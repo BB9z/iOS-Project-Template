@@ -1,7 +1,6 @@
 #! /bin/bash
 # Copyright © 2014, 2018, 2020 BB9z.
 # Copyright © 2016-2017 Beijing ZhiYun ZhiYuan Technology Co., Ltd.
-# Maintained by BB9z (https://github.com/BB9z)
 
 echo "MBAutoBuildScript 1.0"
 echo "-----------------------"
@@ -16,16 +15,6 @@ export LC_ALL=en_US.UTF-8
 if [[ $ACTION = "clean" ]]; then
   echo "清理"
   exit 0
-fi
-
-# 检查 pod
-readonly PODS_ROOT="${PROJECT_DIR}/Pods"
-diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" > /dev/null
-if [[ $? != 0 ]] ; then
-    echo "error: The sandbox is not in sync with the Podfile.lock."
-    exit 1
-else
-    echo "Podfile.lock OK."
 fi
 
 cd "$ScriptPath"
