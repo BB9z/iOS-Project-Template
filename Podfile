@@ -56,6 +56,18 @@ target 'App' do
     # end
 end
 
+# Demos
+abstract_target 'Demo' do
+  pod 'MBAppKit', :git => 'https://github.com/RFUI/MBAppKit.git', :subspecs => [
+      'Navigation',
+      'RootViewController',
+  ]
+  pod 'RFMessageManager', :subspecs => ['SVProgressHUD']
+
+  target "GuestMode" do
+  end
+end
+
 post_install do |pi|
     # 临时修正 deployment target 不支持的问题，并且让 Pod 跟随 App 支持的版本进行编译
     # https://github.com/CocoaPods/CocoaPods/issues/7314
