@@ -25,6 +25,8 @@
 		D501847120F8863E009481D4 /* MBDebugViews.m in Sources */ = {isa = PBXBuildFile; fileRef = D501846A20F8863E009481D4 /* MBDebugViews.m */; };
 		D501847220F8863E009481D4 /* MBDebugMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D501846B20F8863E009481D4 /* MBDebugMenuViewController.m */; };
 		D50693D819495D9E0002BFCC /* MBControlGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = D50693D719495D9E0002BFCC /* MBControlGroup.m */; };
+		D50D5F2E24D9A75E0047715A /* UIViewController+AccountSwitching.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D5F2D24D9A75E0047715A /* UIViewController+AccountSwitching.swift */; };
+		D50D5F3024D9B4BB0047715A /* Array+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588308820CACB32002030C4 /* Array+App.swift */; };
 		D5197D3217F027B400CA387C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5197D3417F027B400CA387C /* InfoPlist.strings */; };
 		D5197D3517F027BB00CA387C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5197D3717F027BB00CA387C /* Localizable.strings */; };
 		D519A0C02434444200E26A64 /* MBShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D519A0BD2434444200E26A64 /* MBShareManager.m */; };
@@ -235,6 +237,7 @@
 		D501847720FA3207009481D4 /* MBDebugPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBDebugPrivate.h; sourceTree = "<group>"; };
 		D50693D619495D9E0002BFCC /* MBControlGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBControlGroup.h; sourceTree = "<group>"; };
 		D50693D719495D9E0002BFCC /* MBControlGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBControlGroup.m; sourceTree = "<group>"; };
+		D50D5F2D24D9A75E0047715A /* UIViewController+AccountSwitching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AccountSwitching.swift"; sourceTree = "<group>"; };
 		D5197A3A17EECAAF00CA387C /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5197A4517EECAAF00CA387C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		D5197D3317F027B400CA387C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -562,6 +565,21 @@
 				D501846720F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.m */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		D50D5F2F24D9A85A0047715A /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				D5DAEAA324D7E2DA005744C7 /* Account.swift */,
+				D5DAEA7124D7D0FE005744C7 /* Info.plist */,
+				D5DAEA8C24D7D621005744C7 /* MBApp.swift */,
+				D5DAEA9F24D7DB51005744C7 /* NSUserDefaults+App.h */,
+				D5DAEA9D24D7DB4E005744C7 /* NSUserDefaults+App.m */,
+				D5DAEA7B24D7D213005744C7 /* OCHeader.h */,
+				D5DAEA9224D7D817005744C7 /* ShortCuts.h */,
+				D5DAEA9024D7D80F005744C7 /* ShortCuts.m */,
+			);
+			name = Supports;
 			sourceTree = "<group>";
 		};
 		D5170CE8191B327A000C7D45 /* PushManager */ = {
@@ -1148,18 +1166,12 @@
 		D5DAEA6224D7D0F8005744C7 /* GuestMode */ = {
 			isa = PBXGroup;
 			children = (
-				D5DAEAA324D7E2DA005744C7 /* Account.swift */,
+				D50D5F2F24D9A85A0047715A /* Supports */,
 				D5DAEAC824D82149005744C7 /* DemoVCs.swift */,
-				D5DAEA7124D7D0FE005744C7 /* Info.plist */,
 				D5DAEA9A24D7DA67005744C7 /* Main.storyboard */,
-				D5DAEA8C24D7D621005744C7 /* MBApp.swift */,
 				D5DAEA8224D7D406005744C7 /* NavigationController.swift */,
-				D5DAEA9F24D7DB51005744C7 /* NSUserDefaults+App.h */,
-				D5DAEA9D24D7DB4E005744C7 /* NSUserDefaults+App.m */,
-				D5DAEA7B24D7D213005744C7 /* OCHeader.h */,
 				D5DAEACC24D82E94005744C7 /* README.md */,
-				D5DAEA9224D7D817005744C7 /* ShortCuts.h */,
-				D5DAEA9024D7D80F005744C7 /* ShortCuts.m */,
+				D50D5F2D24D9A75E0047715A /* UIViewController+AccountSwitching.swift */,
 			);
 			path = GuestMode;
 			sourceTree = "<group>";
@@ -1754,6 +1766,7 @@
 				D5DAEAA424D7E2DB005744C7 /* Account.swift in Sources */,
 				D5DAEA8124D7D3E5005744C7 /* AccountEntities.swift in Sources */,
 				D5DAEA8724D7D460005744C7 /* ApplicationDelegate.swift in Sources */,
+				D50D5F3024D9B4BB0047715A /* Array+App.swift in Sources */,
 				D5DAEA9324D7D8A6005744C7 /* debug.m in Sources */,
 				D5DAEACA24D8214E005744C7 /* DemoVCs.swift in Sources */,
 				D5DAEA7C24D7D361005744C7 /* EnvironmentFlag.swift in Sources */,
@@ -1766,6 +1779,7 @@
 				D5DAEA9E24D7DB4E005744C7 /* NSUserDefaults+App.m in Sources */,
 				D5DAEAA224D7E2A0005744C7 /* RootViewController.swift in Sources */,
 				D5DAEA9124D7D80F005744C7 /* ShortCuts.m in Sources */,
+				D50D5F2E24D9A75E0047715A /* UIViewController+AccountSwitching.swift in Sources */,
 				D5DAEAA024D7DBB3005744C7 /* UIViewController+App.m in Sources */,
 				D5DAEA9924D7D952005744C7 /* UIViewController+NavigationAppearance.m in Sources */,
 			);

@@ -1,6 +1,6 @@
 //
 //  NavigationController.swift
-//  App
+//  GuestMode
 //
 
 private enum NavigationTab: Int {
@@ -58,6 +58,7 @@ class NavigationController: MBNavigationController {
     }
 
     override func presentLoginScene() {
+        precondition(AppUser() == nil)
         let vc = LoginViewController.newFromStoryboard()
         pushViewController(vc, animated: true)
     }
@@ -86,17 +87,6 @@ class NavigationController: MBNavigationController {
 
     // MARK: -
 
-    override func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        super.navigationController(navigationController, didShow: viewController, animated: animated)
-
-        if viewController.rfPrefersDisabledInteractivePopGesture {
-            // 禁用返回手势，只禁用就行，会自行恢复
-            interactivePopGestureRecognizer?.isEnabled = false
-        }
-    }
-
-    // MARK: -
-
     var tabItems: MBControlGroup? {
         bottomBar as? MBControlGroup
     }
@@ -111,6 +101,8 @@ class NavigationController: MBNavigationController {
 // MARK: - Tab
 
 extension NavigationController: MBControlGroupDelegate {
+
+    // tab 切换阻止未登入时切换到需要登入的页面
     func controlGroup(_ controlGroup: MBControlGroup, shouldSelectControlAt index: Int) -> Bool {
         if AppUser() == nil {
             let vc: UIViewController = viewControllerAtTabIndex(index)
@@ -148,13 +140,5 @@ extension NavigationController: MBControlGroupDelegate {
         vc.rfPrefersBottomBarShown = true
         tabControllers.replaceObject(at: index, withObject: vc)
         return vc
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        let idx = tabItems?.selectIndex
-        for i in 0..<tabControllers.count where i != idx {
-            tabControllers.replacePointer(at: i, withPointer: nil)
-        }
     }
 }

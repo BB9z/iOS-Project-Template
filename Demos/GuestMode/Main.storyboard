@@ -313,26 +313,100 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="td1-vx-LiN">
-                                <rect key="frame" x="10" y="10" width="355" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加载结果" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="td1-vx-LiN">
+                                <rect key="frame" x="10" y="10" width="355" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="2aN-dJ-UFY">
+                                <rect key="frame" x="169" y="293" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ap5-AY-ZVy" firstAttribute="trailing" secondItem="td1-vx-LiN" secondAttribute="trailing" constant="10" id="E1X-ve-AHp"/>
                             <constraint firstItem="td1-vx-LiN" firstAttribute="leading" secondItem="ap5-AY-ZVy" secondAttribute="leading" constant="10" id="YmW-It-zd5"/>
+                            <constraint firstItem="2aN-dJ-UFY" firstAttribute="centerX" secondItem="VMQ-R6-AMg" secondAttribute="centerX" id="aSb-0I-afL"/>
+                            <constraint firstItem="2aN-dJ-UFY" firstAttribute="centerY" secondItem="VMQ-R6-AMg" secondAttribute="centerY" id="e5j-ua-K1k"/>
                             <constraint firstItem="td1-vx-LiN" firstAttribute="top" secondItem="ap5-AY-ZVy" secondAttribute="top" constant="10" id="j3T-F5-XKp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ap5-AY-ZVy"/>
                     </view>
-                    <navigationItem key="navigationItem" title="本页游客可见" id="V3Q-bk-5on"/>
+                    <navigationItem key="navigationItem" title="本页游客可见" id="V3Q-bk-5on">
+                        <barButtonItem key="rightBarButtonItem" title="用户切换" id="r6O-J7-VhY">
+                            <connections>
+                                <segue destination="bih-4U-k3p" kind="push" id="Bk7-y7-vnN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentView" destination="td1-vx-LiN" id="fQz-SZ-lAH"/>
+                        <outlet property="loadingIndicator" destination="2aN-dJ-UFY" id="cW9-i5-wui"/>
+                        <outlet property="resultLabel" destination="td1-vx-LiN" id="FTG-eF-qqD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5a-7H-Ut0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="356" y="818"/>
+        </scene>
+        <!--用户切换-->
+        <scene sceneID="sPc-7a-fZs">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ko-Cs-LrL" sceneMemberID="firstResponder"/>
+                <viewController id="bih-4U-k3p" customClass="LoginSwitchViewController" customModule="GuestMode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IWN-Eq-S01">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qcK-sY-cTc">
+                                <rect key="frame" x="133" y="217" width="109" height="127"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVy-nO-DtU">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="39"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <state key="normal" title="登出"/>
+                                        <connections>
+                                            <action selector="onLogout:" destination="bih-4U-k3p" eventType="touchUpInside" id="ct4-xA-x4o"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnf-ra-0dP">
+                                        <rect key="frame" x="0.0" y="44" width="109" height="39"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <state key="normal" title="登入作为 A"/>
+                                        <connections>
+                                            <action selector="demoLoginAsUserA:" destination="bih-4U-k3p" eventType="touchUpInside" id="TCa-me-RQ2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybd-hB-OIJ">
+                                        <rect key="frame" x="0.0" y="88" width="108" height="39"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <state key="normal" title="登入作为 B"/>
+                                        <connections>
+                                            <action selector="demoLoginAsUserB:" destination="bih-4U-k3p" eventType="touchUpInside" id="3gv-EY-ehG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qcK-sY-cTc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2RD-cZ-8Fh" secondAttribute="leading" constant="20" id="Ea0-0F-HF0"/>
+                            <constraint firstItem="qcK-sY-cTc" firstAttribute="centerY" secondItem="IWN-Eq-S01" secondAttribute="centerY" multiplier="0.9" id="F9J-sU-Wtm"/>
+                            <constraint firstItem="qcK-sY-cTc" firstAttribute="centerX" secondItem="IWN-Eq-S01" secondAttribute="centerX" id="u3Z-yD-CgW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2RD-cZ-8Fh"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="用户切换" id="H8n-5U-dBo"/>
+                    <connections>
+                        <outlet property="logoutButton" destination="cVy-nO-DtU" id="0g8-YU-XRQ"/>
+                        <outletCollection property="loginButtons" destination="dnf-ra-0dP" collectionClass="NSMutableArray" id="LIu-qV-BxA"/>
+                        <outletCollection property="loginButtons" destination="ybd-hB-OIJ" collectionClass="NSMutableArray" id="GuZ-R6-qDZ"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1092" y="817"/>
         </scene>
     </scenes>
     <resources>

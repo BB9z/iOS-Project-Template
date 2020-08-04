@@ -2,8 +2,6 @@
 //  DemoVCs.swift
 //  GuestMode
 //
-//  Created by BB9z on 2020/8/3.
-//
 
 /**
  演示首页
@@ -16,7 +14,7 @@ class HomeViewController: UIViewController {
         Account.addCurrentUserChangeObserver(self, initial: true) { [weak self] user in
             guard let sf = self else { return }
             sf.logoutButton.isHidden = user == nil
-            sf.loginStateLabel.text = user == nil ? "未登入" : "已登入"
+            sf.loginStateLabel.text = user == nil ? "未登入" : "已登入: \(AppUserInformation()?.name ?? "-")"
         }
     }
 
@@ -50,6 +48,29 @@ class PrivateViewController: UIViewController {
  */
 class PublicViewController: UIViewController {
     override class func storyboardName() -> String { "Main" }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // 展示用户切换的处理
+        if isNeedsReloadAsUserChanged {
+            refresh()
+            updateLastUserID()
+        }
+    }
+
+    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private weak var resultLabel: UILabel!
+    func refresh() {
+        loadingIndicator.startAnimating()
+        contentView.isHidden = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            guard let sf = self else { return }
+            sf.loadingIndicator.stopAnimating()
+            sf.contentView.isHidden = false
+            sf.resultLabel.text = AppUser() == nil ? "现在展示的是游客可见的内容" : "现在展示的是\(AppUserInformation()?.name ?? "用户")可见的内容"
+        }
+    }
 }
 
 /**
@@ -57,6 +78,9 @@ class PublicViewController: UIViewController {
  */
 class LoginViewController: UIViewController, LoginVCs {
     override class func storyboardName() -> String { "Main" }
+
+    /// 便于用户切换时区分
+    static var demoUserName: String?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -75,7 +99,10 @@ class LoginViewController: UIViewController, LoginVCs {
         if !restoreJumpSwitch.isOn {
             AppNavigationController()?.loginSuspendedViewController = nil
         }
+        let information = AccountEntity()
+        information.name = Self.demoUserName ?? "默认用户"
         let user = Account(id: Account.userIDUndetermined)!
+        user.information = information
         user.token = "demo token"
         Account.current = user
     }
@@ -94,4 +121,34 @@ class LoginStep2ViewController: UIViewController, LoginVCs {
 
 /// 用于登入后移除导航中的多个登入页
 @objc protocol LoginVCs {
+}
+
+
+/**
+ 用户切换工具页
+ */
+class LoginSwitchViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        Account.addCurrentUserChangeObserver(self, initial: true) { [weak self] user in
+            guard let sf = self else { return }
+            let isLogin = user != nil
+            sf.logoutButton.isHidden = !isLogin
+            sf.loginButtons.views(hidden: isLogin)
+        }
+    }
+
+    @IBOutlet private var loginButtons: [UIButton]!
+    @IBOutlet private weak var logoutButton: UIButton!
+    @IBAction private func demoLoginAsUserA(_ sender: Any) {
+        LoginViewController.demoUserName = "用户 A"
+        AppNavigationController()?.presentLoginScene()
+    }
+    @IBAction private func demoLoginAsUserB(_ sender: Any) {
+        LoginViewController.demoUserName = "用户 B"
+        AppNavigationController()?.presentLoginScene()
+    }
+    @IBAction private func onLogout(_ sender: Any) {
+        Account.current = nil
+    }
 }

@@ -1,6 +1,6 @@
 //
 //  MBApp.swift
-//  App
+//  GuestMode
 //
 
 /**

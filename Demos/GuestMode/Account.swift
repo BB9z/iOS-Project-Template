@@ -1,6 +1,6 @@
 //
 //  Account.swift
-//  App
+//  GuestMode
 //
 
 /**

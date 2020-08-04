@@ -1,6 +1,6 @@
 //
 //  UserDefaults 字段定义
-//  App
+//  GuestMode
 //
 
 #import <MBAppKit/MBGeneralType.h>
