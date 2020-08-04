@@ -58,14 +58,24 @@ end
 
 # Demos
 abstract_target 'Demo' do
-  pod 'MBAppKit', :git => 'https://github.com/RFUI/MBAppKit.git', :subspecs => [
-      'Navigation',
-      'RootViewController',
-  ]
-  pod 'RFMessageManager', :subspecs => ['SVProgressHUD']
+    platform :ios, '11.0'
 
-  target "GuestMode" do
-  end
+    pod 'RFAlpha', :subspecs => [
+        'RFButton',
+    ]
+    pod 'MBAppKit',
+      :git => 'https://github.com/RFUI/MBAppKit.git',
+      :subspecs => [
+        'Navigation',
+        'RootViewController',
+    ]
+    pod 'RFMessageManager', :subspecs => ['SVProgressHUD']
+
+    target "GuestMode" do
+        pod 'RFAlpha', :subspecs => [
+            'RFTransitioning/MoveInFromBottomTransitioningStyle'
+        ]
+    end
 end
 
 post_install do |pi|

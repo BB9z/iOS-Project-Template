@@ -92,4 +92,9 @@ FOUNDATION_EXPORT BOOL AppActive(void);
 /// 应用处于后台
 FOUNDATION_EXPORT BOOL AppInBackground(void);
 
+/**
+ 应用 URL 跳转，demo 无需路由，未实现
+ */
+FOUNDATION_EXPORT void AppNavigationJump(NSString *__nullable url, id __nullable additonalObject);
+
 NS_ASSUME_NONNULL_END

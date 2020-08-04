@@ -110,3 +110,7 @@ BOOL AppActive() {
 BOOL AppInBackground() {
     return [UIApplication sharedApplication].applicationState == UIApplicationStateBackground;
 }
+
+void AppNavigationJump(NSString *__nullable url, id __nullable additonalObject) {
+    NSCAssert(NO, @"未实现");
+}

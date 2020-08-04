@@ -89,9 +89,16 @@ PODS:
   - RFAlpha/RFTransitioning/Core (0.6.0):
     - RFInitializing (>= 1.1)
     - RFKit/Runtime (>= 1.7.1)
+  - RFAlpha/RFTransitioning/MoveInFromBottomTransitioningStyle (0.6.0):
+    - RFAlpha/RFTransitioning/Core
+    - RFAlpha/RFTransitioning/PullDownToPopInteraction
   - RFAlpha/RFTransitioning/NavigationControllerTransition (0.6.0):
     - RFAlpha/RFTransitioning/Core
     - RFDelegateChain/Chain
+  - RFAlpha/RFTransitioning/PullDownToPopInteraction (0.6.0):
+    - RFAlpha/RFTransitioning/Core
+    - RFAlpha/RFTransitioning/NavigationControllerTransition
+    - "RFKit/Category/UIView+RFAnimate"
   - RFAlpha/RFViewApperance/RFDrawView (0.6.0):
     - RFInitializing (>= 1.1)
     - RFKit/Runtime (>= 1.7.1)
@@ -262,6 +269,7 @@ DEPENDENCIES:
   - RFAlpha/RFTabController
   - RFAlpha/RFTableViewPullToFetchPlugin
   - RFAlpha/RFTimer
+  - RFAlpha/RFTransitioning/MoveInFromBottomTransitioningStyle
   - RFAlpha/RFViewApperance/RFLayerApperance
   - RFAlpha/RFViewApperance/RFLine
   - RFAlpha/RFWindow
@@ -299,7 +307,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   MBAppKit:
-    :commit: c28cefc6c8ccbe22d6d7a071923ca41c94b0fd4f
+    :commit: 117e5fdb9e2a7cdfc258690f7dc577f91c392ecc
     :git: https://github.com/RFUI/MBAppKit.git
 
 SPEC CHECKSUMS:
@@ -317,6 +325,6 @@ SPEC CHECKSUMS:
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: cfd9e3ab1cb2234d00449d7c73f6ffdb9f86170b
+PODFILE CHECKSUM: ffe0591910a9b009ee853606877038bb793c0c38
 
 COCOAPODS: 1.9.3

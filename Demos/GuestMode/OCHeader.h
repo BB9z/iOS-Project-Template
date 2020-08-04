@@ -72,6 +72,7 @@
 //#import <RFAlpha/RFDrawImage.h>
 //#import <RFAlpha/RFLine.h>
 //#import <RFAlpha/RFTimer.h>
+#import <RFAlpha/UIViewController+RFTransitioning.h>
 //#import <RFKeyboard/RFKeyboard.h>
 //#import <RFKit/NSFileManager+RFKit.h>
 #import <RFKit/RFRuntime.h>

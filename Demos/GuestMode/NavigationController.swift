@@ -4,7 +4,7 @@
 //
 
 private enum NavigationTab: Int {
-    case home = 0, count
+    case home = 0, tabNeedsLogin, tabAllowGuest, count
     static let defaule = NavigationTab.home
     static let login = NSNotFound
 }
@@ -26,7 +26,9 @@ class NavigationController: MBNavigationController {
         defaultAppearanceAttributes[.prefersBottomBarShownAttribute] = 0
         bottomBarHidden = true
 
-        Account.addCurrentUserChangeObserver(self, initial: true) { [weak self] user in
+        tabItems?.selectIndex = NavigationTab.defaule.rawValue
+        onTabSelect(tabItems!)
+        Account.addCurrentUserChangeObserver(self, initial: false) { [weak self] user in
             if user != nil {
                 self?.onLogin()
             } else {
@@ -35,21 +37,54 @@ class NavigationController: MBNavigationController {
         }
     }
 
+    // MARK: - 登入/登出控制
+
     func onLogout() {
-        presentLoginScene()
-        tabControllers.count = 0
-        tabControllers.count = NavigationTab.count.rawValue
+        changeNavigationStack { _ in
+            if self.visibleViewController?.mbUserLoginRequired == true {
+                self.presentLoginScene()
+            }
+        }
     }
 
     func onLogin() {
-        tabItems?.selectIndex = NavigationTab.defaule.rawValue
-        onTabSelect(tabItems!)
+        // 如果登入相关页面不涉及多个页面，直接 pop 登入页即可
+        if let vc = loginSuspendedViewController {
+            replaceViewControllers(ofScence: LoginVCs.self, with: vc, animated: true)
+        }
+        else {
+            popViewControllers(ofScence: LoginVCs.self, animated: true)
+        }
     }
 
     override func presentLoginScene() {
-        tabItems?.selectIndex = NavigationTab.login
-        setViewControllers([ LoginViewController.newFromStoryboard() ], animated: true)
+        let vc = LoginViewController.newFromStoryboard()
+        pushViewController(vc, animated: true)
     }
+
+    @discardableResult override func popViewController(animated: Bool) -> UIViewController? {
+        guard let topVC = topViewController else {
+            return super.popViewController(animated: animated)
+        }
+        func isLoginVC(_ vc: UIViewController?) -> Bool {
+            return vc?.conforms(to: LoginVCs.self) == true
+        }
+        if AppUser() == nil
+            && isLoginVC(topVC)
+            && !isLoginVC(previousViewController) {
+            // 弹出界面（可能是登入界面），返回后需要登入、强制重设导航
+            // 这里前置条件是默认页面无需登入即可浏览
+            let hasNeedsLoginVC = viewControllers.contains { $0.mbUserLoginRequired }
+            if hasNeedsLoginVC {
+                let rootVC: UIViewController = viewControllerAtTabIndex(NavigationTab.defaule.rawValue)
+                setViewControllers([rootVC, topVC], animated: false)
+                tabItems?.selectIndex = NavigationTab.defaule.rawValue
+            }
+        }
+        return super.popViewController(animated: animated)
+    }
+
+    // MARK: -
 
     override func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         super.navigationController(navigationController, didShow: viewController, animated: animated)
@@ -77,6 +112,13 @@ class NavigationController: MBNavigationController {
 
 extension NavigationController: MBControlGroupDelegate {
     func controlGroup(_ controlGroup: MBControlGroup, shouldSelectControlAt index: Int) -> Bool {
+        if AppUser() == nil {
+            let vc: UIViewController = viewControllerAtTabIndex(index)
+            if vc.mbUserLoginRequired {
+                presentLoginScene()
+                return false
+            }
+        }
         return true
     }
 
@@ -96,7 +138,11 @@ extension NavigationController: MBControlGroupDelegate {
         switch NavigationTab(rawValue: index) {
         case .home:
             vc = HomeViewController.newFromStoryboard()
-        case .some(.count), .none:
+        case .tabNeedsLogin:
+            vc = PrivateViewController.newFromStoryboard()
+        case .tabAllowGuest:
+            vc = PublicViewController.newFromStoryboard()
+        case .count, .none:
             fatalError()
         }
         vc.rfPrefersBottomBarShown = true
@@ -110,13 +156,5 @@ extension NavigationController: MBControlGroupDelegate {
         for i in 0..<tabControllers.count where i != idx {
             tabControllers.replacePointer(at: i, withPointer: nil)
         }
-    }
-}
-
-// MARK: - Jump
-extension NavigationController {
-    @IBAction private func navigationBackToHome(_ sender: Any?) {
-        tabItems?.selectIndex = NavigationTab.defaule.rawValue
-        onTabSelect(tabItems!)
     }
 }

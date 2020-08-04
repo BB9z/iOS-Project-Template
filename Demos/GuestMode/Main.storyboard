@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,76 +43,46 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlU-FP-eKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="50" id="HWW-2K-HcN" customClass="MBControlGroup">
-                    <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
+                    <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SSz-wD-ff7">
-                            <rect key="frame" x="50" y="0.0" width="100" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Hhq-8h-tNK">
+                            <rect key="frame" x="50" y="0.0" width="260" height="50"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="首页" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STZ-Lw-Ykh">
-                                    <rect key="frame" x="0.0" y="33" width="100" height="14"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                    <accessibility key="accessibilityConfiguration">
-                                        <bool key="isElement" value="NO"/>
-                                    </accessibility>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="highlightedColor" name="Color/primary"/>
-                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4y-M5-7WS">
+                                    <rect key="frame" x="0.0" y="0.0" width="86.5" height="50"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                    <state key="normal" title="首页"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kq-lJ-zfT">
+                                    <rect key="frame" x="86.5" y="0.0" width="87" height="50"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                    <state key="normal" title="登入可见"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jo3-cn-qAm">
+                                    <rect key="frame" x="173.5" y="0.0" width="86.5" height="50"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                    <state key="normal" title="公开可见"/>
+                                </button>
                             </subviews>
-                            <accessibility key="accessibilityConfiguration" label="打卡">
-                                <accessibilityTraits key="traits" button="YES"/>
-                                <bool key="isElement" value="YES"/>
-                            </accessibility>
-                        </view>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YCl-3e-Tmq">
-                            <rect key="frame" x="150" y="0.0" width="100" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="帖子" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGb-wo-soZ">
-                                    <rect key="frame" x="0.0" y="33" width="100" height="14"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                    <accessibility key="accessibilityConfiguration">
-                                        <bool key="isElement" value="NO"/>
-                                    </accessibility>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="highlightedColor" name="Color/primary"/>
-                                </label>
-                            </subviews>
-                            <accessibility key="accessibilityConfiguration" label="打卡">
-                                <accessibilityTraits key="traits" button="YES"/>
-                                <bool key="isElement" value="YES"/>
-                            </accessibility>
-                        </view>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNQ-bc-RHO">
-                            <rect key="frame" x="250" y="0.0" width="100" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tl-DJ-wf5">
-                                    <rect key="frame" x="0.0" y="33" width="100" height="14"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                    <accessibility key="accessibilityConfiguration">
-                                        <bool key="isElement" value="NO"/>
-                                    </accessibility>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="highlightedColor" name="Color/primary"/>
-                                </label>
-                            </subviews>
-                            <accessibility key="accessibilityConfiguration" label="我的">
-                                <accessibilityTraits key="traits" button="YES"/>
-                                <bool key="isElement" value="YES"/>
-                            </accessibility>
-                        </view>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="sU2-23-RI7"/>
+                            </constraints>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Hhq-8h-tNK" firstAttribute="leading" secondItem="HWW-2K-HcN" secondAttribute="leading" constant="50" id="LM9-fX-7Cd"/>
+                        <constraint firstAttribute="trailing" secondItem="Hhq-8h-tNK" secondAttribute="trailing" constant="50" id="MgX-Jt-kq7"/>
+                        <constraint firstItem="Hhq-8h-tNK" firstAttribute="top" secondItem="HWW-2K-HcN" secondAttribute="top" id="yef-L7-ocF"/>
+                    </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="selectionNoticeOnlySendWhenButtonTapped" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="onTabSelect:" destination="NavigationController" eventType="valueChanged" id="tHL-vG-xEp"/>
+                        <outlet property="delegate" destination="NavigationController" id="1ww-TH-6UA"/>
+                        <outlet property="stackLayoutView" destination="Hhq-8h-tNK" id="RPE-r7-Wof"/>
                     </connections>
                 </view>
             </objects>
@@ -127,28 +96,107 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z34-5E-Pyj">
-                                <rect key="frame" x="16" y="20" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="Jry-T2-dKN" kind="push" id="svq-gJ-bcG"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ieX-G0-XKF">
+                                <rect key="frame" x="67.5" y="174.5" width="240" height="211.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已登入/未登入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7w-Fp-nd2">
+                                        <rect key="frame" x="0.0" y="0.0" width="109.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5n-C1-l2Y">
+                                        <rect key="frame" x="0.0" y="25.5" width="45" height="39"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <state key="normal" title="登出"/>
+                                        <connections>
+                                            <action selector="onLogout:" destination="HomeViewController" eventType="touchUpInside" id="Y1k-vi-SdG"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrK-NW-tl1" userLabel="Space">
+                                        <rect key="frame" x="0.0" y="69.5" width="240" height="10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="Zzb-xd-cRC"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvl-zN-jna">
+                                        <rect key="frame" x="0.0" y="84.5" width="157" height="39"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <state key="normal" title="需要登入的操作"/>
+                                        <connections>
+                                            <action selector="demoActionNeedsLogin:" destination="HomeViewController" eventType="touchUpInside" id="P5g-iW-lNL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUW-g4-k3n">
+                                        <rect key="frame" x="0.0" y="128.5" width="157" height="39"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <state key="normal" title="跳转需要登入页"/>
+                                        <connections>
+                                            <segue destination="YJu-9q-oPc" kind="push" id="Xzs-qt-6co"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWA-xI-7qm">
+                                        <rect key="frame" x="0.0" y="172.5" width="157" height="39"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <state key="normal" title="跳转到普通页面"/>
+                                        <connections>
+                                            <segue destination="9Kn-g5-Tz3" kind="push" id="RUl-ac-Uw9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="z34-5E-Pyj" firstAttribute="leading" secondItem="Du6-7h-l5h" secondAttribute="leading" constant="16" id="cnq-BM-FBM"/>
-                            <constraint firstItem="z34-5E-Pyj" firstAttribute="top" secondItem="Du6-7h-l5h" secondAttribute="top" constant="20" id="fTm-w0-572"/>
+                            <constraint firstItem="ieX-G0-XKF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Du6-7h-l5h" secondAttribute="leading" constant="20" id="KXO-ME-tws"/>
+                            <constraint firstItem="ieX-G0-XKF" firstAttribute="centerX" secondItem="HomeViewController-View" secondAttribute="centerX" id="aUe-LF-fTJ"/>
+                            <constraint firstItem="ieX-G0-XKF" firstAttribute="centerY" secondItem="HomeViewController-View" secondAttribute="centerY" multiplier="0.9" id="dmB-t7-JVK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Du6-7h-l5h"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Home" id="I12-lK-Zok"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="loginStateLabel" destination="F7w-Fp-nd2" id="SzQ-MH-qPX"/>
+                        <outlet property="logoutButton" destination="k5n-C1-l2Y" id="CY9-Fr-aQr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Private-->
+        <scene sceneID="Z3M-RJ-Ofy">
+            <objects>
+                <viewController storyboardIdentifier="PrivateViewController" title="Private" id="YJu-9q-oPc" customClass="PrivateViewController" customModule="GuestMode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iEr-mG-epU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你可以直接在 Interface Builder 中设置 vc 的 MBUserLoginRequired 属性，若为 YES，vc 在未登入时会先跳转到登入页。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUy-6v-RsN">
+                                <rect key="frame" x="10" y="10" width="355" height="64.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="NUy-6v-RsN" firstAttribute="top" secondItem="Anl-V9-XRO" secondAttribute="top" constant="10" id="2MM-BB-1Al"/>
+                            <constraint firstItem="Anl-V9-XRO" firstAttribute="trailing" secondItem="NUy-6v-RsN" secondAttribute="trailing" constant="10" id="Bf4-4o-Swv"/>
+                            <constraint firstItem="NUy-6v-RsN" firstAttribute="leading" secondItem="Anl-V9-XRO" secondAttribute="leading" constant="10" id="QCX-AU-aa7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Anl-V9-XRO"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="本页登录才可见" id="jin-X5-Cmo"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="MBUserLoginRequired" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ev5-ar-UEC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-359" y="818"/>
         </scene>
         <!--Login-->
         <scene sceneID="XUp-x4-zgj">
@@ -157,20 +205,137 @@
                     <view key="view" contentMode="scaleToFill" id="zfs-yB-3a9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bdR-fl-w0j">
+                                <rect key="frame" x="120.5" y="216" width="134" height="129"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmh-Oe-bof">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="39"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <state key="normal" title="登入"/>
+                                        <connections>
+                                            <action selector="demoLogin:" destination="Jry-T2-dKN" eventType="touchUpInside" id="OU0-qR-Y9Y"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y1r-1I-Zf8">
+                                        <rect key="frame" x="0.0" y="49" width="128.5" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恢复跳转" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6Y-ur-OTo">
+                                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K4L-gb-rfX">
+                                                <rect key="frame" x="79.5" y="0.0" width="51" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79L-6q-LM9">
+                                        <rect key="frame" x="0.0" y="90" width="134" height="39"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <state key="normal" title="进入更深层级"/>
+                                        <connections>
+                                            <segue destination="rNH-Ke-trD" kind="push" id="ccF-Vi-jhU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bdR-fl-w0j" firstAttribute="centerY" secondItem="zfs-yB-3a9" secondAttribute="centerY" multiplier="0.9" id="MaU-bl-2ix"/>
+                            <constraint firstItem="bdR-fl-w0j" firstAttribute="centerX" secondItem="zfs-yB-3a9" secondAttribute="centerX" id="XZW-Sa-iVO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZWK-3F-ApE"/>
                     </view>
                     <navigationItem key="navigationItem" title="登录" id="8Rp-u4-dHb"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="restoreJumpContainer" destination="Y1r-1I-Zf8" id="7VV-rm-Qj2"/>
+                        <outlet property="restoreJumpSwitch" destination="K4L-gb-rfX" id="f6Z-Aw-D4d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqM-o0-uNQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="887" y="0.0"/>
         </scene>
+        <!--Login 2-->
+        <scene sceneID="ONH-Gs-oAz">
+            <objects>
+                <viewController title="Login 2" id="rNH-Ke-trD" customClass="LoginStep2ViewController" customModule="GuestMode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YUQ-mo-HGV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rnw-nD-J2o">
+                                <rect key="frame" x="22.5" y="204" width="330" height="152.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYd-Qn-5zX">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="39"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <state key="normal" title="登入"/>
+                                        <connections>
+                                            <action selector="demoLogin:" destination="rNH-Ke-trD" eventType="touchUpInside" id="uev-Mh-I85"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWa-ad-PMP">
+                                        <rect key="frame" x="0.0" y="49" width="330" height="103.5"/>
+                                        <string key="text">在登入时，导航堆栈中登入注册相关的页面均会被移除。 
+需要做的是给登入注册页面用一个 protocol 声明，在导航的 onLogin() 方法统一弹出。</string>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rnw-nD-J2o" firstAttribute="centerY" secondItem="YUQ-mo-HGV" secondAttribute="centerY" multiplier="0.9" id="0Vy-bb-Pfq"/>
+                            <constraint firstItem="rnw-nD-J2o" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YUQ-mo-HGV" secondAttribute="leading" constant="20" id="E8y-Hv-rai"/>
+                            <constraint firstItem="rnw-nD-J2o" firstAttribute="centerX" secondItem="YUQ-mo-HGV" secondAttribute="centerX" id="vsC-dl-MPn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YLh-p9-Q7S"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="登录 2" id="eLd-L4-Jtt"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oF3-su-jFV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1634" y="0.0"/>
+        </scene>
+        <!--Public-->
+        <scene sceneID="ZMU-wV-Sig">
+            <objects>
+                <viewController storyboardIdentifier="PublicViewController" title="Public" id="9Kn-g5-Tz3" customClass="PublicViewController" customModule="GuestMode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VMQ-R6-AMg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="td1-vx-LiN">
+                                <rect key="frame" x="10" y="10" width="355" height="0.0"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ap5-AY-ZVy" firstAttribute="trailing" secondItem="td1-vx-LiN" secondAttribute="trailing" constant="10" id="E1X-ve-AHp"/>
+                            <constraint firstItem="td1-vx-LiN" firstAttribute="leading" secondItem="ap5-AY-ZVy" secondAttribute="leading" constant="10" id="YmW-It-zd5"/>
+                            <constraint firstItem="td1-vx-LiN" firstAttribute="top" secondItem="ap5-AY-ZVy" secondAttribute="top" constant="10" id="j3T-F5-XKp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ap5-AY-ZVy"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="本页游客可见" id="V3Q-bk-5on"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b5a-7H-Ut0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="356" y="818"/>
+        </scene>
     </scenes>
     <resources>
         <image name="nav_back_layoutfix" width="23" height="19"/>
-        <namedColor name="Color/primary">
-            <color red="0.1803921568627451" green="0.5607843137254902" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

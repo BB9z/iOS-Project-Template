@@ -124,8 +124,6 @@
 		D5DAEA8424D7D436005744C7 /* NSPointArray+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588308C20CACB33002030C4 /* NSPointArray+App.swift */; };
 		D5DAEA8524D7D446005744C7 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55959D220AB9FA20019D733 /* MessageManager.swift */; };
 		D5DAEA8724D7D460005744C7 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAEA8624D7D45F005744C7 /* ApplicationDelegate.swift */; };
-		D5DAEA8924D7D4A2005744C7 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAEA8824D7D4A2005744C7 /* HomeVC.swift */; };
-		D5DAEA8B24D7D4BD005744C7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAEA8A24D7D4BD005744C7 /* LoginVC.swift */; };
 		D5DAEA8E24D7D698005744C7 /* MBControlGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = D50693D719495D9E0002BFCC /* MBControlGroup.m */; };
 		D5DAEA9124D7D80F005744C7 /* ShortCuts.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DAEA9024D7D80F005744C7 /* ShortCuts.m */; };
 		D5DAEA9324D7D8A6005744C7 /* debug.m in Sources */ = {isa = PBXBuildFile; fileRef = D52EADE72043B983007219E0 /* debug.m */; };
@@ -136,6 +134,8 @@
 		D5DAEAA224D7E2A0005744C7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAEAA124D7E2A0005744C7 /* RootViewController.swift */; };
 		D5DAEAA424D7E2DB005744C7 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAEAA324D7E2DA005744C7 /* Account.swift */; };
 		D5DAEAA724D7E377005744C7 /* MBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAEAA624D7E377005744C7 /* MBApp.swift */; };
+		D5DAEACA24D8214E005744C7 /* DemoVCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAEAC824D82149005744C7 /* DemoVCs.swift */; };
+		D5DAEACD24D842AD005744C7 /* MBLayoutButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE52312043F7B9009148B3 /* MBLayoutButton.m */; };
 		D5DB4C19241DD71300832A0A /* MBEntitiesTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DB4C18241DD71300832A0A /* MBEntitiesTableView.m */; };
 		D5DB4C1C241E243900832A0A /* MBCollectionListDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DB4C1B241E243900832A0A /* MBCollectionListDisplayer.m */; };
 		D5DB4C1F241E27B800832A0A /* MBKeyboardAdjustScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DB4C1D241E27B700832A0A /* MBKeyboardAdjustScrollView.m */; };
@@ -390,8 +390,6 @@
 		D5DAEA7B24D7D213005744C7 /* OCHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCHeader.h; sourceTree = "<group>"; };
 		D5DAEA8224D7D406005744C7 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		D5DAEA8624D7D45F005744C7 /* ApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
-		D5DAEA8824D7D4A2005744C7 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		D5DAEA8A24D7D4BD005744C7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D5DAEA8C24D7D621005744C7 /* MBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBApp.swift; sourceTree = "<group>"; };
 		D5DAEA9024D7D80F005744C7 /* ShortCuts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShortCuts.m; sourceTree = "<group>"; };
 		D5DAEA9224D7D817005744C7 /* ShortCuts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShortCuts.h; sourceTree = "<group>"; };
@@ -401,6 +399,10 @@
 		D5DAEAA124D7E2A0005744C7 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		D5DAEAA324D7E2DA005744C7 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		D5DAEAA624D7E377005744C7 /* MBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBApp.swift; sourceTree = "<group>"; };
+		D5DAEAC824D82149005744C7 /* DemoVCs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoVCs.swift; sourceTree = "<group>"; };
+		D5DAEACB24D82E81005744C7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D5DAEACC24D82E94005744C7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D5DAEAD024D85D00005744C7 /* demos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = demos.entitlements; sourceTree = "<group>"; };
 		D5DB4C17241DD71300832A0A /* MBEntitiesTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBEntitiesTableView.h; sourceTree = "<group>"; };
 		D5DB4C18241DD71300832A0A /* MBEntitiesTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBEntitiesTableView.m; sourceTree = "<group>"; };
 		D5DB4C1A241E243900832A0A /* MBCollectionListDisplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCollectionListDisplayer.h; sourceTree = "<group>"; };
@@ -1138,6 +1140,7 @@
 			children = (
 				D5DAEAA524D7E33E005744C7 /* _Shared */,
 				D5DAEA6224D7D0F8005744C7 /* GuestMode */,
+				D5DAEACB24D82E81005744C7 /* README.md */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -1146,15 +1149,15 @@
 			isa = PBXGroup;
 			children = (
 				D5DAEAA324D7E2DA005744C7 /* Account.swift */,
-				D5DAEA8824D7D4A2005744C7 /* HomeVC.swift */,
+				D5DAEAC824D82149005744C7 /* DemoVCs.swift */,
 				D5DAEA7124D7D0FE005744C7 /* Info.plist */,
-				D5DAEA8A24D7D4BD005744C7 /* LoginVC.swift */,
 				D5DAEA9A24D7DA67005744C7 /* Main.storyboard */,
 				D5DAEA8C24D7D621005744C7 /* MBApp.swift */,
 				D5DAEA8224D7D406005744C7 /* NavigationController.swift */,
 				D5DAEA9F24D7DB51005744C7 /* NSUserDefaults+App.h */,
 				D5DAEA9D24D7DB4E005744C7 /* NSUserDefaults+App.m */,
 				D5DAEA7B24D7D213005744C7 /* OCHeader.h */,
+				D5DAEACC24D82E94005744C7 /* README.md */,
 				D5DAEA9224D7D817005744C7 /* ShortCuts.h */,
 				D5DAEA9024D7D80F005744C7 /* ShortCuts.m */,
 			);
@@ -1165,6 +1168,7 @@
 			isa = PBXGroup;
 			children = (
 				D5DAEA8624D7D45F005744C7 /* ApplicationDelegate.swift */,
+				D5DAEAD024D85D00005744C7 /* demos.entitlements */,
 				D5DAEAA624D7E377005744C7 /* MBApp.swift */,
 				D5DAEAA124D7E2A0005744C7 /* RootViewController.swift */,
 			);
@@ -1751,11 +1755,11 @@
 				D5DAEA8124D7D3E5005744C7 /* AccountEntities.swift in Sources */,
 				D5DAEA8724D7D460005744C7 /* ApplicationDelegate.swift in Sources */,
 				D5DAEA9324D7D8A6005744C7 /* debug.m in Sources */,
+				D5DAEACA24D8214E005744C7 /* DemoVCs.swift in Sources */,
 				D5DAEA7C24D7D361005744C7 /* EnvironmentFlag.swift in Sources */,
-				D5DAEA8924D7D4A2005744C7 /* HomeVC.swift in Sources */,
-				D5DAEA8B24D7D4BD005744C7 /* LoginVC.swift in Sources */,
 				D5DAEAA724D7E377005744C7 /* MBApp.swift in Sources */,
 				D5DAEA8E24D7D698005744C7 /* MBControlGroup.m in Sources */,
+				D5DAEACD24D842AD005744C7 /* MBLayoutButton.m in Sources */,
 				D5DAEA8524D7D446005744C7 /* MessageManager.swift in Sources */,
 				D5DAEA8324D7D40E005744C7 /* NavigationController.swift in Sources */,
 				D5DAEA8424D7D436005744C7 /* NSPointArray+App.swift in Sources */,
@@ -2126,6 +2130,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = Demos/_Shared/demos.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -2138,6 +2145,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.bb9z.iOS-Project-Template.demo.GuestMode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "Demos/$(PRODUCT_MODULE_NAME)/OCHeader.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "App-Swift.h";
@@ -2151,6 +2159,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = Demos/_Shared/demos.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = "Demos/$(PRODUCT_MODULE_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2158,6 +2169,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.bb9z.iOS-Project-Template.demo.GuestMode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Demos/$(PRODUCT_MODULE_NAME)/OCHeader.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "App-Swift.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2170,6 +2182,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = Demos/_Shared/demos.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = "Demos/$(PRODUCT_MODULE_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2177,6 +2192,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.bb9z.iOS-Project-Template.demo.GuestMode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Demos/$(PRODUCT_MODULE_NAME)/OCHeader.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "App-Swift.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
