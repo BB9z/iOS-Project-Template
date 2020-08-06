@@ -52,6 +52,7 @@ class PublicViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // 展示用户切换的处理
+        // 如果游客和用户看到的是完全不同的页面，可以通过嵌入不同的 vc 来实现
         if isNeedsReloadAsUserChanged {
             refresh()
             updateLastUserID()
