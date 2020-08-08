@@ -1,6 +1,6 @@
 //
 //  RootViewController.swift
-//  App
+//  Demos
 //
 
 /**

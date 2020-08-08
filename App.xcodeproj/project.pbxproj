@@ -393,7 +393,6 @@
 		D5DAEA7B24D7D213005744C7 /* OCHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCHeader.h; sourceTree = "<group>"; };
 		D5DAEA8224D7D406005744C7 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		D5DAEA8624D7D45F005744C7 /* ApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
-		D5DAEA8C24D7D621005744C7 /* MBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBApp.swift; sourceTree = "<group>"; };
 		D5DAEA9024D7D80F005744C7 /* ShortCuts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShortCuts.m; sourceTree = "<group>"; };
 		D5DAEA9224D7D817005744C7 /* ShortCuts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShortCuts.h; sourceTree = "<group>"; };
 		D5DAEA9A24D7DA67005744C7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -572,7 +571,6 @@
 			children = (
 				D5DAEAA324D7E2DA005744C7 /* Account.swift */,
 				D5DAEA7124D7D0FE005744C7 /* Info.plist */,
-				D5DAEA8C24D7D621005744C7 /* MBApp.swift */,
 				D5DAEA9F24D7DB51005744C7 /* NSUserDefaults+App.h */,
 				D5DAEA9D24D7DB4E005744C7 /* NSUserDefaults+App.m */,
 				D5DAEA7B24D7D213005744C7 /* OCHeader.h */,
