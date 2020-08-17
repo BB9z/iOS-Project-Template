@@ -13,3 +13,24 @@
 "NSURLErrorNotConnectedToInternet"      = "没有联网，请连接 Wi-Fi 或打开移动数据";
 "NSURLErrorSecureConnectionFailed"      = "不能建立与服务器的安全连接。请检查设备的时钟是否正确；如果你在使用公共 Wi-Fi，请打开系统浏览器获取网络访问权限";
 "NSURLErrorTimedOut"                    = "网络连接不畅";
+
+/// - RFAPI Build-in
+
+"RFAPI.Error.GeneralFailureReasonApp" = "很可能是应用 bug";
+"RFAPI.Error.GeneralFailureReasonServer" = "可能服务器正在升级或者维护，也可能是应用 bug";
+"RFAPI.Error.GeneralRecoverySuggestion" = "建议稍后重试，如果持续报告这个错误请检查 AppStore 是否有新版本";
+
+"RFAPI.Debug.CannotCreateRequestError" = "无法创建请求: %@";
+"RFAPI.Error.CannotCreateRequestDescription" = "内部错误，无法创建请求";
+"RFAPI.Error.CannotCreateRequestReason" = "很可能是应用 bug";
+"RFAPI.Error.CannotCreateRequestSuggestion" = "请再试一次，如果依旧请尝试重启应用。给您带来不便，敬请谅解";
+"RFAPI.Error.DefineNoPath" = "接口定义未设置路径";
+"RFAPI.Debug.CannotJoinPathToBaseURL" = "无法拼接路径 %1$@ 到 %2$@，请检查接口定义";
+
+/// RFAPIJSONModelTransformer
+
+"RFAPI.Error.UnexpectedServerResponse" = "返回数据异常";
+"RFAPI.Debug.ObjectResponseTypeMismatchClass" = "期望的数据类型是字典，而实际是 %@\n请先确认一下代码，如果服务器没按要求返回请联系后台人员";
+"RFAPI.Debug.ObjectResponseConvertToModelError" = "不能将返回内容转换为 model：%@\n请先确认一下代码，如果服务器没按要求返回请联系后台人员";
+"RFAPI.Debug.ArrayResponseTypeMismatchClass" = "期望的数据类型是数组，而实际是 %@\n请先确认一下代码，如果服务器没按要求返回请联系后台人员";
+"RFAPI.Debug.ArrayResponseConvertToModelError" = "不能将数组中的元素转换为 model %@\n请先确认一下代码，如果服务器没按要求返回请联系后台人员";

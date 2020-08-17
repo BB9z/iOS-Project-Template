@@ -9,8 +9,9 @@
 @class AccountEntity;
 
 /**
- 迁移到 Swift 版本动力不足，没有让定义与使用变得更轻松：
- key 多需要额外定义，用时也多需额外声明，不方便。
+ 迁移到 Swift 版本动力不足，定义与使用优势暂不明显，有 Codable 需求时再说
+
+ 参见技术选型 https://github.com/BB9z/iOS-Project-Template/wiki/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B#userdefaults
  */
 @interface NSUserDefaults (App)
 

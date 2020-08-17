@@ -30,6 +30,8 @@
 >
 /**
  如果 controls 未设置，从 nib 中载入后，自动把 stackLayoutView 或子 view 中是 UIControl 的 view 设置为 controls
+
+ 不确定是 Xcode bug 还是系统的，IBOutletCollection 实际加载顺序有时和 IB 的不一致，这样 index 就错了，安全起见可设置 tag 值并以此强制重排一下。因此建议自动加载不手动设置
  */
 @property (nullable, nonatomic) IBOutletCollection(UIControl) NSArray *controls;
 

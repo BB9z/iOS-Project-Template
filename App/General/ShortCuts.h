@@ -1,13 +1,7 @@
-/*
- ShortCuts.h
- 
- Copyright © 2018, 2020 RFUI.
- Copyright © 2015 Beijing ZhiYun ZhiYuan Technology Co., Ltd.
- https://github.com/BB9z/iOS-Project-Template
- 
- The MIT License
- https://opensource.org/licenses/MIT
- */
+//
+//  ShortCuts
+//  App
+//
 #import <MBAppKit/MBModel.h>
 
 /**

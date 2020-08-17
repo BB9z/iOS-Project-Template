@@ -27,7 +27,7 @@ fastlane setup_project
 
 ## 关于项目模版
 
-强力推荐阅读[项目模版 wiki](https://github.com/BB9z/iOS-Project-Template/wiki)。
+强烈推荐阅读[项目模版 wiki](https://github.com/BB9z/iOS-Project-Template/wiki)内的相关文档。
 
 ```text
 Copyright © 2018-2020 RFUI, BB9z.

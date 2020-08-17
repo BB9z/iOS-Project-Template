@@ -46,108 +46,120 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlU-FP-eKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="50" id="HWW-2K-HcN" customClass="MBControlGroup">
-                    <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
+                    <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j9J-er-bK2" customClass="RFLine">
-                            <rect key="frame" x="0.0" y="-1" width="400" height="1"/>
+                            <rect key="frame" x="0.0" y="-1" width="360" height="1"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="onePixel" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SSz-wD-ff7" customClass="MBLayoutButton">
-                            <rect key="frame" x="50" y="0.0" width="100" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1rh-c0-pic">
+                            <rect key="frame" x="50" y="0.0" width="260" height="50"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon/test24" translatesAutoresizingMaskIntoConstraints="NO" id="JP6-J7-YQI">
-                                    <rect key="frame" x="34" y="2" width="32" height="32"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="首页" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STZ-Lw-Ykh">
-                                    <rect key="frame" x="0.0" y="33" width="100" height="14"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                    <accessibility key="accessibilityConfiguration">
-                                        <bool key="isElement" value="NO"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSz-wD-ff7" customClass="MBLayoutButton">
+                                    <rect key="frame" x="0.0" y="0.0" width="86" height="50"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon/test24" translatesAutoresizingMaskIntoConstraints="NO" id="JP6-J7-YQI">
+                                            <rect key="frame" x="27" y="2" width="32" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="首页" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STZ-Lw-Ykh">
+                                            <rect key="frame" x="0.0" y="33" width="87" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <bool key="isElement" value="NO"/>
+                                            </accessibility>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="highlightedColor" name="Color/primary"/>
+                                        </label>
+                                    </subviews>
+                                    <accessibility key="accessibilityConfiguration" label="打卡">
+                                        <accessibilityTraits key="traits" button="YES"/>
+                                        <bool key="isElement" value="YES"/>
                                     </accessibility>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="highlightedColor" name="Color/primary"/>
-                                </label>
-                            </subviews>
-                            <accessibility key="accessibilityConfiguration" label="打卡">
-                                <accessibilityTraits key="traits" button="YES"/>
-                                <bool key="isElement" value="YES"/>
-                            </accessibility>
-                            <connections>
-                                <outlet property="icon" destination="JP6-J7-YQI" id="rhY-Il-nct"/>
-                                <outlet property="titleLabel" destination="STZ-Lw-Ykh" id="GGy-Ay-CGM"/>
-                            </connections>
-                        </view>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YCl-3e-Tmq" customClass="MBLayoutButton">
-                            <rect key="frame" x="150" y="0.0" width="100" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon/test24" translatesAutoresizingMaskIntoConstraints="NO" id="uej-mT-e84">
-                                    <rect key="frame" x="34" y="2" width="32" height="32"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="帖子" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGb-wo-soZ">
-                                    <rect key="frame" x="0.0" y="33" width="100" height="14"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                    <accessibility key="accessibilityConfiguration">
-                                        <bool key="isElement" value="NO"/>
+                                    <connections>
+                                        <outlet property="icon" destination="JP6-J7-YQI" id="rhY-Il-nct"/>
+                                        <outlet property="titleLabel" destination="STZ-Lw-Ykh" id="GGy-Ay-CGM"/>
+                                    </connections>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCl-3e-Tmq" customClass="MBLayoutButton">
+                                    <rect key="frame" x="86" y="0.0" width="87" height="50"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon/test24" translatesAutoresizingMaskIntoConstraints="NO" id="uej-mT-e84">
+                                            <rect key="frame" x="28" y="2" width="32" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="帖子" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGb-wo-soZ">
+                                            <rect key="frame" x="0.0" y="33" width="87" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <bool key="isElement" value="NO"/>
+                                            </accessibility>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="highlightedColor" name="Color/primary"/>
+                                        </label>
+                                    </subviews>
+                                    <accessibility key="accessibilityConfiguration" label="打卡">
+                                        <accessibilityTraits key="traits" button="YES"/>
+                                        <bool key="isElement" value="YES"/>
                                     </accessibility>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="highlightedColor" name="Color/primary"/>
-                                </label>
-                            </subviews>
-                            <accessibility key="accessibilityConfiguration" label="打卡">
-                                <accessibilityTraits key="traits" button="YES"/>
-                                <bool key="isElement" value="YES"/>
-                            </accessibility>
-                            <connections>
-                                <outlet property="icon" destination="uej-mT-e84" id="BzU-xx-9KJ"/>
-                                <outlet property="titleLabel" destination="iGb-wo-soZ" id="u3o-Rn-lOh"/>
-                            </connections>
-                        </view>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNQ-bc-RHO" customClass="MBLayoutButton">
-                            <rect key="frame" x="250" y="0.0" width="100" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon/test24" translatesAutoresizingMaskIntoConstraints="NO" id="tXk-dQ-Hb3">
-                                    <rect key="frame" x="34" y="2" width="32" height="32"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tl-DJ-wf5">
-                                    <rect key="frame" x="0.0" y="33" width="100" height="14"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                    <accessibility key="accessibilityConfiguration">
-                                        <bool key="isElement" value="NO"/>
+                                    <connections>
+                                        <outlet property="icon" destination="uej-mT-e84" id="BzU-xx-9KJ"/>
+                                        <outlet property="titleLabel" destination="iGb-wo-soZ" id="u3o-Rn-lOh"/>
+                                    </connections>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNQ-bc-RHO" customClass="MBLayoutButton">
+                                    <rect key="frame" x="173" y="0.0" width="87" height="50"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon/test24" translatesAutoresizingMaskIntoConstraints="NO" id="tXk-dQ-Hb3">
+                                            <rect key="frame" x="28" y="2" width="31" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tl-DJ-wf5">
+                                            <rect key="frame" x="0.0" y="33" width="87" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <bool key="isElement" value="NO"/>
+                                            </accessibility>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="highlightedColor" name="Color/primary"/>
+                                        </label>
+                                    </subviews>
+                                    <accessibility key="accessibilityConfiguration" label="我的">
+                                        <accessibilityTraits key="traits" button="YES"/>
+                                        <bool key="isElement" value="YES"/>
                                     </accessibility>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="highlightedColor" name="Color/primary"/>
-                                </label>
+                                    <connections>
+                                        <outlet property="icon" destination="tXk-dQ-Hb3" id="FPF-Ge-1Ec"/>
+                                        <outlet property="titleLabel" destination="0Tl-DJ-wf5" id="sRq-R8-zM8"/>
+                                    </connections>
+                                </view>
                             </subviews>
-                            <accessibility key="accessibilityConfiguration" label="我的">
-                                <accessibilityTraits key="traits" button="YES"/>
-                                <bool key="isElement" value="YES"/>
-                            </accessibility>
-                            <connections>
-                                <outlet property="icon" destination="tXk-dQ-Hb3" id="FPF-Ge-1Ec"/>
-                                <outlet property="titleLabel" destination="0Tl-DJ-wf5" id="sRq-R8-zM8"/>
-                            </connections>
-                        </view>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="mDP-9e-UZK"/>
+                            </constraints>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="1rh-c0-pic" firstAttribute="top" secondItem="HWW-2K-HcN" secondAttribute="top" id="Pkx-ob-fhF"/>
+                        <constraint firstItem="1rh-c0-pic" firstAttribute="centerX" secondItem="HWW-2K-HcN" secondAttribute="centerX" id="pdw-xA-9lc"/>
+                        <constraint firstItem="1rh-c0-pic" firstAttribute="leading" secondItem="HWW-2K-HcN" secondAttribute="leading" constant="50" id="r37-qk-weY"/>
+                    </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="selectionNoticeOnlySendWhenButtonTapped" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="onTabSelect:" destination="NavigationController" eventType="valueChanged" id="tHL-vG-xEp"/>
+                        <outlet property="delegate" destination="NavigationController" id="YB8-Qr-t8d"/>
+                        <outlet property="stackLayoutView" destination="1rh-c0-pic" id="dBt-WH-XY5"/>
                     </connections>
                 </view>
             </objects>
