@@ -221,6 +221,9 @@ if $isNeedsRename ; then
     SedReplaceFileContent '"$oldName"'      '"$name"'            "$oldName.xcodeproj/xcshareddata/xcschemes/$oldName.xcscheme"
     SedReplaceFileContent '"$oldName.app"'  '"$name.app"'        "$oldName.xcodeproj/xcshareddata/xcschemes/$oldName.xcscheme"
     SedReplaceFileContent "$oldName.xcodeproj" "$name.xcodeproj" "$oldName.xcodeproj/xcshareddata/xcschemes/$oldName.xcscheme"
+    SedReplaceFileContent '"$oldName"'      '"$name"'            "$oldName.xcodeproj/xcshareddata/xcschemes/Preview.xcscheme"
+    SedReplaceFileContent '"$oldName.app"'  '"$name.app"'        "$oldName.xcodeproj/xcshareddata/xcschemes/Preview.xcscheme"
+    SedReplaceFileContent "$oldName.xcodeproj" "$name.xcodeproj" "$oldName.xcodeproj/xcshareddata/xcschemes/Preview.xcscheme"
 
     sed -i '' "s/target '$oldName' do/target '$name' do/g" "Podfile"
 

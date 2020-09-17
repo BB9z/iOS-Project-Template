@@ -1,4 +1,4 @@
-/*!
+/*
  MBTableViewDataSource
  
  Copyright © 2018, 2020 RFUI.
@@ -11,7 +11,7 @@
 #import "MBListDataSource.h"
 
 // @MBDependency:4
-@interface MBTableViewDataSource : MBListDataSource <
+@interface MBTableViewDataSource<CellType, ItemType> : MBListDataSource <
     UITableViewDataSource
 >
 @property (weak, nullable, nonatomic) IBOutlet UITableView *tableView;
@@ -50,12 +50,12 @@
 /**
  可选，默认 Cell
  */
-@property (null_resettable, nonatomic) NSString *__nonnull (^cellReuseIdentifier)(UITableView *__nonnull tableView, NSIndexPath *__nonnull indexPath, id __nonnull item);
+@property (null_resettable, nonatomic) NSString *__nonnull (^cellReuseIdentifier)(UITableView *__nonnull tableView, NSIndexPath *__nonnull indexPath, ItemType __nonnull item);
 
 /**
  可选，默认在 cell 上执行 setItem 方法
  */
-@property (null_resettable, nonatomic) void (^configureCell)(UITableView *__nonnull tableView, id __nonnull cell, NSIndexPath *__nonnull indexPath, id __nonnull item);
+@property (null_resettable, nonatomic) void (^configureCell)(UITableView *__nonnull tableView, CellType __nonnull cell, NSIndexPath *__nonnull indexPath, ItemType __nonnull item);
 
 #pragma mark -
 
@@ -65,9 +65,9 @@
 - (void)reconfigVisableCells;
 
 /// 删除条目
-- (void)removeItem:(nullable id)item withRowAnimation:(UITableViewRowAnimation)animation;
+- (void)removeItem:(nullable ItemType)item withRowAnimation:(UITableViewRowAnimation)animation;
 
 /// 添加到末尾
-- (nullable NSIndexPath *)appendItem:(nullable id)item withRowAnimation:(UITableViewRowAnimation)animation;
+- (nullable NSIndexPath *)appendItem:(nullable ItemType)item withRowAnimation:(UITableViewRowAnimation)animation;
 
 @end

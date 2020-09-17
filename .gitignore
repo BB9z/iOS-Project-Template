@@ -5,16 +5,13 @@
 **/*.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
 **/*.xcworkspace/xcshareddata/*.xccheckout
 **/*.xcworkspace/xcshareddata/*.xcscmblueprint
+**/*.playground/**/timeline.xctimeline
 .idea/
-
-# Xcode Injection
-IOSInjectionProject/
-OSXInjectionProject/
 
 # Build
 Scripts/build/
 build/
-DerivedData
+DerivedData/
 *.ipa
 
 # CocoaPods

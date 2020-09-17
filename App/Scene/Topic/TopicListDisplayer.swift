@@ -47,7 +47,10 @@ class TopicListDisplayer: MBTableListDisplayer {
 }
 
 /// 帖子列表 cell
-class TopicListCell: UITableViewCell, TopicEntityUpdating {
+class TopicListCell: UITableViewCell,
+    HasItem,
+    TopicEntityUpdating {
+
     @objc var item: TopicEntity! {
         didSet {
             if let old = oldValue {

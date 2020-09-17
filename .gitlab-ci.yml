@@ -37,31 +37,45 @@ variables:
   FIR_UPLOAD_TOKEN: FIR_TOKEN
 
 cache:
-  key: "v1"
+  key: "v2"
   paths:
+    - Carthage/Build/
     - Pods/
 
+# 开发环境打包
 develop_deploy:
   stage: deploy
   tags:
     - mobile-publish
   only:
     - develop
+  artifacts:
+    paths:
+      - "export/*.zip"
+    expire_in: 1 days
   script: ./CI/gitlab.sh
   variables:
     XC_BUILD_CONFIGURATION: Debug
 
+# 内测环境打包
 demo_deploy:
   stage: deploy
   tags:
     - mobile-publish
   only:
     - alpha
+  artifacts:
+    paths:
+      - "export/*.zip"
+      - "**/*.ipa"
+    expire_in: 2 days
+    when: always
   script: ./CI/gitlab.sh
   variables:
     FIR_UPLOAD_TOKEN: ZMM_FIR_TOKEN
     XC_BUILD_CONFIGURATION: Alpha
 
+# 正式发版
 release_deploy:
   stage: deploy
   tags:
@@ -69,6 +83,11 @@ release_deploy:
   only:
     - release
     - master
+  artifacts:
+    paths:
+      - "export/*.zip"
+      
+    expire_in: 4 days
   script: ./CI/gitlab.sh
   variables:
     FIR_UPLOAD_TOKEN: ""

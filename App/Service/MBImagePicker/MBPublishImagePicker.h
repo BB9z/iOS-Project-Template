@@ -1,7 +1,7 @@
-/*!
+/*
  MBPublishImagePicker
  
- Copyright © 2018 RFUI.
+ Copyright © 2018, 2020 RFUI.
  Copyright © 2016 Beijing ZhiYun ZhiYuan Technology Co., Ltd.
  https://github.com/RFUI/MBAppKit
  
@@ -66,6 +66,6 @@
 @property CGRect popoverPresentationSourceRect;
 @property (nullable) void (^popoverConfiguration)(UIPopoverPresentationController *__nonnull popover);
 
-@property (class, readonly, nonnull) NSString *errorDomain;
+@property (class, readonly, nonnull) NSErrorDomain errorDomain;
 
 @end

@@ -11,7 +11,7 @@
 #endif
 
 @interface MBPublishAvatarImageCropperViewController : UIViewController
-@property (weak) IBOutlet RFImageCropperView *cropperView;
+@property (weak) RFImageCropperView *cropperView;
 @property UIImage *image;
 @property BOOL shouldSkipDisappearCallback;
 @end

@@ -11,12 +11,11 @@
 
 - (void)RFPerform {
     UIViewController *parent = [UIViewController rootViewControllerWhichCanPresentModalViewController];
-    MBModalPresentViewController *vc = self.destinationViewController;
-    if (![vc isKindOfClass:[MBModalPresentViewController class]]) {
-        RFAssert(false, @"%@ is not a MBModalPresentViewController.", vc);
+    id<MBModalPresentDestination> vc = self.destinationViewController;
+    if (![vc respondsToSelector:@selector(presentFromViewController:animated:completion:)]) {
+        RFAssert(false, @"%@ must confirms to MBModalPresentDestination.", vc);
         return;
     }
-
     [vc presentFromViewController:parent animated:YES completion:nil];
 }
 
@@ -45,6 +44,7 @@
     }
 
     UIView *dest = self.view;
+    dest.autoresizingMask = UIViewAutoresizingFlexibleSize;
     [parentViewController addChildViewController:self];
     [parentViewController.view addSubview:dest resizeOption:RFViewResizeOptionFill];
 
@@ -52,13 +52,16 @@
     dest.hidden = YES;
     dispatch_after_seconds(0.05, ^{
         dest.hidden = NO;
-        [(id<MBModalPresentSegueDelegate>)self setViewHidden:NO animated:YES completion:completion];
+        [self setViewHidden:NO animated:YES completion:completion];
     });
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.destinationViewController isKindOfClass:UINavigationController.class]) return;
-    [self dismissAnimated:YES completion:nil];
+    if (!self.disableAutoDismissWhenSegueTriggered) {
+        [self dismissAnimated:YES completion:nil];
+    }
+    [super prepareForSegue:segue sender:sender];
 }
 
 - (IBAction)dismiss:(id)sender {

@@ -62,4 +62,9 @@
  */
 - (void)froze;
 
+/**
+ 请求成功后焦点转移到下一个
+ */
+@property (weak, nullable) IBOutlet UIResponder *nextField;
+
 @end

@@ -1,7 +1,19 @@
 {
   "images" : [
     {
+      "filename" : "text_field_bg_focused.pdf",
       "idiom" : "universal",
+      "resizing" : {
+        "cap-insets" : {
+          "bottom" : 22,
+          "top" : 21
+        },
+        "center" : {
+          "height" : 1,
+          "mode" : "tile"
+        },
+        "mode" : "3-part-vertical"
+      },
       "scale" : "1x"
     },
     {
@@ -11,16 +23,12 @@
           "value" : "dark"
         }
       ],
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "text_field_bg_focused@2x.png",
+      "filename" : "text_field_bg_focused_drak.pdf",
       "idiom" : "universal",
       "resizing" : {
         "cap-insets" : {
-          "bottom" : 44,
-          "top" : 43
+          "bottom" : 22,
+          "top" : 21
         },
         "center" : {
           "height" : 1,
@@ -28,6 +36,10 @@
         },
         "mode" : "3-part-vertical"
       },
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
       "scale" : "2x"
     },
     {
@@ -37,35 +49,11 @@
           "value" : "dark"
         }
       ],
-      "filename" : "text_field_bg_focused_drak@2x.png",
       "idiom" : "universal",
-      "resizing" : {
-        "cap-insets" : {
-          "bottom" : 44,
-          "top" : 43
-        },
-        "center" : {
-          "height" : 1,
-          "mode" : "tile"
-        },
-        "mode" : "3-part-vertical"
-      },
       "scale" : "2x"
     },
     {
-      "filename" : "text_field_bg_focused@3x.png",
       "idiom" : "universal",
-      "resizing" : {
-        "cap-insets" : {
-          "bottom" : 66,
-          "top" : 65
-        },
-        "center" : {
-          "height" : 1,
-          "mode" : "tile"
-        },
-        "mode" : "3-part-vertical"
-      },
       "scale" : "3x"
     },
     {
@@ -75,19 +63,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "text_field_bg_focused_drak@3x.png",
       "idiom" : "universal",
-      "resizing" : {
-        "cap-insets" : {
-          "bottom" : 66,
-          "top" : 65
-        },
-        "center" : {
-          "height" : 1,
-          "mode" : "tile"
-        },
-        "mode" : "3-part-vertical"
-      },
       "scale" : "3x"
     }
   ],

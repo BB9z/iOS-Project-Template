@@ -26,6 +26,7 @@
  3. 作为子控件的父 view 动态使用，Control group 会管理布局，动态增减子按钮布局会随之更新，或者使用 UIStackView 管理按钮布局
  */
 @interface MBControlGroup : UIControl <
+    UIFocusItem,
     RFInitializing
 >
 /**

@@ -7,10 +7,23 @@ ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 target 'App' do
     platform :ios, '11.0'
 
+#    pod 'AMap3DMap-NO-IDFA'             # 高德地图
+#    pod 'AXRatingView'                  # 打星评分控件
+#    pod 'AliyunOSSiOS'                  # 阿里云文件存储
+#    pod 'Bugly'                         # 腾讯崩溃收集
+#    pod 'CollectionViewCenteredFlowLayout' # CollectionView 居中对齐
+#    pod 'FLEX', :configurations => ['Debug'] # 开发辅助工具集
+#    pod 'GRDB.swift'                    # SQLite 数据库
+#    pod 'GTSDK'                         # 推送: 个推
+#    pod 'QingNiuSDK'                    # 七牛云存储
+    pod 'SDWebImage'                    # 网络图片加载
+#    pod 'UICollectionViewLeftAlignedLayout' # CollectionView 左对齐
+#    pod 'UMengAnalytics-NO-IDFA'        # 友盟分析
+#    pod 'WechatOpenSDK'                 # 微信 SDK
+
     pod 'RFKit', :subspecs => [
         'Category/NSFileManager',
         'Category/UIScrollView+RFScrolling',
-        'Category/UISearchBar',
     ]
     pod 'RFAlpha', :subspecs => [
         'RFBlockSelectorPerform',
@@ -43,17 +56,9 @@ target 'App' do
         'Input',
         'Navigation',
         'RootViewController',
-        'UserIDIsString', # 如果 user ID 是整型的，请删除这条
+        'UserIDIsString', # 🔰 如果 user ID 是整型的，请删除这条
         'Worker',
     ]
-    pod 'RFAPI', '>= 2.0.0-beta.2'
-
-#    pod 'FLEX', :configurations => ['Debug']
-    pod 'SDWebImage'
-
-    # target "Test" do
-    #     inherit! :search_paths
-    # end
 end
 
 # Demos

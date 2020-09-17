@@ -58,7 +58,7 @@
 - (void)fetchItemsFromViewController:(nullable UIViewController *)viewController nextPage:(BOOL)nextPage success:(void (^)(__kindof MBListDataSource *dateSource, NSArray *fetchedItems))success completion:(void (^)(__kindof MBListDataSource *dateSource))completion {
     if (self.fetching) return;
     if (!self.fetchAPIName) {
-        NSAssert(false, @"Datasource 的 fetchAPIName 未设置");
+        NSLog(@"❌ Datasource 的 fetchAPIName 未设置");
         return;
     }
     self.fetching = YES;

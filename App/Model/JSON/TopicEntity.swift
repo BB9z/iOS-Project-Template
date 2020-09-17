@@ -11,10 +11,8 @@ import B9MulticastDelegate
  https://bb9z.github.io/API-Documentation-Sample/Sample/Entity#TopicEntity
  */
 @objc(TopicEntity)
-class TopicEntity: MBModel {
-    override class func keyMapper() -> JSONKeyMapper! {
-        JSONKeyMapper.baseMapper(JSONKeyMapper.forSnakeCase(), withModelToJSONExceptions: [ "uid": "id" ])
-    }
+class TopicEntity: MBModel,
+    IdentifierEquatable {
 
     @objc var uid: String = ""
     @objc var title: String?
@@ -67,6 +65,17 @@ class TopicEntity: MBModel {
                 }
             }
         })
+    }
+
+    // MARK: -
+
+    override func isEqual(_ object: Any?) -> Bool {
+        isUIDEqual(object)
+    }
+    override var hash: Int { uid.hashValue }
+
+    override class func keyMapper() -> JSONKeyMapper! {
+        JSONKeyMapper.baseMapper(JSONKeyMapper.forSnakeCase(), withModelToJSONExceptions: [ "uid": "id" ])
     }
 
     // MARK: -

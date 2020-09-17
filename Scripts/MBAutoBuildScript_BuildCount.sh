@@ -7,6 +7,12 @@ echo "MBAutoBuildScript Build Count 1.0"
 echo "-----------------------"
 set -euo pipefail
 
+# SwiftUI 预览跳过
+if [[ $CONFIGURATION = "Preview" ]]; then
+  echo "跳过预览"
+  exit 0
+fi
+
 # 自动构建数
 if [ $enableAutoBuildCount = 1 ]; then
     readonly branchName=$(git symbolic-ref --short -q HEAD || echo "default");

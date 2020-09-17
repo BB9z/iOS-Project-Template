@@ -156,6 +156,10 @@ RFInitializingRootForUIView
 - (void)deselectControl:(UIControl *)control {
 }
 
+- (BOOL)canBecomeFocused {
+    return NO;
+}
+
 #pragma mark - Layout
 
 - (void)updateConstraints {

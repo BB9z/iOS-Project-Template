@@ -106,7 +106,7 @@
 - (void)removeItem:(id)item withRowAnimation:(UITableViewRowAnimation)animation {
     NSIndexPath *ip = [self indexPathForItem:item];
     if (!ip) return;
-    [self.items removeObject:item];
+    [self.items removeObjectAtIndex:ip.row];
     if (self.items.count == 0 && self.pageEnd) {
         self.empty = YES;
     }

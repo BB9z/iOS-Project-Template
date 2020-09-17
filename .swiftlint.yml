@@ -81,7 +81,7 @@ opt_in_rules:
   - switch_case_on_newline
   - toggle_bool
   # - trailing_closure
-  - unavailable_function
+  # - unavailable_function
   - unneeded_parentheses_in_closure_argument
   # - untyped_error_in_catch
   - unused_import
@@ -101,11 +101,12 @@ opt_in_rules:
   # - nslocalizedstring_require_bundle
 
 excluded:
+  - B9Doc
   - Carthage
-  - Pods
   - Frameworks
+  - Pods
 
-# 针对每条规则的配置
+# 针对每条规则的配置（请按字母顺序排序）
 # https://realm.github.io/SwiftLint/rule-directory.html
 
 file_length:
@@ -118,9 +119,15 @@ identifier_name:
   excluded:
     - i       # loop
     - j       # loop
+    - k       # loop
+    - as      # cast
     - e       # error
+    - id      # identifier
     - c       # RFAPI, context
     - sf      # guard self
+    - x
+    - y
+    - z
     - vc      # view controller
     - v       # view
     - tv      # table view
@@ -129,6 +136,7 @@ identifier_name:
     - cb      # callback
     - ds      # dataSource
     - ip      # indexPath
+    - db      # database
 
 implicit_return:
   # 默认 closure, function, getter，仅 getter 就可以了，闭包和方法里用不合适
@@ -145,6 +153,10 @@ large_tuple:
 #   ignores_function_declarations: true
 #   ignores_comments: true
 #   ignores_interpolated_strings: true
+
+type_name:
+  excluded:
+    - ID      # identifier
 
 vertical_whitespace:
   # 默认1，有时为了分区隔两行

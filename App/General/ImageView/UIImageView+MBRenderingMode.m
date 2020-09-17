@@ -4,7 +4,7 @@
 @implementation UIImageView (MBRenderingMode)
 
 - (BOOL)renderingAsTemplate {
-    RFAssert(false, @"这是个伪属性，只在 set 时更新一下图片");
+    NSLog(@"⚠️ 访问 renderingAsTemplate 的 getter 无意义，伪属性，只在 set 时更新一下图片");
     return NO;
 }
 

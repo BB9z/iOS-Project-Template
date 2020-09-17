@@ -1,10 +1,10 @@
 /*
  UIImageView+MBRenderingMode
- 
+
  Copyright © 2018, 2020 RFUI.
  Copyright © 2015 Beijing ZhiYun ZhiYuan Technology Co., Ltd.
  https://github.com/BB9z/iOS-Project-Template
- 
+
  The MIT License
  https://opensource.org/licenses/MIT
  */
@@ -20,10 +20,10 @@
  */
 @interface UIImageView (MBRenderingMode)
 
-// @MBDependency:1
+// @MBDependency:2
 /**
  设置时强制将图片按 UIImageRenderingModeAlwaysTemplate 方式渲染
- 
+
  不会影响以后设置 image 和其它相关属性
  */
 @property (nonatomic) IBInspectable BOOL renderingAsTemplate;

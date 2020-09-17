@@ -61,6 +61,17 @@ class NavigationController: MBNavigationController {
         }
     }
 
+    override func updateNavigationAppearance(appearanceAttributes attributes: [RFViewControllerAppearanceAttributeKey: Any] = [:], animationDuration: TimeInterval, animated: Bool) {
+        super.updateNavigationAppearance(appearanceAttributes: attributes, animationDuration: animationDuration, animated: animated)
+        if let boolValue = attributes[RFViewControllerAppearanceAttributeKey.pefersTransparentBar] as? NSNumber,
+            boolValue.boolValue {
+            navigationBar.isTranslucent = true
+            navigationBar.setBackgroundImage(UIImage(named: "blank"), for: .default)
+        } else if navigationBar.isTranslucent {
+            navigationBar.isTranslucent = false
+        }
+    }
+
     // MARK: -
 
     var tabItems: MBControlGroup? {

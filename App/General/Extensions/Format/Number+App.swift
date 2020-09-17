@@ -34,3 +34,17 @@ extension NumberFormatter {
         return formatter
     }
 }
+
+extension LengthFormatter {
+    // @MBDependency:1
+    /// 距离格式化，两位有效数字
+    static var distance: LengthFormatter {
+        let formatter = LengthFormatter()
+        formatter.unitStyle = .short
+        let numberfm = NumberFormatter()
+        numberfm.minimumSignificantDigits = 0
+        numberfm.maximumSignificantDigits = 2
+        formatter.numberFormatter = numberfm
+        return formatter
+    }
+}

@@ -11,6 +11,12 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# SwiftUI 预览跳过
+if [[ $CONFIGURATION = "Preview" ]]; then
+  echo "跳过预览"
+  exit 0
+fi
+
 # Clean 没有必要执行
 if [[ $ACTION = "clean" ]]; then
   echo "清理"

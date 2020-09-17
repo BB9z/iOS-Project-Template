@@ -33,6 +33,11 @@
 /// 阻止侧滑返回手势
 @property IBInspectable BOOL RFPrefersDisabledInteractivePopGesture;
 
+/// 透明导航
+@property IBInspectable BOOL pefersTransparentBar;
+
 - (nullable NSMutableDictionary<RFViewControllerAppearanceAttributeKey, id> *)RFNavigationAppearanceAttributes;
 
 @end
+
+FOUNDATION_EXTERN RFViewControllerAppearanceAttributeKey const _Nonnull RFViewControllerPefersTransparentBar;

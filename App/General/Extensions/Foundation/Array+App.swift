@@ -1,24 +1,14 @@
 /*
- 应用级别的便捷方法
+ 应用级别的便捷方法：Array 扩展
+
+ 很多方法定义在更底层的 Collections+App.swift 中
  */
 extension Array {
 
-    /// 非空，结合空的判断使用起来更容易些
-    var isNotEmpty: Bool {
-        !isEmpty
-    }
-
-    /// 安全的获取元素，index 超出范围返回 nil
-    func rf_object(at index: Int) -> Element? {
-        if 0..<count ~= index {
-            return self[index]
-        }
-        return nil
-    }
-
+    // @MBDependency:2
     /**
      从数组中提取元素，这些元素会从数组中移除并返回
-     
+
      例
      ```
      var a = [1, 2, 3, 4, 5, 6]
@@ -37,29 +27,37 @@ extension Array {
         }
         return elementRemoved
     }
-
-    /**
-     遍历数组，同时访问元素和序号，并可随时终止遍历
-     */
-    func enumerateElements(_ block: (Element, Int, _ stoped: inout Bool) -> Void) {
-        var stop = false
-        for i in 0 ..< count {
-            block(self[i], i, &stop)
-            if stop {
-                return
-            }
-        }
-    }
 }
 
-extension Array where Iterator.Element: UIView {
+extension Array where Self.Element: UIView {
+    // @MBDependency:3
     /// 改变一组 view 的隐藏
-    func views(hidden: Bool) {
-        forEach { v in
-            v.isHidden = hidden
+    func views(hidden: Bool, animated: Bool = false) {
+        if !animated {
+            forEach { v in
+                v.isHidden = hidden
+            }
+            return
         }
+        if !hidden {
+            forEach { v in
+                v.isHidden = false
+            }
+        }
+        UIView.animate(withDuration: 0.3, animations: {
+            self.forEach { v in
+                v.alpha = hidden ? 0 : 1
+            }
+        }, completion: { _ in
+            if hidden {
+                self.forEach { v in
+                    v.isHidden = true
+                }
+            }
+        })
     }
 
+    // @MBDependency:2
     /// 按照 tag 值从小到大重新排序
     /// bug(Xcode 10.2): 用于修正 IBOutletCollection 顺序错乱
     mutating func sortByTag() {

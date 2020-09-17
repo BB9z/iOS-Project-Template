@@ -46,14 +46,15 @@ main_target.build_configurations.each do |config|
       xcode_info_plist_path = setting_hash["INFOPLIST_FILE"]
   end
 
+  # 🔰 项目配置检查示例
   # CODE SIGN 应使用项目默认值，target 配置中不应包含 CODE SIGN 设置
-  if setting_hash["CODE_SIGN_IDENTITY"]
-    puts "#{proj.path}:0: target 配置中不应包含 CODE_SIGN_IDENTITY 设置"
-  end
-  
-  if setting_hash["CODE_SIGN_IDENTITY[sdk=*]"]
-    puts "#{proj.path}:0: target 配置中不应包含 CODE_SIGN_IDENTITY[sdk=*] 设置"
-  end
+#  if setting_hash["CODE_SIGN_IDENTITY"]
+#    puts "#{proj.path}:0: target 配置中不应包含 CODE_SIGN_IDENTITY 设置"
+#  end
+#
+#  if setting_hash["CODE_SIGN_IDENTITY[sdk=*]"]
+#    puts "#{proj.path}:0: target 配置中不应包含 CODE_SIGN_IDENTITY[sdk=*] 设置"
+#  end
 end
 
 # 验证当前 Info.plist 配置
@@ -65,8 +66,9 @@ if info_plist == nil
     exit false
 end
 
-rdc = info_plist["UIRequiredDeviceCapabilities"]
-if rdc.count != 1
-    puts "#{xcode_info_plist_path}:0: Required device capabilities 配置错误"
-    exit false
-end
+# 🔰 Info.plist 检查示例
+#rdc = info_plist["UIRequiredDeviceCapabilities"]
+#if rdc.count != 1
+#    puts "#{xcode_info_plist_path}:0: Required device capabilities 配置错误"
+#    exit false
+#end

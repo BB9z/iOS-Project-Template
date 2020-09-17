@@ -1,16 +1,15 @@
 {
   "images" : [
     {
+      "filename" : "On.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "checkbox_on@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "checkbox_on@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

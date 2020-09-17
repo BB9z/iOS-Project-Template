@@ -8,7 +8,7 @@
  https://opensource.org/licenses/MIT
  */
 
-#import "API.h"
+#import "Common.h"
 
 @protocol MBFileUploadTask <NSObject>
 /// 取消请求

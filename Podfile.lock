@@ -108,15 +108,20 @@ PODS:
     - RFAlpha/RFViewApperance/RFDrawView
   - RFAlpha/RFWindow (0.6.0):
     - RFInitializing (>= 1.1)
-  - RFAPI (2.0.0-beta.2):
+  - RFAPI (2.0.0):
+    - RFAPI/Core (= 2.0.0)
+    - RFAPI/JSONModel (= 2.0.0)
+  - RFAPI/Core (2.0.0):
     - AFNetworking/Reachability (>= 2.3)
     - AFNetworking/Security (>= 2.3)
     - AFNetworking/Serialization (>= 2.3)
-    - JSONModel
     - RFInitializing (>= 1.1)
     - RFKit/Runtime (> 1.7)
     - RFMessageManager/Manager (>= 0.5)
     - RFMessageManager/RFNetworkActivityMessage
+  - RFAPI/JSONModel (2.0.0):
+    - JSONModel
+    - RFAPI/Core
   - RFDelegateChain/Chain (1.0.0):
     - RFInitializing (>= 1.1)
     - RFKit/Runtime (>= 1.7.1)
@@ -203,8 +208,6 @@ PODS:
     - RFKit/Runtime
   - "RFKit/Category/UIScrollView+RFScrolling (2.5.0)":
     - RFKit/Foundation
-  - RFKit/Category/UISearchBar (2.5.0):
-    - RFKit/Foundation
   - RFKit/Category/UIStoryboard (2.5.0):
     - RFKit/Foundation
   - RFKit/Category/UITableView (2.5.0):
@@ -245,9 +248,9 @@ PODS:
     - RFKit/Category/UIDevice
     - RFKit/Category/UINavigationController
     - RFKit/Runtime (>= 1.7)
-  - SDWebImage (5.8.4):
-    - SDWebImage/Core (= 5.8.4)
-  - SDWebImage/Core (5.8.4)
+  - SDWebImage (5.9.0):
+    - SDWebImage/Core (= 5.9.0)
+  - SDWebImage/Core (5.9.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
@@ -273,7 +276,6 @@ DEPENDENCIES:
   - RFAlpha/RFViewApperance/RFLayerApperance
   - RFAlpha/RFViewApperance/RFLine
   - RFAlpha/RFWindow
-  - RFAPI (>= 2.0.0-beta.2)
   - RFDelegateChain/UICollectionViewDataSource
   - RFDelegateChain/UICollectionViewDelegateFlowLayout
   - RFDelegateChain/UITextFieldDelegate
@@ -281,7 +283,6 @@ DEPENDENCIES:
   - RFKeyboard
   - RFKit/Category/NSFileManager
   - "RFKit/Category/UIScrollView+RFScrolling"
-  - RFKit/Category/UISearchBar
   - RFMessageManager/SVProgressHUD
   - RFSegue/Async
   - SDWebImage
@@ -315,16 +316,16 @@ SPEC CHECKSUMS:
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   MBAppKit: 2512e62c5af8cb5bd4dac22e63ea2ed6eaf02e66
   RFAlpha: a2ba9b06f5452e11c486abd3bf20c9036734ae7a
-  RFAPI: dcd1c98b1ca7de93b900111e1a5232a21a08a65f
+  RFAPI: 41c61c25a37b49946a1f4143b2a1b657f3835a81
   RFDelegateChain: 06b2100d30de422eb7dee4ad833c8bd80c631f16
   RFInitializing: c85e1d8b9c5b540761f7983af3e9bb517654ad84
   RFKeyboard: d270ea1f612d86c980974222bae7c6d7d04428be
   RFKit: 2c76d7fd9edeec96fea708f4b9b4fdd25445b5d4
   RFMessageManager: 2967d1f691a4ac310b76afc8ef505d9e9b5151f0
   RFSegue: 16a13d55032a737a93a1feb3c758077f708e3c70
-  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
+  SDWebImage: 62ae4a18473520c67b79e9724c31a63599cc9423
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: ffe0591910a9b009ee853606877038bb793c0c38
+PODFILE CHECKSUM: 6f8c8374bd34f419bdacae32930e96f4596f8462
 
 COCOAPODS: 1.9.3

@@ -1,7 +1,7 @@
 /*
  MBTableListDisplayer
  
- Copyright © 2018 RFUI.
+ Copyright © 2018, 2020 RFUI.
  Copyright © 2015 Beijing ZhiYun ZhiYuan Information Technology Co., Ltd.
  https://github.com/BB9z/iOS-Project-Template
  
@@ -23,13 +23,13 @@
     MBGeneralListDisplaying
 >
 
-@property (nonatomic) MBTableView *tableView;
+@property (nonnull, nonatomic) MBTableView *tableView;
 
-@property (nonatomic) IBInspectable NSString *APIName;
-@property (weak) MBTableViewDataSource *dataSource;
+@property (nullable, nonatomic) IBInspectable NSString *APIName;
+@property (weak, nullable) MBTableViewDataSource *dataSource;
 
 /// 默认不做什么
-- (void)setupDataSource:(MBTableViewDataSource *)ds;
+- (void)setupDataSource:(nonnull MBTableViewDataSource *)ds;
 
 @end
 
@@ -42,26 +42,26 @@
 @interface MBTableListController : UIViewController <
     MBGeneralListDisplaying
 >
-@property (strong, nonatomic) IBInspectable NSString *APIName;
+@property (nullable) IBInspectable NSString *APIName;
 
 /**
  用于设置列表的默认 cell reuse identifier。复杂情况，有不同种类的 cell 时，请在 setupDataSource: 中设置 data source
  */
-@property (strong, nonatomic) IBInspectable NSString *cellIdentifier;
+@property (nullable) IBInspectable NSString *cellIdentifier;
 
 /**
  手动，而不是 viewDidLoad 时立即刷新
  */
-@property (nonatomic) IBInspectable BOOL disableAutoRefreshAfterViewLoadded;
+@property IBInspectable BOOL disableAutoRefreshAfterViewLoadded;
 
-@property (nonatomic) IBInspectable BOOL clearsSelectionOnViewWillAppear;
+@property IBInspectable BOOL clearsSelectionOnViewWillAppear;
 
-@property (strong, nonatomic) MBTableListDisplayer *listDisplayer;
+@property (nonnull) MBTableListDisplayer *listDisplayer;
 
-- (UITableView *)listView;
-- (MBTableViewDataSource *)dataSource;
+- (nonnull UITableView *)listView;
+- (nonnull MBTableViewDataSource *)dataSource;
 
 /// 默认什么也不做
-- (void)setupDataSource:(MBTableViewDataSource *)ds;
+- (void)setupDataSource:(nonnull MBTableViewDataSource *)ds;
 
 @end

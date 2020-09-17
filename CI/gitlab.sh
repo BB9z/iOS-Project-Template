@@ -41,7 +41,13 @@ readonly XC_BUILD_CONFIGURATION="${XC_BUILD_CONFIGURATION:="$(logWarning 'XC_BUI
 logInfo "XC_BUILD_CONFIGURATION = $XC_BUILD_CONFIGURATION"
 
 readonly XC_PROVISIONING_ID=${XC_PROVISIONING_ID:="$(logWarning 'XC_PROVISIONING_ID 未设置')"}
+if [ -n "$XC_PROVISIONING_ID" ]; then
+    logInfo "XC_PROVISIONING_ID = $XC_PROVISIONING_ID"
+fi
 readonly XC_CODE_SIGN_IDENTITY=${XC_CODE_SIGN_IDENTITY:="$(logWarning 'XC_CODE_SIGN_IDENTITY 未设置')"}
+if [ -n "$XC_CODE_SIGN_IDENTITY" ]; then
+    logInfo "XC_CODE_SIGN_IDENTITY = $XC_CODE_SIGN_IDENTITY"
+fi
 readonly XC_IMPORT_PROVISIONING_PATH=${XC_IMPORT_PROVISIONING_PATH:=""}
 logInfo "XC_IMPORT_PROVISIONING_PATH = $XC_IMPORT_PROVISIONING_PATH"
 readonly XC_IMPORT_CERTIFICATE_PATH=${XC_IMPORT_CERTIFICATE_PATH:=""}
@@ -117,6 +123,17 @@ fi
 
 logSection "项目打包"
 xcodebuild -exportArchive -archivePath "$ARCHIVE_PATH" -exportPath "$EXPORT_DIRECTORY_PATH" -exportOptionsPlist "$EXPORT_OPTIONS_PLIST" | xcpretty $xcprettyOptions
+
+dSYMsCount=$(find "$ARCHIVE_PATH/dSYMs" -d 1 -name "*.dSYM" | wc -l)
+if [ $dSYMsCount -ge 1 ]; then
+    logInfo "归档 dSYMs 文件"
+    find "$ARCHIVE_PATH/dSYMs" -d 1 -name "*.dSYM" -print0 | while read -d $'\0' file; do
+        logInfo "压缩 $file"
+        zip -r -X "$EXPORT_DIRECTORY_PATH/$(basename $file).zip" "$file/"
+    done
+else
+    logWarning "项目设置未生成 dSYMs 文件，跳过归档"
+fi
 
 logSection "应用包上传"
 if [ -n "$FIR_UPLOAD_TOKEN" ]; then

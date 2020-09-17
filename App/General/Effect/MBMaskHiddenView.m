@@ -1,5 +1,6 @@
 
 #import "MBMaskHiddenView.h"
+#import <RFKit/RFGeometry.h>
 
 @interface MBMaskHiddenView ()
 @property BOOL hiddenShouldBe;
@@ -56,7 +57,12 @@
 - (void)_setupUIHidden:(BOOL)hidden {
     CGRect frame = (CGRect){ CGPointZero, self.bounds.size };
     if (hidden) {
-        frame.size.height = 0;
+        CGSize newSize = CGSizeMake(frame.size.width, 0);
+        RFResizeAnchor anchor = RFResizeAnchorTop;
+        if (self.transitionDirection == 1) {
+            anchor = RFResizeAnchorBottom;
+        }
+        frame = CGRectResize(frame, newSize, anchor);
     }
     if (!CGRectEqualToRect(self.maskView.frame, frame)) {
         self.maskView.frame = frame;

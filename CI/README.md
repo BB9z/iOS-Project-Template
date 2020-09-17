@@ -4,6 +4,7 @@
 
 - 高效的 CocoaPods 配置：自动跳过 install，缓存，按需 repo update；
 - 支持自动/手动代码签名，手动代码签名支持 provisioning profile 、证书自动更新；
+- dSYMs 符号文件打包；
 - fir.im 上传，可选从哪个环境变量载入 token。
 
 ⚠️ p12 导入功能目前不够完善，导入后的访问权限没设置好，可能导致在 build 最后阶段卡住，如果出现这种情况先手动导入。

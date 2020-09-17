@@ -1,39 +1,27 @@
 {
   "images" : [
     {
+      "filename" : "block_round44.pdf",
       "idiom" : "universal",
+      "resizing" : {
+        "cap-insets" : {
+          "left" : 23,
+          "right" : 24
+        },
+        "center" : {
+          "mode" : "tile",
+          "width" : 1
+        },
+        "mode" : "3-part-horizontal"
+      },
       "scale" : "1x"
     },
     {
-      "filename" : "block_round44@2x.png",
       "idiom" : "universal",
-      "resizing" : {
-        "cap-insets" : {
-          "left" : 47,
-          "right" : 48
-        },
-        "center" : {
-          "mode" : "tile",
-          "width" : 1
-        },
-        "mode" : "3-part-horizontal"
-      },
       "scale" : "2x"
     },
     {
-      "filename" : "block_round44@3x.png",
       "idiom" : "universal",
-      "resizing" : {
-        "cap-insets" : {
-          "left" : 71,
-          "right" : 72
-        },
-        "center" : {
-          "mode" : "tile",
-          "width" : 1
-        },
-        "mode" : "3-part-horizontal"
-      },
       "scale" : "3x"
     }
   ],

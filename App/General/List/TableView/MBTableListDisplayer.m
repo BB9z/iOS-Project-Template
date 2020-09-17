@@ -31,7 +31,9 @@ RFInitializingRootForUIViewController
     if (self.APIName) {
         ds.fetchAPIName = self.APIName;
     }
-    [self setupDataSource:ds];
+    if (ds) {
+        [self setupDataSource:ds];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -78,6 +80,7 @@ RFInitializingRootForUIViewController
     [super viewDidLoad];
 
     MBTableListDisplayer *dc = self.childViewControllers.lastObject;
+    NSAssert([dc isKindOfClass:MBTableListDisplayer.class], @"Cannot get correct list displayer.");
     self.listDisplayer = dc;
 
     if (self.APIName) {

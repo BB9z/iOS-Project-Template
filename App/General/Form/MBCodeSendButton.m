@@ -40,6 +40,9 @@
 
 - (void)froze {
     self.enabled = NO;
+    if (self.nextField) {
+        [self.nextField becomeFirstResponder];
+    }
     if (self.timer.isScheduled) return;
 
     NSString *initTitle = [NSString stringWithFormat:self.disableNoticeFormat, self.frozeSecond];

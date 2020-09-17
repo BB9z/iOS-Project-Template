@@ -216,20 +216,25 @@ class PasswordResetMobileViewController: LoginFormBaseViewController {
                         AppHUD().showErrorStatus("服务器返回异常")
                         return
                 }
-                sf.item = token
+                sf.otToken = token
                 sf.performSegue(withIdentifier: "NEXT", sender: sf)
             }
         }
     }
 
-    /// ot_token
-    @objc var item: String?
+    private var otToken: String?
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // 通过 HasItem 传值
+        if var vc = segue.destination as? AnyHasItem {
+            vc.setItem(otToken)
+        }
+    }
 }
 
 /**
  密码找回，设置新密码
  */
-class PasswordResetViewController: LoginFormBaseViewController {
+class PasswordResetViewController: LoginFormBaseViewController, HasItem {
     var form: LoginPasswordSetScene {
         MBSwift.cast(children.first, as: LoginPasswordSetScene.self)
     }
@@ -258,4 +263,16 @@ class PasswordResetViewController: LoginFormBaseViewController {
             }
         }
     }
+
+    #if DEBUG
+    @objc func debugCommands() -> [UIBarButtonItem] {
+        [
+            DebugMenuItem2("填入12345678", {
+                self.form.passwordField.text = "12345678"
+                self.form.passwordField2.text = "12345678"
+                self.form.submitButton.isEnabled = true
+            })
+        ]
+    }
+    #endif
 }

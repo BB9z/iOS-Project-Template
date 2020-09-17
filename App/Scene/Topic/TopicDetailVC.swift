@@ -6,7 +6,10 @@
 /**
  帖子详情
  */
-class TopicDetailViewController: UIViewController, TopicEntityUpdating {
+class TopicDetailViewController: UIViewController,
+    HasItem,
+    TopicEntityUpdating {
+
     @objc var item: TopicEntity! {
         didSet {
             item.delegates.add(self)
@@ -69,7 +72,7 @@ class TopicDetailViewController: UIViewController, TopicEntityUpdating {
 }
 
 /// 列表 cell
-class CommentListCell: UITableViewCell {
+class CommentListCell: UITableViewCell, HasItem {
     @objc var item: CommentEntity! {
         didSet {
             avatarView.item = item.from

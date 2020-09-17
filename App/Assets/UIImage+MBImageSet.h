@@ -26,7 +26,7 @@
 /**
  根据标识符取一套图中的相应图片
 
- @param set 集合名，为空抛出 NSInvalidArgumentException 异常
+ @param set 集合名，需要以 zs_ 开头，为空抛出 NSInvalidArgumentException 异常
  @param identifier 图片标识符，可以是 NSString 或 NSNumber，number 会转为整型字符串。为空抛出 NSInvalidArgumentException 异常
  */
 + (nullable UIImage *)imageWithSetName:(nonnull NSString *)set identifier:(nonnull id)identifier;
