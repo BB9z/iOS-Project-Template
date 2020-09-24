@@ -35,6 +35,8 @@ class HomeViewController: UIViewController {
     }
 }
 
+// MARK: - 浏览页面
+
 /**
  需要登入可见的页面
  */
@@ -74,6 +76,8 @@ class PublicViewController: UIViewController {
         }
     }
 }
+
+// MARK: - 登陆页面
 
 /**
  演示登入页

@@ -2496,7 +2496,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.bb9z.iOS-Project-Template.demo.GuestMode";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.bb9z.iOS-Project-Template.demo.$(PRODUCT_MODULE_NAME)";
 				PRODUCT_NAME = GuestMode;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Demos/$(PRODUCT_MODULE_NAME)/OCHeader.h";
@@ -2510,20 +2510,14 @@
 			baseConfigurationReference = 2F09DCCC405DF9103E4AAD71 /* Pods-Demo-GuestMode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = Demos/_Shared/demos.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = "Demos/$(PRODUCT_MODULE_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.bb9z.iOS-Project-Template.demo.GuestMode";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.bb9z.iOS-Project-Template.demo.$(PRODUCT_MODULE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Demos/$(PRODUCT_MODULE_NAME)/OCHeader.h";
@@ -2537,7 +2531,6 @@
 			baseConfigurationReference = 3C2A158B8ECB4AD849268B71 /* Pods-Demo-GuestMode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = Demos/_Shared/demos.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				INFOPLIST_FILE = "Demos/$(PRODUCT_MODULE_NAME)/Info.plist";
@@ -2545,7 +2538,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.bb9z.iOS-Project-Template.demo.GuestMode";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.bb9z.iOS-Project-Template.demo.$(PRODUCT_MODULE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Demos/$(PRODUCT_MODULE_NAME)/OCHeader.h";
@@ -2559,7 +2552,6 @@
 			baseConfigurationReference = 441CCD900DEDD58060E47BE6 /* Pods-Demo-GuestMode.alpha.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = Demos/_Shared/demos.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				INFOPLIST_FILE = "Demos/$(PRODUCT_MODULE_NAME)/Info.plist";
@@ -2567,7 +2559,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.bb9z.iOS-Project-Template.demo.GuestMode";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.bb9z.iOS-Project-Template.demo.$(PRODUCT_MODULE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Demos/$(PRODUCT_MODULE_NAME)/OCHeader.h";
