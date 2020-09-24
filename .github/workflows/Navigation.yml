@@ -1,4 +1,4 @@
-name: CI Demos
+name: Demos
 
 on:
   push:

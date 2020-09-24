@@ -96,6 +96,7 @@
 		D58D1BB8251CB95200D1EF32 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58D1BAF251CB95200D1EF32 /* NavigationController.swift */; };
 		D58D1BBA251CB95200D1EF32 /* NSUserDefaults+App.m in Sources */ = {isa = PBXBuildFile; fileRef = D58D1BB1251CB95200D1EF32 /* NSUserDefaults+App.m */; };
 		D58D1C63251CC3B300D1EF32 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58D1C5E251CC3AC00D1EF32 /* ApplicationDelegate.swift */; };
+		D58D1C7D251CCBAA00D1EF32 /* UIViewController+RFInterfaceOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D9F5132071BA6500B6FE9B /* UIViewController+RFInterfaceOrientation.m */; };
 		D5936E09217977FB00BC4F03 /* MBIndefiniteRotationImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5936E07217977FA00BC4F03 /* MBIndefiniteRotationImageView.m */; };
 		D5A3312321527BA100B0FD5B /* MBCellStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A3311F21527BA100B0FD5B /* MBCellStackView.m */; };
 		D5A3312421527BA100B0FD5B /* MBFlipCollapsibleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A3312021527BA100B0FD5B /* MBFlipCollapsibleView.m */; };
@@ -2013,6 +2014,7 @@
 				D58D1BBA251CB95200D1EF32 /* NSUserDefaults+App.m in Sources */,
 				D58D1B87251CB8FB00D1EF32 /* RootViewController.swift in Sources */,
 				D58D1BB2251CB95200D1EF32 /* ShortCuts.m in Sources */,
+				D58D1C7D251CCBAA00D1EF32 /* UIViewController+RFInterfaceOrientation.m in Sources */,
 				D58D1B8A251CB8FB00D1EF32 /* UIViewController+App.m in Sources */,
 				D58D1B8B251CB8FB00D1EF32 /* UIViewController+NavigationAppearance.m in Sources */,
 			);
