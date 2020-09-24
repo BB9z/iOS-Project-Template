@@ -81,6 +81,9 @@ abstract_target 'Demo' do
             'RFTransitioning/MoveInFromBottomTransitioningStyle'
         ]
     end
+
+    target "Navigation" do
+    end
 end
 
 post_install do |pi|

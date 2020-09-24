@@ -17,6 +17,7 @@ class ApplicationDelegate: MBApplicationDelegate {
     }
 
     override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+        Account.setup()
         return true
     }
 }
