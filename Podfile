@@ -12,7 +12,7 @@ target 'App' do
 #    pod 'AliyunOSSiOS'                  # 阿里云文件存储
 #    pod 'Bugly'                         # 腾讯崩溃收集
 #    pod 'CollectionViewCenteredFlowLayout' # CollectionView 居中对齐
-#    pod 'FLEX', :configurations => ['Debug'] # 开发辅助工具集
+#    pod 'FLEX', :configurations => ['Debug', 'Preview'] # 开发辅助工具集
 #    pod 'GRDB.swift'                    # SQLite 数据库
 #    pod 'GTSDK'                         # 推送: 个推
 #    pod 'QingNiuSDK'                    # 七牛云存储

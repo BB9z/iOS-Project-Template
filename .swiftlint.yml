@@ -101,6 +101,7 @@ opt_in_rules:
   # - nslocalizedstring_require_bundle
 
 excluded:
+  - "App/Development Content/*.playground"
   - B9Doc
   - Carthage
   - Frameworks

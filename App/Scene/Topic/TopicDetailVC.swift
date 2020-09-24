@@ -10,6 +10,8 @@ class TopicDetailViewController: UIViewController,
     HasItem,
     TopicEntityUpdating {
 
+    override class func storyboardName() -> String? { "Topic" }
+
     @objc var item: TopicEntity! {
         didSet {
             item.delegates.add(self)
@@ -85,4 +87,10 @@ class CommentListCell: UITableViewCell, HasItem {
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var timeLabel: UILabel!
     @IBOutlet private weak var contentLabel: UILabel!
+}
+
+extension TopicDetailViewController: AppPageURL {
+    var pageURL: URL? {
+        URL(string: "\(NavigationController.appScheme)://topic/\(item.uid)")
+    }
 }

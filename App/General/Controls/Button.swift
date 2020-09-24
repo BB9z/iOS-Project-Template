@@ -105,8 +105,9 @@ class Button: MBButton {
 
     override func onButtonTapped() {
         super.onButtonTapped()
-        if jumpURL != nil {
-            AppNavigationJump(jumpURL, nil)
+        if let jumpURL = jumpURL,
+           let url = URL(string: jumpURL) {
+            NavigationController.jump(url: url, context: nil)
         }
     }
 }

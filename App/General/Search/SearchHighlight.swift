@@ -31,7 +31,7 @@ extension UILabel {
         }
         let atts = NSMutableAttributedString(string: aText)
         let nsRange = NSRange(range, in: aText)
-        let highlightColor = window?.tintColor ?? UIColor(named: "Color/primary")!
+        let highlightColor = window?.tintColor ?? UIColor(named: "primary")!
         atts.setAttributes([.foregroundColor: highlightColor], range: nsRange)
         attributedText = atts
     }

@@ -27,6 +27,21 @@
 
 #pragma mark -
 
+// @bug(iOS 14): CollectionView 的 _diffableDataSourceImpl 方法，会调用 dataSource 中的同名方法，当 delegate 指回 collectionView 产生死循环
+// 目前的解决方案是忽略全部 _ 打头的方法；另外这个算 MBCollectionView 的 bug，但写在这里比较适普
+- (void)forwardInvocation:(NSInvocation *)anInvocation {
+    if ([NSStringFromSelector(anInvocation.selector) hasPrefix:@"_"]) {
+        return;
+    }
+    [super forwardInvocation:anInvocation];
+}
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+    if ([NSStringFromSelector(aSelector) hasPrefix:@"_"]) {
+        return nil;
+    }
+    return [super forwardingTargetForSelector:aSelector];
+}
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     if (!self.collectionView) {
         self.collectionView = collectionView;

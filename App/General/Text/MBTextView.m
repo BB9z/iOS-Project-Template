@@ -26,7 +26,7 @@ RFInitializingRootForUIView
     self.scrollsToTop = NO;
 
     if (!self.placeholderTextColor) {
-        self.placeholderTextColor = [UIColor colorNamed:@"Color/placeholder"];
+        self.placeholderTextColor = [UIColor colorNamed:@"placeholder"];
     }
     
     /// 使 TextView 和 backgroundImageView 无缝贴着

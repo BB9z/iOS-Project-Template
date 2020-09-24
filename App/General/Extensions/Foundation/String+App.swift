@@ -15,6 +15,18 @@ extension StringProtocol {
     func matches(regularExpression pattern: String) -> Bool {
         return range(of: pattern, options: .regularExpression) != nil
     }
+
+    // @MBDependency:2
+    /// email 格式检查
+    var isValidEmail: Bool {
+        matches(regularExpression: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}")
+    }
+
+    // @MBDependency:3
+    /// 是否是大陆手机手机号
+    var isValidPhoneNumber: Bool {
+        matches(regularExpression: "^1\\d{10}$")
+    }
 }
 
 extension String {
@@ -47,3 +59,10 @@ extension String {
         return str
     }
 }
+
+/*
+ 废弃的实现
+
+ 硬换行数 https://github.com/BB9z/iOS-Project-Template/blob/4.1/App/General/Extensions/Foundation/NSString%2BApp.m#L19
+ 版本比较 https://github.com/BB9z/iOS-Project-Template/blob/4.1/App/General/Extensions/Foundation/NSString%2BApp.m#L27
+ */

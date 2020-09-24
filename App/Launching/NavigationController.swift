@@ -3,12 +3,6 @@
 //  App
 //
 
-private enum NavigationTab: Int {
-    case home = 0, topic, more, count
-    static let defaule = NavigationTab.home
-    static let login = NSNotFound
-}
-
 /**
  应用主导航控制器
  */
@@ -38,17 +32,15 @@ class NavigationController: MBNavigationController {
 
     func onLogout() {
         presentLoginScene()
-        tabControllers.count = 0
-        tabControllers.count = NavigationTab.count.rawValue
+        releaseTabViewControllersIfNeeded()
     }
 
     func onLogin() {
-        tabItems?.selectIndex = NavigationTab.defaule.rawValue
-        onTabSelect(tabItems!)
+        selectTab(.defaule)
     }
 
     override func presentLoginScene() {
-        tabItems?.selectIndex = NavigationTab.login
+        tabItems.selectIndex = NavigationTab.login
         setViewControllers([ WelcomeViewController.newFromStoryboard() ], animated: true)
     }
 
@@ -72,73 +64,15 @@ class NavigationController: MBNavigationController {
         }
     }
 
-    // MARK: -
-
-    var tabItems: MBControlGroup? {
-        bottomBar as? MBControlGroup
-    }
-
-    lazy var tabControllers: NSPointerArray = {
-        let array = NSPointerArray(options: .strongMemory)
-        array.count = NavigationTab.count.rawValue
-        return array
-    }()
-}
-
-// MARK: - Tab
-
-extension NavigationController: MBControlGroupDelegate {
-    func controlGroup(_ controlGroup: MBControlGroup, shouldSelectControlAt index: Int) -> Bool {
-        return true
-    }
-
-    @IBAction private func onTabSelect(_ sender: MBControlGroup) {
-        let vc: UIViewController = viewControllerAtTabIndex(sender.selectIndex)
-        let newVCs = [ vc ]
-        if viewControllers != newVCs {
-            viewControllers = newVCs
-        }
-    }
-
-    func viewControllerAtTabIndex(_ index: Int) -> UIViewController {
-        if let vc = tabControllers.object(at: index) as? UIViewController {
-            return vc
-        }
-        var vc: UIViewController!
-        switch NavigationTab(rawValue: index) {
-        case .home:
-            vc = HomeViewController.newFromStoryboard()
-        case .topic:
-            vc = TopicRecommandListController.newFromStoryboard()
-        case .more:
-            vc = MoreViewController.newFromStoryboard()
-        case .some(.count), .none:
-            fatalError()
-        }
-        vc.rfPrefersBottomBarShown = true
-        tabControllers.replaceObject(at: index, withObject: vc)
-        return vc
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        let idx = tabItems?.selectIndex
-        for i in 0..<tabControllers.count where i != idx {
-            tabControllers.replacePointer(at: i, withPointer: nil)
-        }
-    }
-}
-
-extension NavigationController: MBDebugNavigationReleaseChecking {
-    func debugShouldIgnoralCheckRelease(for viewController: UIViewController!) -> Bool {
-        return (tabControllers.allObjects as NSArray).contains(viewController!)
+        releaseTabViewControllersIfNeeded()
     }
 }
 
 // MARK: - Jump
 extension NavigationController {
     @IBAction private func navigationBackToHome(_ sender: Any?) {
-        tabItems?.selectIndex = NavigationTab.defaule.rawValue
-        onTabSelect(tabItems!)
+        selectTab(.defaule)
     }
 }

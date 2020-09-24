@@ -1,4 +1,3 @@
-
 /// 可被 TagView 展示的元素
 @objc public protocol TagViewElement {
     /// Tag 标题

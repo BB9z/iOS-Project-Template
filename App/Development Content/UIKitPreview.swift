@@ -42,8 +42,6 @@ import SwiftUI
 
 /// 预览 UIViewController，适应项目模版，设置了导航等
 struct ViewControllerPreview: UIViewControllerRepresentable {
-    typealias UIViewControllerType = RootViewController
-
     let viewController: UIViewController
 
     init(_ builder: @escaping () throws -> UIViewController) {
@@ -76,11 +74,20 @@ struct ViewControllerPreview: UIViewControllerRepresentable {
     }
 
     func makeUIViewController(context: Context) -> UIViewControllerType {
-        AppNavigationController()!.pushViewController(viewController, animated: false)
-        return AppRootViewController()!
+        // Xcode 12 临时修正方案，显示效果有问题，RootVC 的行为可能无法恢复了
+        if let nav = AppNavigationController() {
+            nav.pushViewController(viewController, animated: false)
+            nav.removeFromParentViewControllerAndView()
+            return nav
+        }
+        return viewController
+        /* Xcode 11 使用以下方式即可
+         AppNavigationController()!.pushViewController(viewController, animated: false)
+         return AppRootViewController()!
+         */
     }
 
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
         return
     }
 }

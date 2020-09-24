@@ -122,23 +122,23 @@ PODS:
   - RFAPI/JSONModel (2.0.0):
     - JSONModel
     - RFAPI/Core
-  - RFDelegateChain/Chain (1.0.0):
+  - RFDelegateChain/Chain (2.0.0):
     - RFInitializing (>= 1.1)
     - RFKit/Runtime (>= 1.7.1)
-  - RFDelegateChain/UICollectionViewDataSource (1.0.0):
+  - RFDelegateChain/UICollectionViewDataSource (2.0.0):
     - RFDelegateChain/Chain
-  - RFDelegateChain/UICollectionViewDelegate (1.0.0):
+  - RFDelegateChain/UICollectionViewDelegate (2.0.0):
     - RFDelegateChain/UIScrollViewDelegate
-  - RFDelegateChain/UICollectionViewDelegateFlowLayout (1.0.0):
+  - RFDelegateChain/UICollectionViewDelegateFlowLayout (2.0.0):
     - RFDelegateChain/UICollectionViewDelegate
-  - RFDelegateChain/UIScrollViewDelegate (1.0.0):
+  - RFDelegateChain/UIScrollViewDelegate (2.0.0):
     - RFDelegateChain/Chain
-  - RFDelegateChain/UITextFieldDelegate (1.0.0):
+  - RFDelegateChain/UITextFieldDelegate (2.0.0):
     - RFDelegateChain/Chain
-  - RFDelegateChain/UITextViewDelegate (1.0.0):
+  - RFDelegateChain/UITextViewDelegate (2.0.0):
     - RFDelegateChain/Chain
   - RFInitializing (1.2.0)
-  - RFKeyboard (0.2.0):
+  - RFKeyboard (0.3.0):
     - RFKit/Runtime (>= 1.7)
   - RFKit (2.5.0):
     - RFKit/Default (= 2.5.0)
@@ -248,9 +248,9 @@ PODS:
     - RFKit/Category/UIDevice
     - RFKit/Category/UINavigationController
     - RFKit/Runtime (>= 1.7)
-  - SDWebImage (5.9.0):
-    - SDWebImage/Core (= 5.9.0)
-  - SDWebImage/Core (5.9.0)
+  - SDWebImage (5.9.1):
+    - SDWebImage/Core (= 5.9.1)
+  - SDWebImage/Core (5.9.1)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
@@ -317,15 +317,15 @@ SPEC CHECKSUMS:
   MBAppKit: 2512e62c5af8cb5bd4dac22e63ea2ed6eaf02e66
   RFAlpha: a2ba9b06f5452e11c486abd3bf20c9036734ae7a
   RFAPI: 41c61c25a37b49946a1f4143b2a1b657f3835a81
-  RFDelegateChain: 06b2100d30de422eb7dee4ad833c8bd80c631f16
+  RFDelegateChain: c21e2d440c873c2f8a84d9bffc31b46bdf1a0743
   RFInitializing: c85e1d8b9c5b540761f7983af3e9bb517654ad84
-  RFKeyboard: d270ea1f612d86c980974222bae7c6d7d04428be
+  RFKeyboard: 673a594ea5d27bb597e1501858b29007f5daeff5
   RFKit: 2c76d7fd9edeec96fea708f4b9b4fdd25445b5d4
   RFMessageManager: 2967d1f691a4ac310b76afc8ef505d9e9b5151f0
   RFSegue: 16a13d55032a737a93a1feb3c758077f708e3c70
-  SDWebImage: 62ae4a18473520c67b79e9724c31a63599cc9423
+  SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 6f8c8374bd34f419bdacae32930e96f4596f8462
+PODFILE CHECKSUM: b7cf4c847e1e9577c14e489ee84219f7df2bf07c
 
 COCOAPODS: 1.9.3

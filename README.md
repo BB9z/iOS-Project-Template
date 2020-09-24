@@ -4,7 +4,7 @@
 
 ## 需求
 
-iOS 11+，Xcode 11+。
+iOS 11+；Xcode 12+，Xcode 11 应该也支持，但不保证。
 
 Ruby Gems 依赖：
 

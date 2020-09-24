@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,14 +29,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="4xG-Hm-F6p">
                                         <rect key="frame" x="76.666666666666686" y="10" width="222" height="27"/>
                                         <subviews>
-                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7C-36-QPn">
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7C-36-QPn">
                                                 <rect key="frame" x="0.0" y="0.0" width="148" height="27"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <state key="normal" title="登录或注册即代表你已同意">
-                                                    <color key="titleColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" systemColor="tertiaryLabelColor"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAS-w8-m5p">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAS-w8-m5p">
                                                 <rect key="frame" x="148" y="0.0" width="74" height="27"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <state key="normal" title="《用户协议》"/>
@@ -46,7 +47,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="4xG-Hm-F6p" firstAttribute="centerX" secondItem="ZwQ-EK-61f" secondAttribute="centerX" id="Acx-nR-61t"/>
                                     <constraint firstItem="4xG-Hm-F6p" firstAttribute="top" secondItem="ZwQ-EK-61f" secondAttribute="top" constant="10" id="Mvz-Dd-DNC"/>
@@ -54,7 +55,8 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Hh3-ou-RGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Hh3-ou-RGB" firstAttribute="trailing" secondItem="ZwQ-EK-61f" secondAttribute="trailing" id="0Eh-pX-OiY"/>
                             <constraint firstItem="Hh3-ou-RGB" firstAttribute="bottom" secondItem="aEj-k0-AWb" secondAttribute="bottom" id="3Eg-R2-o0B"/>
@@ -64,7 +66,6 @@
                             <constraint firstItem="aEj-k0-AWb" firstAttribute="leading" secondItem="Hh3-ou-RGB" secondAttribute="leading" id="aUx-S5-1FG"/>
                             <constraint firstItem="ZwQ-EK-61f" firstAttribute="leading" secondItem="Hh3-ou-RGB" secondAttribute="leading" id="g6K-DV-abw"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Hh3-ou-RGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="939-EO-hZi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -86,10 +87,10 @@
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LcT-FY-NVX">
                                     <rect key="frame" x="0.0" y="44" width="360" height="999"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <sections>
                             <tableViewSection id="kp5-mV-YlU">
@@ -102,7 +103,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注册" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APo-J4-D4V">
-                                                    <rect key="frame" x="25" y="20" width="315" height="34"/>
+                                                    <rect key="frame" x="25" y="19.999999999999996" width="315" height="33.666666666666657"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -157,13 +158,13 @@
                                                     <rect key="frame" x="25" y="15" width="25" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+86" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWr-ag-jwG">
-                                                            <rect key="frame" x="0.0" y="7.3333333333333313" width="25" height="15.666666666666664"/>
+                                                            <rect key="frame" x="0.0" y="7" width="25" height="16"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                            <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" systemColor="tertiaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Fev-VV-iah"/>
                                                         <constraint firstItem="NWr-ag-jwG" firstAttribute="centerY" secondItem="Khd-uy-rg5" secondAttribute="centerY" id="gcv-cQ-SUx"/>
@@ -235,7 +236,7 @@
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goa-sF-CxM" customClass="RFLine">
                                                     <rect key="frame" x="247" y="24" width="1" height="13"/>
-                                                    <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="separatorColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="13" id="MHe-ux-bX4"/>
                                                         <constraint firstAttribute="width" constant="1" id="aN3-OV-lK6"/>
@@ -254,7 +255,7 @@
                                                         <color key="titleColor" name="Color/primary"/>
                                                     </state>
                                                     <state key="disabled" title="%dS">
-                                                        <color key="titleColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleColor" systemColor="tertiaryLabelColor"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="onSendCode:" destination="3ls-lH-z7g" eventType="touchUpInside" id="kxr-lg-FUD"/>
@@ -345,10 +346,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="360" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3u-ct-3gb" userLabel="Submit Invaild">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3u-ct-3gb" userLabel="Submit Invaild">
                                                     <rect key="frame" x="25" y="8" width="310" height="44"/>
                                                 </button>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJA-yz-uBF" userLabel="Submit" customClass="Button" customModule="App" customModuleProvider="target">
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJA-yz-uBF" userLabel="Submit" customClass="Button" customModule="App" customModuleProvider="target">
                                                     <rect key="frame" x="25" y="8" width="310" height="44"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <state key="normal" title="确认" backgroundImage="button_round44_fill">
@@ -427,10 +428,10 @@
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zxQ-wB-CzA">
                                     <rect key="frame" x="0.0" y="44" width="360" height="999"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <sections>
                             <tableViewSection id="MJ7-uq-lUM">
@@ -443,7 +444,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎您" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEV-6C-fVp">
-                                                    <rect key="frame" x="25" y="20" width="315" height="34"/>
+                                                    <rect key="frame" x="25" y="19.999999999999996" width="315" height="33.666666666666657"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -480,13 +481,13 @@
                                                     <rect key="frame" x="25" y="15" width="25" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+86" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4s-LT-Z6j">
-                                                            <rect key="frame" x="0.0" y="7.3333333333333313" width="25" height="15.666666666666664"/>
+                                                            <rect key="frame" x="0.0" y="7" width="25" height="16"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                            <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" systemColor="tertiaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="X4s-LT-Z6j" firstAttribute="centerY" secondItem="euZ-EJ-erp" secondAttribute="centerY" id="AoX-mF-lPN"/>
                                                         <constraint firstAttribute="height" constant="30" id="fQd-T4-Gh0"/>
@@ -526,7 +527,7 @@
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6uy-3t-O4r" customClass="RFLine">
                                                     <rect key="frame" x="247" y="24" width="1" height="13"/>
-                                                    <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="separatorColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="13" id="lcQ-Fm-KFG"/>
                                                         <constraint firstAttribute="width" constant="1" id="s74-g8-eJu"/>
@@ -545,7 +546,7 @@
                                                         <color key="titleColor" name="Color/primary"/>
                                                     </state>
                                                     <state key="disabled" title="%dS">
-                                                        <color key="titleColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleColor" systemColor="tertiaryLabelColor"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="onSendCode:" destination="w33-f2-H0w" eventType="touchUpInside" id="al6-nP-A9m"/>
@@ -572,11 +573,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="360" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qkx-u1-GLD">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qkx-u1-GLD">
                                                     <rect key="frame" x="25" y="8" width="92" height="30"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <state key="normal" title="其他登录方式">
-                                                        <color key="titleColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleColor" systemColor="secondaryLabelColor"/>
                                                     </state>
                                                     <connections>
                                                         <segue destination="8FP-X5-hGE" kind="show" id="725-xD-7KV"/>
@@ -596,10 +597,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="360" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LaU-H2-fsU" userLabel="Submit Invaild">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LaU-H2-fsU" userLabel="Submit Invaild">
                                                     <rect key="frame" x="25" y="2" width="310" height="44"/>
                                                 </button>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y52-Jo-iVG" userLabel="Submit" customClass="Button" customModule="App" customModuleProvider="target">
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y52-Jo-iVG" userLabel="Submit" customClass="Button" customModule="App" customModuleProvider="target">
                                                     <rect key="frame" x="25" y="2" width="310" height="44"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <state key="normal" title="登录/注册" backgroundImage="button_round44_fill">
@@ -669,10 +670,10 @@
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cLV-68-Dzg">
                                     <rect key="frame" x="0.0" y="44" width="360" height="999"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <sections>
                             <tableViewSection id="E9s-N0-e8Y">
@@ -685,7 +686,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎您" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQW-H6-l1a">
-                                                    <rect key="frame" x="25" y="20" width="315" height="34"/>
+                                                    <rect key="frame" x="25" y="19.999999999999996" width="315" height="33.666666666666657"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -761,17 +762,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="360" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4XW-Lj-QUe">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4XW-Lj-QUe">
                                                     <rect key="frame" x="25" y="8" width="77" height="30"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <state key="normal" title="忘记密码？">
-                                                        <color key="titleColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleColor" systemColor="secondaryLabelColor"/>
                                                     </state>
                                                     <connections>
                                                         <segue destination="MhX-4F-DlR" kind="show" id="Yey-xE-IbE"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDZ-bg-h3f">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDZ-bg-h3f">
                                                     <rect key="frame" x="309" y="8" width="31" height="30"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <state key="normal" title="注册"/>
@@ -795,10 +796,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="360" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeC-wl-HWY" userLabel="Submit Invaild">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeC-wl-HWY" userLabel="Submit Invaild">
                                                     <rect key="frame" x="25" y="2" width="310" height="44"/>
                                                 </button>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJ5-Xs-bRM" userLabel="Submit" customClass="Button" customModule="App" customModuleProvider="target">
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJ5-Xs-bRM" userLabel="Submit" customClass="Button" customModule="App" customModuleProvider="target">
                                                     <rect key="frame" x="25" y="2" width="310" height="44"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <state key="normal" title="登录" backgroundImage="button_round44_fill">
@@ -855,26 +856,26 @@
         <!--Login Password View Controller-->
         <scene sceneID="twA-ac-df8">
             <objects>
-                <viewController id="8FP-X5-hGE" customClass="LoginPasswordViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="8FP-X5-hGE" customClass="LoginPasswordViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NNo-C6-n94">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="680"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXc-i1-FqS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="680"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="690"/>
                                 <connections>
                                     <segue destination="cO9-8R-ZyE" kind="embed" id="br7-F6-pK4"/>
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Hrg-Oe-Gqt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wXc-i1-FqS" firstAttribute="bottom" secondItem="Hrg-Oe-Gqt" secondAttribute="bottom" id="2xb-Ca-VHJ"/>
                             <constraint firstItem="wXc-i1-FqS" firstAttribute="top" secondItem="Hrg-Oe-Gqt" secondAttribute="top" id="WQm-nf-SYW"/>
                             <constraint firstItem="wXc-i1-FqS" firstAttribute="trailing" secondItem="Hrg-Oe-Gqt" secondAttribute="trailing" id="aIy-gx-sks"/>
                             <constraint firstItem="wXc-i1-FqS" firstAttribute="leading" secondItem="Hrg-Oe-Gqt" secondAttribute="leading" id="agW-lB-iOz"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Hrg-Oe-Gqt"/>
                     </view>
                     <navigationItem key="navigationItem" id="1FB-Ab-fpM"/>
                 </viewController>
@@ -885,26 +886,26 @@
         <!--Password Reset Mobile View Controller-->
         <scene sceneID="nH8-OC-nUj">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="MhX-4F-DlR" customClass="PasswordResetMobileViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MhX-4F-DlR" customClass="PasswordResetMobileViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R2r-yU-KQK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="626"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="690"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JsL-2g-x2p">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="626"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="646"/>
                                 <connections>
                                     <segue destination="lfr-PU-yCn" kind="embed" id="6gC-Wf-cLU"/>
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="vsY-q3-18x"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JsL-2g-x2p" firstAttribute="top" secondItem="vsY-q3-18x" secondAttribute="top" id="9Ya-NW-a3K"/>
                             <constraint firstItem="JsL-2g-x2p" firstAttribute="trailing" secondItem="vsY-q3-18x" secondAttribute="trailing" id="QuG-S5-N28"/>
                             <constraint firstItem="JsL-2g-x2p" firstAttribute="bottom" secondItem="vsY-q3-18x" secondAttribute="bottom" id="Rzu-37-A5O"/>
                             <constraint firstItem="JsL-2g-x2p" firstAttribute="leading" secondItem="vsY-q3-18x" secondAttribute="leading" id="qEd-6W-hhV"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="vsY-q3-18x"/>
                     </view>
                     <navigationItem key="navigationItem" id="B7r-48-Ogp"/>
                     <connections>
@@ -930,10 +931,10 @@
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fFi-dF-fk0">
                                     <rect key="frame" x="0.0" y="44" width="360" height="999"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <sections>
                             <tableViewSection id="asf-CA-cdF">
@@ -946,7 +947,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通过手机验证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0L-xL-AAn">
-                                                    <rect key="frame" x="25" y="20" width="315" height="34"/>
+                                                    <rect key="frame" x="25" y="19.999999999999996" width="315" height="33.666666666666657"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -983,13 +984,13 @@
                                                     <rect key="frame" x="25" y="15" width="25" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+86" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2u-UH-E3s">
-                                                            <rect key="frame" x="0.0" y="7.3333333333333313" width="25" height="15.666666666666664"/>
+                                                            <rect key="frame" x="0.0" y="7" width="25" height="16"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                            <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" systemColor="tertiaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="x2u-UH-E3s" firstAttribute="centerY" secondItem="rmz-Sq-C0z" secondAttribute="centerY" id="234-2v-hrz"/>
                                                         <constraint firstAttribute="height" constant="30" id="VKH-RK-lWX"/>
@@ -1029,7 +1030,7 @@
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVb-yx-swK" customClass="RFLine">
                                                     <rect key="frame" x="247" y="24" width="1" height="13"/>
-                                                    <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" systemColor="separatorColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="1" id="LqQ-tB-HGv"/>
                                                         <constraint firstAttribute="height" constant="13" id="jla-aN-Zwf"/>
@@ -1048,7 +1049,7 @@
                                                         <color key="titleColor" name="Color/primary"/>
                                                     </state>
                                                     <state key="disabled" title="%dS">
-                                                        <color key="titleColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleColor" systemColor="tertiaryLabelColor"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="onSendCode:" destination="bYU-L9-xW1" eventType="touchUpInside" id="Jzq-Km-xjn"/>
@@ -1083,10 +1084,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="360" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7u-NY-8iJ" userLabel="Submit Invaild">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7u-NY-8iJ" userLabel="Submit Invaild">
                                                     <rect key="frame" x="25" y="2" width="310" height="44"/>
                                                 </button>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaW-Om-eri" userLabel="Submit" customClass="Button" customModule="App" customModuleProvider="target">
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaW-Om-eri" userLabel="Submit" customClass="Button" customModule="App" customModuleProvider="target">
                                                     <rect key="frame" x="25" y="2" width="310" height="44"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <state key="normal" title="下一步" backgroundImage="button_round44_fill">
@@ -1144,26 +1145,26 @@
         <!--Password Reset View Controller-->
         <scene sceneID="AZ1-fS-4LD">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="KpK-uL-NKZ" customClass="PasswordResetViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KpK-uL-NKZ" customClass="PasswordResetViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s3b-3a-GYx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="626"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="690"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="170-cu-Hfv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="626"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="646"/>
                                 <connections>
                                     <segue destination="MIH-6T-8at" kind="embed" id="cJi-kY-e6D"/>
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="LAz-wH-JYR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="170-cu-Hfv" firstAttribute="top" secondItem="LAz-wH-JYR" secondAttribute="top" id="4s2-N1-Pct"/>
                             <constraint firstItem="170-cu-Hfv" firstAttribute="bottom" secondItem="LAz-wH-JYR" secondAttribute="bottom" id="IWD-2M-YxG"/>
                             <constraint firstItem="170-cu-Hfv" firstAttribute="trailing" secondItem="LAz-wH-JYR" secondAttribute="trailing" id="LbA-JY-hpS"/>
                             <constraint firstItem="170-cu-Hfv" firstAttribute="leading" secondItem="LAz-wH-JYR" secondAttribute="leading" id="uSU-Nn-Odm"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="LAz-wH-JYR"/>
                     </view>
                     <navigationItem key="navigationItem" id="5uH-Mi-0BD"/>
                 </viewController>
@@ -1186,10 +1187,10 @@
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BxX-OH-FVS">
                                     <rect key="frame" x="0.0" y="44" width="360" height="999"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <sections>
                             <tableViewSection id="Rtn-e0-M7b">
@@ -1202,7 +1203,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置新密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhw-i1-wzp">
-                                                    <rect key="frame" x="25" y="20" width="315" height="34"/>
+                                                    <rect key="frame" x="25" y="19.999999999999996" width="315" height="33.666666666666657"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1286,10 +1287,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="360" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0T-pW-0bs" userLabel="Submit Invaild">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0T-pW-0bs" userLabel="Submit Invaild">
                                                     <rect key="frame" x="25" y="2" width="310" height="44"/>
                                                 </button>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2t-dI-Mtz" userLabel="Submit" customClass="Button" customModule="App" customModuleProvider="target">
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2t-dI-Mtz" userLabel="Submit" customClass="Button" customModule="App" customModuleProvider="target">
                                                     <rect key="frame" x="25" y="2" width="310" height="44"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <state key="normal" title="确认" backgroundImage="button_round44_fill">
@@ -1346,26 +1347,26 @@
         <!--Login Register View Controller-->
         <scene sceneID="dvE-xd-b4L">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="ybf-0G-iJD" customClass="LoginRegisterViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ybf-0G-iJD" customClass="LoginRegisterViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yAx-u5-37J">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="626"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="690"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZF2-Vu-KAL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="626"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="646"/>
                                 <connections>
                                     <segue destination="Iey-Y2-XYc" kind="embed" id="55m-Kv-kJc"/>
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="rGz-EL-DEd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ZF2-Vu-KAL" firstAttribute="leading" secondItem="rGz-EL-DEd" secondAttribute="leading" id="epf-he-8bm"/>
                             <constraint firstItem="ZF2-Vu-KAL" firstAttribute="bottom" secondItem="rGz-EL-DEd" secondAttribute="bottom" id="pab-UV-qMk"/>
                             <constraint firstItem="ZF2-Vu-KAL" firstAttribute="trailing" secondItem="rGz-EL-DEd" secondAttribute="trailing" id="prz-Q7-rFc"/>
                             <constraint firstItem="ZF2-Vu-KAL" firstAttribute="top" secondItem="rGz-EL-DEd" secondAttribute="top" id="y7i-gf-Cdz"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="rGz-EL-DEd"/>
                     </view>
                     <navigationItem key="navigationItem" id="CeU-L5-qUs"/>
                 </viewController>
@@ -1382,5 +1383,17 @@
         <namedColor name="Color/primary">
             <color red="0.1803921568627451" green="0.5607843137254902" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

@@ -31,7 +31,6 @@
 //#import "MBMaskHiddenView.h"
 #import "MBModalPresentSegue.h"
 #import "MBNavigationController+MBDebugReleaseChecking.h"
-#import "MBNavigationController+Router.h"
 #import "MBNavigationController.h"
 //#import "MBNotificationBadgeManager.h"
 //#import "MBPublishImagePicker.h"

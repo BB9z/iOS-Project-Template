@@ -1,10 +1,10 @@
 
 #import "MBDebugFloatConsoleViewController.h"
+#import "Common.h"
 #import "MBDebugHelpers.h"
 #import "MBDebugMenuViewController.h"
 #import "MBDebugPrivate.h"
 #import "MBDebugViews.h"
-#import "MBNavigationController+Router.h"
 #import "UIKit+App.h"
 #import "debug.h"
 #import <MBAppKit/MBRootViewController.h>
@@ -192,14 +192,14 @@ static unsigned long long LastMemoryUsed;
         NSString *url = alert.textFields.firstObject.text;
         if (!url) return;
         [NSUserDefaults.standardUserDefaults setObject:url forKey:@"mbdebug.LastOpenURL"];
-        AppNavigationJump(url, nil);
+        [self _jumpURL:url];
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"3s 后跳转" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSString *url = alert.textFields.firstObject.text;
         if (!url) return;
         [NSUserDefaults.standardUserDefaults setObject:url forKey:@"mbdebug.LastOpenURL"];
         dispatch_after_seconds(3, ^{
-            AppNavigationJump(url, nil);
+            [self _jumpURL:url];
         });
     }]];
     UIViewController *vp = (UIViewController *)AppRootViewController();
@@ -210,6 +210,13 @@ static unsigned long long LastMemoryUsed;
         ppc.permittedArrowDirections = 0;
     }
     [vp presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)_jumpURL:(NSString *)urlString {
+    if (!urlString.length) return;
+    NSURL *url = [NSURL.alloc initWithString:urlString];
+    if (!url) return;
+    [NavigationController jumpWithUrl:url context:nil];
 }
 
 - (void)resetURLStorage {

@@ -18,7 +18,8 @@ class ApplicationDelegate: MBApplicationDelegate {
     }
 
     override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        #if DEBUG
+        #if PREVIEW
+        #elseif DEBUG
         // https://github.com/BB9z/iOS-Project-Template/wiki/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B#tools-implement-faster
         Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
         #endif
@@ -33,7 +34,7 @@ class ApplicationDelegate: MBApplicationDelegate {
 
     func setupUIAppearance() {
         // 统一全局色，storyboard 的全局色只对部分 UI 生效，比如无法对 UIAlertController 应用
-        window.tintColor = UIColor(named: "Color/primary")!
+        window.tintColor = UIColor(named: "primary")!
 
         // 列表 data source 全局调整
         MBListDataSource<AnyObject>.defualtPageStartZero = false
@@ -77,8 +78,8 @@ class ApplicationDelegate: MBApplicationDelegate {
     }
 
     override func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-        if url.scheme == AppScheme {
-            AppNavigationJump(url.absoluteString, nil)
+        if url.scheme == NavigationController.appScheme {
+            NavigationController.jump(url: url, context: nil)
             return true
         }
         return super.application(app, open: url, options: options)

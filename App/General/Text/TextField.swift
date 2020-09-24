@@ -124,7 +124,7 @@ class TextField: MBTextField {
             guard let str = text?.trimmed() else {
                 return (nil, "请输入手机号")
             }
-            guard str.isValidPhoneNumber() else {
+            guard str.isValidPhoneNumber else {
                 return (nil, "手机号格式错误")
             }
             return (str, nil)
@@ -166,7 +166,7 @@ class TextField: MBTextField {
             guard let str = text?.trimmed() else {
                 return (nil, "请输入邮箱")
             }
-            guard str.isValidEmail() else {
+            guard str.isValidEmail else {
                 return (nil, "邮箱格式错误")
             }
             return (str, nil)

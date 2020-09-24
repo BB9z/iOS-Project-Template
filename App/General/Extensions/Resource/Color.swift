@@ -1,4 +1,4 @@
-/**
+/*
  应用级别的便捷方法
  */
 extension UIColor {

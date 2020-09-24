@@ -1,7 +1,7 @@
 
 #import "MBLayoutButton.h"
+#import "Common.h"
 #import "MBNavigationController.h"
-#import "MBNavigationController+Router.h"
 
 @interface MBLayoutButton ()
 @property BOOL touchDownEffectApplied;
@@ -34,9 +34,10 @@
     [super afterInit];
     if (self.touchUpInsideCallback) return;
     self.touchUpInsideCallback = ^(MBLayoutButton * _Nonnull sender) {
-        if (sender.jumpURL.length) {
-            AppNavigationJump(sender.jumpURL, nil);
-        }
+        if (!sender.jumpURL.length) return;
+        NSURL *url = [NSURL.alloc initWithString:sender.jumpURL];
+        if (!url) return;
+        [NavigationController jumpWithUrl:url context:nil];
     };
 }
 

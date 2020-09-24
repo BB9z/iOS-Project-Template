@@ -16,7 +16,7 @@ void DebugLog(BOOL fatal, NSString *_Nullable recordID, NSString *_Nonnull forma
     }
     if (recordID
         && ![@MBBuildConfiguration isEqualToString:@"Debug"]) {
-        // TODO: 记录错误
+        // 🔰 记录错误
     }
 }
 
