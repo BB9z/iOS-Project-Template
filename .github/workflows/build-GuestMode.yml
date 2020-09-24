@@ -46,4 +46,4 @@ jobs:
       - name: Build iOS target
         run: |
           set -o pipefail
-          xcodebuild -workspace "App.xcworkspace" -scheme "$XC_BUILD_SCHEME" -destination generic/platform=iOS | xcpretty
+          xcodebuild -workspace "App.xcworkspace" -scheme "$XC_BUILD_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 11' | xcpretty

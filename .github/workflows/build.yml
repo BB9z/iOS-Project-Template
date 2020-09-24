@@ -2,48 +2,51 @@ name: CI
 
 on:
   push:
-    branches:
-      - master
+    branches-ignore:
+      - demo
   pull_request:
+    branches-ignore:
+      - demo
+      
 
 jobs:
   build:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: CocoaPods Cache
-      uses: actions/cache@v2
-      with:
-        path: "Pods"
-        key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-pods-
+      - name: CocoaPods Cache
+        uses: actions/cache@v2
+        with:
+          path: "Pods"
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
 
-    - name: Setup Project
-      run: |
-        pod --version
-        isNeedsPodInstall=false
-        diff "Podfile.lock" "Pods/Manifest.lock" >/dev/null || {
-          isNeedsPodInstall=true
-        }
-        if $isNeedsPodInstall; then
-          pod install || {
-            echo "pod install fails, try update repo"
-            pod install --repo-update
+      - name: Setup Project
+        run: |
+          pod --version
+          isNeedsPodInstall=false
+          diff "Podfile.lock" "Pods/Manifest.lock" >/dev/null || {
+            isNeedsPodInstall=true
           }
-          touch "Scripts/PreBuild.time"
-        else
-          echo "Podfile unchanged, skip pod install."
-        fi
-      
-    - name: Build maccatalyst target
-      run: |
-        set -o pipefail
-        xcodebuild -workspace "App.xcworkspace" -scheme "App"  -destination 'platform=macOS,arch=x86_64' | xcpretty
+          if $isNeedsPodInstall; then
+            pod install || {
+              echo "pod install fails, try update repo"
+              pod install --repo-update
+            }
+            touch "Scripts/PreBuild.time"
+          else
+            echo "Podfile unchanged, skip pod install."
+          fi
 
-    - name: Build iOS target
-      run: |
-        set -o pipefail
-        xcodebuild -workspace "App.xcworkspace" -scheme "App"  -destination 'platform=iOS Simulator,name=iPhone 11' | xcpretty
+      - name: Build maccatalyst target
+        run: |
+          set -o pipefail
+          xcodebuild -workspace "App.xcworkspace" -scheme "App"  -destination 'platform=macOS,arch=x86_64' | xcpretty
+
+      - name: Build iOS target
+        run: |
+          set -o pipefail
+          xcodebuild -workspace "App.xcworkspace" -scheme "App"  -destination 'platform=iOS Simulator,name=iPhone 11' | xcpretty
