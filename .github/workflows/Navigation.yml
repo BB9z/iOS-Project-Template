@@ -1,0 +1,52 @@
+name: CI Demos
+
+on:
+  push:
+    branches:
+      - demo
+    paths:
+      - .github/workflows/Navigation.yml
+      - Demos/_Shared/**
+      - Demos/Navigation/**
+      - App.xcodeproj/project.pbxproj
+      - Podfile.lock
+
+jobs:
+  build:
+    name: 导航系统
+    runs-on: macos-latest
+    env:
+      XC_BUILD_SCHEME: "Navigation"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: CocoaPods Cache
+        uses: actions/cache@v2
+        with:
+          path: "Pods"
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+
+      - name: Setup Project
+        run: |
+          pod --version
+          isNeedsPodInstall=false
+          diff "Podfile.lock" "Pods/Manifest.lock" >/dev/null || {
+            isNeedsPodInstall=true
+          }
+          if $isNeedsPodInstall; then
+            pod install || {
+              echo "pod install fails, try update repo"
+              pod install --repo-update
+            }
+            touch "Scripts/PreBuild.time"
+          else
+            echo "Podfile unchanged, skip pod install."
+          fi
+
+      - name: Build iOS target
+        run: |
+          set -o pipefail
+          xcodebuild -workspace "App.xcworkspace" -scheme "$XC_BUILD_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 11' | xcpretty
