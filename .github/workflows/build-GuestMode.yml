@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - demo
+    paths:
+      - Demos/_Shared/**
+      - Demos/GuestMode/**
+
+jobs:
+  build:
+    name: 游客模式
+    runs-on: macos-latest
+    env:
+      XC_BUILD_SCHEME: "GuestMode"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: CocoaPods Cache
+        uses: actions/cache@v2
+        with:
+          path: "Pods"
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+
+      - name: Setup Project
+        run: |
+          pod --version
+          isNeedsPodInstall=false
+          diff "Podfile.lock" "Pods/Manifest.lock" >/dev/null || {
+            isNeedsPodInstall=true
+          }
+          if $isNeedsPodInstall; then
+            pod install || {
+              echo "pod install fails, try update repo"
+              pod install --repo-update
+            }
+            touch "Scripts/PreBuild.time"
+          else
+            echo "Podfile unchanged, skip pod install."
+          fi
+
+      - name: Build iOS target
+        run: |
+          set -o pipefail
+          xcodebuild -workspace "App.xcworkspace" -scheme "$XC_BUILD_SCHEME" -destination generic/platform=iOS | xcpretty
