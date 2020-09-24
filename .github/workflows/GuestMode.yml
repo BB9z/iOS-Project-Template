@@ -5,8 +5,11 @@ on:
     branches:
       - demo
     paths:
+      - .github/workflows/GuestMode.yml
       - Demos/_Shared/**
       - Demos/GuestMode/**
+      - App.xcodeproj/project.pbxproj
+      - Podfile.lock
 
 jobs:
   build:
