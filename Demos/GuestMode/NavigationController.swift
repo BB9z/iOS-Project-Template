@@ -142,3 +142,11 @@ extension NavigationController: MBControlGroupDelegate {
         return vc
     }
 }
+
+// MARK: - Router
+
+extension NavigationController {
+    @objc class func jump(url: URL, context: Any?) {
+        precondition(false, "Demo 不需要路由")
+    }
+}

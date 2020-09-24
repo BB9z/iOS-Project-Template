@@ -69,7 +69,8 @@ class PublicViewController: UIViewController {
             guard let sf = self else { return }
             sf.loadingIndicator.stopAnimating()
             sf.contentView.isHidden = false
-            sf.resultLabel.text = AppUser() == nil ? "现在展示的是游客可见的内容" : "现在展示的是\(AppUserInformation()?.name ?? "用户")可见的内容"
+            let text = AppUser() == nil ? "现在展示的是游客可见的内容" : "现在展示的是\(AppUserInformation()?.name ?? "用户")可见的内容"
+            sf.resultLabel.text = text + "\n当用户改变时，你可以看到这里会自行刷新"
         }
     }
 }
@@ -99,6 +100,10 @@ class LoginViewController: UIViewController, LoginVCs {
     @IBAction private func demoLogin(_ sender: Any) {
         if !restoreJumpSwitch.isOn {
             AppNavigationController()?.loginSuspendedViewController = nil
+        }
+        if Account.current != nil {
+            print("⚠️ 已登入，重复点击？")
+            return
         }
         let information = AccountEntity()
         information.name = Self.demoUserName ?? "默认用户"
