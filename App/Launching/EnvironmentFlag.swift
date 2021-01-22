@@ -19,6 +19,9 @@ extension MBENVFlag {
     /// 应用启动后至少进过一次前台
     static let appHasEnterForegroundOnce = MBENVFlag(rawValue: 1 << 1)
 
+    /// 网络是否在线
+    static let online = MBENVFlag(rawValue: 1 << 2)
+
     //- 用户状态
     /// 用户已登入
     static let userHasLogged = MBENVFlag(rawValue: 1 << 4)

@@ -52,7 +52,7 @@ class Account: MBUser {
             #endif
             if uidChanged {
                 if uid != Account.userIDUndetermined {
-                    DebugLog(true, "MBUserInformationIDMismatch", "用户信息 ID 不匹配")
+                    AppLog().critical("用户信息 ID 不匹配")
                 }
                 setValue(information.uid, forKeyPath: #keyPath(MBUser.uid))
             }
@@ -94,7 +94,7 @@ class Account: MBUser {
         guard userID > 0 else { return }
         #endif
         guard let token = AppUserDefaultsShared().userToken else {
-            DebugLog(true, "LaunchUserNoToken", "Account has ID but no token")
+            AppLog().critical("Account has ID but no token")
             return
         }
 
@@ -124,8 +124,9 @@ class Account: MBUser {
     }
 
     override func onLogin() {
-        debugPrint("当前用户 ID: \(uid), token: \(token ?? "null")")
-        AppAPI().defineManager.authorizationHeader["token"] = token
+        guard let token = token else { fatalError() }
+        debugPrint("当前用户 ID: \(uid), token: \(token)")
+        AppAPI().defineManager.authorizationHeader[authHeaderKey] = "Bearer \(token)"
         AppEnv().setFlagOn(.userHasLogged)
         if !hasPofileFetchedThisSession {
             updateInformation { c in
@@ -136,8 +137,12 @@ class Account: MBUser {
     override func onLogout() {
         AppEnv().setFlagOff(.userHasLogged)
         AppEnv().setFlagOff(.userInfoFetched)
-        AppAPI().defineManager.authorizationHeader.removeObject(forKey: "token")
+        AppAPI().defineManager.authorizationHeader.removeObject(forKey: authHeaderKey)
         profile?.synchronize()
+    }
+    private var authHeaderKey: String {
+        // 🔰 修改认证头字段名
+        "Authorization"
     }
 
     /// 更新账号用户信息

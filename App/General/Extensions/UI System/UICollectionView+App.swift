@@ -7,9 +7,7 @@ extension UICollectionView {
      便捷方法，通过类名找相应 nib 注册，且 cell 的 reuse identifier 也是类名
      */
     func registerNib(with aClass: AnyClass) {
-        guard let name = aClass.className else {
-            fatalError()
-        }
+        let name = MBSwift.typeName(aClass)
         let nib = UINib(nibName: name, bundle: nil)
         register(nib, forCellWithReuseIdentifier: name)
     }

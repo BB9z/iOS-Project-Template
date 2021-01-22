@@ -20,7 +20,7 @@
 
 /// 重写或设置 block 改变展示方式
 - (nullable NSString *)displayStringForVaule:(nullable id)value;
-@property (nullable) NSString*__nullable (^vauleFormatBlock)(__kindof MBVauleLabel *__nonnull label, id __nullable value);
+@property (nullable) NSString*__nullable (^valueFormatBlock)(__kindof MBVauleLabel *__nonnull label, id __nullable value);
 @end
 
 // @MBDependency:2
@@ -43,5 +43,5 @@
 
 /// 重写或设置 block 改变展示方式
 - (nullable NSAttributedString *)displayAttributedStringForVaule:(nullable id)value;
-@property (nullable) NSAttributedString*__nullable (^vauleFormatBlock)(__kindof MBVauleAttributedLabel *__nonnull label, id __nullable value);
+@property (nullable) NSAttributedString*__nullable (^valueFormatBlock)(__kindof MBVauleAttributedLabel *__nonnull label, id __nullable value);
 @end

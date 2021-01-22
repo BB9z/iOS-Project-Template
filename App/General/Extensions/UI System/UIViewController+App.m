@@ -19,7 +19,15 @@
 }
 
 - (void)RFPresentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(BOOL presented))completion {
-    UIViewController *navVisible = self.navigationController.visibleViewController;
+    UINavigationController *nav = self.navigationController;
+    if (!nav) {
+        NSLog(@"⚠️ 当前 vc 不在导航中，RFPresent 只支持处于导航中的 vc 管理");
+        if (completion) {
+            completion(NO);
+        }
+        return;
+    }
+    UIViewController *navVisible = nav.visibleViewController;
     BOOL isNavVisible = NO;
     UIViewController *vc = self;
     while (vc) {
@@ -30,14 +38,13 @@
         vc = vc.parentViewController;
     }
     if (!self.isViewAppeared
-        || !self.navigationController
         || !isNavVisible) {
         if (completion) {
             completion(NO);
         }
         return;
     }
-    [self.navigationController presentViewController:viewControllerToPresent animated:flag completion:^{
+    [nav presentViewController:viewControllerToPresent animated:flag completion:^{
         if (completion) {
             completion(YES);
         }

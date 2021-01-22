@@ -1,6 +1,7 @@
 
 #import "MBDebugHelpers.h"
-#import "MBDebugPrivate.h"
+#import "MBFlexInterface.h"
+#import "ShortCuts.h"
 #import <RFAlpha/RFBlockSelectorPerform.h>
 #import <RFKit/NSString+RFKit.h>
 @import ObjectiveC;
@@ -52,13 +53,11 @@ NSString *DebugItemDescription(id item) {
 }
 
 void DebugUIInspecteModel(NSObject *model) {
-#if __has_include("FLEX/FLEX.h") && DEBUG
-    UIViewController *vc = [FLEXObjectExplorerFactory explorerViewControllerForObject:model];
+    UIViewController *vc = [MBFlexInterface explorerViewControllerForObject:model];
     if (vc) {
         [(UINavigationController *)AppNavigationController() pushViewController:vc animated:YES];
         return;
     }
-#endif
     UIAlertController *as = [UIAlertController alertControllerWithTitle:model.debugDescription message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     [as addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     UIViewController *vp = (UIViewController *)AppRootViewController();

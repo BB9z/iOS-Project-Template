@@ -10,12 +10,6 @@ extension Date {
     }
 
     // @MBDependency:2
-    /// 毫秒时间戳
-    var timestamp: Int64 {
-        Int64(timeIntervalSince1970 * 1000)
-    }
-
-    // @MBDependency:2
     /// 一天的起始时间
     var dayStart: Date {
         (self as NSDate).dayStart
@@ -115,17 +109,24 @@ extension TimeInterval {
     }
 }
 
-extension TimeZone {
-    // @MBDependency:2
-    /// 服务器时区
-    static var server = TimeZone(identifier: "Asia/Shanghai")!
-}
+// MARK: - 时间戳
+
+/* 🔰 如需使用毫秒时间戳，可启用下列代码
 
 /// 应用毫秒时间戳
 typealias TimeStamp = Int64
 
+extension Date {
+    /// 毫秒时间戳
+    var timestamp: TimeStamp {
+        TimeStamp(timeIntervalSince1970 * 1000)
+    }
+}
+
 extension TimeStamp {
+    /// 转为日期对象
     var date: Date {
         Date(timeIntervalSince1970: Double(self) / 1000.0)
     }
 }
+*/

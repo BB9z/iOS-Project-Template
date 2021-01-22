@@ -1,10 +1,10 @@
 /*
  MBKeyboardFloatContainer
- 
- Copyright © 2018, 2020 RFUI.
+
+ Copyright © 2018, 2020-2021 BB9z.
  Copyright © 2014 Beijing ZhiYun ZhiYuan Technology Co., Ltd.
  https://github.com/BB9z/iOS-Project-Template
- 
+
  The MIT License
  https://opensource.org/licenses/MIT
  */
@@ -14,7 +14,7 @@
 // @MBDependency:1
 /**
  一般是界面底部的一个容器，键盘弹出来跟着向上浮动，键盘收起又回落了
- 
+
  使用：
  - 连接 keyboardLayoutConstraint
  - 设置其他可选参数

@@ -73,7 +73,7 @@ class MBApp: NSObject {
 //    @objc lazy var workerQueue = MBWorkerQueue()
 //    @objc lazy var backgroundWorkerQueue: MBWorkerQueue = {
 //        let queue = MBWorkerQueue()
-//        queue.dispatchQueue = DispatchQueue.global(qos: .background)
+//        queue.dispatchQueue = DispatchQueue(label: "BackgroundWorker", qos: .background)
 //        return queue
 //    }()
 }

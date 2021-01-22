@@ -30,18 +30,6 @@ readonly timeFile=$"$ScriptPath/PreBuild.time"
 ruby "./ProjectFileVerification.rb"
 test 0 -ne $? && exit 1
 
-# 文件夹自动排序
-if [[ $EnableAutoGroupSortByName = "YES" && $ACTION = "" && $CONFIGURATION = "Debug" && $USER != "_xcsbuildd" ]]; then
-  if [ -n "$(find "$SRCROOT" -name project.pbxproj -newer "$timeFile")" ]; then
-    perl -w "$ScriptPath/sort-Xcode-project-file.pl" "$PROJECT_FILE_PATH"
-    echo "error: 整理 project.pbxproj，请重新编译项目"
-    touch "$timeFile"
-    exit 1
-  else
-    echo "跳过 project.pbxproj 整理"
-  fi
-fi
-
 # 代码审查强制立即修改
 # USER="User for test"
 readonly codeReviewCommandList=$(find "$SRCROOT" \( -name "*.h" -or -name "*.m" -or -name "*.mm" -or -name "*.c" \) -print0 | xargs -0 egrep --with-filename --line-number --only-matching "// ($CodeReviewFixRightNowKeywordsExpression)\(($USER)\).*\$")

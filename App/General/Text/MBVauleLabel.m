@@ -9,8 +9,8 @@
 }
 
 - (NSString *)displayStringForVaule:(id)value {
-    if (self.vauleFormatBlock) {
-        return self.vauleFormatBlock(self, value);
+    if (self.valueFormatBlock) {
+        return self.valueFormatBlock(self, value);
     }
     return [value description];
 }
@@ -55,8 +55,8 @@ RFInitializingRootForUIView
 }
 
 - (NSAttributedString *)displayAttributedStringForVaule:(id)value {
-    if (self.vauleFormatBlock) {
-        return self.vauleFormatBlock(self, value);
+    if (self.valueFormatBlock) {
+        return self.valueFormatBlock(self, value);
     }
 
     if (!self.attributedFormatString) return nil;

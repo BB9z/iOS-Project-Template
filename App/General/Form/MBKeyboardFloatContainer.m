@@ -38,13 +38,10 @@ RFInitializingRootForUIView
 
 - (void)keyboardWillShow:(NSNotification *)note {
     CGFloat keyboardHeight = [RFKeyboard keyboardLayoutHeightForNotification:note inView:self];
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue]];
-    [UIView setAnimationCurve:[note.userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue]];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    self.keyboardLayoutConstraint.constant = keyboardHeight + self.offsetAdjust;
-    [self.keyboardLayoutConstraint updateLayoutIfNeeded];
-    [UIView commitAnimations];
+    [RFKeyboard viewAnimateWithNotification:note animations:^{
+        self.keyboardLayoutConstraint.constant = keyboardHeight + self.offsetAdjust;
+        [self.keyboardLayoutConstraint updateLayoutIfNeeded];
+    } completion:nil];
     if (self.tapToDismissContainer) {
         if (self.maskButton.superview
             && self.maskButton.superview != self.tapToDismissContainer) {
@@ -62,18 +59,15 @@ RFInitializingRootForUIView
     if (self.tapToDismissContainer) {
         [self.tapToDismissContainer removeSubview:self.maskButton];
     }
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue]];
-    [UIView setAnimationCurve:[note.userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue]];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    if (self.keyboardLayoutOriginalConstraint) {
-        self.keyboardLayoutConstraint.constant = self.keyboardLayoutOriginalConstraint;
-    }
-    else {
-        self.keyboardLayoutConstraint.constant = 0;
-    }
-    [self.keyboardLayoutConstraint updateLayoutIfNeeded];
-    [UIView commitAnimations];
+    [RFKeyboard viewAnimateWithNotification:note animations:^{
+        if (self.keyboardLayoutOriginalConstraint) {
+            self.keyboardLayoutConstraint.constant = self.keyboardLayoutOriginalConstraint;
+        }
+        else {
+            self.keyboardLayoutConstraint.constant = 0;
+        }
+        [self.keyboardLayoutConstraint updateLayoutIfNeeded];
+    } completion:nil];
 }
 
 - (void)dealloc {

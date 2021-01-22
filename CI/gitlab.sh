@@ -77,6 +77,17 @@ logInfo "EXPORT_OPTIONS_PLIST = $EXPORT_OPTIONS_PLIST"
 readonly EXPORT_DIRECTORY_PATH="./export"
 readonly EXPORT_IPA_PATH="$EXPORT_DIRECTORY_PATH/$XC_BUILD_SCHEME.ipa"
 
+isCIKeycahinCreated=false
+errorhandler () {
+    logSection "异常清理"
+
+    if $isCIKeycahinCreated; then
+        logInfo "清理临时 keychain"
+        security delete-keychain "$KC_NAME.keychain"
+    fi
+}
+trap errorhandler ERR
+
 xcodebuild -version
 
 logSection "配置更新"
@@ -99,7 +110,6 @@ else
     logWarning "Podfile 不存在？跳过 CocoaPods 安装"
 fi
 
-isCIKeycahinCreated=false
 if [ -n "$XC_IMPORT_CERTIFICATE_PATH" ]; then
     if [ -z "$XC_IMPORT_CERTIFICATE_PASSWORD" ]; then
         logError "安装证书已指定，但是密码未设置"
@@ -107,8 +117,7 @@ if [ -n "$XC_IMPORT_CERTIFICATE_PATH" ]; then
     fi
     logInfo "创建临时 keychain"
     security create-keychain -p "$KC_PASSWORD" "$KC_NAME.keychain" || {
-        logError "创建临时 keychain 失败，$KC_NAME 可能已存在，你可以通过设置 KC_NAME 环境变量换一个"
-        exit 1
+        logWarning "$KC_NAME 可能已存在，将尝试利用现有 keychain，也可以通过设置 KC_NAME 环境变量指定另外一个"
     }
     isCIKeycahinCreated=true
     security list-keychains -d user -s "$KC_NAME.keychain" $(security list-keychains -d user | sed s/\"//g)

@@ -2,7 +2,7 @@
  debug
  应用调试工具
  
- Copyright © 2018 RFUI.
+ Copyright © 2018, 2020 RFUI.
  Copyright © 2015-2016 Beijing ZhiYun ZhiYuan Technology Co., Ltd.
  Copyright © 2013-2014 Chinamobo Co., Ltd.
  https://github.com/BB9z/iOS-Project-Template
@@ -23,10 +23,12 @@
  综合性调试方法，会在不同环境做合适的处理
  
  @param fatal 如果是 YES，在调试时会在这个位置停住
- @param recordID 非空时，会在正式和内测环境记录 Fabric 错误
+ @param recordID 非空时，会在正式和内测环境记录错误
  */
 FOUNDATION_EXPORT void DebugLog(BOOL fatal, NSString *_Nullable recordID, NSString *_Nonnull format, ...) NS_FORMAT_FUNCTION(3, 4);
-FOUNDATION_EXPORT void DebugLogSwift(BOOL fatal, NSString *_Nullable recordID, NSString *__nonnull message) NS_SWIFT_NAME(DebugLog(_:_:_:));
+
+/// 抛出一个 objc 异常以暂停，用以在调试时提示需要注意的事
+FOUNDATION_EXPORT void ThrowExceptionToPause(void);
 
 /**
  断言 obj 是 aClass

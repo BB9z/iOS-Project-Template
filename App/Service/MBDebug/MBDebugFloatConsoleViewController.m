@@ -1,9 +1,9 @@
 
 #import "MBDebugFloatConsoleViewController.h"
 #import "Common.h"
+#import "MBFlexInterface.h"
 #import "MBDebugHelpers.h"
 #import "MBDebugMenuViewController.h"
-#import "MBDebugPrivate.h"
 #import "MBDebugViews.h"
 #import "UIKit+App.h"
 #import "debug.h"
@@ -36,15 +36,8 @@ static unsigned long long LastMemoryUsed;
     win.hidden = YES;
 }
 
-- (IBAction)onDebugMenu:(id)sender {
-    MBDebugMenuViewController *vc = MBDebugMenuViewController.newFromStoryboard;
-    [(UINavigationController *)AppNavigationController() pushViewController:vc animated:YES];
-}
-
 - (IBAction)onFlex:(id)sender {
-#if __has_include("FLEX/FLEX.h") && DEBUG
-    [FLEXManager.sharedManager showExplorer];
-#endif
+    [MBFlexInterface showFlexExplorer];
 }
 
 - (void)viewDidLoad {

@@ -19,15 +19,19 @@ variables:
   XC_BUILD_CONFIGURATION: Release
 
   # Provisioning Profile 文件 ID，留空尝试让 Xcode 自动选择签名
+  # Xcode 中使用手动签名时，Build Settings > Signing > Provisioning Profile 里的文本
   XC_PROVISIONING_ID: ""
 
   # 代码签名身份，留空尝试让 Xcode 自动选择签名
+  # Xcode 中使用手动签名时，Build Settings > Signing > Code Signing Identity 里的文本。形如：Apple Distribution: XXX (XXXX)
   XC_CODE_SIGN_IDENTITY: ""
 
   # 导入 provisioning profile 文件的路径，留空跳过导入
+  # 例如："./CI/dev.mobileprovision"
   XC_IMPORT_PROVISIONING_PATH: ""
 
   # 导入 p12 签名证书的路径，留空跳过导入
+  # 例如："./CI/dev.p12"
   XC_IMPORT_CERTIFICATE_PATH: ""
 
   # 导入证书的密码

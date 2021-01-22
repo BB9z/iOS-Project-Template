@@ -36,7 +36,7 @@ extension NavigationController {
     /// 跳转路由具体实现
     private func jump(url: URL, context: Any?) {
         if url.isHTTP {
-            // htttp 链接交由系统处理
+            // http 链接交由系统处理
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
             return
         }

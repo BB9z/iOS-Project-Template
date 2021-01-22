@@ -4,7 +4,7 @@
 
 ## 需求
 
-iOS 11+；Xcode 12+，Xcode 11 应该也支持，但不保证。
+iOS 12+；Xcode 12+。
 
 Ruby Gems 依赖：
 
@@ -24,6 +24,8 @@ pod install
 或
 fastlane setup_project
 ```
+
+双击「安装 git hook 脚本.command」以安装项目文件整理脚本，在 git 提交时执行。
 
 ## 关于项目模版
 

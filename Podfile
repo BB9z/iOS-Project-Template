@@ -5,7 +5,7 @@ ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 # inhibit_all_warnings!
 
 target 'App' do
-    platform :ios, '11.0'
+    platform :ios, '12.0'
 
 #    pod 'AMap3DMap-NO-IDFA'             # 高德地图
 #    pod 'AXRatingView'                  # 打星评分控件

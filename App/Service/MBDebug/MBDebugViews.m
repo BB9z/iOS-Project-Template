@@ -1,8 +1,10 @@
 
 #import "MBDebugViews.h"
-#import "MBDebugPrivate.h"
 #import "NSUserDefaults+MBDebug.h"
 #import "UIViewController+App.h"
+#if __has_include("FLEX/FLEX.h")
+#import <FLEX/FLEX.h>
+#endif
 
 @implementation MBDebugContainerView
 
