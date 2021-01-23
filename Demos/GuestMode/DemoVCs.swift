@@ -7,7 +7,7 @@
  演示首页
  */
 class HomeViewController: UIViewController {
-    override class func storyboardName() -> String { "Main" }
+    override class func storyboardName() -> String { "GuestMode" }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ class HomeViewController: UIViewController {
  需要登入可见的页面
  */
 class PrivateViewController: UIViewController {
-    override class func storyboardName() -> String { "Main" }
+    override class func storyboardName() -> String { "GuestMode" }
     // 是否需要登入可见在 Interface Builder 中设置 MBUserLoginRequired
 }
 
@@ -49,7 +49,7 @@ class PrivateViewController: UIViewController {
  游客也可见的页面
  */
 class PublicViewController: UIViewController {
-    override class func storyboardName() -> String { "Main" }
+    override class func storyboardName() -> String { "GuestMode" }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -83,7 +83,7 @@ class PublicViewController: UIViewController {
  演示登入页
  */
 class LoginViewController: UIViewController, LoginVCs {
-    override class func storyboardName() -> String { "Main" }
+    override class func storyboardName() -> String { "GuestMode" }
 
     /// 便于用户切换时区分
     static var demoUserName: String?
@@ -106,12 +106,12 @@ class LoginViewController: UIViewController, LoginVCs {
             AppNavigationController()?.loginSuspendedViewController = nil
         }
         if Account.current != nil {
-            print("⚠️ 已登入，重复点击？")
+            AppLog().critical("⚠️ 已登入，重复点击？")
             return
         }
         let information = AccountEntity()
         information.name = Self.demoUserName ?? "默认用户"
-        let user = Account(id: Account.userIDUndetermined)!
+        let user = Account(id: MBID.random(in: 0..<100))!
         user.information = information
         user.token = "demo token"
         Account.current = user

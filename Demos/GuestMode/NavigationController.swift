@@ -13,7 +13,7 @@ private enum NavigationTab: Int {
  应用主导航控制器
  */
 class NavigationController: MBNavigationController {
-    override class func storyboardName() -> String { "Main" }
+    override class func storyboardName() -> String { "GuestMode" }
 
     override func onInit() {
         super.onInit()
@@ -23,8 +23,6 @@ class NavigationController: MBNavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 强制设置一些初始状态，否则会有异常
-        defaultAppearanceAttributes[.prefersBottomBarShownAttribute] = 0
-        bottomBarHidden = true
 
         tabItems?.selectIndex = NavigationTab.defaule.rawValue
         onTabSelect(tabItems!)

@@ -7,7 +7,7 @@
  应用主导航控制器
  */
 class NavigationController: MBNavigationController {
-    override class func storyboardName() -> String { "Main" }
+    override class func storyboardName() -> String { "Navigation" }
 
     override func onInit() {
         super.onInit()

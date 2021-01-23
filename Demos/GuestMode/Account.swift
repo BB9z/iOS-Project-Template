@@ -52,7 +52,7 @@ class Account: MBUser {
             #endif
             if uidChanged {
                 if uid != Account.userIDUndetermined {
-                    DebugLog(true, "MBUserInformationIDMismatch", "用户信息 ID 不匹配")
+                    AppLog().critical("用户信息 ID 不匹配")
                 }
                 setValue(information.uid, forKeyPath: #keyPath(MBUser.uid))
             }
@@ -94,7 +94,7 @@ class Account: MBUser {
         guard userID > 0 else { return }
         #endif
         guard let token = AppUserDefaultsShared().userToken else {
-            DebugLog(true, "LaunchUserNoToken", "Account has ID but no token")
+            AppLog().critical("Account has ID but no token")
             return
         }
 
