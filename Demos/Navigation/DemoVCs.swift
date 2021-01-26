@@ -23,6 +23,7 @@ class ForceLandscapeViewController: UIViewController {
     }
 }
 
+/// 样式设置演示页
 class StyleConfigViewController: UIViewController {
     var barColorIndex = 0
 
@@ -40,7 +41,7 @@ class StyleConfigViewController: UIViewController {
         updateNavigationAppearance(animated: true)
     }
     private func updateStyleAttributes() {
-        rfPreferredNavigationBarColor = colorForSegmentIndex(currentPageColorControl.selectedSegmentIndex)
+        preferredNavigationBarColor = colorForSegmentIndex(currentPageColorControl.selectedSegmentIndex)
     }
 
     @IBOutlet private weak var nextPageColorControl: UISegmentedControl!
@@ -66,6 +67,7 @@ class StyleConfigViewController: UIViewController {
     }
 }
 
+/// 在 viewWillAppear 中设置样式的演示，不推荐
 class StyleConfigAppearViewController: UIViewController {
     var barColorIndex = 0
 

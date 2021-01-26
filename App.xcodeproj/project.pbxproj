@@ -119,7 +119,7 @@
 		D58D1B90251CB8FB00D1EF32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C636A62047CC5900851CF4 /* LaunchScreen.storyboard */; };
 		D58D1BB2251CB95200D1EF32 /* ShortCuts.m in Sources */ = {isa = PBXBuildFile; fileRef = D58D1BA6251CB95200D1EF32 /* ShortCuts.m */; };
 		D58D1BB4251CB95200D1EF32 /* DemoVCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58D1BA8251CB95200D1EF32 /* DemoVCs.swift */; };
-		D58D1BB5251CB95200D1EF32 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58D1BAA251CB95200D1EF32 /* Navigation.storyboard */; };
+		D58D1BB5251CB95200D1EF32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58D1BAA251CB95200D1EF32 /* Main.storyboard */; };
 		D58D1BB8251CB95200D1EF32 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58D1BAF251CB95200D1EF32 /* NavigationController.swift */; };
 		D58D1BBA251CB95200D1EF32 /* NSUserDefaults+App.m in Sources */ = {isa = PBXBuildFile; fileRef = D58D1BB1251CB95200D1EF32 /* NSUserDefaults+App.m */; };
 		D58D1C63251CC3B300D1EF32 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58D1C5E251CC3AC00D1EF32 /* ApplicationDelegate.swift */; };
@@ -397,7 +397,7 @@
 		D58D1BA6251CB95200D1EF32 /* ShortCuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortCuts.m; sourceTree = "<group>"; };
 		D58D1BA8251CB95200D1EF32 /* DemoVCs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoVCs.swift; sourceTree = "<group>"; };
 		D58D1BA9251CB95200D1EF32 /* NSUserDefaults+App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+App.h"; sourceTree = "<group>"; };
-		D58D1BAA251CB95200D1EF32 /* Navigation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
+		D58D1BAA251CB95200D1EF32 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D58D1BAB251CB95200D1EF32 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D58D1BAC251CB95200D1EF32 /* ShortCuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortCuts.h; sourceTree = "<group>"; };
 		D58D1BAE251CB95200D1EF32 /* OCHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCHeader.h; sourceTree = "<group>"; };
@@ -1146,7 +1146,7 @@
 			children = (
 				D58D1C68251CC7B200D1EF32 /* Supports */,
 				D58D1BA8251CB95200D1EF32 /* DemoVCs.swift */,
-				D58D1BAA251CB95200D1EF32 /* Navigation.storyboard */,
+				D58D1BAA251CB95200D1EF32 /* Main.storyboard */,
 				D58D1BAF251CB95200D1EF32 /* NavigationController.swift */,
 				D58D1BAB251CB95200D1EF32 /* README.md */,
 			);
@@ -1744,7 +1744,7 @@
 			files = (
 				D58D1B8F251CB8FB00D1EF32 /* Assets.xcassets in Resources */,
 				D58D1B90251CB8FB00D1EF32 /* LaunchScreen.storyboard in Resources */,
-				D58D1BB5251CB95200D1EF32 /* Navigation.storyboard in Resources */,
+				D58D1BB5251CB95200D1EF32 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
