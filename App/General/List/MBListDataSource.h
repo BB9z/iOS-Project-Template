@@ -1,7 +1,7 @@
-/*!
+/*
  MBListDataSource
 
- Copyright © 2018, 2020 RFUI.
+ Copyright © 2018, 2020-2021 BB9z.
  Copyright © 2014-2016 Beijing ZhiYun ZhiYuan Information Technology Co., Ltd.
  https://github.com/BB9z/iOS-Project-Template
 
@@ -10,9 +10,11 @@
  */
 #import <RFDelegateChain/RFDelegateChain.h>
 
+@class RFAPIRequestConext;
+
 // @MBDependency:4
 /**
- 单 section 的列表 dataSource
+ 分页加载的列表 dataSource
  */
 @interface MBListDataSource<ItemType> : RFDelegateChain
 
@@ -26,6 +28,12 @@
 #pragma mark - Items
 
 @property (nullable, nonatomic) NSMutableArray<ItemType> *items;
+
+/**
+ 默认列表是单 section 的，置为 YES 激活分组模式，
+ 分组模式下要求列表对象具有和 MBListSectionDataItem 相同的界面
+ */
+@property IBInspectable BOOL isSectionEnabled;
 
 /// 列表为空
 @property BOOL empty;
@@ -117,6 +125,9 @@ typedef NS_ENUM(short, MBDataSourcePageEndDetectPolicy) {
 
 /// 除分页参数外，附加的请求参数
 @property (nullable) NSDictionary *fetchParameters;
+
+/// 网络请求修改
+@property (nullable) void (^requestContextModify)(RFAPIRequestConext *__nonnull);
 
 /// 本次请求失败的错误信息
 @property (nullable) NSError *lastFetchError;

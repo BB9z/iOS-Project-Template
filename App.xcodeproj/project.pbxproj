@@ -12,7 +12,6 @@
 		BAC657E0F3A1916D866A4244 /* libPods-Demo-Navigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6282026D5F368D705FC1DB92 /* libPods-Demo-Navigation.a */; };
 		D501844E20F865D3009481D4 /* Number+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501844C20F865D2009481D4 /* Number+App.swift */; };
 		D501844F20F865D3009481D4 /* UITableView+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501844D20F865D3009481D4 /* UITableView+App.swift */; };
-		D501845520F86D75009481D4 /* MBValueMapPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D501845320F86D75009481D4 /* MBValueMapPickerViewController.xib */; };
 		D501845620F86D75009481D4 /* MBValueMapPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D501845420F86D75009481D4 /* MBValueMapPickerViewController.m */; };
 		D501845820F88016009481D4 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501845720F88016009481D4 /* TextField.swift */; };
 		D501845B20F881B6009481D4 /* DissolveTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501845920F881B6009481D4 /* DissolveTransitioning.swift */; };
@@ -24,6 +23,13 @@
 		D501847020F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.m in Sources */ = {isa = PBXBuildFile; fileRef = D501846720F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.m */; };
 		D501847120F8863E009481D4 /* MBDebugViews.m in Sources */ = {isa = PBXBuildFile; fileRef = D501846A20F8863E009481D4 /* MBDebugViews.m */; };
 		D501847220F8863E009481D4 /* MBDebugMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D501846B20F8863E009481D4 /* MBDebugMenuViewController.m */; };
+		D50319D425BE518C00C2849E /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50319D325BE518C00C2849E /* CornerRadius.swift */; };
+		D5031A1E25BEA95200C2849E /* MBDebugLiveCountChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5031A1D25BEA95200C2849E /* MBDebugLiveCountChecker.swift */; };
+		D5031A2625BEBB7700C2849E /* Picker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5031A2525BEBB7700C2849E /* Picker.storyboard */; };
+		D5031A5425BEC50D00C2849E /* StroryboardCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5031A5325BEC50D00C2849E /* StroryboardCreation.swift */; };
+		D5031A5C25BEC99700C2849E /* UIKit+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5031A5B25BEC99700C2849E /* UIKit+Compatibility.swift */; };
+		D5031A5F25BEC9F300C2849E /* UIViewController+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D533C4E92592363600590FBA /* UIViewController+Appearance.swift */; };
+		D5031A6B25BED1AE00C2849E /* FileURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5031A6A25BED1AE00C2849E /* FileURL.swift */; };
 		D50693D819495D9E0002BFCC /* MBControlGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = D50693D719495D9E0002BFCC /* MBControlGroup.m */; };
 		D50D5F2E24D9A75E0047715A /* UIViewController+AccountSwitching.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D5F2D24D9A75E0047715A /* UIViewController+AccountSwitching.swift */; };
 		D50D5F3024D9B4BB0047715A /* Array+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588308820CACB32002030C4 /* Array+App.swift */; };
@@ -197,7 +203,6 @@
 		D5EE517A2043F5E6009148B3 /* MBKeyboardFloatContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE515B2043F5E4009148B3 /* MBKeyboardFloatContainer.m */; };
 		D5EE517B2043F5E6009148B3 /* MBCodeSendButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE515C2043F5E4009148B3 /* MBCodeSendButton.m */; };
 		D5EE51812043F5E6009148B3 /* MBTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51692043F5E5009148B3 /* MBTextView.m */; };
-		D5EE51852043F5E6009148B3 /* MBDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5EE51712043F5E5009148B3 /* MBDatePickerViewController.xib */; };
 		D5EE51862043F5E6009148B3 /* MBDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51732043F5E5009148B3 /* MBDatePickerViewController.m */; };
 		D5EE51872043F5E6009148B3 /* MBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51762043F5E5009148B3 /* MBSearchViewController.m */; };
 		D5EE519A2043F5F3009148B3 /* CALayer+MBAnimationPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51952043F5F3009148B3 /* CALayer+MBAnimationPersistence.m */; };
@@ -210,7 +215,6 @@
 		D5EE51F32043F613009148B3 /* MBNavigationTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51BF2043F613009148B3 /* MBNavigationTitleView.m */; };
 		D5EE51F42043F613009148B3 /* MBNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51C02043F613009148B3 /* MBNavigationItem.m */; };
 		D5EE51F62043F613009148B3 /* MBVauleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51C82043F613009148B3 /* MBVauleLabel.m */; };
-		D5EE51FA2043F613009148B3 /* UIViewController+NavigationAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51D32043F613009148B3 /* UIViewController+NavigationAppearance.m */; };
 		D5EE51FD2043F613009148B3 /* MBTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51DB2043F613009148B3 /* MBTabController.m */; };
 		D5EE51FE2043F613009148B3 /* MBTabControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51DD2043F613009148B3 /* MBTabControl.m */; };
 		D5EE51FF2043F613009148B3 /* MBTabScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51DF2043F613009148B3 /* MBTabScrollView.m */; };
@@ -265,7 +269,6 @@
 		D501844C20F865D2009481D4 /* Number+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Number+App.swift"; sourceTree = "<group>"; };
 		D501844D20F865D3009481D4 /* UITableView+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+App.swift"; sourceTree = "<group>"; };
 		D501845220F86D74009481D4 /* MBValueMapPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBValueMapPickerViewController.h; sourceTree = "<group>"; };
-		D501845320F86D75009481D4 /* MBValueMapPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBValueMapPickerViewController.xib; sourceTree = "<group>"; };
 		D501845420F86D75009481D4 /* MBValueMapPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBValueMapPickerViewController.m; sourceTree = "<group>"; };
 		D501845720F88016009481D4 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		D501845920F881B6009481D4 /* DissolveTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DissolveTransitioning.swift; sourceTree = "<group>"; };
@@ -283,6 +286,12 @@
 		D501846920F8863E009481D4 /* MBDebugHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDebugHelpers.h; sourceTree = "<group>"; };
 		D501846A20F8863E009481D4 /* MBDebugViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDebugViews.m; sourceTree = "<group>"; };
 		D501846B20F8863E009481D4 /* MBDebugMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDebugMenuViewController.m; sourceTree = "<group>"; };
+		D50319D325BE518C00C2849E /* CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
+		D5031A1D25BEA95200C2849E /* MBDebugLiveCountChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBDebugLiveCountChecker.swift; sourceTree = "<group>"; };
+		D5031A2525BEBB7700C2849E /* Picker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Picker.storyboard; sourceTree = "<group>"; };
+		D5031A5325BEC50D00C2849E /* StroryboardCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StroryboardCreation.swift; sourceTree = "<group>"; };
+		D5031A5B25BEC99700C2849E /* UIKit+Compatibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Compatibility.swift"; sourceTree = "<group>"; };
+		D5031A6A25BED1AE00C2849E /* FileURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileURL.swift; sourceTree = "<group>"; };
 		D50693D619495D9E0002BFCC /* MBControlGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBControlGroup.h; sourceTree = "<group>"; };
 		D50693D719495D9E0002BFCC /* MBControlGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBControlGroup.m; sourceTree = "<group>"; };
 		D50D5F2D24D9A75E0047715A /* UIViewController+AccountSwitching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AccountSwitching.swift"; sourceTree = "<group>"; };
@@ -316,6 +325,7 @@
 		D533C4DB25922D2000590FBA /* WorkersTriggering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkersTriggering.swift; sourceTree = "<group>"; };
 		D533C4E4259235E200590FBA /* MBFlexInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBFlexInterface.m; sourceTree = "<group>"; };
 		D533C4E5259235E200590FBA /* MBFlexInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBFlexInterface.h; sourceTree = "<group>"; };
+		D533C4E92592363600590FBA /* UIViewController+Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Appearance.swift"; sourceTree = "<group>"; };
 		D533C4F32592370800590FBA /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		D533C505259242DC00590FBA /* Codable+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Codable+App.swift"; sourceTree = "<group>"; };
 		D53446022592481400F5FD80 /* Date+Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Server.swift"; sourceTree = "<group>"; };
@@ -515,7 +525,6 @@
 		D5EE515E2043F5E5009148B3 /* MBCodeSendButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCodeSendButton.h; sourceTree = "<group>"; };
 		D5EE51632043F5E5009148B3 /* MBTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTextView.h; sourceTree = "<group>"; };
 		D5EE51692043F5E5009148B3 /* MBTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTextView.m; sourceTree = "<group>"; };
-		D5EE51712043F5E5009148B3 /* MBDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBDatePickerViewController.xib; sourceTree = "<group>"; };
 		D5EE51722043F5E5009148B3 /* MBDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDatePickerViewController.h; sourceTree = "<group>"; };
 		D5EE51732043F5E5009148B3 /* MBDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDatePickerViewController.m; sourceTree = "<group>"; };
 		D5EE51752043F5E5009148B3 /* MBSearchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSearchTextField.h; sourceTree = "<group>"; };
@@ -541,8 +550,6 @@
 		D5EE51C82043F613009148B3 /* MBVauleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBVauleLabel.m; sourceTree = "<group>"; };
 		D5EE51CC2043F613009148B3 /* MBVauleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBVauleLabel.h; sourceTree = "<group>"; };
 		D5EE51D12043F613009148B3 /* UICollectionView+IBInspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+IBInspectable.h"; sourceTree = "<group>"; };
-		D5EE51D32043F613009148B3 /* UIViewController+NavigationAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavigationAppearance.m"; sourceTree = "<group>"; };
-		D5EE51D42043F613009148B3 /* UIViewController+NavigationAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavigationAppearance.h"; sourceTree = "<group>"; };
 		D5EE51D92043F613009148B3 /* MBTabScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTabScrollView.h; sourceTree = "<group>"; };
 		D5EE51DB2043F613009148B3 /* MBTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTabController.m; sourceTree = "<group>"; };
 		D5EE51DC2043F613009148B3 /* MBPageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBPageScrollView.h; sourceTree = "<group>"; };
@@ -649,6 +656,7 @@
 				D501846520F8863E009481D4 /* MBDebugFloatConsoleViewController.m */,
 				D501846920F8863E009481D4 /* MBDebugHelpers.h */,
 				D501845E20F8863E009481D4 /* MBDebugHelpers.m */,
+				D5031A1D25BEA95200C2849E /* MBDebugLiveCountChecker.swift */,
 				D501846320F8863E009481D4 /* MBDebugMenuViewController.h */,
 				D501846B20F8863E009481D4 /* MBDebugMenuViewController.m */,
 				D501846220F8863E009481D4 /* MBDebugViews.h */,
@@ -683,6 +691,18 @@
 				D5DAEA9024D7D80F005744C7 /* ShortCuts.m */,
 			);
 			name = Supports;
+			sourceTree = "<group>";
+		};
+		D50319A025BE33BD00C2849E /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				D5031A6A25BED1AE00C2849E /* FileURL.swift */,
+				D5B8A39D251221A300C84CB1 /* IdentifierEquatable.swift */,
+				D544A39D197D1E8600C65604 /* JSONValueTransformer+App.m */,
+				D569C9EE21AE907F00211E36 /* MBErrorCode.h */,
+				D569C9EF21AE908100211E36 /* MBErrorCode.m */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 		D5170CE8191B327A000C7D45 /* PushManager */ = {
@@ -783,6 +803,7 @@
 			isa = PBXGroup;
 			children = (
 				D5C82DDB2179D98C00E63A2A /* Color.swift */,
+				D5031A5325BEC50D00C2849E /* StroryboardCreation.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -802,6 +823,7 @@
 				D534460E25924CE700F5FD80 /* UIApplication+App.swift */,
 				D54F0E532199BB22003370F4 /* UIButton+App.swift */,
 				D58D1AFF251C583300D1EF32 /* UICollectionView+App.swift */,
+				D5031A5B25BEC99700C2849E /* UIKit+Compatibility.swift */,
 				D501844D20F865D3009481D4 /* UITableView+App.swift */,
 				D5EE51042043DAA1009148B3 /* UIViewController+App.h */,
 				D5EE50EC2043DAA1009148B3 /* UIViewController+App.m */,
@@ -908,12 +930,10 @@
 			children = (
 				D5BA55212046471800E4F335 /* Account */,
 				D552DD5018C8506700D02290 /* JSON */,
+				D50319A025BE33BD00C2849E /* Support */,
 				D533C4D925922D2000590FBA /* Worker */,
 				D5740B4924985E92001CBCB2 /* AppError.swift */,
 				D533C4D325922D1100590FBA /* DBManager.swift */,
-				D5B8A39D251221A300C84CB1 /* IdentifierEquatable.swift */,
-				D569C9EE21AE907F00211E36 /* MBErrorCode.h */,
-				D569C9EF21AE908100211E36 /* MBErrorCode.m */,
 				D52EADF62043C0EB007219E0 /* NSUserDefaults+App.h */,
 				D52EADF32043C0EB007219E0 /* NSUserDefaults+App.m */,
 				D52EADF42043C0EB007219E0 /* README.md */,
@@ -926,7 +946,6 @@
 			isa = PBXGroup;
 			children = (
 				D5BF664C24BC81D7008BC122 /* CommentEntity.swift */,
-				D544A39D197D1E8600C65604 /* JSONValueTransformer+App.m */,
 				D59066B520AD0C4500411410 /* README.md */,
 				D5FB116E24BBF3D6001963D5 /* TopicEntity.swift */,
 				D553507224BBFB3E00282871 /* UserEntity.swift */,
@@ -1400,10 +1419,9 @@
 			children = (
 				D5EE51722043F5E5009148B3 /* MBDatePickerViewController.h */,
 				D5EE51732043F5E5009148B3 /* MBDatePickerViewController.m */,
-				D5EE51712043F5E5009148B3 /* MBDatePickerViewController.xib */,
 				D501845220F86D74009481D4 /* MBValueMapPickerViewController.h */,
 				D501845420F86D75009481D4 /* MBValueMapPickerViewController.m */,
-				D501845320F86D75009481D4 /* MBValueMapPickerViewController.xib */,
+				D5031A2525BEBB7700C2849E /* Picker.storyboard */,
 			);
 			path = Picker;
 			sourceTree = "<group>";
@@ -1414,6 +1432,7 @@
 				D5EE51962043F5F3009148B3 /* CALayer+MBAnimationPersistence.h */,
 				D5EE51952043F5F3009148B3 /* CALayer+MBAnimationPersistence.m */,
 				D5D932F02515EDC300E1C4B6 /* CalloutView.swift */,
+				D50319D325BE518C00C2849E /* CornerRadius.swift */,
 				D501845920F881B6009481D4 /* DissolveTransitioning.swift */,
 				D5EE51A52043F612009148B3 /* MBAutoFadeoutView.h */,
 				D5EE519F2043F612009148B3 /* MBAutoFadeoutView.m */,
@@ -1490,8 +1509,7 @@
 				D55959C620AB92000019D733 /* UIScrollView+IBInspectable.h */,
 				D5C3CBF5217EEEDA0097CCD9 /* UITextView+ContainerInset.h */,
 				D5C3CBF4217EEEDA0097CCD9 /* UITextView+ContainerInset.m */,
-				D5EE51D42043F613009148B3 /* UIViewController+NavigationAppearance.h */,
-				D5EE51D32043F613009148B3 /* UIViewController+NavigationAppearance.m */,
+				D533C4E92592363600590FBA /* UIViewController+Appearance.swift */,
 				D5D9F5112071BA6400B6FE9B /* UIViewController+RFInterfaceOrientation.h */,
 				D5D9F5132071BA6500B6FE9B /* UIViewController+RFInterfaceOrientation.m */,
 			);
@@ -1708,11 +1726,10 @@
 				D5740B51249B8B60001CBCB2 /* Login.storyboard in Resources */,
 				D55959CA20AB93B20019D733 /* Main.storyboard in Resources */,
 				D5B49F0C1C41133A00847925 /* MBCollectionRefreshFooterView.xib in Resources */,
-				D5EE51852043F5E6009148B3 /* MBDatePickerViewController.xib in Resources */,
 				D501846D20F8863E009481D4 /* MBDebug.storyboard in Resources */,
 				D5B49F181C41133A00847925 /* MBRefreshFooterView.xib in Resources */,
 				D5B49F1A1C41133A00847925 /* MBRefreshHeaderView.xib in Resources */,
-				D501845520F86D75009481D4 /* MBValueMapPickerViewController.xib in Resources */,
+				D5031A2625BEBB7700C2849E /* Picker.storyboard in Resources */,
 				D553507924BC1EA100282871 /* Topic.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1921,6 +1938,7 @@
 				D5B8A39B251217C900C84CB1 /* Collections+App.swift in Sources */,
 				D5C82DDC2179D98C00E63A2A /* Color.swift in Sources */,
 				D5BF664D24BC81D7008BC122 /* CommentEntity.swift in Sources */,
+				D50319D425BE518C00C2849E /* CornerRadius.swift in Sources */,
 				D5F9F47F208D921200427201 /* Date+App.swift in Sources */,
 				D53446032592481400F5FD80 /* Date+Server.swift in Sources */,
 				D54F0E4F2199A56E003370F4 /* DateFormatter+App.swift in Sources */,
@@ -1929,6 +1947,7 @@
 				D501845B20F881B6009481D4 /* DissolveTransitioning.swift in Sources */,
 				D5B1905A24026DB90076CD61 /* EnumListView.swift in Sources */,
 				D5DC60C124CA84BC00FBB147 /* EnvironmentFlag.swift in Sources */,
+				D5031A6B25BED1AE00C2849E /* FileURL.swift in Sources */,
 				D5C3CBEF217ED20F0097CCD9 /* Geometry+App.swift in Sources */,
 				D5BE29602509CB9C00A9AA2F /* HasItem.swift in Sources */,
 				D569C9CF21AE8D3200211E36 /* HomeVC.swift in Sources */,
@@ -1957,6 +1976,7 @@
 				D5EE51862043F5E6009148B3 /* MBDatePickerViewController.m in Sources */,
 				D501846F20F8863E009481D4 /* MBDebugFloatConsoleViewController.m in Sources */,
 				D501846C20F8863E009481D4 /* MBDebugHelpers.m in Sources */,
+				D5031A1E25BEA95200C2849E /* MBDebugLiveCountChecker.swift in Sources */,
 				D501847220F8863E009481D4 /* MBDebugMenuViewController.m in Sources */,
 				D501847120F8863E009481D4 /* MBDebugViews.m in Sources */,
 				D5EE51E82043F613009148B3 /* MBDesignView.m in Sources */,
@@ -2032,6 +2052,7 @@
 				D501845C20F881B7009481D4 /* Shadow.swift in Sources */,
 				D52EADF02043BA3D007219E0 /* ShortCuts.m in Sources */,
 				D5F9F480208D921200427201 /* String+App.swift in Sources */,
+				D5031A5425BEC50D00C2849E /* StroryboardCreation.swift in Sources */,
 				D5B884B6250EEC53001CDBCF /* TagView.swift in Sources */,
 				D559AD6821746EEC005D4BCD /* TextField+Action.swift in Sources */,
 				D501845820F88016009481D4 /* TextField.swift in Sources */,
@@ -2047,13 +2068,14 @@
 				D579495F21788D67002E1C4A /* UIDevice+App.swift in Sources */,
 				D52EAB652043B6B3007219E0 /* UIImage+MBImageSet.m in Sources */,
 				D5EE520D2043F61D009148B3 /* UIImageView+MBRenderingMode.m in Sources */,
+				D5031A5C25BEC99700C2849E /* UIKit+Compatibility.swift in Sources */,
 				D5DB4C22241E39EA00832A0A /* UIKit+DynamicType.m in Sources */,
 				D5B8A3A0251225F700C84CB1 /* UIKitPreview.swift in Sources */,
 				D501844F20F865D3009481D4 /* UITableView+App.swift in Sources */,
 				D5C3CBF6217EEEDA0097CCD9 /* UITextView+ContainerInset.m in Sources */,
 				D5EE51212043DAA2009148B3 /* UIViewController+App.m in Sources */,
 				D534461125924CE700F5FD80 /* UIViewController+App.swift in Sources */,
-				D5EE51FA2043F613009148B3 /* UIViewController+NavigationAppearance.m in Sources */,
+				D5031A5F25BEC9F300C2849E /* UIViewController+Appearance.swift in Sources */,
 				D5D9F5142071BA6500B6FE9B /* UIViewController+RFInterfaceOrientation.m in Sources */,
 				D5F1F849251C1D6400D641F9 /* URL+App.swift in Sources */,
 				D5BF664F24BC8BE8008BC122 /* UserAvatarView.swift in Sources */,

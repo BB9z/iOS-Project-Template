@@ -1,7 +1,7 @@
 /*
  MBCollectionViewColumnLayout
  
- Copyright © 2018-2019 RFUI.
+ Copyright © 2018-2020 BB9z.
  Copyright © 2014-2015 Beijing ZhiYun ZhiYuan Information Technology Co., Ltd.
  https://github.com/BB9z/iOS-Project-Template
  
@@ -34,13 +34,16 @@
 /// 列数量，默认 3
 @property (nonatomic) IBInspectable NSInteger columnCount;
 
-- (CGFloat)itemWidthInSectionAtIndex:(NSInteger)section;
-
 /**
  布局的参考 item size，这个类会修改实际 itemSize
  
  从 nib 里载入后会吧 itemSize 复制给这个属性，如果手动更新该属性需要手动调用重新布局的方法
  */
 @property (nonatomic) CGSize referenceItemSize;
+
+/**
+ 仅宽度自适应，保持高度
+ */
+@property IBInspectable BOOL onlyAdjustWidth;
 
 @end

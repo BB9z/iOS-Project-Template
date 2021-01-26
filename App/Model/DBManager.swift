@@ -9,14 +9,12 @@ import GRDB
 
 /// 数据库单例
 func AppDatabase() -> DBManager {  // swiftlint:disable:this identifier_name
-    if let this = _sharedInstance {
-        return this
-    }
-    let this = DBManager()
-    _sharedInstance = this
-    return this
+    sharedInstance
 }
-private var _sharedInstance: DBManager?
+private let sharedInstance: DBManager = {
+    let instance = DBManager()
+    return instance
+}()
 
 /**
  数据库访问界面
@@ -29,7 +27,7 @@ final class DBManager {
 
     init() {
         do {
-            let databaseURL = try FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent("App.db")
+            let databaseURL = try FileURL.database()
             var config = Configuration()
             #if DEBUG
             config.prepareDatabase { db in
@@ -85,22 +83,20 @@ extension DBManager {
     func asyncRead(_ work: @escaping DatabaseWorkItem) {
         workQueue.async {
             do {
-                try self.dbQueue.read { db in
-                    try work(db)
-                }
+                try self.dbQueue.read(work)
             } catch {
                 AppLog().critical("读取失败 \(error)")
             }
         }
     }
 
-    func asyncWrite(_ work: @escaping DatabaseWorkItem) {
+    func asyncWrite(_ work: @escaping DatabaseWorkItem, noTransaction: Bool = false) {
         workQueue.async {
             do {
-                try self.dbQueue.write { db in
-                    try autoreleasepool {
-                        try work(db)
-                    }
+                if noTransaction {
+                    try self.dbQueue.writeWithoutTransaction(work)
+                } else {
+                    try self.dbQueue.write(work)
                 }
             } catch {
                 AppLog().critical("写入失败 \(error)")
@@ -150,6 +146,14 @@ extension Record {
             return nil
         }
         return jsonString
+    }
+
+    func smartSave(_ db: Database) throws {
+        do {
+            try updateChanges(db)
+        } catch PersistenceError.recordNotFound {
+            try insert(db)
+        }
     }
 }
 

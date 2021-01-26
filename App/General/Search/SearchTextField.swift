@@ -22,7 +22,7 @@ class SearchTextField: MBSearchTextField {
     }()
 
     lazy var loadingView: UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView(style: .gray)
+        let indicator = UIActivityIndicatorView(style: .init(medium: true))
         indicator.startAnimating()
         indicator.hidesWhenStopped = false
         return indicator

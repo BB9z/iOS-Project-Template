@@ -142,7 +142,7 @@ static MBPublishImagePicker *MBPBLiveInstance = nil;
 
 - (void)systemImagePickerDidReturnImage:(nonnull UIImage *)orgImage {
     if (self.cropAfterImageSelected) {
-        MBPublishAvatarImageCropperViewController *vc = [MBPublishAvatarImageCropperViewController newFromStoryboard];
+        MBPublishAvatarImageCropperViewController *vc = [MBPublishAvatarImageCropperViewController newWithStoryboardName:@"Picker" identifier:nil];
         vc.image = orgImage;
         [AppNavigationController() pushViewController:vc animated:NO];
     }

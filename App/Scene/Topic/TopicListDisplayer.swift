@@ -6,8 +6,8 @@
 /**
  帖子列表
  */
-class TopicListDisplayer: MBTableListDisplayer {
-    override class func storyboardName() -> String? { "Topic" }
+class TopicListDisplayer: MBTableListDisplayer, StroryboardCreation {
+    static var storyboardID: StoryboardID { .topic }
 
     #if DEBUG
     @objc func debugCommands() -> [UIBarButtonItem] {

@@ -43,9 +43,7 @@ extension IdentifierEquatable where Self: NSObjectProtocol {
      class SomeEntity: NSObject, IdentifierEquatable {
          var uid: MBID = -1
 
-         override func isEqual(_ object: Any?) -> Bool {
-            return isUIDEqual(object)
-         }
+         override func isEqual(_ object: Any?) -> Bool { isUIDEqual(object) }
          override var hash: Int { uid.hashValue }
      }
      ```

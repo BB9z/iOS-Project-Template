@@ -1,7 +1,7 @@
 /*
  MBModalPresentSegue
  
- Copyright © 2018-2020 RFUI.
+ Copyright © 2018-2020 BB9z.
  Copyright © 2014-2016 Beijing ZhiYun ZhiYuan Technology Co., Ltd.
  Copyright © 2014 Chinamobo Co., Ltd.
  https://github.com/BB9z/iOS-Project-Template
@@ -78,5 +78,8 @@
 
 /// 默认 segue 跳转时自动退出弹窗
 @property IBInspectable BOOL disableAutoDismissWhenSegueTriggered;
+
+/// 即将退出弹窗时调用
+@property (nullable) void (^willDismiss)(__kindof MBModalPresentViewController *__nonnull vc);
 
 @end

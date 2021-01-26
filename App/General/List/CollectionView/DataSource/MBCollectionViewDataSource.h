@@ -29,6 +29,9 @@
 /// 对 cell 进行定制，默认实现尝试设置 item 属性
 @property (null_resettable, nonatomic) void (^configureCell)(UICollectionView *__nonnull collectionView, __kindof UICollectionViewCell *__nonnull cell, NSIndexPath *__nonnull indexPath, id __nonnull item);
 
+///
+@property (nullable) UICollectionReusableView*_Nonnull (^viewForSupplementaryElement)(UICollectionView *__nonnull collectionView, NSString *__nonnull kind, NSIndexPath *__nonnull indexPath, id<UICollectionViewDataSource> __nullable delegate);
+
 #pragma mark -
 
 /**

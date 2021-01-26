@@ -101,11 +101,8 @@
 @property IBInspectable CGFloat itemSpacing;
 
 /// 控件距 frame 边框的边距
-#if TARGET_INTERFACE_BUILDER
-@property IBInspectable CGRect itemInsets;
-#else
 @property UIEdgeInsets itemInsets;
-#endif
+@property IBInspectable CGRect _itemInsets;
 
 - (void)updateSelfLayout;
 

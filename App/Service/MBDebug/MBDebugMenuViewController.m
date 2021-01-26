@@ -3,10 +3,6 @@
 
 @implementation MBDebugMenuViewController
 
-+ (NSString *)storyboardName {
-    return @"MBDebug";
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 }

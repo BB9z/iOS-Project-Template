@@ -24,10 +24,6 @@ static unsigned long long LastMemoryUsed;
 
 @implementation MBDebugFloatConsoleViewController
 
-+ (NSString *)storyboardName {
-    return @"MBDebug";
-}
-
 - (IBAction)onHide:(id)sender {
     RFWindow *win = (RFWindow *)self.view.window;
     if (![win isKindOfClass:RFWindow.class]) return;

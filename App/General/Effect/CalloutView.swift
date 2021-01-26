@@ -18,11 +18,6 @@ class CalloutView: UIView {
             updatePanelLayer()
         }
     }
-    @IBInspectable var cornerRadius: CGFloat = 5 {
-        didSet {
-            updatePanelLayer()
-        }
-    }
     var contentInset = UIEdgeInsets.zero {
         didSet {
             updatePanelLayer()

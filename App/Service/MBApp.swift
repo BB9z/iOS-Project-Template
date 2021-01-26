@@ -24,7 +24,10 @@ class MBApp: NSObject {
     private func setupVersion() {
         let defaults = AppUserDefaultsShared()
         let bundle = Bundle.main
-        version = bundle.infoDictionary?["CFBundleShortVersionString"] as? String ?? bundle.versionString
+        guard let bundleVerison = bundle.infoDictionary?["CFBundleShortVersionString"] as? String else {
+            fatalError()
+        }
+        version = bundleVerison
 
         guard let lastVersion = defaults.lastVersion else {
             // 全新启动
@@ -69,6 +72,9 @@ class MBApp: NSObject {
 
     /// 全局导航
     @objc var globalNavigationController: NavigationController?
+
+    /// 数据库
+//    lazy var database = AppDatabase()
 
 //    @objc lazy var workerQueue = MBWorkerQueue()
 //    @objc lazy var backgroundWorkerQueue: MBWorkerQueue = {

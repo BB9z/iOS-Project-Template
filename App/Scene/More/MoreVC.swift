@@ -6,8 +6,8 @@
 /**
  更多 tab 页
  */
-class MoreViewController: UIViewController {
-    override class func storyboardName() -> String { "Main" }
+class MoreViewController: UIViewController, StroryboardCreation {
+    static var storyboardID: StoryboardID { .main }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

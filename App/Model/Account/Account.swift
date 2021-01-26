@@ -140,10 +140,8 @@ class Account: MBUser {
         AppAPI().defineManager.authorizationHeader.removeObject(forKey: authHeaderKey)
         profile?.synchronize()
     }
-    private var authHeaderKey: String {
-        // 🔰 修改认证头字段名
-        "Authorization"
-    }
+    // 🔰 修改认证头字段名
+    private var authHeaderKey: String { "Authorization" }
 
     /// 更新账号用户信息
     func updateInformation(requestContext context: (RFAPIRequestConext) -> Void) {

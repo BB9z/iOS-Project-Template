@@ -8,6 +8,7 @@
 
 @implementation MBControlGroup
 @dynamic selectIndex;
+@dynamic _itemInsets;
 RFInitializingRootForUIView
 
 - (void)onInit {
@@ -234,6 +235,13 @@ RFInitializingRootForUIView
 
     CGFloat contentWidth = x - (controls.count? itemSpacing : 0) + itemInset.right;
     self.MBControlGroup_intrinsicContentWidth = contentWidth;
+}
+
+- (CGRect)_itemInsets {
+    return [NSValue valueWithUIEdgeInsets:self.itemInsets].CGRectValue;
+}
+- (void)set_itemInsets:(CGRect)_itemInsets {
+    self.itemInsets = [NSValue valueWithCGRect:_itemInsets].UIEdgeInsetsValue;
 }
 
 #pragma mark Content Size

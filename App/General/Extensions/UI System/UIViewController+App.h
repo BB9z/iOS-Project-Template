@@ -1,7 +1,7 @@
 /*
  UIViewController+App
 
- Copyright © 2018 RFUI.
+ Copyright © 2018, 2021 BB9z.
  Copyright © 2016 Beijing ZhiYun ZhiYuan Technology Co., Ltd.
  https://github.com/BB9z/iOS-Project-Template
  
@@ -12,20 +12,6 @@
 #import "UIKit+App.h"
 
 @interface UIViewController (App)
-
-// @MBDependency:4
-/**
- 从 storyboard 创建当前 vc 实例
-
- Stroyboard ID 需要与类名一致，类里必须通过 storyboardName 指定 storyboard 文件的文件名
- */
-+ (nonnull instancetype)newFromStoryboard;
-
-// @MBDependency:4
-/**
- 定义视图在哪个 storyboard 中，newFromStoryboard 使用
- */
-+ (nullable NSString *)storyboardName;
 
 // @MBDependency:4
 /**

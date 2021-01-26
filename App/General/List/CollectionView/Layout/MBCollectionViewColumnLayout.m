@@ -33,47 +33,70 @@
     }
 }
 
-- (CGFloat)innerLayoutWidthForSection:(NSInteger)section {
+#pragma mark - 响应变化
+
+- (void)prepareLayout {
+    [super prepareLayout];
+    BOOL layoutChanged = [self updateLayoutIfNeeded:self.collectionView.bounds];
+    if (layoutChanged) {
+        [self.collectionView invalidateIntrinsicContentSize];
+    }
+}
+
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
+    CGRect oldBounds = self.collectionView.bounds;
+    if (CGRectGetWidth(oldBounds) != CGRectGetWidth(newBounds)) {
+        [self updateLayoutIfNeeded:newBounds];
+        return YES;
+    }
+    return [super shouldInvalidateLayoutForBoundsChange:newBounds];
+}
+
+/// 返回是否更新了布局
+- (BOOL)updateLayoutIfNeeded:(CGRect)bounds {
+    if (self.collectionView.numberOfSections == 0) return NO;
+
+    CGSize newItemSize = [self itemSizeForBounds:self.collectionView.bounds];
+    if (CGSizeEqualToSize(newItemSize, self.itemSize)) {
+        return NO;
+    }
+    self.itemSize = newItemSize;
+    return YES;
+}
+
+#pragma mark - 布局计算
+
+- (CGSize)itemSizeForBounds:(CGRect)bounds {
+    CGSize reference = self.referenceItemSize;
+    if (self.autoColumnDecideOnItemMinimumWidth) {
+        CGFloat width = [self innerLayoutWidthForSection:0 bounds:bounds];
+        self.columnCount = width/self.referenceItemSize.width;
+    }
+
+    CGFloat itemWidth = [self itemWidthInSectionAtIndex:0 bounds:bounds];
+
+    CGFloat itemHeight = self.onlyAdjustWidth ? reference.height : round(itemWidth/reference.width * reference.height);
+    return CGSizeMake(itemWidth, itemHeight);
+}
+
+- (CGFloat)innerLayoutWidthForSection:(NSInteger)section bounds:(CGRect)bounds {
     UIEdgeInsets sectionInset;
     if ([self.delegateRefrence respondsToSelector:@selector(collectionView:layout:insetForSectionAtIndex:)]) {
         sectionInset = [self.delegateRefrence collectionView:self.collectionView layout:self insetForSectionAtIndex:section];
     } else {
         sectionInset = self.sectionInset;
     }
-    return self.collectionView.frame.size.width - sectionInset.left - sectionInset.right;
+    return CGRectGetWidth(bounds) - sectionInset.left - sectionInset.right;
 }
 
-- (CGFloat)itemWidthInSectionAtIndex:(NSInteger)section {
-    CGFloat width = [self innerLayoutWidthForSection:section];
+- (CGFloat)itemWidthInSectionAtIndex:(NSInteger)section bounds:(CGRect)bounds {
+    CGFloat width = [self innerLayoutWidthForSection:section bounds:bounds];
     NSInteger columnCount = self.columnCount;
     if (columnCount < 1) {
         columnCount = 1;
     }
     CGFloat itemWidth = floor((width - (columnCount - 1) * self.minimumInteritemSpacing) / columnCount);
     return itemWidth;
-}
-
-- (void)prepareLayout {
-    [super prepareLayout];
-    if (self.collectionView.numberOfSections == 0) return;
-
-    CGSize reference = self.referenceItemSize;
-    if (self.autoColumnDecideOnItemMinimumWidth) {
-        CGFloat width = [self innerLayoutWidthForSection:0];
-        self.columnCount = width/self.referenceItemSize.width;
-    }
-
-    CGFloat itemWidth = [self itemWidthInSectionAtIndex:0];
-    self.itemSize = CGSizeMake(itemWidth, round(itemWidth/reference.width * reference.height));
-    [self.collectionView invalidateIntrinsicContentSize];
-}
-
-- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
-    CGRect oldBounds = self.collectionView.bounds;
-    if (CGRectGetWidth(oldBounds) != CGRectGetWidth(newBounds)) {
-        return YES;
-    }
-    return [super shouldInvalidateLayoutForBoundsChange:newBounds];
 }
 
 @end

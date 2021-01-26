@@ -6,8 +6,8 @@
 /**
  应用主导航控制器
  */
-class NavigationController: MBNavigationController {
-    override class func storyboardName() -> String { "Main" }
+class NavigationController: MBNavigationController, StroryboardCreation, UIApplicationDelegate {
+    static var storyboardID: StoryboardID { .main }
 
     override func onInit() {
         super.onInit()
@@ -16,9 +16,8 @@ class NavigationController: MBNavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 强制设置一些初始状态，否则会有异常
-        defaultAppearanceAttributes[.prefersBottomBarShownAttribute] = 0
-        bottomBarHidden = true
+        // 导航基类会在导航即将显示时把当前的样式作为默认样式，进入 app 时就显示 tab 但我们需要默认不显示 tab
+        defaultAppearanceAttributes[.prefersBottomBarShownAttribute] = false
         AppAPI()
 
         Account.addCurrentUserChangeObserver(self, initial: true) { [weak self] user in
@@ -28,6 +27,11 @@ class NavigationController: MBNavigationController {
                 self?.onLogout()
             }
         }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AppEnv().setFlagOn(.naigationLoaded)
     }
 
     func onLogout() {
@@ -46,8 +50,7 @@ class NavigationController: MBNavigationController {
 
     override func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         super.navigationController(navigationController, didShow: viewController, animated: animated)
-
-        if viewController.rfPrefersDisabledInteractivePopGesture {
+        if viewController.prefersDisabledInteractivePopGesture {
             // 禁用返回手势，只禁用就行，会自行恢复
             interactivePopGestureRecognizer?.isEnabled = false
         }

@@ -39,6 +39,9 @@
 }
 
 - (void)presentFromViewController:(UIViewController *)parentViewController animated:(BOOL)animated completion:(void (^)(void))completion {
+    if ([parentViewController isKindOfClass:UINavigationController.class]) {
+        NSLog(@"⚠️ 不应从导航展现 MBModalPresentViewController，会导致导航 vc 堆栈判断错误");
+    }
     if (!parentViewController) {
         parentViewController = [UIViewController rootViewControllerWhichCanPresentModalViewController];
     }
@@ -73,6 +76,9 @@
 
 - (void)dismissAnimated:(BOOL)flag completion:(void (^)(void))completion {
     [MBAPI cancelOperationsWithViewController:self];
+    if (self.willDismiss) {
+        self.willDismiss(self);
+    }
     @weakify(self);
     [self setViewHidden:YES animated:YES completion:^{
         @strongify(self);

@@ -2,6 +2,7 @@
 #import "MBCollectionViewDataSource.h"
 #import <MBAppKit/MBGeneral.h>
 #import <RFDelegateChain/RFDelegateChain.h>
+#import "MBListDateItem.h"
 
 @implementation MBCollectionViewDataSource
 
@@ -46,10 +47,16 @@
     if (!self.collectionView) {
         self.collectionView = collectionView;
     }
+    if (self.isSectionEnabled) {
+        return self.items.count;
+    }
     return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if (self.isSectionEnabled) {
+        return [(MBListSectionDataItem *)self.items[section] rows].count;
+    }
     return self.items.count;
 }
 
@@ -59,6 +66,13 @@
     RFAssert(cell, nil);
     self.configureCell(collectionView, cell, indexPath, item);
     return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if (self.viewForSupplementaryElement) {
+        return self.viewForSupplementaryElement(collectionView, kind, indexPath, self.delegate);
+    }
+    return (UICollectionReusableView *_Nonnull)[self.delegate collectionView:collectionView viewForSupplementaryElementOfKind:kind atIndexPath:indexPath];
 }
 
 #pragma mark -

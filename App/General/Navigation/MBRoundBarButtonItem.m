@@ -3,7 +3,6 @@
 #import "Common.h"
 #import "MBButton.h"
 #import <RFAlpha/RFDrawImage.h>
-#import <RFAlpha/UIView+RFLayerApperance.h>
 
 @interface MBRoundBarButtonItem ()
 @property UIButton *buttonView;

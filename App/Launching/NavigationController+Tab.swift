@@ -72,7 +72,7 @@ extension NavigationController: MBControlGroupDelegate {
         default:
             fatalError()
         }
-        vc.rfPrefersBottomBarShown = true
+        vc.prefersBottomBarShown = true
         tabControllers.replaceObject(at: tabIndex, withObject: vc)
         return vc
     }

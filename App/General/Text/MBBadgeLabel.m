@@ -3,6 +3,7 @@
 #import <RFKit/RFGeometry.h>
 
 @implementation MBBadgeLabel
+@dynamic _contentInset;
 RFInitializingRootForUIView
 
 - (void)onInit {
@@ -38,9 +39,15 @@ RFInitializingRootForUIView
     self.layer.cornerRadius = CGRectGetHeight(bounds) / 2.;
 }
 
-- (void)updateCount:(long)count {
-    self.text = @(count).stringValue;
-    self.hidden = count == 0;
+- (void)updateCount:(NSInteger)count {
+    NSInteger max = self.maxCount;
+    if (max > 0 && count > max) {
+        self.text = [NSString.alloc initWithFormat:@"%@+", @(max)];
+        self.hidden = NO;
+    } else {
+        self.text = @(count).stringValue;
+        self.hidden = count == 0;
+    }
 }
 
 @end

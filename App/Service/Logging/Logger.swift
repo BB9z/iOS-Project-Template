@@ -9,22 +9,19 @@ import Logging
 
 /// Logger 单例
 func AppLog() -> Logger {  // swiftlint:disable:this identifier_name
-    if let this = _sharedInstance {
-        return this
-    }
-    #if DEBUG
-    LoggingSystem.bootstrap { _ in AppLogHandler() }
-    #else
-    // 简单处理，生产环境完全禁用 log
-    LoggingSystem.bootstrap { _ in SwiftLogNoOpLogHandler() }
-    #endif
-    let this = Logger(label: "App")
-    _sharedInstance = this
-    return this
+    AppLogHandler.sharedLogger
 }
 
-private var _sharedInstance: Logger?
 private struct AppLogHandler: LogHandler {
+    fileprivate static let sharedLogger: Logger = {
+        #if DEBUG
+        LoggingSystem.bootstrap { _ in AppLogHandler() }
+        #else
+        // 简单处理，生产环境完全禁用 log
+        LoggingSystem.bootstrap { _ in SwiftLogNoOpLogHandler() }
+        #endif
+        return Logger(label: "App")
+    }()
 
     var metadata: Logger.Metadata = [:]
 

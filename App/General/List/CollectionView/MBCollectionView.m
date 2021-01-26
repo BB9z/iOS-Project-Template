@@ -8,9 +8,7 @@
 #import <RFKit/UIView+RFAnimate.h>
 #import <RFKit/UIView+RFKit.h>
 
-@interface MBCollectionView () <
-    UICollectionViewDelegate
->
+@interface MBCollectionView ()
 @property (nonatomic) MBCollectionViewDataSource *trueDataSource;
 @property (nonatomic) BOOL refreshFooterViewStatusUpdateFlag;
 
@@ -20,6 +18,7 @@
 @property (nonatomic) UIEdgeInsets trueContentInset;
 @property (weak, nonatomic) id footerStatusObserver;
 @property (nonatomic) CGFloat lastHeaderViewHeight;
+@property id dataSourceFetchingObserver;
 @end
 
 @implementation MBCollectionView
@@ -39,19 +38,23 @@ RFInitializingRootForUIView
     self.trueDataSource = ds;
     [super setDataSource:ds];
     self.alwaysBounceVertical = YES;
+    self.adjustOffsetBeforeReload = ^(MBCollectionView * _Nonnull list) {
+        [list scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionTop animated:!list.refreshControl.isRefreshing];
+    };
 }
 
 - (void)afterInit {
-    self.delegate = self;
     self.dataSource.delegate = (id<UICollectionViewDataSource>)self;
     UIRefreshControl *rc = self.refreshControl;
     if (!rc && !self.disableRefreshControl) {
-        self.refreshControl = [UIRefreshControl.alloc init];
+        UIRefreshControl *rc = [UIRefreshControl.alloc init];
+        rc.tintColor = self.tintColor;
+        self.refreshControl = rc;
     }
     @weakify(self);
-    [self RFAddObserver:self forKeyPath:@keypath(self, refreshFooterViewStatusUpdateFlag) options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew queue:nil block:^(id observer, NSDictionary *change) {
+    self.dataSourceFetchingObserver = [self RFAddObserver:self forKeyPath:@keypath(self, refreshFooterViewStatusUpdateFlag) options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew queue:nil block:^(id observer, NSDictionary *change) {
         @strongify(self);
-        rc.enabled = !self.dataSource.fetching;
+        self.refreshControl.enabled = !self.dataSource.fetching;
         [self MBCollectionView_setNeedsUpdateFooterRefreshing];
     }];
 }
@@ -114,9 +117,15 @@ MBSynthesizeSetNeedsMethodUsingAssociatedObject(MBCollectionView_setNeedsUpdateF
     else {
         ft.status = RFRefreshControlStatusWaiting;
     }
+    if (self.dataSourceStatusChanged) {
+        self.dataSourceStatusChanged(ds);
+    }
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        NSAssert(NO, @"⚠️ Section header 已启用，但没有修改 dataSource 的 delegate 或 viewForSupplementaryElement 回调");
+    }
     __kindof UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"RefreshFooter" forIndexPath:indexPath];
     if ([view isKindOfClass:MBCollectionRefreshFooterView.class]) {
         MBCollectionRefreshFooterView *rv = view;
@@ -170,7 +179,9 @@ MBSynthesizeSetNeedsMethodUsingAssociatedObject(MBCollectionView_setNeedsUpdateF
     }
     if (!nextPage) {
         [self.dataSource cancelFetching];
-        [self scrollToTopAnimated:!rc.isRefreshing];
+        if (self.adjustOffsetBeforeReload) {
+            self.adjustOffsetBeforeReload(self);
+        }
     }
     [self.dataSource fetchItemsFromViewController:self.viewController nextPage:nextPage success:^(MBCollectionViewDataSource *dateSource, NSArray *fetchedItems) {
         [dateSource.collectionView reloadData];
@@ -293,18 +304,22 @@ RFInitializingRootForUIView
 - (void)updateHeightIfNeeded {
     if (!self.contentView) return;
 
-    CGFloat heightShouldBe = self.contentView.height;
+    CGFloat heightShouldBe = self.contentView.height + self.safeAreaInsets.top;
     if (self.height != heightShouldBe) {
         [self updateHeight];
     }
 }
 
+- (void)safeAreaInsetsDidChange {
+    [super safeAreaInsetsDidChange];
+    [self updateHeightIfNeeded];
+}
+
 - (void)updateHeight {
     if (self.contentView) {
         // ??: 图像高过小 contentView 会不断浮动导致死循环
-        self.height = floor(self.contentView.height);
+        self.height = floor(self.contentView.height + self.safeAreaInsets.top);
     }
-    dout_float(self.contentView.height);
 
     MBCollectionView *tb = (id)self.superview;
     if ([tb isKindOfClass:[MBCollectionView class]]) {

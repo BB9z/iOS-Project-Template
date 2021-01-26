@@ -22,6 +22,9 @@ extension MBENVFlag {
     /// 网络是否在线
     static let online = MBENVFlag(rawValue: 1 << 2)
 
+    /// 使用 Wi-Fi 联网
+    static let wifi = MBENVFlag(rawValue: 1 << 3)
+
     //- 用户状态
     /// 用户已登入
     static let userHasLogged = MBENVFlag(rawValue: 1 << 4)

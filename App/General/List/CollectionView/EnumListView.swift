@@ -85,7 +85,7 @@ class EnumListView: UICollectionView, UICollectionViewDelegateFlowLayout {
 }
 
 class EnumListCell: UICollectionViewCell {
-    @objc var item: (AnyObject & EnumListElement)! {
+    @objc var item: EnumListView.EnumObject! {
         didSet {
             button.text = item.enumListDiscription
         }

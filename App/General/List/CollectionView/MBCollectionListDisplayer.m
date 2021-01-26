@@ -26,6 +26,7 @@ RFInitializingRootForUIViewController
     [super viewDidLoad];
 
     MBCollectionViewDataSource *ds = self.collectionView.dataSource;
+    NSAssert([self.collectionView isKindOfClass:MBCollectionView.class], @"");
     self.dataSource = ds;
     if (self.APIName) {
         ds.fetchAPIName = self.APIName;

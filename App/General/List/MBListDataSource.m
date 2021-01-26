@@ -4,6 +4,7 @@
 #import <RFKit/NSArray+RFKit.h>
 #import <MBAppKit/MBAppKit.h>
 #import <MBAppKit/MBAPI.h>
+#import "MBListDateItem.h"
 
 @interface MBListDataSourceFetchComplationCallback : RFCallback
 @end
@@ -32,14 +33,30 @@
     self.maxID = nil;
     self.pageEnd = NO;
     self.fetching = NO;
+    self.hasSuccessFetched = NO;
     self.fetchOperation = nil;
+    self.lastFetchError = nil;
 }
 
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.isSectionEnabled) {
+        return [(MBListSectionDataItem *)self.items[indexPath.section] rows][indexPath.row];
+    }
     return [self.items rf_objectAtIndex:indexPath.row];
 }
 
 - (nullable NSIndexPath *)indexPathForItem:(nullable id)item {
+    if (self.isSectionEnabled) {
+        __block NSIndexPath *indexPath = nil;
+        [self.items enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger section, BOOL * _Nonnull stop) {
+            NSInteger idx = [[(MBListSectionDataItem *)obj rows] indexOfObject:item];
+            if (idx != NSNotFound) {
+                indexPath = [NSIndexPath indexPathForRow:idx inSection:section];
+                *stop = YES;
+            }
+        }];
+        return indexPath;
+    }
     NSInteger idx = [self.items indexOfObject:item];
     if (idx != NSNotFound) {
         return [NSIndexPath indexPathForRow:idx inSection:0];
@@ -92,6 +109,12 @@
     self.fetchOperation = [MBAPI requestName:self.fetchAPIName context:^(RFAPIRequestConext *c) {
         c.parameters = parameter;
         c.groupIdentifier = viewController.APIGroupIdentifier;
+        if (self.requestContextModify) {
+            self.requestContextModify(c);
+        }
+        if (c.success || c.failure || c.finished) {
+            NSLog(@"⚠️ 通过 requestContextModify 设置的回调会被忽略");
+        }
         @weakify(self);
         c.success = ^(id<RFAPITask>  _Nonnull task, id  _Nullable responseObject) {
             @strongify(self);
@@ -148,6 +171,7 @@
 
 - (void)cancelFetching {
     self.fetchOperation = nil;
+    self.fetching = NO;
 }
 
 - (void)setItemsWithRawData:(id)responseData {

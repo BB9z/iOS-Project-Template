@@ -1,22 +1,7 @@
 
 #import "UIViewController+App.h"
-#import <MBAppKit/NSObject+MBAppKit.h>
 
 @implementation UIViewController (App)
-
-+ (nonnull instancetype)newFromStoryboard {
-    NSString *storyboardName = self.storyboardName;
-    if (!storyboardName.length) {
-        NSAssert(NO, @"storyboardName not set.");
-    }
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
-    NSString *iden = self.className;
-    return [sb instantiateViewControllerWithIdentifier:iden];
-}
-
-+ (nullable NSString *)storyboardName {
-    return nil;
-}
 
 - (void)RFPresentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(BOOL presented))completion {
     UINavigationController *nav = self.navigationController;

@@ -7,10 +7,11 @@
  帖子详情
  */
 class TopicDetailViewController: UIViewController,
+    StroryboardCreation,
     HasItem,
     TopicEntityUpdating {
 
-    override class func storyboardName() -> String? { "Topic" }
+    static var storyboardID: StoryboardID { .topic }
 
     @objc var item: TopicEntity! {
         didSet {

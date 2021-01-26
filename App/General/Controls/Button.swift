@@ -23,24 +23,21 @@ class Button: MBButton {
     }
 
     override func setupAppearance() {
-        guard let style = styleName else { return }
+        guard let style = Style(rawValue: styleName ?? "") else { return }
         switch style {
-        case Style.std.rawValue:
+        case .std:
             // todo 设置样式
             break
 
-        case Style.round.rawValue:
+        case .round:
             setTitleColor(.white, for: .selected)
             setTitleColor(.white, for: .disabled)
             adjustsImageWhenHighlighted = false
             updateRoundStyleIfNeeded()
 
-        case Style.row.rawValue:
+        case .row:
             setBackgroundImage(#imageLiteral(resourceName: "row_highlight"), for: .highlighted)
             adjustsImageWhenHighlighted = false
-
-        default:
-            break
         }
     }
 

@@ -4,6 +4,9 @@ ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
 # inhibit_all_warnings!
 
+# 部分不支持 macCatalyst 的 pod，可用以下方案处理
+# https://github.com/fermoya/CatalystPodSupport
+
 target 'App' do
     platform :ios, '12.0'
 
@@ -18,7 +21,6 @@ target 'App' do
 #    pod 'QingNiuSDK'                    # 七牛云存储
     pod 'SDWebImage'                    # 网络图片加载
 #    pod 'UICollectionViewLeftAlignedLayout' # CollectionView 左对齐
-#    pod 'UMengAnalytics-NO-IDFA'        # 友盟分析
 #    pod 'WechatOpenSDK'                 # 微信 SDK
 
     pod 'RFKit', :subspecs => [
@@ -38,7 +40,6 @@ target 'App' do
         'RFTableViewPullToFetchPlugin',
         'RFTimer',
         'RFViewApperance/RFLine',
-        'RFViewApperance/RFLayerApperance',
         'RFWindow',
     ]
     pod 'RFDelegateChain', :subspecs => [

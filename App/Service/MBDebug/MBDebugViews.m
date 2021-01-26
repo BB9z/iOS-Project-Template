@@ -2,6 +2,7 @@
 #import "MBDebugViews.h"
 #import "NSUserDefaults+MBDebug.h"
 #import "UIViewController+App.h"
+#import "Common.h"
 #if __has_include("FLEX/FLEX.h")
 #import <FLEX/FLEX.h>
 #endif
@@ -108,7 +109,7 @@ RFInitializingRootForUIView
         win.backgroundColor = nil;
         self.win = win;
     }
-    self.win.rootViewController = [MBDebugFloatConsoleViewController newFromStoryboard];
+    self.win.rootViewController = [MBDebugFloatConsoleViewController newWithStoryboardName:@"MBDebug" identifier:nil];
     self.win.hidden = NO;
 }
 

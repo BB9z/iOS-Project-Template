@@ -1,7 +1,7 @@
 /*
  MBCollectionView
  
- Copyright © 2018 RFUI.
+ Copyright © 2018, 2021 BB9z.
  Copyright © 2014-2016 Beijing ZhiYun ZhiYuan Information Technology Co., Ltd.
  https://github.com/BB9z/iOS-Project-Template
 
@@ -30,14 +30,31 @@
  */
 @property IBInspectable BOOL autoFetchWhenMoveToWindow;
 
+/**
+ 在开始刷新开始前调整可视范围
+
+ 默认滚动使第一个 cell 位于顶部
+ */
+@property (nullable) void (^adjustOffsetBeforeReload)(MBCollectionView *__nonnull list);
+
+/**
+ 数据源状态变化回调
+ */
+@property (nullable) void (^dataSourceStatusChanged)(MBCollectionViewDataSource *__nonnull dateSource);
+
 #pragma mark - Header & footer
 
 /// 默认 view 创建后如果 refreshControl 未设置会自动创建一个 UIRefreshControl
 /// 如果不需要使用 refreshControl 需设置该属性为 YES
 @property IBInspectable BOOL disableRefreshControl;
 
-/// 在 collection view 顶部增加的区域，相当于 table view 的 tableHeaderView
-/// 内部通过修改 contentInset 实现
+/**
+ 在 collection view 顶部增加的区域，相当于 table view 的 tableHeaderView
+
+ 内部通过修改 contentInset 实现。由于是往内容顶部开出区域来显示 header，到顶时的 content offset 会变负
+
+ @bug 如果 collection view 用了 UIRefreshControl 会有冲突
+ */
 @property (nullable, nonatomic) UIView *collectionHeaderView;
 
 /**
@@ -49,6 +66,8 @@
 
 /// 用于对 refreshFooterView 进行定制，因为其不会立即载入
 @property (nullable) void (^refreshFooterConfig)(MBCollectionRefreshFooterView *__nonnull);
+
+- (nonnull UICollectionReusableView *)collectionView:(nonnull UICollectionView *)collectionView viewForSupplementaryElementOfKind:(nonnull NSString *)kind atIndexPath:(nonnull NSIndexPath *)indexPath;
 
 /// 重置，以便作为另一个列表展示
 - (void)prepareForReuse;

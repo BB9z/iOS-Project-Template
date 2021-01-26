@@ -122,7 +122,7 @@ class TextField: MBTextField {
         switch type {
         case .mobile:
             guard let str = text?.trimmed() else {
-                return (nil, "请输入手机号")
+                return (nil, emptyPromoteText ?? "请输入手机号")
             }
             guard str.isValidPhoneNumber else {
                 return (nil, "手机号格式错误")
@@ -130,12 +130,12 @@ class TextField: MBTextField {
             return (str, nil)
         case .code:
             guard let str = text?.trimmed() else {
-                return (nil, "请输入验证码")
+                return (nil, emptyPromoteText ?? "请输入验证码")
             }
             return (str, nil)
         case .password:
             guard let str = text, str.isNotEmpty else {
-                return (nil, "请输入密码")
+                return (nil, emptyPromoteText ?? "请输入密码")
             }
             if let nextInput = nextField as? MBTextField,
                 nextInput.formContentType == TextFieldContentType.password2.rawValue {
@@ -148,7 +148,7 @@ class TextField: MBTextField {
             return (str, nil)
         case .password2:
             guard let str = text, str.isNotEmpty else {
-                return (nil, "请输入确认密码")
+                return (nil, emptyPromoteText ?? "请输入确认密码")
             }
             guard str.count >= 8 else {
                 return (nil, "密码长度至少8位")
@@ -159,12 +159,12 @@ class TextField: MBTextField {
             return (str, nil)
         case .userName:
             guard let str = text, str.isNotEmpty else {
-                return (nil, "请输入用户名")
+                return (nil, emptyPromoteText ?? "请输入用户名")
             }
             return (str, nil)
         case .email:
             guard let str = text?.trimmed() else {
-                return (nil, "请输入邮箱")
+                return (nil, emptyPromoteText ?? "请输入邮箱")
             }
             guard str.isValidEmail else {
                 return (nil, "邮箱格式错误")
@@ -172,16 +172,18 @@ class TextField: MBTextField {
             return (str, nil)
         case .name:
             guard let str = text, str.isNotEmpty else {
-                return (nil, "请输入姓名")
+                return (nil, emptyPromoteText ?? "请输入姓名")
             }
             return (str, nil)
         case .required:
             guard let str = text?.trimmed(), str.isNotEmpty else {
-                return (nil, placeholder)
+                return (nil, emptyPromoteText ?? placeholder)
             }
             return (str, nil)
         } // END: switch
     }
+    /// 输入为空时验证弹窗的提醒文本
+    @IBInspectable var emptyPromoteText: String?
 
     /// 自动验证、提示并返回合法值
     ///

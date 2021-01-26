@@ -10,8 +10,8 @@
 }
 
 /// 登入注册 vc 基类
-class LoginFormBaseViewController: UIViewController, LoginVCs {
-    override class func storyboardName() -> String { "Login" }
+class LoginFormBaseViewController: UIViewController, StroryboardCreation, LoginVCs {
+    static var storyboardID: StoryboardID { .login }
 
     /// 发送验证码相关的信息
     /// 返回 nil 不执行发送

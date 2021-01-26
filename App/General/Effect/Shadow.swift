@@ -7,7 +7,6 @@ class BackgroundView: UIView {
     @IBInspectable var shadowBlur: CGFloat = 11
     @IBInspectable var shadowSpread: CGFloat = -2
     @IBInspectable var shadowColor: UIColor = UIColor.black.withAlphaComponent(0.3)
-    @IBInspectable var cornerRadius: CGFloat = 6
 
     override func awakeFromNib() {
         super.awakeFromNib()

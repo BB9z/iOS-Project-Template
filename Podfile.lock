@@ -102,8 +102,6 @@ PODS:
   - RFAlpha/RFViewApperance/RFDrawView (0.7.1):
     - RFInitializing (>= 1.1)
     - RFKit/Runtime (>= 1.7.1)
-  - RFAlpha/RFViewApperance/RFLayerApperance (0.7.1):
-    - RFKit/Category/UIDevice
   - RFAlpha/RFViewApperance/RFLine (0.7.1):
     - RFAlpha/RFViewApperance/RFDrawView
   - RFAlpha/RFWindow (0.7.1):
@@ -248,9 +246,9 @@ PODS:
     - RFKit/Category/UIDevice
     - RFKit/Category/UINavigationController
     - RFKit/Runtime (>= 1.7)
-  - SDWebImage (5.10.2):
-    - SDWebImage/Core (= 5.10.2)
-  - SDWebImage/Core (5.10.2)
+  - SDWebImage (5.10.3):
+    - SDWebImage/Core (= 5.10.3)
+  - SDWebImage/Core (5.10.3)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
@@ -323,9 +321,9 @@ SPEC CHECKSUMS:
   RFKit: 046ed8a61c874fbb93dce7a694cfc059e8bf5d7a
   RFMessageManager: e261b12146e083989df83106304fbface62705b5
   RFSegue: 32840d5876e32f192b22f41160ebfcf466a0fa3b
-  SDWebImage: b969dcfc02c40a5da71eac0b03b8f1a0c794a86f
+  SDWebImage: e378178472b735e84b007bfb55514c97948a0598
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 1a2b29c18bf8eac805ffb7be432ca95d72897ad2
+PODFILE CHECKSUM: 685290878a9365f81c499cfd7a6930f243d37cb9
 
 COCOAPODS: 1.10.0
