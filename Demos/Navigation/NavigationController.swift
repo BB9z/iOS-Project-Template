@@ -14,10 +14,6 @@ class NavigationController: MBNavigationController, StroryboardCreation {
         MBApp.status().globalNavigationController = self
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     // MARK: - 页面声明的行为、样式控制
 
     override func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {

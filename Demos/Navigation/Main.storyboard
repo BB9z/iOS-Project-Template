@@ -550,7 +550,7 @@
         <!--viewWillAppear 中设置样式-->
         <scene sceneID="mtt-eF-Y9L">
             <objects>
-                <viewController id="65Z-Rx-9nX" sceneMemberID="viewController">
+                <viewController id="65Z-Rx-9nX" customClass="ViewAppearWayRootViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8AK-pL-SYx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -618,7 +618,13 @@
                             <constraint firstItem="KGL-1w-MIU" firstAttribute="bottom" secondItem="5n5-f1-CvG" secondAttribute="bottom" id="ljl-zK-Kgx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="viewWillAppear 中设置样式" id="jJf-v4-VTj"/>
+                    <navigationItem key="navigationItem" title="viewWillAppear 中设置样式" id="jJf-v4-VTj">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="mVt-jc-DHS">
+                            <connections>
+                                <action selector="onDismiss:" destination="65Z-Rx-9nX" id="v8h-FC-C2r"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Px-Cn-vrp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

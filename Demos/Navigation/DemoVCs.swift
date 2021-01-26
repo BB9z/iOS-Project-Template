@@ -67,6 +67,12 @@ class StyleConfigViewController: UIViewController {
     }
 }
 
+class ViewAppearWayRootViewController: UIViewController {
+    @IBAction private func onDismiss(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
 /// 在 viewWillAppear 中设置样式的演示，不推荐
 class StyleConfigAppearViewController: UIViewController {
     var barColorIndex = 0
