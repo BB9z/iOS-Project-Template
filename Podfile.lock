@@ -271,7 +271,6 @@ DEPENDENCIES:
   - RFAlpha/RFTableViewPullToFetchPlugin
   - RFAlpha/RFTimer
   - RFAlpha/RFTransitioning/MoveInFromBottomTransitioningStyle
-  - RFAlpha/RFViewApperance/RFLayerApperance
   - RFAlpha/RFViewApperance/RFLine
   - RFAlpha/RFWindow
   - RFDelegateChain/UICollectionViewDataSource
@@ -324,6 +323,6 @@ SPEC CHECKSUMS:
   SDWebImage: e378178472b735e84b007bfb55514c97948a0598
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 685290878a9365f81c499cfd7a6930f243d37cb9
+PODFILE CHECKSUM: b1bf2581cc46c20bc07f9166cc63c784ca32a6fc
 
 COCOAPODS: 1.10.0

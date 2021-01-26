@@ -30,6 +30,15 @@
 		D5031A5C25BEC99700C2849E /* UIKit+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5031A5B25BEC99700C2849E /* UIKit+Compatibility.swift */; };
 		D5031A5F25BEC9F300C2849E /* UIViewController+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D533C4E92592363600590FBA /* UIViewController+Appearance.swift */; };
 		D5031A6B25BED1AE00C2849E /* FileURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5031A6A25BED1AE00C2849E /* FileURL.swift */; };
+		D5031B7F25BFF8D800C2849E /* StroryboardCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5031A5325BEC50D00C2849E /* StroryboardCreation.swift */; };
+		D5031B8425BFF8D900C2849E /* StroryboardCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5031A5325BEC50D00C2849E /* StroryboardCreation.swift */; };
+		D5031B9125BFF93F00C2849E /* MBSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588308A20CACB32002030C4 /* MBSwift.swift */; };
+		D5031B9625BFF94000C2849E /* MBSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588308A20CACB32002030C4 /* MBSwift.swift */; };
+		D5031B9B25BFF9E000C2849E /* UIViewController+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D533C4E92592363600590FBA /* UIViewController+Appearance.swift */; };
+		D5031BA025BFF9E100C2849E /* UIViewController+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D533C4E92592363600590FBA /* UIViewController+Appearance.swift */; };
+		D5031BA525BFF9FF00C2849E /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B966992501CF77009D77A0 /* AssociatedObject.swift */; };
+		D5031BAA25BFF9FF00C2849E /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B966992501CF77009D77A0 /* AssociatedObject.swift */; };
+		D5031BB725BFFBD500C2849E /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58D1C5E251CC3AC00D1EF32 /* ApplicationDelegate.swift */; };
 		D50693D819495D9E0002BFCC /* MBControlGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = D50693D719495D9E0002BFCC /* MBControlGroup.m */; };
 		D50D5F2E24D9A75E0047715A /* UIViewController+AccountSwitching.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D5F2D24D9A75E0047715A /* UIViewController+AccountSwitching.swift */; };
 		D50D5F3024D9B4BB0047715A /* Array+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588308820CACB32002030C4 /* Array+App.swift */; };
@@ -106,7 +115,6 @@
 		D58D1B85251CB8FB00D1EF32 /* NSPointArray+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588308C20CACB33002030C4 /* NSPointArray+App.swift */; };
 		D58D1B87251CB8FB00D1EF32 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAEAA124D7E2A0005744C7 /* RootViewController.swift */; };
 		D58D1B8A251CB8FB00D1EF32 /* UIViewController+App.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE50EC2043DAA1009148B3 /* UIViewController+App.m */; };
-		D58D1B8B251CB8FB00D1EF32 /* UIViewController+NavigationAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51D32043F613009148B3 /* UIViewController+NavigationAppearance.m */; };
 		D58D1B8F251CB8FB00D1EF32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D52EAB622043B6B3007219E0 /* Assets.xcassets */; };
 		D58D1B90251CB8FB00D1EF32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C636A62047CC5900851CF4 /* LaunchScreen.storyboard */; };
 		D58D1BB2251CB95200D1EF32 /* ShortCuts.m in Sources */ = {isa = PBXBuildFile; fileRef = D58D1BA6251CB95200D1EF32 /* ShortCuts.m */; };
@@ -177,12 +185,10 @@
 		D5DAEA8324D7D40E005744C7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAEA8224D7D406005744C7 /* NavigationController.swift */; };
 		D5DAEA8424D7D436005744C7 /* NSPointArray+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588308C20CACB33002030C4 /* NSPointArray+App.swift */; };
 		D5DAEA8524D7D446005744C7 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55959D220AB9FA20019D733 /* MessageManager.swift */; };
-		D5DAEA8724D7D460005744C7 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAEA8624D7D45F005744C7 /* ApplicationDelegate.swift */; };
 		D5DAEA8E24D7D698005744C7 /* MBControlGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = D50693D719495D9E0002BFCC /* MBControlGroup.m */; };
 		D5DAEA9124D7D80F005744C7 /* ShortCuts.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DAEA9024D7D80F005744C7 /* ShortCuts.m */; };
 		D5DAEA9324D7D8A6005744C7 /* debug.m in Sources */ = {isa = PBXBuildFile; fileRef = D52EADE72043B983007219E0 /* debug.m */; };
-		D5DAEA9924D7D952005744C7 /* UIViewController+NavigationAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51D32043F613009148B3 /* UIViewController+NavigationAppearance.m */; };
-		D5DAEA9B24D7DA9E005744C7 /* GuestMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5DAEA9A24D7DA67005744C7 /* GuestMode.storyboard */; };
+		D5DAEA9B24D7DA9E005744C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5DAEA9A24D7DA67005744C7 /* Main.storyboard */; };
 		D5DAEA9E24D7DB4E005744C7 /* NSUserDefaults+App.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DAEA9D24D7DB4E005744C7 /* NSUserDefaults+App.m */; };
 		D5DAEAA024D7DBB3005744C7 /* UIViewController+App.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE50EC2043DAA1009148B3 /* UIViewController+App.m */; };
 		D5DAEAA224D7E2A0005744C7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAEAA124D7E2A0005744C7 /* RootViewController.swift */; };
@@ -487,10 +493,9 @@
 		D5DAEA7124D7D0FE005744C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5DAEA7B24D7D213005744C7 /* OCHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCHeader.h; sourceTree = "<group>"; };
 		D5DAEA8224D7D406005744C7 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		D5DAEA8624D7D45F005744C7 /* ApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
 		D5DAEA9024D7D80F005744C7 /* ShortCuts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShortCuts.m; sourceTree = "<group>"; };
 		D5DAEA9224D7D817005744C7 /* ShortCuts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShortCuts.h; sourceTree = "<group>"; };
-		D5DAEA9A24D7DA67005744C7 /* GuestMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GuestMode.storyboard; sourceTree = "<group>"; };
+		D5DAEA9A24D7DA67005744C7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D5DAEA9D24D7DB4E005744C7 /* NSUserDefaults+App.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+App.m"; sourceTree = "<group>"; };
 		D5DAEA9F24D7DB51005744C7 /* NSUserDefaults+App.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+App.h"; sourceTree = "<group>"; };
 		D5DAEAA124D7E2A0005744C7 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -678,21 +683,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		D50D5F2F24D9A85A0047715A /* Supports */ = {
-			isa = PBXGroup;
-			children = (
-				D5DAEAA324D7E2DA005744C7 /* Account.swift */,
-				D5DAEA8624D7D45F005744C7 /* ApplicationDelegate.swift */,
-				D5DAEA7124D7D0FE005744C7 /* Info.plist */,
-				D5DAEA9F24D7DB51005744C7 /* NSUserDefaults+App.h */,
-				D5DAEA9D24D7DB4E005744C7 /* NSUserDefaults+App.m */,
-				D5DAEA7B24D7D213005744C7 /* OCHeader.h */,
-				D5DAEA9224D7D817005744C7 /* ShortCuts.h */,
-				D5DAEA9024D7D80F005744C7 /* ShortCuts.m */,
-			);
-			name = Supports;
-			sourceTree = "<group>";
-		};
 		D50319A025BE33BD00C2849E /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -703,6 +693,20 @@
 				D569C9EF21AE908100211E36 /* MBErrorCode.m */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		D5031B7425BFF87F00C2849E /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				D5DAEAA324D7E2DA005744C7 /* Account.swift */,
+				D5DAEA7124D7D0FE005744C7 /* Info.plist */,
+				D5DAEA9F24D7DB51005744C7 /* NSUserDefaults+App.h */,
+				D5DAEA9D24D7DB4E005744C7 /* NSUserDefaults+App.m */,
+				D5DAEA7B24D7D213005744C7 /* OCHeader.h */,
+				D5DAEA9224D7D817005744C7 /* ShortCuts.h */,
+				D5DAEA9024D7D80F005744C7 /* ShortCuts.m */,
+			);
+			path = Supports;
 			sourceTree = "<group>";
 		};
 		D5170CE8191B327A000C7D45 /* PushManager */ = {
@@ -1370,9 +1374,9 @@
 		D5DAEA6224D7D0F8005744C7 /* GuestMode */ = {
 			isa = PBXGroup;
 			children = (
-				D50D5F2F24D9A85A0047715A /* Supports */,
+				D5031B7425BFF87F00C2849E /* Supports */,
 				D5DAEAC824D82149005744C7 /* DemoVCs.swift */,
-				D5DAEA9A24D7DA67005744C7 /* GuestMode.storyboard */,
+				D5DAEA9A24D7DA67005744C7 /* Main.storyboard */,
 				D5DAEA8224D7D406005744C7 /* NavigationController.swift */,
 				D5DAEACC24D82E94005744C7 /* README.md */,
 				D50D5F2D24D9A75E0047715A /* UIViewController+AccountSwitching.swift */,
@@ -1756,8 +1760,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5DAEA7624D7D12E005744C7 /* Assets.xcassets in Resources */,
-				D5DAEA9B24D7DA9E005744C7 /* GuestMode.storyboard in Resources */,
 				D5DAEA7824D7D145005744C7 /* LaunchScreen.storyboard in Resources */,
+				D5DAEA9B24D7DA9E005744C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2090,6 +2094,7 @@
 			files = (
 				D58D1C63251CC3B300D1EF32 /* ApplicationDelegate.swift in Sources */,
 				D58D1B7C251CB8FB00D1EF32 /* Array+App.swift in Sources */,
+				D5031BAA25BFF9FF00C2849E /* AssociatedObject.swift in Sources */,
 				D58D1B7D251CB8FB00D1EF32 /* debug.m in Sources */,
 				D58D1BB4251CB95200D1EF32 /* DemoVCs.swift in Sources */,
 				D58D1B7F251CB8FB00D1EF32 /* EnvironmentFlag.swift in Sources */,
@@ -2097,14 +2102,16 @@
 				D58D1B80251CB8FB00D1EF32 /* MBApp.swift in Sources */,
 				D58D1B81251CB8FB00D1EF32 /* MBControlGroup.m in Sources */,
 				D58D1B82251CB8FB00D1EF32 /* MBLayoutButton.m in Sources */,
+				D5031B9625BFF94000C2849E /* MBSwift.swift in Sources */,
 				D58D1B83251CB8FB00D1EF32 /* MessageManager.swift in Sources */,
 				D58D1BB8251CB95200D1EF32 /* NavigationController.swift in Sources */,
 				D58D1B85251CB8FB00D1EF32 /* NSPointArray+App.swift in Sources */,
 				D58D1BBA251CB95200D1EF32 /* NSUserDefaults+App.m in Sources */,
 				D58D1B87251CB8FB00D1EF32 /* RootViewController.swift in Sources */,
 				D58D1BB2251CB95200D1EF32 /* ShortCuts.m in Sources */,
+				D5031B8425BFF8D900C2849E /* StroryboardCreation.swift in Sources */,
 				D58D1B8A251CB8FB00D1EF32 /* UIViewController+App.m in Sources */,
-				D58D1B8B251CB8FB00D1EF32 /* UIViewController+NavigationAppearance.m in Sources */,
+				D5031BA025BFF9E100C2849E /* UIViewController+Appearance.swift in Sources */,
 				D58D1C7D251CCBAA00D1EF32 /* UIViewController+RFInterfaceOrientation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2126,8 +2133,9 @@
 			files = (
 				D5DAEAA424D7E2DB005744C7 /* Account.swift in Sources */,
 				D5DAEA8124D7D3E5005744C7 /* AccountEntities.swift in Sources */,
-				D5DAEA8724D7D460005744C7 /* ApplicationDelegate.swift in Sources */,
+				D5031BB725BFFBD500C2849E /* ApplicationDelegate.swift in Sources */,
 				D50D5F3024D9B4BB0047715A /* Array+App.swift in Sources */,
+				D5031BA525BFF9FF00C2849E /* AssociatedObject.swift in Sources */,
 				D5DAEA9324D7D8A6005744C7 /* debug.m in Sources */,
 				D5DAEACA24D8214E005744C7 /* DemoVCs.swift in Sources */,
 				D5DAEA7C24D7D361005744C7 /* EnvironmentFlag.swift in Sources */,
@@ -2135,15 +2143,17 @@
 				D5DAEAA724D7E377005744C7 /* MBApp.swift in Sources */,
 				D5DAEA8E24D7D698005744C7 /* MBControlGroup.m in Sources */,
 				D5DAEACD24D842AD005744C7 /* MBLayoutButton.m in Sources */,
+				D5031B9125BFF93F00C2849E /* MBSwift.swift in Sources */,
 				D5DAEA8524D7D446005744C7 /* MessageManager.swift in Sources */,
 				D5DAEA8324D7D40E005744C7 /* NavigationController.swift in Sources */,
 				D5DAEA8424D7D436005744C7 /* NSPointArray+App.swift in Sources */,
 				D5DAEA9E24D7DB4E005744C7 /* NSUserDefaults+App.m in Sources */,
 				D5DAEAA224D7E2A0005744C7 /* RootViewController.swift in Sources */,
 				D5DAEA9124D7D80F005744C7 /* ShortCuts.m in Sources */,
+				D5031B7F25BFF8D800C2849E /* StroryboardCreation.swift in Sources */,
 				D50D5F2E24D9A75E0047715A /* UIViewController+AccountSwitching.swift in Sources */,
 				D5DAEAA024D7DBB3005744C7 /* UIViewController+App.m in Sources */,
-				D5DAEA9924D7D952005744C7 /* UIViewController+NavigationAppearance.m in Sources */,
+				D5031B9B25BFF9E000C2849E /* UIViewController+Appearance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2833,7 +2843,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Demos/_Shared/demos.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				INFOPLIST_FILE = "Demos/$(PRODUCT_MODULE_NAME)/Info.plist";
+				INFOPLIST_FILE = "Demos/$(PRODUCT_MODULE_NAME)/Supports/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2841,7 +2851,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.bb9z.iOS-Project-Template.demo.$(PRODUCT_MODULE_NAME)";
 				PRODUCT_NAME = GuestMode;
 				SUPPORTS_MACCATALYST = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Demos/$(PRODUCT_MODULE_NAME)/OCHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Demos/$(PRODUCT_MODULE_NAME)/Supports/OCHeader.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "App-Swift.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2854,7 +2864,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Demos/_Shared/demos.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				INFOPLIST_FILE = "Demos/$(PRODUCT_MODULE_NAME)/Info.plist";
+				INFOPLIST_FILE = "Demos/$(PRODUCT_MODULE_NAME)/Supports/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2862,7 +2872,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.bb9z.iOS-Project-Template.demo.$(PRODUCT_MODULE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Demos/$(PRODUCT_MODULE_NAME)/OCHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Demos/$(PRODUCT_MODULE_NAME)/Supports/OCHeader.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "App-Swift.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2875,7 +2885,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Demos/_Shared/demos.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				INFOPLIST_FILE = "Demos/$(PRODUCT_MODULE_NAME)/Info.plist";
+				INFOPLIST_FILE = "Demos/$(PRODUCT_MODULE_NAME)/Supports/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2883,7 +2893,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.bb9z.iOS-Project-Template.demo.$(PRODUCT_MODULE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Demos/$(PRODUCT_MODULE_NAME)/OCHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Demos/$(PRODUCT_MODULE_NAME)/Supports/OCHeader.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "App-Swift.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2896,7 +2906,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Demos/_Shared/demos.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				INFOPLIST_FILE = "Demos/$(PRODUCT_MODULE_NAME)/Info.plist";
+				INFOPLIST_FILE = "Demos/$(PRODUCT_MODULE_NAME)/Supports/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2904,7 +2914,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.bb9z.iOS-Project-Template.demo.$(PRODUCT_MODULE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Demos/$(PRODUCT_MODULE_NAME)/OCHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Demos/$(PRODUCT_MODULE_NAME)/Supports/OCHeader.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "App-Swift.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

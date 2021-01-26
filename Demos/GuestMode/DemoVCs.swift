@@ -6,8 +6,8 @@
 /**
  演示首页
  */
-class HomeViewController: UIViewController {
-    override class func storyboardName() -> String { "GuestMode" }
+class HomeViewController: UIViewController, StroryboardCreation {
+    static var storyboardID: StoryboardID { .main }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,16 +40,16 @@ class HomeViewController: UIViewController {
 /**
  需要登入可见的页面
  */
-class PrivateViewController: UIViewController {
-    override class func storyboardName() -> String { "GuestMode" }
+class PrivateViewController: UIViewController, StroryboardCreation {
+    static var storyboardID: StoryboardID { .main }
     // 是否需要登入可见在 Interface Builder 中设置 MBUserLoginRequired
 }
 
 /**
  游客也可见的页面
  */
-class PublicViewController: UIViewController {
-    override class func storyboardName() -> String { "GuestMode" }
+class PublicViewController: UIViewController, StroryboardCreation {
+    static var storyboardID: StoryboardID { .main }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -82,8 +82,8 @@ class PublicViewController: UIViewController {
 /**
  演示登入页
  */
-class LoginViewController: UIViewController, LoginVCs {
-    override class func storyboardName() -> String { "GuestMode" }
+class LoginViewController: UIViewController, LoginVCs, StroryboardCreation {
+    static var storyboardID: StoryboardID { .main }
 
     /// 便于用户切换时区分
     static var demoUserName: String?

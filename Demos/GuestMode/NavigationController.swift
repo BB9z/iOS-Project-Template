@@ -12,8 +12,8 @@ private enum NavigationTab: Int {
 /**
  应用主导航控制器
  */
-class NavigationController: MBNavigationController {
-    override class func storyboardName() -> String { "GuestMode" }
+class NavigationController: MBNavigationController, StroryboardCreation {
+    static var storyboardID: StoryboardID { .main }
 
     override func onInit() {
         super.onInit()
@@ -22,7 +22,8 @@ class NavigationController: MBNavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 强制设置一些初始状态，否则会有异常
+        // 导航基类会在导航即将显示时把当前的样式作为默认样式，进入 app 时就显示 tab 但我们需要默认不显示 tab
+        defaultAppearanceAttributes[.prefersBottomBarShownAttribute] = false
 
         tabItems?.selectIndex = NavigationTab.defaule.rawValue
         onTabSelect(tabItems!)
@@ -135,7 +136,7 @@ extension NavigationController: MBControlGroupDelegate {
         case .count, .none:
             fatalError()
         }
-        vc.rfPrefersBottomBarShown = true
+        vc.prefersBottomBarShown = true
         tabControllers.replaceObject(at: index, withObject: vc)
         return vc
     }
