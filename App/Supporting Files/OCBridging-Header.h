@@ -76,6 +76,7 @@
 #import <RFAlpha/RFContainerView.h>
 #import <RFAlpha/RFDrawImage.h>
 #import <RFAlpha/RFLine.h>
+#import <RFAlpha/RFNavigationController.h>
 #import <RFAlpha/RFTimer.h>
 #import <RFKeyboard/RFKeyboard.h>
 #import <RFKit/NSFileManager+RFKit.h>
