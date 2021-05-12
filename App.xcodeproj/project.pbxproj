@@ -110,7 +110,6 @@
 		D5B49EC61C4111B600847925 /* MBLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B49EC11C4111B600847925 /* MBLayoutConstraint.m */; };
 		D5B49F021C41133A00847925 /* MBCollectionViewArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B49ECB1C41133900847925 /* MBCollectionViewArrayDataSource.m */; };
 		D5B49F031C41133A00847925 /* MBCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B49ECD1C41133900847925 /* MBCollectionViewDataSource.m */; };
-		D5B49F041C41133A00847925 /* MBCollectionViewColumnLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B49ED01C41133900847925 /* MBCollectionViewColumnLayout.m */; };
 		D5B49F051C41133A00847925 /* MBCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B49ED21C41133900847925 /* MBCollectionViewFlowLayout.m */; };
 		D5B49F071C41133A00847925 /* MBCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B49ED61C41133900847925 /* MBCollectionView.m */; };
 		D5B49F081C41133A00847925 /* MBEntitiesCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B49ED81C41133900847925 /* MBEntitiesCollectionView.m */; };
@@ -161,6 +160,7 @@
 		D5DB4C22241E39EA00832A0A /* UIKit+DynamicType.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DB4C21241E39EA00832A0A /* UIKit+DynamicType.m */; };
 		D5DC60C124CA84BC00FBB147 /* EnvironmentFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55959CD20AB95640019D733 /* EnvironmentFlag.swift */; };
 		D5E2DBFB24CEE54400CEB26D /* APIResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2DBFA24CEE54300CEB26D /* APIResponseSerializer.swift */; };
+		D5E6336D264BC77900C4EBE6 /* MBCollectionViewColumnLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E6336C264BC77900C4EBE6 /* MBCollectionViewColumnLayout.swift */; };
 		D5E80580226F403D00901C41 /* MBBottomLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E8057F226F403D00901C41 /* MBBottomLayoutView.m */; };
 		D5EE51192043DAA2009148B3 /* NSArray+App.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE50E42043DAA1009148B3 /* NSArray+App.m */; };
 		D5EE51212043DAA2009148B3 /* UIViewController+App.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE50EC2043DAA1009148B3 /* UIViewController+App.m */; };
@@ -369,8 +369,6 @@
 		D5B49ECB1C41133900847925 /* MBCollectionViewArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCollectionViewArrayDataSource.m; sourceTree = "<group>"; };
 		D5B49ECC1C41133900847925 /* MBCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCollectionViewDataSource.h; sourceTree = "<group>"; };
 		D5B49ECD1C41133900847925 /* MBCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCollectionViewDataSource.m; sourceTree = "<group>"; };
-		D5B49ECF1C41133900847925 /* MBCollectionViewColumnLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCollectionViewColumnLayout.h; sourceTree = "<group>"; };
-		D5B49ED01C41133900847925 /* MBCollectionViewColumnLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCollectionViewColumnLayout.m; sourceTree = "<group>"; };
 		D5B49ED11C41133900847925 /* MBCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		D5B49ED21C41133900847925 /* MBCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		D5B49ED51C41133900847925 /* MBCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCollectionView.h; sourceTree = "<group>"; };
@@ -445,6 +443,7 @@
 		D5DB4C20241E39EA00832A0A /* UIKit+DynamicType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+DynamicType.h"; sourceTree = "<group>"; };
 		D5DB4C21241E39EA00832A0A /* UIKit+DynamicType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIKit+DynamicType.m"; sourceTree = "<group>"; };
 		D5E2DBFA24CEE54300CEB26D /* APIResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponseSerializer.swift; sourceTree = "<group>"; };
+		D5E6336C264BC77900C4EBE6 /* MBCollectionViewColumnLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBCollectionViewColumnLayout.swift; sourceTree = "<group>"; };
 		D5E8057E226F403C00901C41 /* MBBottomLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBBottomLayoutView.h; sourceTree = "<group>"; };
 		D5E8057F226F403D00901C41 /* MBBottomLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBBottomLayoutView.m; sourceTree = "<group>"; };
 		D5EE50E42043DAA1009148B3 /* NSArray+App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+App.m"; sourceTree = "<group>"; };
@@ -1132,8 +1131,7 @@
 				D5031C3325C04A2500C2849E /* CollectionViewAutoSizingSectionView.swift */,
 				D5F9F47A208D8F8700427201 /* MBCollectionViewCarouselLayout.h */,
 				D5F9F47B208D8F8700427201 /* MBCollectionViewCarouselLayout.m */,
-				D5B49ECF1C41133900847925 /* MBCollectionViewColumnLayout.h */,
-				D5B49ED01C41133900847925 /* MBCollectionViewColumnLayout.m */,
+				D5E6336C264BC77900C4EBE6 /* MBCollectionViewColumnLayout.swift */,
 				D5EE521E2043F6A6009148B3 /* MBCollectionViewEqualColumnSpaceLayout.h */,
 				D5EE521B2043F6A6009148B3 /* MBCollectionViewEqualColumnSpaceLayout.m */,
 				D5B49ED11C41133900847925 /* MBCollectionViewFlowLayout.h */,
@@ -1679,7 +1677,7 @@
 				D5B49F071C41133A00847925 /* MBCollectionView.m in Sources */,
 				D5B49F021C41133A00847925 /* MBCollectionViewArrayDataSource.m in Sources */,
 				D5F9F47C208D8F8700427201 /* MBCollectionViewCarouselLayout.m in Sources */,
-				D5B49F041C41133A00847925 /* MBCollectionViewColumnLayout.m in Sources */,
+				D5E6336D264BC77900C4EBE6 /* MBCollectionViewColumnLayout.swift in Sources */,
 				D5B49F031C41133A00847925 /* MBCollectionViewDataSource.m in Sources */,
 				D5EE52212043F6A7009148B3 /* MBCollectionViewEqualColumnSpaceLayout.m in Sources */,
 				D5B49F051C41133A00847925 /* MBCollectionViewFlowLayout.m in Sources */,
