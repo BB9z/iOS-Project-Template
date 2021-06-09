@@ -4,7 +4,7 @@
 
 ## 需求
 
-iOS 12+；Xcode 12+。
+iOS 13+；Xcode 12+。
 
 Ruby Gems 依赖：
 
