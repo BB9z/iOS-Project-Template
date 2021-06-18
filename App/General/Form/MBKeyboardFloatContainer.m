@@ -39,8 +39,13 @@ RFInitializingRootForUIView
 - (void)keyboardWillShow:(NSNotification *)note {
     CGFloat keyboardHeight = [RFKeyboard keyboardLayoutHeightForNotification:note inView:self];
     [RFKeyboard viewAnimateWithNotification:note animations:^{
-        self.keyboardLayoutConstraint.constant = keyboardHeight + self.offsetAdjust;
-        [self.keyboardLayoutConstraint updateLayoutIfNeeded];
+        self.keyboardLayoutConstraint.constant = keyboardHeight + self.offsetAdjust - self.safeAreaInsets.bottom;
+        if (self.needsLayoutView) {
+            [self.needsLayoutView layoutIfNeeded];
+        }
+        else {
+            [self.keyboardLayoutConstraint updateLayoutIfNeeded];
+        }
     } completion:nil];
     if (self.tapToDismissContainer) {
         if (self.maskButton.superview
@@ -66,7 +71,12 @@ RFInitializingRootForUIView
         else {
             self.keyboardLayoutConstraint.constant = 0;
         }
-        [self.keyboardLayoutConstraint updateLayoutIfNeeded];
+        if (self.needsLayoutView) {
+            [self.needsLayoutView layoutIfNeeded];
+        }
+        else {
+            [self.keyboardLayoutConstraint updateLayoutIfNeeded];
+        }
     } completion:nil];
 }
 

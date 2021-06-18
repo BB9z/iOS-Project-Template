@@ -27,27 +27,34 @@
 /**
  键盘弹出时会设置该约束为键盘高度，收起时设置成 0
  */
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *keyboardLayoutConstraint;
+@property (weak, nullable) IBOutlet NSLayoutConstraint *keyboardLayoutConstraint;
+
+/**
+ 可选，keyboardLayoutConstraint 变更时需要重新布局的 view
+
+ 如果 keyboardLayoutConstraint 是里层 view 的，只会通知里层 view 更新布局，但外层 view 也可能收到影响了，导致动画不同步
+ */
+@property (weak, nullable) IBOutlet UIView *needsLayoutView;
 
 /**
  用于键盘收起时，调节约束的偏移量
  */
-@property (nonatomic) IBInspectable CGFloat keyboardLayoutOriginalConstraint;
+@property IBInspectable CGFloat keyboardLayoutOriginalConstraint;
 
 /**
  用于键盘弹出时，调节约束的偏移量
  */
-@property (nonatomic) IBInspectable CGFloat offsetAdjust;
+@property IBInspectable CGFloat offsetAdjust;
 
 /**
  如果设置，弹出键盘时，点击该区域会隐藏键盘
  */
-@property (nonatomic, weak) IBOutlet UIView *tapToDismissContainer;
+@property (weak, nullables) IBOutlet UIView *tapToDismissContainer;
 
 /**
  键盘事件响应
  */
-- (void)keyboardWillShow:(NSNotification *)note NS_REQUIRES_SUPER;
-- (void)keyboardWillHide:(NSNotification *)note NS_REQUIRES_SUPER;
+- (void)keyboardWillShow:(nonnull NSNotification *)note NS_REQUIRES_SUPER;
+- (void)keyboardWillHide:(nonnull NSNotification *)note NS_REQUIRES_SUPER;
 
 @end
