@@ -49,7 +49,7 @@
 /**
  如果设置，弹出键盘时，点击该区域会隐藏键盘
  */
-@property (weak, nullables) IBOutlet UIView *tapToDismissContainer;
+@property (weak, nullable) IBOutlet UIView *tapToDismissContainer;
 
 /**
  键盘事件响应

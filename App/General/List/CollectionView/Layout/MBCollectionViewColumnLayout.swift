@@ -65,7 +65,7 @@ class MBCollectionViewColumnLayout: UICollectionViewFlowLayout {
         }
     }
 
-    override func shouldInvalidateLayout(forBoundsChange newBounds: NSRect) -> Bool {
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         if newBounds.width != collectionView?.bounds.width {
             updateLayout(bounds: newBounds)
             return true
@@ -94,9 +94,9 @@ class MBCollectionViewColumnLayout: UICollectionViewFlowLayout {
             let width = innerLayoutWidth(section: 0, bounds: bounds)
             columnCount = Int(width / reference.width)
         }
-        let itemWidth = itemWidth(section: 0, bounds: bounds)
-        let itemHeight = onlyAdjustWidth ? reference.height : itemWidth / reference.width * reference.height
-        return CGSize(width: itemWidth, height: itemHeight)
+        let width = itemWidth(section: 0, bounds: bounds)
+        let height = onlyAdjustWidth ? reference.height : width / reference.width * reference.height
+        return CGSize(width: width, height: height)
     }
 
     private func itemWidth(section: Int, bounds: CGRect) -> CGFloat {
