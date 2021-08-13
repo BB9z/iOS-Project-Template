@@ -20,6 +20,24 @@ final class ObjectPool<Key: Hashable, Value: AnyObject> {
     init() {
     }
 
+    /**
+     只读或写线程安全
+
+     但如果类似下列代码，不存在则创建保存这种，请用 `object(key: Key, creator: @autoclosure () -> Value)` 方法
+
+     ```
+     // 反例，下述方法不是线程安全的，相同 id 的 Obj 可以创建多个并返回
+     fun someFunc(id: Key) -> Obj {
+         if let old = pool[id] {
+           return old
+         } else {
+           let new = Obj(id)
+           pool[id] = new
+           return new
+         }
+     }
+     ```
+     */
     subscript(index: Key) -> Value? {
         get {
             lock.lock()
@@ -34,9 +52,23 @@ final class ObjectPool<Key: Hashable, Value: AnyObject> {
         }
     }
 
+    /**
+     返回 key 对应的对象，如果未在对象池中不存在，则用 creator 创建，存储后返回
+     */
+    func object(key: Key, creator: @autoclosure () -> Value) -> Value {
+        lock.lock()
+        defer { lock.unlock() }
+        if let obj = store[key]?.object {
+            return obj
+        }
+        let obj = creator()
+        store[key] = Weak(object: obj)
+        return obj
+    }
+
     func removeAll() {
         lock.lock()
-        store.removeAll()
+        store = [:]
         lock.unlock()
     }
 
