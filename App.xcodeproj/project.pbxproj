@@ -2038,7 +2038,7 @@
 				CodeCommentsHighlightKeywordsExpression = "TODO|FIXME";
 				CodeCommentsHighlightSkipFrameworks = YES;
 				CodeReviewFixRightNowKeywordsExpression = "FUCK|FIXRIGHTNOW|NOTICE";
-				EnableCodeCommentsHighlight = YES;
+				EnableCodeCommentsHighlight = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				ProjectFilePath = "${SRCROOT}/${PROJECT}.xcodeproj";
 				ScriptPath = $SRCROOT/Scripts;
@@ -2051,7 +2051,7 @@
 				CodeCommentsHighlightKeywordsExpression = "TODO|FIXME";
 				CodeCommentsHighlightSkipFrameworks = YES;
 				CodeReviewFixRightNowKeywordsExpression = "FUCK|FIXRIGHTNOW|NOTICE";
-				EnableCodeCommentsHighlight = YES;
+				EnableCodeCommentsHighlight = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				ProjectFilePath = "${SRCROOT}/${PROJECT}.xcodeproj";
 				ScriptPath = $SRCROOT/Scripts;
@@ -2160,7 +2160,7 @@
 				CodeCommentsHighlightKeywordsExpression = "TODO|FIXME";
 				CodeCommentsHighlightSkipFrameworks = YES;
 				CodeReviewFixRightNowKeywordsExpression = "FUCK|FIXRIGHTNOW|NOTICE";
-				EnableCodeCommentsHighlight = YES;
+				EnableCodeCommentsHighlight = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				ProjectFilePath = "${SRCROOT}/${PROJECT}.xcodeproj";
 				ScriptPath = $SRCROOT/Scripts;
