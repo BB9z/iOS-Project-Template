@@ -95,6 +95,7 @@
 		D5740B56249C5316001CBCB2 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5740B55249C5316001CBCB2 /* MoreVC.swift */; };
 		D5740B58249C7C5D001CBCB2 /* LoginForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5740B57249C7C5D001CBCB2 /* LoginForms.swift */; };
 		D579495F21788D67002E1C4A /* UIDevice+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D579495E21788D67002E1C4A /* UIDevice+App.swift */; };
+		D584C77B26EEC970004E434B /* GradientProgressViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D584C77A26EEC970004E434B /* GradientProgressViews.swift */; };
 		D588308620CAB8AE002030C4 /* MBNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D588308320CAB8AE002030C4 /* MBNavigationBar.m */; };
 		D588308720CAB8AE002030C4 /* MBRoundBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D588308520CAB8AE002030C4 /* MBRoundBarButtonItem.m */; };
 		D588308D20CACB33002030C4 /* Array+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588308820CACB32002030C4 /* Array+App.swift */; };
@@ -343,6 +344,7 @@
 		D5740B55249C5316001CBCB2 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		D5740B57249C7C5D001CBCB2 /* LoginForms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForms.swift; sourceTree = "<group>"; };
 		D579495E21788D67002E1C4A /* UIDevice+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+App.swift"; sourceTree = "<group>"; };
+		D584C77A26EEC970004E434B /* GradientProgressViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientProgressViews.swift; sourceTree = "<group>"; };
 		D588307F20CA67A7002030C4 /* UICollectionViewFlowLayout+IBInspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewFlowLayout+IBInspectable.h"; sourceTree = "<group>"; };
 		D588308220CAB8AE002030C4 /* MBNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNavigationBar.h; sourceTree = "<group>"; };
 		D588308320CAB8AE002030C4 /* MBNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNavigationBar.m; sourceTree = "<group>"; };
@@ -1394,6 +1396,7 @@
 			isa = PBXGroup;
 			children = (
 				D52A04E420F85F2600F535ED /* Button.swift */,
+				D584C77A26EEC970004E434B /* GradientProgressViews.swift */,
 				D50693D619495D9E0002BFCC /* MBControlGroup.h */,
 				D50693D719495D9E0002BFCC /* MBControlGroup.m */,
 				D5EE52292043F7B9009148B3 /* MBLayoutButton.h */,
@@ -1656,6 +1659,7 @@
 				D5031A6B25BED1AE00C2849E /* FileURL.swift in Sources */,
 				D5C3CBEF217ED20F0097CCD9 /* Geometry+App.swift in Sources */,
 				D5031C0425C03F7C00C2849E /* Gradient.swift in Sources */,
+				D584C77B26EEC970004E434B /* GradientProgressViews.swift in Sources */,
 				D5BE29602509CB9C00A9AA2F /* HasItem.swift in Sources */,
 				D569C9CF21AE8D3200211E36 /* HomeVC.swift in Sources */,
 				D5B8A39E251221A300C84CB1 /* IdentifierEquatable.swift in Sources */,
