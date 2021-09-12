@@ -92,13 +92,13 @@ static OSSConfigEntity *_ossConfig = nil;
     OSSConfigEntity *config = _ossConfig;
     OSSClient *client = _ossClient;
     if (!config) {
-        callback(NO, nil, [NSError errorWithDomain:APIErrorDomain code:MBErrorObjectNotFound localizedDescription:@"配置异常"]);
+        callback(NO, nil, [NSError errorWithDomain:API.errorDomain code:MBErrorObjectNotFound localizedDescription:@"配置异常"]);
         return;
     }
     NSString *objectKey = [self _objectKeyForPutRequest:request];
     NSURL *url = [config destinationURLWithObjectKey:objectKey];
     if (!url) {
-        callback(NO, nil, [NSError errorWithDomain:APIErrorDomain code:MBErrorDataInvaild localizedDescription:@"资源地址生成失败"]);
+        callback(NO, nil, [NSError errorWithDomain:API.errorDomain code:MBErrorDataInvaild localizedDescription:@"资源地址生成失败"]);
         return;
     }
     
