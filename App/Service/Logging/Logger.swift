@@ -9,36 +9,50 @@ import Logging
 
 /// Logger 单例
 func AppLog() -> Logger {  // swiftlint:disable:this identifier_name
-    AppLogHandler.sharedLogger
+    AppLogHandler.shared
 }
 
 private struct AppLogHandler: LogHandler {
-    fileprivate static let sharedLogger: Logger = {
-        #if DEBUG
+    fileprivate static let shared: Logger = {
         LoggingSystem.bootstrap { _ in AppLogHandler() }
-        #else
-        // 简单处理，生产环境完全禁用 log
-        LoggingSystem.bootstrap { _ in SwiftLogNoOpLogHandler() }
-        #endif
         return Logger(label: "App")
     }()
 
     var metadata: Logger.Metadata = [:]
 
-    var logLevel = Logger.Level.info
+    #if DEBUG
+    var logLevel = Logger.Level.debug
+    #else
+    var logLevel = Logger.Level.error
+    #endif
 
     // swiftlint:disable:next function_parameter_count
     func log(level: Logger.Level, message: Logger.Message, metadata: Logger.Metadata?, source: String, file: String, function: String, line: UInt) {
         // 🔰 按需调整实现
+        #if DEBUG
+        switch level {
+        case .debug, .trace:
+            print("\(timestamp()): 🔹 \(message)")
+        case .info:
+            print("\(timestamp()): \(message)")
+        case .notice, .warning:
+            print("\(timestamp()): ⚠️ \(message)")
+        case .error:
+            NSLog("❌ \(message)")
+        case .critical:
+            NSLog("❌ \(message)")
+            ThrowExceptionToPause()
+        }
+        #else
         switch level {
         case .error:
-            NSLog(String(describing: message))
+            NSLog("\(message)")
         case .critical:
-            NSLog(String(describing: message))
-            ThrowExceptionToPause()
+            NSLog("\(message)")
         default:
-            print("\(timestamp()): [\(level)] \(message)")
+            break
         }
+        #endif
     }
 
     subscript(metadataKey metadataKey: String) -> Logger.Metadata.Value? {
@@ -50,6 +64,7 @@ private struct AppLogHandler: LogHandler {
         }
     }
 
+    // https://github.com/apple/swift-log/blob/1.4.2/Sources/Logging/Logging.swift#L929
     private func timestamp() -> String {
         var buffer = [Int8](repeating: 0, count: 127)
         var timestamp = time(nil)
