@@ -69,19 +69,19 @@
     [(UIControl *)self.submitButton setEnabled:self.isValid];
     [self MBFormFieldVerifyControl_updateSumitButtonLink];
 }
-- (void)setInvaildSubmitButton:(id)invaildSubmitButton {
-    _invaildSubmitButton = invaildSubmitButton;
+- (void)setInvalidSubmitButton:(id)invalidSubmitButton {
+    _invalidSubmitButton = invalidSubmitButton;
     [self MBFormFieldVerifyControl_updateSumitButtonLink];
 }
 
 - (void)MBFormFieldVerifyControl_updateSumitButtonLink {
-    id invaildControl = self.invaildSubmitButton;
-    if (!invaildControl) return;
+    id invalidControl = self.invalidSubmitButton;
+    if (!invalidControl) return;
     BOOL v = self.isValid;
     for (MBTextField *f in self.textFields) {
         if (!f.nextField) continue;
-        if (f.nextField == self.submitButton || f.nextField == invaildControl) {
-            f.nextField = v ? self.submitButton : invaildControl;
+        if (f.nextField == self.submitButton || f.nextField == invalidControl) {
+            f.nextField = v ? self.submitButton : invalidControl;
         }
     }
 }

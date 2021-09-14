@@ -31,15 +31,15 @@ static MBPublishImagePicker *MBPBLiveInstance = nil;
 
 @implementation MBPublishImagePicker
 
-+ (void)pickAvatarImageWithCropSize : (CGSize)size actionSheetTitle : (NSString *)title complation : (MBGeneralCallback)complation {
++ (void)pickAvatarImageWithCropSize : (CGSize)size actionSheetTitle : (NSString *)title completion : (MBGeneralCallback)completion {
     [self pickImageWithConfiguration:^(MBPublishImagePicker *_Nonnull instance) {
         instance.cropAfterImageSelected = YES;
         instance.cropSize = size;
-    } complation:complation];
+    } completion:completion];
 }
 
-+ (void)pickImageWithConfiguration:(NS_NOESCAPE void (^)(MBPublishImagePicker *_Nonnull))configBlock complation:(MBGeneralCallback)complation {
-    MBGeneralCallback safeCallback = MBSafeCallback(complation);
++ (void)pickImageWithConfiguration:(NS_NOESCAPE void (^)(MBPublishImagePicker *_Nonnull))configBlock completion:(MBGeneralCallback)completion {
+    MBGeneralCallback safeCallback = MBSafeCallback(completion);
     if (MBPBLiveInstance) {
         if (MBPBLiveInstance.hasSystemImagePickerShown && MBPBLiveInstance.systemImagePickerVC == nil) {
             MBPBLiveInstance = nil;

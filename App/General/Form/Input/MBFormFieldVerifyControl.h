@@ -39,6 +39,6 @@
 
  如果设置，当有输入框的 nextField 指向 submitButton 时，会更新该指向
  */
-@property (weak, nullable, nonatomic) IBOutlet id invaildSubmitButton;
+@property (weak, nullable, nonatomic) IBOutlet id invalidSubmitButton;
 
 @end

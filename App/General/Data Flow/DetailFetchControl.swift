@@ -42,7 +42,7 @@ class DetailFetchControl<T> {
     var fetchError: ((RFAPITask?, Error) -> Void)?
 
     /// 服务器模型转换，通常在后台线程执行
-    var responseProccess: ((Any?, T) -> T)?
+    var responseProcess: ((Any?, T) -> T)?
 
     /// 数据不充足且离线时展示
     var offlineTips = "未连接网络，联网后才能查看详情内容"
@@ -104,8 +104,8 @@ class DetailFetchControl<T> {
                 }
                 sf.fetchError?(task, error)
             }
-            if let proccess = responseProccess {
-                c.responseObjectTransformer = { proccess($1, item) }
+            if let process = responseProcess {
+                c.responseObjectTransformer = { process($1, item) }
             }
             c.success { [weak self] _, rsp in
                 guard let sf = self else { return }

@@ -58,7 +58,7 @@ class TopicEntity: MBModel,
 
         likeTask = API.requestName(shouldLike ? positiveAPI : negativeAPI, context: { c in
             c.parameters = ["tid": uid]
-            c.complation { [self] task, _, _ in
+            c.completion { [self] task, _, _ in
                 if task?.isSuccess == false {
                     isLiked = !shouldLike
                     likeCount -= shouldLike ? 1 : -1

@@ -67,7 +67,7 @@
  `CAAnimation` instances associated with the provided keys will be copied and held onto,
  when the applications enters background mode and restored when exiting background mode.
  
- Set to `nil`to disable persistance.
+ Set to `nil`to disable persistence.
  */
 @property (nonatomic, nullable) NSArray<NSString *> *MBPersistentAnimationKeys;
 

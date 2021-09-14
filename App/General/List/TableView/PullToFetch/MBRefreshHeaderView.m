@@ -27,10 +27,10 @@
     if (_status == status) return;
     _status = status;
 
-    BOOL isProccessing = (status == RFPullToFetchIndicatorStatusProcessing);
+    BOOL isProcessing = (status == RFPullToFetchIndicatorStatusProcessing);
 
-    self.indicatorImageView.hidden = isProccessing;
-    self.activityIndicatorView.hidden = !isProccessing;
+    self.indicatorImageView.hidden = isProcessing;
+    self.activityIndicatorView.hidden = !isProcessing;
 
     UILabel *label = self.statusLabel;
     switch (status) {

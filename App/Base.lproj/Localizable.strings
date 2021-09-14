@@ -15,7 +15,7 @@
 "NSURLErrorSecureConnectionFailed"      = "不能建立与服务器的安全连接。请检查设备的时钟是否正确；如果你在使用公共 Wi-Fi，请打开系统浏览器获取网络访问权限";
 "NSURLErrorTimedOut"                    = "网络连接不畅";
 
-/// - RFAPI Build-in
+/// - RFAPI Built-in
 
 "RFAPI.Error.GeneralFailureReasonApp" = "很可能是应用 bug";
 "RFAPI.Error.GeneralFailureReasonServer" = "可能服务器正在升级或者维护，也可能是应用 bug";

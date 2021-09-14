@@ -194,7 +194,7 @@ typedef NS_ENUM(short, MBDataSourceDistinctRule) {
 @property (class, nullable, nonatomic) BOOL (^defaultFetchFailureHandler)(MBListDataSource *__nonnull ds, NSError *__nonnull error);
 
 /// 注册数据请求结束的事件处理
-- (void)addFetchComplationCallback:(void (^__nonnull)(__kindof MBListDataSource *__nonnull ds, NSError *__nullable error))callback refrenceObject:(nonnull id)object;
-- (void)removeFetchComplationCallbacksOnRefrenceObject:(nonnull id)object;
+- (void)addFetchCompletionCallback:(void (^__nonnull)(__kindof MBListDataSource *__nonnull ds, NSError *__nullable error))callback refrenceObject:(nonnull id)object;
+- (void)removeFetchCompletionCallbacksOnRefrenceObject:(nonnull id)object;
 
 @end

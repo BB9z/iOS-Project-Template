@@ -38,7 +38,7 @@ plist = { "Version" => 1 } if plist == nil
 # 写一个最简单的版本检查
 record_version = plist["Version"]
 if !record_version
-    puts "Unknow record file."
+    puts "Unknown record file."
     puts -1
     exit 1
 elsif record_version > 1

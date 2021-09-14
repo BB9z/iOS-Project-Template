@@ -40,7 +40,7 @@ class NavigationController: MBNavigationController, StoryboardCreation, UIApplic
     }
 
     func onLogin() {
-        selectTab(.defaule)
+        selectTab(.default)
     }
 
     override func presentLoginScene() {
@@ -76,6 +76,6 @@ class NavigationController: MBNavigationController, StoryboardCreation, UIApplic
 // MARK: - Jump
 extension NavigationController {
     @IBAction private func navigationBackToHome(_ sender: Any?) {
-        selectTab(.defaule)
+        selectTab(.default)
     }
 }

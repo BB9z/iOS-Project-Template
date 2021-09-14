@@ -78,15 +78,15 @@
 }
 
 - (void)_MBAudioRecorder_onTimeout {
-    [self stopRecordComplation:nil];
+    [self stopRecordCompletion:nil];
 }
 
-- (void)stopRecordComplation:(void (^)(BOOL, NSURL *, NSError *))complation {
+- (void)stopRecordCompletion:(void (^)(BOOL, NSURL *, NSError *))completion {
     if (self._recordingTimeout) {
         [self._recordingTimeout invalidate];
         self._recordingTimeout = nil;
     }
-    MBGeneralCallback cb = MBSafeCallback(complation);
+    MBGeneralCallback cb = MBSafeCallback(completion);
     AVAudioRecorder *r = self._recorder;
     if (!r) {
         cb(NO, nil, [NSError errorWithDomain:@"MBAudioRecorder" code:MBErrorOperationCanceled localizedDescription:@"没有开始录音"]);
@@ -94,7 +94,7 @@
     }
     self._recorder = nil;
     self.paused = NO;
-    self._stopCallback = complation;
+    self._stopCallback = completion;
     [r stop];
     if (!self.disableAudioSessionCategotyRestoreWhenStop) {
         [AVAudioSession.sharedInstance setCategory:AVAudioSessionCategorySoloAmbient error:nil];

@@ -5,8 +5,8 @@
 @interface MBLoadButton ()
 @property (strong, nonatomic) id loadingObserver;
 @property (readwrite, nonatomic) BOOL observing;
-@property (weak, readwrite, nonatomic) id observeTarget;
-@property (copy, readwrite, nonatomic) NSString *observeKeypath;
+@property (weak, readwrite) id observeTarget;
+@property (copy, readwrite) NSString *observeKeypath;
 @property (copy, nonatomic) BOOL (^evaluateBlock)(id evaluatedVaule);
 @end
 
@@ -34,14 +34,14 @@
     if (!enabled) {
         self.selected = NO;
     }
-    if (self.hidesWhenComplation) {
+    if (self.hidesWhenCompletion) {
         self.hidden = (enabled && !self.selected);
     }
 }
 
 - (void)setSelected:(BOOL)selected {
     [super setSelected:selected];
-    if (self.hidesWhenComplation && selected) {
+    if (self.hidesWhenCompletion && selected) {
         self.hidden = NO;
     }
 }
@@ -54,7 +54,7 @@
     self.selected = !success;
 }
 
-- (void)observeTarget:(id)target forKeyPath:(NSString *)keypath evaluateBlock:(BOOL (^)(id evaluatedVaule))ifProccessingBlock {
+- (void)observeTarget:(id)target forKeyPath:(NSString *)keypath evaluateBlock:(BOOL (^)(id evaluatedVaule))ifProcessingBlock {
     if (self.observing) {
         dout_warning(@"MBLoadButton already observing %@", self.observeTarget);
         return;
@@ -63,7 +63,7 @@
 
     self.observeTarget = target;
     self.observeKeypath = keypath;
-    self.evaluateBlock = ifProccessingBlock;
+    self.evaluateBlock = ifProcessingBlock;
 
     self.loadingObserver = [target RFAddObserver:self forKeyPath:keypath options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial queue:nil block:^(MBLoadButton *observer, NSDictionary *change) {
         [observer evaluateEnableStatus];

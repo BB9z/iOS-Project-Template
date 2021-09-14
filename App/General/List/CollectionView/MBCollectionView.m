@@ -30,7 +30,7 @@ RFInitializingRootForUIView
     ds.collectionView = self;
     ds.delegate = self;
     @weakify(self);
-    [ds addFetchComplationCallback:^(MBCollectionViewDataSource *d, NSError * _Nullable error) {
+    [ds addFetchCompletionCallback:^(MBCollectionViewDataSource *d, NSError * _Nullable error) {
         @strongify(self);
         [self.refreshControl endRefreshing];
         self.autoFetchWhenScroll = !error;
@@ -244,7 +244,7 @@ MBSynthesizeSetNeedsMethodUsingAssociatedObject(MBCollectionView_setNeedsUpdateF
             [self addSubview:collectionHeaderView];
         }
 
-        // Adjust header offset when header is visable
+        // Adjust header offset when header is visible
         if (self.contentOffset.y <= 0) {
             CGPoint offset = self.contentOffset;
             offset.y = -headerHeight;

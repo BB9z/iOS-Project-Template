@@ -81,7 +81,7 @@
     _dout(@"offset: %f, %f\t ix: %f(%f), %f(%f)", offset, offsetCurrent, offset / wPage, ixTarget, offsetCurrent / wPage, ixCurrent);
     
     double ixFinal = ixTarget;
-    // Limite page count change less than 2.
+    // Limit page count change less than 2.
     if (fabs(ixCurrent - ixTarget) > 1) {
         ixFinal = ixCurrent > ixTarget ? ixCurrent - 1 : ixCurrent + 1;
     }

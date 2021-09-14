@@ -16,7 +16,7 @@
 /**
  一个简单快速的 collection view 子类：
  
- - 数组作为单 setion 的数据源
+ - 数组作为单 section 的数据源
  - 默认 reuse identifier 为 "Cell"
  - Cell 点击时尝试执行 cell 的 onCellSelected 方法
  - 默认 scrollsToTop 为 NO
