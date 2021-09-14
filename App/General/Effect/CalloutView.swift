@@ -5,6 +5,7 @@ class CalloutView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = .clear
+        layer.masksToBounds = false
     }
 
     /// 箭头方向，0 向上，1 向下
@@ -165,7 +166,8 @@ private extension UIBezierPath {
     func addLine(x: CGFloat, y: CGFloat) {
         addLine(to: CGPoint(x: x, y: y))
     }
-    func addCurve(c1x: CGFloat, c1y: CGFloat, c2x: CGFloat, c2y: CGFloat, x: CGFloat, y: CGFloat) {  // swiftlint:disable:this function_parameter_count
+    // swiftlint:disable:next function_parameter_count
+    func addCurve(c1x: CGFloat, c1y: CGFloat, c2x: CGFloat, c2y: CGFloat, x: CGFloat, y: CGFloat) {
         addCurve(to: CGPoint(x: x, y: y), controlPoint1: CGPoint(x: c1x, y: c1y), controlPoint2: CGPoint(x: c2x, y: c2y))
     }
 }

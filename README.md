@@ -17,6 +17,8 @@ gem install fastlane #可选
 
 项目初始化请双击执行 bootstrap.command，随引导操作。
 
+command 脚本第一次运行时，系统可能会提示未认证的开发者禁止运行。可通过右键菜单，选择打开来解除限制。
+
 正常执行 CocoaPods 安装或用 fastlane 配置即可：
 
 ```sh

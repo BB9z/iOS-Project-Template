@@ -15,7 +15,7 @@ class CommentEntity: MBModel,
 
     var uid: String = ""
     var from: UserEntity?
-    var to: UserEntity?           // swiftlint:disable:this identifier_name
+    var to: UserEntity?
     var createTime: Date?
     var content: String?
     var replies: [CommentEntity]?

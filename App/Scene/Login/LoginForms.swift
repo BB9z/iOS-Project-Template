@@ -57,7 +57,7 @@ internal class LoginRegisterFormScene: UITableViewController {
 
     func updateUI(isEmail: Bool) {
         isEmailButton.isSelected = isEmail
-        tableView.reloadSections(IndexSet(arrayLiteral: userIDSection), with: .automatic)
+        tableView.reloadSections(IndexSet(integer: userIDSection), with: .automatic)
     }
 
     // 静态 UITableViewController 也可做 cell 的动态显隐

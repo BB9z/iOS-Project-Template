@@ -9,10 +9,6 @@
 # If you want to automatically update fastlane if a new version is available:
 # update_fastlane
 
-# This is the minimum version number required.
-# Update this, if you use features of a newer version
-fastlane_version "2.90.0"
-
 default_platform :ios
 
 before_all do
@@ -44,6 +40,8 @@ platform :ios do
   
   desc "打包上传到 fir.im"
   lane :alpha do
+    # https://docs.fastlane.tools/app-store-connect-api/
+
       # gym 文档 https://docs.fastlane.tools/actions/gym/
       gym(
           scheme: "AdHocTest",
