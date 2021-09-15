@@ -98,6 +98,7 @@
 		D584C77B26EEC970004E434B /* GradientProgressViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D584C77A26EEC970004E434B /* GradientProgressViews.swift */; };
 		D584C78026F020A3004E434B /* MBTouchEffectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D584C77C26F020A3004E434B /* MBTouchEffectButton.m */; };
 		D584C78126F020A3004E434B /* MBLoadButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D584C77F26F020A3004E434B /* MBLoadButton.m */; };
+		D584C78526F03768004E434B /* CoreAnimation+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D584C78426F03768004E434B /* CoreAnimation+App.swift */; };
 		D588308620CAB8AE002030C4 /* MBNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D588308320CAB8AE002030C4 /* MBNavigationBar.m */; };
 		D588308720CAB8AE002030C4 /* MBRoundBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D588308520CAB8AE002030C4 /* MBRoundBarButtonItem.m */; };
 		D588308D20CACB33002030C4 /* Array+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588308820CACB32002030C4 /* Array+App.swift */; };
@@ -351,6 +352,7 @@
 		D584C77D26F020A3004E434B /* MBLoadButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLoadButton.h; sourceTree = "<group>"; };
 		D584C77E26F020A3004E434B /* MBTouchEffectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTouchEffectButton.h; sourceTree = "<group>"; };
 		D584C77F26F020A3004E434B /* MBLoadButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBLoadButton.m; sourceTree = "<group>"; };
+		D584C78426F03768004E434B /* CoreAnimation+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreAnimation+App.swift"; sourceTree = "<group>"; };
 		D588307F20CA67A7002030C4 /* UICollectionViewFlowLayout+IBInspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewFlowLayout+IBInspectable.h"; sourceTree = "<group>"; };
 		D588308220CAB8AE002030C4 /* MBNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNavigationBar.h; sourceTree = "<group>"; };
 		D588308320CAB8AE002030C4 /* MBNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNavigationBar.m; sourceTree = "<group>"; };
@@ -723,6 +725,7 @@
 		D519A0D4243490BC00E26A64 /* UI System */ = {
 			isa = PBXGroup;
 			children = (
+				D584C78426F03768004E434B /* CoreAnimation+App.swift */,
 				D534460E25924CE700F5FD80 /* UIApplication+App.swift */,
 				D54F0E532199BB22003370F4 /* UIButton+App.swift */,
 				D58D1AFF251C583300D1EF32 /* UICollectionView+App.swift */,
@@ -1675,6 +1678,7 @@
 				D5B8A39E251221A300C84CB1 /* IdentifierEquatable.swift in Sources */,
 				D544A39E197D1E8600C65604 /* JSONValueTransformer+App.m in Sources */,
 				D5031C3C25C04C9200C2849E /* ListStateView.swift in Sources */,
+				D584C78526F03768004E434B /* CoreAnimation+App.swift in Sources */,
 				D533C4F42592370800590FBA /* Logger.swift in Sources */,
 				D5740B58249C7C5D001CBCB2 /* LoginForms.swift in Sources */,
 				D5740B53249B8B7C001CBCB2 /* LoginVCs.swift in Sources */,
