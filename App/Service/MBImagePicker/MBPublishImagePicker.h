@@ -1,7 +1,7 @@
 /*
  MBPublishImagePicker
  
- Copyright © 2018, 2020 RFUI.
+ Copyright © 2018, 2020-2021 BB9z.
  Copyright © 2016 Beijing ZhiYun ZhiYuan Technology Co., Ltd.
  https://github.com/RFUI/MBAppKit
  
