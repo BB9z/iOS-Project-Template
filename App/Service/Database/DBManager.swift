@@ -54,10 +54,7 @@ final class DBManager {
         migrator.registerMigration("v0") { db in
             // Create a table
             // See https://github.com/groue/GRDB.swift#create-tables
-            try db.create(table: "xxx") { table in
-                table.autoIncrementedPrimaryKey("id")
-                table.column("type", .text).notNull()
-            }
+            try _KVRecord.createTable(db)
         }
 
 //        migrator.registerMigration("v1") { db in
@@ -99,33 +96,6 @@ extension DBManager {
             } catch {
                 AppLog().critical("写入失败 \(error)")
             }
-        }
-    }
-
-    func read<T: FetchableRecord & TableRecord>(id: MBID) -> T? {
-        return dbQueue.read { db -> T? in
-            return try? T.fetchOne(db, key: id)
-        }
-    }
-
-    /// Save (insert or update) a model.
-    func save(model: inout MutablePersistableRecord) {
-        do {
-            try dbQueue.write { db in
-                try model.save(db)
-            }
-        } catch {
-            AppLog().critical("保存失败 \(error)")
-        }
-    }
-
-    func save(_ updates: DatabaseWorkItem) {
-        do {
-            try dbQueue.write { db in
-                try updates(db)
-            }
-        } catch {
-            AppLog().critical("保存失败 \(error)")
         }
     }
 }
