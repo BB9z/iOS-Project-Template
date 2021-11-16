@@ -659,7 +659,6 @@
 				D552DD7C18C8541D00D02290 /* General */,
 				D552DD5518C8506700D02290 /* Launching */,
 				D552DD4D18C8506700D02290 /* Model */,
-				D552DD5A18C8506700D02290 /* Networking */,
 				D552DD4918C8506700D02290 /* Scene */,
 				D5542F131918B82100831016 /* Service */,
 				D52EADE32043B983007219E0 /* Supporting Files */,
@@ -808,10 +807,20 @@
 		D533D1432743CF33008B923F /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				D533C4D325922D1100590FBA /* DBManager.swift */,
 				D533D1442743D01A008B923F /* DBManager+KVStorage.swift */,
+				D533C4D325922D1100590FBA /* DBManager.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		D533D1462743D0C2008B923F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D5F65F3324C1CAF10082FEC2 /* API.swift */,
+				D5542EA9191887F500831016 /* APIDefine.plist */,
+				D5E2DBFA24CEE54300CEB26D /* APIResponseSerializer.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		D5488F99218FB7D2004CA3E0 /* MBShareManager */ = {
@@ -883,16 +892,6 @@
 			path = Launching;
 			sourceTree = "<group>";
 		};
-		D552DD5A18C8506700D02290 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				D5F65F3324C1CAF10082FEC2 /* API.swift */,
-				D5542EA9191887F500831016 /* APIDefine.plist */,
-				D5E2DBFA24CEE54300CEB26D /* APIResponseSerializer.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		D552DD7C18C8541D00D02290 /* General */ = {
 			isa = PBXGroup;
 			children = (
@@ -941,8 +940,8 @@
 		D5542F131918B82100831016 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				D533D1432743CF33008B923F /* Database */,
 				D50CFA7425C92197003329EE /* AppNewVersionChecker */,
+				D533D1432743CF33008B923F /* Database */,
 				D533C4F22592370800590FBA /* Logging */,
 				D569C9DF21AE906900211E36 /* MBAudioRecorder */,
 				D501845D20F8863E009481D4 /* MBDebug */,
@@ -953,6 +952,7 @@
 				D569C9DC21AE906800211E36 /* MBPublishSession */,
 				D5488F99218FB7D2004CA3E0 /* MBShareManager */,
 				D55959D120AB9F930019D733 /* MessageManager */,
+				D533D1462743D0C2008B923F /* Networking */,
 				D5170CE8191B327A000C7D45 /* PushManager */,
 				D5542F151918B83400831016 /* MBApp.swift */,
 				D569C9E521AE906900211E36 /* README.md */,
@@ -1675,6 +1675,7 @@
 				D5F9F47F208D921200427201 /* Date+App.swift in Sources */,
 				D53446032592481400F5FD80 /* Date+Server.swift in Sources */,
 				D54F0E4F2199A56E003370F4 /* DateFormatter+App.swift in Sources */,
+				D533D1452743D01A008B923F /* DBManager+KVStorage.swift in Sources */,
 				D533C4D525922D1100590FBA /* DBManager.swift in Sources */,
 				D52EADEB2043B983007219E0 /* debug.m in Sources */,
 				D50CFA6B25C912CC003329EE /* DetailFetchControl.swift in Sources */,
@@ -1702,7 +1703,6 @@
 				D5A3312321527BA100B0FD5B /* MBCellStackView.m in Sources */,
 				D5EE517B2043F5E6009148B3 /* MBCodeSendButton.m in Sources */,
 				D5DB4C1C241E243900832A0A /* MBCollectionListDisplayer.m in Sources */,
-				D533D1452743D01A008B923F /* DBManager+KVStorage.swift in Sources */,
 				D5B49F0B1C41133A00847925 /* MBCollectionRefreshFooterView.m in Sources */,
 				D5B49F071C41133A00847925 /* MBCollectionView.m in Sources */,
 				D5B49F021C41133A00847925 /* MBCollectionViewArrayDataSource.m in Sources */,
