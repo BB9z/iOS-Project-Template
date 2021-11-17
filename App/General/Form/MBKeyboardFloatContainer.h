@@ -57,4 +57,11 @@
 - (void)keyboardWillShow:(nonnull NSNotification *)note NS_REQUIRES_SUPER;
 - (void)keyboardWillHide:(nonnull NSNotification *)note NS_REQUIRES_SUPER;
 
+/**
+ 跳过接下来的隐藏键盘事件，直到键盘显示事件恢复正常处理
+
+ 用于优化手动隐藏紧接着显示键盘时的动画效果
+ */
+@property BOOL ignoreUpcomingHideNotificationUntilShow;
+
 @end
