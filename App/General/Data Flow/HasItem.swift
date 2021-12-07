@@ -55,7 +55,7 @@ extension UIViewController {
     /**
      通用 segue 传值辅助方法
 
-     destination 需符合 AnyHasItem，item 依次尝试从 source、sender、sender 各级别父 view 直到 view controller 的 view
+     destination 需符合 AnyHasItem，item 依次尝试从 sender、sender 各级别父 view（直到 view controller 的 view）及 view controller 自身获取。
 
      使用需显式重载 prepare 方法，例：
 
