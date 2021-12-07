@@ -76,7 +76,6 @@ extension UIViewController {
         }
         set {
             let flag = InterfaceOrientationFlag(rawValue: UInt(newValue))
-            debugPrint("\(title ?? description) set flag", newValue, flag)
             interfaceOrientationFlag = flag
         }
     }
@@ -129,7 +128,6 @@ extension UIViewController {
         let value = (interfaceOrientationFlag == .default ? nil : interfaceOrientationFlag)?.mask
             ?? Self.defaultInterfaceOrientation?.mask
             ?? _b9_supportedInterfaceOrientations()
-        debugPrint("InterfaceOrientations \(title ?? description) return", value.debugDescription)
         return value
     }
 }
@@ -151,58 +149,5 @@ extension InterfaceOrientationFlag {
             masks.remove(.landscape)
         }
         return masks
-    }
-}
-
-// MARK: - Debug
-
-class IOVC: UIViewController {
-    @IBAction private func toPortrait(_ sender: Any) {
-        UIDevice.current.setValue(UIDeviceOrientation.portrait.rawValue, forKey: "orientation")
-    }
-
-    @IBAction private func toLandscapeLeft(_ sender: Any) {
-        UIDevice.current.setValue(UIDeviceOrientation.landscapeLeft.rawValue, forKey: "orientation")
-    }
-}
-
-extension UIDeviceOrientation: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        switch self {
-        case .unknown:
-            return "unknown"
-        case .portrait:
-            return "portrait"
-        case .portraitUpsideDown:
-            return "portraitUpsideDown"
-        case .landscapeLeft:
-            return "landscapeLeft"
-        case .landscapeRight:
-            return "landscapeRight"
-        case .faceUp:
-            return "faceUp"
-        case .faceDown:
-            return "faceDown"
-        @unknown default:
-            fatalError()
-        }
-    }
-}
-
-extension UIInterfaceOrientationMask: CustomDebugStringConvertible {
-    public var debugDescription: String {
-        var parts = [String]()
-        let allCases: [(UIInterfaceOrientationMask, String)] = [
-            (.portraitUpsideDown, "⬇️"),
-            (.portrait, "⬆️"),
-            (.landscapeLeft, "⬅️"),
-            (.landscapeRight, "➡️")
-        ]
-        allCases.forEach { option, text in
-            if contains(option) {
-                parts.append(text)
-            }
-        }
-        return "[UIInterfaceOrientationMask: " + parts.joined(separator: "") + "]"
     }
 }
