@@ -48,6 +48,11 @@ class NavigationController: MBNavigationController, StoryboardCreation, UIApplic
         setViewControllers([ WelcomeViewController.newFromStoryboard() ], animated: true)
     }
 
+    override func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        super.navigationController(navigationController, willShow: viewController, animated: animated)
+        UIViewController.forceRotationIfNeeded(viewController: viewController)
+    }
+
     override func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         super.navigationController(navigationController, didShow: viewController, animated: animated)
         if viewController.prefersDisabledInteractivePopGesture {

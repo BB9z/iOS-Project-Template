@@ -95,6 +95,7 @@
 		D5740B53249B8B7C001CBCB2 /* LoginVCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5740B52249B8B7C001CBCB2 /* LoginVCs.swift */; };
 		D5740B56249C5316001CBCB2 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5740B55249C5316001CBCB2 /* MoreVC.swift */; };
 		D5740B58249C7C5D001CBCB2 /* LoginForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5740B57249C7C5D001CBCB2 /* LoginForms.swift */; };
+		D57432B4275E3B390029CE1A /* UIViewController+InterfaceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57432B3275E3B390029CE1A /* UIViewController+InterfaceOrientation.swift */; };
 		D579495F21788D67002E1C4A /* UIDevice+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D579495E21788D67002E1C4A /* UIDevice+App.swift */; };
 		D584C77B26EEC970004E434B /* GradientProgressViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D584C77A26EEC970004E434B /* GradientProgressViews.swift */; };
 		D584C78026F020A3004E434B /* MBTouchEffectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D584C77C26F020A3004E434B /* MBTouchEffectButton.m */; };
@@ -158,7 +159,6 @@
 		D5C636A72047CC5900851CF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C636A62047CC5900851CF4 /* LaunchScreen.storyboard */; };
 		D5C82DDC2179D98C00E63A2A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C82DDB2179D98C00E63A2A /* Color.swift */; };
 		D5D932F12515EDC300E1C4B6 /* CalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D932F02515EDC300E1C4B6 /* CalloutView.swift */; };
-		D5D9F5142071BA6500B6FE9B /* UIViewController+RFInterfaceOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D9F5132071BA6500B6FE9B /* UIViewController+RFInterfaceOrientation.m */; };
 		D5DB4C19241DD71300832A0A /* MBEntitiesTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DB4C18241DD71300832A0A /* MBEntitiesTableView.m */; };
 		D5DB4C1C241E243900832A0A /* MBCollectionListDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DB4C1B241E243900832A0A /* MBCollectionListDisplayer.m */; };
 		D5DB4C1F241E27B800832A0A /* MBKeyboardAdjustScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DB4C1D241E27B700832A0A /* MBKeyboardAdjustScrollView.m */; };
@@ -348,6 +348,7 @@
 		D5740B52249B8B7C001CBCB2 /* LoginVCs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVCs.swift; sourceTree = "<group>"; };
 		D5740B55249C5316001CBCB2 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		D5740B57249C7C5D001CBCB2 /* LoginForms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForms.swift; sourceTree = "<group>"; };
+		D57432B3275E3B390029CE1A /* UIViewController+InterfaceOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+InterfaceOrientation.swift"; sourceTree = "<group>"; };
 		D579495E21788D67002E1C4A /* UIDevice+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+App.swift"; sourceTree = "<group>"; };
 		D584C77A26EEC970004E434B /* GradientProgressViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientProgressViews.swift; sourceTree = "<group>"; };
 		D584C77C26F020A3004E434B /* MBTouchEffectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTouchEffectButton.m; sourceTree = "<group>"; };
@@ -444,8 +445,6 @@
 		D5C82DDB2179D98C00E63A2A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D5D4CC6E2043A6ED002FE9F0 /* OCBridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCBridging-Header.h"; sourceTree = "<group>"; };
 		D5D932F02515EDC300E1C4B6 /* CalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutView.swift; sourceTree = "<group>"; };
-		D5D9F5112071BA6400B6FE9B /* UIViewController+RFInterfaceOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RFInterfaceOrientation.h"; sourceTree = "<group>"; };
-		D5D9F5132071BA6500B6FE9B /* UIViewController+RFInterfaceOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RFInterfaceOrientation.m"; sourceTree = "<group>"; };
 		D5DB4C17241DD71300832A0A /* MBEntitiesTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBEntitiesTableView.h; sourceTree = "<group>"; };
 		D5DB4C18241DD71300832A0A /* MBEntitiesTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBEntitiesTableView.m; sourceTree = "<group>"; };
 		D5DB4C1A241E243900832A0A /* MBCollectionListDisplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCollectionListDisplayer.h; sourceTree = "<group>"; };
@@ -1377,8 +1376,7 @@
 				D5C3CBF5217EEEDA0097CCD9 /* UITextView+ContainerInset.h */,
 				D5C3CBF4217EEEDA0097CCD9 /* UITextView+ContainerInset.m */,
 				D533C4E92592363600590FBA /* UIViewController+Appearance.swift */,
-				D5D9F5112071BA6400B6FE9B /* UIViewController+RFInterfaceOrientation.h */,
-				D5D9F5132071BA6500B6FE9B /* UIViewController+RFInterfaceOrientation.m */,
+				D57432B3275E3B390029CE1A /* UIViewController+InterfaceOrientation.swift */,
 			);
 			path = "UIKit+IBInspectable";
 			sourceTree = "<group>";
@@ -1822,7 +1820,7 @@
 				D5EE51212043DAA2009148B3 /* UIViewController+App.m in Sources */,
 				D534461125924CE700F5FD80 /* UIViewController+App.swift in Sources */,
 				D5031A5F25BEC9F300C2849E /* UIViewController+Appearance.swift in Sources */,
-				D5D9F5142071BA6500B6FE9B /* UIViewController+RFInterfaceOrientation.m in Sources */,
+				D57432B4275E3B390029CE1A /* UIViewController+InterfaceOrientation.swift in Sources */,
 				D5F1F849251C1D6400D641F9 /* URL+App.swift in Sources */,
 				D5BF664F24BC8BE8008BC122 /* UserAvatarView.swift in Sources */,
 				D553507324BBFB3E00282871 /* UserEntity.swift in Sources */,
