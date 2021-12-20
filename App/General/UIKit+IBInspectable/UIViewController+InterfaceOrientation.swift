@@ -19,6 +19,16 @@ import UIKit
  2. 在需要特殊朝向的页面设置 `interfaceOrientationFlag` 属性，可以在 Interface Builder 中直接设置；
  3. 如需强制转屏特性，需要在合适的地方调用 `forceRotationIfNeeded(viewController:)` 方法，可以通过导航去控制，推荐导航的 `navigationController(_, willShow:, animated:)` 代理方法；
  4. iPadOS 上不建议控制朝向，利用 UITraitCollection 适配才是正道；iPad 应用必需在设置中启用「Requires Full Screen」才能支持朝向控制（否则连 UIViewController 的 supportedInterfaceOrientations 都不会被调用），强制转屏在 iPad 上不可用。
+
+ 强制转屏幕示例：
+
+ ```swift
+ extension NavigationController: UINavigationControllerDelegate {
+     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+         viewController.attemptRotation(transitionCoordinator: navigationController.transitionCoordinator)
+     }
+ }
+ ```
  */
 public struct InterfaceOrientationFlag: OptionSet {
     public var rawValue: UInt
@@ -27,8 +37,6 @@ public struct InterfaceOrientationFlag: OptionSet {
         self.rawValue = rawValue
     }
 
-    /// 使用全局默认值
-    static let `default` = InterfaceOrientationFlag([])
     /// 支持竖屏
     static let portrait = InterfaceOrientationFlag(rawValue: 1 << 0)
     /// 支持横屏
@@ -54,9 +62,6 @@ extension UIViewController {
             dispatchPrecondition(condition: .onQueue(.main))
             if newValue != nil {
                 // 启用控制
-                if newValue == .default {
-                    fatalError("启用屏幕旋转控制的默认值不能是 .default")
-                }
                 if _defaultInterfaceOrientation == nil {
                     swizzle(enable: true)
                 }
@@ -88,14 +93,30 @@ extension UIViewController {
         set { flagAssociation[self] = newValue }
     }
 
+    /// 按需触发强制转屏
+    ///
+    /// - Parameter transitionCoordinator: 外部的转场动画信息。交互转场在交互结束且未被取消时尝试转屏，其他情况正常立即执行
+    public func attemptRotation(transitionCoordinator: UIViewControllerTransitionCoordinator? = nil) {
+        if transitionCoordinator?.isInteractive == true {
+            transitionCoordinator?.animate(alongsideTransition: nil, completion: { ctx in
+                if !ctx.isCancelled {
+                    UIViewController.forceRotationIfNeeded(viewController: self)
+                }
+            })
+        } else {
+            UIViewController.forceRotationIfNeeded(viewController: self)
+        }
+    }
+
     /// 判断设备朝向是否需要强制转换到给定 vc 的朝向，如果是则强转朝向
-    public static func forceRotationIfNeeded(viewController: UIViewController) {
-        guard let flag = viewController.interfaceOrientationFlag,
-              flag.shouldForceRotation else { return }
+    private static func forceRotationIfNeeded(viewController: UIViewController) {
+        AppLog().debug("forceRotationIfNeeded \(viewController)")
         if viewController.traitCollection.userInterfaceIdiom == .pad {
             // iPad 上不支持强制设置方向，下面走了也无效果
             return
         }
+        guard let flag = viewController.interfaceOrientationFlag ?? Self.defaultInterfaceOrientation,
+              flag.shouldForceRotation else { return }
         guard let vcWindow = (viewController.navigationController ?? AppNavigationController())?.view.window else {
             AppLog().warning("未找到 vc 所在窗体，跳过强制转屏")
             return
@@ -104,13 +125,18 @@ extension UIViewController {
         let isPortrait = vcWindow.screen.bounds.width < vcWindow.screen.bounds.height
         if isPortrait {
             if !flag.contains(.portrait) {
-                UIDevice.current.setValue(UIDeviceOrientation.landscapeLeft.rawValue, forKey: "orientation")
+                forceRotation(to: .landscapeLeft)
             }
         } else {
             if !flag.contains(.landscape) {
-                UIDevice.current.setValue(UIDeviceOrientation.portrait.rawValue, forKey: "orientation")
+                forceRotation(to: .portrait)
             }
         }
+    }
+
+    private static func forceRotation(to orientation: UIDeviceOrientation) {
+        UIDevice.current.setValue(orientation.rawValue, forKey: "orientation")
+        UIViewController.attemptRotationToDeviceOrientation()
     }
 
     // MARK: -
@@ -125,7 +151,7 @@ extension UIViewController {
     }
 
     @objc private func _b9_supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        let value = (interfaceOrientationFlag == .default ? nil : interfaceOrientationFlag)?.mask
+        let value = interfaceOrientationFlag?.mask
             ?? Self.defaultInterfaceOrientation?.mask
             ?? _b9_supportedInterfaceOrientations()
         return value

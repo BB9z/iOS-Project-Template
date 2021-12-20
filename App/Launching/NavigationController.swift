@@ -50,7 +50,7 @@ class NavigationController: MBNavigationController, StoryboardCreation, UIApplic
 
     override func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         super.navigationController(navigationController, willShow: viewController, animated: animated)
-        UIViewController.forceRotationIfNeeded(viewController: viewController)
+        viewController.attemptRotation(transitionCoordinator: transitionCoordinator)
     }
 
     override func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
