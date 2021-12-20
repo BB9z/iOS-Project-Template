@@ -6,7 +6,7 @@
 /// tab 序号定义
 enum NavigationTab: Int {
     case home = 0, topic, more, count
-    static let defaule = NavigationTab.home
+    static let `default` = NavigationTab.home
     static let login = NSNotFound
 }
 
@@ -66,7 +66,7 @@ extension NavigationController: MBControlGroupDelegate {
         case .home:
             vc = HomeViewController.newFromStoryboard()
         case .topic:
-            vc = TopicRecommandListController.newFromStoryboard()
+            vc = TopicRecommendListController.newFromStoryboard()
         case .more:
             vc = MoreViewController.newFromStoryboard()
         default:

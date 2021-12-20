@@ -1,7 +1,7 @@
 /*
  MBPublishImagePicker
  
- Copyright © 2018, 2020 RFUI.
+ Copyright © 2018, 2020-2021 BB9z.
  Copyright © 2016 Beijing ZhiYun ZhiYuan Technology Co., Ltd.
  https://github.com/RFUI/MBAppKit
  
@@ -21,17 +21,17 @@
 
  @param title 选择从相册还是相机的标题
  @param size 头像裁切尺寸，像素
- @param complation 主线程回调，item 是 UIImage
+ @param completion 主线程回调，item 是 UIImage
  */
-+ (void)pickAvatarImageWithCropSize:(CGSize)size actionSheetTitle:(nullable NSString *)title complation:(nonnull MBGeneralCallback)complation;
++ (void)pickAvatarImageWithCropSize:(CGSize)size actionSheetTitle:(nullable NSString *)title completion:(nonnull MBGeneralCallback)completion;
 
 /**
  选择图像并返回
 
  @param configBlock 可以进行丰富的设置来控制流程
- @param complation 主线程回调，item 根据设置的不同可以是各种类型，一般如果上传会返回 图片URL，只选图片是 UIImage
+ @param completion 主线程回调，item 根据设置的不同可以是各种类型，一般如果上传会返回 图片URL，只选图片是 UIImage
  */
-+ (void)pickImageWithConfiguration:(NS_NOESCAPE void (^__nullable)(MBPublishImagePicker *__nonnull instance))configBlock complation:(nonnull MBGeneralCallback)complation;
++ (void)pickImageWithConfiguration:(NS_NOESCAPE void (^__nullable)(MBPublishImagePicker *__nonnull instance))configBlock completion:(nonnull MBGeneralCallback)completion;
 
 /// 弹出选择相册还是照相时的标题
 @property (nullable) NSString *selectImagePickerSourceTitle;

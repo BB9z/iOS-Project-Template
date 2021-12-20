@@ -6,7 +6,7 @@
 /**
  应用主导航控制器
  */
-class NavigationController: MBNavigationController, StroryboardCreation, UIApplicationDelegate {
+class NavigationController: MBNavigationController, StoryboardCreation, UIApplicationDelegate {
     static var storyboardID: StoryboardID { .main }
 
     override func onInit() {
@@ -40,12 +40,17 @@ class NavigationController: MBNavigationController, StroryboardCreation, UIAppli
     }
 
     func onLogin() {
-        selectTab(.defaule)
+        selectTab(.default)
     }
 
     override func presentLoginScene() {
         tabItems.selectIndex = NavigationTab.login
         setViewControllers([ WelcomeViewController.newFromStoryboard() ], animated: true)
+    }
+
+    override func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        super.navigationController(navigationController, willShow: viewController, animated: animated)
+        viewController.attemptRotation(transitionCoordinator: transitionCoordinator)
     }
 
     override func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
@@ -76,6 +81,6 @@ class NavigationController: MBNavigationController, StroryboardCreation, UIAppli
 // MARK: - Jump
 extension NavigationController {
     @IBAction private func navigationBackToHome(_ sender: Any?) {
-        selectTab(.defaule)
+        selectTab(.default)
     }
 }

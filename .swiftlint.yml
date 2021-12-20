@@ -5,14 +5,26 @@
 # swiftlint 很多人用，有必要包含进来。
 
 disabled_rules:
+  # 国外这政治正确哦，像 black、master、slave 这种都是禁用词
+  - inclusive_language
+
   # 限制行长度过时了，老式文本编辑器才需要，Xcode 换行的渲染不错，没必要。
   # 另一种观点是一行一个参数看着更清楚，有必要换行的情形要么是参数多了，要么传参位置有长表达式。极端的例子，没人会把所有两个参数的都另起一行吧？
   # 参数过多是接口设计问题，长表达式赋值到一个变量就完了，参数换行更清楚是伪命题。
   # 我讨厌参数换行的理由是它影响了编辑器原本的自动换行，尤其当窗口比较窄时，手动加的换行很容易一团糟。
   - line_length
 
-  # 项目脚本已经带了 todo 提示
-  - todo
+  # 声明多个协议喜欢这种写法
+  #
+  # struct Some: P1,
+  #     P2,
+  #     P3
+  # {
+  # }
+  - opening_brace
+
+  # 有时要用、有时只判空，这样切换方便一些
+  - unused_optional_binding
 
 # 筛选后开了很多可选规则
 # 几乎用不到、不合理的规则删去了，注释的是看情况可以开的
@@ -67,7 +79,7 @@ opt_in_rules:
   # - object_literal
   - operator_usage_whitespace
   - overridden_super_call
-  - pattern_matching_keywords
+  # - pattern_matching_keywords
   - prefer_self_type_over_type_of_self
   # - private_action
   - reduce_into
@@ -128,6 +140,10 @@ identifier_name:
     - x
     - y
     - z
+    - x1
+    - x2
+    - y1
+    - y2
     - vc      # view controller
     - v       # view
     - tv      # table view
@@ -137,6 +153,8 @@ identifier_name:
     - ds      # dataSource
     - ip      # indexPath
     - db      # database
+    - on      # on/off
+    - to      # from/to
 
 implicit_return:
   # 默认 closure, function, getter，仅 getter 就可以了，闭包和方法里用不合适
@@ -159,5 +177,5 @@ type_name:
     - ID      # identifier
 
 vertical_whitespace:
-  # 默认1，有时为了分区隔两行
+  # 默认1，有时为了分区代码块隔两行
   max_empty_lines: 2

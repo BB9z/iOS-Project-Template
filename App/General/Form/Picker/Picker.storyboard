@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -221,11 +222,90 @@
             </objects>
             <point key="canvasLocation" x="780" y="155"/>
         </scene>
+        <!--Image Cropper-->
+        <scene sceneID="cfb-Mm-g9o">
+            <objects>
+                <viewController storyboardIdentifier="MBPublishAvatarImageCropperViewController" title="Image Cropper" automaticallyAdjustsScrollViewInsets="NO" id="fBT-nT-kIM" customClass="MBPublishAvatarImageCropperViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="js2-cp-W4S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muh-98-yuD" userLabel="Back">
+                                <rect key="frame" x="4" y="44" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="2sy-pI-ZUR"/>
+                                    <constraint firstAttribute="height" constant="48" id="bdS-16-69D"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="nav_back"/>
+                                <connections>
+                                    <action selector="onCancel:" destination="fBT-nT-kIM" eventType="touchUpInside" id="UEG-Ta-OsB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="移动和缩放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPa-e8-KCv">
+                                <rect key="frame" x="166" y="58.5" width="82" height="19"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYu-fI-rZO" customClass="MBBottomLayoutView">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4w-h8-GgN">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Xp9-eI-22t"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="完成">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onPick:" destination="fBT-nT-kIM" eventType="touchUpInside" id="UD1-B1-o6c"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                <constraints>
+                                    <constraint firstItem="j4w-h8-GgN" firstAttribute="leading" secondItem="GYu-fI-rZO" secondAttribute="leading" id="Rlc-m4-EvB"/>
+                                    <constraint firstItem="j4w-h8-GgN" firstAttribute="top" secondItem="GYu-fI-rZO" secondAttribute="top" id="lOT-6y-n0E"/>
+                                    <constraint firstAttribute="bottom" secondItem="j4w-h8-GgN" secondAttribute="bottom" id="vJn-gF-jJQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="j4w-h8-GgN" secondAttribute="trailing" id="xuN-U7-8oz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Reh-XK-dG2"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vPa-e8-KCv" firstAttribute="centerY" secondItem="muh-98-yuD" secondAttribute="centerY" id="43j-PK-Olc"/>
+                            <constraint firstItem="muh-98-yuD" firstAttribute="top" secondItem="Reh-XK-dG2" secondAttribute="top" id="N14-PF-yXW"/>
+                            <constraint firstItem="Reh-XK-dG2" firstAttribute="bottom" secondItem="GYu-fI-rZO" secondAttribute="bottom" id="Q6v-4c-m4V"/>
+                            <constraint firstItem="GYu-fI-rZO" firstAttribute="leading" secondItem="Reh-XK-dG2" secondAttribute="leading" id="Z7p-zA-Bj5"/>
+                            <constraint firstItem="muh-98-yuD" firstAttribute="leading" secondItem="Reh-XK-dG2" secondAttribute="leading" constant="4" id="ZwE-bi-eYd"/>
+                            <constraint firstItem="vPa-e8-KCv" firstAttribute="centerX" secondItem="js2-cp-W4S" secondAttribute="centerX" id="bkR-N1-kDq"/>
+                            <constraint firstItem="Reh-XK-dG2" firstAttribute="trailing" secondItem="GYu-fI-rZO" secondAttribute="trailing" id="gGX-hw-r8r"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QUn-9o-VMO"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="prefersNavigationBarHidden" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="prefersLightContentBarStyle" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="prefersDisabledInteractivePopGesture" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rkv-TV-7Is" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1513" y="155"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="nav_back" width="9" height="16"/>
         <namedColor name="primary">
             <color red="0.1803921568627451" green="0.5607843137254902" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -8,14 +8,14 @@ ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 # https://github.com/fermoya/CatalystPodSupport
 
 target 'App' do
-    platform :ios, '12.0'
+    platform :ios, '13.0'
 
 #    pod 'AMap3DMap-NO-IDFA'             # 高德地图
 #    pod 'AXRatingView'                  # 打星评分控件
 #    pod 'AliyunOSSiOS'                  # 阿里云文件存储
 #    pod 'Bugly'                         # 腾讯崩溃收集
 #    pod 'CollectionViewCenteredFlowLayout' # CollectionView 居中对齐
-#    pod 'FLEX', :configurations => ['Debug', 'Preview'] # 开发辅助工具集
+#    pod 'FLEX', :configurations => 'Debug' # 开发辅助工具集
 #    pod 'GRDB.swift'                    # SQLite 数据库
 #    pod 'GTSDK'                         # 推送: 个推
 #    pod 'QingNiuSDK'                    # 七牛云存储
@@ -89,7 +89,7 @@ end
 
 post_install do |pi|
     # 临时修正 deployment target 不支持的问题，并且让 Pod 跟随 App 支持的版本进行编译
-    # https://github.com/CocoaPods/CocoaPods/issues/7314
+    # https://github.com/CocoaPods/CocoaPods/issues/7314#issuecomment-422283045
     fix_deployment_target(pi)
 end
 

@@ -50,3 +50,48 @@ extension HasItem {
         self.item = newValue
     }
 }
+
+extension UIViewController {
+    /**
+     通用 segue 传值辅助方法
+
+     destination 需符合 AnyHasItem，item 依次尝试从 sender、sender 各级别父 view（直到 view controller 的 view）及 view controller 自身获取。
+
+     使用需显式重载 prepare 方法，例：
+
+     ```
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         generalPrepare(segue: segue, sender: sender)
+     }
+     ```
+     */
+    func generalPrepare(segue: UIStoryboardSegue, sender: Any?) {
+        guard var destination = segue.destination as? AnyHasItem else {
+            return
+        }
+        if let source = sender as? AnyHasItem,
+           let item: Any = source.item() {
+            destination.setItem(item)
+            return
+        }
+
+        // 尝试从 sender 各个父 view 取
+        if var view = sender as? UIView,
+           view.viewController === self {
+            while let superview = view.superview {
+                view = superview
+                if let source = view as? AnyHasItem,
+                   let item: Any = source.item() {
+                    destination.setItem(item)
+                    return
+                }
+                if view === self.view { break }
+            }
+        }
+
+        if let source = segue.source as? AnyHasItem,
+           let item: Any = source.item() {
+            destination.setItem(item)
+        }
+    }
+}

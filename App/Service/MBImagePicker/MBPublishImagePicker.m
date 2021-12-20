@@ -6,6 +6,7 @@
 #import "UIKit+App.h"
 #import <RFAlpha/RFImageCropperView.h>
 #import <RFAlpha/RFKVOWrapper.h>
+#import <RFKit/UIViewController+RFKit.h>
 #if __has_include("API+FileUpload.h")
 #import "API+FileUpload.h"
 #endif
@@ -31,17 +32,17 @@ static MBPublishImagePicker *MBPBLiveInstance = nil;
 
 @implementation MBPublishImagePicker
 
-+ (void)pickAvatarImageWithCropSize : (CGSize)size actionSheetTitle : (NSString *)title complation : (MBGeneralCallback)complation {
++ (void)pickAvatarImageWithCropSize:(CGSize)size actionSheetTitle:(NSString *)title completion:(MBGeneralCallback)completion {
     [self pickImageWithConfiguration:^(MBPublishImagePicker *_Nonnull instance) {
         instance.cropAfterImageSelected = YES;
         instance.cropSize = size;
-    } complation:complation];
+    } completion:completion];
 }
 
-+ (void)pickImageWithConfiguration:(NS_NOESCAPE void (^)(MBPublishImagePicker *_Nonnull))configBlock complation:(MBGeneralCallback)complation {
-    MBGeneralCallback safeCallback = MBSafeCallback(complation);
++ (void)pickImageWithConfiguration:(NS_NOESCAPE void (^)(MBPublishImagePicker *_Nonnull))configBlock completion:(MBGeneralCallback)completion {
+    MBGeneralCallback safeCallback = MBSafeCallback(completion);
     if (MBPBLiveInstance) {
-        if (MBPBLiveInstance.hasSystemImagePickerShown && MBPBLiveInstance.systemImagePickerVC == nil) {
+        if (MBPBLiveInstance.hasSystemImagePickerShown && ![MBPBLiveInstance.systemImagePickerVC isViewAppeared]) {
             MBPBLiveInstance = nil;
         }
         else {
@@ -107,6 +108,10 @@ static MBPublishImagePicker *MBPBLiveInstance = nil;
 }
 
 - (void)presentImagePickerViewContorllerWithSourceType:(UIImagePickerControllerSourceType)sourceType {
+    if (![UIImagePickerController isSourceTypeAvailable:sourceType]) {
+        [self _executeCallbackFail:[NSError errorWithDomain:MBPublishImagePicker.errorDomain code:MBErrorLackDeviceCapability localizedDescription:@"不支持的选取方式"]];
+        return;
+    }
     UIImagePickerController *pik = [[UIImagePickerController alloc] init];
     pik.sourceType = sourceType;
     pik.delegate = self;
@@ -121,15 +126,17 @@ static MBPublishImagePicker *MBPBLiveInstance = nil;
         [picker dismissViewControllerAnimated:YES completion:nil];
         return;
     }
-
-    UIImage *orgImage = info[UIImagePickerControllerOriginalImage];
-    if (!orgImage) {
+    UIImage *image = info[UIImagePickerControllerEditedImage];
+    if (!image) {
+        image = info[UIImagePickerControllerOriginalImage];
+    }
+    if (!image) {
         [self _executeCallbackFail:[NSError errorWithDomain:MBPublishImagePicker.errorDomain code:MBErrorDataNotAvailable localizedDescription:@"图片选取失败"]];
         [picker dismissViewControllerAnimated:YES completion:nil];
         return;
     }
 
-    [self systemImagePickerDidReturnImage:orgImage];
+    [self systemImagePickerDidReturnImage:image];
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 

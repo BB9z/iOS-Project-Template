@@ -8,8 +8,8 @@ extension UIView {
             layer.cornerRadius
         }
         set {
+            // 不要设置裁切属性，显示圆角不是必须，而且不要裁切时不好撤销设置
             layer.cornerRadius = newValue
-            layer.masksToBounds = newValue > 0
         }
     }
 }

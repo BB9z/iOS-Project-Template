@@ -33,7 +33,7 @@ extension NSPointerArray {
     }
 
     func object(at index: Int) -> AnyObject? {
-        guard index < count, let pointer = self.pointer(at: index) else { return nil }
+        guard index < count, let pointer = pointer(at: index) else { return nil }
         return Unmanaged<AnyObject>.fromOpaque(pointer).takeUnretainedValue()
     }
 

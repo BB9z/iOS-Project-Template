@@ -1,7 +1,7 @@
 /**
  首页
  */
-class HomeViewController: UIViewController, StroryboardCreation {
+class HomeViewController: UIViewController, StoryboardCreation {
     static var storyboardID: StoryboardID { .main }
 
     @IBAction private func navigationPop(_ sender: Any) {

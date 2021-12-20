@@ -7,7 +7,7 @@
  帖子详情
  */
 class TopicDetailViewController: UIViewController,
-    StroryboardCreation,
+    StoryboardCreation,
     HasItem,
     TopicEntityUpdating {
 
@@ -28,30 +28,34 @@ class TopicDetailViewController: UIViewController,
             ds.fetchParameters = ["tid": item.uid]
         }
         listView.pullToFetchController.footerContainer.emptyLabel.text = "暂无评论"
-        updateUI(item: item)
+        fetchControl.item = item
         refresh()
     }
 
-    @objc func refresh() {
-        API.requestName("TopicDetail") { c in
-            c.parameters = ["tid": item.uid]
-            c.groupIdentifier = apiGroupIdentifier
-            c.success { [weak self] _, rsp in
-                guard let sf = self, let item = rsp as? TopicEntity else { return }
+    private lazy var fetchControl: DetailFetchControl<Item> = {
+        let fcc = DetailFetchControl<Item>()
+//        fcc.hasEnoughDataToDisplay = { $0.content?.isNotEmpty == true }
+        fcc.updater = { [weak self] item in
+            guard let sf = self else { return }
+            if sf.item != item {
                 sf.item.merge(from: item)
-                sf.updateUI(item: sf.item)
             }
-            c.failure { [weak self] _, error in
-                guard let sf = self else { return }
-                let e = error as NSError
-                if e.code == 404 {
-                    AppHUD().showInfoStatus("帖子已移除或不存在")
-                    sf.navigationController?.removeViewController(sf, animated: true)
-                    return
-                }
-                AppHUD().alertError(error, title: nil, fallbackMessage: "帖子信息获取失败")
-            }
+            sf.updateUI(item: item)
         }
+        fcc.fetchError = { [weak self] _, error in
+            guard let sf = self else { return }
+            let code = (error as NSError).code
+            if code == 404 {
+                AppHUD().showInfoStatus("帖子已移除或不存在")
+                sf.navigationController?.removeViewController(sf, animated: true)
+                return
+            }
+            AppHUD().alertError(error, title: nil, fallbackMessage: "帖子信息获取失败")
+        }
+        return fcc
+    }()
+    @objc func refresh() {
+        fetchControl.start(api: "TopicDetail", parameters: ["tid": item.uid])
         listView.pullToFetchController.triggerHeaderProcess()
     }
 

@@ -708,7 +708,7 @@ static BOOL g_WeiboRegisterFlag = NO;
     self.lastCallback = nil;
     if (!cb) return;
     if ([error.domain isEqualToString:ASAuthorizationErrorDomain]) {
-        // 未启用两步验证取消时返回 unknow
+        // 未启用两步验证取消时返回 unknown
         if (error.code == ASAuthorizationErrorCanceled) {
             error = nil;
         }

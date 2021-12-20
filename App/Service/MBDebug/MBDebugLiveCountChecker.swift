@@ -34,9 +34,30 @@ public func LiveCount(remove obj: AnyObject) {
 }
 
 /**
+ 检查类型的数量不超过限定值
+ */
+public func LiveCount(check type: AnyClass, limit: Int, delay: TimeInterval = -1) {
+    #if DEBUG
+    func check() {
+        let count = MBDebugLiveCountChecker.shared.count(for: type)
+        if count > limit {
+            AppLog().critical("\(type) 活动对象数量 \(count) 超出预期")
+        }
+    }
+    if delay >= 0 {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            check()
+        }
+    } else {
+        check()
+    }
+    #endif
+}
+
+/**
  使用、实现极简的内存泄漏监测预防
 
- 受 https://github.com/krzysztofzablocki/LifetimeTracker 启发，但更简单但更好用
+ 受 https://github.com/krzysztofzablocki/LifetimeTracker 启发，更简单但更好用
  */
 final class MBDebugLiveCountChecker {
     static let shared = MBDebugLiveCountChecker()

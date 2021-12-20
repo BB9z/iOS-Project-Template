@@ -188,16 +188,16 @@ class TextField: MBTextField {
     /// 自动验证、提示并返回合法值
     ///
     /// - Parameters:
-    ///   - noticeWhenInvaild: 内容非法时弹出报错提示
-    ///   - becomeFirstResponderWhenInvaild: 内容非法时获取键盘焦点
+    ///   - noticeWhenInvalid: 内容非法时弹出报错提示
+    ///   - becomeFirstResponderWhenInvalid: 内容非法时获取键盘焦点
     /// - Returns: 合法值
-    func vaildFieldText(noticeWhenInvaild: Bool = true, becomeFirstResponderWhenInvaild: Bool = true) -> String? {
+    func vaildFieldText(noticeWhenInvalid: Bool = true, becomeFirstResponderWhenInvalid: Bool = true) -> String? {
         let (vaildText, errorMessage) = _vaildFieldText()
         if let e = errorMessage {
-            if noticeWhenInvaild {
+            if noticeWhenInvalid {
                 AppHUD().showErrorStatus(e)
             }
-            if becomeFirstResponderWhenInvaild {
+            if becomeFirstResponderWhenInvalid {
                 becomeFirstResponder()
             }
         }

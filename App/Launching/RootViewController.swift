@@ -68,6 +68,8 @@ class RootViewController: MBRootViewController {
     }
     */
 
+    // MARK: - UI 适配辅助
+
     #if DEBUG
     #if targetEnvironment(macCatalyst)
     /// 强制修改窗口的最小尺寸，用以调试小屏幕适配

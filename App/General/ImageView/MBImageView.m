@@ -8,7 +8,7 @@
 @property NSOperation *_dowloadOperation;
 @property (nonatomic) NSString *_downloadingImageURL;
 @property NSString *_completedImageURL;
-@property MBGeneralCallback complation;
+@property MBGeneralCallback completion;
 @property NSURL *_urlForDownloadFinishCallbackVerifying;
 @end
 
@@ -54,9 +54,9 @@ RFInitializingRootForUIView
     }
 }
 
-- (void)fetchImageWithImageURL:(NSString *)imageURL complete:(MBGeneralCallback)complation {
+- (void)fetchImageWithImageURL:(NSString *)imageURL complete:(MBGeneralCallback)completion {
     // 回调覆盖什么的先简单处理
-    self.complation = complation;
+    self.completion = completion;
     self.imageURL = imageURL;
 }
 
@@ -83,9 +83,9 @@ RFInitializingRootForUIView
     if (__downloadingImageURL) {
         if (imageURL == self.imageURL) {
             // 新值和 imageURL 相同，意味着传入的是新图片，应该通知旧的图片已取消
-            if (self.complation) {
-                self.complation(NO, nil, nil);
-                self.complation = nil;
+            if (self.completion) {
+                self.completion(NO, nil, nil);
+                self.completion = nil;
             }
         }
         [self._dowloadOperation cancel];
@@ -120,9 +120,9 @@ RFInitializingRootForUIView
                 }
             }
 
-            if (self.complation) {
-                self.complation(finished, image, error);
-                self.complation = nil;
+            if (self.completion) {
+                self.completion(finished, image, error);
+                self.completion = nil;
             }
         });
     }];

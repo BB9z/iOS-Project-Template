@@ -37,6 +37,9 @@ variables:
   # 导入证书的密码
   XC_IMPORT_CERTIFICATE_PASSWORD: ""
 
+  # 指定导出 IPA 的名称，留空用 XC_BUILD_SCHEME
+  XC_EXPORT_IPA_NAME: ""
+
   # 存放 fir.im 上传 token 的环境变量名，留空不上传
   FIR_UPLOAD_TOKEN: FIR_TOKEN
 

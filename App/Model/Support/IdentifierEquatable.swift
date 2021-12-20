@@ -50,7 +50,7 @@ extension IdentifierEquatable where Self: NSObjectProtocol {
      */
     func isUIDEqual(_ object: Any?) -> Bool {
         if let obj = object as? Self {
-            return self.uid == obj.uid
+            return uid == obj.uid
         }
         return false
     }

@@ -89,16 +89,9 @@ PODS:
   - RFAlpha/RFTransitioning/Core (0.7.1):
     - RFInitializing (>= 1.1)
     - RFKit/Runtime (>= 1.7.1)
-  - RFAlpha/RFTransitioning/MoveInFromBottomTransitioningStyle (0.7.1):
-    - RFAlpha/RFTransitioning/Core
-    - RFAlpha/RFTransitioning/PullDownToPopInteraction
   - RFAlpha/RFTransitioning/NavigationControllerTransition (0.7.1):
     - RFAlpha/RFTransitioning/Core
     - RFDelegateChain/Chain
-  - RFAlpha/RFTransitioning/PullDownToPopInteraction (0.7.1):
-    - RFAlpha/RFTransitioning/Core
-    - RFAlpha/RFTransitioning/NavigationControllerTransition
-    - "RFKit/Category/UIView+RFAnimate"
   - RFAlpha/RFViewApperance/RFDrawView (0.7.1):
     - RFInitializing (>= 1.1)
     - RFKit/Runtime (>= 1.7.1)
@@ -106,10 +99,10 @@ PODS:
     - RFAlpha/RFViewApperance/RFDrawView
   - RFAlpha/RFWindow (0.7.1):
     - RFInitializing (>= 1.1)
-  - RFAPI (2.1.0):
-    - RFAPI/Core (= 2.1.0)
-    - RFAPI/JSONModel (= 2.1.0)
-  - RFAPI/Core (2.1.0):
+  - RFAPI (2.1.1):
+    - RFAPI/Core (= 2.1.1)
+    - RFAPI/JSONModel (= 2.1.1)
+  - RFAPI/Core (2.1.1):
     - AFNetworking/Reachability (>= 2.3)
     - AFNetworking/Security (>= 2.3)
     - AFNetworking/Serialization (>= 2.3)
@@ -117,7 +110,7 @@ PODS:
     - RFKit/Runtime (> 1.7)
     - RFMessageManager/Manager (>= 0.5)
     - RFMessageManager/RFNetworkActivityMessage
-  - RFAPI/JSONModel (2.1.0):
+  - RFAPI/JSONModel (2.1.1):
     - JSONModel
     - RFAPI/Core
   - RFDelegateChain/Chain (2.1.0):
@@ -246,9 +239,9 @@ PODS:
     - RFKit/Category/UIDevice
     - RFKit/Category/UINavigationController
     - RFKit/Runtime (>= 1.7)
-  - SDWebImage (5.10.3):
-    - SDWebImage/Core (= 5.10.3)
-  - SDWebImage/Core (5.10.3)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
@@ -270,7 +263,6 @@ DEPENDENCIES:
   - RFAlpha/RFTabController
   - RFAlpha/RFTableViewPullToFetchPlugin
   - RFAlpha/RFTimer
-  - RFAlpha/RFTransitioning/MoveInFromBottomTransitioningStyle
   - RFAlpha/RFViewApperance/RFLine
   - RFAlpha/RFWindow
   - RFDelegateChain/UICollectionViewDataSource
@@ -313,16 +305,16 @@ SPEC CHECKSUMS:
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   MBAppKit: 65cea59d15fabbe0275eb8c8cf8852799253b4b5
   RFAlpha: 0d69ff9d72e11d279f2a11ab3b7edb55ccb9a72c
-  RFAPI: 6864e34493d0262d5fd15f76b7d06c50960f2851
+  RFAPI: 3cba472523c4301b4a0c44b1b3dcbe5707d21372
   RFDelegateChain: c6df4faf9932f86d9539a08d0aa8f9709025d874
   RFInitializing: 6f3d8149e68ed0a4460fbe5d89608a52f663978f
   RFKeyboard: 673a594ea5d27bb597e1501858b29007f5daeff5
   RFKit: 046ed8a61c874fbb93dce7a694cfc059e8bf5d7a
   RFMessageManager: e261b12146e083989df83106304fbface62705b5
   RFSegue: 32840d5876e32f192b22f41160ebfcf466a0fa3b
-  SDWebImage: e378178472b735e84b007bfb55514c97948a0598
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: b1bf2581cc46c20bc07f9166cc63c784ca32a6fc
+PODFILE CHECKSUM: 8b4c3b012acd8485860cf8d1230d985113f58d81
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.11.1

@@ -13,7 +13,7 @@
 
 // @MBDependency:3
 /**
- 单一 sction，可从服务器上分页获取数据的数据源
+ 单一 section，可从服务器上分页获取数据的数据源
  */
 @interface MBCollectionViewDataSource : MBListDataSource <
     UICollectionViewDataSource

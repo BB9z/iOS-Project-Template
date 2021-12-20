@@ -9,15 +9,16 @@
  https://bb9z.github.io/API-Documentation-Sample/Sample/Entity#CommentEntity
  */
 @objc(CommentEntity)
+@objcMembers
 class CommentEntity: MBModel,
     IdentifierEquatable {
 
-    @objc var uid: String = ""
-    @objc var from: UserEntity?
-    @objc var to: UserEntity?           // swiftlint:disable:this identifier_name
-    @objc var createTime: Date?
-    @objc var content: String?
-    @objc var replies: [CommentEntity]?
+    var uid: String = ""
+    var from: UserEntity?
+    var to: UserEntity?
+    var createTime: Date?
+    var content: String?
+    var replies: [CommentEntity]?
 
     // MARK: -
 

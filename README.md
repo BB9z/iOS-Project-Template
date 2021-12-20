@@ -4,7 +4,7 @@
 
 ## 需求
 
-iOS 12+；Xcode 12+。
+iOS 13+；Xcode 12+。
 
 Ruby Gems 依赖：
 
@@ -16,6 +16,8 @@ gem install fastlane #可选
 ## 配置
 
 项目初始化请双击执行 bootstrap.command，随引导操作。
+
+command 脚本第一次运行时，系统可能会提示未认证的开发者禁止运行。可通过右键菜单，选择打开来解除限制。
 
 正常执行 CocoaPods 安装或用 fastlane 配置即可：
 
@@ -32,7 +34,7 @@ fastlane setup_project
 强烈推荐阅读[项目模版 wiki](https://github.com/BB9z/iOS-Project-Template/wiki)内的相关文档。
 
 ```text
-Copyright © 2018-2020 RFUI, BB9z.
+Copyright © 2018-2021 BB9z.
 Copyright © 2014-2016 Beijing ZhiYun ZhiYuan Information Technology Co., Ltd.
 Copyright © 2013-2014 Chinamobo Co., Ltd.
 

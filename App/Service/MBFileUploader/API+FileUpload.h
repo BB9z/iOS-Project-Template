@@ -1,7 +1,7 @@
 /*
  API+FileUpload
  
- Copyright © 2018 RFUI.
+ Copyright © 2018, 2020-2021 RFUI.
  https://github.com/BB9z/iOS-Project-Template
  
  The MIT License

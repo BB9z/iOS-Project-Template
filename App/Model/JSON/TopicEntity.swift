@@ -11,18 +11,19 @@ import B9MulticastDelegate
  https://bb9z.github.io/API-Documentation-Sample/Sample/Entity#TopicEntity
  */
 @objc(TopicEntity)
+@objcMembers
 class TopicEntity: MBModel,
     IdentifierEquatable {
 
-    @objc var uid: String = ""
-    @objc var title: String?
-    @objc var content: String?
-    @objc var author: UserEntity?
-    @objc var createTime: Date?
-    @objc var editTime: Date?
+    var uid: String = ""
+    var title: String?
+    var content: String?
+    var author: UserEntity?
+    var createTime: Date?
+    var editTime: Date?
 //    "attachments": [AttachmentEntity],
-    @objc var status: [String] = [String]()
-    @objc var commentCount: Int = 0
+    var status: [String] = [String]()
+    var commentCount: Int = 0
 
     // MARK: -
     @objc private var allowOperations = [String]()
@@ -33,8 +34,8 @@ class TopicEntity: MBModel,
         allowOperations.contains("like")
     }
 
-    @objc var likeCount: Int = 0
-    @objc private(set) var isLiked: Bool = false
+    var likeCount: Int = 0
+    private(set) var isLiked: Bool = false
 //    "last_comment": CommentEntity
 
     private weak var likeTask: RFAPITask?
@@ -56,12 +57,12 @@ class TopicEntity: MBModel,
         delegates.invoke { $0.topicLikedChanged?(self) }
 
         likeTask = API.requestName(shouldLike ? positiveAPI : negativeAPI, context: { c in
-            c.parameters = ["tid": self.uid]
-            c.complation { task, _, _ in
+            c.parameters = ["tid": uid]
+            c.completion { [self] task, _, _ in
                 if task?.isSuccess == false {
-                    self.isLiked = !shouldLike
-                    self.likeCount -= shouldLike ? 1 : -1
-                    self.delegates.invoke { $0.topicLikedChanged?(self) }
+                    isLiked = !shouldLike
+                    likeCount -= shouldLike ? 1 : -1
+                    delegates.invoke { $0.topicLikedChanged?(self) }
                 }
             }
         })

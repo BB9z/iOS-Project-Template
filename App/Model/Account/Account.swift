@@ -100,7 +100,7 @@ class Account: MBUser {
 
         guard let user = Account(id: userID) else { fatalError() }
         user.token = token
-        self.current = user
+        current = user
         user.updateInformation { c in
             c.failureCallback = APISlientFailureHandler(true)
         }
@@ -148,14 +148,14 @@ class Account: MBUser {
         API.requestName("AcoountInfo") { c in
             context(c)
             let inputSuccessCallback = c.successCallback
-            c.success { task, rsp in
+            c.success { [self] task, rsp in
                 guard let info = rsp as? AccountEntity else { fatalError() }
                 if let cb = inputSuccessCallback {
                     cb(task, rsp)
                 }
-                self.hasPofileFetchedThisSession = true
-                self.information = info
-                if self.isCurrent {
+                hasPofileFetchedThisSession = true
+                information = info
+                if isCurrent {
                     AppEnv().setFlagOn(.userInfoFetched)
                 }
             }

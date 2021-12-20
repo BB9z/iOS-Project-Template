@@ -24,11 +24,11 @@ extension UITextField {
 
         // 修正模式切换改变后，光标的位置
         if isFirstResponder {
-            let text = self.text
+            let str = text
             let orgRange = selectedTextRange
             resignFirstResponder()
             becomeFirstResponder()
-            self.text = text
+            text = str
             selectedTextRange = orgRange
         }
     }

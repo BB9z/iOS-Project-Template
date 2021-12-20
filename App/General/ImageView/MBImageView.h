@@ -34,9 +34,9 @@
 
  @param imageURL 图片地址
 
- @param complation 这个回调设计是获取到图像后对图像进行额外处理准备的，只有当图片实际加载到 image view 上或获取失败时才会调用。可能会被调用多次，如有缓存图像时；还有可能根本不被调用，加载过程中又开始加载另外一张图、未加载完 view 被释放。item 是 UIImage
+ @param completion 这个回调设计是获取到图像后对图像进行额外处理准备的，只有当图片实际加载到 image view 上或获取失败时才会调用。可能会被调用多次，如有缓存图像时；还有可能根本不被调用，加载过程中又开始加载另外一张图、未加载完 view 被释放。item 是 UIImage
  */
-- (void)fetchImageWithImageURL:(nullable NSString *)imageURL complete:(nullable MBGeneralCallback)complation;
+- (void)fetchImageWithImageURL:(nullable NSString *)imageURL complete:(nullable MBGeneralCallback)completion;
 
 #pragma mark - 状态图
 

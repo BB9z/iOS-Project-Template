@@ -60,7 +60,7 @@ class MBApp: NSObject {
     @objc lazy var api: API = {
         let instance = API()
         API.global = instance
-        instance.networkActivityIndicatorManager = self.hud
+        instance.networkActivityIndicatorManager = hud
         return instance
     }()
 

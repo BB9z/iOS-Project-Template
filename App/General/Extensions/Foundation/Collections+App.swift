@@ -39,7 +39,7 @@ extension Collection {
     /**
      遍历集合，同时访问元素和序号，并可随时终止遍历
      */
-    func enumerateElements(_ block: (Element, Index, _ stoped: inout Bool) -> Void) {
+    func enumerateElements(_ block: (Element, Index, _ stopped: inout Bool) -> Void) {
         var stop = false
         var i = startIndex
         while i != endIndex {

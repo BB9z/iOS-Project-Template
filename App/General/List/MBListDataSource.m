@@ -6,13 +6,13 @@
 #import <MBAppKit/MBAPI.h>
 #import "MBListDateItem.h"
 
-@interface MBListDataSourceFetchComplationCallback : RFCallback
+@interface MBListDataSourceFetchCompletionCallback : RFCallback
 @end
 
 @interface MBListDataSource ()
 @property BOOL fetching;
 @property (weak, nonatomic) id<RFAPITask> fetchOperation;
-@property (nonatomic) RFCallbackControl<MBListDataSourceFetchComplationCallback *> *fetchComplationCallbacks;
+@property (nonatomic) RFCallbackControl<MBListDataSourceFetchCompletionCallback *> *fetchCompletionCallbacks;
 @end
 
 @implementation MBListDataSource
@@ -164,7 +164,7 @@
             if (completion) {
                 completion(self);
             }
-            [self.fetchComplationCallbacks performWithSource:self filter:nil];
+            [self.fetchCompletionCallbacks performWithSource:self filter:nil];
         };
     }];
 }
@@ -312,25 +312,25 @@ static id _defaultFetchFailureHandler = nil;
     _defaultFetchFailureHandler = defaultFetchFailureHandler;
 }
 
-- (RFCallbackControl *)fetchComplationCallbacks {
-    if (_fetchComplationCallbacks) return _fetchComplationCallbacks;
+- (RFCallbackControl *)fetchCompletionCallbacks {
+    if (_fetchCompletionCallbacks) return _fetchCompletionCallbacks;
     RFCallbackControl *c = RFCallbackControl.new;
-    c.objectClass = MBListDataSourceFetchComplationCallback.class;
-    _fetchComplationCallbacks = c;
-    return _fetchComplationCallbacks;
+    c.objectClass = MBListDataSourceFetchCompletionCallback.class;
+    _fetchCompletionCallbacks = c;
+    return _fetchCompletionCallbacks;
 }
 
-- (void)addFetchComplationCallback:(void (^)(__kindof MBListDataSource * _Nonnull, NSError * _Nullable))callback refrenceObject:(id)object {
-    [self.fetchComplationCallbacks addCallback:callback refrenceObject:object];
+- (void)addFetchCompletionCallback:(void (^)(__kindof MBListDataSource * _Nonnull, NSError * _Nullable))callback refrenceObject:(id)object {
+    [self.fetchCompletionCallbacks addCallback:callback refrenceObject:object];
 }
 
-- (void)removeFetchComplationCallbacksOnRefrenceObject:(id)object {
-    [self.fetchComplationCallbacks removeCallbackOfRefrenceObject:object];
+- (void)removeFetchCompletionCallbacksOnRefrenceObject:(id)object {
+    [self.fetchCompletionCallbacks removeCallbackOfRefrenceObject:object];
 }
 
 @end
 
-@implementation MBListDataSourceFetchComplationCallback
+@implementation MBListDataSourceFetchCompletionCallback
 
 - (void)perfromBlock:(nonnull id)block source:(MBListDataSource *)source {
     void (^cb)(__kindof MBListDataSource *__nonnull ds, NSError *__nullable error) = block;

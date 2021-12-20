@@ -6,13 +6,13 @@
 /**
  帖子列表
  */
-class TopicListDisplayer: MBTableListDisplayer, StroryboardCreation {
+class TopicListDisplayer: MBTableListDisplayer, StoryboardCreation {
     static var storyboardID: StoryboardID { .topic }
 
     #if DEBUG
     @objc func debugCommands() -> [UIBarButtonItem] {
         [
-            DebugMenuItem2("测试数据") {    // swiftlint:disable:this closure_body_length
+            DebugMenuItem2("测试数据") { [self] in  // swiftlint:disable:this closure_body_length
                 let user1 = UserEntity()
                 user1.uid = "UAnOiIAvB1keXOBFfvUezgIQ"
                 user1.name = "演示用户"
@@ -39,7 +39,7 @@ class TopicListDisplayer: MBTableListDisplayer, StroryboardCreation {
                 tp3.createTime = Date(timeIntervalSinceNow: -3600 * 24)
 
                 let items = [tp1, tp2, tp3]
-                self.tableView.dataSource.setItemsWithRawData(items)
+                tableView.dataSource.setItemsWithRawData(items)
             }
         ]
     }

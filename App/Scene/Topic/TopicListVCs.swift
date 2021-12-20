@@ -6,16 +6,16 @@
 /**
  推荐帖子列表
  */
-class TopicRecommandListController: MBTableListController, StroryboardCreation {
+class TopicRecommendListController: MBTableListController, StoryboardCreation {
     static var storyboardID: StoryboardID { .topic }
 }
 
 #if PREVIEW
 import SwiftUI
-struct TopicRecommandListPreview: PreviewProvider {
+struct TopicRecommendListPreview: PreviewProvider {
     static var previews: some View {
         ViewControllerPreview {
-            TopicRecommandListController.newFromStoryboard()
+            TopicRecommendListController.newFromStoryboard()
         }
     }
 }

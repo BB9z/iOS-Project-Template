@@ -30,7 +30,7 @@ class APIResponseSerializer: AFHTTPResponseSerializer {
         acceptableContentTypes = ["application/json", "text/json"]
     }
 
-    @available(*, unavailable, message: "No implemention")
+    @available(*, unavailable, message: "No implementation")
     required init?(coder: NSCoder) {
         fatalError()
     }

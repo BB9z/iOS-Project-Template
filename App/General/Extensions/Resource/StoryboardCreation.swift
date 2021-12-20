@@ -1,5 +1,5 @@
 //
-//  StroryboardCreation.swift
+//  StoryboardCreation.swift
 //  App
 //
 
@@ -20,7 +20,7 @@ enum StoryboardID: String {
  ```
 
  */
-protocol StroryboardCreation: UIViewController {
+protocol StoryboardCreation: UIViewController {
     /// 从 storyboard 种创建实例
     static func newFromStoryboard() -> Self
 
@@ -31,7 +31,7 @@ protocol StroryboardCreation: UIViewController {
     static var identifierInStroyboard: String { get }
 }
 
-extension StroryboardCreation {
+extension StoryboardCreation {
     static func newFromStoryboard() -> Self {
         let board = UIStoryboard(name: storyboardID.rawValue, bundle: nil)
         let vc = board.instantiateViewController(withIdentifier: identifierInStroyboard)

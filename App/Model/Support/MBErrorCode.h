@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, MBErrorCode) {
 
     //-- 数据错误 (1XXX)
     /// 数据格式错误，无法处理，需要扔掉
-    MBErrorDataInvaild                  = 21010,
+    MBErrorDataInvalid                  = 21010,
 
     /// 数据不支持，提示新版本
     MBErrorDataNotSupport               = 21020,
@@ -63,7 +63,7 @@ typedef NS_ENUM(NSInteger, MBErrorCode) {
 
     //-- 文件错误 (5xxx)
     /// 无效的路径
-    MBErrorPathInvaild                  = 25010,
+    MBErrorPathInvalid                  = 25010,
 
     /// 文件不存在
     MBErrorFileNotExist                 = 25300,

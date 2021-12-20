@@ -6,7 +6,7 @@
 /**
  更多 tab 页
  */
-class MoreViewController: UIViewController, StroryboardCreation {
+class MoreViewController: UIViewController, StoryboardCreation {
     static var storyboardID: StoryboardID { .main }
 
     override func viewDidAppear(_ animated: Bool) {

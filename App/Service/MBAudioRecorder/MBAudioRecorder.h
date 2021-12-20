@@ -64,7 +64,7 @@
 
  如果未开始会报错 MBErrorOperationCanceled。不会修改 audio session 的 category
  */
-- (void)stopRecordComplation:(nullable void (^)(BOOL, NSURL *__nullable, NSError *__nullable))complation;
+- (void)stopRecordCompletion:(nullable void (^)(BOOL, NSURL *__nullable, NSError *__nullable))completion;
 
 @property (readonly, getter=isRecording) BOOL recording;
 @property (nonatomic) BOOL paused;

@@ -60,6 +60,8 @@ logInfo "XC_IMPORT_PROVISIONING_PATH = $XC_IMPORT_PROVISIONING_PATH"
 readonly XC_IMPORT_CERTIFICATE_PATH=${XC_IMPORT_CERTIFICATE_PATH:=""}
 logInfo "XC_IMPORT_CERTIFICATE_PATH = $XC_IMPORT_CERTIFICATE_PATH"
 readonly XC_IMPORT_CERTIFICATE_PASSWORD=${XC_IMPORT_CERTIFICATE_PASSWORD:=""}
+readonly XC_EXPORT_IPA_NAME="${XC_EXPORT_IPA_NAME:="$(logWarning 'XC_EXPORT_IPA_NAME 未设置，默认 XC_BUILD_SCHEME')$XC_BUILD_SCHEME"}"
+logInfo "XC_EXPORT_IPA_NAMEXC_EXPORT_IPA_NAME = $XC_EXPORT_IPA_NAME"
 
 # keychian 的设置可以从外部导入，但默认不推荐修改
 readonly KC_NAME=${KC_NAME:="CIBuilder"}
@@ -72,10 +74,10 @@ if [ -n "$FIR_UPLOAD_TOKEN" ]; then
 fi
 
 readonly ARCHIVE_PATH="./$(date "+%Y-%m-%d %H.%M.%S").xcarchive"
-readonly EXPORT_OPTIONS_PLIST="${EXPORT_OPTIONS_PLIST:="$(logWarning 'EXPORT_OPTIONS_PLIST 未设置，使用默认路径')./ci/ExportOptions.plist"}"
+readonly EXPORT_OPTIONS_PLIST="${EXPORT_OPTIONS_PLIST:="$(logWarning 'EXPORT_OPTIONS_PLIST 未设置，使用默认路径')./CI/ExportOptions.plist"}"
 logInfo "EXPORT_OPTIONS_PLIST = $EXPORT_OPTIONS_PLIST"
 readonly EXPORT_DIRECTORY_PATH="./export"
-readonly EXPORT_IPA_PATH="$EXPORT_DIRECTORY_PATH/$XC_BUILD_SCHEME.ipa"
+readonly EXPORT_IPA_PATH="$EXPORT_DIRECTORY_PATH/$XC_EXPORT_IPA_NAME.ipa"
 
 isCIKeycahinCreated=false
 errorhandler () {
@@ -168,7 +170,14 @@ if [ $dSYMsCount -ge 1 ]; then
     logInfo "归档 dSYMs 文件"
     find "$ARCHIVE_PATH/dSYMs" -d 1 -name "*.dSYM" -print0 | while read -d $'\0' file; do
         logInfo "压缩 $file"
-        zip -r -X "$EXPORT_DIRECTORY_PATH/$(basename $file).zip" "$file/"
+        local pushCD="$PWD"
+        cd "$(dirname $file)"
+        if $isVerbose; then
+            echo $PWD
+            echo "zip -r -X \"$pushCD/$EXPORT_DIRECTORY_PATH/$(basename $file).zip\" \"$(basename $file)/\""
+        fi
+        zip -r -X "$pushCD/$EXPORT_DIRECTORY_PATH/$(basename $file).zip" "$(basename $file)/"
+        cd "$pushCD"
     done
 else
     logWarning "项目设置未生成 dSYMs 文件，跳过归档"
