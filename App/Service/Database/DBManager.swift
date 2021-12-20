@@ -66,7 +66,7 @@ final class DBManager {
         return migrator
     }
 
-    lazy var workQueue = DispatchQueue(label: "AppDB", qos: .default, attributes: .concurrent, autoreleaseFrequency: .workItem, target: nil)
+    let workQueue = DispatchQueue(label: "AppDB", qos: .default, attributes: .concurrent, autoreleaseFrequency: .workItem, target: nil)
 }
 
 // MARK: - Database Access
