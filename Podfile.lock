@@ -89,9 +89,16 @@ PODS:
   - RFAlpha/RFTransitioning/Core (0.7.1):
     - RFInitializing (>= 1.1)
     - RFKit/Runtime (>= 1.7.1)
+  - RFAlpha/RFTransitioning/MoveInFromBottomTransitioningStyle (0.7.1):
+    - RFAlpha/RFTransitioning/Core
+    - RFAlpha/RFTransitioning/PullDownToPopInteraction
   - RFAlpha/RFTransitioning/NavigationControllerTransition (0.7.1):
     - RFAlpha/RFTransitioning/Core
     - RFDelegateChain/Chain
+  - RFAlpha/RFTransitioning/PullDownToPopInteraction (0.7.1):
+    - RFAlpha/RFTransitioning/Core
+    - RFAlpha/RFTransitioning/NavigationControllerTransition
+    - "RFKit/Category/UIView+RFAnimate"
   - RFAlpha/RFViewApperance/RFDrawView (0.7.1):
     - RFInitializing (>= 1.1)
     - RFKit/Runtime (>= 1.7.1)
@@ -263,6 +270,7 @@ DEPENDENCIES:
   - RFAlpha/RFTabController
   - RFAlpha/RFTableViewPullToFetchPlugin
   - RFAlpha/RFTimer
+  - RFAlpha/RFTransitioning/MoveInFromBottomTransitioningStyle
   - RFAlpha/RFViewApperance/RFLine
   - RFAlpha/RFWindow
   - RFDelegateChain/UICollectionViewDataSource
@@ -315,6 +323,6 @@ SPEC CHECKSUMS:
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 8b4c3b012acd8485860cf8d1230d985113f58d81
+PODFILE CHECKSUM: 72fbc16ce0be4093f62e7224c219a6c8432ba23c
 
 COCOAPODS: 1.11.1

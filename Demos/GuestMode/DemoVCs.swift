@@ -6,7 +6,7 @@
 /**
  演示首页
  */
-class HomeViewController: UIViewController, StroryboardCreation {
+class HomeViewController: UIViewController, StoryboardCreation {
     static var storyboardID: StoryboardID { .main }
 
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class HomeViewController: UIViewController, StroryboardCreation {
 /**
  需要登入可见的页面
  */
-class PrivateViewController: UIViewController, StroryboardCreation {
+class PrivateViewController: UIViewController, StoryboardCreation {
     static var storyboardID: StoryboardID { .main }
     // 是否需要登入可见在 Interface Builder 中设置 MBUserLoginRequired
 }
@@ -48,7 +48,7 @@ class PrivateViewController: UIViewController, StroryboardCreation {
 /**
  游客也可见的页面
  */
-class PublicViewController: UIViewController, StroryboardCreation {
+class PublicViewController: UIViewController, StoryboardCreation {
     static var storyboardID: StoryboardID { .main }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -82,7 +82,7 @@ class PublicViewController: UIViewController, StroryboardCreation {
 /**
  演示登入页
  */
-class LoginViewController: UIViewController, LoginVCs, StroryboardCreation {
+class LoginViewController: UIViewController, LoginVCs, StoryboardCreation {
     static var storyboardID: StoryboardID { .main }
 
     /// 便于用户切换时区分

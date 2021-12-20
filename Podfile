@@ -64,7 +64,7 @@ end
 
 # Demos
 abstract_target 'Demo' do
-    platform :ios, '11.0'
+    platform :ios, '13.0'
 
     pod 'RFAlpha', :subspecs => [
         'RFButton',

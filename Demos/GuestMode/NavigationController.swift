@@ -12,7 +12,7 @@ private enum NavigationTab: Int {
 /**
  应用主导航控制器
  */
-class NavigationController: MBNavigationController, StroryboardCreation {
+class NavigationController: MBNavigationController, StoryboardCreation {
     static var storyboardID: StoryboardID { .main }
 
     override func onInit() {
