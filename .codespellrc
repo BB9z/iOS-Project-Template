@@ -1,0 +1,5 @@
+[codespell]
+count =
+skip = ./.git,./Carthage/,./Pods
+check-filenames =
+ignore-words-list = dout,inout
