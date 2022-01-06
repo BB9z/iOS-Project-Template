@@ -1,11 +1,8 @@
 
 /*:
  [目录](TOC) | [Previous](@previous) | [Next](@next)
-
- 🔰 提示 No such module 'PlaygroundExport' 错误请先 build 一下 PlaygroundExport.framework
  */
 
-import PlaygroundExport
 import PlaygroundSupport
 
 class TagItem: TagViewElement {
