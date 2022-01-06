@@ -1,7 +1,7 @@
 /*
  UIViewController+InterfaceOrientation.swift
 
- Copyright © 2021 BB9z.
+ Copyright © 2021-2022 BB9z.
  https://github.com/BB9z/iOS-Project-Template
 
  The MIT License
@@ -17,7 +17,7 @@ import UIKit
 
  1. 设置 `UIViewController.defaultInterfaceOrientation` 以激活朝向控制；
  2. 在需要特殊朝向的页面设置 `interfaceOrientationFlag` 属性，可以在 Interface Builder 中直接设置；
- 3. 如需强制转屏特性，需要在合适的地方调用 `forceRotationIfNeeded(viewController:)` 方法，可以通过导航去控制，推荐导航的 `navigationController(_, willShow:, animated:)` 代理方法；
+ 3. 如需强制转屏特性，需要在合适的地方调用 `attemptRotation(transitionCoordinator:)` 方法，可以通过导航去控制，推荐导航的 `navigationController(_:willShow:animated:)` 代理方法；
  4. iPadOS 上不建议控制朝向，利用 UITraitCollection 适配才是正道；iPad 应用必需在设置中启用「Requires Full Screen」才能支持朝向控制（否则连 UIViewController 的 supportedInterfaceOrientations 都不会被调用），强制转屏在 iPad 上不可用。
 
  强制转屏幕示例：
@@ -47,6 +47,7 @@ public struct InterfaceOrientationFlag: OptionSet {
 
 private var _defaultInterfaceOrientation: InterfaceOrientationFlag?
 private let flagAssociation = AssociatedObject<InterfaceOrientationFlag>()
+private var _lastOrientationBeforeForceRotation: UIInterfaceOrientation = .unknown
 
 extension UIViewController {
     /**
@@ -122,20 +123,32 @@ extension UIViewController {
             return
         }
         // 用 UIDevice.orientation 做判定是下策
-        let isPortrait = vcWindow.screen.bounds.width < vcWindow.screen.bounds.height
-        if isPortrait {
+        let orientation = orientation(window: vcWindow)
+        if orientation.isPortrait {
             if !flag.contains(.portrait) {
-                forceRotation(to: .landscapeLeft)
+                forceRotation(to: .landscapeLeft, in: vcWindow)
             }
-        } else {
+        } else if orientation.isLandscape {
             if !flag.contains(.landscape) {
-                forceRotation(to: .portrait)
+                forceRotation(to: .portrait, in: vcWindow)
             }
         }
     }
 
-    private static func forceRotation(to orientation: UIDeviceOrientation) {
-        UIDevice.current.setValue(orientation.rawValue, forKey: "orientation")
+    private static func orientation(window: UIWindow) -> UIInterfaceOrientation {
+        window.windowScene?.interfaceOrientation ?? (UIApplication.shared as InterfaceOrientationQuerying).interfaceOrientation
+    }
+
+    private static func forceRotation(to orientation: UIDeviceOrientation, in window: UIWindow) {
+        var restoredOrientation = orientation
+        let lastOrientation = _lastOrientationBeforeForceRotation
+        if (orientation.isPortrait && lastOrientation.isPortrait)
+            || (orientation.isLandscape && lastOrientation.isLandscape) {
+            // 直接用数值对应，否则一堆 switch，而且类型间横屏值是相反的
+            restoredOrientation = UIDeviceOrientation(rawValue: lastOrientation.rawValue) ?? orientation
+        }
+        _lastOrientationBeforeForceRotation = self.orientation(window: window)
+        UIDevice.current.setValue(restoredOrientation.rawValue, forKey: "orientation")
         UIViewController.attemptRotationToDeviceOrientation()
     }
 
@@ -175,5 +188,16 @@ extension InterfaceOrientationFlag {
             masks.remove(.landscape)
         }
         return masks
+    }
+}
+
+// 用于消除警告，状态栏方向的作为兜底
+private protocol InterfaceOrientationQuerying {
+    var interfaceOrientation: UIInterfaceOrientation { get }
+}
+@available (iOS, deprecated)
+extension UIApplication: InterfaceOrientationQuerying {
+    var interfaceOrientation: UIInterfaceOrientation {
+        statusBarOrientation
     }
 }
