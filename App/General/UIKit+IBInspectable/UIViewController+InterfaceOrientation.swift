@@ -111,7 +111,6 @@ extension UIViewController {
 
     /// 判断设备朝向是否需要强制转换到给定 vc 的朝向，如果是则强转朝向
     private static func forceRotationIfNeeded(viewController: UIViewController) {
-        AppLog().debug("forceRotationIfNeeded \(viewController)")
         if viewController.traitCollection.userInterfaceIdiom == .pad {
             // iPad 上不支持强制设置方向，下面走了也无效果
             return
