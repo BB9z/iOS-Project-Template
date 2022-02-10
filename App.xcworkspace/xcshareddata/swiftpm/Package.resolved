@@ -2,8 +2,26 @@
   "object": {
     "pins": [
       {
+        "package": "B9Action",
+        "repositoryURL": "https://gitee.com/b9swift/Action",
+        "state": {
+          "branch": null,
+          "revision": "fb5d1d155f1a7d420785423f8c81875c406c23d6",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "B9AssociatedObject",
+        "repositoryURL": "https://gitee.com/b9swift/AssociatedObject",
+        "state": {
+          "branch": null,
+          "revision": "5d187f0e3ff28f7fecf9f4fcbdbd717d18fda4e3",
+          "version": "1.0.0"
+        }
+      },
+      {
         "package": "B9MulticastDelegate",
-        "repositoryURL": "https://github.com/b9swift/MulticastDelegate",
+        "repositoryURL": "https://gitee.com/b9swift/MulticastDelegate",
         "state": {
           "branch": null,
           "revision": "1c5a741a39e37ba0717adb9405f367e26beeacf4",
@@ -11,8 +29,17 @@
         }
       },
       {
+        "package": "Pulse",
+        "repositoryURL": "https://gitee.com/b9swift/Pulse",
+        "state": {
+          "branch": null,
+          "revision": "b70373536161ce160f15f9180d6b7c1339c3ed09",
+          "version": "0.20.0"
+        }
+      },
+      {
         "package": "swift-log",
-        "repositoryURL": "https://github.com/apple/swift-log",
+        "repositoryURL": "https://gitee.com/b9swift/swift-log",
         "state": {
           "branch": null,
           "revision": "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
