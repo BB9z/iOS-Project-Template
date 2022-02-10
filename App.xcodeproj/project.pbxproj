@@ -46,6 +46,7 @@
 		D5197D3517F027BB00CA387C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5197D3717F027BB00CA387C /* Localizable.strings */; };
 		D519A0CF2434883400E26A64 /* MBMaskHiddenView.m in Sources */ = {isa = PBXBuildFile; fileRef = D519A0CE2434883300E26A64 /* MBMaskHiddenView.m */; };
 		D527917D27B557A800522240 /* B9MulticastDelegate in Frameworks */ = {isa = PBXBuildFile; productRef = D527917C27B557A800522240 /* B9MulticastDelegate */; };
+		D527917F27B558D600522240 /* Do.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527917E27B558D500522240 /* Do.swift */; };
 		D52A04E520F85F2600F535ED /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52A04E420F85F2600F535ED /* Button.swift */; };
 		D52EAB652043B6B3007219E0 /* UIImage+MBImageSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D52EAB602043B6B3007219E0 /* UIImage+MBImageSet.m */; };
 		D52EAB672043B6B3007219E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D52EAB622043B6B3007219E0 /* Assets.xcassets */; };
@@ -269,6 +270,7 @@
 		D519A0CE2434883300E26A64 /* MBMaskHiddenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMaskHiddenView.m; sourceTree = "<group>"; };
 		D525F3E72506988D003EBEB0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D525F3E82506988D003EBEB0 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		D527917E27B558D500522240 /* Do.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Do.swift; sourceTree = "<group>"; };
 		D52A04E420F85F2600F535ED /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		D52EAB602043B6B3007219E0 /* UIImage+MBImageSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MBImageSet.m"; sourceTree = "<group>"; };
 		D52EAB612043B6B3007219E0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -728,6 +730,7 @@
 			children = (
 				D5B966992501CF77009D77A0 /* AssociatedObject.swift */,
 				D54AFCEA22BF8DFD0031559F /* Atomic.swift */,
+				D527917E27B558D500522240 /* Do.swift */,
 				D588308A20CACB32002030C4 /* MBSwift.swift */,
 			);
 			path = Language;
@@ -1620,6 +1623,7 @@
 				D52EADEB2043B983007219E0 /* debug.m in Sources */,
 				D50CFA6B25C912CC003329EE /* DetailFetchControl.swift in Sources */,
 				D501845B20F881B6009481D4 /* DissolveTransitioning.swift in Sources */,
+				D527917F27B558D600522240 /* Do.swift in Sources */,
 				D5B1905A24026DB90076CD61 /* EnumListView.swift in Sources */,
 				D5DC60C124CA84BC00FBB147 /* EnvironmentFlag.swift in Sources */,
 				D5031A6B25BED1AE00C2849E /* FileURL.swift in Sources */,
