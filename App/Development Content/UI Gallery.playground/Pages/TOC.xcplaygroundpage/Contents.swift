@@ -9,6 +9,7 @@
  ## 目录
 
 - [TagView](TagView) - 自定义绘制，展示若干 tag
+- [RippleView](RippleView) - CAReplicatorLayer 使用 demo，波纹效果
 
 ----
 

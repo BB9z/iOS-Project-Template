@@ -3,5 +3,6 @@
     <pages>
         <page name='TOC'/>
         <page name='TagView'/>
+        <page name='RippleView'/>
     </pages>
 </playground>
