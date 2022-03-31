@@ -33,6 +33,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" systemColor="labelColor"/>
                         <navigationBarAppearance key="standardAppearance"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance"/>
                     </navigationBar>
                     <connections>
                         <segue destination="pRq-q7-gLS" kind="relationship" relationship="rootViewController" id="8da-fv-zwe"/>
@@ -565,11 +566,11 @@
             <objects>
                 <viewController id="65Z-Rx-9nX" customClass="ViewAppearWayRootViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8AK-pL-SYx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="492"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="5n5-f1-CvG" userLabel="README">
-                                <rect key="frame" x="0.0" y="56" width="320" height="492"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="492"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sYh-Xj-Hdb" userLabel="Content">
                                         <rect key="frame" x="20" y="20" width="280" height="406"/>
@@ -647,9 +648,11 @@
         <scene sceneID="UgK-eB-i51">
             <objects>
                 <navigationController modalPresentationStyle="pageSheet" id="Zub-ka-yo5" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8lb-gT-oNK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="8lb-gT-oNK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance"/>
                     </navigationBar>
                     <connections>
                         <segue destination="65Z-Rx-9nX" kind="relationship" relationship="rootViewController" id="PhM-E3-gg0"/>
@@ -664,11 +667,11 @@
             <objects>
                 <viewController id="nCN-QO-pHj" customClass="StyleConfigAppearViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2BW-vm-kqy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="492"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDP-Ty-HUc">
-                                <rect key="frame" x="20" y="76" width="280" height="452"/>
+                                <rect key="frame" x="20" y="20" width="280" height="452"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IJE-OL-gw5">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="181"/>

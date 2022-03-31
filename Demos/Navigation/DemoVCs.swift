@@ -74,7 +74,15 @@ class StyleConfigAppearViewController: UIViewController {
         updateStyle()
     }
     private func updateStyle() {
-        navigationController?.navigationBar.barTintColor = colorForSegmentIndex(currentPageColorControl.selectedSegmentIndex)
+        let color = colorForSegmentIndex(currentPageColorControl.selectedSegmentIndex)
+        guard let bar = navigationController?.navigationBar else { return }
+        bar.barTintColor = color
+        bar.standardAppearance.backgroundColor = color
+        bar.compactAppearance?.backgroundColor = color
+        bar.scrollEdgeAppearance?.backgroundColor = color
+        if #available(iOS 15.0, *) {
+            bar.compactScrollEdgeAppearance?.backgroundColor = color
+        }
     }
 
     @IBOutlet private weak var nextPageColorControl: UISegmentedControl!
