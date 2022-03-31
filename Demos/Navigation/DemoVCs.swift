@@ -3,26 +3,6 @@
 //  Navigation
 //
 
-/// 强制横屏
-class ForceLandscapeViewController: UIViewController {
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { .landscape }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        forceLandscape()
-    }
-
-    private func forceLandscape() {
-        switch UIDevice.current.orientation {
-        case .landscapeLeft, .landscapeRight:
-            return
-        default:
-            let orientationValue = NSNumber(value: UIInterfaceOrientation.landscapeLeft.rawValue)
-            UIDevice.current.setValue(orientationValue, forKey: "orientation")
-        }
-    }
-}
-
 /// 样式设置演示页
 class StyleConfigViewController: UIViewController {
     var barColorIndex = 0

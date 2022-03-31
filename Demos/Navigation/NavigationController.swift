@@ -12,9 +12,15 @@ class NavigationController: MBNavigationController, StoryboardCreation {
     override func onInit() {
         super.onInit()
         MBApp.status().globalNavigationController = self
+        UIViewController.defaultInterfaceOrientation = .portrait
     }
 
     // MARK: - 页面声明的行为、样式控制
+
+    override func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        super.navigationController(navigationController, willShow: viewController, animated: animated)
+        viewController.attemptRotation(transitionCoordinator: navigationController.transitionCoordinator)
+    }
 
     override func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         super.navigationController(navigationController, didShow: viewController, animated: animated)
