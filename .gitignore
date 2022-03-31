@@ -28,9 +28,6 @@ fastlane/screenshots
 fastlane/test_output
 fastlane/sign&cert
 
-# 手动安装的依赖
-/Frameworks/Realm.framework
-
 # CSV
 *.orig
 .svn

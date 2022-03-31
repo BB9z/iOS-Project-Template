@@ -1,7 +1,7 @@
 /*
  AppNewVersionChecker.swift
 
- Copyright © 2021 BB9z.
+ Copyright © 2021-2022 BB9z.
  https://github.com/BB9z/iOS-Project-Template
 
  The MIT License
@@ -13,18 +13,19 @@
 /**
  应用更新检查器
 
- 检查数据源目前支持 AppStore，fir.im（公开链接）
+ 检查数据源目前支持 fir.im
 
  🔰 新控件暂不完善，按需修改
  */
 class AppNewVersionChecker {
 
-    init(appStoreID: Int64) {
-        checkSource = .appStore
-        appID = String(appStoreID)
-        loadLastInfo()
-    }
+    /**
+     创建 fir.im 的更新检查器
 
+     - Parameter firShort: 下载链接后缀，如下载链接是 https://下载域名/abcd ，则这里填 abcd
+
+        使用这种方式支持任意账户的公开应用，若用官方的 API 还需另配 token
+     */
     init(firShort: String) {
         checkSource = .firim
         appID = firShort
@@ -135,7 +136,7 @@ class AppNewVersionChecker {
         currentCheckCallback = callback
         switch checkSource {
         case .appStore:
-            checkAppStore(silent: silent)
+            fatalError("应用商店检查不再可用")
         case .firim:
             checkFirim(silent: silent)
         }
@@ -199,69 +200,6 @@ class AppNewVersionChecker {
     }
     private static var userDefaultResultKey: String {
         "AppNewVersionChecker.Result"
-    }
-
-    // MARK: - AppStore
-
-    private func checkAppStore(silent: Bool) {
-        let define = RFAPIDefine()
-        define.method = "GET"
-        define.path = "https://itunes.apple.com/lookup?id=\(appID)"
-        define.responseSerializerClass = AFJSONResponseSerializer.self
-        define.needsAuthorization = false
-        define.responseExpectType = .default
-
-        task = AppAPI().request(define: define, context: { c in
-            c.identifier = "CheckAppStore"
-            c.groupIdentifier = "AppNewVersionChecker"
-            c.timeoutInterval = 10
-            if !silent {
-                c.loadMessage = "检查版本中，请稍后"
-            }
-            c.failure { [weak self] _, error in
-                guard let sf = self else { return }
-                AppLog().critical("\(error)")
-                sf.noticeResultCallback(error: error)
-            }
-            c.success { [weak self] _, rsp in
-                guard let sf = self else { return }
-                do {
-                    let jsonData = try JSONSerialization.data(withJSONObject: rsp as Any, options: [])
-                    let results = try JSONDecoder().decode(AppStoreResponse.self, from: jsonData)
-                    sf.handle(response: results)
-                } catch {
-                    AppLog().critical("\(error)")
-                    sf.noticeResultCallback(error: error)
-                }
-            }
-            c.finished { [weak self] _, _ in
-                self?.cleanRequest()
-            }
-        })
-    }
-
-    private func handle(response: AppStoreResponse) {
-        if let item = response.results.first {
-            if var info = info,
-               info.version == item.version {
-                info.refreshTime = Date()
-                self.info = info
-            } else {
-                info = VersionInfo(version: item.version, build: nil, releaseNote: item.releaseNotes, source: .appStore, refreshTime: Date())
-            }
-        } else {
-            info = VersionInfo(version: MBApp.status().version, build: nil, releaseNote: nil, source: .appStore, refreshTime: Date())
-        }
-        saveInfo()
-        noticeResultCallback(error: nil)
-    }
-
-    private struct AppStoreResponse: Decodable {
-        struct Item: Decodable {
-            var version: String
-            var releaseNotes: String?
-        }
-        var results: [Item]
     }
 
     // MARK: - firim

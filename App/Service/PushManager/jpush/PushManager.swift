@@ -47,9 +47,7 @@ final class PushManager: NSObject,
     }
 
     @objc func afterInit() {
-        if let push = launchOptions?[.remoteNotification] as? [AnyHashable: Any] {
-            didReceiveRemoteNotification(userInfo: push, isUserAction: true)
-        }
+        proccessLaunchOptions()
         AppDelegate().addAppEventListener(self)
     }
 
@@ -64,7 +62,16 @@ final class PushManager: NSObject,
         #else
         AppLog().info("jPush 已禁用")
         #endif
-        launchOptions = nil
+        proccessLaunchOptions()
+    }
+
+    private func proccessLaunchOptions() {
+        if let options = launchOptions {
+            if let push = options[.remoteNotification] as? [AnyHashable: Any] {
+                didReceiveRemoteNotification(userInfo: push, isUserAction: true)
+            }
+            launchOptions = nil
+        }
     }
 
     /// 未获取成功为 nil
