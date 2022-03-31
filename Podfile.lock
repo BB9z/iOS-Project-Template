@@ -3,10 +3,10 @@ PODS:
   - AFNetworking/Security (4.0.1)
   - AFNetworking/Serialization (4.0.1)
   - JSONModel (1.8.0)
-  - MBAppKit/Button (0.12.0):
+  - MBAppKit/Button (0.13.0):
     - RFInitializing
     - RFKit/RFGeometry
-  - MBAppKit/Core (0.12.0):
+  - MBAppKit/Core (0.13.0):
     - RFAlpha/RFSwizzle
     - RFAPI (~> 2.0)
     - RFKit (~> 2.0)
@@ -15,89 +15,88 @@ PODS:
     - RFKit/Category/NSJSONSerialization
     - RFKit/Category/NSLayoutConstraint
     - RFKit/Category/NSURL
-  - MBAppKit/Environment (0.12.0):
+  - MBAppKit/Environment (0.13.0):
     - RFKit/Category/NSArray
     - RFKit/Runtime
-  - MBAppKit/Input (0.12.0):
+  - MBAppKit/Input (0.13.0):
     - MBAppKit/Core
     - RFDelegateChain/UITextFieldDelegate
     - RFInitializing
     - RFKit/Category/UIResponder
     - RFKit/RFGeometry
-  - MBAppKit/Navigation (0.12.0):
+  - MBAppKit/Navigation (0.13.0):
     - MBAppKit/Core
     - RFAlpha/RFNavigationController
     - RFAlpha/RFSynthesize
     - RFKit/Category/NSArray
     - RFKit/Category/UIResponder
-  - MBAppKit/RootViewController (0.12.0):
+  - MBAppKit/RootViewController (0.13.0):
     - RFKit/Runtime
-  - MBAppKit/UserIDIsString (0.12.0):
+  - MBAppKit/UserIDIsString (0.13.0):
     - MBAppKit/Core
-  - MBAppKit/Worker (0.12.0):
+  - MBAppKit/Worker (0.13.0):
     - MBAppKit/Core
     - RFInitializing
-  - RFAlpha/RFBlockSelectorPerform (0.7.1)
-  - RFAlpha/RFButton (0.7.1):
+  - RFAlpha/RFBlockSelectorPerform (0.7.2)
+  - RFAlpha/RFButton (0.7.2):
     - RFInitializing (>= 1.1)
     - RFKit/Runtime (>= 1.7.1)
-  - RFAlpha/RFCallbackControl (0.7.1):
+  - RFAlpha/RFCallbackControl (0.7.2):
     - RFKit/Category/NSArray
     - RFKit/Runtime (>= 1.7.1)
-  - RFAlpha/RFContainerView (0.7.1):
+  - RFAlpha/RFContainerView (0.7.2):
     - RFInitializing (>= 1.1)
     - RFKit/Category/UIView
     - RFKit/Category/UIViewController
     - RFKit/Runtime (>= 1.7.1)
-  - RFAlpha/RFDataSourceArray (0.7.1)
-  - RFAlpha/RFDrawImage (0.7.1):
+  - RFAlpha/RFDataSourceArray (0.7.2)
+  - RFAlpha/RFDrawImage (0.7.2):
     - RFKit/Runtime (>= 1.7.1)
-  - RFAlpha/RFImageCropper (0.7.1):
+  - RFAlpha/RFImageCropper (0.7.2):
     - RFInitializing (>= 1.1)
     - RFKit/Category/UIColor
     - RFKit/Category/UIImage
     - RFKit/Category/UIView
     - "RFKit/Category/UIView+RFAnimate"
     - RFKit/Runtime (>= 1.7.1)
-  - RFAlpha/RFKVOWrapper (0.7.1):
+  - RFAlpha/RFKVOWrapper (0.7.2):
     - RFKit/Runtime (>= 1.7.1)
-  - RFAlpha/RFNavigationController (0.7.1):
+  - RFAlpha/RFNavigationController (0.7.2):
     - RFAlpha/RFTransitioning/NavigationControllerTransition
     - RFKit/Category/NSError
     - RFKit/Category/UIView
     - "RFKit/Category/UIView+RFAnimate"
-    - "RFKit/Category/UIViewController+RFInterfaceOrientation"
     - RFKit/Runtime (>= 1.7.1)
-  - RFAlpha/RFRefreshControl (0.7.1):
+  - RFAlpha/RFRefreshControl (0.7.2):
     - RFKit/Runtime (>= 1.7.1)
-  - RFAlpha/RFSwizzle (0.7.1):
+  - RFAlpha/RFSwizzle (0.7.2):
     - RFKit/Runtime (>= 1.7.1)
-  - RFAlpha/RFSynthesize (0.7.1):
+  - RFAlpha/RFSynthesize (0.7.2):
     - RFKit/Runtime (>= 1.7.1)
-  - RFAlpha/RFTabController (0.7.1):
+  - RFAlpha/RFTabController (0.7.2):
     - RFAlpha/RFDataSourceArray
     - RFInitializing (>= 1.1)
     - RFKit/Category/NSArray
     - RFKit/Category/UIView
     - RFKit/Runtime (>= 1.7.1)
-  - RFAlpha/RFTableViewPullToFetchPlugin (0.7.1):
+  - RFAlpha/RFTableViewPullToFetchPlugin (0.7.2):
     - RFAlpha/RFKVOWrapper
     - RFDelegateChain/Chain
     - RFKit/Category/UIView
     - "RFKit/Category/UIView+RFAnimate"
-  - RFAlpha/RFTimer (0.7.1)
-  - RFAlpha/RFTransitioning/Core (0.7.1):
+  - RFAlpha/RFTimer (0.7.2)
+  - RFAlpha/RFTransitioning/Core (0.7.2):
     - RFInitializing (>= 1.1)
     - RFKit/Runtime (>= 1.7.1)
-  - RFAlpha/RFTransitioning/NavigationControllerTransition (0.7.1):
+  - RFAlpha/RFTransitioning/NavigationControllerTransition (0.7.2):
     - RFAlpha/RFTransitioning/Core
     - RFDelegateChain/Chain
-  - RFAlpha/RFViewApperance/RFDrawView (0.7.1):
+  - RFAlpha/RFViewApperance/RFDrawView (0.7.2):
     - RFInitializing (>= 1.1)
     - RFKit/Runtime (>= 1.7.1)
-  - RFAlpha/RFViewApperance/RFLine (0.7.1):
+  - RFAlpha/RFViewApperance/RFLine (0.7.2):
     - RFAlpha/RFViewApperance/RFDrawView
-  - RFAlpha/RFWindow (0.7.1):
+  - RFAlpha/RFWindow (0.7.2):
     - RFInitializing (>= 1.1)
   - RFAPI (2.1.1):
     - RFAPI/Core (= 2.1.1)
@@ -213,7 +212,6 @@ PODS:
     - RFKit/Runtime
   - RFKit/Category/UIViewController (2.5.1):
     - RFKit/Foundation
-  - "RFKit/Category/UIViewController+RFInterfaceOrientation (2.5.1)"
   - RFKit/Default (2.5.1):
     - RFKit/Category/Default
     - RFKit/RFGeometry
@@ -239,9 +237,9 @@ PODS:
     - RFKit/Category/UIDevice
     - RFKit/Category/UINavigationController
     - RFKit/Runtime (>= 1.7)
-  - SDWebImage (5.11.1):
-    - SDWebImage/Core (= 5.11.1)
-  - SDWebImage/Core (5.11.1)
+  - SDWebImage (5.12.5):
+    - SDWebImage/Core (= 5.12.5)
+  - SDWebImage/Core (5.12.5)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
@@ -297,14 +295,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   MBAppKit:
-    :commit: 7aff349c01867379ea4ed4bfdd35d772e937c64c
+    :commit: b557b27168982ce047364e9c4c589945615fd307
     :git: https://github.com/RFUI/MBAppKit.git
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
-  MBAppKit: 65cea59d15fabbe0275eb8c8cf8852799253b4b5
-  RFAlpha: 0d69ff9d72e11d279f2a11ab3b7edb55ccb9a72c
+  MBAppKit: 67f7f60b893a98e7986889204cd4ac2f02d524e9
+  RFAlpha: b903f1725ccadee2226ab34fd0b9009cffa364d2
   RFAPI: 3cba472523c4301b4a0c44b1b3dcbe5707d21372
   RFDelegateChain: c6df4faf9932f86d9539a08d0aa8f9709025d874
   RFInitializing: 6f3d8149e68ed0a4460fbe5d89608a52f663978f
@@ -312,7 +310,7 @@ SPEC CHECKSUMS:
   RFKit: 046ed8a61c874fbb93dce7a694cfc059e8bf5d7a
   RFMessageManager: e261b12146e083989df83106304fbface62705b5
   RFSegue: 32840d5876e32f192b22f41160ebfcf466a0fa3b
-  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
 PODFILE CHECKSUM: 8b4c3b012acd8485860cf8d1230d985113f58d81
