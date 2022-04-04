@@ -2,13 +2,6 @@
 #import "debug.h"
 #import "NSUserDefaults+App.h"
 
-void ThrowExceptionToPause(void) {
-    @try {
-        @throw [NSException exceptionWithName:@"pause" reason:nil userInfo:nil];
-    }
-    @catch (NSException *exception) { }
-}
-
 void DebugLog(BOOL fatal, NSString *_Nullable recordID, NSString *_Nonnull format, ...) {
     va_list args;
     va_start(args, format);
@@ -16,7 +9,10 @@ void DebugLog(BOOL fatal, NSString *_Nullable recordID, NSString *_Nonnull forma
     va_end(args);
 
     if (fatal) {
-        ThrowExceptionToPause();
+        @try {
+            @throw [NSException exceptionWithName:@"pause" reason:nil userInfo:nil];
+        }
+        @catch (NSException *exception) { }
     }
     if (recordID
         && ![@MBBuildConfiguration isEqualToString:@"Debug"]) {

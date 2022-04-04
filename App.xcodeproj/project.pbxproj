@@ -193,6 +193,7 @@
 		D5EE521A2043F693009148B3 /* MBSingleSectionCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE52162043F692009148B3 /* MBSingleSectionCollectionView.m */; };
 		D5EE52212043F6A7009148B3 /* MBCollectionViewEqualColumnSpaceLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE521B2043F6A6009148B3 /* MBCollectionViewEqualColumnSpaceLayout.m */; };
 		D5EE523D2043F7B9009148B3 /* MBLayoutButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE52312043F7B9009148B3 /* MBLayoutButton.m */; };
+		D5F036B527FB479800C60A72 /* B9Debug in Frameworks */ = {isa = PBXBuildFile; productRef = D5F036B427FB479800C60A72 /* B9Debug */; };
 		D5F1F843251C0B3A00D641F9 /* NavigationController+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1F842251C0B3A00D641F9 /* NavigationController+Router.swift */; };
 		D5F1F849251C1D6400D641F9 /* URL+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1F848251C1D6400D641F9 /* URL+App.swift */; };
 		D5F65F3424C1CAF20082FEC2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F65F3324C1CAF10082FEC2 /* API.swift */; };
@@ -532,6 +533,7 @@
 			files = (
 				D57FBB6E279BB770003A0533 /* B9Action in Frameworks */,
 				D57FBB6B279BB727003A0533 /* B9AssociatedObject in Frameworks */,
+				D5F036B527FB479800C60A72 /* B9Debug in Frameworks */,
 				D527917D27B557A800522240 /* B9MulticastDelegate in Frameworks */,
 				674FCCB03EFF1B157024C64B /* libPods-App.a in Frameworks */,
 				D57FBB71279D51BA003A0533 /* Logging in Frameworks */,
@@ -1450,6 +1452,7 @@
 				D57FBB6D279BB770003A0533 /* B9Action */,
 				D57FBB70279D51BA003A0533 /* Logging */,
 				D527917C27B557A800522240 /* B9MulticastDelegate */,
+				D5F036B427FB479800C60A72 /* B9Debug */,
 			);
 			productName = App;
 			productReference = D5197A3A17EECAAF00CA387C /* App.app */;
@@ -1478,6 +1481,7 @@
 				D57FBB6C279BB770003A0533 /* XCRemoteSwiftPackageReference "Action" */,
 				D57FBB6F279D51BA003A0533 /* XCRemoteSwiftPackageReference "swift-log" */,
 				D527917B27B557A800522240 /* XCRemoteSwiftPackageReference "MulticastDelegate" */,
+				D5F036B327FB479800C60A72 /* XCRemoteSwiftPackageReference "Debug" */,
 			);
 			productRefGroup = D5197A3B17EECAAF00CA387C /* Products */;
 			projectDirPath = "";
@@ -2208,6 +2212,14 @@
 				minimumVersion = 0.20.0;
 			};
 		};
+		D5F036B327FB479800C60A72 /* XCRemoteSwiftPackageReference "Debug" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://gitee.com/b9swift/Debug";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2230,6 +2242,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D57FBB6F279D51BA003A0533 /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = Logging;
+		};
+		D5F036B427FB479800C60A72 /* B9Debug */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5F036B327FB479800C60A72 /* XCRemoteSwiftPackageReference "Debug" */;
+			productName = B9Debug;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
