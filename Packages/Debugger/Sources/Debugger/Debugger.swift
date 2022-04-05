@@ -17,6 +17,8 @@ public enum Debugger {
     /**
      将调试入口按钮添加到界面上
 
+     如果按钮后来被其他 view 覆盖了，重新调用可以把按钮移到顶部
+
      - Parameter window: 添加到哪个 window 里，未指定使用应用当前的 key window
      */
     public static func installTriggerButton(in window: UIWindow? = nil) {
@@ -41,7 +43,11 @@ public enum Debugger {
         #endif
     }
 
-    ///
+    /**
+     调试模式是否开启，用于控制调试入口按钮的显隐
+
+     在 DEBUG 模式下，执行 `installTriggerButton()` 会自动开启
+     */
     public static var isDebugEnabled: Bool {
         get {
             UserDefaults.standard.bool(forKey: "__debugEnabled")
