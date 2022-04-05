@@ -63,6 +63,8 @@
 		D53446032592481400F5FD80 /* Date+Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53446022592481400F5FD80 /* Date+Server.swift */; };
 		D534461025924CE700F5FD80 /* UIApplication+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534460E25924CE700F5FD80 /* UIApplication+App.swift */; };
 		D534461125924CE700F5FD80 /* UIViewController+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534460F25924CE700F5FD80 /* UIViewController+App.swift */; };
+		D53BB5FA27FC467700F60168 /* B9FoundationUI in Resources */ = {isa = PBXBuildFile; fileRef = D53BB5F927FC467700F60168 /* B9FoundationUI */; };
+		D53BB5FC27FC468300F60168 /* B9FoundationUI in Frameworks */ = {isa = PBXBuildFile; productRef = D53BB5FB27FC468300F60168 /* B9FoundationUI */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D544A396197CBE5300C65604 /* MBFormSelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D544A395197CBE5300C65604 /* MBFormSelectButton.m */; };
 		D544A39E197D1E8600C65604 /* JSONValueTransformer+App.m in Sources */ = {isa = PBXBuildFile; fileRef = D544A39D197D1E8600C65604 /* JSONValueTransformer+App.m */; };
 		D54AFCEB22BF8DFE0031559F /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54AFCEA22BF8DFD0031559F /* Atomic.swift */; };
@@ -303,6 +305,7 @@
 		D534460E25924CE700F5FD80 /* UIApplication+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+App.swift"; sourceTree = "<group>"; };
 		D534460F25924CE700F5FD80 /* UIViewController+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+App.swift"; sourceTree = "<group>"; };
 		D5353D1524B7E1EF00BED8C7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D53BB5F927FC467700F60168 /* B9FoundationUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = B9FoundationUI; sourceTree = "<group>"; };
 		D544A394197CBE5300C65604 /* MBFormSelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBFormSelectButton.h; sourceTree = "<group>"; };
 		D544A395197CBE5300C65604 /* MBFormSelectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBFormSelectButton.m; sourceTree = "<group>"; };
 		D544A39D197D1E8600C65604 /* JSONValueTransformer+App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONValueTransformer+App.m"; sourceTree = "<group>"; };
@@ -535,6 +538,7 @@
 				D57FBB6E279BB770003A0533 /* B9Action in Frameworks */,
 				D57FBB6B279BB727003A0533 /* B9AssociatedObject in Frameworks */,
 				D5F036B527FB479800C60A72 /* B9Debug in Frameworks */,
+				D53BB5FC27FC468300F60168 /* B9FoundationUI in Frameworks */,
 				D527917D27B557A800522240 /* B9MulticastDelegate in Frameworks */,
 				D5F036C327FBC80500C60A72 /* HasItem in Frameworks */,
 				674FCCB03EFF1B157024C64B /* libPods-App.a in Frameworks */,
@@ -1414,6 +1418,7 @@
 		D5F036BD27FBB45D00C60A72 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				D53BB5F927FC467700F60168 /* B9FoundationUI */,
 				D5F036C027FBC6E000C60A72 /* HasItem */,
 			);
 			path = Packages;
@@ -1464,6 +1469,7 @@
 				D527917C27B557A800522240 /* B9MulticastDelegate */,
 				D5F036B427FB479800C60A72 /* B9Debug */,
 				D5F036C227FBC80500C60A72 /* HasItem */,
+				D53BB5FB27FC468300F60168 /* B9FoundationUI */,
 			);
 			productName = App;
 			productReference = D5197A3A17EECAAF00CA387C /* App.app */;
@@ -1511,6 +1517,7 @@
 			files = (
 				D5542EAA191887F500831016 /* APIDefine.plist in Resources */,
 				D52EAB672043B6B3007219E0 /* Assets.xcassets in Resources */,
+				D53BB5FA27FC467700F60168 /* B9FoundationUI in Resources */,
 				D5F036C127FBC6E000C60A72 /* HasItem in Resources */,
 				D5197D3217F027B400CA387C /* InfoPlist.strings in Resources */,
 				D5C636A72047CC5900851CF4 /* LaunchScreen.storyboard in Resources */,
@@ -2238,6 +2245,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D527917B27B557A800522240 /* XCRemoteSwiftPackageReference "MulticastDelegate" */;
 			productName = B9MulticastDelegate;
+		};
+		D53BB5FB27FC468300F60168 /* B9FoundationUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = B9FoundationUI;
 		};
 		D57FBB6A279BB727003A0533 /* B9AssociatedObject */ = {
 			isa = XCSwiftPackageProductDependency;
