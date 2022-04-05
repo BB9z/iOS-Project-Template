@@ -1,17 +1,16 @@
 /*
  HasItem.swift
 
- Copyright © 2020 BB9z.
+ Copyright © 2020, 2022 BB9z.
  https://github.com/BB9z/iOS-Project-Template
 
  The MIT License
  https://opensource.org/licenses/MIT
  */
-
 import Foundation
 
 /// 定义通用的模型属性，便于对象间传值
-protocol HasItem: AnyHasItem {
+public protocol HasItem: AnyHasItem {
     associatedtype Item
 
     /**
@@ -27,7 +26,7 @@ protocol HasItem: AnyHasItem {
  HasItem type erasure
  与常规的用包装消除类型不同，这里需要消除协议自身及其 associated type 的类型约束
  */
-protocol AnyHasItem {
+public protocol AnyHasItem {
     /// 读取 item，类型不匹配转为 nil
     func item<T>() -> T?
 
@@ -35,7 +34,8 @@ protocol AnyHasItem {
     mutating func setItem<T>(_ item: T)
 }
 
-extension HasItem {
+public extension HasItem {
+    /// 读取 item，类型不匹配转为 nil
     func item<T>() -> T? {
         // 实现备忘：
         // item 正常是非空（未赋值肯定是 bug），这里如果返回非空，外面用起来会方便点
@@ -43,6 +43,7 @@ extension HasItem {
         // 另外，根据编译环境区分处理不合适
         item as? T
     }
+    /// 设置 item
     mutating func setItem<T>(_ item: T) {
         guard let newValue = item as? Item else {
             fatalError("set item type mismatched.")
@@ -51,7 +52,10 @@ extension HasItem {
     }
 }
 
-extension UIViewController {
+#if canImport(UIKit)
+import UIKit
+
+public extension UIViewController {
     /**
      通用 segue 传值辅助方法
 
@@ -76,8 +80,7 @@ extension UIViewController {
         }
 
         // 尝试从 sender 各个父 view 取
-        if var view = sender as? UIView,
-           view.viewController === self {
+        if var view = sender as? UIView {
             while let superview = view.superview {
                 view = superview
                 if let source = view as? AnyHasItem,
@@ -95,3 +98,4 @@ extension UIViewController {
         }
     }
 }
+#endif // Can import UIKit
