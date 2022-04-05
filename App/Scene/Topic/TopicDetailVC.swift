@@ -3,6 +3,8 @@
 //  App
 //
 
+import HasItem
+
 /**
  帖子详情
  */
