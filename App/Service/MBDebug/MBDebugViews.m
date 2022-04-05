@@ -7,29 +7,6 @@
 #import <FLEX/FLEX.h>
 #endif
 
-@implementation MBDebugContainerView
-
-- (void)willMoveToWindow:(UIWindow *)newWindow {
-    [super willMoveToWindow:newWindow];
-    if (!NSUserDefaults.standardUserDefaults._debugEnabled) {
-        [self removeFromSuperview];
-    }
-}
-
-@end
-
-
-@implementation MBDebugContainerScrollView
-
-- (void)willMoveToWindow:(UIWindow *)newWindow {
-    [super willMoveToWindow:newWindow];
-    if (!NSUserDefaults.standardUserDefaults._debugEnabled) {
-        [self removeFromSuperview];
-    }
-}
-
-@end
-
 #import <RFAlpha/RFWindow.h>
 #import "MBDebugFloatConsoleViewController.h"
 
@@ -48,13 +25,6 @@ RFInitializingRootForUIView
 
 - (void)afterInit {
     self.enableObserverActived = YES;
-#if __has_include("FLEX/FLEX.h") && DEBUG
-    FLEXManager *fm = [FLEXManager sharedManager];
-    [fm registerSimulatorShortcutWithKey:@"d" modifiers:UIKeyModifierControl action:^{
-        NSUserDefaults.standardUserDefaults._debugEnabled = YES;
-        [self onButtonTapped];
-    } description:@"Toggle debug menu"];
-#endif
 }
 
 - (void)setEnableObserverActived:(BOOL)enableObserverActived {
@@ -85,17 +55,7 @@ RFInitializingRootForUIView
 
 - (void)didMoveToWindow {
     [super didMoveToWindow];
-#if TARGET_OS_SIMULATOR
     [self setupAsTopMostViewInWindow:self.window];
-    self.hidden = !NSUserDefaults.standardUserDefaults._debugEnabled;
-#else
-    if (!NSUserDefaults.standardUserDefaults._debugEnabled) {
-        [self removeFromSuperview];
-    }
-    else {
-        [self setupAsTopMostViewInWindow:self.window];
-    }
-#endif
 }
 
 - (void)setupAsTopMostViewInWindow:(UIWindow *)window {
@@ -111,14 +71,6 @@ RFInitializingRootForUIView
     }
     self.win.rootViewController = [MBDebugFloatConsoleViewController newWithStoryboardName:@"MBDebug" identifier:nil];
     self.win.hidden = NO;
-}
-
-+ (void)installToKeyWindow {
-    UIWindow *w = UIApplication.sharedApplication.keyWindow;
-    MBDebugWindowButton *button = [MBDebugWindowButton.alloc initWithFrame:CGRectMake(5, w.frame.size.height -20 -5, 20, 20)];
-    button.backgroundColor = [UIColor.redColor colorWithAlphaComponent:0.3];
-    button.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleRightMargin;
-    [w addSubview:button];
 }
 
 @end

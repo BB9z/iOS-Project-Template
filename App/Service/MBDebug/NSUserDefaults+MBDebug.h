@@ -15,9 +15,6 @@
  */
 @interface NSUserDefaults (MBDebug)
 
-/// 调试模式是否开启
-@property BOOL _debugEnabled;
-
 /// 接口请求 SSL 安全性最小化，便于抓包调试
 @property BOOL _debugAPIAllowSSLDebug;
 

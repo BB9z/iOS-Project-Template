@@ -3,6 +3,8 @@
 //  App
 //
 
+import Debugger
+
 /**
  注意是基于 MBApplicationDelegate 的，大部分 UIApplicationDelegate 方法需要调用 super
 
@@ -28,7 +30,7 @@ class ApplicationDelegate: MBApplicationDelegate {
         RFKeyboard.autoDisimssKeyboardWhenTouch = true
         setupUIAppearance()
         dispatch_after_seconds(0) {
-            MBDebugWindowButton.installToKeyWindow()
+            Debugger.installTriggerButton()
         }
         return true
     }

@@ -11,20 +11,6 @@
 #import <RFKit/RFRuntime.h>
 #import <RFInitializing.h>
 
-/**
- 在 debug mode 下才会显示的 view
- */
-@interface MBDebugContainerView : UIView
-@end
-
-/**
- 在 debug mode 下才会显示的 scroll view
- */
-@interface MBDebugContainerScrollView : UIScrollView
-@end
-
-#pragma mark - Window
-
 @class RFWindow;
 
 @interface MBDebugWindowButton : UIButton <
@@ -32,5 +18,4 @@
 >
 @property (nonatomic, strong) RFWindow *win;
 
-+ (void)installToKeyWindow;
 @end

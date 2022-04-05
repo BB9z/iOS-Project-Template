@@ -66,6 +66,7 @@
 		D53BB5FA27FC467700F60168 /* B9FoundationUI in Resources */ = {isa = PBXBuildFile; fileRef = D53BB5F927FC467700F60168 /* B9FoundationUI */; };
 		D53BB5FC27FC468300F60168 /* B9FoundationUI in Frameworks */ = {isa = PBXBuildFile; productRef = D53BB5FB27FC468300F60168 /* B9FoundationUI */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D53BB5FE27FC473000F60168 /* Debugger in Resources */ = {isa = PBXBuildFile; fileRef = D53BB5FD27FC473000F60168 /* Debugger */; };
+		D53BB60027FC4EE600F60168 /* Debugger in Frameworks */ = {isa = PBXBuildFile; productRef = D53BB5FF27FC4EE600F60168 /* Debugger */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D544A396197CBE5300C65604 /* MBFormSelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D544A395197CBE5300C65604 /* MBFormSelectButton.m */; };
 		D544A39E197D1E8600C65604 /* JSONValueTransformer+App.m in Sources */ = {isa = PBXBuildFile; fileRef = D544A39D197D1E8600C65604 /* JSONValueTransformer+App.m */; };
 		D54AFCEB22BF8DFE0031559F /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54AFCEA22BF8DFD0031559F /* Atomic.swift */; };
@@ -542,6 +543,7 @@
 				D5F036B527FB479800C60A72 /* B9Debug in Frameworks */,
 				D53BB5FC27FC468300F60168 /* B9FoundationUI in Frameworks */,
 				D527917D27B557A800522240 /* B9MulticastDelegate in Frameworks */,
+				D53BB60027FC4EE600F60168 /* Debugger in Frameworks */,
 				D5F036C327FBC80500C60A72 /* HasItem in Frameworks */,
 				674FCCB03EFF1B157024C64B /* libPods-App.a in Frameworks */,
 				D57FBB71279D51BA003A0533 /* Logging in Frameworks */,
@@ -1473,6 +1475,7 @@
 				D5F036B427FB479800C60A72 /* B9Debug */,
 				D5F036C227FBC80500C60A72 /* HasItem */,
 				D53BB5FB27FC468300F60168 /* B9FoundationUI */,
+				D53BB5FF27FC4EE600F60168 /* Debugger */,
 			);
 			productName = App;
 			productReference = D5197A3A17EECAAF00CA387C /* App.app */;
@@ -2253,6 +2256,10 @@
 		D53BB5FB27FC468300F60168 /* B9FoundationUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = B9FoundationUI;
+		};
+		D53BB5FF27FC4EE600F60168 /* Debugger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Debugger;
 		};
 		D57FBB6A279BB727003A0533 /* B9AssociatedObject */ = {
 			isa = XCSwiftPackageProductDependency;
