@@ -71,7 +71,7 @@ final class PrepareSegueTests: XCTestCase {
         childView.addSubview(sender)
 
         sourceVC.generalPrepare(segue: segue, sender: sender)
-        XCTAssertEqual(nil, destinationVC.item)
+        XCTAssertNil(destinationVC.item)
     }
 
     // MARK: - 特殊情况
@@ -103,7 +103,7 @@ final class PrepareSegueTests: XCTestCase {
         childView.addSubview(sender)
 
         sourceVC.generalPrepare(segue: segue, sender: sender)
-        XCTAssertEqual(nil, destinationVC.item)
+        XCTAssertNil(destinationVC.item)
 
         // Undefined behavior: sender 属于另外的页面，属于业务 bug
         let anotherView = TestView()
