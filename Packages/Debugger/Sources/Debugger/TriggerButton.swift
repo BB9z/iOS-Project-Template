@@ -32,16 +32,14 @@ internal final class TriggerButton: UIButton {
             let storyboard = UIStoryboard(name: "Debugger", bundle: Bundle.module)
             let vc = storyboard.instantiateInitialViewController()
             floatWindow.rootViewController = vc
+            floatWindow.windowLevel = .alert + 1
         }
-        floatWindow.frame = window!.screen.bounds
-        floatWindow.isHidden = false
-        floatWindow.windowLevel = .alert + 1
+        floatWindow.isHidden.toggle()
     }
 
-    private lazy var floatWindow: UIWindow = {
-        let win = UIWindow()
+    private lazy var floatWindow: Window = {
+        let win = Window()
         win.backgroundColor = nil
-        win.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return win
     }()
 
