@@ -76,6 +76,19 @@ internal final class FloatViewController: UIViewController {
             DebugActionItem(title: "隐藏左下调试按钮片刻", action: Debugger.hideTriggerButtonForAwhile)
         ])
         globalListDatasource.update(items: globalItems)
+        contextListDatasource.update(items: contextItems(currentVC: currentVC))
+    }
+
+    private func contextItems(currentVC: UIViewController?) -> [DebugActionItem] {
+        var items = [DebugActionItem]()
+        var viewController = currentVC
+        while viewController != nil {
+            if let source = viewController as? DebugActionSource {
+                items.append(contentsOf: source.debugActionItems())
+            }
+            viewController = viewController?.parent
+        }
+        return items
     }
 
     private var isAutoHideAfterPerformAction: Bool {

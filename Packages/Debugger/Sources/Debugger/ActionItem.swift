@@ -10,8 +10,21 @@ import UIKit
 /// 调试操作定义
 public typealias DebugActionItem = UIBarButtonItem
 
-private var actionBlockAssociation: UInt8 = 0
+/// 在 view controller 中定义，debugger 会从当前页面逐级向上遍历以获取所有的调试操作
+@objc public protocol DebugActionSource {
+    /// 返回当前页面层级中支持的调试操作
+    func debugActionItems() -> [DebugActionItem]
+}
 
+extension DebugActionItem {
+    /// 使用闭包创建一个调试操作
+    public convenience init(title: String, action: (() -> Void)?) {
+        self.init(title: title, style: .plain, target: nil, action: nil)
+        actionBlock = action
+    }
+}
+
+/// 增加对闭包的支持
 internal extension DebugActionItem {
     private var actionBlock: (() -> Void)? {
         get {
@@ -30,12 +43,8 @@ internal extension DebugActionItem {
             UIApplication.shared.sendAction(sel, to: target, from: nil, for: nil)
         }
     }
-
-    convenience init(title: String, action: (() -> Void)?) {
-        self.init(title: title, style: .plain, target: nil, action: nil)
-        actionBlock = action
-    }
 }
+private var actionBlockAssociation: UInt8 = 0
 
 // swiftlint:disable identifier_name
 
