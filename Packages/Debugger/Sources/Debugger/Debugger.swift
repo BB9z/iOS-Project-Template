@@ -58,7 +58,20 @@ public enum Debugger {
         }
     }
 
-    static var floatWindow: Window! {
+    /// 附加的全局操作，供应用定制
+    public static var globalActionItems: [DebugActionItem] {
+        get {
+            _globalActionItems ?? []
+        }
+        set {
+            _globalActionItems = newValue
+            DispatchQueue.main.async {
+                floatViewController?.refresh()
+            }
+        }
+    }
+
+    internal static var floatWindow: Window! {
         get {
             _floatWindow ?? {
                 let win = Window()
@@ -75,12 +88,13 @@ public enum Debugger {
         }
     }
 
-    static var floatViewController: FloatViewController? {
+    internal static var floatViewController: FloatViewController? {
         floatWindow?.rootViewController as? FloatViewController
     }
 }
 
 private var _floatWindow: Window?
+private var _globalActionItems: [DebugActionItem]?
 
 /// 入口按钮缓存实例
 internal weak var triggerButton: TriggerButton?
@@ -153,7 +167,6 @@ internal extension Debugger {
         return vc
     }
 
-
     static func alertShow(text: String) {
         let alert = UIAlertController(title: text, message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "关闭", style: .cancel, handler: nil))
@@ -167,10 +180,10 @@ internal extension Debugger {
         vc.present(alert, animated: true, completion: nil)
     }
 
-    static func hideControlCenterForAwhile() {
-        hideControlCenter()
+    static func hideTriggerButtonForAwhile() {
+        triggerButton?.isHidden = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
-            showControlCenter()
+            triggerButton?.isHidden = false
         }
     }
 }

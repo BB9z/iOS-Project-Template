@@ -7,10 +7,11 @@
 
 import UIKit
 
-class FloatViewController: UIViewController {
+/// 主浮窗
+internal final class FloatViewController: UIViewController {
     typealias Item = DebugActionItem
 
-    class DataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
+    private final class DataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
         private(set) var items = [Item]()
 
         var tableView: UITableView? {
@@ -34,8 +35,16 @@ class FloatViewController: UIViewController {
             return cell
         }
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            items[indexPath.row].perform()
+            let action = items[indexPath.row]
+            if shouldHideOnSelect {
+                if action.action != #selector(FloatViewController.onSwitchAutoHide) {
+                    Debugger.hideControlCenter()
+                }
+            }
+            action.perform()
         }
+
+        var shouldHideOnSelect = false
     }
 
     /// 全局操作
@@ -52,12 +61,35 @@ class FloatViewController: UIViewController {
     }
 
     @IBAction func refresh() {
-        var globalItems = [
-            DebugActionItem(title: "视图层级", action: Debugger.showViewControllerHierarchy),
+        let currentVC = Debugger.currentViewController
+        var globalItems = Debugger.globalActionItems
+        globalItems.append({
+            var title = "视图层级"
+            if let vc = currentVC {
+                title += ": \(type(of: vc))"
+            }
+            return DebugActionItem(title: title, action: Debugger.showViewControllerHierarchy)
+        }())
+        globalItems.append(contentsOf: [
             DebugActionItem(title: "模拟内存警告", action: Debugger.simulateMemoryWarning),
-        ]
-        globalItems.append(DebugActionItem(title: "隐藏左下调试按钮片刻", action: Debugger.hideControlCenterForAwhile))
+            DebugActionItem(title: isAutoHideAfterPerformAction ? "操作自动隐藏: 开启" : "操作自动隐藏: 关闭", style: .plain, target: self, action: #selector(onSwitchAutoHide)),
+            DebugActionItem(title: "隐藏左下调试按钮片刻", action: Debugger.hideTriggerButtonForAwhile)
+        ])
         globalListDatasource.update(items: globalItems)
+    }
+
+    private var isAutoHideAfterPerformAction: Bool {
+        get {
+            globalListDatasource.shouldHideOnSelect
+        }
+        set {
+            globalListDatasource.shouldHideOnSelect = newValue
+            contextListDatasource.shouldHideOnSelect = newValue
+        }
+    }
+    @objc private func onSwitchAutoHide() {
+        isAutoHideAfterPerformAction.toggle()
+        refresh()
     }
 
     @IBAction private func onHide(_ sender: Any) {
