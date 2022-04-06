@@ -8,6 +8,7 @@
  https://opensource.org/licenses/MIT
  */
 
+import B9FoundationUI
 import UIKit
 
 /**
@@ -56,30 +57,120 @@ public enum Debugger {
             UserDefaults.standard.set(newValue, forKey: "__debugEnabled")
         }
     }
+
+    static var floatWindow: Window! {
+        get {
+            _floatWindow ?? {
+                let win = Window()
+                win.backgroundColor = nil
+                win.windowLevel = .statusBar
+                win.rootViewController = UIStoryboard(name: "Debugger", bundle: Bundle.module)
+                    .instantiateInitialViewController()
+                _floatWindow = win
+                return win
+            }()
+        }
+        set {
+            _floatWindow = newValue
+        }
+    }
+
+    static var floatViewController: FloatViewController? {
+        floatWindow?.rootViewController as? FloatViewController
+    }
 }
+
+private var _floatWindow: Window?
 
 /// 入口按钮缓存实例
 internal weak var triggerButton: TriggerButton?
 
 // MARK: - 一些操作
 public extension Debugger {
+    /// 切换调试面板显隐
+    static func toggleControlCenterVisable() {
+        floatWindow.isHidden.toggle()
+        if !floatWindow.isHidden {
+            floatViewController?.refresh()
+        }
+    }
+
+    /// 隐藏调试面板
+    static func showControlCenter() {
+        floatWindow.isHidden = true
+        floatViewController?.refresh()
+    }
+
+    /// 隐藏调试面板
+    static func hideControlCenter() {
+        floatWindow.isHidden = true
+    }
+
     /// 显示 VC 堆栈调试信息
     static func showViewControllerHierarchy() {
         let sel = Selector(("_printH" + "ierarchy"))
         guard UIViewController.responds(to: sel) else { return }
+        let isFloatShown = !floatWindow.isHidden
+        if isFloatShown {
+            // 不隐藏在 iOS 上会显示 debug window 内的结构
+            floatWindow.isHidden = true
+        }
         let obj = UIViewController.perform(sel)
+        if isFloatShown {
+            floatWindow.isHidden = false
+        }
         guard let result = obj?.takeUnretainedValue() as? String else { return }
         print(result)
+        alertShow(text: result)
+    }
+
+    /// 模拟内存警告
+    static func simulateMemoryWarning() {
+        let sel = Selector(("_performMemoryWarning"))
+        UIApplication.shared.perform(sel, with: nil, afterDelay: 0)
     }
 }
 
 // MARK: - Helper
 internal extension Debugger {
-    static var rootViewController: UIViewController? {
+    /// 尝试找应用的 key window，找不到用第一个 window
+    static var mainWindow: UIWindow? {
         let windows = UIApplication.shared.windows
-        guard let win = windows.first(where: { $0.isKeyWindow }) ?? windows.first else {
-            return nil
+        return windows.first(where: { $0.isKeyWindow }) ?? windows.first
+    }
+
+    /// 主 window 的根视图
+    static var rootViewController: UIViewController? {
+        mainWindow?.rootViewController
+    }
+
+    /// 通过 hit test 找当前的 view controller
+    static var currentViewController: UIViewController? {
+        guard let win = mainWindow else { return nil }
+        // 中心点偏右上，减少识别到中间 HUD 的可能性
+        let testPoint = CGPoint(x: win.bounds.width * 0.7, y: win.bounds.height * 0.3)
+        let vc = win.hitTest(testPoint, with: nil)?.viewController
+        return vc
+    }
+
+
+    static func alertShow(text: String) {
+        let alert = UIAlertController(title: text, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "关闭", style: .cancel, handler: nil))
+        guard let vc = rootViewController else { return }
+        if let popover = alert.popoverPresentationController {
+            popover.sourceView = vc.view
+            let bounds = vc.view.bounds
+            popover.sourceRect = CGRect(origin: CGPoint(x: bounds.midX, y: bounds.midY), size: .zero)
+            popover.permittedArrowDirections = []
         }
-        return win.rootViewController
+        vc.present(alert, animated: true, completion: nil)
+    }
+
+    static func hideControlCenterForAwhile() {
+        hideControlCenter()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
+            showControlCenter()
+        }
     }
 }

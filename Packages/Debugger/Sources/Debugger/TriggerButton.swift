@@ -27,20 +27,8 @@ internal final class TriggerButton: UIButton {
     }
 
     @objc private func onTap() {
-        if floatWindow.rootViewController == nil {
-            let storyboard = UIStoryboard(name: "Debugger", bundle: Bundle.module)
-            let vc = storyboard.instantiateInitialViewController()
-            floatWindow.rootViewController = vc
-            floatWindow.windowLevel = .alert + 1
-        }
-        floatWindow.isHidden.toggle()
+        Debugger.toggleControlCenterVisable()
     }
-
-    private lazy var floatWindow: Window = {
-        let win = Window()
-        win.backgroundColor = nil
-        return win
-    }()
 
     override func didMoveToWindow() {
         super.didMoveToWindow()

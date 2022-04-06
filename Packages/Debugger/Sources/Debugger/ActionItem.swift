@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// 调试操作定义
 public typealias DebugActionItem = UIBarButtonItem
 
 private var actionBlockAssociation: UInt8 = 0

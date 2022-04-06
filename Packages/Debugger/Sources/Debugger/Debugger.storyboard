@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -26,11 +26,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
-                                        <blurEffect style="regular"/>
+                                        <blurEffect style="prominent"/>
                                     </visualEffectView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="krs-B5-I8R">
-                                        <rect key="frame" x="0.0" y="0.0" width="145" height="350"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="145" height="353"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debugger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N9o-EF-qxV">
+                                            <rect key="frame" x="0.0" y="117" width="145" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                            <color key="textColor" systemColor="tertiaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" textLabel="AXd-86-KL3" style="IBUITableViewCellStyleDefault" id="4lC-ft-3MB">
                                                 <rect key="frame" x="0.0" y="44.5" width="145" height="50"/>
@@ -48,13 +55,20 @@
                                                         </label>
                                                     </subviews>
                                                 </tableViewCellContentView>
-                                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mJ5-at-KVu">
-                                        <rect key="frame" x="155" y="0.0" width="145" height="350"/>
+                                        <rect key="frame" x="155" y="0.0" width="145" height="353"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Context" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eQj-4w-VM4">
+                                            <rect key="frame" x="0.0" y="117" width="145" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                            <color key="textColor" systemColor="tertiaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" textLabel="0X7-y9-zFY" style="IBUITableViewCellStyleDefault" id="BsI-Ik-XVN">
                                                 <rect key="frame" x="0.0" y="44.5" width="145" height="50"/>
@@ -72,14 +86,15 @@
                                                         </label>
                                                     </subviews>
                                                 </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="py3-ib-nx0" userLabel="Bar">
-                                        <rect key="frame" x="0.0" y="350" width="300" height="50"/>
+                                        <rect key="frame" x="0.0" y="353" width="300" height="47"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWb-47-zaD">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="47"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="zpA-Ty-gEJ"/>
                                                 </constraints>
@@ -90,9 +105,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFI-nL-UTp">
-                                                <rect key="frame" x="60" y="0.0" width="50" height="50"/>
+                                                <rect key="frame" x="60" y="0.0" width="48" height="47"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="dJm-ba-erI"/>
+                                                    <constraint firstAttribute="width" constant="48" id="dJm-ba-erI"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="arrow.clockwise" catalog="system"/>
@@ -102,16 +117,16 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4GA-pP-wVQ" userLabel="Drag">
-                                                <rect key="frame" x="200" y="0.0" width="50" height="50"/>
+                                                <rect key="frame" x="204" y="0.0" width="48" height="47"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.up.left.and.down.right.and.arrow.up.right.and.down.left" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ei9-Nn-OHL">
-                                                        <rect key="frame" x="0.0" y="1" width="50" height="48"/>
+                                                        <rect key="frame" x="0.0" y="1" width="48" height="45"/>
                                                     </imageView>
                                                 </subviews>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstItem="ei9-Nn-OHL" firstAttribute="leading" secondItem="4GA-pP-wVQ" secondAttribute="leading" id="0Mk-y2-uuf"/>
-                                                    <constraint firstAttribute="width" constant="50" id="2PP-kO-qRR"/>
+                                                    <constraint firstAttribute="width" constant="48" id="2PP-kO-qRR"/>
                                                     <constraint firstAttribute="trailing" secondItem="ei9-Nn-OHL" secondAttribute="trailing" id="EAh-CS-rBN"/>
                                                     <constraint firstItem="ei9-Nn-OHL" firstAttribute="top" secondItem="4GA-pP-wVQ" secondAttribute="top" id="euY-d0-I2w"/>
                                                     <constraint firstAttribute="bottom" secondItem="ei9-Nn-OHL" secondAttribute="bottom" id="fQc-rf-tIH"/>
@@ -121,10 +136,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HzN-ca-15c" userLabel="Resize">
-                                                <rect key="frame" x="250" y="0.0" width="50" height="50"/>
+                                                <rect key="frame" x="252" y="0.0" width="48" height="47"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.up.left.and.arrow.down.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="te1-Ze-kmQ">
-                                                        <rect key="frame" x="0.0" y="1" width="50" height="48"/>
+                                                        <rect key="frame" x="0.0" y="1" width="48" height="45"/>
                                                     </imageView>
                                                 </subviews>
                                                 <gestureRecognizers/>
@@ -132,7 +147,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="te1-Ze-kmQ" secondAttribute="trailing" id="G8J-l0-Jly"/>
                                                     <constraint firstItem="te1-Ze-kmQ" firstAttribute="top" secondItem="HzN-ca-15c" secondAttribute="top" id="GXP-tW-rmh"/>
                                                     <constraint firstAttribute="bottom" secondItem="te1-Ze-kmQ" secondAttribute="bottom" id="HSE-4U-v7k"/>
-                                                    <constraint firstAttribute="width" constant="50" id="adG-Nb-7fp"/>
+                                                    <constraint firstAttribute="width" constant="48" id="adG-Nb-7fp"/>
                                                     <constraint firstItem="te1-Ze-kmQ" firstAttribute="leading" secondItem="HzN-ca-15c" secondAttribute="leading" id="chH-pS-JYG"/>
                                                 </constraints>
                                                 <connections>
@@ -140,7 +155,6 @@
                                                 </connections>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemFillColor"/>
                                         <constraints>
                                             <constraint firstItem="vWb-47-zaD" firstAttribute="leading" secondItem="py3-ib-nx0" secondAttribute="leading" id="0cn-cB-jMj"/>
                                             <constraint firstAttribute="bottom" secondItem="nFI-nL-UTp" secondAttribute="bottom" id="4m5-KX-MKQ"/>
@@ -152,7 +166,7 @@
                                             <constraint firstAttribute="bottom" secondItem="vWb-47-zaD" secondAttribute="bottom" id="P0I-dA-gHY"/>
                                             <constraint firstAttribute="bottom" secondItem="4GA-pP-wVQ" secondAttribute="bottom" id="Uaq-dL-onc"/>
                                             <constraint firstItem="vWb-47-zaD" firstAttribute="top" secondItem="py3-ib-nx0" secondAttribute="top" id="Xpo-5N-qhJ"/>
-                                            <constraint firstAttribute="height" constant="50" id="Zqx-Og-X7p"/>
+                                            <constraint firstAttribute="height" constant="47" id="Zqx-Og-X7p"/>
                                             <constraint firstAttribute="bottom" secondItem="HzN-ca-15c" secondAttribute="bottom" id="qgP-YV-bdi"/>
                                             <constraint firstItem="HzN-ca-15c" firstAttribute="top" secondItem="py3-ib-nx0" secondAttribute="top" id="tom-pD-uEK"/>
                                         </constraints>
@@ -220,11 +234,8 @@
         <image name="arrow.up.left.and.arrow.down.right" catalog="system" width="128" height="115"/>
         <image name="arrow.up.left.and.down.right.and.arrow.up.right.and.down.left" catalog="system" width="128" height="115"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
-        <systemColor name="systemFillColor">
-            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

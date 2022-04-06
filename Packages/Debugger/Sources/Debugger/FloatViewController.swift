@@ -51,24 +51,17 @@ class FloatViewController: UIViewController {
         contextListDatasource.tableView = contextList
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        reloadItems()
-    }
-
-    @IBAction private func onRefresh(_ sender: Any) {
-        reloadItems()
-    }
-
-    private func reloadItems() {
-        debugPrint("reloadItems()")
-        globalListDatasource.update(items: [
-            DebugActionItem(title: "vc", action: Debugger.showViewControllerHierarchy)
-        ])
+    @IBAction func refresh() {
+        var globalItems = [
+            DebugActionItem(title: "视图层级", action: Debugger.showViewControllerHierarchy),
+            DebugActionItem(title: "模拟内存警告", action: Debugger.simulateMemoryWarning),
+        ]
+        globalItems.append(DebugActionItem(title: "隐藏左下调试按钮片刻", action: Debugger.hideControlCenterForAwhile))
+        globalListDatasource.update(items: globalItems)
     }
 
     @IBAction private func onHide(_ sender: Any) {
-        view.window?.isHidden = true
+        Debugger.hideControlCenter()
     }
 }
 
