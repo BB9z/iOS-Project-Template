@@ -58,4 +58,28 @@ public enum Debugger {
     }
 }
 
+/// 入口按钮缓存实例
 internal weak var triggerButton: TriggerButton?
+
+// MARK: - 一些操作
+public extension Debugger {
+    /// 显示 VC 堆栈调试信息
+    static func showViewControllerHierarchy() {
+        let sel = Selector(("_printH" + "ierarchy"))
+        guard UIViewController.responds(to: sel) else { return }
+        let obj = UIViewController.perform(sel)
+        guard let result = obj?.takeUnretainedValue() as? String else { return }
+        print(result)
+    }
+}
+
+// MARK: - Helper
+internal extension Debugger {
+    static var rootViewController: UIViewController? {
+        let windows = UIApplication.shared.windows
+        guard let win = windows.first(where: { $0.isKeyWindow }) ?? windows.first else {
+            return nil
+        }
+        return win.rootViewController
+    }
+}

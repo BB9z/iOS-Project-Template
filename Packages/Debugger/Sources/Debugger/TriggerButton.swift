@@ -9,7 +9,6 @@
  https://opensource.org/licenses/MIT
  */
 
-import Combine
 import UIKit
 
 internal final class TriggerButton: UIButton {
@@ -45,16 +44,24 @@ internal final class TriggerButton: UIButton {
 
     override func didMoveToWindow() {
         super.didMoveToWindow()
-        userDefaultsObserver = NotificationCenter.default.publisher(for: UserDefaults.didChangeNotification, object: UserDefaults.standard).sink(receiveValue: { [weak self] notice in
-            self?.updateHidden()
-        })
+        if window == nil { return }
+        if userDefaultsObserver == nil {
+            userDefaultsObserver = NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: UserDefaults.standard, queue: .main) { [weak self] _ in
+                self?.updateHidden()
+            }
+        }
         updateHidden()
     }
 
     private func updateHidden() {
-        dispatchPrecondition(condition: .onQueue(.main))
         isHidden = !Debugger.isDebugEnabled
     }
 
-    private var userDefaultsObserver: AnyCancellable?
+    private var userDefaultsObserver: Any?
+
+    deinit {
+        if let observer = userDefaultsObserver {
+            NotificationCenter.default.removeObserver(observer)
+        }
+    }
 }

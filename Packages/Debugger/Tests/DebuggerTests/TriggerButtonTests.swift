@@ -1,5 +1,5 @@
-import XCTest
 @testable import Debugger
+import XCTest
 
 final class DebuggerTriggerButtonTests: XCTestCase {
 
@@ -55,5 +55,22 @@ final class DebuggerTriggerButtonTests: XCTestCase {
             buttonRef = button
         }
         XCTAssertNil(buttonRef, "应正确释放")
+    }
+
+    func testObserverThread() {
+        let button = TriggerButton()
+        let window = UIWindow()
+        window.addSubview(button)
+
+        let exp = XCTestExpectation()
+        let queue = DispatchQueue(label: "test")
+        queue.asyncAfter(deadline: .now() + 0.1) {
+            Debugger.isDebugEnabled = true
+        }
+        queue.asyncAfter(deadline: .now() + 0.2) {
+            Debugger.isDebugEnabled = false
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: .infinity)
     }
 }

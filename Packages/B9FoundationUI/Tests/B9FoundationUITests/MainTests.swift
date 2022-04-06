@@ -17,7 +17,7 @@ final class UIResponderTests: XCTestCase {
         XCTAssertEqual(vc, childView.next(type: UIViewController.self))
 
         // Check view
-        XCTAssertEqual(nil, vc.view.next(type: UIView.self))
+        XCTAssertNil(vc.view.next(type: UIView.self))
         XCTAssertEqual(vc.view, childView.next(type: UIView.self))
         XCTAssertEqual(childView, childChildView.next(type: UIView.self))
 
@@ -26,7 +26,7 @@ final class UIResponderTests: XCTestCase {
         XCTAssertEqual(vc.view, childChildView.next(type: UIScrollView.self))
 
         // Check button
-        XCTAssertEqual(nil, childView.next(type: UIButton.self))
+        XCTAssertNil(childView.next(type: UIButton.self))
         XCTAssertEqual(childView, childChildView.next(type: UIButton.self))
     }
 }
