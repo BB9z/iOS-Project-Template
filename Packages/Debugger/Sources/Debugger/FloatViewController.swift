@@ -1,9 +1,13 @@
-//
-//  File.swift
-//  
-//
-//  Created by BB9z on 2022/4/5.
-//
+/*
+ FloatViewController.swift
+ Debugger
+
+ Copyright © 2022 BB9z.
+ https://github.com/BB9z/iOS-Project-Template
+
+ The MIT License
+ https://opensource.org/licenses/MIT
+ */
 
 import UIKit
 
@@ -68,12 +72,12 @@ internal final class FloatViewController: UIViewController {
             if let vc = currentVC {
                 title += ": \(type(of: vc))"
             }
-            return DebugActionItem(title: title, action: Debugger.showViewControllerHierarchy)
+            return DebugActionItem(title, action: Debugger.showViewControllerHierarchy)
         }())
         globalItems.append(contentsOf: [
-            DebugActionItem(title: "模拟内存警告", action: Debugger.simulateMemoryWarning),
-            DebugActionItem(title: isAutoHideAfterPerformAction ? "操作自动隐藏: 开启" : "操作自动隐藏: 关闭", style: .plain, target: self, action: #selector(onSwitchAutoHide)),
-            DebugActionItem(title: "隐藏左下调试按钮片刻", action: Debugger.hideTriggerButtonForAwhile)
+            DebugActionItem("模拟内存警告", action: Debugger.simulateMemoryWarning),
+            DebugActionItem(isAutoHideAfterPerformAction ? "操作自动隐藏: 开启" : "操作自动隐藏: 关闭", target: self, #selector(onSwitchAutoHide)),
+            DebugActionItem("隐藏左下调试按钮片刻", action: Debugger.hideTriggerButtonForAwhile)
         ])
         globalListDatasource.update(items: globalItems)
         contextListDatasource.update(items: contextItems(currentVC: currentVC))

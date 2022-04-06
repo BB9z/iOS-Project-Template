@@ -1,5 +1,5 @@
-import XCTest
 @testable import HasItem
+import XCTest
 
 class TestViewController: UIViewController, HasItem {
     var item: String!

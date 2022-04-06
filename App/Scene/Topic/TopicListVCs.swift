@@ -13,7 +13,7 @@ class TopicRecommendListController: MBTableListController, StoryboardCreation {
 import Debugger
 extension TopicRecommendListController: DebugActionSource {
     func debugActionItems() -> [DebugActionItem] {
-        [DebugActionItem(title: "zz", action: nil)]
+        [DebugActionItem("zz", action: nil)]
     }
 }
 

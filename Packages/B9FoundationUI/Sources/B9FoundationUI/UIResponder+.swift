@@ -1,3 +1,13 @@
+/*
+ UIResponder+
+ B9FoundationUI
+
+ Copyright © 2022 BB9z.
+ https://github.com/BB9z/iOS-Project-Template
+
+ The MIT License
+ https://opensource.org/licenses/MIT
+ */
 
 import UIKit
 

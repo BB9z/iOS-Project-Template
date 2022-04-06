@@ -1,9 +1,13 @@
-//
-//  File.swift
-//  
-//
-//  Created by BB9z on 2022/4/6.
-//
+/*
+ ActionItem.swift
+ Debugger
+
+ Copyright © 2022 BB9z.
+ https://github.com/BB9z/iOS-Project-Template
+
+ The MIT License
+ https://opensource.org/licenses/MIT
+ */
 
 import UIKit
 
@@ -16,11 +20,16 @@ public typealias DebugActionItem = UIBarButtonItem
     func debugActionItems() -> [DebugActionItem]
 }
 
-extension DebugActionItem {
+public extension DebugActionItem {
     /// 使用闭包创建一个调试操作
-    public convenience init(title: String, action: (() -> Void)?) {
+    convenience init(_ title: String, action: (() -> Void)?) {
         self.init(title: title, style: .plain, target: nil, action: nil)
         actionBlock = action
+    }
+
+    /// target/action 传统方式创建一个调试操作
+    convenience init(_ title: String, target: Any?, _ action: Selector) {
+        self.init(title: title, style: .plain, target: target, action: action)
     }
 }
 
@@ -55,5 +64,5 @@ public func DebugMenuItem(_ title: String, _ target: Any?, _ selector: Selector)
 
 /// 旧版接口
 public func DebugMenuItem2(_ title: String, _ block: @escaping () -> Void) -> DebugActionItem {
-    DebugActionItem(title: title, action: block)
+    DebugActionItem(title, action: block)
 }
