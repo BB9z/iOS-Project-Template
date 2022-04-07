@@ -17,10 +17,7 @@
 		D501846C20F8863E009481D4 /* MBDebugHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = D501845E20F8863E009481D4 /* MBDebugHelpers.m */; };
 		D501846D20F8863E009481D4 /* MBDebug.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D501845F20F8863E009481D4 /* MBDebug.storyboard */; };
 		D501846E20F8863E009481D4 /* NSUserDefaults+MBDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = D501846420F8863E009481D4 /* NSUserDefaults+MBDebug.m */; };
-		D501846F20F8863E009481D4 /* MBDebugFloatConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D501846520F8863E009481D4 /* MBDebugFloatConsoleViewController.m */; };
 		D501847020F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.m in Sources */ = {isa = PBXBuildFile; fileRef = D501846720F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.m */; };
-		D501847120F8863E009481D4 /* MBDebugViews.m in Sources */ = {isa = PBXBuildFile; fileRef = D501846A20F8863E009481D4 /* MBDebugViews.m */; };
-		D501847220F8863E009481D4 /* MBDebugMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D501846B20F8863E009481D4 /* MBDebugMenuViewController.m */; };
 		D50319D425BE518C00C2849E /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50319D325BE518C00C2849E /* CornerRadius.swift */; };
 		D5031A1E25BEA95200C2849E /* MBDebugLiveCountChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5031A1D25BEA95200C2849E /* MBDebugLiveCountChecker.swift */; };
 		D5031A2625BEBB7700C2849E /* Picker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5031A2525BEBB7700C2849E /* Picker.storyboard */; };
@@ -237,16 +234,11 @@
 		D501845E20F8863E009481D4 /* MBDebugHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDebugHelpers.m; sourceTree = "<group>"; };
 		D501845F20F8863E009481D4 /* MBDebug.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MBDebug.storyboard; sourceTree = "<group>"; };
 		D501846020F8863E009481D4 /* NSUserDefaults+MBDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+MBDebug.h"; sourceTree = "<group>"; };
-		D501846120F8863E009481D4 /* MBDebugFloatConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDebugFloatConsoleViewController.h; sourceTree = "<group>"; };
-		D501846220F8863E009481D4 /* MBDebugViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDebugViews.h; sourceTree = "<group>"; };
-		D501846320F8863E009481D4 /* MBDebugMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDebugMenuViewController.h; sourceTree = "<group>"; };
 		D501846420F8863E009481D4 /* NSUserDefaults+MBDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+MBDebug.m"; sourceTree = "<group>"; };
 		D501846520F8863E009481D4 /* MBDebugFloatConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDebugFloatConsoleViewController.m; sourceTree = "<group>"; };
 		D501846720F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBNavigationController+MBDebugReleaseChecking.m"; sourceTree = "<group>"; };
 		D501846820F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBNavigationController+MBDebugReleaseChecking.h"; sourceTree = "<group>"; };
 		D501846920F8863E009481D4 /* MBDebugHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDebugHelpers.h; sourceTree = "<group>"; };
-		D501846A20F8863E009481D4 /* MBDebugViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDebugViews.m; sourceTree = "<group>"; };
-		D501846B20F8863E009481D4 /* MBDebugMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDebugMenuViewController.m; sourceTree = "<group>"; };
 		D50319D325BE518C00C2849E /* CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		D5031A1D25BEA95200C2849E /* MBDebugLiveCountChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBDebugLiveCountChecker.swift; sourceTree = "<group>"; };
 		D5031A2525BEBB7700C2849E /* Picker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Picker.storyboard; sourceTree = "<group>"; };
@@ -569,15 +561,10 @@
 			children = (
 				D501846620F8863E009481D4 /* Components */,
 				D501845F20F8863E009481D4 /* MBDebug.storyboard */,
-				D501846120F8863E009481D4 /* MBDebugFloatConsoleViewController.h */,
 				D501846520F8863E009481D4 /* MBDebugFloatConsoleViewController.m */,
 				D501846920F8863E009481D4 /* MBDebugHelpers.h */,
 				D501845E20F8863E009481D4 /* MBDebugHelpers.m */,
 				D5031A1D25BEA95200C2849E /* MBDebugLiveCountChecker.swift */,
-				D501846320F8863E009481D4 /* MBDebugMenuViewController.h */,
-				D501846B20F8863E009481D4 /* MBDebugMenuViewController.m */,
-				D501846220F8863E009481D4 /* MBDebugViews.h */,
-				D501846A20F8863E009481D4 /* MBDebugViews.m */,
 				D501846020F8863E009481D4 /* NSUserDefaults+MBDebug.h */,
 				D501846420F8863E009481D4 /* NSUserDefaults+MBDebug.m */,
 			);
@@ -1686,11 +1673,8 @@
 				D5B49F051C41133A00847925 /* MBCollectionViewFlowLayout.m in Sources */,
 				D50693D819495D9E0002BFCC /* MBControlGroup.m in Sources */,
 				D5EE51862043F5E6009148B3 /* MBDatePickerViewController.m in Sources */,
-				D501846F20F8863E009481D4 /* MBDebugFloatConsoleViewController.m in Sources */,
 				D501846C20F8863E009481D4 /* MBDebugHelpers.m in Sources */,
 				D5031A1E25BEA95200C2849E /* MBDebugLiveCountChecker.swift in Sources */,
-				D501847220F8863E009481D4 /* MBDebugMenuViewController.m in Sources */,
-				D501847120F8863E009481D4 /* MBDebugViews.m in Sources */,
 				D5EE51E82043F613009148B3 /* MBDesignView.m in Sources */,
 				D5B49F081C41133A00847925 /* MBEntitiesCollectionView.m in Sources */,
 				D5DB4C19241DD71300832A0A /* MBEntitiesTableView.m in Sources */,

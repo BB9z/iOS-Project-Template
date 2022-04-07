@@ -31,6 +31,11 @@ class ApplicationDelegate: MBApplicationDelegate {
         setupUIAppearance()
         dispatch_after_seconds(0) {
             Debugger.installTriggerButton()
+            Debugger.globalActionItems = [
+                DebugActionItem("FLEX") {
+                    MBFlexInterface.showFlexExplorer()
+                }
+            ]
         }
         return true
     }

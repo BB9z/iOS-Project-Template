@@ -1,9 +1,7 @@
 
-#import "MBDebugFloatConsoleViewController.h"
 #import "Common.h"
 #import "MBFlexInterface.h"
 #import "MBDebugHelpers.h"
-#import "MBDebugMenuViewController.h"
 #import "MBDebugViews.h"
 #import "UIKit+App.h"
 #import "debug.h"
@@ -24,18 +22,6 @@ static unsigned long long LastMemoryUsed;
 
 @implementation MBDebugFloatConsoleViewController
 
-- (IBAction)onHide:(id)sender {
-    RFWindow *win = (RFWindow *)self.view.window;
-    if (![win isKindOfClass:RFWindow.class]) return;
-
-    win.rootViewController = nil;
-    win.hidden = YES;
-}
-
-- (IBAction)onFlex:(id)sender {
-    [MBFlexInterface showFlexExplorer];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -43,13 +29,7 @@ static unsigned long long LastMemoryUsed;
     UIViewController *topVC = nav.visibleViewController;
     self.buildInCommands = ({
         NSMutableArray *m = [NSMutableArray arrayWithCapacity:10];
-        [m addObject:({
-            DebugMenuItem(topVC.className, self, @selector(showViewControllerHierarchy));
-        })];
-//        [m addObject:({
-//            NSString *pageName = [NSString stringWithFormat:@"当前页面: %@\n上一页面: %@", [nav valueForKey:@"pageName"], [nav valueForKey:@"lastPageName"]];
-//            DebugMenuItem(pageName, nil, nil);
-//        })];
+
         id item = AppCurrentViewControllerItem(nil);
         if (item) {
             [m addObject:({
@@ -64,7 +44,6 @@ static unsigned long long LastMemoryUsed;
             LastMemoryUsed = ud;
             DebugMenuItem(itemDes, nil, nil);
         })];
-        [m addObject:DebugMenuItem(@"模拟内存警告", self, @selector(simulateMemoryWarning))];
 
         id debugItem = self.buildListInspectorMenuItem;
         if (debugItem) {
@@ -77,7 +56,6 @@ static unsigned long long LastMemoryUsed;
         [m addObject:DebugMenuItem(@"跳转链接", self, @selector(openURL))];
         [m addObject:DebugMenuItem(@"重置网络存储", self, @selector(resetURLStorage))];
         [m addObject:DebugMenuItem(@"Crash now!", self, @selector(makeCrash))];
-        [m addObject:DebugMenuItem(@"隐藏左下调试按钮片刻", self, @selector(hideDebugButtonSomewhile))];
         m;
     });
     [self loadContextCommands];
@@ -121,39 +99,9 @@ static unsigned long long LastMemoryUsed;
 
 #pragma mark - Buildin commands
 
-- (void)showViewControllerHierarchy {
-    NSString *viewControllerSelectorString = [@[ @"_", @"print", @"Hierarchy" ] componentsJoinedByString:@""];
-    SEL viewControllerSelector = NSSelectorFromString(viewControllerSelectorString);
-    id obj;
-    if ([UIViewController respondsToSelector:viewControllerSelector]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        obj = [UIViewController performSelector:viewControllerSelector];
-#pragma clang diagnostic pop
-    }
-    NSString *msg = [NSString stringWithFormat:@"%@", obj];
-    printf("%s\n", [msg cStringUsingEncoding:NSUTF8StringEncoding]);
-    UIAlertController *as = [UIAlertController alertControllerWithTitle:msg message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    [as addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", @"取消") style:UIAlertActionStyleCancel handler:nil]];
-    UIViewController *vp = (UIViewController *)AppRootViewController();
-    UIPopoverPresentationController *ppc = as.popoverPresentationController;
-    if (ppc) {
-        ppc.sourceView = vp.view;
-        ppc.sourceRect = (CGRect){ CGPointOfRectCenter(vp.view.bounds), CGSizeZero };
-        ppc.permittedArrowDirections = 0;
-    }
-    [vp presentViewController:as animated:YES completion:nil];
-}
-
 - (void)showCurrentPageItem {
     id item = AppCurrentViewControllerItem(nil);
     DebugUIInspecteModel(item);
-}
-
-- (void)simulateMemoryWarning {
-    NSString *warningSelectorString = [@[ @"_", @"perform", @"Memory", @"Warning" ] componentsJoinedByString:@""];
-    SEL warningSelector = NSSelectorFromString(warningSelectorString);
-    [UIApplication.sharedApplication performSelector:warningSelector withObject:nil afterDelay:0];
 }
 
 - (void)delayRefreshTopViewController {
@@ -229,19 +177,6 @@ static unsigned long long LastMemoryUsed;
 
 - (void)makeCrash {
     NSAssert(false, @"This is a crash for debug");
-}
-
-- (void)hideDebugButtonSomewhile {
-    UIView *db;
-    for (UIView *v in [(MBRootViewController *)AppRootViewController() view].subviews) {
-        if ([v isKindOfClass:[MBDebugWindowButton class]]) {
-            db = v;
-        }
-    }
-    db.hidden = YES;
-    dispatch_after_seconds(7, ^{
-        db.hidden = NO;
-    });
 }
 
 - (UIBarButtonItem *)buildListInspectorMenuItem {

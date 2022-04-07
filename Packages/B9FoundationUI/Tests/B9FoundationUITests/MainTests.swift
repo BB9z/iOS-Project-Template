@@ -1,5 +1,5 @@
-import XCTest
 @testable import B9FoundationUI
+import XCTest
 
 final class UIResponderTests: XCTestCase {
 
