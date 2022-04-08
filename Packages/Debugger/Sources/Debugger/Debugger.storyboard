@@ -112,8 +112,7 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="arrow.clockwise" catalog="system"/>
                                                 <connections>
-                                                    <action selector="onHide:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="o8z-lv-BOZ"/>
-                                                    <action selector="onRefresh:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WPP-zh-U7d"/>
+                                                    <action selector="refresh" destination="Y6W-OH-hqX" eventType="touchUpInside" id="I54-xC-FB8"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4GA-pP-wVQ" userLabel="Drag">

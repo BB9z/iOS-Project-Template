@@ -23,7 +23,7 @@ public enum Debugger {
      - Parameter window: 添加到哪个 window 里，未指定使用应用当前的 key window
      */
     public static func installTriggerButton(in window: UIWindow? = nil) {
-        guard let win = window ?? UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else {
+        guard let win = window ?? mainWindow else {
             NSLog("❌ \(#function): key window not found")
             return
         }
@@ -75,7 +75,7 @@ public enum Debugger {
         get {
             _floatWindow ?? {
                 let win = Window()
-                win.backgroundColor = nil
+                win.backgroundColor = .red
                 win.windowLevel = .statusBar
                 win.rootViewController = UIStoryboard(name: "Debugger", bundle: Bundle.module)
                     .instantiateInitialViewController()
@@ -101,17 +101,12 @@ internal weak var triggerButton: TriggerButton?
 
 // MARK: - 一些操作
 public extension Debugger {
-    /// 切换调试面板显隐
-    static func toggleControlCenterVisable() {
-        floatWindow.isHidden.toggle()
-        if !floatWindow.isHidden {
-            floatViewController?.refresh()
-        }
-    }
-
-    /// 隐藏调试面板
+    /// 显示调试面板
     static func showControlCenter() {
-        floatWindow.isHidden = true
+        if #available(iOS 13.0, *) {
+            floatWindow.windowScene = triggerButton?.window?.windowScene ?? activedWindowScene
+        }
+        floatWindow.isHidden = false
         floatViewController?.refresh()
     }
 
@@ -147,10 +142,28 @@ public extension Debugger {
 
 // MARK: - Helper
 internal extension Debugger {
-    /// 尝试找应用的 key window，找不到用第一个 window
+    /// 尝试找应用处于活跃的窗体
+    @available(iOS 13.0, *)
+    static var activedWindowScene: UIWindowScene? {
+        if let actived = tureKeyWindow?.windowScene { return actived }
+        let scenes = UIApplication.shared.connectedScenes
+        return (scenes.first(where: { $0.activationState == .foregroundActive }) ?? scenes.first) as? UIWindowScene
+    }
+
+    private static var tureKeyWindow: UIWindow? {
+        (UIApplication.shared as DeprecatedKeyWindow).keyWindow
+    }
+
+    /// 尝试找应用活跃窗体的 key window
     static var mainWindow: UIWindow? {
-        let windows = UIApplication.shared.windows
-        return windows.first(where: { $0.isKeyWindow }) ?? windows.first
+        if let actived = tureKeyWindow { return actived }
+        if #available(iOS 13.0, *) {
+            let windows = activedWindowScene?.windows ?? UIApplication.shared.windows
+            return windows.first(where: { $0.isKeyWindow }) ?? windows.first
+        } else {
+            let windows = UIApplication.shared.windows
+            return windows.first(where: { $0.isKeyWindow }) ?? windows.first
+        }
     }
 
     /// 主 window 的根视图
@@ -180,10 +193,33 @@ internal extension Debugger {
         vc.present(alert, animated: true, completion: nil)
     }
 
+    static func toggleControlCenterVisableFromButton() {
+        if floatWindow.isHidden {
+            showControlCenter()
+            return
+        }
+        if #available(iOS 13.0, *) {
+            if let buttonWin = triggerButton?.window, floatWindow.windowScene != buttonWin.windowScene {
+                // 按钮和浮窗不在同一窗体，移动浮窗
+                showControlCenter()
+                return
+            }
+        }
+        hideControlCenter()
+    }
+
     static func hideTriggerButtonForAwhile() {
         triggerButton?.isHidden = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
             triggerButton?.isHidden = false
         }
     }
+}
+
+// 帮助找真正的处于激活中的 window
+// 支持多窗体的应用，会同时有多个 scene 处于 foregroundActive（这很合理），只有 keyWindow 能反应真正激活的（或者是最后激活的）
+private protocol DeprecatedKeyWindow {
+    var keyWindow: UIWindow? { get }
+}
+extension UIApplication: DeprecatedKeyWindow {
 }

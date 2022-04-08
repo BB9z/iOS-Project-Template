@@ -27,7 +27,7 @@ internal final class TriggerButton: UIButton {
     }
 
     @objc private func onTap() {
-        Debugger.toggleControlCenterVisable()
+        Debugger.toggleControlCenterVisableFromButton()
     }
 
     override func didMoveToWindow() {
