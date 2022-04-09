@@ -19,6 +19,31 @@ internal final class Window: UIWindow {
         }
         return result
     }
+
+    @IBAction internal func debuggerHide(_ sender: Any) {
+        Debugger.hideControlCenter()
+    }
+
+    private var viewControllers = [UIViewController]()
+
+    @IBAction internal func debuggerBack(_ sender: Any) {
+        if rootViewController == viewControllers.last {
+            _ = viewControllers.popLast()
+        }
+        rootViewController = viewControllers.last
+        if rootViewController == nil {
+            Debugger.hideControlCenter()
+        }
+    }
+
+    func debuggerPush(vc: UIViewController) {
+        if let current = rootViewController,
+           !viewControllers.contains(current) {
+            viewControllers.append(current)
+        }
+        viewControllers.append(vc)
+        rootViewController = vc
+    }
 }
 
 internal final class WindowTouchForwardView: UIView {

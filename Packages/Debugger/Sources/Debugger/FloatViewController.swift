@@ -116,10 +116,6 @@ internal final class FloatViewController: UIViewController {
         isAutoHideAfterPerformAction.toggle()
         refresh()
     }
-
-    @IBAction private func onHide(_ sender: Any) {
-        Debugger.hideControlCenter()
-    }
 }
 
 #if canImport(HasItem)

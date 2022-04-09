@@ -80,8 +80,7 @@ public enum Debugger {
                 let win = Window()
                 win.backgroundColor = nil
                 win.windowLevel = .statusBar
-                win.rootViewController = UIStoryboard(name: "Debugger", bundle: Bundle.module)
-                    .instantiateInitialViewController()
+                win.rootViewController = storyboard.instantiateInitialViewController()
                 _floatWindow = win
                 return win
             }()
@@ -128,11 +127,11 @@ public extension Debugger {
             return
         }
         if let value = value as? CustomDebugStringConvertible {
-            alertShow(text: value.debugDescription)
+            show(text: value.debugDescription)
         } else {
             var output = ""
             dump(value, to: &output)
-            alertShow(text: output)
+            show(text: output)
         }
     }
 
@@ -199,6 +198,16 @@ internal extension Debugger {
         let testPoint = CGPoint(x: win.bounds.width * 0.7, y: win.bounds.height * 0.3)
         let vc = win.hitTest(testPoint, with: nil)?.viewController
         return vc
+    }
+
+    static var storyboard: UIStoryboard {
+        UIStoryboard(name: "Debugger", bundle: Bundle.module)
+    }
+
+    static func show(text: String) {
+        let vc = DescriptionViewController.new()
+        vc.item = text
+        floatWindow.debuggerPush(vc: vc)
     }
 
     static func alertShow(text: String) {
