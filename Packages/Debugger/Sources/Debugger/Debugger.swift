@@ -71,11 +71,14 @@ public enum Debugger {
         }
     }
 
+    /// 自定义对象检查方法
+    public static var vauleInspector: ((Any) -> Void)?
+
     internal static var floatWindow: Window! {
         get {
             _floatWindow ?? {
                 let win = Window()
-                win.backgroundColor = .red
+                win.backgroundColor = nil
                 win.windowLevel = .statusBar
                 win.rootViewController = UIStoryboard(name: "Debugger", bundle: Bundle.module)
                     .instantiateInitialViewController()
@@ -113,6 +116,24 @@ public extension Debugger {
     /// 隐藏调试面板
     static func hideControlCenter() {
         floatWindow.isHidden = true
+    }
+
+    /// 检查对象
+    static func inspect(value: Any) {
+        guard let value = unwrap(optional: value) else {
+            return
+        }
+        if let cb = vauleInspector {
+            cb(value)
+            return
+        }
+        if let value = value as? CustomDebugStringConvertible {
+            alertShow(text: value.debugDescription)
+        } else {
+            var output = ""
+            dump(value, to: &output)
+            alertShow(text: output)
+        }
     }
 
     /// 显示 VC 堆栈调试信息
@@ -191,6 +212,33 @@ internal extension Debugger {
             popover.permittedArrowDirections = []
         }
         vc.present(alert, animated: true, completion: nil)
+    }
+
+    static func unwrap(optional value: Any) -> Any? {
+        let mirror = Mirror(reflecting: value)
+        if mirror.displayStyle != .optional {
+            return value
+        }
+        if let (_, some) = mirror.children.first {
+            return some
+        }
+        return nil
+    }
+
+    /// 输入的类型 + id 描述
+    static func shortDescription(value: Any) -> String {
+        guard let value = unwrap(optional: value) else { return "nil" }
+        let mirror = Mirror(reflecting: value)
+        var title = String(describing: mirror.subjectType)
+        for child in mirror.children {
+            if child.label == "id" || child.label == "uid" {
+                if let value = child.value as? CustomStringConvertible {
+                    title += ": \(value)"
+                    break
+                }
+            }
+        }
+        return title
     }
 
     static func toggleControlCenterVisableFromButton() {

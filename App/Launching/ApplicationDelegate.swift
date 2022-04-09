@@ -29,18 +29,25 @@ class ApplicationDelegate: MBApplicationDelegate {
 //        MBEnvironment.registerWorkers()
         RFKeyboard.autoDisimssKeyboardWhenTouch = true
         setupUIAppearance()
-        dispatch_after_seconds(0) {
-            Debugger.installTriggerButton()
-            Debugger.globalActionItems = [
-                DebugActionItem("FLEX") {
-                    MBFlexInterface.showFlexExplorer()
-                }
-            ]
-        }
+        dispatch_after_seconds(0, setupDebugger)
         return true
     }
 
-    func setupUIAppearance() {
+    private func setupDebugger() {
+        Debugger.installTriggerButton()
+        Debugger.globalActionItems = [
+            DebugActionItem("FLEX") {
+                MBFlexInterface.showFlexExplorer()
+            }
+        ]
+//        Debugger.vauleInspector = { value in
+//            if let vc = MBFlexInterface.explorerViewController(for: value) {
+//                AppNavigationController()?.pushViewController(vc, animated: true)
+//            }
+//        }
+    }
+
+    private func setupUIAppearance() {
         // 统一全局色，storyboard 的全局色只对部分 UI 生效，比如无法对 UIAlertController 应用
         window.tintColor = UIColor(named: "primary")!
 
