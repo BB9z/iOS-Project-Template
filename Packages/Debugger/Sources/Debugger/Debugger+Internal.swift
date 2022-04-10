@@ -57,7 +57,12 @@ internal extension Debugger {
             globalItems.append(item)
         }
         globalItems.append(contentsOf: [
+            DebugActionItem("URL 跳转") {
+                openURL()
+                hideControlCenter()
+            },
             DebugActionItem("模拟内存警告", action: simulateMemoryWarning),
+            DebugActionItem("网络存储清空", action: resetURLStorage),
             DebugActionItem("隐藏左下调试按钮片刻", action: hideTriggerButtonForAwhile)
         ])
         return globalItems
@@ -178,6 +183,40 @@ internal extension Debugger {
         triggerButton?.isHidden = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 7) {
             triggerButton?.isHidden = false
+        }
+    }
+
+    static func openURL() {
+        let alert = UIAlertController(title: "链接跳转测试", message: nil, preferredStyle: .alert)
+        alert.addTextField { textField in
+            textField.placeholder = "输入 URL"
+            textField.clearButtonMode = .always
+            textField.text = UserDefaults.standard.string(forKey: "__debug.LastOpenURL")
+        }
+        alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "跳转", style: .default, handler: { _ in
+            jump(url: alert.textFields?.first?.text, after: 0)
+        }))
+        alert.addAction(UIAlertAction(title: "三秒后跳转", style: .default, handler: { _ in
+            jump(url: alert.textFields?.first?.text, after: 3)
+        }))
+        present(alertController: alert)
+    }
+
+    private static func jump(url: String?, after: TimeInterval) {
+        guard let urlString = url, !urlString.isEmpty else { return }
+        guard
+            let url = URL(string: urlString) else {
+            NSLog("❌ \(urlString) 不能转为 URL，请输入编码后的链接")
+            return
+        }
+        UserDefaults.standard.set(url.absoluteString, forKey: "__debug.LastOpenURL")
+        DispatchQueue.main.asyncAfter(deadline: .now() + after) {
+            guard let handler = Debugger.urlJumpHandler else {
+                alertShow(text: "请设置 Debugger.urlJumpHandler")
+                return
+            }
+            handler(url)
         }
     }
 }

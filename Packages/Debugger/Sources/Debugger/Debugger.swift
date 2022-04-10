@@ -77,6 +77,9 @@ public enum Debugger {
     /// 检测列表时依据的属性名
     /// 列表可以是 UITableView、UICollectionView 和 VisableCellInspecting
     public static var inspectingListPropertyNames: [String] = ["listView", "tableView", "collectionView"]
+
+    /// 测试 URL 跳转时，如何处理 URL 需要应用指定
+    public static var urlJumpHandler: ((URL) -> Void)?
 }
 
 // MARK: - 一些操作
@@ -150,5 +153,18 @@ public extension Debugger {
     static func simulateMemoryWarning() {
         let sel = Selector(("_performMemoryWarning"))
         UIApplication.shared.perform(sel, with: nil, afterDelay: 0)
+    }
+
+    /// 重置网络相关存储
+    static func resetURLStorage() {
+        URLCache.shared.removeAllCachedResponses()
+        let credentialStorage = URLCredentialStorage.shared
+        for (space, obj) in credentialStorage.allCredentials {
+            for credential in obj.values {
+                credentialStorage.remove(credential, for: space)
+            }
+        }
+        let cookieStorage = HTTPCookieStorage.shared
+        cookieStorage.cookies?.forEach { cookieStorage.deleteCookie($0) }
     }
 }

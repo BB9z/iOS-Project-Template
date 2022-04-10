@@ -40,6 +40,9 @@ class ApplicationDelegate: MBApplicationDelegate {
                 MBFlexInterface.showFlexExplorer()
             }
         ]
+        Debugger.urlJumpHandler = {
+            NavigationController.jump(url: $0, context: nil)
+        }
 //        Debugger.vauleInspector = { value in
 //            if let vc = MBFlexInterface.explorerViewController(for: value) {
 //                AppNavigationController()?.pushViewController(vc, animated: true)
