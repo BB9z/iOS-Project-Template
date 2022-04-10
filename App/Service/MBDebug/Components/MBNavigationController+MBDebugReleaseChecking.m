@@ -1,7 +1,6 @@
 
 #if RFDEBUG
 #import "MBNavigationController+MBDebugReleaseChecking.h"
-#import "NSUserDefaults+MBDebug.h"
 #import <RFAlpha/RFSwizzle.h>
 #import <MBAppKit/MBAppKit.h>
 #import "debug.h"
