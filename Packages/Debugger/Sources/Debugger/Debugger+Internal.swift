@@ -90,14 +90,18 @@ internal extension Debugger {
     static func alertShow(text: String) {
         let alert = UIAlertController(title: text, message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "关闭", style: .cancel, handler: nil))
+        present(alertController: alert)
+    }
+
+    static func present(alertController: UIAlertController) {
         guard let vc = rootViewController else { return }
-        if let popover = alert.popoverPresentationController {
+        if let popover = alertController.popoverPresentationController {
             popover.sourceView = vc.view
             let bounds = vc.view.bounds
             popover.sourceRect = CGRect(origin: CGPoint(x: bounds.midX, y: bounds.midY), size: .zero)
             popover.permittedArrowDirections = []
         }
-        vc.present(alert, animated: true, completion: nil)
+        vc.present(alertController, animated: true, completion: nil)
     }
 
     static func unwrap(optional value: Any) -> Any? {

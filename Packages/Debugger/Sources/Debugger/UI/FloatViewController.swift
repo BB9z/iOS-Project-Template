@@ -80,6 +80,9 @@ internal final class FloatViewController: UIViewController {
         if let item = currentItemActionItem(currentVC, primaryVC) {
             globalItems.append(item)
         }
+        if let item = listInspectingAction(currentVC) {
+            globalItems.append(item)
+        }
         globalItems.append(contentsOf: [
             DebugActionItem("模拟内存警告", action: Debugger.simulateMemoryWarning),
             DebugActionItem(isAutoHideAfterPerformAction ? "操作自动隐藏: 开启" : "操作自动隐藏: 关闭", target: self, #selector(onSwitchAutoHide)),
@@ -117,39 +120,6 @@ internal final class FloatViewController: UIViewController {
         refresh()
     }
 }
-
-#if canImport(HasItem)
-import HasItem
-
-extension FloatViewController {
-    private func findItem(between currentVC: UIViewController?, and primaryVC: UIViewController?) -> Any? {
-        var viewController = currentVC
-        while viewController != nil {
-            if let vc = viewController as? AnyHasItem {
-                return vc.item()
-            }
-            viewController = viewController?.parent
-        }
-        return nil
-    }
-
-    private func currentItemActionItem(_ currentVC: UIViewController?, _ primaryVC: UIViewController?) -> DebugActionItem? {
-        guard let item = findItem(between: currentVC, and: primaryVC) else {
-            return nil
-        }
-        let title = Debugger.shortDescription(value: item)
-        return DebugActionItem(title) {
-            Debugger.inspect(value: item)
-        }
-    }
-}
-#else
-extension FloatViewController {
-    private func currentItemActionItem() -> DebugActionItem? {
-        nil
-    }
-}
-#endif
 
 /// 可调尺寸、位置的容器
 internal final class DragableResizableView: UIView {

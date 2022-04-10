@@ -73,6 +73,10 @@ public enum Debugger {
 
     /// 自定义对象检查方法
     public static var vauleInspector: ((Any) -> Void)?
+
+    /// 检测列表时依据的属性名
+    /// 列表可以是 UITableView、UICollectionView 和 VisableCellInspecting
+    public static var inspectingListPropertyNames: [String] = ["listView", "tableView", "collectionView"]
 }
 
 // MARK: - 一些操作
@@ -107,6 +111,21 @@ public extension Debugger {
             dump(value, to: &output)
             show(text: output)
         }
+    }
+
+    /// 检测列表可见单元
+    static func inspectVisableCell() {
+        guard let cells = inspectListCell(Debugger.currentViewController) else {
+            return
+        }
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "关闭", style: .cancel, handler: nil))
+        for cell in cells {
+            alert.addAction(UIAlertAction(title: shortDescription(cell: cell), style: .default, handler: { _ in
+                inspect(cell: cell)
+            }))
+        }
+        present(alertController: alert)
     }
 
     /// 显示 VC 堆栈调试信息
