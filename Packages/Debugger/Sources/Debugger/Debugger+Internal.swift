@@ -39,6 +39,32 @@ internal extension Debugger {
         floatWindow?.rootViewController as? FloatViewController
     }
 
+    static func internalGlobalItems() -> [DebugActionItem] {
+        let currentVC = currentViewController
+        let primaryVC = currentVC?.navigationController?.topViewController ?? currentVC
+        var globalItems = globalActionItems
+        globalItems.append({
+            var title = "视图层级"
+            if let vc = primaryVC {
+                title += ": \(type(of: vc))"
+            }
+            return DebugActionItem(title, action: showViewControllerHierarchy)
+        }())
+        if let item = currentItemActionItem(currentVC, primaryVC) {
+            globalItems.append(item)
+        }
+        if let item = listInspectingAction(currentVC) {
+            globalItems.append(item)
+        }
+        globalItems.append(contentsOf: [
+            DebugActionItem("模拟内存警告", action: simulateMemoryWarning),
+            DebugActionItem("隐藏左下调试按钮片刻", action: hideTriggerButtonForAwhile)
+        ])
+        return globalItems
+    }
+
+    // MARK: - 便捷访问
+
     /// 尝试找应用处于活跃的窗体
     @available(iOS 13.0, *)
     static var activedWindowScene: UIWindowScene? {
@@ -80,6 +106,8 @@ internal extension Debugger {
     static var storyboard: UIStoryboard {
         UIStoryboard(name: "Debugger", bundle: Bundle.module)
     }
+
+    // MARK: - 工具方法
 
     static func show(text: String) {
         let vc = DescriptionViewController.new()

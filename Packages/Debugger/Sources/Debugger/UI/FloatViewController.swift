@@ -67,29 +67,11 @@ internal final class FloatViewController: UIViewController {
     // MARK: - 操作
 
     @IBAction func refresh() {
-        let currentVC = Debugger.currentViewController
-        let primaryVC = currentVC?.navigationController?.topViewController ?? currentVC
-        var globalItems = Debugger.globalActionItems
-        globalItems.append({
-            var title = "视图层级"
-            if let vc = primaryVC {
-                title += ": \(type(of: vc))"
-            }
-            return DebugActionItem(title, action: Debugger.showViewControllerHierarchy)
-        }())
-        if let item = currentItemActionItem(currentVC, primaryVC) {
-            globalItems.append(item)
-        }
-        if let item = listInspectingAction(currentVC) {
-            globalItems.append(item)
-        }
-        globalItems.append(contentsOf: [
-            DebugActionItem("模拟内存警告", action: Debugger.simulateMemoryWarning),
-            DebugActionItem(isAutoHideAfterPerformAction ? "操作自动隐藏: 开启" : "操作自动隐藏: 关闭", target: self, #selector(onSwitchAutoHide)),
-            DebugActionItem("隐藏左下调试按钮片刻", action: Debugger.hideTriggerButtonForAwhile)
-        ])
+        var globalItems = Debugger.internalGlobalItems()
+        let autoHideItem = DebugActionItem(isAutoHideAfterPerformAction ? "操作自动隐藏: 开启" : "操作自动隐藏: 关闭", target: self, #selector(onSwitchAutoHide))
+        globalItems.append(autoHideItem)
         globalListDatasource.update(items: globalItems)
-        contextListDatasource.update(items: contextItems(currentVC: currentVC))
+        contextListDatasource.update(items: contextItems(currentVC: Debugger.currentViewController))
     }
 
     private func contextItems(currentVC: UIViewController?) -> [DebugActionItem] {

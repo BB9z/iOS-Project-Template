@@ -14,9 +14,9 @@ import UIKit
 import HasItem
 #endif
 
-extension FloatViewController {
+internal extension Debugger {
 #if canImport(HasItem)
-    private func findItem(between currentVC: UIViewController?, and primaryVC: UIViewController?) -> Any? {
+    private static func findItem(between currentVC: UIViewController?, and primaryVC: UIViewController?) -> Any? {
         var viewController = currentVC
         while viewController != nil {
             if let vc = viewController as? AnyHasItem {
@@ -27,7 +27,7 @@ extension FloatViewController {
         return nil
     }
 
-    internal func currentItemActionItem(_ currentVC: UIViewController?, _ primaryVC: UIViewController?) -> DebugActionItem? {
+    static func currentItemActionItem(_ currentVC: UIViewController?, _ primaryVC: UIViewController?) -> DebugActionItem? {
         guard let item = findItem(between: currentVC, and: primaryVC) else {
             return nil
         }
@@ -37,13 +37,11 @@ extension FloatViewController {
         }
     }
 #else
-    internal func currentItemActionItem(_ currentVC: UIViewController?, _ primaryVC: UIViewController?) -> DebugActionItem? {
+    static func currentItemActionItem(_ currentVC: UIViewController?, _ primaryVC: UIViewController?) -> DebugActionItem? {
         nil
     }
 #endif
-}
 
-internal extension Debugger {
     /// 列表单元描述
     static func shortDescription(cell: Any) -> String {
 #if canImport(HasItem)
