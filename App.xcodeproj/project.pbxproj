@@ -60,9 +60,7 @@
 		D53446032592481400F5FD80 /* Date+Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53446022592481400F5FD80 /* Date+Server.swift */; };
 		D534461025924CE700F5FD80 /* UIApplication+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534460E25924CE700F5FD80 /* UIApplication+App.swift */; };
 		D534461125924CE700F5FD80 /* UIViewController+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534460F25924CE700F5FD80 /* UIViewController+App.swift */; };
-		D53BB5FA27FC467700F60168 /* B9FoundationUI in Resources */ = {isa = PBXBuildFile; fileRef = D53BB5F927FC467700F60168 /* B9FoundationUI */; };
 		D53BB5FC27FC468300F60168 /* B9FoundationUI in Frameworks */ = {isa = PBXBuildFile; productRef = D53BB5FB27FC468300F60168 /* B9FoundationUI */; settings = {ATTRIBUTES = (Weak, ); }; };
-		D53BB5FE27FC473000F60168 /* Debugger in Resources */ = {isa = PBXBuildFile; fileRef = D53BB5FD27FC473000F60168 /* Debugger */; };
 		D53BB60027FC4EE600F60168 /* Debugger in Frameworks */ = {isa = PBXBuildFile; productRef = D53BB5FF27FC4EE600F60168 /* Debugger */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D544A396197CBE5300C65604 /* MBFormSelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D544A395197CBE5300C65604 /* MBFormSelectButton.m */; };
 		D544A39E197D1E8600C65604 /* JSONValueTransformer+App.m in Sources */ = {isa = PBXBuildFile; fileRef = D544A39D197D1E8600C65604 /* JSONValueTransformer+App.m */; };
@@ -194,7 +192,6 @@
 		D5EE52212043F6A7009148B3 /* MBCollectionViewEqualColumnSpaceLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE521B2043F6A6009148B3 /* MBCollectionViewEqualColumnSpaceLayout.m */; };
 		D5EE523D2043F7B9009148B3 /* MBLayoutButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE52312043F7B9009148B3 /* MBLayoutButton.m */; };
 		D5F036B527FB479800C60A72 /* B9Debug in Frameworks */ = {isa = PBXBuildFile; productRef = D5F036B427FB479800C60A72 /* B9Debug */; };
-		D5F036C127FBC6E000C60A72 /* HasItem in Resources */ = {isa = PBXBuildFile; fileRef = D5F036C027FBC6E000C60A72 /* HasItem */; };
 		D5F036C327FBC80500C60A72 /* HasItem in Frameworks */ = {isa = PBXBuildFile; productRef = D5F036C227FBC80500C60A72 /* HasItem */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D5F1F843251C0B3A00D641F9 /* NavigationController+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1F842251C0B3A00D641F9 /* NavigationController+Router.swift */; };
 		D5F1F849251C1D6400D641F9 /* URL+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1F848251C1D6400D641F9 /* URL+App.swift */; };
@@ -1510,9 +1507,6 @@
 			files = (
 				D5542EAA191887F500831016 /* APIDefine.plist in Resources */,
 				D52EAB672043B6B3007219E0 /* Assets.xcassets in Resources */,
-				D53BB5FA27FC467700F60168 /* B9FoundationUI in Resources */,
-				D53BB5FE27FC473000F60168 /* Debugger in Resources */,
-				D5F036C127FBC6E000C60A72 /* HasItem in Resources */,
 				D5197D3217F027B400CA387C /* InfoPlist.strings in Resources */,
 				D5C636A72047CC5900851CF4 /* LaunchScreen.storyboard in Resources */,
 				D5197D3517F027BB00CA387C /* Localizable.strings in Resources */,
