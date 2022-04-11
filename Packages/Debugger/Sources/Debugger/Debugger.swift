@@ -24,7 +24,7 @@ public enum Debugger {
      */
     public static func installTriggerButton(in window: UIWindow? = nil) {
         guard let win = window ?? mainWindow else {
-            NSLog("❌ \(#function): key window not found")
+            NSLog("❌ %@: key window not found", #function)
             return
         }
         if let button = triggerButton {

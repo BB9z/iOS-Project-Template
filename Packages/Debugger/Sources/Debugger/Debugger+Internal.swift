@@ -207,7 +207,7 @@ internal extension Debugger {
         guard let urlString = url, !urlString.isEmpty else { return }
         guard
             let url = URL(string: urlString) else {
-            NSLog("❌ \(urlString) 不能转为 URL，请输入编码后的链接")
+            NSLog("❌ %@ 不能转为 URL，请输入编码后的链接", urlString)
             return
         }
         UserDefaults.standard.set(url.absoluteString, forKey: "__debug.LastOpenURL")
