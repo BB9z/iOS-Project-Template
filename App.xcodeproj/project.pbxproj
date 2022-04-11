@@ -14,13 +14,7 @@
 		D501845820F88016009481D4 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501845720F88016009481D4 /* TextField.swift */; };
 		D501845B20F881B6009481D4 /* DissolveTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501845920F881B6009481D4 /* DissolveTransitioning.swift */; };
 		D501845C20F881B7009481D4 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501845A20F881B6009481D4 /* Shadow.swift */; };
-		D501846C20F8863E009481D4 /* MBDebugHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = D501845E20F8863E009481D4 /* MBDebugHelpers.m */; };
-		D501846D20F8863E009481D4 /* MBDebug.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D501845F20F8863E009481D4 /* MBDebug.storyboard */; };
-		D501846E20F8863E009481D4 /* NSUserDefaults+MBDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = D501846420F8863E009481D4 /* NSUserDefaults+MBDebug.m */; };
-		D501846F20F8863E009481D4 /* MBDebugFloatConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D501846520F8863E009481D4 /* MBDebugFloatConsoleViewController.m */; };
 		D501847020F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.m in Sources */ = {isa = PBXBuildFile; fileRef = D501846720F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.m */; };
-		D501847120F8863E009481D4 /* MBDebugViews.m in Sources */ = {isa = PBXBuildFile; fileRef = D501846A20F8863E009481D4 /* MBDebugViews.m */; };
-		D501847220F8863E009481D4 /* MBDebugMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D501846B20F8863E009481D4 /* MBDebugMenuViewController.m */; };
 		D50319D425BE518C00C2849E /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50319D325BE518C00C2849E /* CornerRadius.swift */; };
 		D5031A1E25BEA95200C2849E /* MBDebugLiveCountChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5031A1D25BEA95200C2849E /* MBDebugLiveCountChecker.swift */; };
 		D5031A2625BEBB7700C2849E /* Picker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5031A2525BEBB7700C2849E /* Picker.storyboard */; };
@@ -63,6 +57,8 @@
 		D53446032592481400F5FD80 /* Date+Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53446022592481400F5FD80 /* Date+Server.swift */; };
 		D534461025924CE700F5FD80 /* UIApplication+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534460E25924CE700F5FD80 /* UIApplication+App.swift */; };
 		D534461125924CE700F5FD80 /* UIViewController+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534460F25924CE700F5FD80 /* UIViewController+App.swift */; };
+		D53BB5FC27FC468300F60168 /* B9FoundationUI in Frameworks */ = {isa = PBXBuildFile; productRef = D53BB5FB27FC468300F60168 /* B9FoundationUI */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D53BB60027FC4EE600F60168 /* Debugger in Frameworks */ = {isa = PBXBuildFile; productRef = D53BB5FF27FC4EE600F60168 /* Debugger */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D544A396197CBE5300C65604 /* MBFormSelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D544A395197CBE5300C65604 /* MBFormSelectButton.m */; };
 		D544A39E197D1E8600C65604 /* JSONValueTransformer+App.m in Sources */ = {isa = PBXBuildFile; fileRef = D544A39D197D1E8600C65604 /* JSONValueTransformer+App.m */; };
 		D54AFCEB22BF8DFE0031559F /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54AFCEA22BF8DFD0031559F /* Atomic.swift */; };
@@ -192,7 +188,7 @@
 		D5EE521A2043F693009148B3 /* MBSingleSectionCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE52162043F692009148B3 /* MBSingleSectionCollectionView.m */; };
 		D5EE52212043F6A7009148B3 /* MBCollectionViewEqualColumnSpaceLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE521B2043F6A6009148B3 /* MBCollectionViewEqualColumnSpaceLayout.m */; };
 		D5EE523D2043F7B9009148B3 /* MBLayoutButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE52312043F7B9009148B3 /* MBLayoutButton.m */; };
-		D5F036C127FBC6E000C60A72 /* HasItem in Resources */ = {isa = PBXBuildFile; fileRef = D5F036C027FBC6E000C60A72 /* HasItem */; };
+		D5F036B527FB479800C60A72 /* B9Debug in Frameworks */ = {isa = PBXBuildFile; productRef = D5F036B427FB479800C60A72 /* B9Debug */; };
 		D5F036C327FBC80500C60A72 /* HasItem in Frameworks */ = {isa = PBXBuildFile; productRef = D5F036C227FBC80500C60A72 /* HasItem */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D5F1F843251C0B3A00D641F9 /* NavigationController+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1F842251C0B3A00D641F9 /* NavigationController+Router.swift */; };
 		D5F1F849251C1D6400D641F9 /* URL+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1F848251C1D6400D641F9 /* URL+App.swift */; };
@@ -229,19 +225,8 @@
 		D501845720F88016009481D4 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		D501845920F881B6009481D4 /* DissolveTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DissolveTransitioning.swift; sourceTree = "<group>"; };
 		D501845A20F881B6009481D4 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
-		D501845E20F8863E009481D4 /* MBDebugHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDebugHelpers.m; sourceTree = "<group>"; };
-		D501845F20F8863E009481D4 /* MBDebug.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MBDebug.storyboard; sourceTree = "<group>"; };
-		D501846020F8863E009481D4 /* NSUserDefaults+MBDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+MBDebug.h"; sourceTree = "<group>"; };
-		D501846120F8863E009481D4 /* MBDebugFloatConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDebugFloatConsoleViewController.h; sourceTree = "<group>"; };
-		D501846220F8863E009481D4 /* MBDebugViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDebugViews.h; sourceTree = "<group>"; };
-		D501846320F8863E009481D4 /* MBDebugMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDebugMenuViewController.h; sourceTree = "<group>"; };
-		D501846420F8863E009481D4 /* NSUserDefaults+MBDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+MBDebug.m"; sourceTree = "<group>"; };
-		D501846520F8863E009481D4 /* MBDebugFloatConsoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDebugFloatConsoleViewController.m; sourceTree = "<group>"; };
 		D501846720F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBNavigationController+MBDebugReleaseChecking.m"; sourceTree = "<group>"; };
 		D501846820F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBNavigationController+MBDebugReleaseChecking.h"; sourceTree = "<group>"; };
-		D501846920F8863E009481D4 /* MBDebugHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDebugHelpers.h; sourceTree = "<group>"; };
-		D501846A20F8863E009481D4 /* MBDebugViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDebugViews.m; sourceTree = "<group>"; };
-		D501846B20F8863E009481D4 /* MBDebugMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDebugMenuViewController.m; sourceTree = "<group>"; };
 		D50319D325BE518C00C2849E /* CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		D5031A1D25BEA95200C2849E /* MBDebugLiveCountChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBDebugLiveCountChecker.swift; sourceTree = "<group>"; };
 		D5031A2525BEBB7700C2849E /* Picker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Picker.storyboard; sourceTree = "<group>"; };
@@ -302,6 +287,8 @@
 		D534460E25924CE700F5FD80 /* UIApplication+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+App.swift"; sourceTree = "<group>"; };
 		D534460F25924CE700F5FD80 /* UIViewController+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+App.swift"; sourceTree = "<group>"; };
 		D5353D1524B7E1EF00BED8C7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D53BB5F927FC467700F60168 /* B9FoundationUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = B9FoundationUI; sourceTree = "<group>"; };
+		D53BB5FD27FC473000F60168 /* Debugger */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Debugger; sourceTree = "<group>"; };
 		D544A394197CBE5300C65604 /* MBFormSelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBFormSelectButton.h; sourceTree = "<group>"; };
 		D544A395197CBE5300C65604 /* MBFormSelectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBFormSelectButton.m; sourceTree = "<group>"; };
 		D544A39D197D1E8600C65604 /* JSONValueTransformer+App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONValueTransformer+App.m"; sourceTree = "<group>"; };
@@ -533,7 +520,10 @@
 			files = (
 				D57FBB6E279BB770003A0533 /* B9Action in Frameworks */,
 				D57FBB6B279BB727003A0533 /* B9AssociatedObject in Frameworks */,
+				D5F036B527FB479800C60A72 /* B9Debug in Frameworks */,
+				D53BB5FC27FC468300F60168 /* B9FoundationUI in Frameworks */,
 				D527917D27B557A800522240 /* B9MulticastDelegate in Frameworks */,
+				D53BB60027FC4EE600F60168 /* Debugger in Frameworks */,
 				D5F036C327FBC80500C60A72 /* HasItem in Frameworks */,
 				674FCCB03EFF1B157024C64B /* libPods-App.a in Frameworks */,
 				D57FBB71279D51BA003A0533 /* Logging in Frameworks */,
@@ -558,18 +548,7 @@
 			isa = PBXGroup;
 			children = (
 				D501846620F8863E009481D4 /* Components */,
-				D501845F20F8863E009481D4 /* MBDebug.storyboard */,
-				D501846120F8863E009481D4 /* MBDebugFloatConsoleViewController.h */,
-				D501846520F8863E009481D4 /* MBDebugFloatConsoleViewController.m */,
-				D501846920F8863E009481D4 /* MBDebugHelpers.h */,
-				D501845E20F8863E009481D4 /* MBDebugHelpers.m */,
 				D5031A1D25BEA95200C2849E /* MBDebugLiveCountChecker.swift */,
-				D501846320F8863E009481D4 /* MBDebugMenuViewController.h */,
-				D501846B20F8863E009481D4 /* MBDebugMenuViewController.m */,
-				D501846220F8863E009481D4 /* MBDebugViews.h */,
-				D501846A20F8863E009481D4 /* MBDebugViews.m */,
-				D501846020F8863E009481D4 /* NSUserDefaults+MBDebug.h */,
-				D501846420F8863E009481D4 /* NSUserDefaults+MBDebug.m */,
 			);
 			path = MBDebug;
 			sourceTree = "<group>";
@@ -1412,6 +1391,8 @@
 		D5F036BD27FBB45D00C60A72 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				D53BB5F927FC467700F60168 /* B9FoundationUI */,
+				D53BB5FD27FC473000F60168 /* Debugger */,
 				D5F036C027FBC6E000C60A72 /* HasItem */,
 			);
 			path = Packages;
@@ -1460,7 +1441,10 @@
 				D57FBB6D279BB770003A0533 /* B9Action */,
 				D57FBB70279D51BA003A0533 /* Logging */,
 				D527917C27B557A800522240 /* B9MulticastDelegate */,
+				D5F036B427FB479800C60A72 /* B9Debug */,
 				D5F036C227FBC80500C60A72 /* HasItem */,
+				D53BB5FB27FC468300F60168 /* B9FoundationUI */,
+				D53BB5FF27FC4EE600F60168 /* Debugger */,
 			);
 			productName = App;
 			productReference = D5197A3A17EECAAF00CA387C /* App.app */;
@@ -1489,6 +1473,7 @@
 				D57FBB6C279BB770003A0533 /* XCRemoteSwiftPackageReference "Action" */,
 				D57FBB6F279D51BA003A0533 /* XCRemoteSwiftPackageReference "swift-log" */,
 				D527917B27B557A800522240 /* XCRemoteSwiftPackageReference "MulticastDelegate" */,
+				D5F036B327FB479800C60A72 /* XCRemoteSwiftPackageReference "Debug" */,
 			);
 			productRefGroup = D5197A3B17EECAAF00CA387C /* Products */;
 			projectDirPath = "";
@@ -1507,14 +1492,12 @@
 			files = (
 				D5542EAA191887F500831016 /* APIDefine.plist in Resources */,
 				D52EAB672043B6B3007219E0 /* Assets.xcassets in Resources */,
-				D5F036C127FBC6E000C60A72 /* HasItem in Resources */,
 				D5197D3217F027B400CA387C /* InfoPlist.strings in Resources */,
 				D5C636A72047CC5900851CF4 /* LaunchScreen.storyboard in Resources */,
 				D5197D3517F027BB00CA387C /* Localizable.strings in Resources */,
 				D5740B51249B8B60001CBCB2 /* Login.storyboard in Resources */,
 				D55959CA20AB93B20019D733 /* Main.storyboard in Resources */,
 				D5B49F0C1C41133A00847925 /* MBCollectionRefreshFooterView.xib in Resources */,
-				D501846D20F8863E009481D4 /* MBDebug.storyboard in Resources */,
 				D5B49F181C41133A00847925 /* MBRefreshFooterView.xib in Resources */,
 				D5B49F1A1C41133A00847925 /* MBRefreshHeaderView.xib in Resources */,
 				D5031A2625BEBB7700C2849E /* Picker.storyboard in Resources */,
@@ -1668,11 +1651,7 @@
 				D5B49F051C41133A00847925 /* MBCollectionViewFlowLayout.m in Sources */,
 				D50693D819495D9E0002BFCC /* MBControlGroup.m in Sources */,
 				D5EE51862043F5E6009148B3 /* MBDatePickerViewController.m in Sources */,
-				D501846F20F8863E009481D4 /* MBDebugFloatConsoleViewController.m in Sources */,
-				D501846C20F8863E009481D4 /* MBDebugHelpers.m in Sources */,
 				D5031A1E25BEA95200C2849E /* MBDebugLiveCountChecker.swift in Sources */,
-				D501847220F8863E009481D4 /* MBDebugMenuViewController.m in Sources */,
-				D501847120F8863E009481D4 /* MBDebugViews.m in Sources */,
 				D5EE51E82043F613009148B3 /* MBDesignView.m in Sources */,
 				D5B49F081C41133A00847925 /* MBEntitiesCollectionView.m in Sources */,
 				D5DB4C19241DD71300832A0A /* MBEntitiesTableView.m in Sources */,
@@ -1741,7 +1720,6 @@
 				D5EE51192043DAA2009148B3 /* NSArray+App.m in Sources */,
 				D588309020CACB33002030C4 /* NSPointArray+App.swift in Sources */,
 				D52EADF82043C0EC007219E0 /* NSUserDefaults+App.m in Sources */,
-				D501846E20F8863E009481D4 /* NSUserDefaults+MBDebug.m in Sources */,
 				D501844E20F865D3009481D4 /* Number+App.swift in Sources */,
 				D50CFA6525C90F22003329EE /* ObjectPool.swift in Sources */,
 				D5031C2E25C044FF00C2849E /* ResizeObservableView.swift in Sources */,
@@ -2219,6 +2197,14 @@
 				minimumVersion = 0.20.0;
 			};
 		};
+		D5F036B327FB479800C60A72 /* XCRemoteSwiftPackageReference "Debug" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://gitee.com/b9swift/Debug";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2226,6 +2212,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D527917B27B557A800522240 /* XCRemoteSwiftPackageReference "MulticastDelegate" */;
 			productName = B9MulticastDelegate;
+		};
+		D53BB5FB27FC468300F60168 /* B9FoundationUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = B9FoundationUI;
+		};
+		D53BB5FF27FC4EE600F60168 /* Debugger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Debugger;
 		};
 		D57FBB6A279BB727003A0533 /* B9AssociatedObject */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -2241,6 +2235,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D57FBB6F279D51BA003A0533 /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = Logging;
+		};
+		D5F036B427FB479800C60A72 /* B9Debug */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5F036B327FB479800C60A72 /* XCRemoteSwiftPackageReference "Debug" */;
+			productName = B9Debug;
 		};
 		D5F036C227FBC80500C60A72 /* HasItem */ = {
 			isa = XCSwiftPackageProductDependency;

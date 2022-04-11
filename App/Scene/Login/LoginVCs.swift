@@ -76,18 +76,6 @@ class WelcomeViewController: LoginFormBaseViewController {
             }
         }
     }
-
-    #if DEBUG
-    @objc func debugCommands() -> [UIBarButtonItem] {
-        [
-            DebugMenuItem2("测试用户") {
-                let user = Account(id: Account.userIDUndetermined)
-                user?.token = "token"
-                Account.current = user
-            }
-        ]
-    }
-    #endif
 }
 
 /**
@@ -265,16 +253,31 @@ class PasswordResetViewController: LoginFormBaseViewController, HasItem {
             }
         }
     }
+}
 
-    #if DEBUG
-    @objc func debugCommands() -> [UIBarButtonItem] {
+#if DEBUG
+import Debugger
+extension WelcomeViewController: DebugActionSource {
+    func debugActionItems() -> [DebugActionItem] {
         [
-            DebugMenuItem2("填入12345678", { [self] in
+            DebugActionItem("测试用户") {
+                let user = Account(id: Account.userIDUndetermined)
+                user?.token = "token"
+                Account.current = user
+            }
+        ]
+    }
+}
+
+extension PasswordResetViewController: DebugActionSource {
+    func debugActionItems() -> [DebugActionItem] {
+        [
+            DebugActionItem("填入12345678") { [self] in
                 form.passwordField.text = "12345678"
                 form.passwordField2.text = "12345678"
                 form.submitButton.isEnabled = true
-            })
+            }
         ]
     }
-    #endif
 }
+#endif

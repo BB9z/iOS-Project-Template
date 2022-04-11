@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "B9Debug",
+        "repositoryURL": "https://gitee.com/b9swift/Debug",
+        "state": {
+          "branch": null,
+          "revision": "8a94cc57f7591a83edf824a79b13a0f23fc8f311",
+          "version": "1.0.1"
+        }
+      },
+      {
         "package": "B9MulticastDelegate",
         "repositoryURL": "https://gitee.com/b9swift/MulticastDelegate",
         "state": {

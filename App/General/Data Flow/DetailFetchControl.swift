@@ -78,6 +78,7 @@ class DetailFetchControl<T> {
 
     private func doRequest() {
         guard let item = item else { fatalError() }
+        // swiftlint:disable:next closure_body_length
         task = API.requestName(api) { c in
             c.parameters = parameters
             if let hasCB = hasEnoughDataToDisplay, !hasCB(item) {

@@ -3,6 +3,8 @@
 //  App
 //
 
+import Debugger
+
 /**
  API 接口请求层
  */
@@ -13,13 +15,15 @@ public class API: MBAPI {
     override public func onInit() {
         super.onInit()
 
-        if UserDefaults.standard._debugAPIAllowSSLDebug {
+        #if DEBUG
+        if Debugger.isDebugEnabled {
             // 允许外部 SSL 嗅探
             let policy = AFSecurityPolicy.default()
             policy.allowInvalidCertificates = true
             policy.validatesDomainName = false
             securityPolicy = policy
         }
+        #endif
 
         // 接口总体设置
         setupAPIDefine(withPlistPath: Bundle.main.path(forResource: "APIDefine", ofType: "plist")!)
