@@ -228,4 +228,3 @@ private protocol DeprecatedKeyWindow {
 }
 extension UIApplication: DeprecatedKeyWindow {
 }
-

@@ -11,6 +11,7 @@
 #if canImport(Alamofire)
 import Alamofire
 #endif
+import B9Condition
 
 /**
  详情获取控制器
@@ -23,7 +24,7 @@ class DetailFetchControl<T> {
 
     deinit {
         task?.cancel()
-        AppEnv().removeFlagsObserver(onlineObserver)
+        AppCondition().remove(observer: onlineObserver)
     }
 
     var item: T!
@@ -47,7 +48,7 @@ class DetailFetchControl<T> {
     /// 数据不充足且离线时展示
     var offlineTips = "未连接网络，联网后才能查看详情内容"
 
-    private var onlineObserver: Any?
+    private var onlineObserver: AnyObject?
     private weak var task: RFAPITask?
     private var api = ""
     private var parameters = [String: Any]()
@@ -61,7 +62,7 @@ class DetailFetchControl<T> {
         updater?(item)
         self.api = api
         self.parameters = parameters
-        if AppEnv().meetFlags(.online) {
+        if AppCondition().meets([.online]) {
             doRequest()
             return
         }
@@ -69,11 +70,11 @@ class DetailFetchControl<T> {
             AppHUD().showInfoStatus(offlineTips)
         }
         // 离线
-        onlineObserver = AppEnv().registerFlagsObserver(.online) { [weak self] in
+        onlineObserver = AppCondition().observe([.online], action: Action { [weak self] in
             guard let sf = self else { return }
-            AppEnv().removeFlagsObserver(sf.onlineObserver)
+            AppCondition().remove(observer: sf.onlineObserver)
             sf.doRequest()
-        }
+        })
     }
 
     private func doRequest() {

@@ -27,10 +27,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 编译环境，Debug、Alpha、Release
 FOUNDATION_EXPORT NSString *AppBuildConfiguration(void);
 
-@class MBEnvironment;
-/// 状态依赖
-FOUNDATION_EXPORT MBEnvironment *AppEnv(void);
-
 @class ApplicationDelegate;
 /// 快速访问 application delegate 实例
 FOUNDATION_EXPORT ApplicationDelegate *__nonnull AppDelegate(void);

@@ -3,6 +3,8 @@
 //  App
 //
 
+import B9Condition
+
 /**
  全局变量中心
 
@@ -17,7 +19,6 @@ class MBApp: NSObject {
 
     override init() {
         super.init()
-        MBEnvironment.setAsApplicationDefault(env)
         setupVersion()
     }
 
@@ -54,7 +55,7 @@ class MBApp: NSObject {
     // MARK: - 挂载的 manager
 
     /// 状态管理器
-    @objc private(set) var env = MBEnvironment()
+    let condition = Condition<Set<ApplicationCondition>>()
 
     /// 网络接口层
     @objc lazy var api: API = {

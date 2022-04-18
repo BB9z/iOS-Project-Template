@@ -3,6 +3,8 @@
 //  App
 //
 
+import B9Condition
+
 /**
  导航对 URL 跳转的支持
  */
@@ -18,7 +20,7 @@ extension NavigationController {
      其它跳转需要以 appScheme:// 起始
      */
     @objc class func jump(url: URL, context: Any?) {
-        if AppEnv().meetFlags(.naigationLoaded) {
+        if AppCondition().meets([.naigationLoaded]) {
             AppNavigationController()?.jump(url: url, context: context)
             return
         }
@@ -26,11 +28,11 @@ extension NavigationController {
         navigatorBlockedJumpURL = url
         navigatorBlockedJumpContext = context
         if hasWaiting { return }
-        AppEnv().waitFlags(.naigationLoaded, do: {
+        AppCondition().wait([.naigationLoaded], action: Action {
             if let url = navigatorBlockedJumpURL {
                 AppNavigationController()?.jump(url: url, context: navigatorBlockedJumpContext)
             }
-        }, timeout: 0)
+        })
     }
 
     /// 跳转路由具体实现

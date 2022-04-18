@@ -13,10 +13,6 @@ NSString *AppBuildConfiguration(void) {
     return @MBBuildConfiguration;
 }
 
-MBEnvironment *AppEnv() {
-    return [MBApp status].env;
-}
-
 ApplicationDelegate *__nonnull AppDelegate() {
     ApplicationDelegate *ad = (id)[UIApplication sharedApplication].delegate;
     RFAssert(ad, @"Shared app delegate nil?");
