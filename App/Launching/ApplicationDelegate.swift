@@ -3,6 +3,7 @@
 //  App
 //
 
+import B9Condition
 import Debugger
 
 /**
@@ -71,17 +72,17 @@ class ApplicationDelegate: MBApplicationDelegate {
     }
 
     override func applicationDidBecomeActive(_ application: UIApplication) {
-        if !AppEnv().meetFlags(.appHasEnterForegroundOnce) {
-            AppEnv().setFlagOn(.appHasEnterForegroundOnce)
+        if !AppCondition().meets([.appHasEnterForegroundOnce]) {
+            AppCondition().set(on: [.appHasEnterForegroundOnce])
             AppUserDefaultsShared().launchCount += 1
             AppUserDefaultsShared().launchCountCurrentVersion += 1
         }
-        AppEnv().setFlagOn(.appInForeground)
+        AppCondition().set(on: [.appInForeground])
         super.applicationDidBecomeActive(application)
     }
 
     override func applicationDidEnterBackground(_ application: UIApplication) {
-        AppEnv().setFlagOff(.appInForeground)
+        AppCondition().set(off: [.appInForeground])
         super.applicationDidEnterBackground(application)
     }
 

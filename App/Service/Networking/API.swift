@@ -3,6 +3,7 @@
 //  App
 //
 
+import B9Condition
 import Debugger
 
 /**
@@ -44,14 +45,12 @@ public class API: MBAPI {
             // 模拟器可能只在启动后更新一次
             switch status {
             case .reachableViaWiFi:
-                AppEnv().setFlagOn(.wifi)
-                AppEnv().setFlagOn(.online)
+                AppCondition().set(on: [.online, .wifi])
             case .reachableViaWWAN:
-                AppEnv().setFlagOff(.wifi)
-                AppEnv().setFlagOn(.online)
+                AppCondition().set(off: [.wifi])
+                AppCondition().set(on: [.online])
             default:
-                AppEnv().setFlagOff(.wifi)
-                AppEnv().setFlagOff(.online)
+                AppCondition().set(off: [.online, .wifi])
             }
         }
     }

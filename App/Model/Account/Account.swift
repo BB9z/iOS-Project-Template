@@ -3,6 +3,8 @@
 //  App
 //
 
+import B9Condition
+
 /**
  管理当前用户
  */
@@ -127,7 +129,7 @@ class Account: MBUser {
         guard let token = token else { fatalError() }
         debugPrint("当前用户 ID: \(uid), token: \(token)")
         AppAPI().defineManager.authorizationHeader[authHeaderKey] = "Bearer \(token)"
-        AppEnv().setFlagOn(.userHasLogged)
+        AppCondition().set(on: [ApplicationCondition.userHasLogged])
         if !hasPofileFetchedThisSession {
             updateInformation { c in
                 c.failureCallback = APISlientFailureHandler(true)
@@ -135,8 +137,7 @@ class Account: MBUser {
         }
     }
     override func onLogout() {
-        AppEnv().setFlagOff(.userHasLogged)
-        AppEnv().setFlagOff(.userInfoFetched)
+        AppCondition().set(off: [.userHasLogged, .userInfoFetched])
         AppAPI().defineManager.authorizationHeader.removeObject(forKey: authHeaderKey)
         profile?.synchronize()
     }
@@ -156,7 +157,7 @@ class Account: MBUser {
                 hasPofileFetchedThisSession = true
                 information = info
                 if isCurrent {
-                    AppEnv().setFlagOn(.userInfoFetched)
+                    AppCondition().set(off: [.userInfoFetched])
                 }
             }
         }
