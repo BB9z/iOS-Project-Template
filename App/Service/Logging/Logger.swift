@@ -40,17 +40,17 @@ private struct AppLogHandler: LogHandler {
         case .notice, .warning:
             print("\(timestamp()): ⚠️ \(message)")
         case .error:
-            NSLog("❌ \(message)")
+            NSLog("❌ %@", message.description)
         case .critical:
-            NSLog("❌ \(message)")
+            NSLog("❌ %@", message.description)
             ThrowExceptionToPause()
         }
         #else
         switch level {
         case .error:
-            NSLog("\(message)")
+            NSLog("%@", message.description)
         case .critical:
-            NSLog("\(message)")
+            NSLog("%@", message.description)
         default:
             break
         }
