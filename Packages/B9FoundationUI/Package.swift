@@ -3,13 +3,15 @@
 
 import PackageDescription
 
+let mainName = "B9FoundationUI"
+
 let package = Package(
-    name: "B9FoundationUI",
+    name: mainName,
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "B9FoundationUI",
-            targets: ["B9FoundationUI"])
+            name: mainName,
+            targets: [mainName])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -19,10 +21,12 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "B9FoundationUI",
+            name: mainName,
             dependencies: []),
         .testTarget(
-            name: "B9FoundationUITests",
-            dependencies: ["B9FoundationUI"])
+            name: mainName + "Tests",
+            dependencies: [
+                Target.Dependency(stringLiteral: mainName)
+            ])
     ]
 )
