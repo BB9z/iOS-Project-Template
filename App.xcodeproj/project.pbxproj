@@ -127,7 +127,6 @@
 		D58D1B00251C583300D1EF32 /* UICollectionView+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58D1AFF251C583300D1EF32 /* UICollectionView+App.swift */; };
 		D58D1B7C251CB8FB00D1EF32 /* Array+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588308820CACB32002030C4 /* Array+App.swift */; };
 		D58D1B7D251CB8FB00D1EF32 /* debug.m in Sources */ = {isa = PBXBuildFile; fileRef = D52EADE72043B983007219E0 /* debug.m */; };
-		D58D1B7F251CB8FB00D1EF32 /* EnvironmentFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55959CD20AB95640019D733 /* EnvironmentFlag.swift */; };
 		D58D1B80251CB8FB00D1EF32 /* MBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAEAA624D7E377005744C7 /* MBApp.swift */; };
 		D58D1B81251CB8FB00D1EF32 /* MBControlGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = D50693D719495D9E0002BFCC /* MBControlGroup.m */; };
 		D58D1B82251CB8FB00D1EF32 /* MBLayoutButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE52312043F7B9009148B3 /* MBLayoutButton.m */; };
@@ -190,7 +189,6 @@
 		D5D932F12515EDC300E1C4B6 /* CalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D932F02515EDC300E1C4B6 /* CalloutView.swift */; };
 		D5DAEA7624D7D12E005744C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D52EAB622043B6B3007219E0 /* Assets.xcassets */; };
 		D5DAEA7824D7D145005744C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C636A62047CC5900851CF4 /* LaunchScreen.storyboard */; };
-		D5DAEA7C24D7D361005744C7 /* EnvironmentFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55959CD20AB95640019D733 /* EnvironmentFlag.swift */; };
 		D5DAEA8124D7D3E5005744C7 /* AccountEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D5C1124387C4300D5F3A8 /* AccountEntities.swift */; };
 		D5DAEA8324D7D40E005744C7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAEA8224D7D406005744C7 /* NavigationController.swift */; };
 		D5DAEA8424D7D436005744C7 /* NSPointArray+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588308C20CACB33002030C4 /* NSPointArray+App.swift */; };
@@ -212,6 +210,8 @@
 		D5DB4C22241E39EA00832A0A /* UIKit+DynamicType.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DB4C21241E39EA00832A0A /* UIKit+DynamicType.m */; };
 		D5DC60C124CA84BC00FBB147 /* ApplicationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55959CD20AB95640019D733 /* ApplicationCondition.swift */; };
 		D5E2DBFB24CEE54400CEB26D /* APIResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2DBFA24CEE54300CEB26D /* APIResponseSerializer.swift */; };
+		D5E5B55228137D3E00FDB0BA /* B9Debug in Frameworks */ = {isa = PBXBuildFile; productRef = D5E5B55128137D3E00FDB0BA /* B9Debug */; };
+		D5E5B55428137D4F00FDB0BA /* B9Debug in Frameworks */ = {isa = PBXBuildFile; productRef = D5E5B55328137D4F00FDB0BA /* B9Debug */; };
 		D5E6336D264BC77900C4EBE6 /* MBCollectionViewColumnLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E6336C264BC77900C4EBE6 /* MBCollectionViewColumnLayout.swift */; };
 		D5E80580226F403D00901C41 /* MBBottomLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E8057F226F403D00901C41 /* MBBottomLayoutView.m */; };
 		D5EE51192043DAA2009148B3 /* NSArray+App.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE50E42043DAA1009148B3 /* NSArray+App.m */; };
@@ -625,6 +625,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5E5B55428137D4F00FDB0BA /* B9Debug in Frameworks */,
 				BAC657E0F3A1916D866A4244 /* libPods-Demo-Navigation.a in Frameworks */,
 				D55A935325BB985E00C16834 /* Logging in Frameworks */,
 			);
@@ -634,6 +635,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5E5B55228137D3E00FDB0BA /* B9Debug in Frameworks */,
 				8E40F15907BB243607FE34C2 /* libPods-Demo-GuestMode.a in Frameworks */,
 				D55A935125BB985400C16834 /* Logging in Frameworks */,
 			);
@@ -1661,6 +1663,7 @@
 			name = Navigation;
 			packageProductDependencies = (
 				D55A935225BB985E00C16834 /* Logging */,
+				D5E5B55328137D4F00FDB0BA /* B9Debug */,
 			);
 			productName = GuestMode;
 			productReference = D58D1B98251CB8FB00D1EF32 /* Navigation.app */;
@@ -1683,6 +1686,7 @@
 			name = GuestMode;
 			packageProductDependencies = (
 				D55A935025BB985400C16834 /* Logging */,
+				D5E5B55128137D3E00FDB0BA /* B9Debug */,
 			);
 			productName = GuestMode;
 			productReference = D5DAEA6124D7D0F8005744C7 /* GuestMode.app */;
@@ -2109,7 +2113,6 @@
 				D5031BAA25BFF9FF00C2849E /* AssociatedObject.swift in Sources */,
 				D58D1B7D251CB8FB00D1EF32 /* debug.m in Sources */,
 				D58D1BB4251CB95200D1EF32 /* DemoVCs.swift in Sources */,
-				D58D1B7F251CB8FB00D1EF32 /* EnvironmentFlag.swift in Sources */,
 				D55A934725BB978100C16834 /* Logger.swift in Sources */,
 				D58D1B80251CB8FB00D1EF32 /* MBApp.swift in Sources */,
 				D58D1B81251CB8FB00D1EF32 /* MBControlGroup.m in Sources */,
@@ -2139,7 +2142,6 @@
 				D5031BA525BFF9FF00C2849E /* AssociatedObject.swift in Sources */,
 				D5DAEA9324D7D8A6005744C7 /* debug.m in Sources */,
 				D5DAEACA24D8214E005744C7 /* DemoVCs.swift in Sources */,
-				D5DAEA7C24D7D361005744C7 /* EnvironmentFlag.swift in Sources */,
 				D55A934625BB978100C16834 /* Logger.swift in Sources */,
 				D5DAEAA724D7E377005744C7 /* MBApp.swift in Sources */,
 				D5DAEA8E24D7D698005744C7 /* MBControlGroup.m in Sources */,
@@ -2757,14 +2759,6 @@
 			package = D527917B27B557A800522240 /* XCRemoteSwiftPackageReference "MulticastDelegate" */;
 			productName = B9MulticastDelegate;
 		};
-		D55A935025BB985400C16834 /* Logging */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Logging;
-		};
-		D55A935225BB985E00C16834 /* Logging */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Logging;
-		};
 		D53BB5FB27FC468300F60168 /* B9FoundationUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = B9FoundationUI;
@@ -2772,6 +2766,14 @@
 		D53BB5FF27FC4EE600F60168 /* Debugger */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Debugger;
+		};
+		D55A935025BB985400C16834 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Logging;
+		};
+		D55A935225BB985E00C16834 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Logging;
 		};
 		D57FBB6A279BB727003A0533 /* B9AssociatedObject */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -2791,6 +2793,16 @@
 		D5D1859B280D7331009B5476 /* B9Condition */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = B9Condition;
+		};
+		D5E5B55128137D3E00FDB0BA /* B9Debug */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5F036B327FB479800C60A72 /* XCRemoteSwiftPackageReference "Debug" */;
+			productName = B9Debug;
+		};
+		D5E5B55328137D4F00FDB0BA /* B9Debug */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5F036B327FB479800C60A72 /* XCRemoteSwiftPackageReference "Debug" */;
+			productName = B9Debug;
 		};
 		D5F036B427FB479800C60A72 /* B9Debug */ = {
 			isa = XCSwiftPackageProductDependency;
