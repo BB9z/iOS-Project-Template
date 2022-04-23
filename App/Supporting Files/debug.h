@@ -27,9 +27,6 @@
  */
 FOUNDATION_EXPORT void DebugLog(BOOL fatal, NSString *_Nullable recordID, NSString *_Nonnull format, ...) NS_FORMAT_FUNCTION(3, 4);
 
-/// 抛出一个 objc 异常以暂停，用以在调试时提示需要注意的事
-FOUNDATION_EXPORT void ThrowExceptionToPause(void);
-
 /**
  断言 obj 是 aClass
  

@@ -7,6 +7,8 @@
 // https://github.com/apple/swift-log
 import Logging
 
+import B9Debug
+
 /// Logger 单例
 func AppLog() -> Logger {  // swiftlint:disable:this identifier_name
     AppLogHandler.shared
@@ -38,17 +40,17 @@ private struct AppLogHandler: LogHandler {
         case .notice, .warning:
             print("\(timestamp()): ⚠️ \(message)")
         case .error:
-            NSLog("❌ \(message)")
+            NSLog("❌ %@", message.description)
         case .critical:
-            NSLog("❌ \(message)")
+            NSLog("❌ %@", message.description)
             ThrowExceptionToPause()
         }
         #else
         switch level {
         case .error:
-            NSLog("\(message)")
+            NSLog("%@", message.description)
         case .critical:
-            NSLog("\(message)")
+            NSLog("%@", message.description)
         default:
             break
         }

@@ -15,9 +15,6 @@ PODS:
     - RFKit/Category/NSJSONSerialization
     - RFKit/Category/NSLayoutConstraint
     - RFKit/Category/NSURL
-  - MBAppKit/Environment (0.13.0):
-    - RFKit/Category/NSArray
-    - RFKit/Runtime
   - MBAppKit/Input (0.13.0):
     - MBAppKit/Core
     - RFDelegateChain/UITextFieldDelegate
@@ -251,7 +248,6 @@ PODS:
 
 DEPENDENCIES:
   - MBAppKit/Button (from `https://github.com/RFUI/MBAppKit.git`)
-  - MBAppKit/Environment (from `https://github.com/RFUI/MBAppKit.git`)
   - MBAppKit/Input (from `https://github.com/RFUI/MBAppKit.git`)
   - MBAppKit/Navigation (from `https://github.com/RFUI/MBAppKit.git`)
   - MBAppKit/RootViewController (from `https://github.com/RFUI/MBAppKit.git`)
@@ -321,6 +317,6 @@ SPEC CHECKSUMS:
   SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 72fbc16ce0be4093f62e7224c219a6c8432ba23c
+PODFILE CHECKSUM: 854c4c3913f12395824757b4fd82aba7a173fad1
 
 COCOAPODS: 1.11.1

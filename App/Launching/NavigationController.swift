@@ -3,6 +3,8 @@
 //  App
 //
 
+import B9Condition
+
 /**
  应用主导航控制器
  */
@@ -31,7 +33,7 @@ class NavigationController: MBNavigationController, StoryboardCreation, UIApplic
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        AppEnv().setFlagOn(.naigationLoaded)
+        AppCondition().set(off: [.naigationLoaded])
     }
 
     func onLogout() {

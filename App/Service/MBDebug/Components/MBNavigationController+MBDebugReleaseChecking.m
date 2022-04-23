@@ -1,7 +1,6 @@
 
 #if RFDEBUG
 #import "MBNavigationController+MBDebugReleaseChecking.h"
-#import "NSUserDefaults+MBDebug.h"
 #import <RFAlpha/RFSwizzle.h>
 #import <MBAppKit/MBAppKit.h>
 #import "debug.h"
@@ -14,10 +13,9 @@
 
 - (void)_MBDebug_didRemoveViewControllers:(nonnull NSArray<UIViewController *> *)vcs {
     [self _MBDebug_didRemoveViewControllers:vcs];
-    
-    if (NSUserDefaults.standardUserDefaults._debugEnabled) {
-        [self debugCheckReleaseWithViewControllers:vcs];
-    }
+#if DEBUG
+    [self debugCheckReleaseWithViewControllers:vcs];
+#endif
 }
 
 - (void)debugCheckReleaseWithViewControllers:(nonnull NSArray<UIViewController *> *)vcs {

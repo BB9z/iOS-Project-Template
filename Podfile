@@ -53,7 +53,6 @@ target 'App' do
     pod 'RFSegue', :subspecs => ['Async']
     pod 'MBAppKit', :git => 'https://github.com/RFUI/MBAppKit.git', :subspecs => [
         'Button',
-        'Environment',
         'Input',
         'Navigation',
         'RootViewController',

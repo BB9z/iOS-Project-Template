@@ -1,3 +1,5 @@
+import B9Condition
+
 /**
  首页
  */
@@ -11,6 +13,6 @@ class HomeViewController: UIViewController, StoryboardCreation {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // 通知主页已加载完毕，启动闪屏会等待这个信号，见 RootViewController
-        AppEnv().setFlagOn(.homeLoaded)
+        AppCondition().set(on: [.homeLoaded])
     }
 }

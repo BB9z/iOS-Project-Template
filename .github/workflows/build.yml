@@ -2,8 +2,12 @@ name: CI
 
 on:
   push:
-    branches-ignore:
-      - demo
+    branches:
+      - main
+      - master
+      - develop
+      - release
+      - hotfix/*
   pull_request:
     branches-ignore:
       - demo

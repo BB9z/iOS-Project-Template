@@ -19,7 +19,7 @@ private extension UIButton {
         }
         set {
             guard let label = titleLabel else {
-                ThrowExceptionToPause()
+                assert(false)
                 return
             }
             label.minimumScaleFactor = newValue

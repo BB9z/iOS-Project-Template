@@ -3,16 +3,21 @@
 //  App
 //
 
+import HasItem
+
 /**
  帖子列表
  */
 class TopicListDisplayer: MBTableListDisplayer, StoryboardCreation {
     static var storyboardID: StoryboardID { .topic }
+}
 
-    #if DEBUG
-    @objc func debugCommands() -> [UIBarButtonItem] {
+#if DEBUG
+import Debugger
+extension TopicListDisplayer: DebugActionSource {
+    func debugActionItems() -> [DebugActionItem] {
         [
-            DebugMenuItem2("测试数据") { [self] in  // swiftlint:disable:this closure_body_length
+            DebugActionItem("测试数据") { [self] in  // swiftlint:disable:this closure_body_length
                 let user1 = UserEntity()
                 user1.uid = "UAnOiIAvB1keXOBFfvUezgIQ"
                 user1.name = "演示用户"
@@ -43,8 +48,8 @@ class TopicListDisplayer: MBTableListDisplayer, StoryboardCreation {
             }
         ]
     }
-    #endif
 }
+#endif
 
 /// 帖子列表 cell
 class TopicListCell: UITableViewCell,

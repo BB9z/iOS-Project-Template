@@ -3,6 +3,9 @@
 //  App
 //
 
+import B9Condition
+import Debugger
+
 /**
  注意是基于 MBApplicationDelegate 的，大部分 UIApplicationDelegate 方法需要调用 super
 
@@ -27,13 +30,28 @@ class ApplicationDelegate: MBApplicationDelegate {
 //        MBEnvironment.registerWorkers()
         RFKeyboard.autoDisimssKeyboardWhenTouch = true
         setupUIAppearance()
-        dispatch_after_seconds(0) {
-            MBDebugWindowButton.installToKeyWindow()
-        }
+        dispatch_after_seconds(0, setupDebugger)
         return true
     }
 
-    func setupUIAppearance() {
+    private func setupDebugger() {
+        Debugger.installTriggerButton()
+        Debugger.globalActionItems = [
+            DebugActionItem("FLEX") {
+                MBFlexInterface.showFlexExplorer()
+            }
+        ]
+        Debugger.urlJumpHandler = {
+            NavigationController.jump(url: $0, context: nil)
+        }
+//        Debugger.vauleInspector = { value in
+//            if let vc = MBFlexInterface.explorerViewController(for: value) {
+//                AppNavigationController()?.pushViewController(vc, animated: true)
+//            }
+//        }
+    }
+
+    private func setupUIAppearance() {
         // 统一全局色，storyboard 的全局色只对部分 UI 生效，比如无法对 UIAlertController 应用
         window.tintColor = UIColor(named: "primary")!
 
@@ -54,17 +72,17 @@ class ApplicationDelegate: MBApplicationDelegate {
     }
 
     override func applicationDidBecomeActive(_ application: UIApplication) {
-        if !AppEnv().meetFlags(.appHasEnterForegroundOnce) {
-            AppEnv().setFlagOn(.appHasEnterForegroundOnce)
+        if !AppCondition().meets([.appHasEnterForegroundOnce]) {
+            AppCondition().set(on: [.appHasEnterForegroundOnce])
             AppUserDefaultsShared().launchCount += 1
             AppUserDefaultsShared().launchCountCurrentVersion += 1
         }
-        AppEnv().setFlagOn(.appInForeground)
+        AppCondition().set(on: [.appInForeground])
         super.applicationDidBecomeActive(application)
     }
 
     override func applicationDidEnterBackground(_ application: UIApplication) {
-        AppEnv().setFlagOff(.appInForeground)
+        AppCondition().set(off: [.appInForeground])
         super.applicationDidEnterBackground(application)
     }
 
