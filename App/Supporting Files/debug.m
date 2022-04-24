@@ -14,10 +14,6 @@ void DebugLog(BOOL fatal, NSString *_Nullable recordID, NSString *_Nonnull forma
         }
         @catch (NSException *exception) { }
     }
-    if (recordID
-        && ![@MBBuildConfiguration isEqualToString:@"Debug"]) {
-        // 🔰 记录错误
-    }
 }
 
 void DebugLogSwift(BOOL fatal, NSString *_Nullable recordID, NSString *__nonnull message) {

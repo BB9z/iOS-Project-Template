@@ -144,6 +144,7 @@
 		D5BF664B24BC1EEF008BC122 /* TopicListVCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BF664A24BC1EEF008BC122 /* TopicListVCs.swift */; };
 		D5BF664D24BC81D7008BC122 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BF664C24BC81D7008BC122 /* CommentEntity.swift */; };
 		D5BF664F24BC8BE8008BC122 /* UserAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BF664E24BC8BE8008BC122 /* UserAvatarView.swift */; };
+		D5C36B8E2815173300C09A26 /* ShortCuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C36B8D2815173300C09A26 /* ShortCuts.swift */; };
 		D5C3CBEF217ED20F0097CCD9 /* Geometry+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3CBEE217ED20F0097CCD9 /* Geometry+App.swift */; };
 		D5C3CBF3217EEEA20097CCD9 /* MBBadgeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C3CBF2217EEEA20097CCD9 /* MBBadgeLabel.m */; };
 		D5C3CBF6217EEEDA0097CCD9 /* UITextView+ContainerInset.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C3CBF4217EEEDA0097CCD9 /* UITextView+ContainerInset.m */; };
@@ -414,6 +415,7 @@
 		D5BF664A24BC1EEF008BC122 /* TopicListVCs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListVCs.swift; sourceTree = "<group>"; };
 		D5BF664C24BC81D7008BC122 /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
 		D5BF664E24BC8BE8008BC122 /* UserAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarView.swift; sourceTree = "<group>"; };
+		D5C36B8D2815173300C09A26 /* ShortCuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortCuts.swift; sourceTree = "<group>"; };
 		D5C3CBEE217ED20F0097CCD9 /* Geometry+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Geometry+App.swift"; sourceTree = "<group>"; };
 		D5C3CBF1217EEEA20097CCD9 /* MBBadgeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBBadgeLabel.h; sourceTree = "<group>"; };
 		D5C3CBF2217EEEA20097CCD9 /* MBBadgeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBBadgeLabel.m; sourceTree = "<group>"; };
@@ -882,6 +884,7 @@
 				D52EADEC2043BA3D007219E0 /* README.md */,
 				D52EADED2043BA3D007219E0 /* ShortCuts.h */,
 				D52EADEE2043BA3D007219E0 /* ShortCuts.m */,
+				D5C36B8D2815173300C09A26 /* ShortCuts.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -1730,6 +1733,7 @@
 				D5B1906D2404AFDC0076CD61 /* SearchTextField.swift in Sources */,
 				D501845C20F881B7009481D4 /* Shadow.swift in Sources */,
 				D52EADF02043BA3D007219E0 /* ShortCuts.m in Sources */,
+				D5C36B8E2815173300C09A26 /* ShortCuts.swift in Sources */,
 				D5031A5425BEC50D00C2849E /* StoryboardCreation.swift in Sources */,
 				D5F9F480208D921200427201 /* String+App.swift in Sources */,
 				D5B884B6250EEC53001CDBCF /* TagView.swift in Sources */,
@@ -1837,7 +1841,6 @@
 					"DEBUG=1",
 					"RFDEBUG=1",
 					"RFDebugLevel=4",
-					"MBBuildConfiguration=\\\"Debug\\\"",
 					"DOUT_FALG_TRACE=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
@@ -1902,7 +1905,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"RFDEBUG=0",
-					"MBBuildConfiguration=\\\"Release\\\"",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -2054,7 +2056,6 @@
 					"$(inherited)",
 					"RFDEBUG=1",
 					"RFDebugLevel=3",
-					"MBBuildConfiguration=\\\"Alpha\\\"",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

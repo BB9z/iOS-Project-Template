@@ -24,9 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - 应用配置/环境
 
-/// 编译环境，Debug、Alpha、Release
-FOUNDATION_EXPORT NSString *AppBuildConfiguration(void);
-
 @class ApplicationDelegate;
 /// 快速访问 application delegate 实例
 FOUNDATION_EXPORT ApplicationDelegate *__nonnull AppDelegate(void);
