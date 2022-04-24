@@ -9,10 +9,10 @@
  不在这写创建逻辑，会导致难于维护
  */
 
-ApplicationDelegate *__nonnull AppDelegate() {
-    ApplicationDelegate *ad = (id)[UIApplication sharedApplication].delegate;
-    RFAssert(ad, @"Shared app delegate nil?");
-    return ad;
+// 先保留，objc 组件有引用
+id AppDelegate(void);  // 让编译器安静
+id AppDelegate(void) {
+    return [UIApplication sharedApplication].delegate;
 }
 
 RootViewController *_Nullable AppRootViewController() {
