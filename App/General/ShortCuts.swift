@@ -47,3 +47,8 @@ func AppDelegate() -> ApplicationDelegate {
 }
 // 直存一个变量，后续访问就不怕非主线程访问 delegate 了
 private let appDelegate = UIApplication.shared.delegate as! ApplicationDelegate
+
+/// 全局根视图
+func AppRootViewController() -> RootViewController? {
+    MBApp.global.rootViewController
+}

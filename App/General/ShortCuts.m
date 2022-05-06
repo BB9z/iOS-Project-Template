@@ -15,10 +15,6 @@ id AppDelegate(void) {
     return [UIApplication sharedApplication].delegate;
 }
 
-RootViewController *_Nullable AppRootViewController() {
-    return [MBApp status].rootViewController;
-}
-
 NavigationController *__nullable AppNavigationController() {
     return [MBApp status].globalNavigationController;
 }

@@ -24,10 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - 应用配置/环境
 
-@class RootViewController;
-/// 全局根视图
-FOUNDATION_EXPORT RootViewController *_Nullable AppRootViewController(void);
-
 @class NavigationController;
 /// 全局导航
 FOUNDATION_EXPORT NavigationController *__nullable AppNavigationController(void);
