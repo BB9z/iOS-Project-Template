@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "B9Action",
+        "repositoryURL": "https://gitee.com/b9swift/Action.git",
+        "state": {
+          "branch": null,
+          "revision": "fb5d1d155f1a7d420785423f8c81875c406c23d6",
+          "version": "1.0.0"
+        }
+      },
+      {
         "package": "B9AssociatedObject",
         "repositoryURL": "https://gitee.com/b9swift/AssociatedObject",
         "state": {
@@ -33,8 +42,8 @@
         "repositoryURL": "https://gitee.com/b9swift/Pulse",
         "state": {
           "branch": null,
-          "revision": "b70373536161ce160f15f9180d6b7c1339c3ed09",
-          "version": "0.20.0"
+          "revision": "5064f602186a91c15eb3c36fd31659ab5084d0a5",
+          "version": "1.0.3"
         }
       },
       {

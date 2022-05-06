@@ -2196,7 +2196,7 @@
 			repositoryURL = "https://gitee.com/b9swift/Pulse";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.20.0;
+				minimumVersion = 1.0.0;
 			};
 		};
 		D5F036B327FB479800C60A72 /* XCRemoteSwiftPackageReference "Debug" */ = {
