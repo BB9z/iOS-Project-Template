@@ -103,14 +103,6 @@ AccountEntity *AppUserInformation() {
 
 #pragma mark -
 
-NSUserDefaults *AppUserDefaultsShared() {
-    return [NSUserDefaults standardUserDefaults];
-}
-
-NSAccountDefaults *_Nullable AppUserDefaultsPrivate() {
-    return AppUser().profile;
-}
-
 BOOL AppActive() {
     return [UIApplication sharedApplication].applicationState == UIApplicationStateActive;
 }

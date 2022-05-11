@@ -15,6 +15,8 @@
 
  */
 
+import Foundation
+
 // swiftlint:disable force_cast identifier_name
 
 /*
@@ -51,4 +53,14 @@ private let appDelegate = UIApplication.shared.delegate as! ApplicationDelegate
 /// 全局根视图
 func AppRootViewController() -> RootViewController? {
     MBApp.global.rootViewController
+}
+
+/// 应用级别的配置项
+func AppUserDefaultsShared() -> UserDefaults {
+    UserDefaults.standard
+}
+
+/// 当前用户的配置项
+func AppUserDefaultsPrivate() -> NSAccountDefaults? {
+    AppUser()?.profile
 }

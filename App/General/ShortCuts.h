@@ -73,15 +73,6 @@ FOUNDATION_EXPORT NSNumber *AppUserIDNumber(void);
 @class AccountEntity;
 FOUNDATION_EXPORT AccountEntity *_Nullable AppUserInformation(void);
 
-#pragma mark - 存储
-
-/// 应用级别的配置项
-FOUNDATION_EXPORT NSUserDefaults *AppUserDefaultsShared(void);
-
-@class NSAccountDefaults;
-/// 当前用户的配置项
-FOUNDATION_EXPORT NSAccountDefaults *_Nullable AppUserDefaultsPrivate(void);
-
 #pragma mark - 特殊标记
 
 /// 应用已进入前台，但不包括应用启动和前后台切换过程中
