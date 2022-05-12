@@ -1,4 +1,4 @@
-name: Demos
+name: "Demos - Guest Mode"
 
 on:
   push:
