@@ -62,12 +62,4 @@ FOUNDATION_EXPORT MBID AppUserID(void);
 FOUNDATION_EXPORT NSNumber *AppUserIDNumber(void);
 #endif
 
-#pragma mark - 特殊标记
-
-/// 应用已进入前台，但不包括应用启动和前后台切换过程中
-FOUNDATION_EXPORT BOOL AppActive(void);
-
-/// 应用处于后台
-FOUNDATION_EXPORT BOOL AppInBackground(void);
-
 NS_ASSUME_NONNULL_END

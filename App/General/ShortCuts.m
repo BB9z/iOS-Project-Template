@@ -88,13 +88,3 @@ NSNumber *AppUserIDNumber() {
     return _UserIDNumberCache;
 }
 #endif
-
-#pragma mark -
-
-BOOL AppActive() {
-    return [UIApplication sharedApplication].applicationState == UIApplicationStateActive;
-}
-
-BOOL AppInBackground() {
-    return [UIApplication sharedApplication].applicationState == UIApplicationStateBackground;
-}

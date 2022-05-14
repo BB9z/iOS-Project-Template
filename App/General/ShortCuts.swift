@@ -26,6 +26,12 @@ import Foundation
  不在这写创建逻辑，会导致难于维护、破坏模块间依赖关系
  */
 
+/// 应用状态，已进入前台，但不包括应用启动和前后台切换过程中
+func AppActive() -> Bool {
+    UIApplication.shared.applicationState == .active
+}
+
+/// 全局接口请求器
 func AppAPI() -> API {
     MBApp.global.api
 }
@@ -47,6 +53,11 @@ func AppDelegate() -> ApplicationDelegate {
 }
 // 直存一个变量，后续访问就不怕非主线程访问 delegate 了
 private let appDelegate = UIApplication.shared.delegate as! ApplicationDelegate
+
+/// 应用状态，是否处于后台
+func AppInBackground() -> Bool {
+    UIApplication.shared.applicationState == .background
+}
 
 /// 全局根视图
 func AppRootViewController() -> RootViewController? {
