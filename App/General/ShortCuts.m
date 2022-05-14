@@ -62,10 +62,6 @@ API *AppAPI(void) {
     return MBApp.status.api;
 }
 
-//BadgeManager *__nonnull AppBadge(void) {
-//    return BadgeManager.defaultManager;
-//}
-
 MessageManager *__nonnull AppHUD(void) {
     return MBApp.status.hud;
 }

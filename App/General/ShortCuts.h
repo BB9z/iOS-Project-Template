@@ -47,10 +47,6 @@ FOUNDATION_EXPORT id __nullable AppCurrentViewControllerItem(Class __nullable ex
 /// 应用接口
 FOUNDATION_EXPORT API *AppAPI(void);
 
-//@class BadgeManager;
-/// 全局红点管理器
-//FOUNDATION_EXPORT BadgeManager *__nonnull AppBadge(void);
-
 @class MessageManager;
 FOUNDATION_EXPORT MessageManager *__nonnull AppHUD(void);
 
