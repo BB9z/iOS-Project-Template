@@ -1,6 +1,6 @@
 
 #import "MBSearchTextField.h"
-#import "ShortCuts.h"
+#import "Common.h"
 #import <RFAlpha/RFTimer.h>
 #import <RFDelegateChain/UITextFiledDelegateChain.h>
 #import <MBAppKit/MBAPI.h>
@@ -44,7 +44,7 @@ RFInitializingRootForUIView
     }
     self.autoSearchTimer.suspended = YES;
     if (self.APIName) {
-        [(MBAPI *)AppAPI() cancelOperationWithIdentifier:self.APIName];
+        [MBApp.status.api cancelOperationWithIdentifier:self.APIName];
     }
     self.autoSearchTimer.suspended = NO;
 }

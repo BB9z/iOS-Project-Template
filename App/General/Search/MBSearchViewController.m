@@ -1,6 +1,6 @@
 
 #import "MBSearchViewController.h"
-#import "ShortCuts.h"
+#import "Common.h"
 #import <RFAlpha/RFAnimationTransitioning.h>
 #import <RFKeyboard/RFKeyboard.h>
 #import <RFKit/NSLayoutConstraint+RFKit.h>
@@ -51,7 +51,7 @@
     }
     sf.text = nil;
     if (sf.isSearching && sf.APIName) {
-        [(MBAPI *)AppAPI() cancelOperationWithIdentifier:sf.APIName];
+        [MBApp.status.api cancelOperationWithIdentifier:sf.APIName];
         sf.isSearching = NO;
     }
     if (!skipPop) {

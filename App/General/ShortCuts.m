@@ -58,10 +58,6 @@ id __nullable AppCurrentViewControllerItem(Class __nullable exceptClass) {
     return nil;
 }
 
-API *AppAPI(void) {
-    return MBApp.status.api;
-}
-
 MessageManager *__nonnull AppHUD(void) {
     return MBApp.status.hud;
 }

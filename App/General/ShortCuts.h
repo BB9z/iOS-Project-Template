@@ -43,10 +43,6 @@ FOUNDATION_EXPORT id __nullable AppCurrentViewControllerItem(Class __nullable ex
 /// 后台 worker 队列，注意后台的意思是 perform 是在后台线程执行的
 //FOUNDATION_EXPORT MBWorkerQueue *AppBackgroundWorkerQueue(void);
 
-@class API;
-/// 应用接口
-FOUNDATION_EXPORT API *AppAPI(void);
-
 @class MessageManager;
 FOUNDATION_EXPORT MessageManager *__nonnull AppHUD(void);
 

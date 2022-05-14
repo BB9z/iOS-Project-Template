@@ -26,11 +26,9 @@ import Foundation
  不在这写创建逻辑，会导致难于维护、破坏模块间依赖关系
  */
 
-/*
-func AppBadge() -> BadgeManager {
-    BadgeManager.default()
+func AppAPI() -> API {
+    MBApp.global.api
 }
- */
 
 /// 编译环境，Debug、Alpha、Release
 func AppBuildConfiguration() -> String {
