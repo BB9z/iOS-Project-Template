@@ -1,3 +1,9 @@
+
+// swiftlint:disable:next identifier_name
+func AppBadge() -> BadgeManager {
+    BadgeManager.defaultManager
+}
+
 /**
  应用红点管理器
  */

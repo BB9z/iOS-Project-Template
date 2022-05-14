@@ -1,6 +1,6 @@
 
 #import "PushManager.h"
-#import "ShortCuts.h"
+#import "Common.h"
 #import <MBAppKit/MBApplicationDelegate.h>
 #import <GTSDK/GeTuiSdk.h>
 #import <RFKit/NSJSONSerialization+RFKit.h>
@@ -50,7 +50,7 @@ RFInitializingRootForNSObject;
         }
     }
 
-    [(MBApplicationDelegate *)AppDelegate() addAppEventListener:self];
+    [AppDelegate() addAppEventListener:self];
     [self registerForRemoteNotificationsIfNeeded];
 
     NSDictionary *lq = self.launchOptions;
