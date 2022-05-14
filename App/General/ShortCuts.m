@@ -97,10 +97,6 @@ NSNumber *AppUserIDNumber() {
 }
 #endif
 
-AccountEntity *AppUserInformation() {
-    return AppUser().information;
-}
-
 #pragma mark -
 
 BOOL AppActive() {

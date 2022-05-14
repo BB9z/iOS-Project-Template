@@ -60,7 +60,12 @@ func AppUserDefaultsShared() -> UserDefaults {
     UserDefaults.standard
 }
 
-/// 当前用户的配置项
+/// 当前登录用户的配置项
 func AppUserDefaultsPrivate() -> NSAccountDefaults? {
     AppUser()?.profile
+}
+
+/// 当前登录用户的账户信息
+func AppUserInformation() -> AccountEntity? {
+    AppUser()?.information
 }

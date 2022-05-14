@@ -70,9 +70,6 @@ FOUNDATION_EXPORT MBID AppUserID(void);
 FOUNDATION_EXPORT NSNumber *AppUserIDNumber(void);
 #endif
 
-@class AccountEntity;
-FOUNDATION_EXPORT AccountEntity *_Nullable AppUserInformation(void);
-
 #pragma mark - 特殊标记
 
 /// 应用已进入前台，但不包括应用启动和前后台切换过程中
