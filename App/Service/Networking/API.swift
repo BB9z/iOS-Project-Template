@@ -95,7 +95,7 @@ public class API: MBAPI {
             }
         } // END: 业务错误处理
 
-        //- 最终处理，报告错误
+        // - 最终处理，报告错误
         if let cb = failure {
             cb(task, nsError)
         } else {

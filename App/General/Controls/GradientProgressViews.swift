@@ -113,7 +113,7 @@ class GradientBarProgressView: UIView {
         }
         privateProgress = validProgress
 
-        //动画时长
+        // 动画时长
         var duration = animated ? animationDuration : 0
         if duration < 0 {
             duration = 0
@@ -131,7 +131,7 @@ class GradientBarProgressView: UIView {
         CATransaction.setCompletionBlock {
             displayLink?.invalidate()
             if duration == 0 {
-                //更新回调
+                // 更新回调
                 self.progressUpdating?(validProgress, self.maskLayer.frame)
             } else {
                 if nil != self.maskLayer.presentation() {
