@@ -19,7 +19,7 @@ func AppDatabase() -> DBManager {  // swiftlint:disable:this identifier_name
  https://github.com/groue/GRDB.swift/blob/master/Documentation/GoodPracticesForDesigningRecordTypes.md
  */
 final class DBManager {
-    static var shared = DBManager()
+    static let shared = DBManager()
 
     let dbQueue: DatabaseQueue
 

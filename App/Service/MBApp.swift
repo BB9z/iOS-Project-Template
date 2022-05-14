@@ -3,8 +3,6 @@
 //  App
 //
 
-import B9Condition
-
 /**
  全局变量中心
 
@@ -12,7 +10,7 @@ import B9Condition
  */
 @objc
 class MBApp: NSObject {
-    static var global = MBApp()
+    static let global = MBApp()
     @objc class func status() -> MBApp {
         return Self.global
     }
@@ -54,9 +52,6 @@ class MBApp: NSObject {
 
     // MARK: - 挂载的 manager
 
-    /// 状态管理器
-    let condition = Condition<Set<ApplicationCondition>>()
-
     /// 网络接口层
     @objc lazy var api: API = {
         let instance = API()
@@ -73,9 +68,6 @@ class MBApp: NSObject {
 
     /// 全局导航
     @objc var globalNavigationController: NavigationController?
-
-    /// 数据库
-//    lazy var database = AppDatabase()
 
 //    @objc lazy var workerQueue = MBWorkerQueue()
 //    @objc lazy var backgroundWorkerQueue: MBWorkerQueue = {

@@ -3,12 +3,14 @@
 //  App
 //
 
+#if canImport(B9Condition)
 import B9Condition
 
 // swiftlint:disable:next identifier_name
 func AppCondition() -> Condition<Set<ApplicationCondition>> {
-    MBApp.global.condition
+    globalCondition
 }
+private let globalCondition = Condition<Set<ApplicationCondition>>()
 
 /**
 关于状态
@@ -46,3 +48,5 @@ enum ApplicationCondition {
     /// 主页已载入
     case homeLoaded
 }
+
+#endif
