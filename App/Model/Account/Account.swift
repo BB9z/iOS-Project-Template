@@ -75,7 +75,7 @@ class Account: MBUser {
 
     var token: String?
 
-    var hasPofileFetchedThisSession: Bool = false
+    var hasPofileFetchedThisSession = false
 
     // MARK: - 挂载
 

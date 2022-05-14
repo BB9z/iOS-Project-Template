@@ -35,7 +35,7 @@ class TopicEntity: MBModel,
     }
 
     var likeCount: Int = 0
-    private(set) var isLiked: Bool = false
+    private(set) var isLiked = false
 //    "last_comment": CommentEntity
 
     private weak var likeTask: RFAPITask?
