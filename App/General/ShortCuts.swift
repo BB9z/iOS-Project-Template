@@ -70,7 +70,7 @@ func AppUserDefaultsShared() -> UserDefaults {
 }
 
 /// 当前登录用户的配置项
-func AppUserDefaultsPrivate() -> NSAccountDefaults? {
+func AppUserDefaultsPrivate() -> AccountDefaults? {
     AppUser()?.profile
 }
 
