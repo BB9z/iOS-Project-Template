@@ -15,6 +15,7 @@
 		D501845B20F881B6009481D4 /* DissolveTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501845920F881B6009481D4 /* DissolveTransitioning.swift */; };
 		D501845C20F881B7009481D4 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501845A20F881B6009481D4 /* Shadow.swift */; };
 		D501847020F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.m in Sources */ = {isa = PBXBuildFile; fileRef = D501846720F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.m */; };
+		D501E65528549059001B5CAA /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501E65428549059001B5CAA /* UserDefaults.swift */; };
 		D50319D425BE518C00C2849E /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50319D325BE518C00C2849E /* CornerRadius.swift */; };
 		D5031A1E25BEA95200C2849E /* MBDebugLiveCountChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5031A1D25BEA95200C2849E /* MBDebugLiveCountChecker.swift */; };
 		D5031A2625BEBB7700C2849E /* Picker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5031A2525BEBB7700C2849E /* Picker.storyboard */; };
@@ -47,7 +48,6 @@
 		D52EAB672043B6B3007219E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D52EAB622043B6B3007219E0 /* Assets.xcassets */; };
 		D52EADEB2043B983007219E0 /* debug.m in Sources */ = {isa = PBXBuildFile; fileRef = D52EADE72043B983007219E0 /* debug.m */; };
 		D52EADF02043BA3D007219E0 /* ShortCuts.m in Sources */ = {isa = PBXBuildFile; fileRef = D52EADEE2043BA3D007219E0 /* ShortCuts.m */; };
-		D52EADF82043C0EC007219E0 /* NSUserDefaults+App.m in Sources */ = {isa = PBXBuildFile; fileRef = D52EADF32043C0EB007219E0 /* NSUserDefaults+App.m */; };
 		D533C4D525922D1100590FBA /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D533C4D325922D1100590FBA /* DBManager.swift */; };
 		D533C4D625922D1100590FBA /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D533C4D425922D1100590FBA /* Types.swift */; };
 		D533C4E6259235E200590FBA /* MBFlexInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = D533C4E4259235E200590FBA /* MBFlexInterface.m */; };
@@ -228,6 +228,7 @@
 		D501845A20F881B6009481D4 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		D501846720F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBNavigationController+MBDebugReleaseChecking.m"; sourceTree = "<group>"; };
 		D501846820F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBNavigationController+MBDebugReleaseChecking.h"; sourceTree = "<group>"; };
+		D501E65428549059001B5CAA /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		D50319D325BE518C00C2849E /* CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		D5031A1D25BEA95200C2849E /* MBDebugLiveCountChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBDebugLiveCountChecker.swift; sourceTree = "<group>"; };
 		D5031A2525BEBB7700C2849E /* Picker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Picker.storyboard; sourceTree = "<group>"; };
@@ -273,9 +274,7 @@
 		D52EADEC2043BA3D007219E0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D52EADED2043BA3D007219E0 /* ShortCuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortCuts.h; sourceTree = "<group>"; };
 		D52EADEE2043BA3D007219E0 /* ShortCuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortCuts.m; sourceTree = "<group>"; };
-		D52EADF32043C0EB007219E0 /* NSUserDefaults+App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+App.m"; sourceTree = "<group>"; };
 		D52EADF42043C0EB007219E0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		D52EADF62043C0EB007219E0 /* NSUserDefaults+App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+App.h"; sourceTree = "<group>"; };
 		D533C4D325922D1100590FBA /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		D533C4D425922D1100590FBA /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		D533C4E4259235E200590FBA /* MBFlexInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBFlexInterface.m; sourceTree = "<group>"; };
@@ -828,10 +827,9 @@
 				D50319A025BE33BD00C2849E /* Support */,
 				D533C4D925922D2000590FBA /* Worker */,
 				D5740B4924985E92001CBCB2 /* AppError.swift */,
-				D52EADF62043C0EB007219E0 /* NSUserDefaults+App.h */,
-				D52EADF32043C0EB007219E0 /* NSUserDefaults+App.m */,
 				D52EADF42043C0EB007219E0 /* README.md */,
 				D533C4D425922D1100590FBA /* Types.swift */,
+				D501E65428549059001B5CAA /* UserDefaults.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1722,7 +1720,6 @@
 				D55959D520ABA9B50019D733 /* NavigationController.swift in Sources */,
 				D5EE51192043DAA2009148B3 /* NSArray+App.m in Sources */,
 				D588309020CACB33002030C4 /* NSPointArray+App.swift in Sources */,
-				D52EADF82043C0EC007219E0 /* NSUserDefaults+App.m in Sources */,
 				D501844E20F865D3009481D4 /* Number+App.swift in Sources */,
 				D50CFA6525C90F22003329EE /* ObjectPool.swift in Sources */,
 				D5031C2E25C044FF00C2849E /* ResizeObservableView.swift in Sources */,
@@ -1762,6 +1759,7 @@
 				D57432B4275E3B390029CE1A /* UIViewController+InterfaceOrientation.swift in Sources */,
 				D5F1F849251C1D6400D641F9 /* URL+App.swift in Sources */,
 				D5BF664F24BC8BE8008BC122 /* UserAvatarView.swift in Sources */,
+				D501E65528549059001B5CAA /* UserDefaults.swift in Sources */,
 				D553507324BBFB3E00282871 /* UserEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

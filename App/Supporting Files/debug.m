@@ -1,6 +1,5 @@
 
 #import "debug.h"
-#import "NSUserDefaults+App.h"
 
 void DebugLog(BOOL fatal, NSString *_Nullable recordID, NSString *_Nonnull format, ...) {
     va_list args;
