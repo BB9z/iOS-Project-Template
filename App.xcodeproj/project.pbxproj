@@ -1537,8 +1537,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# 配置在代码中修改\nxcrun --sdk macosx swift run --package-path \"$SRCROOT/Packages/BuildSystem\"\n";
+			shellPath = /bin/zsh;
+			shellScript = "# 配置在代码中修改\nos_major=$(sw_vers -productVersion | cut -d '.' -f 1)\nif [[ $os_major -lt 13 ]]; then\n  echo \"⚠️ 需要 macOS 13+\"\n  exit 0\nfi\nxcrun --sdk macosx swift run --package-path \"$SRCROOT/Packages/BuildSystem\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D5353D1424B7DEAB00BED8C7 /* Swift Lint */ = {
