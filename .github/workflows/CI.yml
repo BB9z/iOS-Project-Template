@@ -51,9 +51,9 @@ jobs:
       - name: Build maccatalyst target
         run: |
           set -o pipefail
-          xcodebuild -workspace "App.xcworkspace" -scheme "App"  -destination 'platform=macOS,arch=x86_64' | xcpretty
+          xcodebuild -workspace "App.xcworkspace" -scheme "App"  -destination 'platform=macOS,arch=x86_64' | xcbeautify
 
       - name: Build iOS target
         run: |
           set -o pipefail
-          xcodebuild -workspace "App.xcworkspace" -scheme "App"  -destination 'platform=iOS Simulator,name=iPhone 13' | xcpretty
+          xcodebuild -workspace "App.xcworkspace" -scheme "App"  -destination 'platform=iOS Simulator,name=iPhone 13' | xcbeautify
