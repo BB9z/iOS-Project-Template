@@ -10,16 +10,21 @@
 
 /**
  列表状态 view，也可用详情
+ List state view, can also be used for details
 
  通过设置状态变量切换状态
+ Switch state by setting state variables
  */
 class ListStateView: UIView {
     enum State {
         case loading(String?)
         case error(Error?)
         /// 列表为空，会禁用交互响应，允许用户操作覆盖在下面的列表
+        /// An empty list will disable the interaction response.
+        /// Allow users to interact with the list which is covered below
         case empty(String?)
         /// 正常状态，隐藏 view
+        /// Normal state, this view is hidden
         case normal
 
         var isLoading: Bool {
@@ -35,13 +40,17 @@ class ListStateView: UIView {
     }
 
     /// 可选，加载时执行动画，其他状态停止
+    /// Optional, start animation when loading, stop in other states
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView?
     /// 可选，失败时显示，供点击重试用
+    /// Optional, show when failed, for click to retry
     @IBOutlet private weak var retryButton: UIButton?
     /// 显示状态文本
-    @IBOutlet private weak var stautsLabel: UILabel?
+    /// Display status text
+    @IBOutlet private weak var statesLabel: UILabel?
 
     /// 加载时需要隐藏？
+    /// Need to hide when loading?
     @IBInspectable var shouldHiddenWhenLoading: Bool = false
     @IBInspectable var defaultLoadingText: String = "Loading..."
     @IBInspectable var defaultEmptyText: String = "暂无内容"
@@ -56,27 +65,27 @@ class ListStateView: UIView {
                 isHidden = false
                 activityIndicator?.startAnimating()
                 retryButton?.isHidden = true
-                stautsLabel?.text = text ?? defaultLoadingText
+                statesLabel?.text = text ?? defaultLoadingText
             }
             isUserInteractionEnabled = true
 
         case .normal:
             isHidden = true
             activityIndicator?.stopAnimating()
-            stautsLabel?.text = nil
+            statesLabel?.text = nil
 
         case .empty(let text):
             isHidden = false
             activityIndicator?.stopAnimating()
             retryButton?.isHidden = true
-            stautsLabel?.text = text ?? defaultEmptyText
+            statesLabel?.text = text ?? defaultEmptyText
             isUserInteractionEnabled = false
 
         case .error(let error):
             isHidden = false
             activityIndicator?.stopAnimating()
             retryButton?.isHidden = false
-            stautsLabel?.text = error?.localizedDescription ?? defaultErrorText
+            statesLabel?.text = error?.localizedDescription ?? defaultErrorText
             isUserInteractionEnabled = true
         }
     }

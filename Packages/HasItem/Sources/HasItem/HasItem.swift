@@ -10,14 +10,19 @@
 import Foundation
 
 /// 定义通用的模型属性，便于对象间传值
+/// Define generic model properties to facilitate passing values between objects
 public protocol HasItem: AnyHasItem {
     associatedtype Item
 
     /**
      item 模型属性
+     The item model property
 
      一般传值发生在 init 后，且正常不为 nil
      Swift protocol 对是否为空限制严格，只有这种形式满足实际使用需要
+
+     Generally, the value is passed after an object is initialized and is usually not nil.
+     Swift protocol is strictly type-restricted. So only this form can meet the needs of practical use.
      */
     var item: Item! { get set }
 }
@@ -28,14 +33,17 @@ public protocol HasItem: AnyHasItem {
  */
 public protocol AnyHasItem {
     /// 读取 item，类型不匹配转为 nil
+    /// Get item, returns nil if type mismatch
     func item<T>() -> T?
 
     /// 设置 item，必须是类型匹配的非空值
+    /// Set item, must be a non-null value with matching type
     mutating func setItem<T>(_ item: T)
 }
 
 public extension HasItem {
     /// 读取 item，类型不匹配转为 nil
+    /// Get item, returns nil if type mismatch
     func item<T>() -> T? {
         // 实现备忘：
         // item 正常是非空（未赋值肯定是 bug），这里如果返回非空，外面用起来会方便点
@@ -44,6 +52,7 @@ public extension HasItem {
         item as? T
     }
     /// 设置 item
+    /// Set item, must be a non-null value with matching type
     mutating func setItem<T>(_ item: T) {
         guard let newValue = item as? Item else {
             fatalError("set item type mismatched.")

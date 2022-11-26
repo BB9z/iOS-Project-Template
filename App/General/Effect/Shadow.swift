@@ -73,13 +73,13 @@ class ShadowView: UIView {
         didSet {
             if oldValue == lastLayerSize { return }
             guard shadowColor != nil else { return }
-            updateShadowPathWithAnimationFixes(bonuds: layer.bounds)
+            updateShadowPathWithAnimationFixes(bounds: layer.bounds)
         }
     }
 
     // 需要对阴影动画做特别处理才能和 view 尺寸变化的动画同步
-    private func updateShadowPathWithAnimationFixes(bonuds: CGRect) {
-        let rect = bonuds.insetBy(dx: shadowSpread, dy: shadowSpread)
+    private func updateShadowPathWithAnimationFixes(bounds: CGRect) {
+        let rect = bounds.insetBy(dx: shadowSpread, dy: shadowSpread)
         let newShadowPath = UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius).cgPath
         if let resizeAnimation = layer.animation(forKey: "bounds.size") {
             let key = #keyPath(CALayer.shadowPath)

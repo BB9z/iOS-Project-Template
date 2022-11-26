@@ -4,9 +4,9 @@
 //
 
 /**
- 应用顶层 vc
+ 作为应用全局根 view controller
 
- 嵌入主导航，这样如需遮盖导航的弹窗，可以加入到这里，比如启动闪屏、教程弹窗
+ 内嵌主导航，这样如需遮盖导航的弹窗，可以加入到这里，比如启动闪屏、教程弹窗
  基类里做了对 vc 样式声明的铰接处理
  */
 class RootViewController: MBRootViewController {
@@ -32,9 +32,7 @@ class RootViewController: MBRootViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        #if DEBUG
         debugAdjustTraitCollection()
-        #endif
     }
 
     // MARK: - Splash
@@ -81,23 +79,24 @@ class RootViewController: MBRootViewController {
 
     /// 强制修改第一个子 vc size class，用以测试尺寸适配
     func debugAdjustTraitCollection() {
-        if let vc = children.first {
-            let currentCollection = overrideTraitCollection(forChild: vc) ?? UITraitCollection.current
-            let hClass = view.width > 700 ? UIUserInterfaceSizeClass.regular : UIUserInterfaceSizeClass.compact
-            let vClass = view.height > 500 ? UIUserInterfaceSizeClass.regular : UIUserInterfaceSizeClass.compact
-            if currentCollection.horizontalSizeClass == hClass,
-                currentCollection.verticalSizeClass == vClass {
-                return
-            }
-            let horizontal = UITraitCollection(horizontalSizeClass: hClass)
-            let vertical = UITraitCollection(verticalSizeClass: vClass)
-            let collection = UITraitCollection(traitsFrom: [currentCollection, horizontal, vertical])
-            setOverrideTraitCollection(collection, forChild: vc)
+        guard let vc = children.first else { return }
+
+        let size = view.bounds.size
+        let currentCollection = overrideTraitCollection(forChild: vc) ?? .current
+        let hClass = size.width > 700 ? UIUserInterfaceSizeClass.regular : .compact
+        let vClass = size.height > 500 ? UIUserInterfaceSizeClass.regular : .compact
+        if currentCollection.horizontalSizeClass == hClass,
+            currentCollection.verticalSizeClass == vClass {
+            return
         }
+        let horizontal = UITraitCollection(horizontalSizeClass: hClass)
+        let vertical = UITraitCollection(verticalSizeClass: vClass)
+        let collection = UITraitCollection(traitsFrom: [currentCollection, horizontal, vertical])
+        setOverrideTraitCollection(collection, forChild: vc)
     }
     #else
-    func debugAdjustWindowSize() {}
-    func debugAdjustTraitCollection() {}
+    @inlinable func debugAdjustWindowSize() {}
+    @inlinable func debugAdjustTraitCollection() {}
     #endif  // END: macCatalyst
     #endif  // END: DEBUG
 }
