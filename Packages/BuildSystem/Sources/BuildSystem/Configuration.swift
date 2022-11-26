@@ -10,7 +10,7 @@
  */
 
 import Foundation
-import RegexBuilder
+import RegexBuilder  // Xcode 14.1+
 
 /**
  运行脚本的配置
