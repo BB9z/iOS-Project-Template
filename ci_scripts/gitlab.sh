@@ -1,6 +1,6 @@
 #! /bin/zsh
 # 适用于 GitLab 的 iOS 项目打包脚本
-# Copyright © 2020 BB9z.
+# Copyright © 2020, 2022 BB9z.
 # https://github.com/BB9z/iOS-Project-Template 
 
 set -euo pipefail
@@ -74,7 +74,7 @@ if [ -n "$FIR_UPLOAD_TOKEN" ]; then
 fi
 
 readonly ARCHIVE_PATH="./$(date "+%Y-%m-%d %H.%M.%S").xcarchive"
-readonly EXPORT_OPTIONS_PLIST="${EXPORT_OPTIONS_PLIST:="$(logWarning 'EXPORT_OPTIONS_PLIST 未设置，使用默认路径')./CI/ExportOptions.plist"}"
+readonly EXPORT_OPTIONS_PLIST="${EXPORT_OPTIONS_PLIST:="$(logWarning 'EXPORT_OPTIONS_PLIST 未设置，使用默认路径')./ci_scripts/ExportOptions.plist"}"
 logInfo "EXPORT_OPTIONS_PLIST = $EXPORT_OPTIONS_PLIST"
 readonly EXPORT_DIRECTORY_PATH="./export"
 readonly EXPORT_IPA_PATH="$EXPORT_DIRECTORY_PATH/$XC_EXPORT_IPA_NAME.ipa"

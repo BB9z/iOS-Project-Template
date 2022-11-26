@@ -6,11 +6,11 @@
 
 iOS 13+；Xcode 14.1+；macOS 13+。
 
-Ruby Gems 依赖：
+依赖：
 
 ```sh
-gem install cocoapods plist xcodeproj
-gem install fastlane #可选
+brew install cocoapods
+brew install fastlane  # 可选
 ```
 
 ## 配置
