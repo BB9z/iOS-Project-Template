@@ -203,16 +203,6 @@
 		D5FCB68E23FC108B001DE669 /* MBFormFieldVerifyControl+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCB68D23FC108B001DE669 /* MBFormFieldVerifyControl+App.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		D5197D2B17F0242C00CA387C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D5197A3217EECAAF00CA387C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D5197D2717F0241F00CA387C;
-			remoteInfo = MBBuildSystem;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		27E8F4B8C4098FB174EF971E /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
 		3668E59D390585E40FF179B2 /* Pods-App.alpha.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.alpha.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.alpha.xcconfig"; sourceTree = "<group>"; };
@@ -289,6 +279,7 @@
 		D5353D1524B7E1EF00BED8C7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D53BB5F927FC467700F60168 /* B9FoundationUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = B9FoundationUI; sourceTree = "<group>"; };
 		D53BB5FD27FC473000F60168 /* Debugger */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Debugger; sourceTree = "<group>"; };
+		D5420E60290F455200C30832 /* BuildSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BuildSystem; sourceTree = "<group>"; };
 		D544A394197CBE5300C65604 /* MBFormSelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBFormSelectButton.h; sourceTree = "<group>"; };
 		D544A395197CBE5300C65604 /* MBFormSelectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBFormSelectButton.m; sourceTree = "<group>"; };
 		D544A39D197D1E8600C65604 /* JSONValueTransformer+App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONValueTransformer+App.m"; sourceTree = "<group>"; };
@@ -1390,6 +1381,7 @@
 		D5F036BD27FBB45D00C60A72 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				D5420E60290F455200C30832 /* BuildSystem */,
 				D53BB5F927FC467700F60168 /* B9FoundationUI */,
 				D5D1859A280D72B5009B5476 /* Condition */,
 				D53BB5FD27FC473000F60168 /* Debugger */,
@@ -1400,31 +1392,14 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXLegacyTarget section */
-		D5197D2717F0241F00CA387C /* MBBuildSystem */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "";
-			buildConfigurationList = D5197D2817F0242000CA387C /* Build configuration list for PBXLegacyTarget "MBBuildSystem" */;
-			buildPhases = (
-			);
-			buildToolPath = ./MBAutoBuildScript.sh;
-			buildWorkingDirectory = "$(ScriptPath)";
-			dependencies = (
-			);
-			name = MBBuildSystem;
-			passBuildSettingsInEnvironment = 1;
-			productName = MBBuildSystem;
-		};
-/* End PBXLegacyTarget section */
-
 /* Begin PBXNativeTarget section */
 		D5197A3917EECAAF00CA387C /* App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5197A6F17EECAAF00CA387C /* Build configuration list for PBXNativeTarget "App" */;
 			buildPhases = (
+				D5163B2A2892B6EA00FD6132 /* [App] BuildSystem */,
 				09D177FF8CEC0EA630D3BCE2 /* [CP] Check Pods Manifest.lock */,
 				D5353D1424B7DEAB00BED8C7 /* Swift Lint */,
-				D5197D2D17F0258B00CA387C /* Update Build Count */,
 				D5197A3617EECAAF00CA387C /* Sources */,
 				D5197A3717EECAAF00CA387C /* Frameworks */,
 				D5197A3817EECAAF00CA387C /* Resources */,
@@ -1433,7 +1408,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D5197D2C17F0242C00CA387C /* PBXTargetDependency */,
 			);
 			name = App;
 			packageProductDependencies = (
@@ -1481,7 +1455,6 @@
 			projectRoot = "";
 			targets = (
 				D5197A3917EECAAF00CA387C /* App */,
-				D5197D2717F0241F00CA387C /* MBBuildSystem */,
 			);
 		};
 /* End PBXProject section */
@@ -1548,19 +1521,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-App/Pods-App-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D5197D2D17F0258B00CA387C /* Update Build Count */ = {
+		D5163B2A2892B6EA00FD6132 /* [App] BuildSystem */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 			);
-			name = "Update Build Count";
+			name = "[App] BuildSystem";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# BuildCount\n\nexport scriptPath=\"$SRCROOT/Scripts\"\nexport buildCountRecordFile=\"$scriptPath/BuildCountRecord.plist\"\n\n# 配置开关\n# 自动增加构建数\nexport enableAutoBuildCount=1\nexport autoBuildCountUseDataFormat=0\nexport autoBuildCountDataFormat=\"+%y%m%d\"\n\n\"$scriptPath/MBAutoBuildScript_BuildCount.sh\"\n";
+			shellScript = "# 配置在代码中修改\nxcrun --sdk macosx swift run --package-path \"$SRCROOT/Packages/BuildSystem\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D5353D1424B7DEAB00BED8C7 /* Swift Lint */ = {
@@ -1766,14 +1744,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		D5197D2C17F0242C00CA387C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D5197D2717F0241F00CA387C /* MBBuildSystem */;
-			targetProxy = D5197D2B17F0242C00CA387C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		D5197D3417F027B400CA387C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -1932,7 +1902,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "App/Supporting Files/debug.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "App/Development\\ Content";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1962,7 +1931,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "App/Supporting Files/release.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "App/Development\\ Content";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1982,32 +1950,6 @@
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "App-Swift.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		D5197D2917F0242000CA387C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CodeCommentsHighlightKeywordsExpression = "TODO|FIXME";
-				CodeCommentsHighlightSkipFrameworks = YES;
-				CodeReviewFixRightNowKeywordsExpression = "FUCK|FIXRIGHTNOW|NOTICE";
-				EnableCodeCommentsHighlight = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				ProjectFilePath = "${SRCROOT}/${PROJECT}.xcodeproj";
-				ScriptPath = $SRCROOT/Scripts;
-			};
-			name = Debug;
-		};
-		D5197D2A17F0242000CA387C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CodeCommentsHighlightKeywordsExpression = "TODO|FIXME";
-				CodeCommentsHighlightSkipFrameworks = YES;
-				CodeReviewFixRightNowKeywordsExpression = "FUCK|FIXRIGHTNOW|NOTICE";
-				EnableCodeCommentsHighlight = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				ProjectFilePath = "${SRCROOT}/${PROJECT}.xcodeproj";
-				ScriptPath = $SRCROOT/Scripts;
 			};
 			name = Release;
 		};
@@ -2083,7 +2025,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "App/Supporting Files/alpha.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "App/Development\\ Content";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2106,19 +2047,6 @@
 			};
 			name = Alpha;
 		};
-		D564D5D71970EF290032FEC3 /* Alpha */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CodeCommentsHighlightKeywordsExpression = "TODO|FIXME";
-				CodeCommentsHighlightSkipFrameworks = YES;
-				CodeReviewFixRightNowKeywordsExpression = "FUCK|FIXRIGHTNOW|NOTICE";
-				EnableCodeCommentsHighlight = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				ProjectFilePath = "${SRCROOT}/${PROJECT}.xcodeproj";
-				ScriptPath = $SRCROOT/Scripts;
-			};
-			name = Alpha;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2138,16 +2066,6 @@
 				D5197A7017EECAAF00CA387C /* Debug */,
 				D5197A7117EECAAF00CA387C /* Release */,
 				D564D5D51970EF290032FEC3 /* Alpha */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D5197D2817F0242000CA387C /* Build configuration list for PBXLegacyTarget "MBBuildSystem" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D5197D2917F0242000CA387C /* Debug */,
-				D5197D2A17F0242000CA387C /* Release */,
-				D564D5D71970EF290032FEC3 /* Alpha */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
