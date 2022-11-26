@@ -23,6 +23,18 @@ disabled_rules:
   # }
   - opening_brace
 
+  # 脚本体系里也有 todo 提示功能，按需选用吧
+  - todo
+
+  # 只支持必须带或不能带，实际应该区分情况更佳。
+  # 同行不应带，多行应该带：
+  # [1, 2] // 不应有逗号
+  # [
+  #   1,
+  #   2, // 应该有逗号
+  # ]
+  - trailing_comma
+
   # 有时要用、有时只判空，这样切换方便一些
   - unused_optional_binding
 
@@ -113,6 +125,8 @@ opt_in_rules:
 
 excluded:
   - "App/Development Content/*.playground"
+  - "**/.build"
+  - "**/Build"
   - B9Doc
   - Carthage
   - Frameworks
