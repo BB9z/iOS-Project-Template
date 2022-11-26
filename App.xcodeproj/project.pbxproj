@@ -247,6 +247,7 @@
 		D5197D3617F027BB00CA387C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D519A0CD2434883300E26A64 /* MBMaskHiddenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMaskHiddenView.h; sourceTree = "<group>"; };
 		D519A0CE2434883300E26A64 /* MBMaskHiddenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMaskHiddenView.m; sourceTree = "<group>"; };
+		D5202E65293268FE00983FCF /* ci_post_clone.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_clone.sh; sourceTree = "<group>"; };
 		D525F3E72506988D003EBEB0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D525F3E82506988D003EBEB0 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D527917E27B558D500522240 /* Do.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Do.swift; sourceTree = "<group>"; };
@@ -586,6 +587,7 @@
 		D5197A3117EECAAF00CA387C = {
 			isa = PBXGroup;
 			children = (
+				D5202E64293268D500983FCF /* ci_scripts */,
 				D5197A4317EECAAF00CA387C /* App */,
 				D525F3E62506988D003EBEB0 /* Development Content */,
 				D5197A3C17EECAAF00CA387C /* Frameworks */,
@@ -708,6 +710,14 @@
 				D588308A20CACB32002030C4 /* MBSwift.swift */,
 			);
 			path = Language;
+			sourceTree = "<group>";
+		};
+		D5202E64293268D500983FCF /* ci_scripts */ = {
+			isa = PBXGroup;
+			children = (
+				D5202E65293268FE00983FCF /* ci_post_clone.sh */,
+			);
+			path = ci_scripts;
 			sourceTree = "<group>";
 		};
 		D525F3E62506988D003EBEB0 /* Development Content */ = {
