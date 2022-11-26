@@ -1903,6 +1903,7 @@
 				CODE_SIGN_ENTITLEMENTS = "App/Supporting Files/debug.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				DEVELOPMENT_ASSET_PATHS = "App/Development\\ Content";
+				DEVELOPMENT_TEAM = Y85RFN6NXZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -1913,7 +1914,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = b9.com.example.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -1932,6 +1933,7 @@
 				CODE_SIGN_ENTITLEMENTS = "App/Supporting Files/release.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				DEVELOPMENT_ASSET_PATHS = "App/Development\\ Content";
+				DEVELOPMENT_TEAM = Y85RFN6NXZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -1942,7 +1944,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = b9.com.example.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
@@ -2026,6 +2028,7 @@
 				CODE_SIGN_ENTITLEMENTS = "App/Supporting Files/alpha.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				DEVELOPMENT_ASSET_PATHS = "App/Development\\ Content";
+				DEVELOPMENT_TEAM = Y85RFN6NXZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -2036,7 +2039,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = b9.com.example.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ALPHA";
@@ -2075,7 +2078,7 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		D527917B27B557A800522240 /* XCRemoteSwiftPackageReference "MulticastDelegate" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://gitee.com/b9swift/MulticastDelegate";
+			repositoryURL = "https://github.com/b9swift/MulticastDelegate";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.1.0;
@@ -2083,7 +2086,7 @@
 		};
 		D57FBB69279BB727003A0533 /* XCRemoteSwiftPackageReference "AssociatedObject" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://gitee.com/b9swift/AssociatedObject";
+			repositoryURL = "https://github.com/b9swift/AssociatedObject";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
@@ -2091,7 +2094,7 @@
 		};
 		D57FBB6C279BB770003A0533 /* XCRemoteSwiftPackageReference "Action" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://gitee.com/b9swift/Action";
+			repositoryURL = "https://github.com/b9swift/Action";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
@@ -2099,7 +2102,7 @@
 		};
 		D57FBB6F279D51BA003A0533 /* XCRemoteSwiftPackageReference "swift-log" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://gitee.com/b9swift/swift-log";
+			repositoryURL = "https://github.com/apple/swift-log";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
@@ -2107,7 +2110,7 @@
 		};
 		D59C90C72787BBB300B0EF28 /* XCRemoteSwiftPackageReference "Pulse" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://gitee.com/b9swift/Pulse";
+			repositoryURL = "https://github.com/kean/Pulse";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
@@ -2115,7 +2118,7 @@
 		};
 		D5F036B327FB479800C60A72 /* XCRemoteSwiftPackageReference "Debug" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://gitee.com/b9swift/Debug";
+			repositoryURL = "https://github.com/b9swift/Debug";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.1;

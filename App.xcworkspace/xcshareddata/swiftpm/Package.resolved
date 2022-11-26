@@ -3,34 +3,34 @@
     "pins": [
       {
         "package": "B9Action",
-        "repositoryURL": "https://gitee.com/b9swift/Action.git",
+        "repositoryURL": "https://github.com/b9swift/Action",
         "state": {
           "branch": null,
-          "revision": "fb5d1d155f1a7d420785423f8c81875c406c23d6",
+          "revision": "ad6665b193e5f79658e2bca2a013e99ed6c3dd56",
           "version": "1.0.0"
         }
       },
       {
         "package": "B9AssociatedObject",
-        "repositoryURL": "https://gitee.com/b9swift/AssociatedObject",
+        "repositoryURL": "https://github.com/b9swift/AssociatedObject",
         "state": {
           "branch": null,
-          "revision": "5d187f0e3ff28f7fecf9f4fcbdbd717d18fda4e3",
+          "revision": "cd19916b2fa24312eacbb3886b96ca9a4133fdf8",
           "version": "1.0.0"
         }
       },
       {
         "package": "B9Debug",
-        "repositoryURL": "https://gitee.com/b9swift/Debug",
+        "repositoryURL": "https://github.com/b9swift/Debug",
         "state": {
           "branch": null,
-          "revision": "8a94cc57f7591a83edf824a79b13a0f23fc8f311",
+          "revision": "dfe94a4e5d0674c8e0428bf6682d6bf2678ee69d",
           "version": "1.0.1"
         }
       },
       {
         "package": "B9MulticastDelegate",
-        "repositoryURL": "https://gitee.com/b9swift/MulticastDelegate",
+        "repositoryURL": "https://github.com/b9swift/MulticastDelegate",
         "state": {
           "branch": null,
           "revision": "1c5a741a39e37ba0717adb9405f367e26beeacf4",
@@ -39,20 +39,20 @@
       },
       {
         "package": "Pulse",
-        "repositoryURL": "https://gitee.com/b9swift/Pulse",
+        "repositoryURL": "https://github.com/kean/Pulse",
         "state": {
           "branch": null,
-          "revision": "5064f602186a91c15eb3c36fd31659ab5084d0a5",
-          "version": "1.0.3"
+          "revision": "403699c645e0872fa8986366a7015da334f0f48b",
+          "version": "1.1.0"
         }
       },
       {
         "package": "swift-log",
-        "repositoryURL": "https://gitee.com/b9swift/swift-log",
+        "repositoryURL": "https://github.com/apple/swift-log",
         "state": {
           "branch": null,
-          "revision": "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
-          "version": "1.4.2"
+          "revision": "6fe203dc33195667ce1759bf0182975e4653ba1c",
+          "version": "1.4.4"
         }
       }
     ]
