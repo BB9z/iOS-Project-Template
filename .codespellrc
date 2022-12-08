@@ -1,5 +1,8 @@
+# https://github.com/codespell-project/codespell
+# 拼写检查命令行工具，可用 Homebrew 安装：brew install codespell
+
 [codespell]
 count =
-skip = ./.git,./Carthage/,./Pods
+skip = ./.git,./Carthage/,./Pods,.build,Build,./Packages/Pulse
 check-filenames =
-ignore-words-list = dout,inout
+ignore-words-list = anumber,dout,inout

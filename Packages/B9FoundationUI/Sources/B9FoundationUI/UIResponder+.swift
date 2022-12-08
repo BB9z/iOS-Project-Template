@@ -26,7 +26,7 @@ extension UIResponder {
 
      遍历响应者链，从中查找第一个给定类型的对象。
 
-     - Returns: The nearest specified type responser to the receiver, returns nil if not found.
+     - Returns: The nearest specified type responder to the receiver, returns nil if not found.
         最接近接受者的指定类型对象，找不到返回 nil
      */
     public func next<T>(type: T.Type) -> T? {

@@ -86,7 +86,7 @@ public extension Debugger {
     /// 显示调试面板
     static func showControlCenter() {
         if #available(iOS 13.0, *) {
-            floatWindow.windowScene = triggerButton?.window?.windowScene ?? activedWindowScene
+            floatWindow.windowScene = triggerButton?.window?.windowScene ?? activatedWindowScene
         }
         floatWindow.isHidden = false
         floatViewController?.refresh()

@@ -8,7 +8,7 @@
 
 方便地在 Swift 中利用 Objective-C 关联对象。
 
-Objective-C associated value wrapper in Swift.
+Objective-C associated value wrapper for convenient use in Swift. It is primarily used to add attributes to existing types through extensions.
 
 ## 集成
 
@@ -18,7 +18,7 @@ You can also use [GitHub source](https://github.com/b9swift/AssociatedObject).
 
 ## Installation
 
-Using Swift Package Manager or import manually.
+You can use either Swift Package Manager or manual importing to add this package to your project.
 
 你也可以使用 [gitee 镜像](https://gitee.com/b9swift/AssociatedObject)。
 

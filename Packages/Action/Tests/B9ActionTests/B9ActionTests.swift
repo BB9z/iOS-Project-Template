@@ -16,7 +16,7 @@ class Counter {
 
 final class B9ActionTests: XCTestCase {
 
-    func testBecomeInvaildAfterRefrenceReleased() {
+    func testBecomeInvalidAfterReferenceReleased() {
         var action: Action!
 
         do {
@@ -24,17 +24,17 @@ final class B9ActionTests: XCTestCase {
             action = Action({
                 XCTAssert(false, "Should not be executed")
             }, reference: object)
-            XCTAssertTrue(action.isVaild)
+            XCTAssertTrue(action.isValid)
         }
-        XCTAssertFalse(action.isVaild, "Should be invalid after reference released")
+        XCTAssertFalse(action.isValid, "Should be invalid after reference released")
         action.perform(with: nil)
     }
 
-    func testAlwaysVaildIfNoSetRefrence() {
+    func testAlwaysValidIfNoSetReference() {
         let expectation = XCTestExpectation(description: "")
         let target = OCTarget()
         let action = Action(target: target, selector: #selector(OCTarget.fill(expectation:)))
-        XCTAssertTrue(action.isVaild)
+        XCTAssertTrue(action.isValid)
         action.perform(with: expectation)
         wait(for: [expectation], timeout: 0)
     }

@@ -16,7 +16,7 @@
 /**
  构建新的历史记录数组，新的历史排在最前面，会去重复
 
- reciver 是旧的历史
+ receiver 是旧的历史
 
  @param items 新的历史
  @param limit 历史记录条数限制，不限制需传入 NSIntegerMax 而不能是 0

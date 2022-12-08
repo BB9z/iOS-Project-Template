@@ -23,7 +23,7 @@
  It automatically helps you:
 
  - Adjust content inset according to keyboard height to make all content scrolling visible.
- - If any view in this scroll view becomes the first responser. It will try to adjust the scroll position to make it visible with the best effect (considering the selection range, view size)
+ - If any view in this scroll view becomes the first responder. It will try to adjust the scroll position to make it visible with the best effect (considering the selection range, view size)
  */
 @interface MBKeyboardAdjustScrollView : UIScrollView
 @end

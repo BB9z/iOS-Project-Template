@@ -53,7 +53,7 @@ final class B9ConditionTests: XCTestCase {
             } else if counter == 2 {
                 print("observer 2nd")
             } else {
-                fatalError("Should not hanppen")
+                fatalError("Should not happen")
             }
         }, queue: observerQueue, autoRemove: false)
         after(0.1) {
@@ -122,7 +122,7 @@ final class B9ConditionTests: XCTestCase {
         XCTAssertEqual(condition.observers.count, 0)
     }
 
-    func testWaitTimout() {
+    func testWaitTimeout() {
         let condition = Condition<OptionFlag>()
         condition.wait(.a, action: Action {
             fatalError("Never")
@@ -163,7 +163,7 @@ final class B9ConditionTests: XCTestCase {
         after(0.1) {
             XCTAssertTrue(isCalled, "Should called after reset")
 
-            XCTAssertNotNil(observer, "Observer is keeped by condition")
+            XCTAssertNotNil(observer, "Observer is retained by condition")
             condition.remove(observer: observer)
             XCTAssertNil(observer, "After remove, observer should autoreleased")
 
@@ -216,12 +216,12 @@ final class B9ConditionTests: XCTestCase {
     }
 
     func testReleaseWithoutTimeout() {
-        strongRefrence = Condition<OptionFlag>()
-        strongRefrence.wait(.a, action: Action({
+        strongReference = Condition<OptionFlag>()
+        strongReference.wait(.a, action: Action({
             fatalError("Should not executed")
         }, reference: nil), timeout: 0)
-        strongRefrence.set(on: [.a])
-        strongRefrence = nil
+        strongReference.set(on: [.a])
+        strongReference = nil
         let testEnd = XCTestExpectation()
         after(0.1) {
             testEnd.fulfill()
@@ -230,13 +230,13 @@ final class B9ConditionTests: XCTestCase {
     }
 
     func testReleaseWithTimeout() {
-        strongRefrence = Condition<OptionFlag>()
-        strongRefrence.wait(.a, action: Action({
+        strongReference = Condition<OptionFlag>()
+        strongReference.wait(.a, action: Action({
             fatalError("Should not executed")
         }, reference: nil), timeout: 1)
         after(0.1) {
-            self.strongRefrence.set(on: [.a])
-            self.strongRefrence = nil
+            self.strongReference.set(on: [.a])
+            self.strongReference = nil
         }
         let testEnd = XCTestExpectation()
         after(0.2) {
@@ -245,7 +245,7 @@ final class B9ConditionTests: XCTestCase {
         wait(for: [testEnd], timeout: 2)
     }
 
-    var strongRefrence: Condition<OptionFlag>!
+    var strongReference: Condition<OptionFlag>!
 
     private func after(_ second: TimeInterval, do work: @escaping () -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + second, execute: work)

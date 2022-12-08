@@ -73,8 +73,8 @@ internal extension Debugger {
 
     /// 尝试找应用处于活跃的窗体
     @available(iOS 13.0, *)
-    static var activedWindowScene: UIWindowScene? {
-        if let actived = tureKeyWindow?.windowScene { return actived }
+    static var activatedWindowScene: UIWindowScene? {
+        if let activated = tureKeyWindow?.windowScene { return activated }
         let scenes = UIApplication.shared.connectedScenes
         return (scenes.first(where: { $0.activationState == .foregroundActive }) ?? scenes.first) as? UIWindowScene
     }
@@ -85,9 +85,9 @@ internal extension Debugger {
 
     /// 尝试找应用活跃窗体的 key window
     static var mainWindow: UIWindow? {
-        if let actived = tureKeyWindow { return actived }
+        if let activated = tureKeyWindow { return activated }
         if #available(iOS 13.0, *) {
-            let windows = activedWindowScene?.windows ?? UIApplication.shared.windows
+            let windows = activatedWindowScene?.windows ?? UIApplication.shared.windows
             return windows.first(where: { $0.isKeyWindow }) ?? windows.first
         } else {
             let windows = UIApplication.shared.windows

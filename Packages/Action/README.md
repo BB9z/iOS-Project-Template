@@ -8,7 +8,7 @@
 
 一个简单的基础组件，主要目的是为 target/selector 模式和 block 调用提供统一的界面。
 
-A simple base component whose main purpose is to provide a unified interface for target/selector patterns and block calls.
+A simple foundational component, primarily intended to provide a uniform interface for target/selector patterns and block invocations.
 
 ## 集成
 
@@ -18,6 +18,6 @@ You can also use [GitHub source](https://github.com/b9swift/Action).
 
 ## Installation
 
-Using Swift Package Manager or import manually.
+Using Swift Package Manager or importing manually.
 
 你也可以使用 [gitee 镜像](https://gitee.com/b9swift/Action)。
