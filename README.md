@@ -27,8 +27,6 @@ pod install
 fastlane setup_project
 ```
 
-双击「安装 git hook 脚本.command」以安装项目文件整理脚本，在 git 提交时执行。
-
 ## 关于项目模版
 
 强烈推荐阅读[项目模版 wiki](https://github.com/BB9z/iOS-Project-Template/wiki)内的相关文档。

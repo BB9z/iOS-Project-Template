@@ -1,4 +1,7 @@
 #!/bin/zsh
+# 搜寻目录下的 Xcode 项目文件，对项目文件执行排序整理操作
+# Copyright © 2018, 2022 BB9z.
+# https://github.com/BB9z/iOS-Project-Template
 
 set -euo pipefail
 

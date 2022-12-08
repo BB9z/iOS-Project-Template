@@ -1,7 +1,8 @@
-#! /bin/sh
+#! /bin/zsh
 
 # 拉取 demo 分支
-# Copyright © 2020 BB9z.
+# Copyright © 2020, 2022 BB9z.
+# https://github.com/BB9z/iOS-Project-Template
 
 set -euo pipefail
 

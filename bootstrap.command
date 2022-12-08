@@ -1,7 +1,8 @@
-#! /bin/sh
+#! /bin/zsh
 
 # 项目初始化：项目自动更名，重建 git，检查工具依赖等
 # Copyright © 2019, 2022 BB9z.
+# https://github.com/BB9z/iOS-Project-Template
 
 set -euo pipefail
 

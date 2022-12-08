@@ -1,6 +1,8 @@
 #!/usr/bin/env swift
 
 /// 安装项目文件整理脚本到 git hooks
+/// Copyright © 2020 BB9z.
+/// https://github.com/BB9z/iOS-Project-Template
 
 import Cocoa
 

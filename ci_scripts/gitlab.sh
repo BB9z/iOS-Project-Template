@@ -1,7 +1,7 @@
 #! /bin/zsh
 # 适用于 GitLab 的 iOS 项目打包脚本
 # Copyright © 2020, 2022 BB9z.
-# https://github.com/BB9z/iOS-Project-Template 
+# https://github.com/BB9z/iOS-Project-Template
 
 set -euo pipefail
 echo "$PWD"

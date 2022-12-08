@@ -1,8 +1,10 @@
 # ci_scripts
 
-CI/CD 脚本，包含 GitLab 和 Xcode Cloud 用到的脚本。目录名是 Xcode Cloud 定死的。
+脚本目录，存放日常用脚本和部分 CI/CD 脚本。目录名以前是 Scripts，为支持 Xcode Cloud 更名为此（Xcode Cloud 定死改不了，弄两个脚本目录也难看）。
 
-## GitLab
+🎯 开头的 command 脚本是用来快捷执行常用操作的，我一般直接在 Xcode 中右键 "Open with External Editor" 直接运行。如果系统提示未认证的开发者禁止运行，可通过在 Finder（访达）中右键，选择 "打开" 来解除限制。
+
+## GitLab CI 脚本
 
 ### 特色功能
 
@@ -20,6 +22,8 @@ CI/CD 脚本，包含 GitLab 和 Xcode Cloud 用到的脚本。目录名是 Xcod
 - `[ci clean]` 清理编译
 - `[ci verbose]` 输出更多信息
 
-## Xcode Cloud
+## Xcode Cloud 脚本
+
+只用了 `ci_post_clone.sh`，用以安装 CocoaPods 依赖。
 
 [Xcode Cloud 使用](https://developer.apple.com/documentation/xcode/writing-custom-build-scripts)
