@@ -29,82 +29,81 @@ end
 
 desc "项目文件内容排序整理"
 lane :sort_project do
-    sh('cd .. && ./Scripts/sort_projects.sh')
+    sh("cd .. && ./Scripts/sort_projects.sh")
 end
 
 platform :ios do
-  desc "Runs all the tests"
-  lane :test do
-    scan
-  end
+    desc "Runs all the tests"
+    lane :test do
+        scan
+    end
   
-  desc "打包上传到 fir.im"
-  lane :alpha do
-    # https://docs.fastlane.tools/app-store-connect-api/
+    desc "打包上传到 fir.im"
+    lane :alpha do
+        # https://docs.fastlane.tools/app-store-connect-api/
 
-      # gym 文档 https://docs.fastlane.tools/actions/gym/
-      gym(
-          scheme: "AdHocTest",
-          configuration: "Alpha",
-          output_name: "Alpha",
-          export_method: "ad-hoc"
-      )
-      notification(message: "打包完毕，等待上传", sound: "default")
-      ipa_path = ENV["IPA_OUTPUT_PATH"];
-      sh "fir publish \"#{ipa_path}\""
-      
-      notification(message: "✅ Alpha 发布成功", sound: "default")
-      clean_build_artifacts
-  end
+        # gym 文档 https://docs.fastlane.tools/actions/gym/
+        gym(
+            scheme: "AdHocTest",
+            configuration: "Alpha",
+            output_name: "Alpha",
+            export_method: "ad-hoc"
+        )
+        notification(message: "打包完毕，等待上传", sound: "default")
+        ipa_path = ENV["IPA_OUTPUT_PATH"];
+        sh "fir publish \"#{ipa_path}\""
+        
+        notification(message: "✅ Alpha 发布成功", sound: "default")
+        clean_build_artifacts
+    end
 
-  desc "打包上传到 TestFlight"
-  lane :beta do
-    ensure_git_branch(branch: "develop")
-    ensure_git_status_clean
-    # match(type: "appstore") # more information: https://codesigning.guide
+    desc "打包上传到 TestFlight"
+    lane :beta do
+        ensure_git_branch(branch: "develop")
+        ensure_git_status_clean
+        # match(type: "appstore") # more information: https://codesigning.guide
 
-    gym(
-      scheme: "App"
-    )
-    # 手动签名，一般是账号不是管理员时
-    # gym(
-    #   scheme: "App",
-    #   export_options: {
-    #     uploadBitcode: true,
-    #     uploadSymbols: true,
-    #     compileBitcode: true,
-    #     signingStyle: "manual",
-    #     provisioningProfiles: {
-    #       "包名 com.example.app" => "Profile 名称（区分大小写）"
-    #     }
-    #   }
-    # )
-    notification(message: "打包完毕，等待上传", sound: "default")
-    upload_to_testflight
+        gym(
+            scheme: "App"
+        )
+        # 手动签名，一般当跑在公共 CI 或开发者账号没有管理员权限时
+        # gym(
+        #   scheme: "App",
+        #   export_options: {
+        #     uploadBitcode: true,
+        #     uploadSymbols: true,
+        #     compileBitcode: true,
+        #     signingStyle: "manual",
+        #     provisioningProfiles: {
+        #       "包名 com.example.app" => "Profile 名称（区分大小写）"
+        #     }
+        #   }
+        # )
+        notification(message: "打包完毕，等待上传", sound: "default")
+        upload_to_testflight
 
-    # notification(message: "上传成功，开始上传符号文件到 fabric", sound: "default")
-    # upload_symbols_to_crashlytics
-    
-    notification(message: "✅ BETA 发布成功", sound: "default")
-    clean_build_artifacts
-  end
+        # notification(message: "上传成功，开始上传符号文件到 fabric", sound: "default")
+        # upload_symbols_to_crashlytics
 
-  after_all do |lane|
-    # This block is called, only if the executed lane was successful
+        notification(message: "✅ BETA 发布成功", sound: "default")
+        clean_build_artifacts
+    end
 
-    # slack(
-    #   message: "Successfully deployed new App Update."
-    # )
-  end
+    after_all do |lane|
+        # This block is called, only if the executed lane was successful
 
-  error do |lane, exception|
-    puts "如果打包 OK，编译出来的包可以在项目根目录中找到"
-    puts "后续上传步骤可以再手工执行：pilot upload"
-    notification(subtitle: "⚠️ 出错了", message: exception.message, sound: "default")
-    say "Error, error"
-  end
+        # slack(
+        #   message: "Successfully deployed new App Update."
+        # )
+    end
+
+    error do |lane, exception|
+        puts "如果打包 OK，编译出来的包可以在项目根目录中找到"
+        puts "后续上传步骤可以再手工执行：pilot upload"
+        notification(subtitle: "⚠️ 出错了", message: exception.message, sound: "default")
+        say "Error, error"
+    end
 end
-
 
 # More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
 # All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
