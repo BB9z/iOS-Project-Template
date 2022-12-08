@@ -6,11 +6,12 @@
 
 iOS 13+；Xcode 14.1+；macOS 13+。
 
-Ruby Gems 依赖：
+依赖：
 
 ```sh
-gem install cocoapods plist xcodeproj
-gem install fastlane #可选
+brew install cocoapods
+brew install fastlane  # 可选
+brew install swiftlint # 可选
 ```
 
 ## 配置
@@ -26,8 +27,6 @@ pod install
 或
 fastlane setup_project
 ```
-
-双击「安装 git hook 脚本.command」以安装项目文件整理脚本，在 git 提交时执行。
 
 ## 关于项目模版
 

@@ -1,7 +1,8 @@
 #! /bin/sh
 
 # 项目初始化：项目自动更名，重建 git，检查工具依赖等
-# Copyright © 2019 BB9z.
+# Copyright © 2019, 2022 BB9z.
+# https://github.com/BB9z/iOS-Project-Template
 
 set -euo pipefail
 
@@ -98,25 +99,6 @@ isValidProductName () {
     fi
 }
 
-# 检查指定 ruby gem 是否已安装
-# 
-# $1: Gem 完整包名
-# return: exit code 0/1
-CheckGemInstalled () {
-    if gem list "^$1$" -i 2>&1 >/dev/null; then
-        return 0
-    else
-        return 1
-    fi
-}
-
-PromoteIfGemNotInstalled () {
-    CheckGemInstalled "$1" || {
-        logError "$1 未安装"
-        logInput "  安装请执行: gem install $1"
-    }
-}
-
 logInfo "本脚本将辅助你完成项目初始化"
 logInfo "在开始前先收集一些信息"
 
@@ -189,9 +171,6 @@ if $isNeedsRename ; then
 
     logInfo "  Podfile"
     cp "Podfile" "$backupDir/Podfile"
-
-    logInfo "  ProjectFileVerification.rb"
-    cp "Scripts/ProjectFileVerification.rb" "$backupDir/ProjectFileVerification.rb"
 fi
 
 if $isNeedsRecreateGit ; then
@@ -224,30 +203,19 @@ if $isNeedsRename ; then
 
     sed -i '' "s/target '$oldName' do/target '$name' do/g" "Podfile"
 
-    SedReplaceFileContent "\"$oldName\"" "\"$name\"" "Scripts/ProjectFileVerification.rb"
-
     mv -v "$oldName.xcworkspace" "$name.xcworkspace"
     mv -v "$oldName.xcodeproj"   "$name.xcodeproj"
 fi
 
 if ! [ -x "$(command -v pod)" ]; then
-    logWarning "CocoaPods 貌似没有安装，请执行 gem install cocoapods 进行安装"
+    logWarning "CocoaPods 貌似没有安装，请执行 brew install cocoapods 进行安装"
 else
     logInfo "重新 pod install"
     pod install
 fi
 
-logInfo "检查是否所需的 gem 都已安装"
-
-PromoteIfGemNotInstalled "plist"
-PromoteIfGemNotInstalled "xcodeproj"
-CheckGemInstalled "fastlane" || {
-    logWarning "fastlane 未安装（可选）"
-    logInput   "  安装请执行: gem install fastlane"
-}
-
 logInfo "整理项目文件"
-Scripts/sort_projects.sh
+ci_scripts/sort_projects.sh
 
 echo "项目设置完成"
 logInfo "  检查一切 OK 后，可删除 Backup 目录，bootstrap 脚本也建议删除"

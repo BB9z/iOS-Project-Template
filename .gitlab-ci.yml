@@ -27,11 +27,11 @@ variables:
   XC_CODE_SIGN_IDENTITY: ""
 
   # 导入 provisioning profile 文件的路径，留空跳过导入
-  # 例如："./CI/dev.mobileprovision"
+  # 例如："./ci_scripts/dev.mobileprovision"
   XC_IMPORT_PROVISIONING_PATH: ""
 
   # 导入 p12 签名证书的路径，留空跳过导入
-  # 例如："./CI/dev.p12"
+  # 例如："./ci_scripts/dev.p12"
   XC_IMPORT_CERTIFICATE_PATH: ""
 
   # 导入证书的密码
@@ -60,7 +60,7 @@ develop_deploy:
     paths:
       - "export/*.zip"
     expire_in: 1 days
-  script: ./CI/gitlab.sh
+  script: ./ci_scripts/gitlab.sh
   variables:
     XC_BUILD_CONFIGURATION: Debug
 
@@ -77,7 +77,7 @@ demo_deploy:
       - "**/*.ipa"
     expire_in: 2 days
     when: always
-  script: ./CI/gitlab.sh
+  script: ./ci_scripts/gitlab.sh
   variables:
     FIR_UPLOAD_TOKEN: ZMM_FIR_TOKEN
     XC_BUILD_CONFIGURATION: Alpha
@@ -95,6 +95,6 @@ release_deploy:
       - "export/*.zip"
       
     expire_in: 4 days
-  script: ./CI/gitlab.sh
+  script: ./ci_scripts/gitlab.sh
   variables:
     FIR_UPLOAD_TOKEN: ""

@@ -26,7 +26,7 @@ class TopicEntity: MBModel,
     var commentCount: Int = 0
 
     // MARK: -
-    @objc private var allowOperations = [String]()
+    private var allowOperations = [String]()
 
     // MARK: - 赞
 
