@@ -6,5 +6,5 @@ pod update --verbose || {
     say "Update failed"
     exit
 }
-./Scripts/sort_projects.sh
+./ci_scripts/sort_projects.sh
 say "Update done"

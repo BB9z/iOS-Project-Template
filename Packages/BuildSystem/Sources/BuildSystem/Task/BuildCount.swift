@@ -30,7 +30,7 @@ class BuildCount {
     }
 
     /// 编译次数记录文件的相对路径
-    let recordFilePath = "Scripts/BuildCountRecord.plist"
+    let recordFilePath = "ci_scripts/BuildCountRecord.plist"
 
     func run(context: XCContext) throws {
         let recordURL = context.resolving(relativePath: recordFilePath)

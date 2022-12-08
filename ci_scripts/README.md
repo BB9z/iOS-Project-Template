@@ -1,6 +1,6 @@
 # ci_scripts
 
-CI/CD 脚本，包含了不同体系。目录名是 Xcode Cloud 定死的。
+CI/CD 脚本，包含 GitLab 和 Xcode Cloud 用到的脚本。目录名是 Xcode Cloud 定死的。
 
 ## GitLab
 

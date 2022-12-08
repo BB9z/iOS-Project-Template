@@ -214,7 +214,7 @@ else
 fi
 
 logInfo "整理项目文件"
-Scripts/sort_projects.sh
+ci_scripts/sort_projects.sh
 
 echo "项目设置完成"
 logInfo "  检查一切 OK 后，可删除 Backup 目录，bootstrap 脚本也建议删除"

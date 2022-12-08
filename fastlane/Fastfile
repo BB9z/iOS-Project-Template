@@ -29,7 +29,7 @@ end
 
 desc "项目文件内容排序整理"
 lane :sort_project do
-    sh("cd .. && ./Scripts/sort_projects.sh")
+    sh("cd .. && ./ci_scripts/sort_projects.sh")
 end
 
 platform :ios do

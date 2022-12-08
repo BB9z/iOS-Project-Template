@@ -6,5 +6,5 @@ pod install --verbose || {
     say "Install failed"
     exit
 }
-./Scripts/sort_projects.sh
+./ci_scripts/sort_projects.sh
 say "Install done"

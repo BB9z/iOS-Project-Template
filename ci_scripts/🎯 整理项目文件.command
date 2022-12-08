@@ -1,6 +1,5 @@
 #!/bin/zsh
 set -euo pipefail
 cd "$(dirname "$0")/.."
-echo "$PWD"
-fastlane sort_project
+./ci_scripts/sort_projects.sh
 say "sort done"
