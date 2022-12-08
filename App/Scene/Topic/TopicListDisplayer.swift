@@ -17,7 +17,7 @@ import Debugger
 extension TopicListDisplayer: DebugActionSource {
     func debugActionItems() -> [DebugActionItem] {
         [
-            DebugActionItem("测试数据") { [self] in  // swiftlint:disable:this closure_body_length
+            DebugActionItem("测试数据") { [self] in
                 let user1 = UserEntity()
                 user1.uid = "UAnOiIAvB1keXOBFfvUezgIQ"
                 user1.name = "演示用户"

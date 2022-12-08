@@ -41,7 +41,6 @@ disabled_rules:
 # 筛选后开了很多可选规则
 # 几乎用不到、不合理的规则删去了，注释的是看情况可以开的
 opt_in_rules:
-  - anyobject_protocol
   - array_init
   # - attributes
   - closure_body_length
@@ -130,6 +129,7 @@ excluded:
   - B9Doc
   - Carthage
   - Frameworks
+  - Packages
   - Pods
 
 # 针对每条规则的配置（请按字母顺序排序）
