@@ -9,6 +9,7 @@
  https://opensource.org/licenses/MIT
  */
 
+import B9FoundationUI
 import UIKit
 
 // swiftlint:disable identifier_name
@@ -24,7 +25,7 @@ internal extension Debugger {
             _floatWindow ?? {
                 let win = Window()
                 win.backgroundColor = nil
-                win.windowLevel = .statusBar
+                win.windowLevel = .alert
                 win.rootViewController = storyboard.instantiateInitialViewController()
                 _floatWindow = win
                 return win

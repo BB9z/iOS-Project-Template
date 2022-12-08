@@ -12,6 +12,8 @@
 import UIKit
 
 internal final class Window: UIWindow {
+    override var canBecomeKey: Bool { false }
+
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let result = super.hitTest(point, with: event)
         if result is WindowTouchForwardView {
@@ -26,7 +28,7 @@ internal final class Window: UIWindow {
 
     private var viewControllers = [UIViewController]()
 
-    @IBAction internal func debuggerBack(_ sender: Any) {
+    @IBAction internal func debuggerBack(_ sender: Any?) {
         if rootViewController == viewControllers.last {
             _ = viewControllers.popLast()
         }
