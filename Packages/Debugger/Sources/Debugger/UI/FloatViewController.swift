@@ -51,12 +51,33 @@ internal final class FloatViewController: UIViewController {
         var shouldHideOnSelect = false
     }
 
+    @IBOutlet private weak var contentView: UIView!
     /// 全局操作
     @IBOutlet private weak var globalList: UITableView!
     /// 当前视图中的操作
     @IBOutlet private weak var contextList: UITableView!
     private lazy var globalListDatasource = DataSource()
     private lazy var contextListDatasource = DataSource()
+
+    internal var customView: UIView? {
+        didSet {
+            if let cView = customView {
+                contentView.addSubview(cView)
+                if cView.translatesAutoresizingMaskIntoConstraints {
+                    cView.frame = contentView.bounds
+                } else {
+                    contentView.addConstraints([
+                        cView.topAnchor.constraint(equalTo: contentView.topAnchor),
+                        cView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+                        cView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+                        cView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+                    ])
+                }
+            } else {
+                oldValue?.removeFromSuperview()
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +93,7 @@ internal final class FloatViewController: UIViewController {
         globalItems.append(autoHideItem)
         globalListDatasource.update(items: globalItems)
         contextListDatasource.update(items: contextItems(currentVC: Debugger.currentViewController))
+        customView = nil
     }
 
     private func contextItems(currentVC: UIViewController?) -> [DebugActionItem] {
