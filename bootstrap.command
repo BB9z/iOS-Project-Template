@@ -1,4 +1,4 @@
-#! /bin/zsh
+#! /bin/sh
 
 # 项目初始化：项目自动更名，重建 git，检查工具依赖等
 # Copyright © 2019, 2022 BB9z.
