@@ -31,6 +31,7 @@ class HighlightComments {
             "(",
             "-not", "-path", "\(context.sourceRoot)/Frameworks/*",
             "-not", "-path", "\(context.sourceRoot)/Packages/BuildSystem/*",
+            "-not", "-path", "\(context.sourceRoot)/Packages/Pulse/*",
             "-not", "-path", "\(context.sourceRoot)/Pods/*",
             ")",
             // Find all files of types
