@@ -11,6 +11,7 @@ iOS 13+；Xcode 14.1+；macOS 13+。
 ```sh
 brew install cocoapods
 brew install fastlane  # 可选
+brew install swiftlint # 可选
 ```
 
 ## 配置
