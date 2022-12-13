@@ -1,4 +1,4 @@
-name: Demos
+name: "Demos - Navigation"
 
 on:
   push:
@@ -11,18 +11,22 @@ on:
       - App.xcodeproj/project.pbxproj
       - Podfile.lock
 
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     name: 导航系统
-    runs-on: macos-latest
+    runs-on: macos-12
     env:
       XC_BUILD_SCHEME: "Navigation"
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: CocoaPods Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "Pods"
           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
@@ -41,7 +45,6 @@ jobs:
               echo "pod install fails, try update repo"
               pod install --repo-update
             }
-            touch "Scripts/PreBuild.time"
           else
             echo "Podfile unchanged, skip pod install."
           fi
