@@ -61,11 +61,11 @@ class Account: MBUser {
             // 原则是保留能从用户信息接口获取的字段
             // 如果是登录接口附加的信息则移动到 Account 上
 
-            persistentInfomationToStore()
+            persistentInformationToStore()
         }
     }
     private var _information: AccountEntity?
-    private func persistentInfomationToStore() {
+    private func persistentInformationToStore() {
         guard isCurrent else { return }
         AppUserDefaultsShared().lastUserID = uid
         AppUserDefaultsShared().accountEntity = information
@@ -73,13 +73,11 @@ class Account: MBUser {
 
     var token: String?
 
-    var hasPofileFetchedThisSession: Bool = false
-
     // MARK: - 挂载
 
-    @objc private(set) lazy var profile: NSAccountDefaults? = {
+    private(set) lazy var profile: AccountDefaults? = {
         let suitName = ("User\(uid)" as NSString).rf_MD5
-        return NSAccountDefaults(suiteName: suitName)
+        return AccountDefaults(suiteName: suitName)
     }()
 
     // MARK: - 流程
@@ -90,7 +88,7 @@ class Account: MBUser {
         #if MBUserStringUID
         guard let userID = AppUserDefaultsShared().lastUserID else { return }
         #else
-        let userID = AppUserDefaultsShared().lastUserID
+        let userID = AppUserDefaultsShared().lastUserID ?? 0
         guard userID > 0 else { return }
         #endif
         guard let token = AppUserDefaultsShared().userToken else {
@@ -113,11 +111,6 @@ class Account: MBUser {
         #endif
         defaults.userToken = user?.token
         defaults.accountEntity = user?.information
-        if !defaults.synchronize() {
-            // 实际项目遇到过 UserDefaults 无法存储的 bug，需要用户重启设备才行
-            // 处理方式可以参考： https://github.com/BB9z/iOS-Project-Template/blob/4.1/App/Model/Account/Account.swift#L123-L127
-            NSLog("⚠️ 用户信息存储失败")
-        }
     }
 
     override func onLogin() {

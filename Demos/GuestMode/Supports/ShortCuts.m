@@ -9,10 +9,6 @@
  不在这写创建逻辑，会导致难于维护
  */
 
-NSString *AppBuildConfiguration(void) {
-    return @MBBuildConfiguration;
-}
-
 ApplicationDelegate *__nonnull AppDelegate() {
     ApplicationDelegate *ad = (id)[UIApplication sharedApplication].delegate;
     RFAssert(ad, @"Shared app delegate nil?");
@@ -97,10 +93,6 @@ AccountEntity *AppUserInformation() {
 
 NSUserDefaults *AppUserDefaultsShared() {
     return [NSUserDefaults standardUserDefaults];
-}
-
-NSAccountDefaults *_Nullable AppUserDefaultsPrivate() {
-    return AppUser().profile;
 }
 
 BOOL AppActive() {
