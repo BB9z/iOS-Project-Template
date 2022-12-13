@@ -43,7 +43,7 @@ enum ApplicationCondition {
 
     // - 模块生命周期
     /// 导航已加载
-    case naigationLoaded
+    case navigationLoaded
 
     /// 主页已载入
     case homeLoaded
