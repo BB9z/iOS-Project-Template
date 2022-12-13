@@ -1,6 +1,8 @@
 #!/usr/bin/env swift
 
 /// 安装项目文件整理脚本到 git hooks
+/// Copyright © 2020 BB9z.
+/// https://github.com/BB9z/iOS-Project-Template
 
 import Cocoa
 
@@ -48,7 +50,7 @@ if !FileManager.default.fileExists(atPath: preCommitFileURL.path) {
 
     set -euo pipefail
 
-    ./Scripts/sort_projects.sh
+    ./ci_scripts/sort_projects.sh
 
     """
     do {
@@ -77,7 +79,7 @@ guard var fileContent = try? String(contentsOf: preCommitFileURL, encoding: .utf
 var fileLines = fileContent.components(separatedBy: .newlines)
 for line in fileLines.reversed() {
     let text = line.trimmingCharacters(in: .whitespaces)
-    if text.contains("./Scripts/sort_projects.sh"),
+    if text.contains("./ci_scripts/sort_projects.sh"),
        !text.hasPrefix("#") {
         print("🎉 排序脚本已安装在 pre-commit 中")
         exit(EXIT_SUCCESS)
@@ -85,7 +87,7 @@ for line in fileLines.reversed() {
 }
 
 print("🧭 附加排序脚本到文件末尾")
-fileContent.append("\n./Scripts/sort_projects.sh\n")
+fileContent.append("\n./ci_scripts/sort_projects.sh\n")
 do {
     try fileContent.write(to: preCommitFileURL, atomically: false, encoding: .utf8)
     try Script.chmod(preCommitFileURL, permissions: 0o755)

@@ -8,7 +8,6 @@
  https://opensource.org/licenses/MIT
  */
 
-import B9FoundationUI
 import UIKit
 
 /**
@@ -87,7 +86,7 @@ public extension Debugger {
     /// 显示调试面板
     static func showControlCenter() {
         if #available(iOS 13.0, *) {
-            floatWindow.windowScene = triggerButton?.window?.windowScene ?? activedWindowScene
+            floatWindow.windowScene = triggerButton?.window?.windowScene ?? activatedWindowScene
         }
         floatWindow.isHidden = false
         floatViewController?.refresh()
@@ -96,6 +95,14 @@ public extension Debugger {
     /// 隐藏调试面板
     static func hideControlCenter() {
         floatWindow.isHidden = true
+    }
+
+    static func showDebugView(_ view: UIView) {
+        floatViewController?.customView = view
+    }
+
+    static func hideDebugView() {
+        floatViewController?.customView = nil
     }
 
     /// 检查对象

@@ -19,7 +19,7 @@ let package = Package(
     dependencies: [
         // https://developer.apple.com/documentation/swift_packages/target/dependency
         // Dependencies declare other packages that this package depends on.
-        .package(name: "B9Action", url: "https://gitee.com/b9swift/Action.git", from: "1.0.0")
+        .package(name: "B9Action", url: "https://github.com/b9swift/Action.git", from: "1.0.0")
     ],
     targets: [
         // https://developer.apple.com/documentation/swift_packages/target

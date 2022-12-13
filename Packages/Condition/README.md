@@ -7,9 +7,16 @@
 [![GitHub Source](https://img.shields.io/badge/Source-GitHub-24292F.svg?style=flat-square)](https://github.com/b9swift/Condition)
 
 维护一组状态，当满足特定状态时执行相应的监听
+Maintains a set of states that allows it to perform observation actions when the specific states are satisfied.
 
 ## 集成
 
 使用 Swift Package Manager 或手工导入。
 
 You can also use [GitHub source](https://github.com/b9swift/Condition).
+
+## Installation
+
+You can use either Swift Package Manager or manual importing to add this package or module to your project.
+
+你也可以使用 [gitee 镜像](https://gitee.com/b9swift/Condition)。

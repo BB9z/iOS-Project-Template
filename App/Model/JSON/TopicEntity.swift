@@ -26,7 +26,7 @@ class TopicEntity: MBModel,
     var commentCount: Int = 0
 
     // MARK: -
-    @objc private var allowOperations = [String]()
+    private var allowOperations = [String]()
 
     // MARK: - 赞
 
@@ -35,7 +35,7 @@ class TopicEntity: MBModel,
     }
 
     var likeCount: Int = 0
-    private(set) var isLiked: Bool = false
+    private(set) var isLiked = false
 //    "last_comment": CommentEntity
 
     private weak var likeTask: RFAPITask?

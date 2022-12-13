@@ -10,28 +10,21 @@
 
 /**
  线性渐变 view
+ Linear gradient view
  */
 @IBDesignable
 class GradientView: UIView {
     @IBInspectable var startColor: UIColor? {
-        didSet {
-            needsUpdateStyle = true
-        }
+        didSet { needsUpdateStyle = true }
     }
     @IBInspectable var endColor: UIColor? {
-        didSet {
-            needsUpdateStyle = true
-        }
+        didSet { needsUpdateStyle = true }
     }
     @IBInspectable var startPoint: CGPoint = CGPoint(x: 0.5, y: 0) {
-        didSet {
-            needsUpdateStyle = true
-        }
+        didSet { needsUpdateStyle = true }
     }
     @IBInspectable var endPoint: CGPoint = CGPoint(x: 0.5, y: 1) {
-        didSet {
-            needsUpdateStyle = true
-        }
+        didSet { needsUpdateStyle = true }
     }
 
     override class var layerClass: AnyClass {

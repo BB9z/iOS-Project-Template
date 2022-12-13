@@ -1,3 +1,19 @@
+/*!
+ BadgeManager.swift
+ MBNotificationCenter
+ 
+ Copyright © 2020, 2022 BB9z.
+ https://github.com/BB9z/iOS-Project-Template
+ 
+ The MIT License
+ https://opensource.org/licenses/MIT
+ */
+
+// swiftlint:disable:next identifier_name
+func AppBadge() -> BadgeManager {
+    BadgeManager.defaultManager
+}
+
 /**
  应用红点管理器
  */

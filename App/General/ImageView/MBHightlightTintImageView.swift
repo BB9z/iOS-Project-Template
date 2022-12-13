@@ -13,12 +13,12 @@
 
  注意：iOS 11-12 第一屏的图片可能还需要用 UIImageView+MBRenderingMode 修正一下
  */
-class MBHightlightTintImageView: UIImageView {
+class MBHighlightTintImageView: UIImageView {
 
     private var normalTintColor: UIColor?
-    @IBInspectable var hightlightTintColor: UIColor? {
+    @IBInspectable var highlightTintColor: UIColor? {
         didSet {
-            if isHighlighted, let color = hightlightTintColor {
+            if isHighlighted, let color = highlightTintColor {
                 tintColor = color
             }
         }
@@ -34,7 +34,7 @@ class MBHightlightTintImageView: UIImageView {
 
     override var isHighlighted: Bool {
         didSet {
-            guard let color = hightlightTintColor else {
+            guard let color = highlightTintColor else {
                 return
             }
             if isHighlighted {

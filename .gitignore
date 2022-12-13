@@ -10,8 +10,8 @@
 .idea/
 
 # Build
-Scripts/build/
-build/
+**/.build/
+**/Build/
 DerivedData/
 *.ipa
 

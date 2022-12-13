@@ -11,4 +11,4 @@
 
 #import <UIKit/UIKit.h>
 
-#pragma message "这个文件仅用于向 Interface Buider 中增加属性的便捷访问，不应该被其他文件引用"
+#pragma message "这个文件仅用于向 Interface Builder 中增加属性的便捷访问，不应该被其他文件引用"

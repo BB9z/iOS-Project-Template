@@ -75,13 +75,13 @@ class Account: MBUser {
 
     var token: String?
 
-    var hasPofileFetchedThisSession: Bool = false
+    var hasPofileFetchedThisSession = false
 
     // MARK: - 挂载
 
-    @objc private(set) lazy var profile: NSAccountDefaults? = {
+    private(set) lazy var profile: AccountDefaults? = {
         let suitName = ("User\(uid)" as NSString).rf_MD5
-        return NSAccountDefaults(suiteName: suitName)
+        return AccountDefaults(suiteName: suitName)
     }()
 
     // MARK: - 流程

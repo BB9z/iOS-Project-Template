@@ -1,6 +1,5 @@
 
 #import "debug.h"
-#import "NSUserDefaults+App.h"
 
 void DebugLog(BOOL fatal, NSString *_Nullable recordID, NSString *_Nonnull format, ...) {
     va_list args;
@@ -13,10 +12,6 @@ void DebugLog(BOOL fatal, NSString *_Nullable recordID, NSString *_Nonnull forma
             @throw [NSException exceptionWithName:@"pause" reason:nil userInfo:nil];
         }
         @catch (NSException *exception) { }
-    }
-    if (recordID
-        && ![@MBBuildConfiguration isEqualToString:@"Debug"]) {
-        // 🔰 记录错误
     }
 }
 
