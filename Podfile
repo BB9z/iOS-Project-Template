@@ -55,7 +55,6 @@ target 'App' do
         'Button',
         'Input',
         'Navigation',
-        'RootViewController',
         'UserIDIsString', # 🔰 如果 user ID 是整型的，请删除这条
         'Worker',
     ]
