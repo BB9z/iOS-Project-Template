@@ -27,8 +27,6 @@ PODS:
     - RFAlpha/RFSynthesize
     - RFKit/Category/NSArray
     - RFKit/Category/UIResponder
-  - MBAppKit/RootViewController (0.13.0):
-    - RFKit/Runtime
   - MBAppKit/UserIDIsString (0.13.0):
     - MBAppKit/Core
   - MBAppKit/Worker (0.13.0):
@@ -243,7 +241,6 @@ DEPENDENCIES:
   - MBAppKit/Button (from `https://github.com/RFUI/MBAppKit.git`)
   - MBAppKit/Input (from `https://github.com/RFUI/MBAppKit.git`)
   - MBAppKit/Navigation (from `https://github.com/RFUI/MBAppKit.git`)
-  - MBAppKit/RootViewController (from `https://github.com/RFUI/MBAppKit.git`)
   - MBAppKit/UserIDIsString (from `https://github.com/RFUI/MBAppKit.git`)
   - MBAppKit/Worker (from `https://github.com/RFUI/MBAppKit.git`)
   - RFAlpha/RFBlockSelectorPerform
@@ -309,6 +306,6 @@ SPEC CHECKSUMS:
   SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 854c4c3913f12395824757b4fd82aba7a173fad1
+PODFILE CHECKSUM: 72766b4216c734bd57388bd8d4fe950aeff7c566
 
 COCOAPODS: 1.11.3

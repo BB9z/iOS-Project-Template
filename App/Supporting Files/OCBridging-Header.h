@@ -61,7 +61,6 @@
 #import <MBAppKit/MBApplicationDelegate.h>
 #import <MBAppKit/MBGeneral.h>
 #import <MBAppKit/MBModel.h>
-#import <MBAppKit/MBRootViewController.h>
 #import <MBAppKit/MBUser.h>
 //#import <MBAppKit/MBWorkerQueue.h>
 #import <RFAPI/RFAPIJSONModelTransformer.h>

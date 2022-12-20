@@ -33,7 +33,7 @@ class NavigationController: MBNavigationController, StoryboardCreation, UIApplic
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        AppCondition().set(off: [.naigationLoaded])
+        AppCondition().set(off: [.navigationLoaded])
     }
 
     func onLogout() {

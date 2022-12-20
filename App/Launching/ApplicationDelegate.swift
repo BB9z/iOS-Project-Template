@@ -55,6 +55,11 @@ class ApplicationDelegate: MBApplicationDelegate {
         // 统一全局色，storyboard 的全局色只对部分 UI 生效，比如无法对 UIAlertController 应用
         window.tintColor = UIColor(named: "primary")!
 
+        #if DEBUG
+        // 强制修改窗口的最小尺寸，用以调试小屏幕适配
+        window.windowScene?.sizeRestrictions?.minimumSize = CGSize(width: 200, height: 300)
+        #endif
+
         // 列表 data source 全局调整
         MBListDataSource<AnyObject>.defualtPageStartZero = false
         MBListDataSource<AnyObject>.defaultPageSizeParameterName = "size"
