@@ -3,7 +3,7 @@
 
 import PackageDescription
 
-let mainName = "B9FoundationUI"
+let mainName = "B9Foundation"
 
 let package = Package(
     name: mainName,

@@ -1,4 +1,4 @@
-@testable import B9FoundationUI
+@testable import B9Foundation
 import XCTest
 
 final class UIResponderTests: XCTestCase {

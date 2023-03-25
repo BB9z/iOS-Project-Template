@@ -9,7 +9,7 @@
  https://opensource.org/licenses/MIT
  */
 
-import B9FoundationUI
+import B9Foundation
 import UIKit
 
 // swiftlint:disable identifier_name
