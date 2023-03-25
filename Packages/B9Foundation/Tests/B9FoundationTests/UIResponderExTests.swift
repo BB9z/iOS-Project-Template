@@ -1,3 +1,14 @@
+/*
+ UIResponderExTests.swift
+ B9Foundation
+
+ Copyright © 2022-2023 BB9z.
+ https://github.com/BB9z/iOS-Project-Template
+
+ The MIT License
+ https://opensource.org/licenses/MIT
+ */
+
 @testable import B9Foundation
 import XCTest
 
