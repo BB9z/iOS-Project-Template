@@ -3,7 +3,7 @@
 
 import PackageDescription
 
-let mainName = "B9FoundationUI"
+let mainName = "B9Foundation"
 
 let package = Package(
     name: mainName,
@@ -27,6 +27,9 @@ let package = Package(
             name: mainName + "Tests",
             dependencies: [
                 Target.Dependency(stringLiteral: mainName)
-            ])
+            ],
+            resources: [
+                .process("Resources"),
+            ]),
     ]
 )

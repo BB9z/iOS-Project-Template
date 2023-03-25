@@ -57,7 +57,7 @@
 		D53446032592481400F5FD80 /* Date+Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53446022592481400F5FD80 /* Date+Server.swift */; };
 		D534461025924CE700F5FD80 /* UIApplication+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534460E25924CE700F5FD80 /* UIApplication+App.swift */; };
 		D534461125924CE700F5FD80 /* UIViewController+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D534460F25924CE700F5FD80 /* UIViewController+App.swift */; };
-		D53BB5FC27FC468300F60168 /* B9FoundationUI in Frameworks */ = {isa = PBXBuildFile; productRef = D53BB5FB27FC468300F60168 /* B9FoundationUI */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D53BB5FC27FC468300F60168 /* B9Foundation in Frameworks */ = {isa = PBXBuildFile; productRef = D53BB5FB27FC468300F60168 /* B9Foundation */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D53BB60027FC4EE600F60168 /* Debugger in Frameworks */ = {isa = PBXBuildFile; productRef = D53BB5FF27FC4EE600F60168 /* Debugger */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D544A396197CBE5300C65604 /* MBFormSelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D544A395197CBE5300C65604 /* MBFormSelectButton.m */; };
 		D544A39E197D1E8600C65604 /* JSONValueTransformer+App.m in Sources */ = {isa = PBXBuildFile; fileRef = D544A39D197D1E8600C65604 /* JSONValueTransformer+App.m */; };
@@ -277,7 +277,7 @@
 		D534460E25924CE700F5FD80 /* UIApplication+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+App.swift"; sourceTree = "<group>"; };
 		D534460F25924CE700F5FD80 /* UIViewController+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+App.swift"; sourceTree = "<group>"; };
 		D5353D1524B7E1EF00BED8C7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		D53BB5F927FC467700F60168 /* B9FoundationUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = B9FoundationUI; sourceTree = "<group>"; };
+		D53BB5F927FC467700F60168 /* B9Foundation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = B9Foundation; sourceTree = "<group>"; };
 		D53BB5FD27FC473000F60168 /* Debugger */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Debugger; sourceTree = "<group>"; };
 		D5420E60290F455200C30832 /* BuildSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BuildSystem; sourceTree = "<group>"; };
 		D544A394197CBE5300C65604 /* MBFormSelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBFormSelectButton.h; sourceTree = "<group>"; };
@@ -519,7 +519,7 @@
 				D57FBB6B279BB727003A0533 /* B9AssociatedObject in Frameworks */,
 				D5D1859C280D7331009B5476 /* B9Condition in Frameworks */,
 				D5F036B527FB479800C60A72 /* B9Debug in Frameworks */,
-				D53BB5FC27FC468300F60168 /* B9FoundationUI in Frameworks */,
+				D53BB5FC27FC468300F60168 /* B9Foundation in Frameworks */,
 				D527917D27B557A800522240 /* B9MulticastDelegate in Frameworks */,
 				D53BB60027FC4EE600F60168 /* Debugger in Frameworks */,
 				D5F036C327FBC80500C60A72 /* HasItem in Frameworks */,
@@ -1389,7 +1389,7 @@
 			children = (
 				D546F50D2932D2EC00EB5F04 /* Action */,
 				D546F5102932D2EC00EB5F04 /* AssociatedObject */,
-				D53BB5F927FC467700F60168 /* B9FoundationUI */,
+				D53BB5F927FC467700F60168 /* B9Foundation */,
 				D5420E60290F455200C30832 /* BuildSystem */,
 				D5D1859A280D72B5009B5476 /* Condition */,
 				D546F50C2932D2EC00EB5F04 /* Debug */,
@@ -1429,7 +1429,7 @@
 				D527917C27B557A800522240 /* B9MulticastDelegate */,
 				D5F036B427FB479800C60A72 /* B9Debug */,
 				D5F036C227FBC80500C60A72 /* HasItem */,
-				D53BB5FB27FC468300F60168 /* B9FoundationUI */,
+				D53BB5FB27FC468300F60168 /* B9Foundation */,
 				D53BB5FF27FC4EE600F60168 /* Debugger */,
 				D5D1859B280D7331009B5476 /* B9Condition */,
 			);
@@ -2141,9 +2141,9 @@
 			package = D527917B27B557A800522240 /* XCRemoteSwiftPackageReference "MulticastDelegate" */;
 			productName = B9MulticastDelegate;
 		};
-		D53BB5FB27FC468300F60168 /* B9FoundationUI */ = {
+		D53BB5FB27FC468300F60168 /* B9Foundation */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = B9FoundationUI;
+			productName = B9Foundation;
 		};
 		D53BB5FF27FC4EE600F60168 /* Debugger */ = {
 			isa = XCSwiftPackageProductDependency;

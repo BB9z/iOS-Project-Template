@@ -66,18 +66,15 @@ private struct AppLogHandler: LogHandler {
         }
     }
 
-    // https://github.com/apple/swift-log/blob/1.4.2/Sources/Logging/Logging.swift#L929
     private func timestamp() -> String {
-        var buffer = [Int8](repeating: 0, count: 127)
-        var timestamp = time(nil)
-        let localTime = localtime(&timestamp)
-        strftime(&buffer, buffer.count, "%H:%M:%S", localTime)
-        return buffer.withUnsafeBufferPointer {
-            $0.withMemoryRebound(to: CChar.self) {
-                String(cString: $0.baseAddress!)
-            }
-        }
+        nowDateFormatter.string(from: Date())
     }
+
+    private let nowDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss.SSS"
+        return dateFormatter
+    }()
 }
 
 #endif
