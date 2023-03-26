@@ -2,6 +2,8 @@
  搜索高亮支持
  */
 
+import B9AssociatedObject
+
 /**
  添加到 model 上支持搜索高亮
 

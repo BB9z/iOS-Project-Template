@@ -3,6 +3,8 @@
 //  App
 //
 
+import B9AssociatedObject
+
 /// tab 序号定义
 enum NavigationTab: Int {
     case home = 0, topic, more, count

@@ -8,6 +8,7 @@
  https://opensource.org/licenses/MIT
  */
 
+import B9AssociatedObject
 import UIKit
 
 /**
