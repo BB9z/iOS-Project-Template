@@ -60,7 +60,6 @@ opt_in_rules:
   # - expiring_todo
   # - explicit_enum_raw_value
   - explicit_init
-  - explicit_self
   # - explicit_type_interface
   - extension_access_modifier
   # - fallthrough
@@ -106,7 +105,6 @@ opt_in_rules:
   # - unavailable_function
   - unneeded_parentheses_in_closure_argument
   # - untyped_error_in_catch
-  - unused_import
   - vertical_parameter_alignment_on_call
   # - vertical_whitespace_between_cases
   - vertical_whitespace_closing_braces
@@ -121,6 +119,11 @@ opt_in_rules:
   # - file_header
   - missing_docs
   # - nslocalizedstring_require_bundle
+
+# Rules run by `swiftlint analyze`
+analyzer_rules:
+  - explicit_self
+  - unused_import
 
 excluded:
   - "App/Development Content/*.playground"

@@ -247,6 +247,7 @@
 		D5197D3617F027BB00CA387C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D519A0CD2434883300E26A64 /* MBMaskHiddenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMaskHiddenView.h; sourceTree = "<group>"; };
 		D519A0CE2434883300E26A64 /* MBMaskHiddenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMaskHiddenView.m; sourceTree = "<group>"; };
+		D51B800529D0789400DD825C /* SwiftLint Configuration */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = "SwiftLint Configuration"; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		D525F3E72506988D003EBEB0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D525F3E82506988D003EBEB0 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D527917E27B558D500522240 /* Do.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Do.swift; sourceTree = "<group>"; };
@@ -742,6 +743,7 @@
 		D52EADE32043B983007219E0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D51B800529D0789400DD825C /* SwiftLint Configuration */,
 				D52EADE52043B983007219E0 /* alpha.entitlements */,
 				D52EADE92043B983007219E0 /* Common.h */,
 				D52EADE62043B983007219E0 /* debug.entitlements */,
@@ -1569,7 +1571,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nfi\n";
+			shellScript = "PATH=\"$PATH:/opt/homebrew/bin\"\nif [ -x \"$(command -v swiftlint)\" ]; then\n    swiftlint\nelse\n    echo \"warning: 🚫 SwiftLint not found. You can install it using Homebrew\"\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
