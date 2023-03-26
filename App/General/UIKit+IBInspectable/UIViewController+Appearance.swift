@@ -8,6 +8,8 @@
  https://opensource.org/licenses/MIT
  */
 
+import B9AssociatedObject
+
 /**
  在 Interface Builder 中直接控制 vc 相关样式
  */
