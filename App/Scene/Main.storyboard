@@ -87,7 +87,7 @@
                                             <rect key="frame" x="34.333333333333329" y="8.6666666666666643" width="18" height="18"/>
                                             <color key="tintColor" systemColor="systemGray2Color"/>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="hightlightTintColor">
+                                                <userDefinedRuntimeAttribute type="color" keyPath="highlightTintColor">
                                                     <color key="value" systemColor="systemBlueColor"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="renderingAsTemplate" value="YES"/>
@@ -127,7 +127,7 @@
                                             <rect key="frame" x="34.333333333333343" y="8.6666666666666643" width="18" height="18"/>
                                             <color key="tintColor" systemColor="systemGray3Color"/>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="hightlightTintColor">
+                                                <userDefinedRuntimeAttribute type="color" keyPath="highlightTintColor">
                                                     <color key="value" systemColor="systemGreenColor"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="renderingAsTemplate" value="YES"/>
@@ -168,7 +168,7 @@
                                             <color key="tintColor" systemColor="systemGray4Color"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="renderingAsTemplate" value="YES"/>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="hightlightTintColor">
+                                                <userDefinedRuntimeAttribute type="color" keyPath="highlightTintColor">
                                                     <color key="value" systemColor="systemOrangeColor"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
