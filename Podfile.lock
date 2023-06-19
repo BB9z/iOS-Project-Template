@@ -8,7 +8,7 @@ PODS:
     - RFKit/RFGeometry
   - MBAppKit/Core (0.13.0):
     - RFAlpha/RFSwizzle
-    - RFAPI (~> 2.0)
+    - RFAPI (~> 2.1.1)
     - RFKit (~> 2.0)
     - RFKit/Category/NSDate
     - RFKit/Category/NSDateFormatter
@@ -232,9 +232,9 @@ PODS:
     - RFKit/Category/UIDevice
     - RFKit/Category/UINavigationController
     - RFKit/Runtime (>= 1.7)
-  - SDWebImage (5.12.5):
-    - SDWebImage/Core (= 5.12.5)
-  - SDWebImage/Core (5.12.5)
+  - SDWebImage (5.16.0):
+    - SDWebImage/Core (= 5.16.0)
+  - SDWebImage/Core (5.16.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
@@ -288,13 +288,13 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   MBAppKit:
-    :commit: b557b27168982ce047364e9c4c589945615fd307
+    :commit: f67ccd08ceed9ffe0194f83c55e4a68124ee47f1
     :git: https://github.com/RFUI/MBAppKit.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
-  MBAppKit: 67f7f60b893a98e7986889204cd4ac2f02d524e9
+  MBAppKit: be40a93b7463347c6b12c11ccee79cfa89c18e64
   RFAlpha: b903f1725ccadee2226ab34fd0b9009cffa364d2
   RFAPI: 3cba472523c4301b4a0c44b1b3dcbe5707d21372
   RFDelegateChain: c6df4faf9932f86d9539a08d0aa8f9709025d874
@@ -303,9 +303,9 @@ SPEC CHECKSUMS:
   RFKit: 046ed8a61c874fbb93dce7a694cfc059e8bf5d7a
   RFMessageManager: e261b12146e083989df83106304fbface62705b5
   RFSegue: 32840d5876e32f192b22f41160ebfcf466a0fa3b
-  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
+  SDWebImage: 2aea163b50bfcb569a2726b6a754c54a4506fcf6
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
 PODFILE CHECKSUM: 72766b4216c734bd57388bd8d4fe950aeff7c566
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1
