@@ -1,7 +1,6 @@
 
 #import "MBRoundBarButtonItem.h"
 #import "Common.h"
-#import "MBButton.h"
 #import <RFAlpha/RFDrawImage.h>
 
 @interface MBRoundBarButtonItem ()
