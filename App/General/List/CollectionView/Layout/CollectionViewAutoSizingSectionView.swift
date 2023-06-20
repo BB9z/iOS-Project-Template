@@ -20,7 +20,7 @@ class CollectionViewAutoSizingSectionView: UICollectionReusableView, ResizeObser
 
     func didResized(view: UIView, oldSize: CGSize) {
         if view == refrenceHeightView {
-            if height != refrenceHeightView.height {
+            if bounds.height != refrenceHeightView.bounds.height {
                 updateHeight()
             }
         }
@@ -44,7 +44,7 @@ class CollectionViewAutoSizingSectionView: UICollectionReusableView, ResizeObser
 
     override var intrinsicContentSize: CGSize {
         if let ref = refrenceHeightView {
-            return CGSize(width: width, height: ref.height)
+            return CGSize(width: bounds.width, height: ref.bounds.height)
         }
         return super.intrinsicContentSize
     }

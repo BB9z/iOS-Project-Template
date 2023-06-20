@@ -1,6 +1,5 @@
 
 #import "MBTableViewController.h"
-#import <RFKit/UITableView+RFKit.h>
 
 @interface MBTableViewController ()
 @end
@@ -9,7 +8,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.listView deselectRows:animated];
+    for (NSIndexPath *row in self.listView.indexPathsForSelectedRows) {
+        [self.listView deselectRowAtIndexPath:row animated:animated];
+    }
 }
 
 - (void)refresh {

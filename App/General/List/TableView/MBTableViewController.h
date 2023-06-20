@@ -9,7 +9,7 @@
  https://opensource.org/licenses/MIT
  */
 #import "MBTableView.h"
-#import <MBAppKit/MBGeneral.h>
+#import "MBGeneral.h"
 
 // @MBDependency:3
 /**

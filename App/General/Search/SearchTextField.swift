@@ -8,7 +8,7 @@ class SearchTextField: MBSearchTextField {
         leftView = container
         leftViewMode = .always
         container.addSubview(iconView)
-        iconView.frame = CGRect(x: 16, y: (container.height - 16) / 2, width: 16, height: 16)
+        iconView.frame = CGRect(x: 16, y: (container.bounds.height - 16) / 2, width: 16, height: 16)
         container.addSubview(loadingView)
         loadingView.center = CGPointOfRectCenter(container.bounds)
         loadingView.move(xOffset: 2, yOffset: 0)

@@ -10,12 +10,7 @@
 */
 @objc(AccountEntity)
 class AccountEntity: MBModel {
-    #if MBUserStringUID
     @objc var uid: MBIdentifier = ""
-    #else
-    @objc var uid: MBID = 0
-    #endif
-
     @objc var name: String?
     @objc var introduction: String?
     @objc var avatar: String?
@@ -43,11 +38,7 @@ class LoginResponseEntity: MBModel {
             AppHUD().showErrorStatus("服务器返回信息缺失")
             return
         }
-        #if MBUserStringUID
         let user = Account(id: info.uid as String)
-        #else
-        let user = Account(id: info.uid)
-        #endif
         user?.token = token
         Account.current = user
     }

@@ -7,7 +7,7 @@
  The MIT License
  https://opensource.org/licenses/MIT
  */
-#import <MBAppKit/MBAppKit.h>
+#import <RFKit/RFRuntime.h>
 #import <RFInitializing/RFInitializing.h>
 
 // @MBDependency:1

@@ -9,7 +9,7 @@
  */
 
 #import <RFKit/RFRuntime.h>
-#import <MBAppKit/MBGeneralCallback.h>
+#import "MBGeneralCallback.h"
 
 /**
  复杂上传管理

@@ -3,7 +3,7 @@
 #import "Common.h"
 #import <RFAlpha/RFTimer.h>
 #import <RFDelegateChain/UITextFiledDelegateChain.h>
-#import <MBAppKit/MBAPI.h>
+#import "MBAPI.h"
 
 @interface MBSearchTextField ()
 @property (nonatomic) RFTimer *autoSearchTimer;

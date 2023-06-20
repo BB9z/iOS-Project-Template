@@ -18,7 +18,7 @@
 - (void)_MBRoundBarButtonItem_setupCustomView {
     UIButton *contentButton = [UIButton buttonWithType:UIButtonTypeCustom];
     UIColor *color = self.tintColor;
-    UIColor *highlightColor = color.rf_darkerColor;
+    UIColor *highlightColor = [color mixedColorWithRatio:0.8 color:UIColor.blackColor];
     CGFloat corners = 3;
     UIEdgeInsets imageInsets = UIEdgeInsetsMakeWithSameMargin(corners);
     CGSize imageSize = CGSizeMake(corners + corners + 1, corners + corners + 1);

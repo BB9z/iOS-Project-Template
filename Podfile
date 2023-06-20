@@ -24,8 +24,12 @@ target 'App' do
 #    pod 'WechatOpenSDK'                 # 微信 SDK
 
     pod 'RFKit', :subspecs => [
+        'Category/NSDate',
+        'Category/NSDateFormatter',
         'Category/NSFileManager',
+        'Category/NSLayoutConstraint',
         'Category/UIScrollView+RFScrolling',
+        'Category/UITableView',
     ]
     pod 'RFAlpha', :subspecs => [
         'RFBlockSelectorPerform',
@@ -36,12 +40,16 @@ target 'App' do
         'RFImageCropper',
         'RFNavigationController',
         'RFRefreshControl',
+        'RFSwizzle',
+        'RFSynthesize',
         'RFTabController',
         'RFTableViewPullToFetchPlugin',
         'RFTimer',
         'RFViewApperance/RFLine',
         'RFWindow',
     ]
+    pod 'RFAPI', :subspecs => ['JSONModel']
+    pod 'RFInitializing'
     pod 'RFDelegateChain', :subspecs => [
         'UICollectionViewDelegateFlowLayout',
         'UICollectionViewDataSource',
@@ -51,13 +59,6 @@ target 'App' do
     pod 'RFKeyboard'
     pod 'RFMessageManager', :subspecs => ['SVProgressHUD']
     pod 'RFSegue', :subspecs => ['Async']
-    pod 'MBAppKit', :git => 'https://github.com/RFUI/MBAppKit.git', :subspecs => [
-        'Button',
-        'Input',
-        'Navigation',
-        'UserIDIsString', # 🔰 如果 user ID 是整型的，请删除这条
-        'Worker',
-    ]
 end
 
 post_install do |pi|

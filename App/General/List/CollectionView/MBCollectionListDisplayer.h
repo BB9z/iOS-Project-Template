@@ -9,7 +9,7 @@
  */
 
 #import "MBCollectionView.h"
-#import <MBAppKit/MBGeneralListDisplaying.h>
+#import "MBGeneralListDisplaying.h"
 
 // @MBDependency:2
 /**

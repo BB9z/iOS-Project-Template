@@ -9,7 +9,7 @@
  https://opensource.org/licenses/MIT
  */
 #import <RFAlpha/RFPageTabController.h>
-#import <MBAppKit/MBGeneralListDisplaying.h>
+#import "MBGeneralListDisplaying.h"
 #import "MBTabControl.h"
 
 // @MBDependency:2

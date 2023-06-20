@@ -1,5 +1,7 @@
 
 #import "MBSingleSectionCollectionView.h"
+#import "MBGeneralItemExchanging.h"
+#import <RFKit/NSArray+RFKit.h>
 
 @interface MBSingleSectionCollectionView ()
 @property (strong, nonatomic) UICollectionViewDataSourceChain *trueDataSource;

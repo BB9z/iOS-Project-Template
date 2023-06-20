@@ -8,7 +8,8 @@
  The MIT License
  https://opensource.org/licenses/MIT
  */
-#import <MBAppKit/MBAppKit.h>
+#import <RFKit/RFRuntime.h>
+#import "MBGeneralCallback.h"
 
 // @MBDependency:3
 /**

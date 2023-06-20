@@ -10,11 +10,7 @@ import B9Condition
  */
 class Account: MBUser {
     // 有的项目登入时只返回认证信息，没有用户 ID，这时候需要用 userIDUndetermined 创建 Account 对象
-    #if MBUserStringUID
     static let userIDUndetermined = "<undetermined>"
-    #else
-    static let userIDUndetermined = INT64_MAX
-    #endif
 
     // MARK: - 状态
 
@@ -47,11 +43,7 @@ class Account: MBUser {
 
             _information = newValue
 
-            #if MBUserStringUID
             let uidChanged = newValue.uid.length > 0 && uid != newValue.uid as String
-            #else
-            let uidChanged = newValue.uid > 0 && uid != newValue.uid
-            #endif
             if uidChanged {
                 if uid != Account.userIDUndetermined {
                     AppLog().critical("用户信息 ID 不匹配")
@@ -80,7 +72,7 @@ class Account: MBUser {
     // MARK: - 挂载
 
     private(set) lazy var profile: AccountDefaults? = {
-        let suitName = ("User\(uid)" as NSString).rf_MD5
+        let suitName = B9Crypto.md5(utf8: "User\(uid)") ?? uid
         return AccountDefaults(suiteName: suitName)
     }()
 
@@ -89,12 +81,7 @@ class Account: MBUser {
     /// 应用启动后初始流程
     class func setup() {
         precondition(AppUser() == nil, "应用初始化时应该还未设置当前用户")
-        #if MBUserStringUID
         guard let userID = AppUserDefaultsShared().lastUserID else { return }
-        #else
-        let userID = AppUserDefaultsShared().lastUserID
-        guard userID > 0 else { return }
-        #endif
         guard let token = AppUserDefaultsShared().userToken else {
             AppLog().critical("Account has ID but no token")
             return
@@ -111,11 +98,7 @@ class Account: MBUser {
     override class func onCurrentUserChanged(_ currentUser: MBUser?) {
         let user = currentUser as? Account
         let defaults = AppUserDefaultsShared()
-        #if MBUserStringUID
         defaults.lastUserID = user?.uid
-        #else
-        defaults.lastUserID = user?.uid ?? 0
-        #endif
         defaults.userToken = user?.token
         defaults.accountEntity = user?.information
         if !defaults.synchronize() {

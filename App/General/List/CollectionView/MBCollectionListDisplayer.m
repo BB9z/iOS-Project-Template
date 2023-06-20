@@ -1,7 +1,7 @@
 
 #import "MBCollectionListDisplayer.h"
 #import "Common.h"
-#import <MBAppKit/MBGeneralCellResponding.h>
+#import "MBGeneralCellResponding.h"
 
 @interface MBCollectionListDisplayer ()
 

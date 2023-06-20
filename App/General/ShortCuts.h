@@ -2,7 +2,7 @@
 //  ShortCuts
 //  App
 //
-#import <MBAppKit/MBModel.h>
+#import "MBModel.h"
 
 /**
  快速访问一些全局对象，见 ShortCuts.swift
@@ -22,13 +22,6 @@ FOUNDATION_EXPORT MessageManager *__nonnull AppHUD(void);
 FOUNDATION_EXPORT Account *__nullable AppUser(void);
 
 /// 当前用户的 ID
-#if MBUserStringUID
 FOUNDATION_EXPORT MBIdentifier __nullable AppUserID(void);
-#else
-FOUNDATION_EXPORT MBID AppUserID(void);
-
-/// 总是非空
-FOUNDATION_EXPORT NSNumber *AppUserIDNumber(void);
-#endif
 
 NS_ASSUME_NONNULL_END

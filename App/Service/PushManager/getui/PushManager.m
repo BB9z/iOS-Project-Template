@@ -1,7 +1,7 @@
 
 #import "PushManager.h"
 #import "Common.h"
-#import <MBAppKit/MBApplicationDelegate.h>
+#import "MBApplicationDelegate.h"
 #import <GTSDK/GeTuiSdk.h>
 #import <RFKit/NSJSONSerialization+RFKit.h>
 @import ObjectiveC;

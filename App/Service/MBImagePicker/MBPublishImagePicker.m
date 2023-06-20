@@ -2,10 +2,13 @@
 #import "MBPublishImagePicker.h"
 #import "Common.h"
 #import "MBErrorCode.h"
+#import "NSObject+MBAppKit.h"
 #import "ShortCuts.h"
 #import "UIKit+App.h"
 #import <RFAlpha/RFImageCropperView.h>
 #import <RFAlpha/RFKVOWrapper.h>
+#import <RFKit/UIImage+RFKit.h>
+#import <RFKit/UIView+RFAnimate.h>
 #import <RFKit/UIViewController+RFKit.h>
 #if __has_include("API+FileUpload.h")
 #import "API+FileUpload.h"

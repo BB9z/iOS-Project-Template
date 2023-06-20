@@ -1,6 +1,6 @@
 
 #import "MBCollectionViewDataSource.h"
-#import <MBAppKit/MBGeneral.h>
+#import "MBGeneral.h"
 #import <RFDelegateChain/RFDelegateChain.h>
 #import "MBListDateItem.h"
 

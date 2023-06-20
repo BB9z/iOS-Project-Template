@@ -1,6 +1,6 @@
 
 #import "MBCollectionView.h"
-#import <MBAppKit/MBGeneralSetNeedsDoSomthing.h>
+#import "MBGeneralSetNeedsDoSomthing.h"
 #import <RFAlpha/RFKVOWrapper.h>
 #import <RFAlpha/UIScrollView+RFScrollViewContentDistance.h>
 #import <RFKit/UIResponder+RFKit.h>

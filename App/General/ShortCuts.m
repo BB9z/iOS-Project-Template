@@ -20,23 +20,6 @@ Account *__nullable AppUser() {
     return [Account currentUser];
 }
 
-#if MBUserStringUID
 MBIdentifier AppUserID() {
     return AppUser().uid;
 }
-#else
-MBID AppUserID() {
-    return AppUser().uid;
-}
-
-static NSNumber *_UserIDNumberCache;
-static MBID _UserIDNumberCacheVerify;
-NSNumber *AppUserIDNumber() {
-    if (_UserIDNumberCache
-        && AppUserID() == _UserIDNumberCacheVerify) {
-        return _UserIDNumberCache;
-    }
-    _UserIDNumberCache = @(AppUserID());
-    return _UserIDNumberCache;
-}
-#endif
