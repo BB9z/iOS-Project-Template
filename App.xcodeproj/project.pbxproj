@@ -157,6 +157,7 @@
 		D5DB4C1F241E27B800832A0A /* MBKeyboardAdjustScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DB4C1D241E27B700832A0A /* MBKeyboardAdjustScrollView.m */; };
 		D5DB4C22241E39EA00832A0A /* UIKit+DynamicType.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DB4C21241E39EA00832A0A /* UIKit+DynamicType.m */; };
 		D5DC60C124CA84BC00FBB147 /* ApplicationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55959CD20AB95640019D733 /* ApplicationCondition.swift */; };
+		D5E2AECA2A418F0000E7ABDA /* Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEC92A418F0000E7ABDA /* Current.swift */; };
 		D5E2DBFB24CEE54400CEB26D /* APIResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2DBFA24CEE54300CEB26D /* APIResponseSerializer.swift */; };
 		D5E6336D264BC77900C4EBE6 /* MBCollectionViewColumnLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E6336C264BC77900C4EBE6 /* MBCollectionViewColumnLayout.swift */; };
 		D5E80580226F403D00901C41 /* MBBottomLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E8057F226F403D00901C41 /* MBBottomLayoutView.m */; };
@@ -429,6 +430,7 @@
 		D5DB4C1E241E27B700832A0A /* MBKeyboardAdjustScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBKeyboardAdjustScrollView.h; sourceTree = "<group>"; };
 		D5DB4C20241E39EA00832A0A /* UIKit+DynamicType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+DynamicType.h"; sourceTree = "<group>"; };
 		D5DB4C21241E39EA00832A0A /* UIKit+DynamicType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIKit+DynamicType.m"; sourceTree = "<group>"; };
+		D5E2AEC92A418F0000E7ABDA /* Current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Current.swift; sourceTree = "<group>"; };
 		D5E2DBFA24CEE54300CEB26D /* APIResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponseSerializer.swift; sourceTree = "<group>"; };
 		D5E6336C264BC77900C4EBE6 /* MBCollectionViewColumnLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBCollectionViewColumnLayout.swift; sourceTree = "<group>"; };
 		D5E8057E226F403C00901C41 /* MBBottomLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBBottomLayoutView.h; sourceTree = "<group>"; };
@@ -913,6 +915,7 @@
 				D55959D120AB9F930019D733 /* MessageManager */,
 				D533D1462743D0C2008B923F /* Networking */,
 				D5170CE8191B327A000C7D45 /* PushManager */,
+				D5E2AEC92A418F0000E7ABDA /* Current.swift */,
 				D5542F151918B83400831016 /* MBApp.swift */,
 				D569C9E521AE906900211E36 /* README.md */,
 			);
@@ -1594,6 +1597,7 @@
 				D5BF664D24BC81D7008BC122 /* CommentEntity.swift in Sources */,
 				D584C78526F03768004E434B /* CoreAnimation+App.swift in Sources */,
 				D50319D425BE518C00C2849E /* CornerRadius.swift in Sources */,
+				D5E2AECA2A418F0000E7ABDA /* Current.swift in Sources */,
 				D5F9F47F208D921200427201 /* Date+App.swift in Sources */,
 				D53446032592481400F5FD80 /* Date+Server.swift in Sources */,
 				D54F0E4F2199A56E003370F4 /* DateFormatter+App.swift in Sources */,
