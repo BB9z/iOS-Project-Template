@@ -173,7 +173,6 @@
 		D5E2AF2B2A41972200E7ABDA /* MBTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF042A41972200E7ABDA /* MBTextField.m */; };
 		D5E2AF2C2A41972200E7ABDA /* MBNavigationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF062A41972200E7ABDA /* MBNavigationOperation.m */; };
 		D5E2AF2D2A41972200E7ABDA /* MBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF072A41972200E7ABDA /* MBNavigationController.m */; };
-		D5E2AF302A41972200E7ABDA /* MBRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF112A41972200E7ABDA /* MBRootViewController.m */; };
 		D5E2AF312A41972200E7ABDA /* MBWorkerQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF142A41972200E7ABDA /* MBWorkerQueue.m */; };
 		D5E2AF322A41972200E7ABDA /* MBWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF152A41972200E7ABDA /* MBWorker.m */; };
 		D5E2AF342A4197D100E7ABDA /* MBCollectionViewArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF332A4197D100E7ABDA /* MBCollectionViewArrayDataSource.swift */; };
@@ -492,8 +491,6 @@
 		D5E2AF072A41972200E7ABDA /* MBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNavigationController.m; sourceTree = "<group>"; };
 		D5E2AF082A41972200E7ABDA /* MBNavigationOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNavigationOperation.h; sourceTree = "<group>"; };
 		D5E2AF092A41972200E7ABDA /* MBNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNavigationController.h; sourceTree = "<group>"; };
-		D5E2AF112A41972200E7ABDA /* MBRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBRootViewController.m; sourceTree = "<group>"; };
-		D5E2AF122A41972200E7ABDA /* MBRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBRootViewController.h; sourceTree = "<group>"; };
 		D5E2AF142A41972200E7ABDA /* MBWorkerQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBWorkerQueue.m; sourceTree = "<group>"; };
 		D5E2AF152A41972200E7ABDA /* MBWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBWorker.m; sourceTree = "<group>"; };
 		D5E2AF162A41972200E7ABDA /* MBWorkerQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBWorkerQueue.h; sourceTree = "<group>"; };
@@ -1393,7 +1390,6 @@
 				D5E2AF022A41972200E7ABDA /* Input */,
 				D5E2AF132A41972200E7ABDA /* MBWorker */,
 				D5E2AF052A41972200E7ABDA /* Navigation */,
-				D5E2AF102A41972200E7ABDA /* RootViewController */,
 				D5E2AF3A2A41AE0000E7ABDA /* MBButton.swift */,
 			);
 			path = Components;
@@ -1417,15 +1413,6 @@
 				D5E2AF062A41972200E7ABDA /* MBNavigationOperation.m */,
 			);
 			path = Navigation;
-			sourceTree = "<group>";
-		};
-		D5E2AF102A41972200E7ABDA /* RootViewController */ = {
-			isa = PBXGroup;
-			children = (
-				D5E2AF122A41972200E7ABDA /* MBRootViewController.h */,
-				D5E2AF112A41972200E7ABDA /* MBRootViewController.m */,
-			);
-			path = RootViewController;
 			sourceTree = "<group>";
 		};
 		D5E2AF132A41972200E7ABDA /* MBWorker */ = {
@@ -1931,7 +1918,6 @@
 				D569C9EA21AE906900211E36 /* MBPublishSession.m in Sources */,
 				D5B49F171C41133A00847925 /* MBRefreshFooterView.m in Sources */,
 				D5B49F191C41133A00847925 /* MBRefreshHeaderView.m in Sources */,
-				D5E2AF302A41972200E7ABDA /* MBRootViewController.m in Sources */,
 				D588308720CAB8AE002030C4 /* MBRoundBarButtonItem.m in Sources */,
 				D5F9F483208DBF5F00427201 /* MBSceneStackView.m in Sources */,
 				D5EE51EC2043F613009148B3 /* MBScrollViewOffsetObserver.m in Sources */,
