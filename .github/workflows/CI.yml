@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: macos-12
+    runs-on: macos-13
 
     steps:
       - uses: actions/checkout@v3
@@ -55,4 +55,4 @@ jobs:
       - name: Build iOS target
         run: |
           set -o pipefail
-          xcodebuild -workspace "App.xcworkspace" -scheme "App"  -destination 'platform=iOS Simulator,name=iPhone 13' | xcpretty
+          xcodebuild -workspace "App.xcworkspace" -scheme "App"  -destination 'platform=iOS Simulator,name=iPhone 14' | xcpretty

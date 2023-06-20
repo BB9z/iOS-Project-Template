@@ -139,7 +139,7 @@
 		D5B8A39E251221A300C84CB1 /* IdentifierEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B8A39D251221A300C84CB1 /* IdentifierEquatable.swift */; };
 		D5B8A3A72513309D00C84CB1 /* NavigationController+Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B8A3A62513309D00C84CB1 /* NavigationController+Tab.swift */; };
 		D5B9669C2501CFCB009D77A0 /* SearchHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9669B2501CFCA009D77A0 /* SearchHighlight.swift */; };
-		D5BE29692509F39B00A9AA2F /* MBHightlightTintImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BE29682509F39B00A9AA2F /* MBHightlightTintImageView.swift */; };
+		D5BE29692509F39B00A9AA2F /* MBHighlightTintImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BE29682509F39B00A9AA2F /* MBHighlightTintImageView.swift */; };
 		D5BF664B24BC1EEF008BC122 /* TopicListVCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BF664A24BC1EEF008BC122 /* TopicListVCs.swift */; };
 		D5BF664D24BC81D7008BC122 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BF664C24BC81D7008BC122 /* CommentEntity.swift */; };
 		D5BF664F24BC8BE8008BC122 /* UserAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BF664E24BC8BE8008BC122 /* UserAvatarView.swift */; };
@@ -404,7 +404,7 @@
 		D5B8A3AB251343AF00C84CB1 /* Run.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Run.gpx; sourceTree = "<group>"; };
 		D5B8A3AE251343AF00C84CB1 /* SignificantChanges.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SignificantChanges.gpx; sourceTree = "<group>"; };
 		D5B9669B2501CFCA009D77A0 /* SearchHighlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHighlight.swift; sourceTree = "<group>"; };
-		D5BE29682509F39B00A9AA2F /* MBHightlightTintImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBHightlightTintImageView.swift; sourceTree = "<group>"; };
+		D5BE29682509F39B00A9AA2F /* MBHighlightTintImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBHighlightTintImageView.swift; sourceTree = "<group>"; };
 		D5BF664A24BC1EEF008BC122 /* TopicListVCs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListVCs.swift; sourceTree = "<group>"; };
 		D5BF664C24BC81D7008BC122 /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
 		D5BF664E24BC8BE8008BC122 /* UserAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarView.swift; sourceTree = "<group>"; };
@@ -722,9 +722,9 @@
 		D52EAB5E2043B6B3007219E0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				D52EAB622043B6B3007219E0 /* Assets.xcassets */,
 				D5197D3417F027B400CA387C /* InfoPlist.strings */,
 				D5197D3717F027BB00CA387C /* Localizable.strings */,
-				D52EAB622043B6B3007219E0 /* Assets.xcassets */,
 				D52EAB612043B6B3007219E0 /* README.md */,
 				D52EAB632043B6B3007219E0 /* UIImage+MBImageSet.h */,
 				D52EAB602043B6B3007219E0 /* UIImage+MBImageSet.m */,
@@ -1348,7 +1348,7 @@
 		D5EE52012043F61C009148B3 /* ImageView */ = {
 			isa = PBXGroup;
 			children = (
-				D5BE29682509F39B00A9AA2F /* MBHightlightTintImageView.swift */,
+				D5BE29682509F39B00A9AA2F /* MBHighlightTintImageView.swift */,
 				D5EE52022043F61C009148B3 /* MBImageView.h */,
 				D5EE52062043F61C009148B3 /* MBImageView.m */,
 				D5EE52072043F61C009148B3 /* MBSkyImageView.h */,
@@ -1544,7 +1544,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/zsh;
-			shellScript = "# 配置在代码中修改\nos_major=$(sw_vers -productVersion | cut -d '.' -f 1)\nif [[ $os_major -lt 13 ]]; then\n  echo \"⚠️ 需要 macOS 13+\"\n  exit 0\nfi\nxcrun --sdk macosx swift run --package-path \"$SRCROOT/Packages/BuildSystem\"\n";
+			shellScript = "# 配置在代码中修改\nxcrun --sdk macosx swift run --package-path \"$SRCROOT/Packages/BuildSystem\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D5353D1424B7DEAB00BED8C7 /* Swift Lint */ = {
@@ -1646,7 +1646,7 @@
 				D5F9F486208DC26600427201 /* MBFormFieldVerifyControl.m in Sources */,
 				D544A396197CBE5300C65604 /* MBFormSelectButton.m in Sources */,
 				D5740B4824985CC2001CBCB2 /* MBFormSelectListViewController.m in Sources */,
-				D5BE29692509F39B00A9AA2F /* MBHightlightTintImageView.swift in Sources */,
+				D5BE29692509F39B00A9AA2F /* MBHighlightTintImageView.swift in Sources */,
 				D569C9EC21AE906900211E36 /* MBImageRenderer.m in Sources */,
 				D5EE520C2043F61D009148B3 /* MBImageView.m in Sources */,
 				D5936E09217977FB00BC4F03 /* MBIndefiniteRotationImageView.m in Sources */,

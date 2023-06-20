@@ -1,5 +1,5 @@
 /*
- MBHightlightTintImageView.swift
+ MBHighlightTintImageView.swift
 
  Copyright © 2020 BB9z.
  https://github.com/BB9z/iOS-Project-Template
