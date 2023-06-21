@@ -1,12 +1,12 @@
 
 #import "MBCollectionView.h"
-#import "MBGeneralSetNeedsDoSomthing.h"
 #import <RFAlpha/RFKVOWrapper.h>
 #import <RFAlpha/UIScrollView+RFScrollViewContentDistance.h>
 #import <RFKit/UIResponder+RFKit.h>
 #import <RFKit/UIScrollView+RFScrolling.h>
 #import <RFKit/UIView+RFAnimate.h>
 #import <RFKit/UIView+RFKit.h>
+@import ObjectiveC;
 
 @interface MBCollectionView ()
 @property (nonatomic) MBCollectionViewDataSource *trueDataSource;
@@ -100,7 +100,17 @@ RFInitializingRootForUIView
     return [NSSet setWithObjects:@keypath(this, dataSource.fetching), @keypath(this, dataSource.pageEnd), @keypath(this, dataSource.empty), nil];
 }
 
-MBSynthesizeSetNeedsMethodUsingAssociatedObject(MBCollectionView_setNeedsUpdateFooterRefreshing, MBCollectionView_updateFooterRefreshing, 0)
+- (void)MBCollectionView_setNeedsUpdateFooterRefreshing {
+    const void *key = _cmd;
+    if (objc_getAssociatedObject(self, key)) return;
+    objc_setAssociatedObject(self, key, @YES, OBJC_ASSOCIATION_ASSIGN);
+    dispatch_after_seconds((0), ^{
+        if (objc_getAssociatedObject(self, key)) {
+            [self MBCollectionView_updateFooterRefreshing];
+            objc_setAssociatedObject(self, key, nil, OBJC_ASSOCIATION_ASSIGN);
+        }
+    });
+}
 
 - (void)MBCollectionView_updateFooterRefreshing {
     MBCollectionViewDataSource *ds = self.dataSource;
