@@ -52,7 +52,6 @@
 #import <AFNetworking/AFSecurityPolicy.h>
 #import "MBAPI.h"
 #import "MBApplicationDelegate.h"
-#import "MBGeneral.h"
 #import "MBModel.h"
 #import "MBUser.h"
 //#import "MBWorkerQueue.h"

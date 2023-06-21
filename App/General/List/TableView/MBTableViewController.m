@@ -1,5 +1,6 @@
 
 #import "MBTableViewController.h"
+#import "MBGeneralCellResponding.h"
 
 @interface MBTableViewController ()
 @end

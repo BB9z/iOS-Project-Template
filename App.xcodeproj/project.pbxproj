@@ -458,7 +458,6 @@
 		D5E2AEEC2A41972200E7ABDA /* MBGeneralCellResponding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralCellResponding.h; sourceTree = "<group>"; };
 		D5E2AEEE2A41972200E7ABDA /* MBGeneralUnwindSegueExchanging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralUnwindSegueExchanging.h; sourceTree = "<group>"; };
 		D5E2AEEF2A41972200E7ABDA /* MBGeneralCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralCallback.h; sourceTree = "<group>"; };
-		D5E2AEF02A41972200E7ABDA /* MBGeneral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneral.h; sourceTree = "<group>"; };
 		D5E2AEF12A41972200E7ABDA /* MBGeneralSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralSelection.h; sourceTree = "<group>"; };
 		D5E2AEF32A41972200E7ABDA /* NSObject+MBAppKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MBAppKit.m"; sourceTree = "<group>"; };
 		D5E2AEF42A41972200E7ABDA /* NSObject+MBAppKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MBAppKit.h"; sourceTree = "<group>"; };
@@ -1290,7 +1289,6 @@
 		D5E2AED72A41972200E7ABDA /* MBGeneral */ = {
 			isa = PBXGroup;
 			children = (
-				D5E2AEF02A41972200E7ABDA /* MBGeneral.h */,
 				D5E2AEEF2A41972200E7ABDA /* MBGeneralCallback.h */,
 				D5E2AEDE2A41972200E7ABDA /* MBGeneralCallback.m */,
 				D5E2AEEC2A41972200E7ABDA /* MBGeneralCellResponding.h */,
