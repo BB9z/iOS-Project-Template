@@ -153,7 +153,6 @@
 		D5DC60C124CA84BC00FBB147 /* ApplicationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55959CD20AB95640019D733 /* ApplicationCondition.swift */; };
 		D5E2AF182A41972200E7ABDA /* MBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AED12A41972200E7ABDA /* MBAPI.m */; };
 		D5E2AF192A41972200E7ABDA /* MBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AED52A41972200E7ABDA /* MBUser.m */; };
-		D5E2AF1A2A41972200E7ABDA /* MBGeneralViewUpdating.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AED82A41972200E7ABDA /* MBGeneralViewUpdating.m */; };
 		D5E2AF1B2A41972200E7ABDA /* MBGeneralSetNeedsDoSomthing.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEDA2A41972200E7ABDA /* MBGeneralSetNeedsDoSomthing.m */; };
 		D5E2AF1C2A41972200E7ABDA /* MBGeneralType.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEDC2A41972200E7ABDA /* MBGeneralType.m */; };
 		D5E2AF1D2A41972200E7ABDA /* MBGeneralCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEDE2A41972200E7ABDA /* MBGeneralCallback.m */; };
@@ -443,7 +442,6 @@
 		D5E2AED22A41972200E7ABDA /* MBAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBAPI.h; sourceTree = "<group>"; };
 		D5E2AED52A41972200E7ABDA /* MBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBUser.m; sourceTree = "<group>"; };
 		D5E2AED62A41972200E7ABDA /* MBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBUser.h; sourceTree = "<group>"; };
-		D5E2AED82A41972200E7ABDA /* MBGeneralViewUpdating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGeneralViewUpdating.m; sourceTree = "<group>"; };
 		D5E2AED92A41972200E7ABDA /* MBGeneralListExchanging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralListExchanging.h; sourceTree = "<group>"; };
 		D5E2AEDA2A41972200E7ABDA /* MBGeneralSetNeedsDoSomthing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGeneralSetNeedsDoSomthing.m; sourceTree = "<group>"; };
 		D5E2AEDB2A41972200E7ABDA /* MBGeneralSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralSegue.h; sourceTree = "<group>"; };
@@ -458,7 +456,6 @@
 		D5E2AEE42A41972200E7ABDA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D5E2AEE52A41972200E7ABDA /* MBGeneralSetNeedsDoSomthing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralSetNeedsDoSomthing.h; sourceTree = "<group>"; };
 		D5E2AEE62A41972200E7ABDA /* MBGeneralListExchanging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGeneralListExchanging.m; sourceTree = "<group>"; };
-		D5E2AEE72A41972200E7ABDA /* MBGeneralViewUpdating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralViewUpdating.h; sourceTree = "<group>"; };
 		D5E2AEE82A41972200E7ABDA /* MBGeneralType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralType.h; sourceTree = "<group>"; };
 		D5E2AEE92A41972200E7ABDA /* MBGeneralItemExchanging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGeneralItemExchanging.m; sourceTree = "<group>"; };
 		D5E2AEEA2A41972200E7ABDA /* MBGeneralSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGeneralSegue.m; sourceTree = "<group>"; };
@@ -1322,8 +1319,6 @@
 				D5E2AEDF2A41972200E7ABDA /* MBGeneralUnwindSegueExchanging.m */,
 				D5E2AEEB2A41972200E7ABDA /* MBGeneralViewControllerStateTransitions.h */,
 				D5E2AEE12A41972200E7ABDA /* MBGeneralViewControllerStateTransitions.m */,
-				D5E2AEE72A41972200E7ABDA /* MBGeneralViewUpdating.h */,
-				D5E2AED82A41972200E7ABDA /* MBGeneralViewUpdating.m */,
 				D5E2AEE42A41972200E7ABDA /* README.md */,
 			);
 			path = MBGeneral;
@@ -1840,7 +1835,6 @@
 				D5E2AF1C2A41972200E7ABDA /* MBGeneralType.m in Sources */,
 				D5E2AF1E2A41972200E7ABDA /* MBGeneralUnwindSegueExchanging.m in Sources */,
 				D5E2AF202A41972200E7ABDA /* MBGeneralViewControllerStateTransitions.m in Sources */,
-				D5E2AF1A2A41972200E7ABDA /* MBGeneralViewUpdating.m in Sources */,
 				D5BE29692509F39B00A9AA2F /* MBHighlightTintImageView.swift in Sources */,
 				D569C9EC21AE906900211E36 /* MBImageRenderer.m in Sources */,
 				D5EE520C2043F61D009148B3 /* MBImageView.m in Sources */,
