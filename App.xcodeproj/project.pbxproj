@@ -182,6 +182,7 @@
 		D5E2AF3D2A41D8BA00E7ABDA /* MBCodeSendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF3C2A41D8BA00E7ABDA /* MBCodeSendButton.swift */; };
 		D5E2AF402A41DB5D00E7ABDA /* MBTouchEffectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF3F2A41DB5D00E7ABDA /* MBTouchEffectButton.swift */; };
 		D5E2AF422A41E22C00E7ABDA /* MBFormSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF412A41E22C00E7ABDA /* MBFormSelectButton.swift */; };
+		D5E2AF442A42643A00E7ABDA /* MBFormFieldVerifyControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF432A42643A00E7ABDA /* MBFormFieldVerifyControl.swift */; };
 		D5E2DBFB24CEE54400CEB26D /* APIResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2DBFA24CEE54300CEB26D /* APIResponseSerializer.swift */; };
 		D5E6336D264BC77900C4EBE6 /* MBCollectionViewColumnLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E6336C264BC77900C4EBE6 /* MBCollectionViewColumnLayout.swift */; };
 		D5E80580226F403D00901C41 /* MBBottomLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E8057F226F403D00901C41 /* MBBottomLayoutView.m */; };
@@ -220,7 +221,6 @@
 		D5F9F47F208D921200427201 /* Date+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F9F47D208D921200427201 /* Date+App.swift */; };
 		D5F9F480208D921200427201 /* String+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F9F47E208D921200427201 /* String+App.swift */; };
 		D5F9F483208DBF5F00427201 /* MBSceneStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F9F481208DBF5F00427201 /* MBSceneStackView.m */; };
-		D5F9F486208DC26600427201 /* MBFormFieldVerifyControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F9F485208DC26600427201 /* MBFormFieldVerifyControl.m */; };
 		D5FB116F24BBF3D6001963D5 /* TopicEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FB116E24BBF3D6001963D5 /* TopicEntity.swift */; };
 		D5FCB68E23FC108B001DE669 /* MBFormFieldVerifyControl+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FCB68D23FC108B001DE669 /* MBFormFieldVerifyControl+App.swift */; };
 /* End PBXBuildFile section */
@@ -502,6 +502,7 @@
 		D5E2AF3C2A41D8BA00E7ABDA /* MBCodeSendButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBCodeSendButton.swift; sourceTree = "<group>"; };
 		D5E2AF3F2A41DB5D00E7ABDA /* MBTouchEffectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTouchEffectButton.swift; sourceTree = "<group>"; };
 		D5E2AF412A41E22C00E7ABDA /* MBFormSelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBFormSelectButton.swift; sourceTree = "<group>"; };
+		D5E2AF432A42643A00E7ABDA /* MBFormFieldVerifyControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBFormFieldVerifyControl.swift; sourceTree = "<group>"; };
 		D5E2DBFA24CEE54300CEB26D /* APIResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponseSerializer.swift; sourceTree = "<group>"; };
 		D5E6336C264BC77900C4EBE6 /* MBCollectionViewColumnLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBCollectionViewColumnLayout.swift; sourceTree = "<group>"; };
 		D5E8057E226F403C00901C41 /* MBBottomLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBBottomLayoutView.h; sourceTree = "<group>"; };
@@ -571,8 +572,6 @@
 		D5F9F47E208D921200427201 /* String+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+App.swift"; sourceTree = "<group>"; };
 		D5F9F481208DBF5F00427201 /* MBSceneStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSceneStackView.m; sourceTree = "<group>"; };
 		D5F9F482208DBF5F00427201 /* MBSceneStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSceneStackView.h; sourceTree = "<group>"; };
-		D5F9F484208DC26500427201 /* MBFormFieldVerifyControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBFormFieldVerifyControl.h; sourceTree = "<group>"; };
-		D5F9F485208DC26600427201 /* MBFormFieldVerifyControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBFormFieldVerifyControl.m; sourceTree = "<group>"; };
 		D5FB116E24BBF3D6001963D5 /* TopicEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicEntity.swift; sourceTree = "<group>"; };
 		D5FCB68D23FC108B001DE669 /* MBFormFieldVerifyControl+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MBFormFieldVerifyControl+App.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1451,8 +1450,7 @@
 			isa = PBXGroup;
 			children = (
 				D5FCB68D23FC108B001DE669 /* MBFormFieldVerifyControl+App.swift */,
-				D5F9F484208DC26500427201 /* MBFormFieldVerifyControl.h */,
-				D5F9F485208DC26600427201 /* MBFormFieldVerifyControl.m */,
+				D5E2AF432A42643A00E7ABDA /* MBFormFieldVerifyControl.swift */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -1878,7 +1876,7 @@
 				D533C4E6259235E200590FBA /* MBFlexInterface.m in Sources */,
 				D5A3312421527BA100B0FD5B /* MBFlipCollapsibleView.m in Sources */,
 				D5FCB68E23FC108B001DE669 /* MBFormFieldVerifyControl+App.swift in Sources */,
-				D5F9F486208DC26600427201 /* MBFormFieldVerifyControl.m in Sources */,
+				D5E2AF442A42643A00E7ABDA /* MBFormFieldVerifyControl.swift in Sources */,
 				D5E2AF422A41E22C00E7ABDA /* MBFormSelectButton.swift in Sources */,
 				D5740B4824985CC2001CBCB2 /* MBFormSelectListViewController.m in Sources */,
 				D5E2AF1D2A41972200E7ABDA /* MBGeneralCallback.m in Sources */,
