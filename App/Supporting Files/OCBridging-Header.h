@@ -44,7 +44,6 @@
 //#import "MBTableViewController.h"
 //#import "MBTableViewArrayDataSource.h"
 #import "MBTableViewDataSource.h"
-#import "MBTextField.h"
 //#import "MBVauleLabel.h"
 //#import "MBValueMapPickerViewController.h"
 //#import "PushManager.h"
@@ -65,6 +64,7 @@
 #import <RFAlpha/RFDrawImage.h>
 #import <RFAlpha/RFLine.h>
 #import <RFAlpha/RFTimer.h>
+#import <RFDelegateChain/UITextFiledDelegateChain.h>
 #import <RFKeyboard/RFKeyboard.h>
 #import <RFKit/NSError+RFKit.h>
 #import <RFKit/NSFileManager+RFKit.h>
