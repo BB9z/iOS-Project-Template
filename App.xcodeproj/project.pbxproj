@@ -156,7 +156,6 @@
 		D5E2AF1C2A41972200E7ABDA /* MBGeneralType.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEDC2A41972200E7ABDA /* MBGeneralType.m */; };
 		D5E2AF1D2A41972200E7ABDA /* MBGeneralCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEDE2A41972200E7ABDA /* MBGeneralCallback.m */; };
 		D5E2AF1E2A41972200E7ABDA /* MBGeneralUnwindSegueExchanging.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEDF2A41972200E7ABDA /* MBGeneralUnwindSegueExchanging.m */; };
-		D5E2AF1F2A41972200E7ABDA /* MBGeneralItemUpdating.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEE02A41972200E7ABDA /* MBGeneralItemUpdating.m */; };
 		D5E2AF202A41972200E7ABDA /* MBGeneralViewControllerStateTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEE12A41972200E7ABDA /* MBGeneralViewControllerStateTransitions.m */; };
 		D5E2AF212A41972200E7ABDA /* MBGeneralCellResponding.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEE22A41972200E7ABDA /* MBGeneralCellResponding.m */; };
 		D5E2AF222A41972200E7ABDA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D5E2AEE42A41972200E7ABDA /* README.md */; };
@@ -447,7 +446,6 @@
 		D5E2AEDD2A41972200E7ABDA /* MBGeneralItemExchanging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralItemExchanging.h; sourceTree = "<group>"; };
 		D5E2AEDE2A41972200E7ABDA /* MBGeneralCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGeneralCallback.m; sourceTree = "<group>"; };
 		D5E2AEDF2A41972200E7ABDA /* MBGeneralUnwindSegueExchanging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGeneralUnwindSegueExchanging.m; sourceTree = "<group>"; };
-		D5E2AEE02A41972200E7ABDA /* MBGeneralItemUpdating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGeneralItemUpdating.m; sourceTree = "<group>"; };
 		D5E2AEE12A41972200E7ABDA /* MBGeneralViewControllerStateTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGeneralViewControllerStateTransitions.m; sourceTree = "<group>"; };
 		D5E2AEE22A41972200E7ABDA /* MBGeneralCellResponding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGeneralCellResponding.m; sourceTree = "<group>"; };
 		D5E2AEE32A41972200E7ABDA /* MBGeneralListDisplaying.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralListDisplaying.h; sourceTree = "<group>"; };
@@ -458,7 +456,6 @@
 		D5E2AEEA2A41972200E7ABDA /* MBGeneralSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGeneralSegue.m; sourceTree = "<group>"; };
 		D5E2AEEB2A41972200E7ABDA /* MBGeneralViewControllerStateTransitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralViewControllerStateTransitions.h; sourceTree = "<group>"; };
 		D5E2AEEC2A41972200E7ABDA /* MBGeneralCellResponding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralCellResponding.h; sourceTree = "<group>"; };
-		D5E2AEED2A41972200E7ABDA /* MBGeneralItemUpdating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralItemUpdating.h; sourceTree = "<group>"; };
 		D5E2AEEE2A41972200E7ABDA /* MBGeneralUnwindSegueExchanging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralUnwindSegueExchanging.h; sourceTree = "<group>"; };
 		D5E2AEEF2A41972200E7ABDA /* MBGeneralCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralCallback.h; sourceTree = "<group>"; };
 		D5E2AEF02A41972200E7ABDA /* MBGeneral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneral.h; sourceTree = "<group>"; };
@@ -1300,8 +1297,6 @@
 				D5E2AEE22A41972200E7ABDA /* MBGeneralCellResponding.m */,
 				D5E2AEDD2A41972200E7ABDA /* MBGeneralItemExchanging.h */,
 				D5E2AEE92A41972200E7ABDA /* MBGeneralItemExchanging.m */,
-				D5E2AEED2A41972200E7ABDA /* MBGeneralItemUpdating.h */,
-				D5E2AEE02A41972200E7ABDA /* MBGeneralItemUpdating.m */,
 				D5E2AEE32A41972200E7ABDA /* MBGeneralListDisplaying.h */,
 				D5E2AED92A41972200E7ABDA /* MBGeneralListExchanging.h */,
 				D5E2AEE62A41972200E7ABDA /* MBGeneralListExchanging.m */,
@@ -1823,7 +1818,6 @@
 				D5E2AF1D2A41972200E7ABDA /* MBGeneralCallback.m in Sources */,
 				D5E2AF212A41972200E7ABDA /* MBGeneralCellResponding.m in Sources */,
 				D5E2AF242A41972200E7ABDA /* MBGeneralItemExchanging.m in Sources */,
-				D5E2AF1F2A41972200E7ABDA /* MBGeneralItemUpdating.m in Sources */,
 				D5E2AF232A41972200E7ABDA /* MBGeneralListExchanging.m in Sources */,
 				D5E2AF252A41972200E7ABDA /* MBGeneralSegue.m in Sources */,
 				D5E2AF1C2A41972200E7ABDA /* MBGeneralType.m in Sources */,

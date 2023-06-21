@@ -16,7 +16,6 @@
 #import "MBGeneralCallback.h"
 #import "MBGeneralCellResponding.h"
 #import "MBGeneralItemExchanging.h"
-#import "MBGeneralItemUpdating.h"
 #import "MBGeneralListDisplaying.h"
 #import "MBGeneralListExchanging.h"
 #import "MBGeneralSegue.h"
