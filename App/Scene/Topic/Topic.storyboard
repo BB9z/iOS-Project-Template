@@ -79,7 +79,7 @@
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <state key="normal" title="点赞"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="rect" keyPath="touchHitTestExpandInsets">
+                                                        <userDefinedRuntimeAttribute type="rect" keyPath="_touchHitTestExpandInsets">
                                                             <rect key="value" x="5" y="5" width="5" height="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>

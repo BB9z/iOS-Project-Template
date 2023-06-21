@@ -46,7 +46,7 @@
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="rect" keyPath="touchHitTestExpandInsets">
+                                                    <userDefinedRuntimeAttribute type="rect" keyPath="_touchHitTestExpandInsets">
                                                         <rect key="value" x="7" y="7" width="7" height="7"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
@@ -60,7 +60,7 @@
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="rect" keyPath="touchHitTestExpandInsets">
+                                                    <userDefinedRuntimeAttribute type="rect" keyPath="_touchHitTestExpandInsets">
                                                         <rect key="value" x="7" y="7" width="7" height="7"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
@@ -147,7 +147,7 @@
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="rect" keyPath="touchHitTestExpandInsets">
+                                                    <userDefinedRuntimeAttribute type="rect" keyPath="_touchHitTestExpandInsets">
                                                         <rect key="value" x="7" y="7" width="7" height="7"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
@@ -161,7 +161,7 @@
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="rect" keyPath="touchHitTestExpandInsets">
+                                                    <userDefinedRuntimeAttribute type="rect" keyPath="_touchHitTestExpandInsets">
                                                         <rect key="value" x="7" y="7" width="7" height="7"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
