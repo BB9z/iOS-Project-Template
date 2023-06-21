@@ -167,8 +167,6 @@
 		D5E2AF252A41972200E7ABDA /* MBGeneralSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEEA2A41972200E7ABDA /* MBGeneralSegue.m */; };
 		D5E2AF262A41972200E7ABDA /* NSObject+MBAppKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEF32A41972200E7ABDA /* NSObject+MBAppKit.m */; };
 		D5E2AF272A41972200E7ABDA /* MBApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEF72A41972200E7ABDA /* MBApplicationDelegate.m */; };
-		D5E2AF282A41972200E7ABDA /* MBAppKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEF82A41972200E7ABDA /* MBAppKit.m */; };
-		D5E2AF292A41972200E7ABDA /* MBUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEFA2A41972200E7ABDA /* MBUserDefaults.m */; };
 		D5E2AF2A2A41972200E7ABDA /* MBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEFF2A41972200E7ABDA /* MBModel.m */; };
 		D5E2AF2C2A41972200E7ABDA /* MBNavigationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF062A41972200E7ABDA /* MBNavigationOperation.m */; };
 		D5E2AF2D2A41972200E7ABDA /* MBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF072A41972200E7ABDA /* MBNavigationController.m */; };
@@ -443,7 +441,6 @@
 		D5E2AECB2A41934400E7ABDA /* AppFramework */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppFramework; sourceTree = "<group>"; };
 		D5E2AED12A41972200E7ABDA /* MBAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBAPI.m; sourceTree = "<group>"; };
 		D5E2AED22A41972200E7ABDA /* MBAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBAPI.h; sourceTree = "<group>"; };
-		D5E2AED32A41972200E7ABDA /* MBAppKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBAppKit.h; sourceTree = "<group>"; };
 		D5E2AED52A41972200E7ABDA /* MBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBUser.m; sourceTree = "<group>"; };
 		D5E2AED62A41972200E7ABDA /* MBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBUser.h; sourceTree = "<group>"; };
 		D5E2AED82A41972200E7ABDA /* MBGeneralViewUpdating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGeneralViewUpdating.m; sourceTree = "<group>"; };
@@ -476,10 +473,6 @@
 		D5E2AEF42A41972200E7ABDA /* NSObject+MBAppKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MBAppKit.h"; sourceTree = "<group>"; };
 		D5E2AEF62A41972200E7ABDA /* MBApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBApplicationDelegate.h; sourceTree = "<group>"; };
 		D5E2AEF72A41972200E7ABDA /* MBApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBApplicationDelegate.m; sourceTree = "<group>"; };
-		D5E2AEF82A41972200E7ABDA /* MBAppKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBAppKit.m; sourceTree = "<group>"; };
-		D5E2AEFA2A41972200E7ABDA /* MBUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBUserDefaults.m; sourceTree = "<group>"; };
-		D5E2AEFB2A41972200E7ABDA /* MBUserDefaultsMakeProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBUserDefaultsMakeProperty.h; sourceTree = "<group>"; };
-		D5E2AEFC2A41972200E7ABDA /* MBUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBUserDefaults.h; sourceTree = "<group>"; };
 		D5E2AEFD2A41972200E7ABDA /* shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shadow.h; sourceTree = "<group>"; };
 		D5E2AEFF2A41972200E7ABDA /* MBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBModel.m; sourceTree = "<group>"; };
 		D5E2AF002A41972200E7ABDA /* MBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBModel.h; sourceTree = "<group>"; };
@@ -1280,9 +1273,6 @@
 				D5E2AED72A41972200E7ABDA /* MBGeneral */,
 				D5E2AEFE2A41972200E7ABDA /* MBModel */,
 				D5E2AED42A41972200E7ABDA /* MBUser */,
-				D5E2AEF92A41972200E7ABDA /* MBUserDefaults */,
-				D5E2AED32A41972200E7ABDA /* MBAppKit.h */,
-				D5E2AEF82A41972200E7ABDA /* MBAppKit.m */,
 				D5E2AEFD2A41972200E7ABDA /* shadow.h */,
 			);
 			path = MBAppKit;
@@ -1355,16 +1345,6 @@
 				D5E2AEF72A41972200E7ABDA /* MBApplicationDelegate.m */,
 			);
 			path = MBApplicationDelegate;
-			sourceTree = "<group>";
-		};
-		D5E2AEF92A41972200E7ABDA /* MBUserDefaults */ = {
-			isa = PBXGroup;
-			children = (
-				D5E2AEFC2A41972200E7ABDA /* MBUserDefaults.h */,
-				D5E2AEFA2A41972200E7ABDA /* MBUserDefaults.m */,
-				D5E2AEFB2A41972200E7ABDA /* MBUserDefaultsMakeProperty.h */,
-			);
-			path = MBUserDefaults;
 			sourceTree = "<group>";
 		};
 		D5E2AEFE2A41972200E7ABDA /* MBModel */ = {
@@ -1819,7 +1799,6 @@
 				D5031C2625C0445500C2849E /* MBAdaptiveStackView.swift in Sources */,
 				D5E2AF182A41972200E7ABDA /* MBAPI.m in Sources */,
 				D5542F161918B83400831016 /* MBApp.swift in Sources */,
-				D5E2AF282A41972200E7ABDA /* MBAppKit.m in Sources */,
 				D5E2AF272A41972200E7ABDA /* MBApplicationDelegate.m in Sources */,
 				D569C9EB21AE906900211E36 /* MBAudioRecorder.m in Sources */,
 				D5EE51E32043F613009148B3 /* MBAutoFadeoutView.m in Sources */,
@@ -1912,7 +1891,6 @@
 				D5EE51812043F5E6009148B3 /* MBTextView.m in Sources */,
 				D5E2AF402A41DB5D00E7ABDA /* MBTouchEffectButton.swift in Sources */,
 				D5E2AF192A41972200E7ABDA /* MBUser.m in Sources */,
-				D5E2AF292A41972200E7ABDA /* MBUserDefaults.m in Sources */,
 				D501845620F86D75009481D4 /* MBValueMapPickerViewController.m in Sources */,
 				D5EE51F62043F613009148B3 /* MBVauleLabel.m in Sources */,
 				D55959D320AB9FA20019D733 /* MessageManager.swift in Sources */,
