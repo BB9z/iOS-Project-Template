@@ -80,7 +80,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1rh-c0-pic">
                             <rect key="frame" x="50" y="0.0" width="260" height="50"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSz-wD-ff7" customClass="MBLayoutButton">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSz-wD-ff7" customClass="MBLayoutButton" customModule="App" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="86.666666666666671" height="50"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkbox_on" translatesAutoresizingMaskIntoConstraints="NO" id="JP6-J7-YQI" customClass="MBHighlightTintImageView" customModule="App" customModuleProvider="target">
@@ -120,7 +120,7 @@
                                         <outlet property="titleLabel" destination="STZ-Lw-Ykh" id="GGy-Ay-CGM"/>
                                     </connections>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCl-3e-Tmq" customClass="MBLayoutButton">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCl-3e-Tmq" customClass="MBLayoutButton" customModule="App" customModuleProvider="target">
                                     <rect key="frame" x="86.666666666666657" y="0.0" width="86.666666666666657" height="50"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkbox_on" translatesAutoresizingMaskIntoConstraints="NO" id="uej-mT-e84" customClass="MBHighlightTintImageView" customModule="App" customModuleProvider="target">
@@ -160,7 +160,7 @@
                                         <outlet property="titleLabel" destination="iGb-wo-soZ" id="u3o-Rn-lOh"/>
                                     </connections>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNQ-bc-RHO" customClass="MBLayoutButton">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNQ-bc-RHO" customClass="MBLayoutButton" customModule="App" customModuleProvider="target">
                                     <rect key="frame" x="173.33333333333334" y="0.0" width="86.666666666666657" height="50"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkbox_on" translatesAutoresizingMaskIntoConstraints="NO" id="tXk-dQ-Hb3" customClass="MBHighlightTintImageView" customModule="App" customModuleProvider="target">

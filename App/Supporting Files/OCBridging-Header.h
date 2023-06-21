@@ -20,7 +20,6 @@
 //#import "MBFlipCollapsibleView.h"
 #import "MBImageView.h"
 //#import "MBIndefiniteRotationImageView.h"
-#import "MBLayoutButton.h"
 //#import "MBLayoutConstraint.h"
 //#import "MBListDateItem.h"
 //#import "MBMaskHiddenView.h"
@@ -59,6 +58,7 @@
 //#import "MBWorkerQueue.h"
 #import <RFAPI/RFAPIJSONModelTransformer.h>
 #import <RFAlpha/RFAnimationTransitioning.h>
+#import <RFAlpha/RFButton.h>
 //#import <RFAlpha/RFCallbackControl.h>
 #import <RFAlpha/RFContainerView.h>
 #import <RFAlpha/RFDrawImage.h>
