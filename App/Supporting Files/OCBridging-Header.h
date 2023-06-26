@@ -24,8 +24,6 @@
 //#import "MBListDateItem.h"
 //#import "MBMaskHiddenView.h"
 #import "MBModalPresentSegue.h"
-#import "MBNavigationController+MBDebugReleaseChecking.h"
-#import "MBNavigationController.h"
 //#import "MBNotificationBadgeManager.h"
 //#import "MBPublishImagePicker.h"
 //#import "MBPublishSession.h"
@@ -53,7 +51,6 @@
 #import "MBAPI.h"
 #import "MBApplicationDelegate.h"
 #import "MBModel.h"
-#import "MBNavigationController.h"
 #import <RFAPI/RFAPIJSONModelTransformer.h>
 #import <RFAlpha/RFAnimationTransitioning.h>
 #import <RFAlpha/RFButton.h>
@@ -61,6 +58,7 @@
 #import <RFAlpha/RFContainerView.h>
 #import <RFAlpha/RFDrawImage.h>
 #import <RFAlpha/RFLine.h>
+#import <RFAlpha/RFNavigationController.h>
 #import <RFAlpha/RFTimer.h>
 #import <RFDelegateChain/UITextFiledDelegateChain.h>
 #import <RFKeyboard/RFKeyboard.h>

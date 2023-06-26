@@ -14,7 +14,6 @@
 		D501845820F88016009481D4 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501845720F88016009481D4 /* TextField.swift */; };
 		D501845B20F881B6009481D4 /* DissolveTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501845920F881B6009481D4 /* DissolveTransitioning.swift */; };
 		D501845C20F881B7009481D4 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501845A20F881B6009481D4 /* Shadow.swift */; };
-		D501847020F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.m in Sources */ = {isa = PBXBuildFile; fileRef = D501846720F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.m */; };
 		D501E65528549059001B5CAA /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501E65428549059001B5CAA /* UserDefaults.swift */; };
 		D50319D425BE518C00C2849E /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50319D325BE518C00C2849E /* CornerRadius.swift */; };
 		D5031A1E25BEA95200C2849E /* MBDebugLiveCountChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5031A1D25BEA95200C2849E /* MBDebugLiveCountChecker.swift */; };
@@ -41,6 +40,7 @@
 		D5197D3217F027B400CA387C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5197D3417F027B400CA387C /* InfoPlist.strings */; };
 		D5197D3517F027BB00CA387C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5197D3717F027BB00CA387C /* Localizable.strings */; };
 		D519A0CF2434883400E26A64 /* MBMaskHiddenView.m in Sources */ = {isa = PBXBuildFile; fileRef = D519A0CE2434883300E26A64 /* MBMaskHiddenView.m */; };
+		D51A2E9D2A49B683007B761F /* MBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A2E9C2A49B682007B761F /* MBNavigationController.swift */; };
 		D527917D27B557A800522240 /* B9MulticastDelegate in Frameworks */ = {isa = PBXBuildFile; productRef = D527917C27B557A800522240 /* B9MulticastDelegate */; };
 		D527917F27B558D600522240 /* Do.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527917E27B558D500522240 /* Do.swift */; };
 		D52A04E520F85F2600F535ED /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52A04E420F85F2600F535ED /* Button.swift */; };
@@ -164,8 +164,6 @@
 		D5E2AF262A41972200E7ABDA /* NSObject+MBAppKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEF32A41972200E7ABDA /* NSObject+MBAppKit.m */; };
 		D5E2AF272A41972200E7ABDA /* MBApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEF72A41972200E7ABDA /* MBApplicationDelegate.m */; };
 		D5E2AF2A2A41972200E7ABDA /* MBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEFF2A41972200E7ABDA /* MBModel.m */; };
-		D5E2AF2C2A41972200E7ABDA /* MBNavigationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF062A41972200E7ABDA /* MBNavigationOperation.m */; };
-		D5E2AF2D2A41972200E7ABDA /* MBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF072A41972200E7ABDA /* MBNavigationController.m */; };
 		D5E2AF342A4197D100E7ABDA /* MBCollectionViewArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF332A4197D100E7ABDA /* MBCollectionViewArrayDataSource.swift */; };
 		D5E2AF372A419CBA00E7ABDA /* B9Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF362A419CBA00E7ABDA /* B9Crypto.swift */; };
 		D5E2AF392A41A09800E7ABDA /* MBTableViewArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF382A41A09800E7ABDA /* MBTableViewArrayDataSource.swift */; };
@@ -261,6 +259,7 @@
 		D5197D3617F027BB00CA387C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D519A0CD2434883300E26A64 /* MBMaskHiddenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMaskHiddenView.h; sourceTree = "<group>"; };
 		D519A0CE2434883300E26A64 /* MBMaskHiddenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMaskHiddenView.m; sourceTree = "<group>"; };
+		D51A2E9C2A49B682007B761F /* MBNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBNavigationController.swift; sourceTree = "<group>"; };
 		D51B800529D0789400DD825C /* SwiftLint Configuration */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = "SwiftLint Configuration"; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		D525F3E72506988D003EBEB0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D525F3E82506988D003EBEB0 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -464,10 +463,6 @@
 		D5E2AEFD2A41972200E7ABDA /* shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shadow.h; sourceTree = "<group>"; };
 		D5E2AEFF2A41972200E7ABDA /* MBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBModel.m; sourceTree = "<group>"; };
 		D5E2AF002A41972200E7ABDA /* MBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBModel.h; sourceTree = "<group>"; };
-		D5E2AF062A41972200E7ABDA /* MBNavigationOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNavigationOperation.m; sourceTree = "<group>"; };
-		D5E2AF072A41972200E7ABDA /* MBNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNavigationController.m; sourceTree = "<group>"; };
-		D5E2AF082A41972200E7ABDA /* MBNavigationOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNavigationOperation.h; sourceTree = "<group>"; };
-		D5E2AF092A41972200E7ABDA /* MBNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNavigationController.h; sourceTree = "<group>"; };
 		D5E2AF332A4197D100E7ABDA /* MBCollectionViewArrayDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBCollectionViewArrayDataSource.swift; sourceTree = "<group>"; };
 		D5E2AF362A419CBA00E7ABDA /* B9Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = B9Crypto.swift; sourceTree = "<group>"; };
 		D5E2AF382A41A09800E7ABDA /* MBTableViewArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTableViewArrayDataSource.swift; sourceTree = "<group>"; };
@@ -1332,23 +1327,12 @@
 		D5E2AF012A41972200E7ABDA /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				D5E2AF052A41972200E7ABDA /* Navigation */,
 				D5E2AF3A2A41AE0000E7ABDA /* MBButton.swift */,
 				D5E2AF452A42820B00E7ABDA /* MBTextField.swift */,
 				D5E2AF472A42A61700E7ABDA /* MBWorker.swift */,
+				D51A2E9C2A49B682007B761F /* MBNavigationController.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		D5E2AF052A41972200E7ABDA /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				D5E2AF092A41972200E7ABDA /* MBNavigationController.h */,
-				D5E2AF072A41972200E7ABDA /* MBNavigationController.m */,
-				D5E2AF082A41972200E7ABDA /* MBNavigationOperation.h */,
-				D5E2AF062A41972200E7ABDA /* MBNavigationOperation.m */,
-			);
-			path = Navigation;
 			sourceTree = "<group>";
 		};
 		D5E2AF352A419CBA00E7ABDA /* B9Lib */ = {
@@ -1761,6 +1745,7 @@
 				D5031A6B25BED1AE00C2849E /* FileURL.swift in Sources */,
 				D5C3CBEF217ED20F0097CCD9 /* Geometry+App.swift in Sources */,
 				D5031C0425C03F7C00C2849E /* Gradient.swift in Sources */,
+				D51A2E9D2A49B683007B761F /* MBNavigationController.swift in Sources */,
 				D584C77B26EEC970004E434B /* GradientProgressViews.swift in Sources */,
 				D569C9CF21AE8D3200211E36 /* HomeVC.swift in Sources */,
 				D5B8A39E251221A300C84CB1 /* IdentifierEquatable.swift in Sources */,
@@ -1826,10 +1811,7 @@
 				D564D5D31970EE340032FEC3 /* MBModalPresentSegue.m in Sources */,
 				D5E2AF2A2A41972200E7ABDA /* MBModel.m in Sources */,
 				D588308620CAB8AE002030C4 /* MBNavigationBar.m in Sources */,
-				D501847020F8863E009481D4 /* MBNavigationController+MBDebugReleaseChecking.m in Sources */,
-				D5E2AF2D2A41972200E7ABDA /* MBNavigationController.m in Sources */,
 				D5EE51F42043F613009148B3 /* MBNavigationItem.m in Sources */,
-				D5E2AF2C2A41972200E7ABDA /* MBNavigationOperation.m in Sources */,
 				D5EE51F32043F613009148B3 /* MBNavigationTitleView.m in Sources */,
 				D50B3E6328255A5800D0974E /* MBOptionSwitch.swift in Sources */,
 				D5EE52002043F613009148B3 /* MBPageScrollView.m in Sources */,
