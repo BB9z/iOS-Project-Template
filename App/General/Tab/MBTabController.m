@@ -26,7 +26,7 @@
     if (!self.tabControl.delegate) {
         self.tabControl.delegate = self;
     }
-    self.pageViewController.APIGroupIdentifier = self.APIGroupIdentifier;
+    self.pageViewController.apiGroupIdentifier = self.apiGroupIdentifier;
 }
 
 - (BOOL)controlGroup:(MBControlGroup *)controlGroup shouldSelectControlAtIndex:(NSInteger)index {
@@ -122,7 +122,7 @@
             }
         }
     }];
-    self.pageAPIGroupIdentifier = selectedViewController.APIGroupIdentifier;
+    self.pageAPIGroupIdentifier = selectedViewController.apiGroupIdentifier;
     if (self.shouldSetNavigationBarButtonItemsToSelectedViewController) {
         [self.navigationItem setLeftBarButtonItems:selectedViewController.navigationItem.leftBarButtonItems animated:animated];
         [self.navigationItem setRightBarButtonItems:selectedViewController.navigationItem.rightBarButtonItems animated:animated];

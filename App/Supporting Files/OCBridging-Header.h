@@ -48,9 +48,10 @@
 #import "UIKit+App.h"
 #import <AFNetworking/AFNetworkReachabilityManager.h>
 #import <AFNetworking/AFSecurityPolicy.h>
-#import "MBAPI.h"
 #import "MBApplicationDelegate.h"
 #import "MBModel.h"
+#import <RFAPI/RFAPI.h>
+#import <RFAPI/RFAPIDefineConfigFile.h>
 #import <RFAPI/RFAPIJSONModelTransformer.h>
 #import <RFAlpha/RFAnimationTransitioning.h>
 #import <RFAlpha/RFButton.h>

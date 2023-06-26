@@ -42,8 +42,8 @@ RFInitializingRootForUIViewController
     self.dataSource.fetchAPIName = APIName;
 }
 
-- (NSString *)APIGroupIdentifier {
-    return self.parentViewController.APIGroupIdentifier;
+- (NSString *)apiGroupIdentifier {
+    return self.parentViewController.apiGroupIdentifier;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

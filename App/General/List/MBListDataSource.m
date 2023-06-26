@@ -1,9 +1,9 @@
 
 #import "MBListDataSource.h"
+#import "Common.h"
 #import <RFAlpha/RFCallbackControl.h>
 #import <RFKit/NSArray+RFKit.h>
 #import <RFKit/RFRuntime.h>
-#import "MBAPI.h"
 #import "MBListDateItem.h"
 
 @interface MBListDataSourceFetchCompletionCallback : RFCallback
@@ -108,7 +108,7 @@
     
     self.fetchOperation = [MBAPI requestName:self.fetchAPIName context:^(RFAPIRequestConext *c) {
         c.parameters = parameter;
-        c.groupIdentifier = viewController.APIGroupIdentifier;
+        c.groupIdentifier = viewController.apiGroupIdentifier;
         if (self.requestContextModify) {
             self.requestContextModify(c);
         }

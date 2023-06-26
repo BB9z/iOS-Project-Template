@@ -2,17 +2,7 @@
 #import "ShortCuts.h"
 #import "Common.h"
 
-// 先保留，objc 组件有引用
-id AppDelegate(void);  // 让编译器安静
-id AppDelegate(void) {
-    return [UIApplication sharedApplication].delegate;
-}
-
-id AppUser(void) {
-    return nil;
-}
-
-NavigationController *__nullable AppNavigationController() {
+NavigationController *__nullable AppNavigationController(void) {
     return [MBApp status].globalNavigationController;
 }
 

@@ -5,7 +5,6 @@
 #import <RFKeyboard/RFKeyboard.h>
 #import <RFKit/NSLayoutConstraint+RFKit.h>
 #import <RFKit/UIView+RFAnimate.h>
-#import "MBAPI.h"
 #import "NSObject+MBAppKit.h"
 
 @interface MBSearchTransitioning : RFAnimationTransitioning
