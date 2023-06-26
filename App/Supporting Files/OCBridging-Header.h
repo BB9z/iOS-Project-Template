@@ -53,8 +53,7 @@
 #import "MBAPI.h"
 #import "MBApplicationDelegate.h"
 #import "MBModel.h"
-#import "MBUser.h"
-//#import "MBWorkerQueue.h"
+#import "MBNavigationController.h"
 #import <RFAPI/RFAPIJSONModelTransformer.h>
 #import <RFAlpha/RFAnimationTransitioning.h>
 #import <RFAlpha/RFButton.h>

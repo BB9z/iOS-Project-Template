@@ -8,18 +8,14 @@ id AppDelegate(void) {
     return [UIApplication sharedApplication].delegate;
 }
 
+id AppUser(void) {
+    return nil;
+}
+
 NavigationController *__nullable AppNavigationController() {
     return [MBApp status].globalNavigationController;
 }
 
 MessageManager *__nonnull AppHUD(void) {
     return MBApp.status.hud;
-}
-
-Account *__nullable AppUser() {
-    return [Account currentUser];
-}
-
-MBIdentifier AppUserID() {
-    return AppUser().uid;
 }

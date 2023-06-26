@@ -22,7 +22,7 @@ class NavigationController: MBNavigationController, StoryboardCreation, UIApplic
         defaultAppearanceAttributes[.prefersBottomBarShownAttribute] = false
         _ = AppAPI()
 
-        Account.addCurrentUserChangeObserver(self, initial: true) { [weak self] user in
+        AccountManager.addCurrentUserChangeObserver(self, initial: true) { [weak self] user in
             if user != nil {
                 self?.onLogin()
             } else {

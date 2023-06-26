@@ -64,6 +64,10 @@ func AppRootViewController() -> RootViewController? {
     MBApp.global.rootViewController
 }
 
+func AppUser() -> Account? {
+    AccountManager.current as? Account
+}
+
 /// 应用级别的配置项
 func AppUserDefaultsShared() -> UserDefaults {
     UserDefaults.standard

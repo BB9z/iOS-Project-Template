@@ -29,7 +29,7 @@ class MoreViewController: UIViewController, StoryboardCreation {
         let alert = UIAlertController(title: "确定要登出么", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "登出", style: .default, handler: { _ in
-            Account.current = nil
+            AccountManager.current = nil
         }))
         rfPresent(alert, animated: true, completion: nil)
     }

@@ -5,6 +5,8 @@
 /// 账号系统 ID 的类型
 typealias AccountID = String
 
+typealias MBIdentifier = String
+
 /* 🔰 例如
 
 /// 服务器时长用的是整型

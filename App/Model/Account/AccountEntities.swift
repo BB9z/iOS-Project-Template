@@ -9,12 +9,13 @@
  https://bb9z.github.io/API-Documentation-Sample/Sample/Entity#AccountEntity
 */
 @objc(AccountEntity)
+@objcMembers
 class AccountEntity: MBModel {
-    @objc var uid: MBIdentifier = ""
-    @objc var name: String?
-    @objc var introduction: String?
-    @objc var avatar: String?
-    @objc var sex: NSNumber?
+    var uid: MBIdentifier = ""
+    var name: String?
+    var introduction: String?
+    var avatar: String?
+    var sex: NSNumber?
 
     override class func keyMapper() -> JSONKeyMapper! {
         JSONKeyMapper(modelToJSONDictionary: [#keyPath(AccountEntity.uid): "id"])
@@ -27,10 +28,11 @@ class AccountEntity: MBModel {
  https://bb9z.github.io/API-Documentation-Sample/Sample/Account#SignInUp
  */
 @objc(LoginResponseEntity)
+@objcMembers
 class LoginResponseEntity: MBModel {
-    @objc var info: AccountEntity?
-    @objc var token: String?
-    @objc var isNew: NSNumber?
+    var info: AccountEntity?
+    var token: String?
+    var isNew: NSNumber?
 
     /// 收到服务器登入信息，设置当前用户
     func setAsCurrent() {
@@ -38,9 +40,9 @@ class LoginResponseEntity: MBModel {
             AppHUD().showErrorStatus("服务器返回信息缺失")
             return
         }
-        let user = Account(id: info.uid as String)
-        user?.token = token
-        Account.current = user
+        let user = Account(id: info.uid)
+        user.token = token
+        AccountManager.current = user
     }
 
     override class func keyMapper() -> JSONKeyMapper! {

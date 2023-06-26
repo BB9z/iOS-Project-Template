@@ -25,18 +25,9 @@
 @class MBApplicationDelegate;
 MBApplicationDelegate *__nullable AppDelegate(void);
 
-@class MBUser;
 /// 当前登录的用户，可以用来判断是否已登录
-MBUser *__nullable AppUser(void);
+id __nullable AppUser(void);
 
 @class MBNavigationController;
 /// 全局导航
 MBNavigationController *__nullable AppNavigationController(void);
-
-#pragma mark - debug
-/**
- debug 方法应当随项目编译，但套件仍需要引用部分 debug 中的方法
- */
-
-FOUNDATION_EXPORT BOOL RFAssertKindOfClass(id __nullable obj, Class __nonnull aClass);
-FOUNDATION_EXPORT void DebugLog(BOOL fatal, NSString *_Nullable recordID, NSString *_Nonnull format, ...) NS_FORMAT_FUNCTION(3, 4);

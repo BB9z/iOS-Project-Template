@@ -9,14 +9,16 @@ import B9Condition
  管理当前用户
  */
 class Account: MBUser {
+
+
     // 有的项目登入时只返回认证信息，没有用户 ID，这时候需要用 userIDUndetermined 创建 Account 对象
     static let userIDUndetermined = "<undetermined>"
 
-    // MARK: - 状态
-
-    override var description: String {
-        "<Account \(ObjectIdentifier(self)): uid = \(uid), information: \(information.description), pofileFetched?: \(hasPofileFetchedThisSession)>"
+    init(id: String) {
+        self.id = id
     }
+
+    // MARK: - 状态
 
     /**
      用户基本信息
@@ -43,12 +45,12 @@ class Account: MBUser {
 
             _information = newValue
 
-            let uidChanged = newValue.uid.length > 0 && uid != newValue.uid as String
+            let uidChanged = newValue.uid.isNotEmpty && id != newValue.uid
             if uidChanged {
-                if uid != Account.userIDUndetermined {
+                if id != Account.userIDUndetermined {
                     AppLog().critical("用户信息 ID 不匹配")
                 }
-                setValue(information.uid, forKeyPath: #keyPath(MBUser.uid))
+                id = information.uid
             }
 
             // 开始对接口/数据源取回的数据处理
@@ -61,10 +63,11 @@ class Account: MBUser {
     private var _information: AccountEntity?
     private func persistentInfomationToStore() {
         guard isCurrent else { return }
-        AppUserDefaultsShared().lastUserID = uid
+        AppUserDefaultsShared().lastUserID = id
         AppUserDefaultsShared().accountEntity = information
     }
 
+    private(set) var id: String
     var token: String?
 
     var hasPofileFetchedThisSession = false
@@ -72,7 +75,7 @@ class Account: MBUser {
     // MARK: - 挂载
 
     private(set) lazy var profile: AccountDefaults? = {
-        let suitName = B9Crypto.md5(utf8: "User\(uid)") ?? uid
+        let suitName = B9Crypto.md5(utf8: "User\(id)") ?? id
         return AccountDefaults(suiteName: suitName)
     }()
 
@@ -87,31 +90,22 @@ class Account: MBUser {
             return
         }
 
-        guard let user = Account(id: userID) else { fatalError() }
+        let user = Account(id: userID)
         user.token = token
-        current = user
+        AccountManager.current = user
         user.updateInformation { c in
             c.failureCallback = APISlientFailureHandler(true)
         }
     }
 
-    override class func onCurrentUserChanged(_ currentUser: MBUser?) {
-        let user = currentUser as? Account
-        let defaults = AppUserDefaultsShared()
-        defaults.lastUserID = user?.uid
-        defaults.userToken = user?.token
-        defaults.accountEntity = user?.information
-        if !defaults.synchronize() {
-            // 实际项目遇到过 UserDefaults 无法存储的 bug，需要用户重启设备才行
-            // 处理方式可以参考： https://github.com/BB9z/iOS-Project-Template/blob/4.1/App/Model/Account/Account.swift#L123-L127
-            NSLog("⚠️ 用户信息存储失败")
-        }
-    }
-
-    override func onLogin() {
+    func onLogin() {
         guard let token = token else { fatalError() }
-        debugPrint("当前用户 ID: \(uid), token: \(token)")
+        debugPrint("当前用户 ID: \(id), token: \(token)")
         AppAPI().defineManager.authorizationHeader[authHeaderKey] = "Bearer \(token)"
+        let defaults = AppUserDefaultsShared()
+        defaults.lastUserID = id
+        defaults.userToken = token
+        defaults.accountEntity = information
         AppCondition().set(on: [ApplicationCondition.userHasLogged])
         if !hasPofileFetchedThisSession {
             updateInformation { c in
@@ -119,8 +113,12 @@ class Account: MBUser {
             }
         }
     }
-    override func onLogout() {
+    func onLogout() {
         AppCondition().set(off: [.userHasLogged, .userInfoFetched])
+        let defaults = AppUserDefaultsShared()
+        defaults.lastUserID = nil
+        defaults.userToken = nil
+        defaults.accountEntity = nil
         AppAPI().defineManager.authorizationHeader.removeObject(forKey: authHeaderKey)
         profile?.synchronize()
     }
@@ -144,5 +142,11 @@ class Account: MBUser {
                 }
             }
         }
+    }
+}
+
+extension Account: CustomDebugStringConvertible {
+    var debugDescription: String {
+        "<Account \(ObjectIdentifier(self)): id = \(id), information: \(information.description), pofileFetched?: \(hasPofileFetchedThisSession)>"
     }
 }

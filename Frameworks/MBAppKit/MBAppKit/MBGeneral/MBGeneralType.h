@@ -17,9 +17,6 @@
 /// 整形 ID
 typedef int64_t MBID;
 
-/// 字符串标示
-typedef NSString* MBIdentifier;
-
 #pragma mark - 时间
 
 /// 整形时长，秒

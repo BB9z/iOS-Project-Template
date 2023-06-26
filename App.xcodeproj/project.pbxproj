@@ -152,7 +152,6 @@
 		D5DB4C22241E39EA00832A0A /* UIKit+DynamicType.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DB4C21241E39EA00832A0A /* UIKit+DynamicType.m */; };
 		D5DC60C124CA84BC00FBB147 /* ApplicationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55959CD20AB95640019D733 /* ApplicationCondition.swift */; };
 		D5E2AF182A41972200E7ABDA /* MBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AED12A41972200E7ABDA /* MBAPI.m */; };
-		D5E2AF192A41972200E7ABDA /* MBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AED52A41972200E7ABDA /* MBUser.m */; };
 		D5E2AF1C2A41972200E7ABDA /* MBGeneralType.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEDC2A41972200E7ABDA /* MBGeneralType.m */; };
 		D5E2AF1D2A41972200E7ABDA /* MBGeneralCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEDE2A41972200E7ABDA /* MBGeneralCallback.m */; };
 		D5E2AF1E2A41972200E7ABDA /* MBGeneralUnwindSegueExchanging.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AEDF2A41972200E7ABDA /* MBGeneralUnwindSegueExchanging.m */; };
@@ -177,6 +176,7 @@
 		D5E2AF442A42643A00E7ABDA /* MBFormFieldVerifyControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF432A42643A00E7ABDA /* MBFormFieldVerifyControl.swift */; };
 		D5E2AF462A42820B00E7ABDA /* MBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF452A42820B00E7ABDA /* MBTextField.swift */; };
 		D5E2AF4A2A42DD9700E7ABDA /* MBLayoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF492A42DD9700E7ABDA /* MBLayoutButton.swift */; };
+		D5E2AF4C2A42ED0300E7ABDA /* MBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2AF4B2A42E9A100E7ABDA /* MBUser.swift */; };
 		D5E2DBFB24CEE54400CEB26D /* APIResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2DBFA24CEE54300CEB26D /* APIResponseSerializer.swift */; };
 		D5E6336D264BC77900C4EBE6 /* MBCollectionViewColumnLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E6336C264BC77900C4EBE6 /* MBCollectionViewColumnLayout.swift */; };
 		D5E80580226F403D00901C41 /* MBBottomLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E8057F226F403D00901C41 /* MBBottomLayoutView.m */; };
@@ -438,8 +438,6 @@
 		D5E2AECB2A41934400E7ABDA /* AppFramework */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppFramework; sourceTree = "<group>"; };
 		D5E2AED12A41972200E7ABDA /* MBAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBAPI.m; sourceTree = "<group>"; };
 		D5E2AED22A41972200E7ABDA /* MBAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBAPI.h; sourceTree = "<group>"; };
-		D5E2AED52A41972200E7ABDA /* MBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBUser.m; sourceTree = "<group>"; };
-		D5E2AED62A41972200E7ABDA /* MBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBUser.h; sourceTree = "<group>"; };
 		D5E2AED92A41972200E7ABDA /* MBGeneralListExchanging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralListExchanging.h; sourceTree = "<group>"; };
 		D5E2AEDB2A41972200E7ABDA /* MBGeneralSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGeneralSegue.h; sourceTree = "<group>"; };
 		D5E2AEDC2A41972200E7ABDA /* MBGeneralType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGeneralType.m; sourceTree = "<group>"; };
@@ -481,6 +479,7 @@
 		D5E2AF452A42820B00E7ABDA /* MBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTextField.swift; sourceTree = "<group>"; };
 		D5E2AF472A42A61700E7ABDA /* MBWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBWorker.swift; sourceTree = "<group>"; };
 		D5E2AF492A42DD9700E7ABDA /* MBLayoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBLayoutButton.swift; sourceTree = "<group>"; };
+		D5E2AF4B2A42E9A100E7ABDA /* MBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBUser.swift; sourceTree = "<group>"; };
 		D5E2DBFA24CEE54300CEB26D /* APIResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponseSerializer.swift; sourceTree = "<group>"; };
 		D5E6336C264BC77900C4EBE6 /* MBCollectionViewColumnLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBCollectionViewColumnLayout.swift; sourceTree = "<group>"; };
 		D5E8057E226F403C00901C41 /* MBBottomLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBBottomLayoutView.h; sourceTree = "<group>"; };
@@ -1262,8 +1261,8 @@
 				D5E2AEF52A41972200E7ABDA /* MBApplicationDelegate */,
 				D5E2AED72A41972200E7ABDA /* MBGeneral */,
 				D5E2AEFE2A41972200E7ABDA /* MBModel */,
-				D5E2AED42A41972200E7ABDA /* MBUser */,
 				D5E2AEFD2A41972200E7ABDA /* shadow.h */,
+				D5E2AF4B2A42E9A100E7ABDA /* MBUser.swift */,
 			);
 			path = MBAppKit;
 			sourceTree = "<group>";
@@ -1275,15 +1274,6 @@
 				D5E2AED12A41972200E7ABDA /* MBAPI.m */,
 			);
 			path = MBAPI;
-			sourceTree = "<group>";
-		};
-		D5E2AED42A41972200E7ABDA /* MBUser */ = {
-			isa = PBXGroup;
-			children = (
-				D5E2AED62A41972200E7ABDA /* MBUser.h */,
-				D5E2AED52A41972200E7ABDA /* MBUser.m */,
-			);
-			path = MBUser;
 			sourceTree = "<group>";
 		};
 		D5E2AED72A41972200E7ABDA /* MBGeneral */ = {
@@ -1785,6 +1775,7 @@
 				D5E2AF272A41972200E7ABDA /* MBApplicationDelegate.m in Sources */,
 				D569C9EB21AE906900211E36 /* MBAudioRecorder.m in Sources */,
 				D5EE51E32043F613009148B3 /* MBAutoFadeoutView.m in Sources */,
+				D5E2AF4C2A42ED0300E7ABDA /* MBUser.swift in Sources */,
 				D5C3CBF3217EEEA20097CCD9 /* MBBadgeLabel.m in Sources */,
 				D5E80580226F403D00901C41 /* MBBottomLayoutView.m in Sources */,
 				D5E2AF3B2A41AE0000E7ABDA /* MBButton.swift in Sources */,
@@ -1870,7 +1861,6 @@
 				D5E2AF462A42820B00E7ABDA /* MBTextField.swift in Sources */,
 				D5EE51812043F5E6009148B3 /* MBTextView.m in Sources */,
 				D5E2AF402A41DB5D00E7ABDA /* MBTouchEffectButton.swift in Sources */,
-				D5E2AF192A41972200E7ABDA /* MBUser.m in Sources */,
 				D501845620F86D75009481D4 /* MBValueMapPickerViewController.m in Sources */,
 				D5EE51F62043F613009148B3 /* MBVauleLabel.m in Sources */,
 				D55959D320AB9FA20019D733 /* MessageManager.swift in Sources */,
