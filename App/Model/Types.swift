@@ -7,6 +7,12 @@ typealias AccountID = String
 
 typealias MBIdentifier = String
 
+/// 专用于标示日期哪一天
+typealias MBDateDayIdentifier = String
+
+/// 整形 ID
+typealias MBID = Int64
+
 /* 🔰 例如
 
 /// 服务器时长用的是整型
