@@ -43,7 +43,6 @@
 		D51A2E9D2A49B683007B761F /* MBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A2E9C2A49B682007B761F /* MBNavigationController.swift */; };
 		D51A2E9F2A4A4B0E007B761F /* MBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A2E9E2A4A4B0E007B761F /* MBAPI.swift */; };
 		D51A2EA12A4B1AF2007B761F /* MBGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A2EA02A4B1AF2007B761F /* MBGeneral.swift */; };
-		D51A2EA32A4B1CA6007B761F /* MBTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A2EA22A4B1CA5007B761F /* MBTableViewDataSource.swift */; };
 		D527917D27B557A800522240 /* B9MulticastDelegate in Frameworks */ = {isa = PBXBuildFile; productRef = D527917C27B557A800522240 /* B9MulticastDelegate */; };
 		D527917F27B558D600522240 /* Do.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527917E27B558D500522240 /* Do.swift */; };
 		D52A04E520F85F2600F535ED /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52A04E420F85F2600F535ED /* Button.swift */; };
@@ -1253,8 +1252,8 @@
 				D5E2AED72A41972200E7ABDA /* MBGeneral */,
 				D5E2AEFE2A41972200E7ABDA /* MBModel */,
 				D51A2E9E2A4A4B0E007B761F /* MBAPI.swift */,
-				D5E2AF4B2A42E9A100E7ABDA /* MBUser.swift */,
 				D51A2EA02A4B1AF2007B761F /* MBGeneral.swift */,
+				D5E2AF4B2A42E9A100E7ABDA /* MBUser.swift */,
 			);
 			path = MBAppKit;
 			sourceTree = "<group>";
@@ -1666,7 +1665,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/zsh;
-			shellScript = "# 配置在代码中修改\nxcrun --sdk macosx swift run --package-path \"$SRCROOT/Packages/BuildSystem\"\n";
+			shellScript = "# 配置在代码中修改\n# xcrun --sdk macosx swift run --package-path \"$SRCROOT/Packages/BuildSystem\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D5353D1424B7DEAB00BED8C7 /* Swift Lint */ = {
@@ -1742,7 +1741,6 @@
 				D5542F161918B83400831016 /* MBApp.swift in Sources */,
 				D5E2AF272A41972200E7ABDA /* MBApplicationDelegate.m in Sources */,
 				D569C9EB21AE906900211E36 /* MBAudioRecorder.m in Sources */,
-				D51A2EA12A4B1AF2007B761F /* MBGeneral.swift in Sources */,
 				D5EE51E32043F613009148B3 /* MBAutoFadeoutView.m in Sources */,
 				D5C3CBF3217EEEA20097CCD9 /* MBBadgeLabel.m in Sources */,
 				D5E80580226F403D00901C41 /* MBBottomLayoutView.m in Sources */,
@@ -1772,6 +1770,7 @@
 				D5E2AF442A42643A00E7ABDA /* MBFormFieldVerifyControl.swift in Sources */,
 				D5E2AF422A41E22C00E7ABDA /* MBFormSelectButton.swift in Sources */,
 				D5740B4824985CC2001CBCB2 /* MBFormSelectListViewController.m in Sources */,
+				D51A2EA12A4B1AF2007B761F /* MBGeneral.swift in Sources */,
 				D5E2AF1D2A41972200E7ABDA /* MBGeneralCallback.m in Sources */,
 				D5E2AF212A41972200E7ABDA /* MBGeneralCellResponding.m in Sources */,
 				D5E2AF242A41972200E7ABDA /* MBGeneralItemExchanging.m in Sources */,
@@ -1826,7 +1825,6 @@
 				D5EE51812043F5E6009148B3 /* MBTextView.m in Sources */,
 				D5E2AF402A41DB5D00E7ABDA /* MBTouchEffectButton.swift in Sources */,
 				D5E2AF4C2A42ED0300E7ABDA /* MBUser.swift in Sources */,
-				D51A2EA32A4B1CA6007B761F /* MBTableViewDataSource.swift in Sources */,
 				D501845620F86D75009481D4 /* MBValueMapPickerViewController.m in Sources */,
 				D5EE51F62043F613009148B3 /* MBVauleLabel.m in Sources */,
 				D55959D320AB9FA20019D733 /* MessageManager.swift in Sources */,

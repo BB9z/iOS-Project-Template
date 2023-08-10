@@ -10,7 +10,7 @@
  */
 import UIKit
 
-class MBTableViewDataSource<CellType, ItemType>: MBListDataSource, UITableViewDataSource {
+class MBTableViewDataSource<CellType, ItemType: AnyObject>: MBListDataSource<ItemType>, UITableViewDataSource {
     weak var tableView: UITableView?
     weak var delegate: UITableViewDataSource?
 
@@ -63,10 +63,6 @@ class MBTableViewDataSource<CellType, ItemType>: MBListDataSource, UITableViewDa
         tableView?.reloadData()
     }
 
-    override func item(at indexPath: IndexPath) -> Any {
-        return super.item(at: indexPath)
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -74,8 +70,10 @@ class MBTableViewDataSource<CellType, ItemType>: MBListDataSource, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = self.item(at: indexPath)
         let reuseIdentifier = cellReuseIdentifier(tableView, indexPath, item)
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        configureCell(tableView, cell as! CellType, indexPath, item)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? CellType else {
+            fatalError()
+        }
+        configureCell(tableView, cell, indexPath, item)
         return cell
     }
 

@@ -95,5 +95,4 @@ class MBCodeSendButton: MBButton {
      请求成功后焦点转移到下一个
      */
     @IBOutlet weak var nextField: UIResponder?
-
 }
