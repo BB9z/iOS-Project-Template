@@ -42,6 +42,8 @@
 		D519A0CF2434883400E26A64 /* MBMaskHiddenView.m in Sources */ = {isa = PBXBuildFile; fileRef = D519A0CE2434883300E26A64 /* MBMaskHiddenView.m */; };
 		D51A2E9D2A49B683007B761F /* MBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A2E9C2A49B682007B761F /* MBNavigationController.swift */; };
 		D51A2E9F2A4A4B0E007B761F /* MBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A2E9E2A4A4B0E007B761F /* MBAPI.swift */; };
+		D51A2EA12A4B1AF2007B761F /* MBGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A2EA02A4B1AF2007B761F /* MBGeneral.swift */; };
+		D51A2EA32A4B1CA6007B761F /* MBTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A2EA22A4B1CA5007B761F /* MBTableViewDataSource.swift */; };
 		D527917D27B557A800522240 /* B9MulticastDelegate in Frameworks */ = {isa = PBXBuildFile; productRef = D527917C27B557A800522240 /* B9MulticastDelegate */; };
 		D527917F27B558D600522240 /* Do.swift in Sources */ = {isa = PBXBuildFile; fileRef = D527917E27B558D500522240 /* Do.swift */; };
 		D52A04E520F85F2600F535ED /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52A04E420F85F2600F535ED /* Button.swift */; };
@@ -259,6 +261,8 @@
 		D519A0CE2434883300E26A64 /* MBMaskHiddenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMaskHiddenView.m; sourceTree = "<group>"; };
 		D51A2E9C2A49B682007B761F /* MBNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBNavigationController.swift; sourceTree = "<group>"; };
 		D51A2E9E2A4A4B0E007B761F /* MBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBAPI.swift; sourceTree = "<group>"; };
+		D51A2EA02A4B1AF2007B761F /* MBGeneral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBGeneral.swift; sourceTree = "<group>"; };
+		D51A2EA22A4B1CA5007B761F /* MBTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTableViewDataSource.swift; sourceTree = "<group>"; };
 		D51B800529D0789400DD825C /* SwiftLint Configuration */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = "SwiftLint Configuration"; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		D525F3E72506988D003EBEB0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D525F3E82506988D003EBEB0 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -1186,6 +1190,7 @@
 				D5E2AF382A41A09800E7ABDA /* MBTableViewArrayDataSource.swift */,
 				D5B49EEB1C41133A00847925 /* MBTableViewDataSource.h */,
 				D5B49EEC1C41133A00847925 /* MBTableViewDataSource.m */,
+				D51A2EA22A4B1CA5007B761F /* MBTableViewDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -1249,6 +1254,7 @@
 				D5E2AEFE2A41972200E7ABDA /* MBModel */,
 				D51A2E9E2A4A4B0E007B761F /* MBAPI.swift */,
 				D5E2AF4B2A42E9A100E7ABDA /* MBUser.swift */,
+				D51A2EA02A4B1AF2007B761F /* MBGeneral.swift */,
 			);
 			path = MBAppKit;
 			sourceTree = "<group>";
@@ -1736,6 +1742,7 @@
 				D5542F161918B83400831016 /* MBApp.swift in Sources */,
 				D5E2AF272A41972200E7ABDA /* MBApplicationDelegate.m in Sources */,
 				D569C9EB21AE906900211E36 /* MBAudioRecorder.m in Sources */,
+				D51A2EA12A4B1AF2007B761F /* MBGeneral.swift in Sources */,
 				D5EE51E32043F613009148B3 /* MBAutoFadeoutView.m in Sources */,
 				D5C3CBF3217EEEA20097CCD9 /* MBBadgeLabel.m in Sources */,
 				D5E80580226F403D00901C41 /* MBBottomLayoutView.m in Sources */,
@@ -1819,6 +1826,7 @@
 				D5EE51812043F5E6009148B3 /* MBTextView.m in Sources */,
 				D5E2AF402A41DB5D00E7ABDA /* MBTouchEffectButton.swift in Sources */,
 				D5E2AF4C2A42ED0300E7ABDA /* MBUser.swift in Sources */,
+				D51A2EA32A4B1CA6007B761F /* MBTableViewDataSource.swift in Sources */,
 				D501845620F86D75009481D4 /* MBValueMapPickerViewController.m in Sources */,
 				D5EE51F62043F613009148B3 /* MBVauleLabel.m in Sources */,
 				D55959D320AB9FA20019D733 /* MessageManager.swift in Sources */,

@@ -13,7 +13,6 @@
  */
 #import <RFKit/RFRuntime.h>
 #import <JSONModel/JSONModel.h>
-#import "MBGeneralType.h"
 
 #pragma mark - MBModel
 

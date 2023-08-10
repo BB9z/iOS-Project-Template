@@ -21,3 +21,9 @@ typealias Duration = Int32
 /// 从 1 开始的序号
 typealias NIdx = Int
  */
+
+protocol ListDisplaying {
+    associatedtype ListType
+
+    var listView: ListType { get }
+}
