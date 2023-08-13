@@ -83,7 +83,7 @@ class Account: MBUser {
 
     /// 应用启动后初始流程
     class func setup() {
-        precondition(AppUser() == nil, "应用初始化时应该还未设置当前用户")
+        precondition(Current.account == nil, "应用初始化时应该还未设置当前用户")
         guard let userID = AppUserDefaultsShared().lastUserID else { return }
         guard let token = AppUserDefaultsShared().userToken else {
             AppLog().critical("Account has ID but no token")

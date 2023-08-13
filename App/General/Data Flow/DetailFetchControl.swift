@@ -67,7 +67,7 @@ class DetailFetchControl<T> {
             return
         }
         if let hasCB = hasEnoughDataToDisplay, !hasCB(item) {
-            AppHUD().showInfoStatus(offlineTips)
+            Current.hud.showInfoStatus(offlineTips)
         }
         // 离线
         onlineObserver = AppCondition().observe([.online], action: Action { [weak self] in

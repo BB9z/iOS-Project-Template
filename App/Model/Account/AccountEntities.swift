@@ -37,7 +37,7 @@ class LoginResponseEntity: MBModel {
     /// 收到服务器登入信息，设置当前用户
     func setAsCurrent() {
         guard let info = info, let token = token else {
-            AppHUD().showErrorStatus("服务器返回信息缺失")
+            Current.hud.showErrorStatus("服务器返回信息缺失")
             return
         }
         let user = Account(id: info.uid)

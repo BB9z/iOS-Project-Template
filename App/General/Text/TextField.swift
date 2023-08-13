@@ -195,7 +195,7 @@ class TextField: MBTextField {
         let (vaildText, errorMessage) = _vaildFieldText()
         if let e = errorMessage {
             if noticeWhenInvalid {
-                AppHUD().showErrorStatus(e)
+                Current.hud.showErrorStatus(e)
             }
             if becomeFirstResponderWhenInvalid {
                 becomeFirstResponder()

@@ -7,7 +7,7 @@ class HomeViewController: UIViewController, StoryboardCreation {
     static var storyboardID: StoryboardID { .main }
 
     @IBAction private func navigationPop(_ sender: Any) {
-        AppHUD().showInfoStatus("主页的该按钮用于调整导航返回按钮图片位置，请删除")
+        Current.hud.showInfoStatus("主页的该按钮用于调整导航返回按钮图片位置，请删除")
     }
 
     override func viewDidAppear(_ animated: Bool) {

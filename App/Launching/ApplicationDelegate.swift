@@ -71,7 +71,7 @@ class ApplicationDelegate: MBApplicationDelegate {
                 || e.code == NSURLErrorNotConnectedToInternet) {
                 // 超时断网不报错
             } else {
-                AppHUD().alertError(e, title: nil, fallbackMessage: "列表加载失败")
+                Current.hud.alertError(e, title: nil, fallbackMessage: "列表加载失败")
             }
             return false
         }

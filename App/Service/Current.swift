@@ -1,16 +1,52 @@
-//
-//  Current.swift
-//  App
-//
-//
+/*
+ Current
+
+ Copyright © 2023 BB9z.
+ https://github.com/BB9z/iOS-Project-Template
+
+ The MIT License
+ https://opensource.org/licenses/MIT
+ */
 
 import UIKit
 
+/**
+ 全局状态中心，挂载模块
+
+ 提供 mock 支持
+ */
 enum Current {
+    // 请按字母顺序排列
+
+    /// 当前登录的用户
+    static var account: Account? {
+        Mocked.account ?? AccountManager.current as? Account
+    }
+
+    /// 编译环境，Debug、Alpha、Release
+    static var buildConfiguration: String {
+        #if DEBUG
+            "Debug"
+        #elseif ALPHA
+            "Alpha"
+        #else
+            "Release"
+        #endif
+    }
+
     static var defualts: UserDefaults {
         Mocked.defualts ?? {
             let instance = UserDefaults.standard
             Mocked.defualts = instance
+            return instance
+        }()
+    }
+
+    /// UI 提示管理器
+    static var hud: MessageManager {
+        Mocked.hud ?? {
+            let instance = MessageManager()
+            Mocked.hud = instance
             return instance
         }()
     }
@@ -31,13 +67,17 @@ enum Current {
 }
 
 enum Mocked {
+    static var account: Account?
     static var defualts: UserDefaults?
     static var identifierForVendor: String?
+    static var hud: MessageManager?
     static var keyWindow: UIWindow?
 
     static func reset() {
+        account = nil
         defualts = nil
         identifierForVendor = nil
+        hud = nil
         keyWindow = nil
     }
 }

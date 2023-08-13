@@ -48,11 +48,11 @@ class TopicDetailViewController: UIViewController,
             guard let sf = self else { return }
             let code = (error as NSError).code
             if code == 404 {
-                AppHUD().showInfoStatus("帖子已移除或不存在")
+                Current.hud.showInfoStatus("帖子已移除或不存在")
                 sf.navigationController?.removeViewController(sf, animated: true)
                 return
             }
-            AppHUD().alertError(error, title: nil, fallbackMessage: "帖子信息获取失败")
+            Current.hud.alertError(error, title: nil, fallbackMessage: "帖子信息获取失败")
         }
         return fcc
     }()

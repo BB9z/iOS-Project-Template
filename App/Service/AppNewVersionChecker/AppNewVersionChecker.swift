@@ -324,7 +324,7 @@ extension AppNewVersionChecker {
                 return
             }
             if let err = error {
-                AppHUD().alertError(err, title: "版本检测失败", fallbackMessage: nil)
+                Current.hud.alertError(err, title: "版本检测失败", fallbackMessage: nil)
             }
         }
     }

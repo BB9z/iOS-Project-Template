@@ -36,17 +36,6 @@ func AppAPI() -> API {
     MBApp.global.api
 }
 
-/// 编译环境，Debug、Alpha、Release
-func AppBuildConfiguration() -> String {
-    #if DEBUG
-    "Debug"
-    #elseif ALPHA
-    "Alpha"
-    #else
-    "Release"
-    #endif
-}
-
 /// 快速访问 application delegate 实例，可以在非主线程访问
 func AppDelegate() -> ApplicationDelegate {
     appDelegate
@@ -54,10 +43,6 @@ func AppDelegate() -> ApplicationDelegate {
 // 直存一个变量，后续访问就不怕非主线程访问 delegate 了
 private let appDelegate = UIApplication.shared.delegate as! ApplicationDelegate
 
-
-func AppHUD() -> MessageManager {
-    MBApp.global.hud
-}
 
 /// 应用状态，是否处于后台
 func AppInBackground() -> Bool {
@@ -74,10 +59,6 @@ func AppRootViewController() -> RootViewController? {
     MBApp.global.rootViewController
 }
 
-func AppUser() -> Account? {
-    AccountManager.current as? Account
-}
-
 /// 应用级别的配置项
 func AppUserDefaultsShared() -> UserDefaults {
     UserDefaults.standard
@@ -85,12 +66,12 @@ func AppUserDefaultsShared() -> UserDefaults {
 
 /// 当前登录用户的配置项
 func AppUserDefaultsPrivate() -> AccountDefaults? {
-    AppUser()?.profile
+    Current.account?.profile
 }
 
 /// 当前登录用户的账户信息
 func AppUserInformation() -> AccountEntity? {
-    AppUser()?.information
+    Current.account?.information
 }
 
 // swiftlint:enable force_cast identifier_name

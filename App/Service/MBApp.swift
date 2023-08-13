@@ -56,12 +56,9 @@ class MBApp: NSObject {
     @objc lazy var api: API = {
         let instance = API()
         API.global = instance
-        instance.networkActivityIndicatorManager = hud
+        instance.networkActivityIndicatorManager = Current.hud
         return instance
     }()
-
-    /// UI 提示管理器
-    @objc lazy var hud = MessageManager()
 
     /// 
     @objc var rootViewController: RootViewController?

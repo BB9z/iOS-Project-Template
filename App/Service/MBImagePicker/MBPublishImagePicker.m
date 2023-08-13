@@ -189,10 +189,10 @@ static MBPublishImagePicker *MBPBLiveInstance = nil;
             [self _executeCallbackFail:[NSError errorWithDomain:MBPublishImagePicker.errorDomain code:MBErrorDataNotAvailable localizedDescription:@"上传图片无法获取"]];
             return;
         }
-        [AppHUD() showActivityIndicatorWithIdentifier:@"imageUpload" groupIdentifier:self.className model:YES message:self.loadingText];
+        [Current.hud showActivityIndicatorWithIdentifier:@"imageUpload" groupIdentifier:self.className model:YES message:self.loadingText];
         #if __has_include("API+FileUpload.h")
         [AppAPI() uploadImageWithData:imageData callback:^(BOOL success, NSURL *imageURL, NSError * error) {
-            [AppHUD() hideWithIdentifier:@"imageUpload"];
+            [Current.hud hideWithIdentifier:@"imageUpload"];
             self.safeCallback(success, imageURL, error);
             MBPBLiveInstance = nil;
         }];
