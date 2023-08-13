@@ -2,8 +2,9 @@
 #if RFDEBUG
 #import "MBNavigationController+MBDebugReleaseChecking.h"
 #import <RFAlpha/RFSwizzle.h>
-#import <MBAppKit/MBAppKit.h>
+#import <RFKit/RFRuntime.h>
 #import "debug.h"
+#import "MBGeneralListDisplaying.h"
 
 @implementation MBNavigationController (MBDebugReleaseChecking)
 

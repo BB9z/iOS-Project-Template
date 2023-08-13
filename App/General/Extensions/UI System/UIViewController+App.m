@@ -1,5 +1,6 @@
 
 #import "UIViewController+App.h"
+#import <RFKit/UIViewController+RFKit.h>
 
 @implementation UIViewController (App)
 

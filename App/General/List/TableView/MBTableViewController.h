@@ -9,7 +9,6 @@
  https://opensource.org/licenses/MIT
  */
 #import "MBTableView.h"
-#import <MBAppKit/MBGeneral.h>
 
 // @MBDependency:3
 /**
@@ -20,9 +19,7 @@
  - 视图显示时取消选中单元
  - 适合 table view 的 segue 准备方法
  */
-@interface MBTableViewController : UIViewController <
-    MBGeneralListDisplaying
->
+@interface MBTableViewController : UIViewController
 @property (weak, nonatomic) IBOutlet MBTableView *listView;
 
 @end

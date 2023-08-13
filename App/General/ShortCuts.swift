@@ -54,14 +54,28 @@ func AppDelegate() -> ApplicationDelegate {
 // 直存一个变量，后续访问就不怕非主线程访问 delegate 了
 private let appDelegate = UIApplication.shared.delegate as! ApplicationDelegate
 
+
+func AppHUD() -> MessageManager {
+    MBApp.global.hud
+}
+
 /// 应用状态，是否处于后台
 func AppInBackground() -> Bool {
     UIApplication.shared.applicationState == .background
 }
 
+/// 全局导航
+func AppNavigationController() -> NavigationController? {
+    MBApp.global.globalNavigationController
+}
+
 /// 全局根视图
 func AppRootViewController() -> RootViewController? {
     MBApp.global.rootViewController
+}
+
+func AppUser() -> Account? {
+    AccountManager.current as? Account
 }
 
 /// 应用级别的配置项
@@ -78,3 +92,5 @@ func AppUserDefaultsPrivate() -> AccountDefaults? {
 func AppUserInformation() -> AccountEntity? {
     AppUser()?.information
 }
+
+// swiftlint:enable force_cast identifier_name

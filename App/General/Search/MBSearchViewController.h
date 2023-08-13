@@ -8,7 +8,7 @@
  The MIT License
  https://opensource.org/licenses/MIT
  */
-#import <MBAppKit/MBAppKit.h>
+#import <RFKit/RFRuntime.h>
 #import "MBSearchTextField.h"
 
 // @MBDependency:2

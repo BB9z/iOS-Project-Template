@@ -1,6 +1,9 @@
 @testable import HasItem
 import XCTest
 
+#if canImport(UIKit)
+import UIKit
+
 class TestViewController: UIViewController, HasItem {
     var item: String!
 }
@@ -113,3 +116,4 @@ final class PrepareSegueTests: XCTestCase {
         XCTAssertEqual("another", destinationVC.item)
     }
 }
+#endif // Can import UIKit

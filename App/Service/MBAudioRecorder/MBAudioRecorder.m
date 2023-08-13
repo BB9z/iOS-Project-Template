@@ -1,7 +1,7 @@
 
 #import "MBAudioRecorder.h"
 #import "MBErrorCode.h"
-#import <MBAppKit/MBGeneralCallback.h>
+#import "MBGeneralCallback.h"
 #import <RFKit/NSFileManager+RFKit.h>
 @import AVFoundation;
 

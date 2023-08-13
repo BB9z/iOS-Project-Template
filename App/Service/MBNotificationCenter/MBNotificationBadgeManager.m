@@ -1,7 +1,7 @@
 
 #import "MBNotificationBadgeManager.h"
 #import <RFTimer.h>
-#import <MBAppKit/MBUser.h>
+#import "MBUser.h"
 
 RFDefineConstString(MBNotificatioBadgeChangedNotification);
 

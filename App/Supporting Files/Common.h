@@ -6,5 +6,5 @@
 
 #pragma once
 
-#import <MBAppKit/MBAppKit.h>
+#import <RFKit/RFRuntime.h>
 #import "App-Swift.h"

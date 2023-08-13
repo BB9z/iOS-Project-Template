@@ -52,7 +52,7 @@ class Button: MBButton {
 
     func updateRoundStyleIfNeeded() {
         guard styleName == Style.round.rawValue else { return }
-        let size = height
+        let size = bounds.height
         guard size > 0 else { return }
         let roundInset = UIEdgeInsetsMakeWithSameMargin(size / 2)
         let resizeInset = UIEdgeInsets(top: 0, left: size / 2 + 1, bottom: 0, right: size / 2 + 1)
@@ -61,7 +61,7 @@ class Button: MBButton {
         setBackgroundImage(normalBG, for: .normal)
         setTitleColor(tintColor, for: .normal)
 
-        let highlghtColor = tintColor.rf_lighter()
+        let highlghtColor = tintColor.mixedColor(withRatio: 0.8, color: .white)
         let highlightBG = RFDrawImage.image(withRoundingCorners: roundInset, size: bgSize, fill: .white, stroke: highlghtColor, strokeWidth: 1, boxMargin: .zero, resizableCapInsets: resizeInset, scaleFactor: 0)
         setBackgroundImage(highlightBG, for: .highlighted)
         setTitleColor(highlghtColor, for: .highlighted)

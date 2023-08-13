@@ -3,35 +3,6 @@ PODS:
   - AFNetworking/Security (4.0.1)
   - AFNetworking/Serialization (4.0.1)
   - JSONModel (1.8.0)
-  - MBAppKit/Button (0.13.0):
-    - RFInitializing
-    - RFKit/RFGeometry
-  - MBAppKit/Core (0.13.0):
-    - RFAlpha/RFSwizzle
-    - RFAPI (~> 2.1.1)
-    - RFKit (~> 2.0)
-    - RFKit/Category/NSDate
-    - RFKit/Category/NSDateFormatter
-    - RFKit/Category/NSJSONSerialization
-    - RFKit/Category/NSLayoutConstraint
-    - RFKit/Category/NSURL
-  - MBAppKit/Input (0.13.0):
-    - MBAppKit/Core
-    - RFDelegateChain/UITextFieldDelegate
-    - RFInitializing
-    - RFKit/Category/UIResponder
-    - RFKit/RFGeometry
-  - MBAppKit/Navigation (0.13.0):
-    - MBAppKit/Core
-    - RFAlpha/RFNavigationController
-    - RFAlpha/RFSynthesize
-    - RFKit/Category/NSArray
-    - RFKit/Category/UIResponder
-  - MBAppKit/UserIDIsString (0.13.0):
-    - MBAppKit/Core
-  - MBAppKit/Worker (0.13.0):
-    - MBAppKit/Core
-    - RFInitializing
   - RFAlpha/RFBlockSelectorPerform (0.7.2)
   - RFAlpha/RFButton (0.7.2):
     - RFInitializing (>= 1.1)
@@ -93,9 +64,6 @@ PODS:
     - RFAlpha/RFViewApperance/RFDrawView
   - RFAlpha/RFWindow (0.7.2):
     - RFInitializing (>= 1.1)
-  - RFAPI (2.1.1):
-    - RFAPI/Core (= 2.1.1)
-    - RFAPI/JSONModel (= 2.1.1)
   - RFAPI/Core (2.1.1):
     - AFNetworking/Reachability (>= 2.3)
     - AFNetworking/Security (>= 2.3)
@@ -125,57 +93,19 @@ PODS:
   - RFInitializing (1.3.0)
   - RFKeyboard (0.3.0):
     - RFKit/Runtime (>= 1.7)
-  - RFKit (2.5.1):
-    - RFKit/Default (= 2.5.1)
-  - RFKit/Category/Default (2.5.1):
-    - RFKit/Category/NSArray
-    - RFKit/Category/NSBundle
-    - RFKit/Category/NSDictionary
-    - RFKit/Category/NSError
-    - RFKit/Category/NSObject
-    - RFKit/Category/NSString
-    - RFKit/Category/UIButton
-    - RFKit/Category/UIColor
-    - RFKit/Category/UIDevice
-    - RFKit/Category/UIImage
-    - RFKit/Category/UINavigationController
-    - RFKit/Category/UIResponder
-    - RFKit/Category/UIStoryboard
-    - RFKit/Category/UITableView
-    - RFKit/Category/UIView
-    - "RFKit/Category/UIView+RFAnimate"
-    - RFKit/Category/UIViewController
   - RFKit/Category/NSArray (2.5.1):
-    - RFKit/Foundation
-  - RFKit/Category/NSBundle (2.5.1):
     - RFKit/Foundation
   - RFKit/Category/NSDate (2.5.1):
     - RFKit/Foundation
   - RFKit/Category/NSDateFormatter (2.5.1):
-    - RFKit/Foundation
-  - RFKit/Category/NSDictionary (2.5.1):
-    - RFKit/Category/NSObject
     - RFKit/Foundation
   - RFKit/Category/NSError (2.5.1):
     - RFKit/Foundation
   - RFKit/Category/NSFileManager (2.5.1):
     - RFKit/Foundation
     - RFKit/Runtime
-  - RFKit/Category/NSJSONSerialization (2.5.1):
-    - RFKit/Foundation
-    - RFKit/Runtime
   - RFKit/Category/NSLayoutConstraint (2.5.1):
     - RFKit/Category/UIView
-    - RFKit/Foundation
-  - RFKit/Category/NSObject (2.5.1):
-    - RFKit/Foundation
-    - RFKit/Runtime
-  - RFKit/Category/NSString (2.5.1):
-    - RFKit/Foundation
-    - RFKit/Runtime
-  - RFKit/Category/NSURL (2.5.1):
-    - RFKit/Foundation
-  - RFKit/Category/UIButton (2.5.1):
     - RFKit/Foundation
   - RFKit/Category/UIColor (2.5.1):
     - RFKit/Foundation
@@ -193,8 +123,6 @@ PODS:
     - RFKit/Runtime
   - "RFKit/Category/UIScrollView+RFScrolling (2.5.1)":
     - RFKit/Foundation
-  - RFKit/Category/UIStoryboard (2.5.1):
-    - RFKit/Foundation
   - RFKit/Category/UITableView (2.5.1):
     - "RFKit/Category/UIView+RFAnimate"
     - RFKit/Foundation
@@ -207,10 +135,6 @@ PODS:
     - RFKit/Runtime
   - RFKit/Category/UIViewController (2.5.1):
     - RFKit/Foundation
-  - RFKit/Default (2.5.1):
-    - RFKit/Category/Default
-    - RFKit/RFGeometry
-    - RFKit/Runtime
   - RFKit/Foundation (2.5.1)
   - RFKit/RFGeometry (2.5.1):
     - RFKit/Runtime
@@ -232,17 +156,12 @@ PODS:
     - RFKit/Category/UIDevice
     - RFKit/Category/UINavigationController
     - RFKit/Runtime (>= 1.7)
-  - SDWebImage (5.16.0):
-    - SDWebImage/Core (= 5.16.0)
-  - SDWebImage/Core (5.16.0)
+  - SDWebImage (5.17.0):
+    - SDWebImage/Core (= 5.17.0)
+  - SDWebImage/Core (5.17.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
-  - MBAppKit/Button (from `https://github.com/RFUI/MBAppKit.git`)
-  - MBAppKit/Input (from `https://github.com/RFUI/MBAppKit.git`)
-  - MBAppKit/Navigation (from `https://github.com/RFUI/MBAppKit.git`)
-  - MBAppKit/UserIDIsString (from `https://github.com/RFUI/MBAppKit.git`)
-  - MBAppKit/Worker (from `https://github.com/RFUI/MBAppKit.git`)
   - RFAlpha/RFBlockSelectorPerform
   - RFAlpha/RFButton
   - RFAlpha/RFCallbackControl
@@ -251,18 +170,26 @@ DEPENDENCIES:
   - RFAlpha/RFImageCropper
   - RFAlpha/RFNavigationController
   - RFAlpha/RFRefreshControl
+  - RFAlpha/RFSwizzle
+  - RFAlpha/RFSynthesize
   - RFAlpha/RFTabController
   - RFAlpha/RFTableViewPullToFetchPlugin
   - RFAlpha/RFTimer
   - RFAlpha/RFViewApperance/RFLine
   - RFAlpha/RFWindow
+  - RFAPI/JSONModel
   - RFDelegateChain/UICollectionViewDataSource
   - RFDelegateChain/UICollectionViewDelegateFlowLayout
   - RFDelegateChain/UITextFieldDelegate
   - RFDelegateChain/UITextViewDelegate
+  - RFInitializing
   - RFKeyboard
+  - RFKit/Category/NSDate
+  - RFKit/Category/NSDateFormatter
   - RFKit/Category/NSFileManager
+  - RFKit/Category/NSLayoutConstraint
   - "RFKit/Category/UIScrollView+RFScrolling"
+  - RFKit/Category/UITableView
   - RFMessageManager/SVProgressHUD
   - RFSegue/Async
   - SDWebImage
@@ -282,19 +209,9 @@ SPEC REPOS:
     - SDWebImage
     - SVProgressHUD
 
-EXTERNAL SOURCES:
-  MBAppKit:
-    :git: https://github.com/RFUI/MBAppKit.git
-
-CHECKOUT OPTIONS:
-  MBAppKit:
-    :commit: f67ccd08ceed9ffe0194f83c55e4a68124ee47f1
-    :git: https://github.com/RFUI/MBAppKit.git
-
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
-  MBAppKit: be40a93b7463347c6b12c11ccee79cfa89c18e64
   RFAlpha: b903f1725ccadee2226ab34fd0b9009cffa364d2
   RFAPI: 3cba472523c4301b4a0c44b1b3dcbe5707d21372
   RFDelegateChain: c6df4faf9932f86d9539a08d0aa8f9709025d874
@@ -303,9 +220,9 @@ SPEC CHECKSUMS:
   RFKit: 046ed8a61c874fbb93dce7a694cfc059e8bf5d7a
   RFMessageManager: e261b12146e083989df83106304fbface62705b5
   RFSegue: 32840d5876e32f192b22f41160ebfcf466a0fa3b
-  SDWebImage: 2aea163b50bfcb569a2726b6a754c54a4506fcf6
+  SDWebImage: 750adf017a315a280c60fde706ab1e552a3ae4e9
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 72766b4216c734bd57388bd8d4fe950aeff7c566
+PODFILE CHECKSUM: 684f958893b7b44d1aa724e11de4cfe77707f557
 
 COCOAPODS: 1.12.1

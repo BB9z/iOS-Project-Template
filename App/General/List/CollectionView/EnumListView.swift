@@ -75,7 +75,7 @@ class EnumListView: UICollectionView, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let string = listDataSource.item(at: indexPath)?.enumListDiscription ?? ""
         var size = (string as NSString).size(withAttributes: cellLabelAttributes)
-        size.width = max(ceil(min(size.width + 30, collectionView.width - 60)), cellMinWidth)
+        size.width = max(ceil(min(size.width + 30, collectionView.bounds.width - 60)), cellMinWidth)
         size.height = cellHight
         return size
     }

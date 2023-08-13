@@ -9,11 +9,11 @@ import Debugger
 /**
  API 接口请求层
  */
-public class API: MBAPI {
+class API: MBAPI {
     /// 业务错误
     @objc static let errorDomain = "APIErrorDomain"
 
-    override public func onInit() {
+    override func onInit() {
         super.onInit()
 
         #if DEBUG
@@ -27,7 +27,7 @@ public class API: MBAPI {
         #endif
 
         // 接口总体设置
-        setupAPIDefine(withPlistPath: Bundle.main.path(forResource: "APIDefine", ofType: "plist")!)
+        setupAPIDefine(plistPath: Bundle.main.path(forResource: "APIDefine", ofType: "plist")!)
 
         defineManager.defaultRequestSerializer = AFJSONRequestSerializer()
         defineManager.defaultResponseSerializer = APIResponseSerializer()
@@ -38,7 +38,7 @@ public class API: MBAPI {
         modelTransformer = RFAPIJSONModelTransformer()
     }
 
-    override public func afterInit() {
+    override func afterInit() {
         super.afterInit()
         reachabilityManager.startMonitoring()
         reachabilityManager.setReachabilityStatusChange { status in
@@ -56,7 +56,7 @@ public class API: MBAPI {
     }
 
     /// 错误统一处理
-    override public func generalHandlerForError(_ error: Error, define: RFAPIDefine, task: RFAPITask, failure: RFAPIRequestFailureCallback? = nil) -> Bool {
+    override func generalHandlerForError(_ error: Error, define: RFAPIDefine, task: RFAPITask, failure: RFAPIRequestFailureCallback? = nil) -> Bool {
         let nsError = Self.transformURLError(error as NSError)
         task.error = nsError
 
@@ -133,7 +133,7 @@ public class API: MBAPI {
         NSURLErrorTimedOut: "NSURLErrorTimedOut"
     ]
 
-    override public func isSuccessResponse(_ responseObjectRef: UnsafeMutablePointer<AnyObject?>, error: NSErrorPointer) -> Bool {
+    override func isSuccessResponse(_ responseObjectRef: UnsafeMutablePointer<AnyObject?>, error: NSErrorPointer) -> Bool {
         // 🔰 判断是否是成功响应
         return true
     }

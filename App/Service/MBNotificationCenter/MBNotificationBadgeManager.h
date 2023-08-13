@@ -10,7 +10,7 @@
  https://opensource.org/licenses/MIT
  */
 #import <RFInitializing/RFInitializing.h>
-#import <MBAppKit/MBAppKit.h>
+#import "MBAppKit.h"
 
 /**
  小红点管理，状态的轮训

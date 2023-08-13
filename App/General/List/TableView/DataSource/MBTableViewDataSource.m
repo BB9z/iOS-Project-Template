@@ -3,7 +3,7 @@
 #if __has_include("MBListDateItem.h")
 #import "MBListDateItem.h"
 #endif
-#import <MBAppKit/MBGeneralItemExchanging.h>
+#import "MBGeneralItemExchanging.h"
 #import <RFKit/NSArray+RFKit.h>
 #import <RFKit/UIView+RFAnimate.h>
 

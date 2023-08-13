@@ -1,5 +1,7 @@
 
 #import "MBEntitiesCollectionView.h"
+#import "MBGeneralItemExchanging.h"
+#import "MBGeneralCellResponding.h"
 
 @implementation MBEntitiesCollectionView
 RFInitializingRootForUIView

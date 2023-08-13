@@ -1,8 +1,7 @@
 
 #import "MBTableListDisplayer.h"
 #import "Common.h"
-#import <MBAppKit/MBGeneralCellResponding.h>
-#import <RFKit/UITableView+RFKit.h>
+#import "MBGeneralCellResponding.h"
 
 @interface MBTableListDisplayer ()
 @end
@@ -39,7 +38,9 @@ RFInitializingRootForUIViewController
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     if (self.clearsSelectionOnViewWillAppear) {
-        [self.listView deselectRows:animated];
+        for (NSIndexPath *row in self.tableView.indexPathsForSelectedRows) {
+            [self.tableView deselectRowAtIndexPath:row animated:animated];
+        }
     }
 }
 
@@ -51,8 +52,8 @@ RFInitializingRootForUIViewController
     self.dataSource.fetchAPIName = APIName;
 }
 
-- (NSString *)APIGroupIdentifier {
-    return self.parentViewController.APIGroupIdentifier;
+- (NSString *)apiGroupIdentifier {
+    return self.parentViewController.apiGroupIdentifier;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

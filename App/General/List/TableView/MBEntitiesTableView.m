@@ -1,5 +1,7 @@
 
 #import "MBEntitiesTableView.h"
+#import "MBGeneralItemExchanging.h"
+#import "MBGeneralCellResponding.h"
 
 @implementation MBEntitiesTableView
 RFInitializingRootForUIView
