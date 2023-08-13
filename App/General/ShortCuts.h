@@ -14,7 +14,4 @@ NS_ASSUME_NONNULL_BEGIN
 /// 全局导航
 FOUNDATION_EXPORT NavigationController *__nullable AppNavigationController(void);
 
-@class MessageManager;
-FOUNDATION_EXPORT MessageManager *__nonnull AppHUD(void);
-
 NS_ASSUME_NONNULL_END

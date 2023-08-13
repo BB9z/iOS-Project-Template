@@ -54,6 +54,11 @@ func AppDelegate() -> ApplicationDelegate {
 // 直存一个变量，后续访问就不怕非主线程访问 delegate 了
 private let appDelegate = UIApplication.shared.delegate as! ApplicationDelegate
 
+
+func AppHUD() -> MessageManager {
+    MBApp.global.hud
+}
+
 /// 应用状态，是否处于后台
 func AppInBackground() -> Bool {
     UIApplication.shared.applicationState == .background
@@ -82,3 +87,5 @@ func AppUserDefaultsPrivate() -> AccountDefaults? {
 func AppUserInformation() -> AccountEntity? {
     AppUser()?.information
 }
+
+// swiftlint:enable force_cast identifier_name

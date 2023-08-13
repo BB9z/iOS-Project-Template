@@ -5,7 +5,3 @@
 NavigationController *__nullable AppNavigationController(void) {
     return [MBApp status].globalNavigationController;
 }
-
-MessageManager *__nonnull AppHUD(void) {
-    return MBApp.status.hud;
-}

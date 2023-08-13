@@ -80,8 +80,6 @@
 		D559AD6821746EEC005D4BCD /* TextField+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559AD6721746EEC005D4BCD /* TextField+Action.swift */; };
 		D564D5D31970EE340032FEC3 /* MBModalPresentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = D564D5D21970EE340032FEC3 /* MBModalPresentSegue.m */; };
 		D569C9CF21AE8D3200211E36 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569C9CE21AE8D3200211E36 /* HomeVC.swift */; };
-		D569C9E821AE906900211E36 /* MBPublishImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D569C9D821AE906700211E36 /* MBPublishImagePicker.m */; };
-		D569C9EA21AE906900211E36 /* MBPublishSession.m in Sources */ = {isa = PBXBuildFile; fileRef = D569C9DE21AE906800211E36 /* MBPublishSession.m */; };
 		D569C9EB21AE906900211E36 /* MBAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = D569C9E021AE906900211E36 /* MBAudioRecorder.m */; };
 		D569C9EC21AE906900211E36 /* MBImageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D569C9E421AE906900211E36 /* MBImageRenderer.m */; };
 		D569C9F021AE908200211E36 /* MBErrorCode.m in Sources */ = {isa = PBXBuildFile; fileRef = D569C9EF21AE908100211E36 /* MBErrorCode.m */; };
@@ -323,10 +321,6 @@
 		D564D5D11970EE340032FEC3 /* MBModalPresentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBModalPresentSegue.h; sourceTree = "<group>"; };
 		D564D5D21970EE340032FEC3 /* MBModalPresentSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBModalPresentSegue.m; sourceTree = "<group>"; };
 		D569C9CE21AE8D3200211E36 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		D569C9D721AE906700211E36 /* MBPublishImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBPublishImagePicker.h; sourceTree = "<group>"; };
-		D569C9D821AE906700211E36 /* MBPublishImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBPublishImagePicker.m; sourceTree = "<group>"; };
-		D569C9DD21AE906800211E36 /* MBPublishSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBPublishSession.h; sourceTree = "<group>"; };
-		D569C9DE21AE906800211E36 /* MBPublishSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBPublishSession.m; sourceTree = "<group>"; };
 		D569C9E021AE906900211E36 /* MBAudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBAudioRecorder.m; sourceTree = "<group>"; };
 		D569C9E121AE906900211E36 /* MBAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBAudioRecorder.h; sourceTree = "<group>"; };
 		D569C9E321AE906900211E36 /* MBImageRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBImageRenderer.h; sourceTree = "<group>"; };
@@ -998,8 +992,6 @@
 		D569C9D621AE906700211E36 /* MBImagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				D569C9D721AE906700211E36 /* MBPublishImagePicker.h */,
-				D569C9D821AE906700211E36 /* MBPublishImagePicker.m */,
 			);
 			path = MBImagePicker;
 			sourceTree = "<group>";
@@ -1007,8 +999,6 @@
 		D569C9DC21AE906800211E36 /* MBPublishSession */ = {
 			isa = PBXGroup;
 			children = (
-				D569C9DD21AE906800211E36 /* MBPublishSession.h */,
-				D569C9DE21AE906800211E36 /* MBPublishSession.m */,
 			);
 			path = MBPublishSession;
 			sourceTree = "<group>";
@@ -1797,8 +1787,6 @@
 				D50B3E6328255A5800D0974E /* MBOptionSwitch.swift in Sources */,
 				D5EE52002043F613009148B3 /* MBPageScrollView.m in Sources */,
 				D5EE51EA2043F613009148B3 /* MBParallaxView.m in Sources */,
-				D569C9E821AE906900211E36 /* MBPublishImagePicker.m in Sources */,
-				D569C9EA21AE906900211E36 /* MBPublishSession.m in Sources */,
 				D5B49F171C41133A00847925 /* MBRefreshFooterView.m in Sources */,
 				D5B49F191C41133A00847925 /* MBRefreshHeaderView.m in Sources */,
 				D588308720CAB8AE002030C4 /* MBRoundBarButtonItem.m in Sources */,
