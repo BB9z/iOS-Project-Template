@@ -1,5 +1,5 @@
 # InterfaceApp
 
-## 目标
+应用侧实现的界面，供 AppFramework 使用。
 
-可便捷升级的应用基础框架
+界面统一前缀：`IA`。

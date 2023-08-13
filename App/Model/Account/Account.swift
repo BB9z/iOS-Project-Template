@@ -12,7 +12,6 @@ import InterfaceApp
  */
 class Account: IAAccount {
 
-
     // 有的项目登入时只返回认证信息，没有用户 ID，这时候需要用 userIDUndetermined 创建 Account 对象
     static let userIDUndetermined = "<undetermined>"
 
@@ -100,7 +99,7 @@ class Account: IAAccount {
         }
     }
 
-    func onLogin() {
+    func didLogin() {
         guard let token = token else { fatalError() }
         debugPrint("当前用户 ID: \(id), token: \(token)")
         Current.api.defineManager.authorizationHeader[authHeaderKey] = "Bearer \(token)"
@@ -115,7 +114,7 @@ class Account: IAAccount {
             }
         }
     }
-    func onLogout() {
+    func didLogout() {
         AppCondition().set(off: [.userHasLogged, .userInfoFetched])
         let defaults = Current.defualts
         defaults.lastUserID = nil

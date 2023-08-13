@@ -60,10 +60,10 @@ public enum AccountManager {
 
     private static func updateCurrent(oldValue: IAAccount?, newValue: IAAccount?) {
         if current !== oldValue {
-            oldValue?.onLogout()
+            oldValue?.didLogout()
         }
         if current === newValue {
-            newValue?.onLogin()
+            newValue?.didLogin()
         }
         noticeCurrentChanged.set()
     }
