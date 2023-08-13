@@ -59,19 +59,4 @@ func AppRootViewController() -> RootViewController? {
     MBApp.global.rootViewController
 }
 
-/// 应用级别的配置项
-func AppUserDefaultsShared() -> UserDefaults {
-    UserDefaults.standard
-}
-
-/// 当前登录用户的配置项
-func AppUserDefaultsPrivate() -> AccountDefaults? {
-    Current.account?.profile
-}
-
-/// 当前登录用户的账户信息
-func AppUserInformation() -> AccountEntity? {
-    Current.account?.information
-}
-
 // swiftlint:enable force_cast identifier_name

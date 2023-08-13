@@ -15,7 +15,7 @@ import Debugger
 @UIApplicationMain
 class ApplicationDelegate: MBApplicationDelegate {
     override func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        AppUserDefaultsShared().applicationLastLaunchTime = Date()
+        Current.defualts.applicationLastLaunchTime = Date()
         _ = MBApp.status()
         return true
     }
@@ -80,8 +80,8 @@ class ApplicationDelegate: MBApplicationDelegate {
     override func applicationDidBecomeActive(_ application: UIApplication) {
         if !AppCondition().meets([.appHasEnterForegroundOnce]) {
             AppCondition().set(on: [.appHasEnterForegroundOnce])
-            AppUserDefaultsShared().launchCount += 1
-            AppUserDefaultsShared().launchCountCurrentVersion += 1
+            Current.defualts.launchCount += 1
+            Current.defualts.launchCountCurrentVersion += 1
         }
         AppCondition().set(on: [.appInForeground])
         super.applicationDidBecomeActive(application)

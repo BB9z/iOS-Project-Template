@@ -49,7 +49,7 @@ final class MBOptionSwitch: UISwitch {
         guard let optionKey = optionKey else {
             return
         }
-        guard let defaults = sharedPreferences ? AppUserDefaultsShared() : AppUserDefaultsPrivate() else {
+        guard let defaults = sharedPreferences ? Current.defualts : Current.accountDefaults else {
             AppLog().warning("Cannot read value as specified UserDefaults is nil.")
             return
         }
@@ -63,7 +63,7 @@ final class MBOptionSwitch: UISwitch {
     }
 
     @objc private func onValueChanged() {
-        guard let defaults = sharedPreferences ? AppUserDefaultsShared() : AppUserDefaultsPrivate() else {
+        guard let defaults = sharedPreferences ? Current.defualts : Current.accountDefaults else {
             AppLog().warning("Cannot save changes as specified UserDefaults is nil.")
             return
         }

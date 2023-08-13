@@ -21,7 +21,7 @@ class MBApp: NSObject {
     }
 
     private func setupVersion() {
-        let defaults = AppUserDefaultsShared()
+        let defaults = Current.defualts
         let bundle = Bundle.main
         guard let bundleVerison = bundle.infoDictionary?["CFBundleShortVersionString"] as? String else {
             fatalError()

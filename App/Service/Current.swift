@@ -18,9 +18,14 @@ import UIKit
 enum Current {
     // 请按字母顺序排列
 
-    /// 当前登录的用户
+    /// 当前登录的账号
     static var account: Account? {
         Mocked.account ?? AccountManager.current as? Account
+    }
+
+    /// 归属于当前账号的配置
+    static var accountDefaults: AccountDefaults? {
+        Mocked.accountDefaults ?? account?.profile
     }
 
     /// 编译环境，Debug、Alpha、Release
@@ -34,6 +39,7 @@ enum Current {
         #endif
     }
 
+    /// 应用级别的配置项
     static var defualts: UserDefaults {
         Mocked.defualts ?? {
             let instance = UserDefaults.standard
@@ -68,6 +74,7 @@ enum Current {
 
 enum Mocked {
     static var account: Account?
+    static var accountDefaults: AccountDefaults?
     static var defualts: UserDefaults?
     static var identifierForVendor: String?
     static var hud: MessageManager?
@@ -75,6 +82,7 @@ enum Mocked {
 
     static func reset() {
         account = nil
+        accountDefaults = nil
         defualts = nil
         identifierForVendor = nil
         hud = nil
@@ -87,4 +95,3 @@ private protocol DeprecatedKeyWindow {
 }
 extension UIApplication: DeprecatedKeyWindow {
 }
-
