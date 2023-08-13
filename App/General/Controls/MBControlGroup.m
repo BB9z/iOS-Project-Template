@@ -1,5 +1,9 @@
 
 #import "MBControlGroup.h"
+#import "NSObject+MBAppKit.h"
+#import <RFKit/NSArray+RFKit.h>
+#import <RFKit/UIView+RFKit.h>
+#import <RFKit/UIView+RFAnimate.h>
 
 @interface MBControlGroup ()
 @property (nonatomic) CGFloat MBControlGroup_intrinsicContentWidth;

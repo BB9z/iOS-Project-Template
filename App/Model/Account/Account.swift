@@ -9,18 +9,16 @@ import B9Condition
  管理当前用户
  */
 class Account: MBUser {
+
+
     // 有的项目登入时只返回认证信息，没有用户 ID，这时候需要用 userIDUndetermined 创建 Account 对象
-    #if MBUserStringUID
     static let userIDUndetermined = "<undetermined>"
-    #else
-    static let userIDUndetermined = INT64_MAX
-    #endif
+
+    init(id: String) {
+        self.id = id
+    }
 
     // MARK: - 状态
-
-    override var description: String {
-        "<Account \(ObjectIdentifier(self)): uid = \(uid), information: \(information.description), pofileFetched?: \(hasPofileFetchedThisSession)>"
-    }
 
     /**
      用户基本信息
@@ -47,16 +45,12 @@ class Account: MBUser {
 
             _information = newValue
 
-            #if MBUserStringUID
-            let uidChanged = newValue.uid.length > 0 && uid != newValue.uid as String
-            #else
-            let uidChanged = newValue.uid > 0 && uid != newValue.uid
-            #endif
+            let uidChanged = newValue.uid.isNotEmpty && id != newValue.uid
             if uidChanged {
-                if uid != Account.userIDUndetermined {
+                if id != Account.userIDUndetermined {
                     AppLog().critical("用户信息 ID 不匹配")
                 }
-                setValue(information.uid, forKeyPath: #keyPath(MBUser.uid))
+                id = information.uid
             }
 
             // 开始对接口/数据源取回的数据处理
@@ -69,10 +63,11 @@ class Account: MBUser {
     private var _information: AccountEntity?
     private func persistentInfomationToStore() {
         guard isCurrent else { return }
-        AppUserDefaultsShared().lastUserID = uid
+        AppUserDefaultsShared().lastUserID = id
         AppUserDefaultsShared().accountEntity = information
     }
 
+    private(set) var id: String
     var token: String?
 
     var hasPofileFetchedThisSession = false
@@ -80,7 +75,7 @@ class Account: MBUser {
     // MARK: - 挂载
 
     private(set) lazy var profile: AccountDefaults? = {
-        let suitName = ("User\(uid)" as NSString).rf_MD5
+        let suitName = B9Crypto.md5(utf8: "User\(id)") ?? id
         return AccountDefaults(suiteName: suitName)
     }()
 
@@ -89,46 +84,28 @@ class Account: MBUser {
     /// 应用启动后初始流程
     class func setup() {
         precondition(AppUser() == nil, "应用初始化时应该还未设置当前用户")
-        #if MBUserStringUID
         guard let userID = AppUserDefaultsShared().lastUserID else { return }
-        #else
-        let userID = AppUserDefaultsShared().lastUserID
-        guard userID > 0 else { return }
-        #endif
         guard let token = AppUserDefaultsShared().userToken else {
             AppLog().critical("Account has ID but no token")
             return
         }
 
-        guard let user = Account(id: userID) else { fatalError() }
+        let user = Account(id: userID)
         user.token = token
-        current = user
+        AccountManager.current = user
         user.updateInformation { c in
             c.failureCallback = APISlientFailureHandler(true)
         }
     }
 
-    override class func onCurrentUserChanged(_ currentUser: MBUser?) {
-        let user = currentUser as? Account
-        let defaults = AppUserDefaultsShared()
-        #if MBUserStringUID
-        defaults.lastUserID = user?.uid
-        #else
-        defaults.lastUserID = user?.uid ?? 0
-        #endif
-        defaults.userToken = user?.token
-        defaults.accountEntity = user?.information
-        if !defaults.synchronize() {
-            // 实际项目遇到过 UserDefaults 无法存储的 bug，需要用户重启设备才行
-            // 处理方式可以参考： https://github.com/BB9z/iOS-Project-Template/blob/4.1/App/Model/Account/Account.swift#L123-L127
-            NSLog("⚠️ 用户信息存储失败")
-        }
-    }
-
-    override func onLogin() {
+    func onLogin() {
         guard let token = token else { fatalError() }
-        debugPrint("当前用户 ID: \(uid), token: \(token)")
+        debugPrint("当前用户 ID: \(id), token: \(token)")
         AppAPI().defineManager.authorizationHeader[authHeaderKey] = "Bearer \(token)"
+        let defaults = AppUserDefaultsShared()
+        defaults.lastUserID = id
+        defaults.userToken = token
+        defaults.accountEntity = information
         AppCondition().set(on: [ApplicationCondition.userHasLogged])
         if !hasPofileFetchedThisSession {
             updateInformation { c in
@@ -136,8 +113,12 @@ class Account: MBUser {
             }
         }
     }
-    override func onLogout() {
+    func onLogout() {
         AppCondition().set(off: [.userHasLogged, .userInfoFetched])
+        let defaults = AppUserDefaultsShared()
+        defaults.lastUserID = nil
+        defaults.userToken = nil
+        defaults.accountEntity = nil
         AppAPI().defineManager.authorizationHeader.removeObject(forKey: authHeaderKey)
         profile?.synchronize()
     }
@@ -161,5 +142,11 @@ class Account: MBUser {
                 }
             }
         }
+    }
+}
+
+extension Account: CustomDebugStringConvertible {
+    var debugDescription: String {
+        "<Account \(ObjectIdentifier(self)): id = \(id), information: \(information.description), pofileFetched?: \(hasPofileFetchedThisSession)>"
     }
 }

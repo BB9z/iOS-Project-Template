@@ -10,7 +10,7 @@
  */
 
 #import <RFInitializing/RFInitializing.h>
-#import <MBAppKit/MBAppKit.h>
+#import <RFKit/RFRuntime.h>
 
 // @MBDependency:2
 /**

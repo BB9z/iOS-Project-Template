@@ -1,8 +1,8 @@
 
 #import "MBCollectionViewDataSource.h"
-#import <MBAppKit/MBGeneral.h>
 #import <RFDelegateChain/RFDelegateChain.h>
 #import "MBListDateItem.h"
+#import "MBGeneralItemExchanging.h"
 
 @implementation MBCollectionViewDataSource
 
@@ -17,7 +17,7 @@
 
 - (void (^)(UICollectionView * _Nonnull, __kindof UICollectionViewCell * _Nonnull, NSIndexPath * _Nonnull, id _Nonnull))configureCell {
     if (!_configureCell) {
-        _configureCell = ^(UICollectionView *collectionView, id<MBSenderEntityExchanging> cell, NSIndexPath *indexPath, id item) {
+        _configureCell = ^(UICollectionView *collectionView, id<MBGeneralItemExchanging> cell, NSIndexPath *indexPath, id item) {
             if ([cell respondsToSelector:@selector(setItem:)]) {
                 [cell setItem:item];
             }

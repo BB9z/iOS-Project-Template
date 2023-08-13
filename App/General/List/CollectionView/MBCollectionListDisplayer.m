@@ -1,7 +1,7 @@
 
 #import "MBCollectionListDisplayer.h"
 #import "Common.h"
-#import <MBAppKit/MBGeneralCellResponding.h>
+#import "MBGeneralCellResponding.h"
 
 @interface MBCollectionListDisplayer ()
 
@@ -42,8 +42,8 @@ RFInitializingRootForUIViewController
     self.dataSource.fetchAPIName = APIName;
 }
 
-- (NSString *)APIGroupIdentifier {
-    return self.parentViewController.APIGroupIdentifier;
+- (NSString *)apiGroupIdentifier {
+    return self.parentViewController.apiGroupIdentifier;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

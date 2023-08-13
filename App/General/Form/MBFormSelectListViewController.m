@@ -1,8 +1,9 @@
 
 #import "MBFormSelectListViewController.h"
 #import "Common.h"
-#import <MBAppKit/MBGeneralItemExchanging.h>
+#import "MBGeneralItemExchanging.h"
 #import <RFAlpha/RFTimer.h>
+#import <RFKit/UITableView+RFKit.h>
 
 @interface MBFormSelectListViewController () {
     BOOL _needsUpdateUIForItem;

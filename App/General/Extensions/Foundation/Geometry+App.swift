@@ -15,4 +15,8 @@ extension UIEdgeInsets {
     init(edge: CGFloat) {
         self.init(top: edge, left: edge, bottom: edge, right: edge)
     }
+
+    func reversed() -> UIEdgeInsets {
+        UIEdgeInsets(top: -top, left: -left, bottom: -bottom, right: -right)
+    }
 }

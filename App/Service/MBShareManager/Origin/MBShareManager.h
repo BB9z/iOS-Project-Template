@@ -8,7 +8,7 @@
  https://opensource.org/licenses/MIT
  */
 #import <RFKit/RFRuntime.h>
-#import <MBAppKit/MBGeneralCallback.h>
+#import "MBGeneralCallback.h"
 
 /// 分享类型
 typedef NS_ENUM(int, MBShareType) {

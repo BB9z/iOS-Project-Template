@@ -1,6 +1,8 @@
 
 #import "MBCellStackView.h"
-
+#import "MBGeneralItemExchanging.h"
+#import <RFKit/NSArray+RFKit.h>
+#import <RFKit/UIView+RFKit.h>
 
 @interface MBCellStackView ()
 @end

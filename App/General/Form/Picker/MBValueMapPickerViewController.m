@@ -1,6 +1,6 @@
 
 #import "MBValueMapPickerViewController.h"
-#import <MBAppKit/MBGeneralItemExchanging.h>
+#import "MBGeneralItemExchanging.h"
 
 @interface MBValueMapPickerViewController () <
     UIPickerViewDelegate,

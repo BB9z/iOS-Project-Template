@@ -1,5 +1,6 @@
 
 #import "MBTextView.h"
+#import "NSObject+MBAppKit.h"
 #import <RFDelegateChain/UITextViewDelegateChain.h>
 #import <RFKit/UIView+RFAnimate.h>
 

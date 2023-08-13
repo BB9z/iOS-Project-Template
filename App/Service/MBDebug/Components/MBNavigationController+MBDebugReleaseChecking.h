@@ -8,7 +8,7 @@
  The MIT License
  https://opensource.org/licenses/MIT
  */
-#import <MBAppKit/MBNavigationController.h>
+#import "MBNavigationController.h"
 
 #if RFDEBUG
 

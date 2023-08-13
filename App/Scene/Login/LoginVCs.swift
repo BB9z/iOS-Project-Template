@@ -262,8 +262,8 @@ extension WelcomeViewController: DebugActionSource {
         [
             DebugActionItem("测试用户") {
                 let user = Account(id: Account.userIDUndetermined)
-                user?.token = "token"
-                Account.current = user
+                user.token = "token"
+                AccountManager.current = user
             }
         ]
     }

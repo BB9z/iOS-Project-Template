@@ -6,7 +6,7 @@
  全局引用常用扩展
  */
 
-#import <RFKit/RFKit.h>
+#import <RFKit/RFRuntime.h>
 #import <RFKit/NSDate+RFKit.h>
 #import <RFKit/NSDateFormatter+RFKit.h>
 

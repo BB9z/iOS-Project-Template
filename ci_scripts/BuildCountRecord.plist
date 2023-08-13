@@ -4,17 +4,10 @@
 <dict>
 	<key>UserBuildRecords</key>
 	<dict>
-		<key>BB9z</key>
-		<dict>
-			<key>master</key>
-			<integer>9</integer>
-		</dict>
 		<key>bb9z</key>
 		<dict>
 			<key>main</key>
 			<integer>3</integer>
-			<key>xcode-cloud</key>
-			<integer>5</integer>
 		</dict>
 	</dict>
 	<key>Version</key>

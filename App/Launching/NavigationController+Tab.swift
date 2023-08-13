@@ -89,8 +89,9 @@ extension NavigationController: MBControlGroupDelegate {
 }
 private let tabControllersAssociation = AssociatedObject<NSPointerArray>()
 
-extension NavigationController: MBDebugNavigationReleaseChecking {
-    func debugShouldIgnoralCheckRelease(for viewController: UIViewController!) -> Bool {
-        return (tabControllers.allObjects as NSArray).contains(viewController!)
-    }
-}
+// TODO: 恢复 MBDebugNavigationReleaseChecking
+//extension NavigationController: MBDebugNavigationReleaseChecking {
+//    func debugShouldIgnoralCheckRelease(for viewController: UIViewController!) -> Bool {
+//        return (tabControllers.allObjects as NSArray).contains(viewController!)
+//    }
+//}
