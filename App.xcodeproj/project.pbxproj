@@ -10,14 +10,12 @@
 		674FCCB03EFF1B157024C64B /* libPods-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6E6A83F7E71FC340A5AE68 /* libPods-App.a */; };
 		D501844E20F865D3009481D4 /* Number+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501844C20F865D2009481D4 /* Number+App.swift */; };
 		D501844F20F865D3009481D4 /* UITableView+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501844D20F865D3009481D4 /* UITableView+App.swift */; };
-		D501845620F86D75009481D4 /* MBValueMapPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D501845420F86D75009481D4 /* MBValueMapPickerViewController.m */; };
 		D501845820F88016009481D4 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501845720F88016009481D4 /* TextField.swift */; };
 		D501845B20F881B6009481D4 /* DissolveTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501845920F881B6009481D4 /* DissolveTransitioning.swift */; };
 		D501845C20F881B7009481D4 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501845A20F881B6009481D4 /* Shadow.swift */; };
 		D501E65528549059001B5CAA /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501E65428549059001B5CAA /* UserDefaults.swift */; };
 		D50319D425BE518C00C2849E /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50319D325BE518C00C2849E /* CornerRadius.swift */; };
 		D5031A1E25BEA95200C2849E /* MBDebugLiveCountChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5031A1D25BEA95200C2849E /* MBDebugLiveCountChecker.swift */; };
-		D5031A2625BEBB7700C2849E /* Picker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5031A2525BEBB7700C2849E /* Picker.storyboard */; };
 		D5031A5425BEC50D00C2849E /* StoryboardCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5031A5325BEC50D00C2849E /* StoryboardCreation.swift */; };
 		D5031A5C25BEC99700C2849E /* UIKit+Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5031A5B25BEC99700C2849E /* UIKit+Compatibility.swift */; };
 		D5031A5F25BEC9F300C2849E /* UIViewController+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D533C4E92592363600590FBA /* UIViewController+Appearance.swift */; };
@@ -78,7 +76,6 @@
 		D55959D320AB9FA20019D733 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55959D220AB9FA20019D733 /* MessageManager.swift */; };
 		D55959D520ABA9B50019D733 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55959D420ABA9B50019D733 /* NavigationController.swift */; };
 		D559AD6821746EEC005D4BCD /* TextField+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559AD6721746EEC005D4BCD /* TextField+Action.swift */; };
-		D564D5D31970EE340032FEC3 /* MBModalPresentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = D564D5D21970EE340032FEC3 /* MBModalPresentSegue.m */; };
 		D569C9CF21AE8D3200211E36 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569C9CE21AE8D3200211E36 /* HomeVC.swift */; };
 		D569C9EB21AE906900211E36 /* MBAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = D569C9E021AE906900211E36 /* MBAudioRecorder.m */; };
 		D569C9EC21AE906900211E36 /* MBImageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D569C9E421AE906900211E36 /* MBImageRenderer.m */; };
@@ -144,6 +141,7 @@
 		D5C3CBF6217EEEDA0097CCD9 /* UITextView+ContainerInset.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C3CBF4217EEEDA0097CCD9 /* UITextView+ContainerInset.m */; };
 		D5C3CBF9217EF0A10097CCD9 /* MBTextCountLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C3CBF8217EF0A10097CCD9 /* MBTextCountLabel.m */; };
 		D5C636A72047CC5900851CF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C636A62047CC5900851CF4 /* LaunchScreen.storyboard */; };
+		D5C80A682A8861D1008F6ED1 /* MBModalPresentSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C80A672A8861D1008F6ED1 /* MBModalPresentSegue.swift */; };
 		D5D1859C280D7331009B5476 /* B9Condition in Frameworks */ = {isa = PBXBuildFile; productRef = D5D1859B280D7331009B5476 /* B9Condition */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D5D932F12515EDC300E1C4B6 /* CalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D932F02515EDC300E1C4B6 /* CalloutView.swift */; };
 		D5DB4C19241DD71300832A0A /* MBEntitiesTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DB4C18241DD71300832A0A /* MBEntitiesTableView.m */; };
@@ -180,7 +178,6 @@
 		D5EE51792043F5E6009148B3 /* MBSearchTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51592043F5E4009148B3 /* MBSearchTextField.m */; };
 		D5EE517A2043F5E6009148B3 /* MBKeyboardFloatContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE515B2043F5E4009148B3 /* MBKeyboardFloatContainer.m */; };
 		D5EE51812043F5E6009148B3 /* MBTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51692043F5E5009148B3 /* MBTextView.m */; };
-		D5EE51862043F5E6009148B3 /* MBDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51732043F5E5009148B3 /* MBDatePickerViewController.m */; };
 		D5EE51872043F5E6009148B3 /* MBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51762043F5E5009148B3 /* MBSearchViewController.m */; };
 		D5EE519A2043F5F3009148B3 /* CALayer+MBAnimationPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51952043F5F3009148B3 /* CALayer+MBAnimationPersistence.m */; };
 		D5EE51E32043F613009148B3 /* MBAutoFadeoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE519F2043F612009148B3 /* MBAutoFadeoutView.m */; };
@@ -220,8 +217,6 @@
 		AF6E6A83F7E71FC340A5AE68 /* libPods-App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D501844C20F865D2009481D4 /* Number+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Number+App.swift"; sourceTree = "<group>"; };
 		D501844D20F865D3009481D4 /* UITableView+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+App.swift"; sourceTree = "<group>"; };
-		D501845220F86D74009481D4 /* MBValueMapPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBValueMapPickerViewController.h; sourceTree = "<group>"; };
-		D501845420F86D75009481D4 /* MBValueMapPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBValueMapPickerViewController.m; sourceTree = "<group>"; };
 		D501845720F88016009481D4 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		D501845920F881B6009481D4 /* DissolveTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DissolveTransitioning.swift; sourceTree = "<group>"; };
 		D501845A20F881B6009481D4 /* Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
@@ -230,7 +225,6 @@
 		D501E65428549059001B5CAA /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		D50319D325BE518C00C2849E /* CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		D5031A1D25BEA95200C2849E /* MBDebugLiveCountChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBDebugLiveCountChecker.swift; sourceTree = "<group>"; };
-		D5031A2525BEBB7700C2849E /* Picker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Picker.storyboard; sourceTree = "<group>"; };
 		D5031A5325BEC50D00C2849E /* StoryboardCreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardCreation.swift; sourceTree = "<group>"; };
 		D5031A5B25BEC99700C2849E /* UIKit+Compatibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Compatibility.swift"; sourceTree = "<group>"; };
 		D5031A6A25BED1AE00C2849E /* FileURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileURL.swift; sourceTree = "<group>"; };
@@ -318,8 +312,6 @@
 		D55959D220AB9FA20019D733 /* MessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
 		D55959D420ABA9B50019D733 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		D559AD6721746EEC005D4BCD /* TextField+Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Action.swift"; sourceTree = "<group>"; };
-		D564D5D11970EE340032FEC3 /* MBModalPresentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBModalPresentSegue.h; sourceTree = "<group>"; };
-		D564D5D21970EE340032FEC3 /* MBModalPresentSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBModalPresentSegue.m; sourceTree = "<group>"; };
 		D569C9CE21AE8D3200211E36 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		D569C9E021AE906900211E36 /* MBAudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBAudioRecorder.m; sourceTree = "<group>"; };
 		D569C9E121AE906900211E36 /* MBAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBAudioRecorder.h; sourceTree = "<group>"; };
@@ -419,6 +411,7 @@
 		D5C3CBF7217EF0A10097CCD9 /* MBTextCountLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTextCountLabel.h; sourceTree = "<group>"; };
 		D5C3CBF8217EF0A10097CCD9 /* MBTextCountLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTextCountLabel.m; sourceTree = "<group>"; };
 		D5C636A62047CC5900851CF4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D5C80A672A8861D1008F6ED1 /* MBModalPresentSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBModalPresentSegue.swift; sourceTree = "<group>"; };
 		D5D1859A280D72B5009B5476 /* Condition */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Condition; sourceTree = "<group>"; };
 		D5D4CC6E2043A6ED002FE9F0 /* OCBridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCBridging-Header.h"; sourceTree = "<group>"; };
 		D5D932F02515EDC300E1C4B6 /* CalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutView.swift; sourceTree = "<group>"; };
@@ -480,8 +473,6 @@
 		D5EE515D2043F5E4009148B3 /* MBSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSearchViewController.h; sourceTree = "<group>"; };
 		D5EE51632043F5E5009148B3 /* MBTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTextView.h; sourceTree = "<group>"; };
 		D5EE51692043F5E5009148B3 /* MBTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTextView.m; sourceTree = "<group>"; };
-		D5EE51722043F5E5009148B3 /* MBDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDatePickerViewController.h; sourceTree = "<group>"; };
-		D5EE51732043F5E5009148B3 /* MBDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDatePickerViewController.m; sourceTree = "<group>"; };
 		D5EE51752043F5E5009148B3 /* MBSearchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSearchTextField.h; sourceTree = "<group>"; };
 		D5EE51762043F5E5009148B3 /* MBSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSearchViewController.m; sourceTree = "<group>"; };
 		D5EE51952043F5F3009148B3 /* CALayer+MBAnimationPersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+MBAnimationPersistence.m"; sourceTree = "<group>"; };
@@ -976,8 +967,7 @@
 		D564D5D01970EE2C0032FEC3 /* Segue */ = {
 			isa = PBXGroup;
 			children = (
-				D564D5D11970EE340032FEC3 /* MBModalPresentSegue.h */,
-				D564D5D21970EE340032FEC3 /* MBModalPresentSegue.m */,
+				D5C80A672A8861D1008F6ED1 /* MBModalPresentSegue.swift */,
 			);
 			path = Segue;
 			sourceTree = "<group>";
@@ -1341,11 +1331,6 @@
 		D5EE51702043F5E5009148B3 /* Picker */ = {
 			isa = PBXGroup;
 			children = (
-				D5EE51722043F5E5009148B3 /* MBDatePickerViewController.h */,
-				D5EE51732043F5E5009148B3 /* MBDatePickerViewController.m */,
-				D501845220F86D74009481D4 /* MBValueMapPickerViewController.h */,
-				D501845420F86D75009481D4 /* MBValueMapPickerViewController.m */,
-				D5031A2525BEBB7700C2849E /* Picker.storyboard */,
 			);
 			path = Picker;
 			sourceTree = "<group>";
@@ -1590,7 +1575,6 @@
 				D5B49F0C1C41133A00847925 /* MBCollectionRefreshFooterView.xib in Resources */,
 				D5B49F181C41133A00847925 /* MBRefreshFooterView.xib in Resources */,
 				D5B49F1A1C41133A00847925 /* MBRefreshHeaderView.xib in Resources */,
-				D5031A2625BEBB7700C2849E /* Picker.storyboard in Resources */,
 				D5E2AF222A41972200E7ABDA /* README.md in Resources */,
 				D553507924BC1EA100282871 /* Topic.storyboard in Resources */,
 			);
@@ -1700,6 +1684,7 @@
 				D5D932F12515EDC300E1C4B6 /* CalloutView.swift in Sources */,
 				D5031C0E25C0401C00C2849E /* Circle.swift in Sources */,
 				D533C506259242DC00590FBA /* Codable+App.swift in Sources */,
+				D5C80A682A8861D1008F6ED1 /* MBModalPresentSegue.swift in Sources */,
 				D5B8A39B251217C900C84CB1 /* Collections+App.swift in Sources */,
 				D5031C3425C04A2500C2849E /* CollectionViewAutoSizingSectionView.swift in Sources */,
 				D5BF664D24BC81D7008BC122 /* CommentEntity.swift in Sources */,
@@ -1747,7 +1732,6 @@
 				D5EE52212043F6A7009148B3 /* MBCollectionViewEqualColumnSpaceLayout.m in Sources */,
 				D5B49F051C41133A00847925 /* MBCollectionViewFlowLayout.m in Sources */,
 				D50693D819495D9E0002BFCC /* MBControlGroup.m in Sources */,
-				D5EE51862043F5E6009148B3 /* MBDatePickerViewController.m in Sources */,
 				D5031A1E25BEA95200C2849E /* MBDebugLiveCountChecker.swift in Sources */,
 				D5EE51E82043F613009148B3 /* MBDesignView.m in Sources */,
 				D5B49F081C41133A00847925 /* MBEntitiesCollectionView.m in Sources */,
@@ -1778,7 +1762,6 @@
 				D5B49F0E1C41133A00847925 /* MBListDataSource.m in Sources */,
 				D5B49F0F1C41133A00847925 /* MBListDateItem.m in Sources */,
 				D519A0CF2434883400E26A64 /* MBMaskHiddenView.m in Sources */,
-				D564D5D31970EE340032FEC3 /* MBModalPresentSegue.m in Sources */,
 				D5E2AF2A2A41972200E7ABDA /* MBModel.m in Sources */,
 				D588308620CAB8AE002030C4 /* MBNavigationBar.m in Sources */,
 				D51A2E9D2A49B683007B761F /* MBNavigationController.swift in Sources */,
@@ -1813,7 +1796,6 @@
 				D5EE51812043F5E6009148B3 /* MBTextView.m in Sources */,
 				D5E2AF402A41DB5D00E7ABDA /* MBTouchEffectButton.swift in Sources */,
 				D5E2AF4C2A42ED0300E7ABDA /* MBUser.swift in Sources */,
-				D501845620F86D75009481D4 /* MBValueMapPickerViewController.m in Sources */,
 				D5EE51F62043F613009148B3 /* MBVauleLabel.m in Sources */,
 				D55959D320AB9FA20019D733 /* MessageManager.swift in Sources */,
 				D5740B56249C5316001CBCB2 /* MoreVC.swift in Sources */,
