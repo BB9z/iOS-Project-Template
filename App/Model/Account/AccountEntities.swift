@@ -3,6 +3,8 @@
 //  App
 //
 
+import AppFramework
+
 /**
  用户账户信息 model
 

@@ -3,6 +3,8 @@
 //  App
 //
 
+import AppFramework
+
 /**
  更多 tab 页
  */

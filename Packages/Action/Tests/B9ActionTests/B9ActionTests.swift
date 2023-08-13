@@ -192,7 +192,7 @@ class Manager {
     }
 }
 
-func async(on queue: DispatchQueue = .main, delay: TimeInterval = -1, _ action: @escaping (() -> Void)) {
+private func async(on queue: DispatchQueue = .main, delay: TimeInterval = -1, _ action: @escaping (() -> Void)) {
     if delay >= 0 {
         queue.asyncAfter(deadline: .now() + delay, execute: action)
     } else {

@@ -52,7 +52,7 @@
     }
     sf.text = nil;
     if (sf.isSearching && sf.APIName) {
-        [MBApp.status.api cancelOperationWithIdentifier:sf.APIName];
+        [MBAPI.global cancelOperationWithIdentifier:sf.APIName];
         sf.isSearching = NO;
     }
     if (!skipPop) {

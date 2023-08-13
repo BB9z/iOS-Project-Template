@@ -3,12 +3,14 @@
 //  App
 //
 
+import AppFramework
 import B9Condition
+import InterfaceApp
 
 /**
  管理当前用户
  */
-class Account: MBUser {
+class Account: IAAccount {
 
 
     // 有的项目登入时只返回认证信息，没有用户 ID，这时候需要用 userIDUndetermined 创建 Account 对象

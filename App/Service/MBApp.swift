@@ -3,11 +3,7 @@
 //  App
 //
 
-/**
- 全局变量中心
-
- 这里主要是挂载一些公共模块的实例
- */
+/// 废弃
 @objc
 class MBApp: NSObject {
     static let global = MBApp()

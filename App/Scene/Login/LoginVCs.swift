@@ -3,6 +3,7 @@
 //  App
 //
 
+import AppFramework
 import HasItem
 
 // 登入相关页面的 IBAction 大都是通过响应链调用的，不能把它们标记成 private

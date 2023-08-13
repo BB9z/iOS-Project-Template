@@ -8,6 +8,7 @@
  https://opensource.org/licenses/MIT
  */
 
+import AppFramework
 import UIKit
 
 /**
