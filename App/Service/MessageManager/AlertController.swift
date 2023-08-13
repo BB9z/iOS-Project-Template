@@ -95,7 +95,7 @@ class AlertController: MBModalPresentViewController, StoryboardCreation {
             return
         }
         Self.currentController = self
-        super.present(from: AppRootViewController(), animated: animated, completion: completion)
+        super.present(from: Current.rootViewController, animated: animated, completion: completion)
     }
 
     override func dismissSelf(animated: Bool, completion: (() -> Void)? = nil) {

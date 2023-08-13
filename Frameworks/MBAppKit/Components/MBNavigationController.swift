@@ -280,7 +280,7 @@ func MBOperationLoginRequired() -> Bool {
         return false
     }
     // TODO: 共享实例
-//    AppNavigationController()._MBNavigationController_tryLogin()
+//    Current.navigationController._MBNavigationController_tryLogin()
     return true
 }
 

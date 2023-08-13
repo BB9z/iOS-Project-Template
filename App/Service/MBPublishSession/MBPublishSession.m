@@ -99,7 +99,7 @@ static void UploadCacheSet(NSURL *fileURL, NSURL *remoteURL) {
     NSParameterAssert(fileURL);
     self._fileUploading = fileURL;
     @weakify(self);
-    self._uploadingTask = [AppAPI() uploadFile:fileURL callback:^(BOOL success, NSURL *item, NSError * _Nullable error) {
+    self._uploadingTask = [Current.api uploadFile:fileURL callback:^(BOOL success, NSURL *item, NSError * _Nullable error) {
         @strongify(self);
         // 如果此时不在可能被取消了
         NSNumber *count = self.filesUploadMap[fileURL];

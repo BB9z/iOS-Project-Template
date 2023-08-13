@@ -212,7 +212,7 @@ class AppNewVersionChecker {
         define.needsAuthorization = false
         define.responseExpectType = .default
 
-        task = AppAPI().request(define: define, context: { c in
+        task = Current.api.request(define: define, context: { c in
             c.identifier = "CheckFirim"
             c.groupIdentifier = "AppNewVersionChecker"
             c.timeoutInterval = 10

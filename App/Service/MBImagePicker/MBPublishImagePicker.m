@@ -107,7 +107,7 @@ static MBPublishImagePicker *MBPBLiveInstance = nil;
             self.popoverConfiguration(ppc);
         }
     }
-    [AppNavigationController() presentViewController:alert animated:YES completion:nil];
+    [Current.navigationController presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)presentImagePickerViewContorllerWithSourceType:(UIImagePickerControllerSourceType)sourceType {
@@ -118,7 +118,7 @@ static MBPublishImagePicker *MBPBLiveInstance = nil;
     UIImagePickerController *pik = [[UIImagePickerController alloc] init];
     pik.sourceType = sourceType;
     pik.delegate = self;
-    [AppNavigationController() presentViewController:pik animated:YES completion:nil];
+    [Current.navigationController presentViewController:pik animated:YES completion:nil];
     self.systemImagePickerVC = pik;
     self.hasSystemImagePickerShown = YES;
 }
@@ -154,7 +154,7 @@ static MBPublishImagePicker *MBPBLiveInstance = nil;
     if (self.cropAfterImageSelected) {
         MBPublishAvatarImageCropperViewController *vc = [MBPublishAvatarImageCropperViewController newWithStoryboardName:@"Picker" identifier:nil];
         vc.image = orgImage;
-        [AppNavigationController() pushViewController:vc animated:NO];
+        [Current.navigationController pushViewController:vc animated:NO];
     }
     else {
         if (self.autoUpload) {
@@ -191,7 +191,7 @@ static MBPublishImagePicker *MBPBLiveInstance = nil;
         }
         [Current.hud showActivityIndicatorWithIdentifier:@"imageUpload" groupIdentifier:self.className model:YES message:self.loadingText];
         #if __has_include("API+FileUpload.h")
-        [AppAPI() uploadImageWithData:imageData callback:^(BOOL success, NSURL *imageURL, NSError * error) {
+        [Current.api uploadImageWithData:imageData callback:^(BOOL success, NSURL *imageURL, NSError * error) {
             [Current.hud hideWithIdentifier:@"imageUpload"];
             self.safeCallback(success, imageURL, error);
             MBPBLiveInstance = nil;
@@ -267,13 +267,13 @@ static MBPublishImagePicker *MBPBLiveInstance = nil;
 
 - (IBAction)onCancel:(id)sender {
     self.shouldSkipDisappearCallback = YES;
-    [AppNavigationController() popViewControllerAnimated:YES];
+    [Current.navigationController popViewControllerAnimated:YES];
     [MBPBLiveInstance cropFinishedWithCroppedImage:nil cancel:YES];
 }
 
 - (IBAction)onPick:(id)sender {
     self.shouldSkipDisappearCallback = YES;
-    [AppNavigationController() popViewControllerAnimated:YES];
+    [Current.navigationController popViewControllerAnimated:YES];
     [MBPBLiveInstance cropFinishedWithCroppedImage:[self.cropperView croppedImage] cancel:NO];
 }
 

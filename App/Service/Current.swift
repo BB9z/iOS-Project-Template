@@ -28,6 +28,17 @@ enum Current {
         Mocked.accountDefaults ?? account?.profile
     }
 
+    /// 全局接口请求器
+    static var api: API {
+        Mocked.api ?? {
+            let instance = API()
+            API.global = instance
+            instance.networkActivityIndicatorManager = Current.hud
+            Mocked.api = instance
+            return instance
+        }()
+    }
+
     /// 快速访问 application delegate 实例
     static var appDelegate: ApplicationDelegate {
         Mocked.appDelegate ?? {
@@ -79,25 +90,41 @@ enum Current {
             (UIApplication.shared as DeprecatedKeyWindow).keyWindow
         }()
     }
+
+    /// 主导航控制器
+    static var navigationController: NavigationController? {
+        Mocked.navigationController ?? MBApp.global.globalNavigationController
+    }
+
+    /// 当前显示的根控制器
+    static var rootViewController: RootViewController? {
+        Mocked.rootViewController ?? MBApp.global.rootViewController
+    }
 }
 
 enum Mocked {
     static var account: Account?
     static var accountDefaults: AccountDefaults?
+    static var api: API?
     static var appDelegate: ApplicationDelegate?
     static var defualts: UserDefaults?
-    static var identifierForVendor: String?
     static var hud: MessageManager?
+    static var identifierForVendor: String?
     static var keyWindow: UIWindow?
+    static var navigationController: NavigationController?
+    static var rootViewController: RootViewController?
 
     static func reset() {
         account = nil
         accountDefaults = nil
+        api = nil
         appDelegate = nil
         defualts = nil
-        identifierForVendor = nil
         hud = nil
+        identifierForVendor = nil
         keyWindow = nil
+        navigationController = nil
+        rootViewController = nil
     }
 }
 

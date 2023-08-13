@@ -52,24 +52,9 @@ class MBApp: NSObject {
 
     // MARK: - 挂载的 manager
 
-    /// 网络接口层
-    @objc lazy var api: API = {
-        let instance = API()
-        API.global = instance
-        instance.networkActivityIndicatorManager = Current.hud
-        return instance
-    }()
-
     /// 
     @objc var rootViewController: RootViewController?
 
     /// 全局导航
     @objc var globalNavigationController: NavigationController?
-
-//    @objc lazy var workerQueue = MBWorkerQueue()
-//    @objc lazy var backgroundWorkerQueue: MBWorkerQueue = {
-//        let queue = MBWorkerQueue()
-//        queue.dispatchQueue = DispatchQueue(label: "BackgroundWorker", qos: .background)
-//        return queue
-//    }()
 }

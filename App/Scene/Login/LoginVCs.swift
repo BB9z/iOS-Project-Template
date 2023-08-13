@@ -249,7 +249,7 @@ class PasswordResetViewController: LoginFormBaseViewController, HasItem {
             c.bindControls = [form.submitButton as Any]
             c.success { _, _ in
                 Current.hud.showSuccessStatus("密码已重置")
-                AppNavigationController()?.popToRootViewController(animated: true)
+                Current.navigationController?.popToRootViewController(animated: true)
             }
         }
     }

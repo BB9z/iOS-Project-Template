@@ -47,7 +47,7 @@ class ApplicationDelegate: MBApplicationDelegate {
         }
         Debugger.vauleInspector = { value in
             if let vc = MBFlexInterface.explorerViewController(for: value) {
-                AppNavigationController()?.pushViewController(vc, animated: true)
+                Current.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }

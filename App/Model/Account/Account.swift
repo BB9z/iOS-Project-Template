@@ -101,7 +101,7 @@ class Account: MBUser {
     func onLogin() {
         guard let token = token else { fatalError() }
         debugPrint("当前用户 ID: \(id), token: \(token)")
-        AppAPI().defineManager.authorizationHeader[authHeaderKey] = "Bearer \(token)"
+        Current.api.defineManager.authorizationHeader[authHeaderKey] = "Bearer \(token)"
         let defaults = Current.defualts
         defaults.lastUserID = id
         defaults.userToken = token
@@ -119,7 +119,7 @@ class Account: MBUser {
         defaults.lastUserID = nil
         defaults.userToken = nil
         defaults.accountEntity = nil
-        AppAPI().defineManager.authorizationHeader.removeObject(forKey: authHeaderKey)
+        Current.api.defineManager.authorizationHeader.removeObject(forKey: authHeaderKey)
         profile?.synchronize()
     }
     // 🔰 修改认证头字段名

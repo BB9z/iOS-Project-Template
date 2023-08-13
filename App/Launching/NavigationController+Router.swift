@@ -21,7 +21,7 @@ extension NavigationController {
      */
     @objc class func jump(url: URL, context: Any?) {
         if AppCondition().meets([.navigationLoaded]) {
-            AppNavigationController()?.jump(url: url, context: context)
+            Current.navigationController?.jump(url: url, context: context)
             return
         }
         let hasWaiting = navigatorBlockedJumpURL != nil
@@ -30,7 +30,7 @@ extension NavigationController {
         if hasWaiting { return }
         AppCondition().wait([.navigationLoaded], action: Action {
             if let url = navigatorBlockedJumpURL {
-                AppNavigationController()?.jump(url: url, context: navigatorBlockedJumpContext)
+                Current.navigationController?.jump(url: url, context: navigatorBlockedJumpContext)
             }
         })
     }

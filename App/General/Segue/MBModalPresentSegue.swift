@@ -37,7 +37,7 @@ class MBModalPresentSegue: UIStoryboardSegue {
  */
 class MBModalPresentPushSegue: UIStoryboardSegue {
     override func perform() {
-        AppNavigationController()?.pushViewController(destination, animated: true)
+        Current.navigationController?.pushViewController(destination, animated: true)
     }
 }
 
