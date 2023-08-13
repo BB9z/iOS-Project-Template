@@ -10,11 +10,18 @@
  */
 import Foundation
 
-/// 应用界面：账户
+/**
+ 应用界面：账户
+
+ 设计备忘：
+ - 使用地址，而非 Equatable 比较相同
+ */
 public protocol IAAccount: AnyObject {
     var id: String { get }
-    /// 成为当前用户时执行的操作，总是在主线程执行
-    func onLogin()
-    /// 用户登出时执行的操作，总是在主线程执行
-    func onLogout()
+
+    /// 成为当前用户时执行的操作，应当在主线程执行
+    func didLogin()
+
+    /// 用户登出时执行的操作，应当在主线程执行
+    func didLogout()
 }
