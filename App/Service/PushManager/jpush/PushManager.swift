@@ -48,7 +48,7 @@ final class PushManager: NSObject,
 
     @objc func afterInit() {
         proccessLaunchOptions()
-        AppDelegate().addAppEventListener(self)
+        Current.appDelegate.addAppEventListener(self)
     }
 
     /// 开启极光服务

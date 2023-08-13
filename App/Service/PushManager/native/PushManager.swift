@@ -42,7 +42,7 @@ final class PushManager: NSObject,
             didReceiveRemoteNotification(userInfo: push, isUserAction: true)
         }
         launchOptions = nil
-        AppDelegate().addAppEventListener(self)
+        Current.appDelegate.addAppEventListener(self)
     }
 
     private let center = UNUserNotificationCenter.current()

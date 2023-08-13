@@ -39,7 +39,7 @@ typedef NSString * MBSocailLoginResultKey NS_TYPED_ENUM;
 
  ## 集成
 
- - AppDelegate() 必须是 MBApplicationDelegate
+ - Current.appDelegate 必须是 MBApplicationDelegate
  - 相应 SDK 集成到项目后自动启用对应渠道的功能
  - App key/ID 之类的无需额外声明，直接读取 Info.plist 中 CFBundleURLTypes
 响应跳转中的设置

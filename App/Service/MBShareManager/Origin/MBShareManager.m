@@ -63,7 +63,7 @@ static BOOL g_WeiboRegisterFlag = NO;
 
 - (instancetype)init {
     self = [super init];
-    [AppDelegate() addAppEventListener:self];
+    [Current.appDelegate addAppEventListener:self];
     return self;
 }
 

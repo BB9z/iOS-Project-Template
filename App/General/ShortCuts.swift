@@ -36,14 +36,6 @@ func AppAPI() -> API {
     MBApp.global.api
 }
 
-/// 快速访问 application delegate 实例，可以在非主线程访问
-func AppDelegate() -> ApplicationDelegate {
-    appDelegate
-}
-// 直存一个变量，后续访问就不怕非主线程访问 delegate 了
-private let appDelegate = UIApplication.shared.delegate as! ApplicationDelegate
-
-
 /// 应用状态，是否处于后台
 func AppInBackground() -> Bool {
     UIApplication.shared.applicationState == .background

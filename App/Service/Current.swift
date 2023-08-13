@@ -28,6 +28,15 @@ enum Current {
         Mocked.accountDefaults ?? account?.profile
     }
 
+    /// 快速访问 application delegate 实例
+    static var appDelegate: ApplicationDelegate {
+        Mocked.appDelegate ?? {
+            let instance = UIApplication.shared.delegate as! ApplicationDelegate  // swiftlint:disable:this force_cast
+            Mocked.appDelegate = instance
+            return instance
+        }()
+    }
+
     /// 编译环境，Debug、Alpha、Release
     static var buildConfiguration: String {
         #if DEBUG
@@ -75,6 +84,7 @@ enum Current {
 enum Mocked {
     static var account: Account?
     static var accountDefaults: AccountDefaults?
+    static var appDelegate: ApplicationDelegate?
     static var defualts: UserDefaults?
     static var identifierForVendor: String?
     static var hud: MessageManager?
@@ -83,6 +93,7 @@ enum Mocked {
     static func reset() {
         account = nil
         accountDefaults = nil
+        appDelegate = nil
         defualts = nil
         identifierForVendor = nil
         hud = nil
