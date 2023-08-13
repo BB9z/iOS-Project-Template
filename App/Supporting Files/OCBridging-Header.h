@@ -44,7 +44,6 @@
 //#import "MBVauleLabel.h"
 //#import "MBValueMapPickerViewController.h"
 //#import "PushManager.h"
-#import "ShortCuts.h"
 #import "UIKit+App.h"
 #import <AFNetworking/AFNetworkReachabilityManager.h>
 #import <AFNetworking/AFSecurityPolicy.h>

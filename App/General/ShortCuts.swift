@@ -64,6 +64,11 @@ func AppInBackground() -> Bool {
     UIApplication.shared.applicationState == .background
 }
 
+/// 全局导航
+func AppNavigationController() -> NavigationController? {
+    MBApp.global.globalNavigationController
+}
+
 /// 全局根视图
 func AppRootViewController() -> RootViewController? {
     MBApp.global.rootViewController
