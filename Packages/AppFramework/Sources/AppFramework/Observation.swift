@@ -51,13 +51,13 @@ internal final class _AFObserverSet<Context> {
     let queue: DispatchQueue
     private var store = [Weak]()
     private(set) var lastContext: (Context?)?
-    let contextComparator: (_ lhs: Context?, _ rhs: Context) -> Bool
+    let contextComparator: (_ oldValue: Context?, _ newValue: Context) -> Bool
 
     /**
      - Parameters:
      - comparator: 对 context 进行比较，如果相同，通知事件不会重复发送；默认不去重
      */
-    init(queue: DispatchQueue = .main, comparator: ((_ lhs: Context?, _ rhs: Context) -> Bool)? = nil) {
+    init(queue: DispatchQueue = .main, comparator: ((_ oldValue: Context?, _ newValue: Context) -> Bool)? = nil) {
         self.queue = queue
         self.contextComparator = comparator ?? { _, _ in false }
     }
