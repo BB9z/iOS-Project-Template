@@ -15,36 +15,6 @@ import Foundation
  一些 key 加了下滑线前缀，是为了兼容旧版；新加的属性直接用 #function 就好
  */
 extension UserDefaults {
-    /// 上次启动时间
-    var applicationLastLaunchTime: Date? {
-        get { object(forKey: "_" + #function) as? Date }
-        set { set(newValue, forKey: "_" + #function) }
-    }
-
-    /// 上次启动时版本
-    var lastVersion: String? {
-        get { string(forKey: "_" + #function) }
-        set { set(newValue, forKey: "_" + #function) }
-    }
-
-    /// 上次更新版本时的版本
-    var previousVersion: String? {
-        get { string(forKey: "_" + #function) }
-        set { set(newValue, forKey: "_" + #function) }
-    }
-
-    /// App 总启动次数
-    var launchCount: Int {
-        get { integer(forKey: "_" + #function) }
-        set { set(newValue, forKey: "_" + #function) }
-    }
-
-    /// 当前版本启动次数
-    var launchCountCurrentVersion: Int {
-        get { integer(forKey: "_" + #function) }
-        set { set(newValue, forKey: "_" + #function) }
-    }
-
     // MARK: - 用户信息
 
     /// 用户 ID，用作是否登入的判定
@@ -86,8 +56,14 @@ class AccountDefaults: UserDefaults {
 //        }
 //    }
 
+    /// 最近一次激活时的版本
+    var lastVersion: String? {
+        get { string(forKey: "_" + #function) }
+        set { set(newValue, forKey: "_" + #function) }
+    }
+
     private func migrateIfNeeded() {
-        let currentVersion = MBApp.global.version
+        let currentVersion = Current.version.version
         guard let lastVersion = self.lastVersion else {
             self.lastVersion = currentVersion
             return
@@ -116,19 +92,6 @@ extension UserDefaults {
     }
     private func set(model value: MBModel?, forKey key: String) {
         let data = value?.toJSONData()
-        set(data, forKey: key)
-    }
-
-    // Codable 对象存储支持
-    private func model<T: Codable>(forKey key: String) -> T? {
-        guard let data = data(forKey: key),
-              let model = try? JSONDecoder().decode(T.self, from: data) else {
-            return nil
-        }
-        return model
-    }
-    private func set<T: Codable>(model value: T?, forKey key: String) {
-        let data = try? JSONEncoder().encode(value)
         set(data, forKey: key)
     }
 }

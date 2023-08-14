@@ -94,12 +94,17 @@ enum Current {
 
     /// 主导航控制器
     static var navigationController: NavigationController? {
-        Mocked.navigationController ?? MBApp.global.globalNavigationController
+        Mocked.navigationController
     }
 
     /// 当前显示的根控制器
     static var rootViewController: RootViewController? {
-        Mocked.rootViewController ?? MBApp.global.rootViewController
+        Mocked.rootViewController
+    }
+
+    /// 版本管理器
+    static var version: VersionManager {
+        Mocked.version ?? VersionManager.shared
     }
 }
 
@@ -114,6 +119,7 @@ enum Mocked {
     static var keyWindow: UIWindow?
     static var navigationController: NavigationController?
     static var rootViewController: RootViewController?
+    static var version: VersionManager?
 
     static func reset() {
         account = nil
@@ -126,6 +132,7 @@ enum Mocked {
         keyWindow = nil
         navigationController = nil
         rootViewController = nil
+        version = nil
     }
 }
 

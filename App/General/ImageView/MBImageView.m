@@ -1,6 +1,5 @@
 
 #import "MBImageView.h"
-#import "debug.h"
 #import <SDWebImage/SDWebImageManager.h>
 #import <SDWebImage/UIView+WebCacheOperation.h>
 

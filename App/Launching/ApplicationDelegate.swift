@@ -3,6 +3,7 @@
 //  App
 //
 
+import AppFramework
 import B9Condition
 import Debugger
 
@@ -15,8 +16,17 @@ import Debugger
 @UIApplicationMain
 class ApplicationDelegate: MBApplicationDelegate {
     override func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        Current.defualts.applicationLastLaunchTime = Date()
-        _ = MBApp.status()
+        Current.version.markAppLaunching()
+        // 🔰 模版简单延迟一下认为启动成功了，可结合实际业务调整时机
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            Current.version.markAppLaunchedSuccessful()
+        }
+        #if DEBUG
+        MBAssertSetHandler { msg, file, line in
+            AppLog().error("\(msg)")
+            assertionFailure(msg, file: file, line: line)
+        }
+        #endif
         return true
     }
 
@@ -80,8 +90,6 @@ class ApplicationDelegate: MBApplicationDelegate {
     override func applicationDidBecomeActive(_ application: UIApplication) {
         if !AppCondition().meets([.appHasEnterForegroundOnce]) {
             AppCondition().set(on: [.appHasEnterForegroundOnce])
-            Current.defualts.launchCount += 1
-            Current.defualts.launchCountCurrentVersion += 1
         }
         AppCondition().set(on: [.appInForeground])
         super.applicationDidBecomeActive(application)

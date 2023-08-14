@@ -1,3 +1,13 @@
+/*
+ IAAccountTests.swift
+ InterfaceApp
+
+ Copyright © 2023 BB9z.
+ https://github.com/BB9z/iOS-Project-Template
+
+ The MIT License
+ https://opensource.org/licenses/MIT
+ */
 
 import InterfaceApp
 import XCTest
