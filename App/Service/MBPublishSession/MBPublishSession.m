@@ -99,7 +99,7 @@ static void UploadCacheSet(NSURL *fileURL, NSURL *remoteURL) {
     NSParameterAssert(fileURL);
     self._fileUploading = fileURL;
     @weakify(self);
-    self._uploadingTask = [AppAPI() uploadFile:fileURL callback:^(BOOL success, NSURL *item, NSError * _Nullable error) {
+    self._uploadingTask = [Current.api uploadFile:fileURL callback:^(BOOL success, NSURL *item, NSError * _Nullable error) {
         @strongify(self);
         // 如果此时不在可能被取消了
         NSNumber *count = self.filesUploadMap[fileURL];
@@ -138,7 +138,7 @@ static void UploadCacheSet(NSURL *fileURL, NSURL *remoteURL) {
 - (void)start {
     if (self._publishing) return;
     self._publishing = YES;
-    [AppHUD() showActivityIndicatorWithIdentifier:@"loading" groupIdentifier:@"MBPublishSession" model:YES message:@""];
+    [Current.hud showActivityIndicatorWithIdentifier:@"loading" groupIdentifier:@"MBPublishSession" model:YES message:@""];
     #if _mb_has_file_upload
     // 已经上传失败的再来最后一次
     [self.filesUploadMap enumerateKeysAndObjectsUsingBlock:^(NSURL * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
@@ -169,7 +169,7 @@ static void UploadCacheSet(NSURL *fileURL, NSURL *remoteURL) {
                 self.publishCallback = nil;
             }
             self._publishing = NO;
-            [AppHUD() hideWithGroupIdentifier:@"MBPublishSession"];
+            [Current.hud hideWithGroupIdentifier:@"MBPublishSession"];
             return;
         }
     }
@@ -197,7 +197,7 @@ static void UploadCacheSet(NSURL *fileURL, NSURL *remoteURL) {
                 self.publishCallback = nil;
             }
             self._publishing = NO;
-            [AppHUD() hideWithGroupIdentifier:@"MBPublishSession"];
+            [Current.hud hideWithGroupIdentifier:@"MBPublishSession"];
         };
     }];
 }

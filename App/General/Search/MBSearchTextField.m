@@ -43,7 +43,7 @@ RFInitializingRootForUIView
     }
     self.autoSearchTimer.suspended = YES;
     if (self.APIName) {
-        [MBApp.status.api cancelOperationWithIdentifier:self.APIName];
+        [MBAPI.global cancelOperationWithIdentifier:self.APIName];
     }
     self.autoSearchTimer.suspended = NO;
 }

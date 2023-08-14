@@ -51,11 +51,11 @@ final class MBWorkerQueue {
             return
         }
         if worker.requiresUserContext {
-//            guard let user = MBUser.currentUser else {
-//                debugPrint("未登入时尝试加入 \(worker.class)")
-//                return
-//            }
-//            worker.userRequired = user
+            guard let user = AccountManager.current else {
+                debugPrint("未登入时尝试加入 \(worker)")
+                return
+            }
+            worker.userRequired = user
         }
 
         #if DEBUG
@@ -97,10 +97,10 @@ final class MBWorkerQueue {
         var next = popExecutableWorker()
         var workersToRemove: [MBWorker]?
         while let worker = next {
-//            if worker.requiresUserContext && worker.userRequired !== MBUser.currentUser {
-//                next = popExecutableWorker()
-//                continue
-//            }
+            if worker.requiresUserContext && worker.userRequired !== AccountManager.current {
+                next = popExecutableWorker()
+                continue
+            }
 
             let skip = worker.shouldSkipExecution(withWorkersWillRemove: &workersToRemove)
             if let workersToRemove = workersToRemove {
@@ -321,9 +321,9 @@ class MBWorker: NSObject, RFInitializing {
         if allowsBackgroundExecution {
             text.append("; allow background")
         }
-//        if requiresUserContext {
-//            text.append("; requires user: \(userRequired.uid)")
-//        }
+        if requiresUserContext {
+            text.append("; requires user: \(String(describing: userRequired))")
+        }
         if enqueueDelay > 0 {
             text.append("; enqueueDelay = \(enqueueDelay)")
         }

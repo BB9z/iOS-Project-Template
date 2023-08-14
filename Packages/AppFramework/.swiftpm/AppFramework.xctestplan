@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "A828EEA2-5FC5-4F4A-9E6C-FAB2E769F847",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "AppFrameworkTests",
+        "name" : "AppFrameworkTests"
+      }
+    }
+  ],
+  "version" : 1
+}

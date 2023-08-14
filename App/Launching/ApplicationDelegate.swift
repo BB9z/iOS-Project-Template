@@ -15,7 +15,7 @@ import Debugger
 @UIApplicationMain
 class ApplicationDelegate: MBApplicationDelegate {
     override func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        AppUserDefaultsShared().applicationLastLaunchTime = Date()
+        Current.defualts.applicationLastLaunchTime = Date()
         _ = MBApp.status()
         return true
     }
@@ -26,7 +26,7 @@ class ApplicationDelegate: MBApplicationDelegate {
         // https://github.com/BB9z/iOS-Project-Template/wiki/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B#tools-implement-faster
         Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
         #endif
-        _ = MBApp.status().api
+        _ = Current.api
         Account.setup()
 //        MBEnvironment.registerWorkers()
         RFKeyboard.autoDisimssKeyboardWhenTouch = true
@@ -47,7 +47,7 @@ class ApplicationDelegate: MBApplicationDelegate {
         }
         Debugger.vauleInspector = { value in
             if let vc = MBFlexInterface.explorerViewController(for: value) {
-                AppNavigationController()?.pushViewController(vc, animated: true)
+                Current.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }
@@ -71,7 +71,7 @@ class ApplicationDelegate: MBApplicationDelegate {
                 || e.code == NSURLErrorNotConnectedToInternet) {
                 // 超时断网不报错
             } else {
-                AppHUD().alertError(e, title: nil, fallbackMessage: "列表加载失败")
+                Current.hud.alertError(e, title: nil, fallbackMessage: "列表加载失败")
             }
             return false
         }
@@ -80,8 +80,8 @@ class ApplicationDelegate: MBApplicationDelegate {
     override func applicationDidBecomeActive(_ application: UIApplication) {
         if !AppCondition().meets([.appHasEnterForegroundOnce]) {
             AppCondition().set(on: [.appHasEnterForegroundOnce])
-            AppUserDefaultsShared().launchCount += 1
-            AppUserDefaultsShared().launchCountCurrentVersion += 1
+            Current.defualts.launchCount += 1
+            Current.defualts.launchCountCurrentVersion += 1
         }
         AppCondition().set(on: [.appInForeground])
         super.applicationDidBecomeActive(application)

@@ -12,12 +12,22 @@
 import XCTest
 
 extension XCTestCase {
-    /// Load test image in test bundle
-    func loadTestImage(named: String, extension: String = "png", directory: String? = nil) -> UIImage {
-        guard let url = Bundle.module.url(forResource: named, withExtension: `extension`, subdirectory: directory),
-              let image = UIImage(contentsOfFile: url.path) else {
-            fatalError("Unable load test image: \(named).")
+    func noBlockingWait(_ time: TimeInterval = 0.1) {
+        let waiter = XCTWaiter()
+        let exp = XCTestExpectation()  // Don't use self
+        DispatchQueue.main.asyncAfter(deadline: .now() + time) {
+            exp.fulfill()
         }
-        return image
+        waiter.wait(for: [exp], timeout: 10)  // No more than 10s
+        print("Test> noBlockingWait end.")
+    }
+}
+
+extension XCTestExpectation {
+    /// Return the expectation that is not intended to happen.
+    @discardableResult
+    func inverted() -> Self {
+        isInverted = true
+        return self
     }
 }

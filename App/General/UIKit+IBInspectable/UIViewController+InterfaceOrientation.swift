@@ -118,7 +118,7 @@ extension UIViewController {
         }
         guard let flag = viewController.interfaceOrientationFlag ?? Self.defaultInterfaceOrientation,
               flag.shouldForceRotation else { return }
-        guard let vcWindow = (viewController.navigationController ?? AppNavigationController())?.view.window else {
+        guard let vcWindow = (viewController.navigationController ?? Current.navigationController)?.view.window else {
             AppLog().warning("未找到 vc 所在窗体，跳过强制转屏")
             return
         }

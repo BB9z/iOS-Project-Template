@@ -50,7 +50,7 @@ RFInitializingRootForNSObject;
         }
     }
 
-    [AppDelegate() addAppEventListener:self];
+    [Current.appDelegate addAppEventListener:self];
     [self registerForRemoteNotificationsIfNeeded];
 
     NSDictionary *lq = self.launchOptions;

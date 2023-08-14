@@ -2,12 +2,14 @@
  MBNavigationController
  MBAppKit
 
- Copyright © 2018-2020, 2022 RFUI.
+ Copyright © 2018-2020, 2022-2023 BB9z.
  https://github.com/RFUI/MBAppKit
 
  Apache License, Version 2.0
  http://www.apache.org/licenses/LICENSE-2.0
  */
+
+import AppFramework
 import B9AssociatedObject
 import UIKit
 
@@ -280,7 +282,7 @@ func MBOperationLoginRequired() -> Bool {
         return false
     }
     // TODO: 共享实例
-//    AppNavigationController()._MBNavigationController_tryLogin()
+//    Current.navigationController._MBNavigationController_tryLogin()
     return true
 }
 

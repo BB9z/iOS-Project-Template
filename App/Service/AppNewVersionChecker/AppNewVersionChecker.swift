@@ -184,7 +184,7 @@ class AppNewVersionChecker {
     private var infoCache: OptionalBox?
 
     private func loadLastInfo() {
-        if let data = AppUserDefaultsShared().value(forKey: Self.userDefaultResultKey) as? Data,
+        if let data = Current.defualts.value(forKey: Self.userDefaultResultKey) as? Data,
            let cached = try? JSONDecoder().decode(VersionInfo.self, from: data) {
             if cached.source == checkSource {
                 infoCache = OptionalBox(cached)
@@ -196,7 +196,7 @@ class AppNewVersionChecker {
     private func saveInfo() {
         guard let value = info else { return }
         let data = try? JSONEncoder().encode(value)
-        AppUserDefaultsShared().setValue(data, forKey: Self.userDefaultResultKey)
+        Current.defualts.setValue(data, forKey: Self.userDefaultResultKey)
     }
     private static var userDefaultResultKey: String {
         "AppNewVersionChecker.Result"
@@ -212,7 +212,7 @@ class AppNewVersionChecker {
         define.needsAuthorization = false
         define.responseExpectType = .default
 
-        task = AppAPI().request(define: define, context: { c in
+        task = Current.api.request(define: define, context: { c in
             c.identifier = "CheckFirim"
             c.groupIdentifier = "AppNewVersionChecker"
             c.timeoutInterval = 10
@@ -324,7 +324,7 @@ extension AppNewVersionChecker {
                 return
             }
             if let err = error {
-                AppHUD().alertError(err, title: "版本检测失败", fallbackMessage: nil)
+                Current.hud.alertError(err, title: "版本检测失败", fallbackMessage: nil)
             }
         }
     }

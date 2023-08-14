@@ -83,9 +83,9 @@ class API: MBAPI {
             switch nsError.code {
 //            case token_invald:
 //                if define.needsAuthorization {
-//                    if AppUser() != nil {
+//                    if Current.account != nil {
 //                        Account.current = nil
-//                        AppHUD().showErrorStatus("登录已过期，请重新登录")
+//                        Current.hud.showErrorStatus("登录已过期，请重新登录")
 //                    }
 //                    return false
 //                }

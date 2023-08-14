@@ -3,11 +3,7 @@
 //  App
 //
 
-/**
- 全局变量中心
-
- 这里主要是挂载一些公共模块的实例
- */
+/// 废弃
 @objc
 class MBApp: NSObject {
     static let global = MBApp()
@@ -21,7 +17,7 @@ class MBApp: NSObject {
     }
 
     private func setupVersion() {
-        let defaults = AppUserDefaultsShared()
+        let defaults = Current.defualts
         let bundle = Bundle.main
         guard let bundleVerison = bundle.infoDictionary?["CFBundleShortVersionString"] as? String else {
             fatalError()
@@ -52,27 +48,9 @@ class MBApp: NSObject {
 
     // MARK: - 挂载的 manager
 
-    /// 网络接口层
-    @objc lazy var api: API = {
-        let instance = API()
-        API.global = instance
-        instance.networkActivityIndicatorManager = hud
-        return instance
-    }()
-
-    /// UI 提示管理器
-    @objc lazy var hud = MessageManager()
-
     /// 
     @objc var rootViewController: RootViewController?
 
     /// 全局导航
     @objc var globalNavigationController: NavigationController?
-
-//    @objc lazy var workerQueue = MBWorkerQueue()
-//    @objc lazy var backgroundWorkerQueue: MBWorkerQueue = {
-//        let queue = MBWorkerQueue()
-//        queue.dispatchQueue = DispatchQueue(label: "BackgroundWorker", qos: .background)
-//        return queue
-//    }()
 }

@@ -4,14 +4,14 @@ class SharePanelViewController: MBModalPresentViewController {
 
     @IBAction private func onTimeline(_ sender: Any) {
         guard MBShareManager.isWechatEnabled else {
-            AppHUD().showErrorStatus("微信未安装")
+            Current.hud.showErrorStatus("微信未安装")
             return
         }
         share(type: .wechatTimeline)
     }
     @IBAction private func onSession(_ sender: Any) {
         guard MBShareManager.isWechatEnabled else {
-            AppHUD().showErrorStatus("微信未安装")
+            Current.hud.showErrorStatus("微信未安装")
             return
         }
         share(type: .wechatSession)
@@ -27,11 +27,11 @@ class SharePanelViewController: MBModalPresentViewController {
         item.shareLink?(with: type) { [weak self] success, _, error in
             let sf = self
             if success {
-                AppHUD().showSuccessStatus("分享成功")
+                Current.hud.showSuccessStatus("分享成功")
                 sf?.dismissSelf(animated: true, completion: nil)
             }
             if let e = (error as NSError?) {
-                AppHUD().alertError(e, title: "分享失败", fallbackMessage: nil)
+                Current.hud.alertError(e, title: "分享失败", fallbackMessage: nil)
             }
         }
     }

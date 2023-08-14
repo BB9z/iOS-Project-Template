@@ -1,0 +1,20 @@
+name: "Package: AppFramework"
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/Package-AppFramework.yml'
+      - 'Packages/AppFramework/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run Package Tests
+        run: |
+          ./Packages/AppFramework/run_unit_tests.command

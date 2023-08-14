@@ -3,6 +3,8 @@
 //  App
 //
 
+import AppFramework
+
 /**
  更多 tab 页
  */
@@ -19,7 +21,7 @@ class MoreViewController: UIViewController, StoryboardCreation {
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var introductionLabel: UILabel!
     private func updateAccountUI() {
-        let user = AppUserInformation()
+        let user = Current.account?.information
         avatarView.imageURL = user?.avatar
         userNameLabel.text = user != nil ? user?.name : "请登录"
         introductionLabel.text = user?.introduction

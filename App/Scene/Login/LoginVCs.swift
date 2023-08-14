@@ -3,6 +3,7 @@
 //  App
 //
 
+import AppFramework
 import HasItem
 
 // 登入相关页面的 IBAction 大都是通过响应链调用的，不能把它们标记成 private
@@ -203,7 +204,7 @@ class PasswordResetMobileViewController: LoginFormBaseViewController {
                 guard let sf = self else { return }
                 guard let info = rsp as? [String: String],
                     let token = info["ot_token"] else {
-                        AppHUD().showErrorStatus("服务器返回异常")
+                        Current.hud.showErrorStatus("服务器返回异常")
                         return
                 }
                 sf.otToken = token
@@ -234,7 +235,7 @@ class PasswordResetViewController: LoginFormBaseViewController, HasItem {
 
     @IBAction func onSubmit(_ sender: Any) {
         guard let token = item else {
-            AppHUD().showErrorStatus("内部参数异常")
+            Current.hud.showErrorStatus("内部参数异常")
             return
         }
         guard let password = form.passwordField.vaildFieldText() else {
@@ -248,8 +249,8 @@ class PasswordResetViewController: LoginFormBaseViewController, HasItem {
             c.groupIdentifier = apiGroupIdentifier
             c.bindControls = [form.submitButton as Any]
             c.success { _, _ in
-                AppHUD().showSuccessStatus("密码已重置")
-                AppNavigationController()?.popToRootViewController(animated: true)
+                Current.hud.showSuccessStatus("密码已重置")
+                Current.navigationController?.popToRootViewController(animated: true)
             }
         }
     }

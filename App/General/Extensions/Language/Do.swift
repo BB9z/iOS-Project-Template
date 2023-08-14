@@ -53,7 +53,7 @@ enum Do { // swiftlint:disable:this type_name
                 case .log:
                     AppLog().error("\(e)")
                 case .hud(let title):
-                    AppHUD().showErrorStatus(String.join(title, e.localizedDescription, separator: ": "))
+                    Current.hud.showErrorStatus(String.join(title, e.localizedDescription, separator: ": "))
                 }
             }
         }

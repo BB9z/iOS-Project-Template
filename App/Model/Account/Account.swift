@@ -3,13 +3,14 @@
 //  App
 //
 
+import AppFramework
 import B9Condition
+import InterfaceApp
 
 /**
  管理当前用户
  */
-class Account: MBUser {
-
+class Account: IAAccount {
 
     // 有的项目登入时只返回认证信息，没有用户 ID，这时候需要用 userIDUndetermined 创建 Account 对象
     static let userIDUndetermined = "<undetermined>"
@@ -31,9 +32,9 @@ class Account: MBUser {
             defer { objc_sync_exit(self) }
 
             if let ret = _information { return ret }
-            var account = AppUserDefaultsShared().accountEntity
+            var account = Current.defualts.accountEntity
             if account == nil {
-                AppUserDefaultsShared().accountEntity = nil
+                Current.defualts.accountEntity = nil
                 account = AccountEntity()
             }
             _information = account
@@ -63,8 +64,8 @@ class Account: MBUser {
     private var _information: AccountEntity?
     private func persistentInfomationToStore() {
         guard isCurrent else { return }
-        AppUserDefaultsShared().lastUserID = id
-        AppUserDefaultsShared().accountEntity = information
+        Current.defualts.lastUserID = id
+        Current.defualts.accountEntity = information
     }
 
     private(set) var id: String
@@ -83,9 +84,9 @@ class Account: MBUser {
 
     /// 应用启动后初始流程
     class func setup() {
-        precondition(AppUser() == nil, "应用初始化时应该还未设置当前用户")
-        guard let userID = AppUserDefaultsShared().lastUserID else { return }
-        guard let token = AppUserDefaultsShared().userToken else {
+        precondition(Current.account == nil, "应用初始化时应该还未设置当前用户")
+        guard let userID = Current.defualts.lastUserID else { return }
+        guard let token = Current.defualts.userToken else {
             AppLog().critical("Account has ID but no token")
             return
         }
@@ -98,11 +99,11 @@ class Account: MBUser {
         }
     }
 
-    func onLogin() {
+    func didLogin() {
         guard let token = token else { fatalError() }
         debugPrint("当前用户 ID: \(id), token: \(token)")
-        AppAPI().defineManager.authorizationHeader[authHeaderKey] = "Bearer \(token)"
-        let defaults = AppUserDefaultsShared()
+        Current.api.defineManager.authorizationHeader[authHeaderKey] = "Bearer \(token)"
+        let defaults = Current.defualts
         defaults.lastUserID = id
         defaults.userToken = token
         defaults.accountEntity = information
@@ -113,13 +114,13 @@ class Account: MBUser {
             }
         }
     }
-    func onLogout() {
+    func didLogout() {
         AppCondition().set(off: [.userHasLogged, .userInfoFetched])
-        let defaults = AppUserDefaultsShared()
+        let defaults = Current.defualts
         defaults.lastUserID = nil
         defaults.userToken = nil
         defaults.accountEntity = nil
-        AppAPI().defineManager.authorizationHeader.removeObject(forKey: authHeaderKey)
+        Current.api.defineManager.authorizationHeader.removeObject(forKey: authHeaderKey)
         profile?.synchronize()
     }
     // 🔰 修改认证头字段名
