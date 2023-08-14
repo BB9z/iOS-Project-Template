@@ -38,7 +38,8 @@ public final class VersionManager {
     /// 建议在 AppDelegate 中尽早调用
     public func markAppLaunching() {
         guard launchCallGuardFlag == 0 else {
-            assert(launchCallGuardFlag != 1, "重复调用 \(#function)")
+            MBAssert(launchCallGuardFlag != 1, "重复调用 \(#function)")
+            MBAssert(launchCallGuardFlag != 2, "启动完成后又调用了 \(#function)")
             return
         }
         launchCallGuardFlag = 1
@@ -61,8 +62,8 @@ public final class VersionManager {
     /// 典型的调用时机：主页已加载成功、应用进入前台、应用启动几秒后（尤其是后台启动）
     public func markAppLaunchedSuccessful() {
         guard launchCallGuardFlag == 1 else {
-            assert(launchCallGuardFlag != 0, "未调用 markAppLaunching")
-            assert(launchCallGuardFlag != 2, "已标记启动结果")
+            MBAssert(launchCallGuardFlag != 0, "未调用 markAppLaunching()")
+            MBAssert(launchCallGuardFlag != 2, "已标记启动结果")
             return
         }
         launchCallGuardFlag = 2

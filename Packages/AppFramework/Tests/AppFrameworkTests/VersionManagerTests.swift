@@ -54,8 +54,6 @@ class VersionManagerTests: XCTestCase {
         // print(storage.dict)
     }
 
-    // TODO: 测试 luanch 标记未按预期调用的场景
-    
     func testSafeMode() {
         storage.dict = [:]
 
@@ -79,5 +77,40 @@ class VersionManagerTests: XCTestCase {
         let ver4 = VersionManager(storage: storage, version: version)
         ver4.markAppLaunching()
         XCTAssertFalse(ver4.isInSafeMode)
+    }
+
+    func testInvaildMarkLaunchCalls() {
+        storage.dict = [:]
+        var assertCalled = 0
+        MBAssertSetHandler { message, _, _ in
+            assertCalled += 1
+            print(message)
+        }
+        defer {
+            MBAssertSetHandler(nil)
+        }
+
+        let version = "1.0"
+
+        let doubleLaunching = VersionManager(storage: storage, version: version)
+        doubleLaunching.markAppLaunching()
+        XCTAssertEqual(0, assertCalled)
+        doubleLaunching.markAppLaunching()
+        XCTAssertEqual(1, assertCalled)
+
+        let noLaunching = VersionManager(storage: storage, version: version)
+        assertCalled = 0
+        noLaunching.markAppLaunchedSuccessful()
+        XCTAssertEqual(1, assertCalled)
+
+        let launchingAfterFinished = VersionManager(storage: storage, version: version)
+        assertCalled = 0
+        launchingAfterFinished.markAppLaunching()
+        launchingAfterFinished.markAppLaunchedSuccessful()
+        XCTAssertEqual(0, assertCalled)
+        launchingAfterFinished.markAppLaunching()
+        XCTAssertEqual(1, assertCalled)
+        launchingAfterFinished.markAppLaunchedSuccessful()
+        XCTAssertEqual(2, assertCalled)
     }
 }
