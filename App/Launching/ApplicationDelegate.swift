@@ -3,6 +3,7 @@
 //  App
 //
 
+import AppFramework
 import B9Condition
 import Debugger
 
@@ -20,6 +21,12 @@ class ApplicationDelegate: MBApplicationDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             Current.version.markAppLaunchedSuccessful()
         }
+        #if DEBUG
+        MBAssertSetHandler { msg, file, line in
+            AppLog().error("\(msg)")
+            assertionFailure(msg, file: file, line: line)
+        }
+        #endif
         return true
     }
 
