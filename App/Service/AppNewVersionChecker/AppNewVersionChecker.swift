@@ -67,7 +67,7 @@ class AppNewVersionChecker {
 
         /// 是否是新版本
         var isNew: Bool {
-            let appVersion = MBApp.status().version
+            let appVersion = Current.version.version
             let verisonResult = version.compare(appVersion, options: [.numeric])
             if verisonResult == .orderedDescending {
                 return true
@@ -180,7 +180,7 @@ class AppNewVersionChecker {
         currentCheckCallback = nil
     }
 
-    private lazy var currentVersion = MBApp.status().version
+    private lazy var currentVersion = Current.version.version
     private var infoCache: OptionalBox?
 
     private func loadLastInfo() {

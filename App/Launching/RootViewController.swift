@@ -22,7 +22,7 @@ class RootViewController: UIViewController {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        MBApp.status().rootViewController = self
+        Mocked.rootViewController = self
     }
 
     override func viewDidLayoutSubviews() {

@@ -14,7 +14,7 @@ class NavigationController: MBNavigationController, StoryboardCreation, UIApplic
 
     override func onInit() {
         super.onInit()
-        MBApp.status().globalNavigationController = self
+        Mocked.navigationController = self
     }
 
     override func viewDidLoad() {

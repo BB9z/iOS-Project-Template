@@ -67,7 +67,6 @@
 		D553507924BC1EA100282871 /* Topic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D553507824BC1EA100282871 /* Topic.storyboard */; };
 		D553507B24BC1EB100282871 /* TopicDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553507A24BC1EB100282871 /* TopicDetailVC.swift */; };
 		D5542EAA191887F500831016 /* APIDefine.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5542EA9191887F500831016 /* APIDefine.plist */; };
-		D5542F161918B83400831016 /* MBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5542F151918B83400831016 /* MBApp.swift */; };
 		D558FDF52046913B00A01EE6 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EE51382043E0DF009148B3 /* RootViewController.swift */; };
 		D55959CA20AB93B20019D733 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55959C920AB93B20019D733 /* Main.storyboard */; };
 		D55959D020AB97B00019D733 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55959CF20AB97B00019D733 /* ApplicationDelegate.swift */; };
@@ -297,7 +296,6 @@
 		D553507824BC1EA100282871 /* Topic.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Topic.storyboard; sourceTree = "<group>"; };
 		D553507A24BC1EB100282871 /* TopicDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetailVC.swift; sourceTree = "<group>"; };
 		D5542EA9191887F500831016 /* APIDefine.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIDefine.plist; sourceTree = "<group>"; };
-		D5542F151918B83400831016 /* MBApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBApp.swift; sourceTree = "<group>"; };
 		D55959C620AB92000019D733 /* UIScrollView+IBInspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+IBInspectable.h"; sourceTree = "<group>"; };
 		D55959C720AB924D0019D733 /* UIKit+IBInspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+IBInspectable.h"; sourceTree = "<group>"; };
 		D55959C920AB93B20019D733 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -925,7 +923,6 @@
 				D533D1462743D0C2008B923F /* Networking */,
 				D5170CE8191B327A000C7D45 /* PushManager */,
 				D5E2AEC92A418F0000E7ABDA /* Current.swift */,
-				D5542F151918B83400831016 /* MBApp.swift */,
 				D569C9E521AE906900211E36 /* README.md */,
 			);
 			path = Service;
@@ -1704,7 +1701,6 @@
 				D5740B53249B8B7C001CBCB2 /* LoginVCs.swift in Sources */,
 				D5031C2625C0445500C2849E /* MBAdaptiveStackView.swift in Sources */,
 				D51A2E9F2A4A4B0E007B761F /* MBAPI.swift in Sources */,
-				D5542F161918B83400831016 /* MBApp.swift in Sources */,
 				D5E2AF272A41972200E7ABDA /* MBApplicationDelegate.m in Sources */,
 				D569C9EB21AE906900211E36 /* MBAudioRecorder.m in Sources */,
 				D5EE51E32043F613009148B3 /* MBAutoFadeoutView.m in Sources */,
