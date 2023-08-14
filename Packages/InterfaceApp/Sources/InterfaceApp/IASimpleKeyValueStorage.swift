@@ -35,6 +35,10 @@ public protocol IASimpleKeyValueStorage {
     func double(forKey key: String) throws -> Double?
 
     func set(double: Double?, forKey key: String) throws
+
+    func date(forKey key: String) throws -> Date?
+
+    func set(date: Date?, forKey key: String) throws
 }
 
 /// 添加默认 codable 支持
@@ -81,5 +85,13 @@ extension UserDefaults: IASimpleKeyValueStorage {
 
     public func set(double: Double?, forKey key: String) throws {
         set(double, forKey: key)
+    }
+
+    public func date(forKey key: String) throws -> Date? {
+        object(forKey: key) as? Date
+    }
+
+    public func set(date: Date?, forKey key: String) throws {
+        set(date, forKey: key)
     }
 }

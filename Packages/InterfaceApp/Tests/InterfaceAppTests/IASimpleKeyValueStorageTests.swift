@@ -91,4 +91,17 @@ class IASimpleKeyValueStorageTests: XCTestCase {
         try storage.set(string: nil, forKey: key)
         XCTAssertNil(try storage.string(forKey: key))
     }
+
+    func testDateMethods() throws {
+        let key = #function
+        let value = Date()
+
+        try storage.set(date: value, forKey: key)
+        let retrievedValue = try storage.date(forKey: key)
+
+        XCTAssertEqual(retrievedValue, value)
+
+        try storage.set(date: nil, forKey: key)
+        XCTAssertNil(try storage.date(forKey: key))
+    }
 }
