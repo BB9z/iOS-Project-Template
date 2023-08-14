@@ -3,7 +3,6 @@
 #import <RFAlpha/RFKVOWrapper.h>
 #import <RFKit/UIView+RFAnimate.h>
 #import <RFKit/UIView+RFKit.h>
-#import "debug.h"
 
 @interface MBTableHeaderFooterView ()
 @property (nonatomic) id contentViewHeightChangeObserver;
@@ -51,7 +50,7 @@ RFInitializingRootForUIView
         }
     }
     else {
-        DebugLog(YES, nil, @"MBTableHeaderFooterView’s superview must be a tableView. Current is %@", self.superview);
+        NSLog(@"MBTableHeaderFooterView’s superview must be a tableView. Current is %@", self.superview);
     }
 }
 

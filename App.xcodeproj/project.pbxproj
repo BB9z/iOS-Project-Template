@@ -46,7 +46,6 @@
 		D52A04E520F85F2600F535ED /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52A04E420F85F2600F535ED /* Button.swift */; };
 		D52EAB652043B6B3007219E0 /* UIImage+MBImageSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D52EAB602043B6B3007219E0 /* UIImage+MBImageSet.m */; };
 		D52EAB672043B6B3007219E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D52EAB622043B6B3007219E0 /* Assets.xcassets */; };
-		D52EADEB2043B983007219E0 /* debug.m in Sources */ = {isa = PBXBuildFile; fileRef = D52EADE72043B983007219E0 /* debug.m */; };
 		D533C4D525922D1100590FBA /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D533C4D325922D1100590FBA /* DBManager.swift */; };
 		D533C4D625922D1100590FBA /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D533C4D425922D1100590FBA /* Types.swift */; };
 		D533C4E6259235E200590FBA /* MBFlexInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = D533C4E4259235E200590FBA /* MBFlexInterface.m */; };
@@ -262,10 +261,8 @@
 		D52EAB612043B6B3007219E0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D52EAB622043B6B3007219E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D52EAB632043B6B3007219E0 /* UIImage+MBImageSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MBImageSet.h"; sourceTree = "<group>"; };
-		D52EADE42043B983007219E0 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
 		D52EADE52043B983007219E0 /* alpha.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = alpha.entitlements; sourceTree = "<group>"; };
 		D52EADE62043B983007219E0 /* debug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = debug.entitlements; sourceTree = "<group>"; };
-		D52EADE72043B983007219E0 /* debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = debug.m; sourceTree = "<group>"; };
 		D52EADE92043B983007219E0 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		D52EADEA2043B983007219E0 /* release.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = release.entitlements; sourceTree = "<group>"; };
 		D52EADEC2043BA3D007219E0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -758,8 +755,6 @@
 				D52EADE52043B983007219E0 /* alpha.entitlements */,
 				D52EADE92043B983007219E0 /* Common.h */,
 				D52EADE62043B983007219E0 /* debug.entitlements */,
-				D52EADE42043B983007219E0 /* debug.h */,
-				D52EADE72043B983007219E0 /* debug.m */,
 				D5197A4517EECAAF00CA387C /* Info.plist */,
 				D5D4CC6E2043A6ED002FE9F0 /* OCBridging-Header.h */,
 				D52EADEA2043B983007219E0 /* release.entitlements */,
@@ -1692,7 +1687,6 @@
 				D54F0E4F2199A56E003370F4 /* DateFormatter+App.swift in Sources */,
 				D533D1452743D01A008B923F /* DBManager+KVStorage.swift in Sources */,
 				D533C4D525922D1100590FBA /* DBManager.swift in Sources */,
-				D52EADEB2043B983007219E0 /* debug.m in Sources */,
 				D50CFA6B25C912CC003329EE /* DetailFetchControl.swift in Sources */,
 				D501845B20F881B6009481D4 /* DissolveTransitioning.swift in Sources */,
 				D527917F27B558D600522240 /* Do.swift in Sources */,
