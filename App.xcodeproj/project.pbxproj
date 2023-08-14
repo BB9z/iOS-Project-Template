@@ -77,7 +77,6 @@
 		D569C9EC21AE906900211E36 /* MBImageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = D569C9E421AE906900211E36 /* MBImageRenderer.m */; };
 		D569C9F021AE908200211E36 /* MBErrorCode.m in Sources */ = {isa = PBXBuildFile; fileRef = D569C9EF21AE908100211E36 /* MBErrorCode.m */; };
 		D5740B4824985CC2001CBCB2 /* MBFormSelectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5740B4724985CC2001CBCB2 /* MBFormSelectListViewController.m */; };
-		D5740B4A24985E93001CBCB2 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5740B4924985E92001CBCB2 /* AppError.swift */; };
 		D5740B4E2498869E001CBCB2 /* UIAnyGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D5740B4D2498869E001CBCB2 /* UIAnyGestureRecognizer.m */; };
 		D5740B51249B8B60001CBCB2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5740B50249B8B5F001CBCB2 /* Login.storyboard */; };
 		D5740B53249B8B7C001CBCB2 /* LoginVCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5740B52249B8B7C001CBCB2 /* LoginVCs.swift */; };
@@ -311,7 +310,6 @@
 		D569C9EF21AE908100211E36 /* MBErrorCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBErrorCode.m; sourceTree = "<group>"; };
 		D5740B4624985CC1001CBCB2 /* MBFormSelectListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBFormSelectListViewController.h; sourceTree = "<group>"; };
 		D5740B4724985CC2001CBCB2 /* MBFormSelectListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBFormSelectListViewController.m; sourceTree = "<group>"; };
-		D5740B4924985E92001CBCB2 /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		D5740B4C2498869D001CBCB2 /* UIAnyGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAnyGestureRecognizer.h; sourceTree = "<group>"; };
 		D5740B4D2498869E001CBCB2 /* UIAnyGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAnyGestureRecognizer.m; sourceTree = "<group>"; };
 		D5740B50249B8B5F001CBCB2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -823,7 +821,6 @@
 				D552DD5018C8506700D02290 /* JSON */,
 				D50319A025BE33BD00C2849E /* Support */,
 				D533C4D925922D2000590FBA /* Worker */,
-				D5740B4924985E92001CBCB2 /* AppError.swift */,
 				D52EADF42043C0EB007219E0 /* README.md */,
 				D533C4D425922D1100590FBA /* Types.swift */,
 				D501E65428549059001B5CAA /* UserDefaults.swift */,
@@ -1654,7 +1651,6 @@
 				D5031C4425C04F8800C2849E /* AlertController.swift in Sources */,
 				D5F65F3424C1CAF20082FEC2 /* API.swift in Sources */,
 				D5E2DBFB24CEE54400CEB26D /* APIResponseSerializer.swift in Sources */,
-				D5740B4A24985E93001CBCB2 /* AppError.swift in Sources */,
 				D5DC60C124CA84BC00FBB147 /* ApplicationCondition.swift in Sources */,
 				D55959D020AB97B00019D733 /* ApplicationDelegate.swift in Sources */,
 				D588308D20CACB33002030C4 /* Array+App.swift in Sources */,
