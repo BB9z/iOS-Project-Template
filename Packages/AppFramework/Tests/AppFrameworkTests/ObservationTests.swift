@@ -190,7 +190,7 @@ class AFObserverSetTests: XCTestCase {
         XCTAssert(observation1 !== observation2, "only for keep instance")
     }
 
-    func testPerformWithDuplicateValue() {
+    func testDuplicatePerformNoCompare() {
         let observerSet = _AFObserverSet<Int>()
 
         var values = [Int]()
@@ -202,7 +202,25 @@ class AFObserverSetTests: XCTestCase {
         observerSet.perform(context: 2)
         observerSet.perform(context: 2)
         observerSet.perform(context: 1)
-        noBlockingWait(1)
+        noBlockingWait(timeout)
+        XCTAssertEqual(values, [1, 2, 2, 1])
+    }
+
+    func testDuplicatePerformWithCompare() {
+        let observerSet = _AFObserverSet<Int> { lhs, rhs in
+            lhs == rhs
+        }
+
+        var values = [Int]()
+        observerSet.add(observer: self) {
+            values.append($0)
+        }
+
+        observerSet.perform(context: 1)
+        observerSet.perform(context: 2)
+        observerSet.perform(context: 2)
+        observerSet.perform(context: 1)
+        noBlockingWait(timeout)
         XCTAssertEqual(values, [1, 2, 1])
     }
 

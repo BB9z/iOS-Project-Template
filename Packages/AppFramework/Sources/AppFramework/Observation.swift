@@ -21,7 +21,7 @@ public protocol MBObservation: AnyObject {
 
  支持：重复传参判断，单一参数 callback
  */
-fileprivate final class _AFObservation<Context: Equatable>: MBObservation {
+fileprivate final class _AFObservation<Context>: MBObservation {
     /// 上次传参
     var lastContext: Context?
 
@@ -46,14 +46,20 @@ fileprivate final class _AFObservation<Context: Equatable>: MBObservation {
 /**
  Observation 集合管理
  */
-internal final class _AFObserverSet<Context: Equatable> {
+internal final class _AFObserverSet<Context> {
     /// callback 调用的队列，也是维护状态的队列
     let queue: DispatchQueue
     private var store = [Weak]()
     private(set) var lastContext: (Context?)?
+    let contextComparator: (_ lhs: Context?, _ rhs: Context) -> Bool
 
-    init(queue: DispatchQueue = .main) {
+    /**
+     - Parameters:
+     - comparator: 对 context 进行比较，如果相同，通知事件不会重复发送；默认不去重
+     */
+    init(queue: DispatchQueue = .main, comparator: ((_ lhs: Context?, _ rhs: Context) -> Bool)? = nil) {
         self.queue = queue
+        self.contextComparator = comparator ?? { _, _ in false }
     }
 
     @discardableResult
@@ -95,7 +101,7 @@ internal final class _AFObserverSet<Context: Equatable> {
                     shouldClean = true
                     continue
                 }
-                if obj.lastContext == context {
+                if contextComparator(obj.lastContext, context) {
                     continue
                 }
                 obj.lastContext = context

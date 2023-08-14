@@ -9,8 +9,6 @@
  https://opensource.org/licenses/MIT
  */
 
-import B9Action
-import B9MulticastDelegate
 import Foundation
 import InterfaceApp
 
@@ -27,36 +25,39 @@ public enum AccountManager {
         }
     }
 
-    public typealias AccountChangedCallback = (IAAccount?) -> Void
+    /**
+     添加当前用户变化的监听
+
+     - parameter observer: 非空对象。当 observer 释放时，监听随之失效
+     - parameter initial: 是否立即调用回调，否则只有当当前用户再次变化时才会触发回调
+     - parameter callback: 仅当当前用户确实变化时（用户 ID 不同）才会调用，且同一个用户不会重复调用
+     */
+    public static func observeCurrentChange(_ observer: AnyObject, initial: Bool, callback: @escaping (IAAccount?) -> Void) {
+        _ = observerSet.add(initial: initial, observer: observer, callback: callback)
+    }
 
     /**
      添加当前用户变化的监听
 
-     - parameter observer: 非空对象。当 observer 释放时，监听会自行移除
      - parameter initial: 是否立即调用回调，否则只有当当前用户再次变化时才会触发回调
      - parameter callback: 仅当当前用户确实变化时（用户 ID 不同）才会调用，且同一个用户不会重复调用
+     - Returns: 监听对象，外部需保持该对象的持有，该对象释放后监听随之失效
      */
-    public static func addCurrentUserChangeObserver(_ observer: AnyObject, initial: Bool, callback: @escaping AccountChangedCallback) {
-        DispatchQueue.main.async {
-            let obj = ChangedObserver(callback)
-            obj.observer = observer
-            obj.calledID = UUID().uuidString
-            changeObservers.append(obj)
-            if initial {
-                noticeCurrentChanged.set()
-            }
-        }
+    public static func observeCurrentChange(initial: Bool, callback: @escaping (IAAccount?) -> Void) -> MBObservation {
+        observerSet.add(initial: initial, callback: callback)
     }
 
     /**
      将 observer 从用户变化监听的队列中移除
      */
-    public static func removeCurrentUserChangeObserver(_ observer: AnyObject?) {
-        DispatchQueue.main.async {
-            changeObservers = changeObservers.filter { obj in
-                obj.observer != nil && obj.observer !== observer
-            }
+    public static func removeCurrentChangeObserver(_ observer: AnyObject?) {
+        if let observer = observer {
+            observerSet.remove(observer)
         }
+    }
+
+    private static let observerSet = _AFObserverSet<IAAccount?> { lhs, rhs in
+        lhs??.id == rhs?.id
     }
 
     private static func updateCurrent(oldValue: IAAccount?, newValue: IAAccount?) {
@@ -66,39 +67,9 @@ public enum AccountManager {
         if current === newValue {
             newValue?.didLogin()
         }
-        noticeCurrentChanged.set()
+        observerSet.perform(context: newValue)
     }
-    private static var noticeCurrentChanged = DelayAction(Action(_noticeUserChanged))
-    private static func _noticeUserChanged() {
-        let user = current
-        var needsClean = false
-        for obj in changeObservers {
-            if obj.observer == nil {
-                needsClean = true
-                continue
-            }
-            if obj.calledID != user?.id {
-                obj.calledID = user?.id
-                obj.callback(user)
-            }
-        }
-        if needsClean {
-            changeObservers = changeObservers.filter { $0.observer != nil }
-        }
-    }
-
-    private final class ChangedObserver {
-        weak var observer: AnyObject?
-        let callback: AccountChangedCallback
-        var calledID: String?
-
-        init(_ handler: @escaping AccountChangedCallback) {
-            callback = handler
-        }
-    }
-    private static var changeObservers = [ChangedObserver]()
 }
-
 
 public extension IAAccount {
     /// 是否是当前用户
