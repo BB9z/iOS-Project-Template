@@ -156,7 +156,7 @@ class AFObserverSetTests: XCTestCase {
             exp2.fulfill()
         }
 
-        wait(for: [exp2])
+        wait(for: [exp2], timeout: timeout)
         XCTAssertEqual(values2, ["first"])
 
         XCTAssert(observation1 !== observation2, "only for keep instance")
@@ -184,7 +184,7 @@ class AFObserverSetTests: XCTestCase {
             exp2.fulfill()
         }
 
-        wait(for: [exp2])
+        wait(for: [exp2], timeout: timeout)
         XCTAssertEqual(values2, ["first"])
 
         XCTAssert(observation1 !== observation2, "only for keep instance")
