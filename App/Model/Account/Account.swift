@@ -32,9 +32,9 @@ class Account: IAAccount {
             defer { objc_sync_exit(self) }
 
             if let ret = _information { return ret }
-            var account = Current.defualts.accountEntity
+            var account = Current.defaults.accountEntity
             if account == nil {
-                Current.defualts.accountEntity = nil
+                Current.defaults.accountEntity = nil
                 account = AccountEntity()
             }
             _information = account
@@ -64,8 +64,8 @@ class Account: IAAccount {
     private var _information: AccountEntity?
     private func persistentInfomationToStore() {
         guard isCurrent else { return }
-        Current.defualts.lastUserID = id
-        Current.defualts.accountEntity = information
+        Current.defaults.lastUserID = id
+        Current.defaults.accountEntity = information
     }
 
     private(set) var id: String
@@ -85,8 +85,8 @@ class Account: IAAccount {
     /// 应用启动后初始流程
     class func setup() {
         precondition(Current.account == nil, "应用初始化时应该还未设置当前用户")
-        guard let userID = Current.defualts.lastUserID else { return }
-        guard let token = Current.defualts.userToken else {
+        guard let userID = Current.defaults.lastUserID else { return }
+        guard let token = Current.defaults.userToken else {
             AppLog().critical("Account has ID but no token")
             return
         }
@@ -103,7 +103,7 @@ class Account: IAAccount {
         guard let token = token else { fatalError() }
         debugPrint("当前用户 ID: \(id), token: \(token)")
         Current.api.defineManager.authorizationHeader[authHeaderKey] = "Bearer \(token)"
-        let defaults = Current.defualts
+        let defaults = Current.defaults
         defaults.lastUserID = id
         defaults.userToken = token
         defaults.accountEntity = information
@@ -116,7 +116,7 @@ class Account: IAAccount {
     }
     func didLogout() {
         AppCondition().set(off: [.userHasLogged, .userInfoFetched])
-        let defaults = Current.defualts
+        let defaults = Current.defaults
         defaults.lastUserID = nil
         defaults.userToken = nil
         defaults.accountEntity = nil

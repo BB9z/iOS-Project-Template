@@ -184,7 +184,7 @@ class AppNewVersionChecker {
     private var infoCache: OptionalBox?
 
     private func loadLastInfo() {
-        if let data = Current.defualts.value(forKey: Self.userDefaultResultKey) as? Data,
+        if let data = Current.defaults.value(forKey: Self.userDefaultResultKey) as? Data,
            let cached = try? JSONDecoder().decode(VersionInfo.self, from: data) {
             if cached.source == checkSource {
                 infoCache = OptionalBox(cached)
@@ -196,7 +196,7 @@ class AppNewVersionChecker {
     private func saveInfo() {
         guard let value = info else { return }
         let data = try? JSONEncoder().encode(value)
-        Current.defualts.setValue(data, forKey: Self.userDefaultResultKey)
+        Current.defaults.setValue(data, forKey: Self.userDefaultResultKey)
     }
     private static var userDefaultResultKey: String {
         "AppNewVersionChecker.Result"
