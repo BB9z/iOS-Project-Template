@@ -194,7 +194,6 @@
 		D5EE521A2043F693009148B3 /* MBSingleSectionCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE52162043F692009148B3 /* MBSingleSectionCollectionView.m */; };
 		D5EE52212043F6A7009148B3 /* MBCollectionViewEqualColumnSpaceLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EE521B2043F6A6009148B3 /* MBCollectionViewEqualColumnSpaceLayout.m */; };
 		D5F036B527FB479800C60A72 /* B9Debug in Frameworks */ = {isa = PBXBuildFile; productRef = D5F036B427FB479800C60A72 /* B9Debug */; };
-		D5F036C327FBC80500C60A72 /* HasItem in Frameworks */ = {isa = PBXBuildFile; productRef = D5F036C227FBC80500C60A72 /* HasItem */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D5F1F843251C0B3A00D641F9 /* NavigationController+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1F842251C0B3A00D641F9 /* NavigationController+Router.swift */; };
 		D5F1F849251C1D6400D641F9 /* URL+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1F848251C1D6400D641F9 /* URL+App.swift */; };
 		D5F65F3424C1CAF20082FEC2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F65F3324C1CAF10082FEC2 /* API.swift */; };
@@ -502,7 +501,6 @@
 		D5EE52162043F692009148B3 /* MBSingleSectionCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSingleSectionCollectionView.m; sourceTree = "<group>"; };
 		D5EE521B2043F6A6009148B3 /* MBCollectionViewEqualColumnSpaceLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCollectionViewEqualColumnSpaceLayout.m; sourceTree = "<group>"; };
 		D5EE521E2043F6A6009148B3 /* MBCollectionViewEqualColumnSpaceLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCollectionViewEqualColumnSpaceLayout.h; sourceTree = "<group>"; };
-		D5F036C027FBC6E000C60A72 /* HasItem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = HasItem; sourceTree = "<group>"; };
 		D5F1F842251C0B3A00D641F9 /* NavigationController+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+Router.swift"; sourceTree = "<group>"; };
 		D5F1F848251C1D6400D641F9 /* URL+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+App.swift"; sourceTree = "<group>"; };
 		D5F65F3324C1CAF10082FEC2 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -529,7 +527,6 @@
 				D53BB5FC27FC468300F60168 /* B9Foundation in Frameworks */,
 				D527917D27B557A800522240 /* B9MulticastDelegate in Frameworks */,
 				D53BB60027FC4EE600F60168 /* Debugger in Frameworks */,
-				D5F036C327FBC80500C60A72 /* HasItem in Frameworks */,
 				674FCCB03EFF1B157024C64B /* libPods-App.a in Frameworks */,
 				D57FBB71279D51BA003A0533 /* Logging in Frameworks */,
 			);
@@ -1467,7 +1464,6 @@
 				D5D1859A280D72B5009B5476 /* Condition */,
 				D546F50C2932D2EC00EB5F04 /* Debug */,
 				D53BB5FD27FC473000F60168 /* Debugger */,
-				D5F036C027FBC6E000C60A72 /* HasItem */,
 				D5C80A6B2A88CE3A008F6ED1 /* InterfaceApp */,
 				D546F50E2932D2EC00EB5F04 /* MulticastDelegate */,
 				D59B9F8D2941DD71009120D4 /* Pulse */,
@@ -1502,7 +1498,6 @@
 				D57FBB70279D51BA003A0533 /* Logging */,
 				D527917C27B557A800522240 /* B9MulticastDelegate */,
 				D5F036B427FB479800C60A72 /* B9Debug */,
-				D5F036C227FBC80500C60A72 /* HasItem */,
 				D53BB5FB27FC468300F60168 /* B9Foundation */,
 				D53BB5FF27FC4EE600F60168 /* Debugger */,
 				D5D1859B280D7331009B5476 /* B9Condition */,
@@ -2259,10 +2254,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D5F036B327FB479800C60A72 /* XCRemoteSwiftPackageReference "Debug" */;
 			productName = B9Debug;
-		};
-		D5F036C227FBC80500C60A72 /* HasItem */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = HasItem;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

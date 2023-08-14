@@ -3,7 +3,7 @@
 //  App
 //
 
-import HasItem
+import AppFramework
 
 /**
  帖子列表
