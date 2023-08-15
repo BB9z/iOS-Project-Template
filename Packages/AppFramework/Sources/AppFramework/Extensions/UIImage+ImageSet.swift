@@ -10,6 +10,7 @@
  https://opensource.org/licenses/MIT
  */
 
+#if canImport(UIKit)
 import UIKit
 
 public extension UIImage {
@@ -43,3 +44,5 @@ public extension UIImage {
         success = true
     }
 }
+
+#endif // End: UIKit

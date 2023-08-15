@@ -11,9 +11,9 @@
 
 import Foundation
 
-extension Sequence where Iterator.Element: Hashable {
+public extension Sequence where Iterator.Element: Hashable {
     /// 返回去重的序列
-    public func uniqued() -> [Iterator.Element] {
+    func uniqued() -> [Iterator.Element] {
         var seen = [Iterator.Element: Bool]()
         return filter { seen.updateValue(true, forKey: $0) == nil }
     }

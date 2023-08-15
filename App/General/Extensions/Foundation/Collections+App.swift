@@ -21,12 +21,6 @@ extension Collection {
         return nil
     }
 
-    // 模版 6.x 移除
-    @available(*, unavailable, renamed: "element(at:)")
-    func rf_object(at index: Index) -> Element? {
-        element(at: index)
-    }
-
     // @MBDependency:2
     /**
      遍历集合，同时访问元素和序号，并可随时终止遍历
