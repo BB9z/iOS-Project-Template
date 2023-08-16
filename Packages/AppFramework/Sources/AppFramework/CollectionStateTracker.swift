@@ -17,96 +17,101 @@ import Foundation
  集合中重复元素会被去除
  */
 public final class CollectionStateTracker<Element: Hashable> {
-
+    /// 当前集合中的元素
     public var elements: [Element] {
         get {
             elementStorage.array as? [Element] ?? []
         }
         set {
-            elementStorage = NSMutableOrderedSet(array: newValue)
+            elementStorage = NSOrderedSet(array: newValue)
         }
     }
-    public var activedElements: [Element] {
-        activedStorage.array as? [Element] ?? []
+    /// 当前激活的元素
+    public var activedElements: [Element] { elements(of: activedStorage) }
+    /// 当前激活的元素的索引
+    public var activedIndexs: IndexSet { activedStorage }
+
+    public init(elements: [Element] = []) {
+        elementStorage = NSOrderedSet(array: elements)
     }
 
-    private var elementStorage = NSMutableOrderedSet()
-
-    // 与 activedIndexs 同时更新，提高访问效率
-    private var activedStorage = NSMutableOrderedSet()
-    private(set) var activedIndexs = IndexSet()
-
+    /// 顺序与 elements 一致
     public typealias Result = (actived: [Element], deactived: [Element])
 
-//    func update(elements: [Element], keepActive: Bool) -> Result {
-//    }
+    /**
+     更新元素集合
+
+     - Parameters:
+     - elements: 新的元素集合
+     - keepActive: 是否保持原有激活状态，如果为 false，所有元素都会被取消激活
+     */
+    public func update(elements: [Element], keepActive: Bool) -> Result {
+        let actived = self.activedElements
+        elementStorage = NSOrderedSet(array: elements)
+
+        if keepActive {
+            activedStorage = indexSet(of: actived)
+            let removed = actived.filter { !elementStorage.contains($0) }
+            return ([], removed)
+        } else {
+            activedStorage.removeAll()
+            return ([], actived)
+        }
+    }
 
     /// 激活单个元素
     public func active(_ element: Element) -> Result {
-        if activedStorage.contains(element) {
-            return ([], [])
-        }
-        let idx = elementStorage.index(of: element)
-        if idx == NSNotFound {
-            return ([], [])
-        }
-        active(idx: idx, elm: element)
-        return ([element], [])
+        active([element])
     }
 
     /// 将多个元素设置为激活状态
     public func active(_ elements: [Element]) -> Result {
-        let actived: Set = Set(elements).subtracting(activedStorage.set)
-        var changeSet = [Element]()
-        for (idx, elm) in self.elements.enumerated() where actived.contains(elm) {
-            active(idx: idx, elm: elm)
-            changeSet.append(elm)
-        }
-        return (changeSet, [])
+        let newIndexSet = activedStorage.union(indexSet(of: elements))
+        return update(activedIndexs: newIndexSet)
     }
 
     /// 取消激活单个元素
     public func deactive(_ element: Element) -> Result {
-        let idxInActive = activedStorage.index(of: element)
-        if idxInActive == NSNotFound {
-            return ([], [])
-        }
-        activedStorage.removeObject(at: idxInActive)
-        activedIndexs.remove(elementStorage.index(of: element))
-        return ([], [element])
+        deactive([element])
     }
 
     /// 取消多个元素的激活状态
     public func deactive(_ elements: [Element]) -> Result {
-        let deactived = elements.filter { activedStorage.contains($0) }
-        guard !deactived.isEmpty else {
-            return ([], [])
-        }
-        var changeSet = [Element]()
-        for (idx, elm) in self.elements.enumerated() where deactived.contains(elm) {
-            deactive(idx: idx, elm: elm)
-            changeSet.append(elm)
-        }
-        return ([], changeSet)
+        let newIndexSet = activedStorage.subtracting(indexSet(of: elements))
+        return update(activedIndexs: newIndexSet)
     }
 
-    private func active(idx: Int, elm: Element) {
-        if let insertIndex = activedIndexs.firstIndex(where: { $0 > idx }) {
-            let offset = activedIndexs.distance(from: activedIndexs.startIndex, to: insertIndex)
-            activedStorage.insert(elm, at: offset)
-        } else {
-            activedStorage.add(elm)
-        }
-        activedIndexs.insert(idx)
+    /// 设置激活的元素，其他元素取消激活
+    public func set(activedElements: [Element]) -> Result {
+        let newIndexSet = indexSet(of: activedElements)
+        return update(activedIndexs: newIndexSet)
     }
 
-    private func deactive(idx: Int, elm: Element) {
-        if let removeIndex = activedIndexs.firstIndex(of: idx) {
-            let offset = activedIndexs.distance(from: activedIndexs.startIndex, to: removeIndex)
-            activedIndexs.remove(idx)
-            activedStorage.removeObject(at: offset)
-        } else {
-            assertionFailure()
+    // MARK: -
+
+    private var elementStorage: NSOrderedSet
+    private var activedStorage = IndexSet()
+}
+
+extension CollectionStateTracker {
+    func elements(of indexSet: IndexSet) -> [Element] {
+        if indexSet.isEmpty { return [] }
+        return elementStorage.objects(at: indexSet) as? [Element] ?? []
+    }
+
+    func indexSet(of elements: [Element]) -> IndexSet {
+        let idxs = elements.compactMap {
+            let idx = elementStorage.index(of: $0)
+            return idx == NSNotFound ? nil : idx
         }
+        return IndexSet(idxs)
+    }
+
+    private func update(activedIndexs newValue: IndexSet) -> Result {
+        let oldValue = activedStorage
+        activedStorage = newValue
+        let addedIndexs = newValue.subtracting(oldValue)
+        let removedIndexs = oldValue.subtracting(newValue)
+        return (elements(of: addedIndexs), elements(of: removedIndexs))
     }
 }

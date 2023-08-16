@@ -14,8 +14,7 @@ import XCTest
 
 final class CollectionStateTrackerTests: XCTestCase {
     func testActiveSingleElement() {
-        let tracker = CollectionStateTracker<Int>()
-        tracker.elements = [1, 2, 3, 4, 5, 5, 5]
+        let tracker = CollectionStateTracker<Int>(elements: [1, 2, 3, 4, 5, 5, 5])
         XCTAssertEqual(tracker.elements, [1, 2, 3, 4, 5])
 
         var result = tracker.active(3)
@@ -49,10 +48,8 @@ final class CollectionStateTrackerTests: XCTestCase {
     }
 
     func testDeactiveSingleElement() {
-        let tracker = CollectionStateTracker<Int>()
-        tracker.elements = [1, 2, 3, 4, 5]
+        let tracker = CollectionStateTracker<Int>(elements: [1, 2, 3, 4, 5])
         _ = tracker.active([1, 3, 4, 5])
-        debugPrint(tracker.activedElements, Array(tracker.activedIndexs))
 
         // At begin
         var result = tracker.deactive(3)
@@ -81,8 +78,7 @@ final class CollectionStateTrackerTests: XCTestCase {
     }
 
     func testMultipleElements() {
-        let tracker = CollectionStateTracker<Int>()
-        tracker.elements = [1, 2, 3, 4, 5]
+        let tracker = CollectionStateTracker<Int>(elements: [1, 2, 3, 4, 5])
 
         assertResult(tracker.active([1, 4]), [1, 4], [])
         assertActived(tracker, at: 0, 3)
@@ -119,6 +115,24 @@ final class CollectionStateTrackerTests: XCTestCase {
         assertResult(tracker.deactive([2, 4, 999]), [], [2, 4])
         XCTAssertEqual(Array(tracker.activedIndexs), [])
         XCTAssertEqual(tracker.activedElements, [])
+    }
+
+    func testUpdateElements() {
+        let tracker = CollectionStateTracker<String>()
+
+        // Not keep
+        assertResult(tracker.update(elements: ["a", "b"], keepActive: false), [], [])
+        assertResult(tracker.active("a"), ["a"], [])
+        assertResult(tracker.update(elements: ["a", "b"], keepActive: false), [], ["a"])
+        assertResult(tracker.active("b"), ["b"], [])
+        assertResult(tracker.update(elements: ["a", "c"], keepActive: false), [], ["b"])
+
+        // Keep
+        assertResult(tracker.update(elements: ["a", "b"], keepActive: true), [], [])
+        assertResult(tracker.active(["a", "b"]), ["a", "b"], [])
+        assertResult(tracker.update(elements: ["a", "b"], keepActive: true), [], [])
+        assertResult(tracker.update(elements: ["b"], keepActive: true), [], ["a"])
+        assertResult(tracker.update(elements: ["b", "c"], keepActive: true), [], [])
     }
 
     private func assertResult<T>(
