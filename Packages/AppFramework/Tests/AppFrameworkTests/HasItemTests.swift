@@ -1,4 +1,15 @@
-@testable import HasItem
+/*
+ HasItemTests.swift
+ AppFramework
+
+ Copyright © 2023 BB9z.
+ https://github.com/BB9z/iOS-Project-Template
+
+ The MIT License
+ https://opensource.org/licenses/MIT
+ */
+
+@testable import AppFramework
 import XCTest
 
 #if canImport(UIKit)
@@ -12,7 +23,7 @@ class TestView: UIView, HasItem {
     var item: String!
 }
 
-final class PrepareSegueTests: XCTestCase {
+final class HasItemPrepareSegueTests: XCTestCase {
 
     func testSenderNoItem() {
         let sourceVC = TestViewController()

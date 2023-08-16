@@ -18,10 +18,6 @@
 
 #if !TARGET_OS_WATCH
 
-#if __has_include("UIImage+MBImageSet.h")
-#   import "UIImage+MBImageSet.h"
-#endif
-
 #import "UIViewController+App.h"
 
 #endif // END: !TARGET_OS_WATCH

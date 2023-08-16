@@ -33,6 +33,9 @@ let package = Package(
             name: mainName + "Tests",
             dependencies: [
                 Target.Dependency(stringLiteral: mainName)
+            ],
+            resources: [
+                .process("Assets"),
             ]),
     ]
 )

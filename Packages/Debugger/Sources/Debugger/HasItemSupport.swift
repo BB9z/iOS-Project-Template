@@ -10,12 +10,12 @@
  */
 
 import UIKit
-#if canImport(HasItem)
-import HasItem
+#if canImport(AppFramework)
+import AppFramework
 #endif
 
 internal extension Debugger {
-#if canImport(HasItem)
+#if canImport(AppFramework)
     private static func findItem(between currentVC: UIViewController?, and primaryVC: UIViewController?) -> Any? {
         var viewController = currentVC
         while viewController != nil {
@@ -44,7 +44,7 @@ internal extension Debugger {
 
     /// 列表单元描述
     static func shortDescription(cell: Any) -> String {
-#if canImport(HasItem)
+#if canImport(AppFramework)
         var result = "\(type(of: cell))"
         if let hasItemCell = cell as? AnyHasItem {
             if let item = hasItemCell.item() as Any? {
@@ -58,7 +58,7 @@ internal extension Debugger {
     }
 
     static func inspect(cell: Any) {
-#if canImport(HasItem)
+#if canImport(AppFramework)
         if let hasItemCell = cell as? AnyHasItem {
             if let item = hasItemCell.item() as Any? {
                 inspect(value: item)

@@ -1,6 +1,7 @@
 /*
  HasItem.swift
-
+ AppFramework
+ 
  Copyright © 2020, 2022 BB9z.
  https://github.com/BB9z/iOS-Project-Template
 

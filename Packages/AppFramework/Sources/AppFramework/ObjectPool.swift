@@ -1,23 +1,26 @@
-/*
+/*!
  ObjectPool.swift
+ AppFramework
 
- Copyright © 2021 BB9z.
+ Copyright © 2021, 2023 BB9z.
  https://github.com/BB9z/iOS-Project-Template
 
  The MIT License
  https://opensource.org/licenses/MIT
  */
 
+import Foundation
+
 /**
  弱引用存储 model 实例，用于保证相同 id 的对象有唯一实例，线程安全
 
  项目模版的 model 更新后刷新机制依赖 model 实例的唯一性
  */
-final class ObjectPool<Key: Hashable, Value: AnyObject> {
+public final class ObjectPool<Key: Hashable, Value: AnyObject> {
     private var store = [Key: Weak]()
     private let lock = NSLock()
 
-    init() {
+    public init() {
     }
 
     /**
@@ -38,7 +41,7 @@ final class ObjectPool<Key: Hashable, Value: AnyObject> {
      }
      ```
      */
-    subscript(index: Key) -> Value? {
+    public subscript(index: Key) -> Value? {
         get {
             lock.lock()
             let value = store[index]
@@ -55,7 +58,7 @@ final class ObjectPool<Key: Hashable, Value: AnyObject> {
     /**
      返回 key 对应的对象，如果未在对象池中不存在，则用 creator 创建，存储后返回
      */
-    func object(key: Key, creator: @autoclosure () -> Value) -> Value {
+    public func object(key: Key, creator: @autoclosure () -> Value) -> Value {
         lock.lock()
         defer { lock.unlock() }
         if let obj = store[key]?.object {
@@ -66,7 +69,7 @@ final class ObjectPool<Key: Hashable, Value: AnyObject> {
         return obj
     }
 
-    func removeAll() {
+    public func removeAll() {
         lock.lock()
         store = [:]
         lock.unlock()

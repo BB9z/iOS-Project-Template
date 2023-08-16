@@ -52,8 +52,8 @@ class AFObserverSetTests: XCTestCase {
         let observerSet = _AFObserverSet<String>()
         var observation: MBObservation!
         autoreleasepool {
-            let refrence = NSObject()
-            observation = observerSet.add(observer: refrence) {
+            let reference = NSObject()
+            observation = observerSet.add(observer: reference) {
                 values.append($0)
                 exps.removeFirst().fulfill()
             }
@@ -113,9 +113,9 @@ class AFObserverSetTests: XCTestCase {
             values.append(ctx)
             exps.removeFirst().fulfill()
         }
-        let refrence = NSObject()
+        let reference = NSObject()
         let normalObservation = observerSet.add(callback: callback)
-        let refrenceObservation = observerSet.add(observer: refrence, callback: callback)
+        let refrenceObservation = observerSet.add(observer: reference, callback: callback)
         let removeObservation = observerSet.add(callback: callback)
         XCTAssertEqual(observerSet.observerCountForTesting(), 0)
         XCTAssert(normalObservation !== refrenceObservation)
@@ -125,7 +125,7 @@ class AFObserverSetTests: XCTestCase {
         XCTAssertEqual(values, [1, 1, 1])
         XCTAssertEqual(observerSet.observerCountForTesting(), 3)
 
-        observerSet.remove(refrence)
+        observerSet.remove(reference)
         observerSet.remove(removeObservation)
         observerSet.perform(context: 2)
 

@@ -4,14 +4,6 @@
  除 Array、Dictionary、Set 等顶层结构的扩展放到相应文件外，其余扩展都放这里
  */
 
-extension Sequence where Iterator.Element: Hashable {
-    /// 返回去重的序列
-    func uniqued() -> [Iterator.Element] {
-        var seen = [Iterator.Element: Bool]()
-        return filter { seen.updateValue(true, forKey: $0) == nil }
-    }
-}
-
 extension Collection {
 
     // @MBDependency:4
@@ -27,12 +19,6 @@ extension Collection {
             return self[index]
         }
         return nil
-    }
-
-    // 模版 6.x 移除
-    @available(*, unavailable, renamed: "element(at:)")
-    func rf_object(at index: Index) -> Element? {
-        element(at: index)
     }
 
     // @MBDependency:2

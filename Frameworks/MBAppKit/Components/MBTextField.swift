@@ -8,9 +8,10 @@
  Apache License, Version 2.0
  http://www.apache.org/licenses/LICENSE-2.0
  */
+
+import AppFramework
 import B9Foundation
 import UIKit
-import HasItem
 
 /**
  TextField 封装
@@ -162,7 +163,7 @@ class MBTextField: UITextField, RFInitializing {
     @IBInspectable var formContentType: String?
 
     /**
-     若非空，在 textFieldDidEndEditing: 时尝试用 KVO 修改其 view controler 中 item 对应属性
+     若非空，在 textFieldDidEndEditing: 时尝试用 KVO 修改其 view controller 中 item 对应属性
 
      @warning 如果点按按钮时没有显示取消焦点，此时 textFieldDidEndEditing 尚未出发因而数据是不全的
      */

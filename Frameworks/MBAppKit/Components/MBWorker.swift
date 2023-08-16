@@ -284,7 +284,7 @@ class MBWorker: NSObject, RFInitializing {
     func finish() {
         executionTimeoutWatchdog = nil
         guard let queue = queue else {
-            NSLog("⚠️ Canot end worker(%@) not in a queue.", self)
+            NSLog("⚠️ Cannot end worker(%@) not in a queue.", self)
             return
         }
         queue._endWorker(self)

@@ -16,7 +16,7 @@ extension Date {
     ///
     /// It can be overwritten during testing.
     /// ```
-    /// @testable import ACFoundation
+    /// @testable import B9Foundation
     /// Date.overwriteCurrent(...)
     /// ```
     public static var current: Date {

@@ -61,10 +61,10 @@ enum Current {
     }
 
     /// 应用级别的配置项
-    static var defualts: UserDefaults {
-        Mocked.defualts ?? {
+    static var defaults: UserDefaults {
+        Mocked.defaults ?? {
             let instance = UserDefaults.standard
-            Mocked.defualts = instance
+            Mocked.defaults = instance
             return instance
         }()
     }
@@ -113,7 +113,7 @@ enum Mocked {
     static var accountDefaults: AccountDefaults?
     static var api: API?
     static var appDelegate: ApplicationDelegate?
-    static var defualts: UserDefaults?
+    static var defaults: UserDefaults?
     static var hud: MessageManager?
     static var identifierForVendor: String?
     static var keyWindow: UIWindow?
@@ -126,7 +126,7 @@ enum Mocked {
         accountDefaults = nil
         api = nil
         appDelegate = nil
-        defualts = nil
+        defaults = nil
         hud = nil
         identifierForVendor = nil
         keyWindow = nil

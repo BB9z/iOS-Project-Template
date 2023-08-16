@@ -33,7 +33,7 @@ class VersionManagerTests: XCTestCase {
         XCTAssertEqual(ver1.version, firstVersion)
         XCTAssertNil(ver1.upgardeFrom)
 
-        // Noraml
+        // Normal
         let ver2 = VersionManager(storage: storage, version: firstVersion)
         XCTAssertFalse(ver2.isFreshInstall)
         XCTAssertEqual(ver2.version, firstVersion)
@@ -45,7 +45,7 @@ class VersionManagerTests: XCTestCase {
         XCTAssertEqual(ver3.version, secondVersion)
         XCTAssertEqual(ver3.upgardeFrom, firstVersion)
 
-        // Noraml
+        // Normal
         let ver4 = VersionManager(storage: storage, version: secondVersion)
         XCTAssertFalse(ver4.isFreshInstall)
         XCTAssertEqual(ver4.version, secondVersion)
