@@ -14,43 +14,49 @@ import Foundation
 /**
  追踪一个集合都有哪些元素处于特定状态，每个操作都返回变化的元素集合
 
- 实现备忘：
-
- 考虑有相同元素的情况，用 Equatable 全遍历，这样效率会比较低，但还好这个类的使用场景不会有太多元素。
- 如果找第一个相同的结束遍历，有多个相同元素时判定又是个问题。
+ 集合中重复元素会被去除
  */
-public final class CollectionStateTracker<Element: Equatable> {
-    var elements = [Element]()
+public final class CollectionStateTracker<Element: Hashable> {
 
-    // 与 activedElements 同时更新，维护序号，提高访问效率
+    public var elements: [Element] {
+        get {
+            elementStorage.array as? [Element] ?? []
+        }
+        set {
+            elementStorage = NSMutableOrderedSet(array: newValue)
+        }
+    }
+    public var activedElements: [Element] {
+        activedStorage.array as? [Element] ?? []
+    }
+
+    private var elementStorage = NSMutableOrderedSet()
+
+    // 与 activedIndexs 同时更新，提高访问效率
+    private var activedStorage = NSMutableOrderedSet()
     private(set) var activedIndexs = IndexSet()
-    private(set) var activedElements = [Element]()
 
     public typealias Result = (actived: [Element], deactived: [Element])
 
 //    func update(elements: [Element], keepActive: Bool) -> Result {
-//
 //    }
 
     /// 激活单个元素
     public func active(_ element: Element) -> Result {
-        if activedElements.contains(element) {
+        if activedStorage.contains(element) {
             return ([], [])
         }
-        var changeSet = [Element]()
-        for (idx, elm) in elements.enumerated() where elm == element {
-            active(idx: idx, elm: elm)
-            changeSet.append(elm)
+        let idx = elementStorage.index(of: element)
+        if idx == NSNotFound {
+            return ([], [])
         }
-        return (changeSet, [])
+        active(idx: idx, elm: element)
+        return ([element], [])
     }
 
     /// 将多个元素设置为激活状态
     public func active(_ elements: [Element]) -> Result {
-        let actived = elements.filter { !activedElements.contains($0) }
-        guard !actived.isEmpty else {
-            return ([], [])
-        }
+        let actived: Set = Set(elements).subtracting(activedStorage.set)
         var changeSet = [Element]()
         for (idx, elm) in self.elements.enumerated() where actived.contains(elm) {
             active(idx: idx, elm: elm)
@@ -61,20 +67,18 @@ public final class CollectionStateTracker<Element: Equatable> {
 
     /// 取消激活单个元素
     public func deactive(_ element: Element) -> Result {
-        if !activedElements.contains(element) {
+        let idxInActive = activedStorage.index(of: element)
+        if idxInActive == NSNotFound {
             return ([], [])
         }
-        var changeSet = [Element]()
-        for (idx, elm) in elements.enumerated() where elm == element {
-            deactive(idx: idx, elm: elm)
-            changeSet.append(elm)
-        }
-        return ([], changeSet)
+        activedStorage.removeObject(at: idxInActive)
+        activedIndexs.remove(elementStorage.index(of: element))
+        return ([], [element])
     }
 
     /// 取消多个元素的激活状态
     public func deactive(_ elements: [Element]) -> Result {
-        let deactived = elements.filter { activedElements.contains($0) }
+        let deactived = elements.filter { activedStorage.contains($0) }
         guard !deactived.isEmpty else {
             return ([], [])
         }
@@ -89,9 +93,9 @@ public final class CollectionStateTracker<Element: Equatable> {
     private func active(idx: Int, elm: Element) {
         if let insertIndex = activedIndexs.firstIndex(where: { $0 > idx }) {
             let offset = activedIndexs.distance(from: activedIndexs.startIndex, to: insertIndex)
-            activedElements.insert(elm, at: offset)
+            activedStorage.insert(elm, at: offset)
         } else {
-            activedElements.append(elm)
+            activedStorage.add(elm)
         }
         activedIndexs.insert(idx)
     }
@@ -100,7 +104,7 @@ public final class CollectionStateTracker<Element: Equatable> {
         if let removeIndex = activedIndexs.firstIndex(of: idx) {
             let offset = activedIndexs.distance(from: activedIndexs.startIndex, to: removeIndex)
             activedIndexs.remove(idx)
-            activedElements.remove(at: offset)
+            activedStorage.removeObject(at: offset)
         } else {
             assertionFailure()
         }
