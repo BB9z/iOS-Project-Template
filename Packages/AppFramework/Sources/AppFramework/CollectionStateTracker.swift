@@ -19,12 +19,7 @@ import Foundation
 public final class CollectionStateTracker<Element: Hashable> {
     /// 当前集合中的元素
     public var elements: [Element] {
-        get {
-            elementStorage.array as? [Element] ?? []
-        }
-        set {
-            elementStorage = NSOrderedSet(array: newValue)
-        }
+        elementStorage.array as? [Element] ?? []
     }
     /// 当前激活的元素
     public var activedElements: [Element] { elements(of: activedStorage) }

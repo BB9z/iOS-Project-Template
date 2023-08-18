@@ -117,6 +117,13 @@ final class CollectionStateTrackerTests: XCTestCase {
         XCTAssertEqual(tracker.activedElements, [])
     }
 
+    func testSetActiveMethod() {
+        let tracker = CollectionStateTracker<String>(elements: ["a", "b", "c"])
+
+        assertResult(tracker.set(activedElements: ["a", "b"]), ["a", "b"], [])
+        assertResult(tracker.set(activedElements: ["b", "c"]), ["c"], ["a"])
+    }
+
     func testUpdateElements() {
         let tracker = CollectionStateTracker<String>()
 
