@@ -22,11 +22,11 @@ class TopicEntity: MBModel,
     var createTime: Date?
     var editTime: Date?
 //    "attachments": [AttachmentEntity],
-    var status: [String] = [String]()
+    var status = [String]()
     var commentCount: Int = 0
 
     // MARK: -
-    private var allowOperations = [String]()
+    private(set) var allowOperations = [String]()
 
     // MARK: - 赞
 
@@ -54,7 +54,7 @@ class TopicEntity: MBModel,
         let shouldLike = !isLiked
         isLiked = shouldLike
         likeCount += shouldLike ? 1 : -1
-        delegates.invoke { $0.topicLikedChanged?(self) }
+        delegates.invoke { $0.topicLikedChanged(self) }
 
         likeTask = API.requestName(shouldLike ? positiveAPI : negativeAPI, context: { c in
             c.parameters = ["tid": uid]
@@ -62,7 +62,7 @@ class TopicEntity: MBModel,
                 if task?.isSuccess == false {
                     isLiked = !shouldLike
                     likeCount -= shouldLike ? 1 : -1
-                    delegates.invoke { $0.topicLikedChanged?(self) }
+                    delegates.invoke { $0.topicLikedChanged(self) }
                 }
             }
         })
@@ -76,7 +76,9 @@ class TopicEntity: MBModel,
     override var hash: Int { uid.hashValue }
 
     override class func keyMapper() -> JSONKeyMapper! {
-        JSONKeyMapper.baseMapper(JSONKeyMapper.forSnakeCase(), withModelToJSONExceptions: [ "uid": "id" ])
+        JSONKeyMapper.baseMapper(JSONKeyMapper.forSnakeCase(), withModelToJSONExceptions: [
+            "uid": "id",
+        ])
     }
 
     // MARK: -
@@ -84,9 +86,14 @@ class TopicEntity: MBModel,
     lazy var delegates = MulticastDelegate<TopicEntityUpdating>()
 }
 
-// 状态更新协议
-// 需要可选实现，需要标记成 @objc
-@objc protocol TopicEntityUpdating {
-    @objc optional func topicLikedChanged(_ item: TopicEntity)
-    @objc optional func topicCommentChanged(_ item: TopicEntity)
+/// 状态更新协议
+protocol TopicEntityUpdating {
+    func topicLikedChanged(_ item: TopicEntity)
+    func topicCommentChanged(_ item: TopicEntity)
+}
+
+// 可选实现
+extension TopicEntityUpdating {
+    func topicLikedChanged(_ item: TopicEntity) {}
+    func topicCommentChanged(_ item: TopicEntity) {}
 }

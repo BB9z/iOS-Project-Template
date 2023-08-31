@@ -28,6 +28,8 @@ class UserEntity: MBModel,
     override var hash: Int { uid.hashValue }
 
     override class func keyMapper() -> JSONKeyMapper! {
-        JSONKeyMapper.baseMapper(JSONKeyMapper.forSnakeCase(), withModelToJSONExceptions: [ "uid": "id" ])
+        JSONKeyMapper.baseMapper(JSONKeyMapper.forSnakeCase(), withModelToJSONExceptions: [
+            "uid": "id",
+        ])
     }
 }

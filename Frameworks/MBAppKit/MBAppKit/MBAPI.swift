@@ -104,6 +104,7 @@ class MBAPI: RFAPI {
     /**
      标准请求
      */
+    @discardableResult
     @objc class func requestName(_ APIName: String, context: (RFAPIRequestConext) -> Void) -> RFAPITask? {
         guard let instance = self.global else {
             assertionFailure("⚠️ MBAPI global instance has not been set.")

@@ -35,6 +35,8 @@ class CommentEntity: MBModel,
     }
 
     override class func keyMapper() -> JSONKeyMapper! {
-        JSONKeyMapper.baseMapper(JSONKeyMapper.forSnakeCase(), withModelToJSONExceptions: [ "uid": "id" ])
+        JSONKeyMapper.baseMapper(JSONKeyMapper.forSnakeCase(), withModelToJSONExceptions: [
+            "uid": "id",
+        ])
     }
 }
