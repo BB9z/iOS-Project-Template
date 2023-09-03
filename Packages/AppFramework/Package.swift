@@ -15,7 +15,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-//        .package(name: "B9Action", url: "https://github.com/b9swift/Action.git", from: "1.1.0"),
+        .package(name: "B9Action", url: "https://github.com/b9swift/Action.git", from: "1.1.0"),
 //        .package(name: "B9MulticastDelegate", url: "https://github.com/b9swift/MulticastDelegate.git", from: "1.1.0"),
         .package(name: "InterfaceApp", path: "../InterfaceApp"),
     ],
@@ -25,7 +25,7 @@ let package = Package(
         .target(
             name: mainName,
             dependencies: [
-//                "B9Action",
+                "B9Action",
 //                "B9MulticastDelegate",
                 "InterfaceApp",
             ]),
