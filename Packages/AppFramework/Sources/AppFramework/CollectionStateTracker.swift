@@ -82,6 +82,16 @@ public final class CollectionStateTracker<Element: Hashable> {
         return update(activedIndexs: newIndexSet)
     }
 
+    /// 查询元素是否处于激活状态。元素应当是当前集合的成员，否则会触发断言
+    public func isActived(_ element: Element) -> Bool {
+        let idx = elementStorage.index(of: element)
+        if idx == NSNotFound {
+            MBAssert(false, "\(self) 不包含元素: \(element).")
+            return false
+        }
+        return activedStorage.contains(idx)
+    }
+
     // MARK: -
 
     private var elementStorage: NSOrderedSet

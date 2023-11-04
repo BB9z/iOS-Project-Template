@@ -117,11 +117,15 @@ final class CollectionStateTrackerTests: XCTestCase {
         XCTAssertEqual(tracker.activedElements, [])
     }
 
-    func testSetActiveMethod() {
+    func testActivedSetAndGetMethod() {
         let tracker = CollectionStateTracker<String>(elements: ["a", "b", "c"])
 
         assertResult(tracker.set(activedElements: ["a", "b"]), ["a", "b"], [])
         assertResult(tracker.set(activedElements: ["b", "c"]), ["c"], ["a"])
+
+        XCTAssertFalse(tracker.isActived("not in"))
+        XCTAssertFalse(tracker.isActived("a"))
+        XCTAssertTrue(tracker.isActived("b"))
     }
 
     func testUpdateElements() {
@@ -141,8 +145,10 @@ final class CollectionStateTrackerTests: XCTestCase {
         assertResult(tracker.update(elements: ["b"], keepActive: true), [], ["a"])
         assertResult(tracker.update(elements: ["b", "c"], keepActive: true), [], [])
     }
+}
 
-    private func assertResult<T>(
+private extension CollectionStateTrackerTests {
+    func assertResult<T>(
         _ result: CollectionStateTracker<T>.Result,
         _ actived: [T],
         _ deactived: [T],
@@ -153,7 +159,7 @@ final class CollectionStateTrackerTests: XCTestCase {
         XCTAssertEqual(result.deactived, deactived, file: file, line: line)
     }
 
-    private func assertActived<T>(
+    func assertActived<T>(
         _ tracker: CollectionStateTracker<T>,
         at activedIndexs: Int...,
         file: StaticString = #filePath,

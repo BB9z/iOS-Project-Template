@@ -9,94 +9,199 @@
  https://opensource.org/licenses/MIT
  */
 
+#if canImport(UIKit)
 import AppFramework
+import UIKit
 import XCTest
 
 // TODO: 组件增加选中修改方法
 // TODO: 组件增加选中序列号方法
 // TODO: 组件增加选中代理
-// TODO: stackLayoutView 双向绑定
+
+/**
+ 用于测试子类行为
+
+ 根据不同状态会调整子控件的 alpha 值：初始 0，选中 0.8，取消选中 0.3
+*/ 
+fileprivate class AlphaGroupControl: MBGroupSelectionControl, MBGroupSelectionControlDelegate {
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        delegate = self
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        delegate = self
+    }
+
+    override var controls: [UIControl] {
+        didSet {
+            controls.forEach { $0.alpha = 0 }
+        }
+    }
+
+    // 改成不按大小排序，按控件顺序
+    override var selectedTags: [Int] {
+        selectedControls.map { $0.tag }
+    }
+
+    var lastUpdateAnimated: Bool?
+
+    override func update(selectedControls: [UIControl], deselectedControls: [UIControl], animated: Bool) {
+        // 故意不调用 super，不应影响行为
+        selectedControls.forEach { $0.alpha = 0.8 }
+        deselectedControls.forEach { $0.alpha = 0.3 }
+        lastUpdateAnimated = animated
+    }
+
+    var couldSelect = true
+    var couldDeselect = true
+    var lastShouldSelectControl: UIControl?
+    var lastShouldDeselectControl: UIControl?
+
+    func groupSelectionControl(_ groupControl: MBGroupSelectionControl, shouldSelect control: UIControl) -> Bool {
+        assert(groupControl == self)
+        lastShouldSelectControl = control
+        return couldSelect
+    }
+    func groupSelectionControl(_ groupControl: MBGroupSelectionControl, shouldDeselect control: UIControl) -> Bool {
+        assert(groupControl == self)
+        lastShouldDeselectControl = control
+        return couldDeselect
+    }
+
+    func resetLast() {
+        lastUpdateAnimated = nil
+        lastShouldSelectControl = nil
+        lastShouldDeselectControl = nil
+    }
+}
 
 class MBGroupSelectionControlTests: XCTestCase {
 
-    func testMinimumSelectCount() {
-        let control = MBGroupSelectionControl()
-        control.controls = [UIButton(), UIButton(), UIButton()]
-        control.minimumSelectCount = 2
+    func testNormal() {
+        let sut = MBGroupSelectionControl()
+        let control1 = UIButton()
+        control1.tag = 1
+        let control2 = UIButton()
+        control2.tag = 2
+        let control3 = UIButton()
+        control3.tag = 3
+        sut.controls = [control1, control2, control3]
+        sut.addTarget(self, action: #selector(didChangeSelection(sender:)), for: .valueChanged)
 
-        // Selecting less than minimumSelectCount should not work
-        control.controls[0].isSelected = true
-        control.controls[1].isSelected = false
-        control.controls[2].isSelected = false
-        XCTAssertEqual(control.selectedControls.count, 1)
+        XCTAssertEqual(sut.selectedControls, [])
+        XCTAssertEqual(sut.selectedTags, [])
 
-        // Selecting exactly minimumSelectCount should work
-        control.controls[0].isSelected = true
-        control.controls[1].isSelected = true
-        control.controls[2].isSelected = false
-        XCTAssertEqual(control.selectedControls.count, 2)
+        tap(control1)
+        XCTAssertEqual(sut.selectedControls, [control1])
+        XCTAssertEqual(sut.selectedTags, [1])
 
-        // Selecting more than minimumSelectCount should work
-        control.controls[0].isSelected = true
-        control.controls[1].isSelected = true
-        control.controls[2].isSelected = true
-        XCTAssertEqual(control.selectedControls.count, 3)
+        tap(control2)
+        XCTAssertEqual(sut.selectedControls, [control2])
+        XCTAssertEqual(sut.selectedTags, [2])
+
+        sut.allowsMultipleSelection = true
+        tap(control3)
+        XCTAssertEqual(sut.selectedControls, [control2, control3])
+        XCTAssertEqual(sut.selectedTags, [2, 3])
+
+        tap(control2)
+        XCTAssertEqual(sut.selectedControls, [control3])
+        XCTAssertEqual(sut.selectedTags, [3])
     }
 
-    func testMaximumSelectCount() {
-        let control = MBGroupSelectionControl()
-        control.controls = [UIButton(), UIButton(), UIButton()]
-        control.maximumSelectCount = 2
+    func testAllowsMultipleSelectionChanges() {
+        let sut = AlphaGroupControl()
+        let control1 = UIButton()
+        let control2 = UIButton()
+        sut.controls = [control1, control2]
 
-        // Selecting more than maximumSelectCount should not work
-        control.controls[0].isSelected = true
-        control.controls[1].isSelected = true
-        control.controls[2].isSelected = true
-        XCTAssertEqual(control.selectedControls.count, 2)
+        XCTAssertFalse(sut.allowsMultipleSelection, "默认单选")
+        sut.update(selection: [control1], animated: false)
 
-        // Deselecting to maximumSelectCount should work
-        control.controls[0].isSelected = true
-        control.controls[1].isSelected = true
-        control.controls[2].isSelected = false
-        XCTAssertEqual(control.selectedControls.count, 2)
+        sut.allowsMultipleSelection = true
+        XCTAssertEqual(sut.selectedControls, [control1])
 
-        // Selecting less than maximumSelectCount should work
-        control.controls[0].isSelected = true
-        control.controls[1].isSelected = false
-        control.controls[2].isSelected = false
-        XCTAssertEqual(control.selectedControls.count, 1)
+        tap(control2)
+        XCTAssertEqual(sut.selectedControls, [control1, control2])
+
+        sut.allowsMultipleSelection = false
+        XCTAssertEqual(sut.selectedControls, [control1], "多选变单选，保留第一个选中的控件的状态")
     }
 
-    func testSingleSelect() {
-        let control = MBGroupSelectionControl()
-        control.controls = [UIButton(), UIButton(), UIButton()]
-        control.maximumSelectCount = 1
+    @objc func didChangeSelection(sender: MBGroupSelectionControl) {
 
-        // Selecting one button should deselect the others
-        control.controls[0].isSelected = true
-        XCTAssertEqual(control.selectedControls.count, 1)
-        XCTAssertEqual(control.selectedControls[0], control.controls[0])
-
-        control.controls[1].isSelected = true
-        XCTAssertEqual(control.selectedControls.count, 1)
-        XCTAssertEqual(control.selectedControls[0], control.controls[1])
-
-        control.controls[2].isSelected = true
-        XCTAssertEqual(control.selectedControls.count, 1)
-        XCTAssertEqual(control.selectedControls[0], control.controls[2])
     }
-
-    func testSelectedTags() {
+    
+    func testDelegate() {
         let control = MBGroupSelectionControl()
-        control.controls = [UIButton(), UIButton(), UIButton()]
-
-        control.controls[0].tag = 1
-        control.controls[1].tag = 2
-        control.controls[2].tag = 3
-
-        control.controls[0].isSelected = true
-        control.controls[2].isSelected = true
-
-        XCTAssertEqual(control.selectedTags, [1, 3])
+        let control1 = UIControl()
+        control1.tag = 1
+        let control2 = UIControl()
+        control2.tag = 2
+        
+        class TestDelegate: MBGroupSelectionControlDelegate {
+            var shouldSelectCalled = false
+            var shouldDeselectCalled = false
+            
+            func groupSelectionControl(_ control: MBGroupSelectionControl, shouldSelect element: UIControl) -> Bool {
+                shouldSelectCalled = true
+                return true
+            }
+            
+            func groupSelectionControl(_ control: MBGroupSelectionControl, shouldDeselect element: UIControl) -> Bool {
+                shouldDeselectCalled = true
+                return true
+            }
+        }
+        
+        let delegate = TestDelegate()
+        control.delegate = delegate
+        
+        control.update(selection: [control1], animated: false)
+        XCTAssertTrue(delegate.shouldSelectCalled)
+        
+        control.update(selection: [], animated: false)
+        XCTAssertTrue(delegate.shouldDeselectCalled)
+    }
+    
+    func testValueChangedActionDelay() {
+        let control = MBGroupSelectionControl()
+        let control1 = UIControl()
+        control1.tag = 1
+        let control2 = UIControl()
+        control2.tag = 2
+        
+        control.valueChangedActionDelay = 0.5
+        
+        let expectation = XCTestExpectation(description: "Value changed action sent")
+        control.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
+        
+        control.update(selection: [control1], animated: false)
+        control.update(selection: [control1, control2], animated: false)
+        
+        wait(for: [expectation], timeout: 1)
+    }
+    
+    @objc func valueChanged() {
+        XCTFail("Value changed action should be delayed")
     }
 }
+
+extension XCTestCase {
+    /// 模拟触发 UIControl 的 touchUpInside 事件
+    func tap(_ control: UIControl) {
+        for target in control.allTargets {
+            let object: NSObject = target as NSObject
+            let rawActions = control.actions(forTarget: target, forControlEvent: .touchUpInside)
+            // debugPrint(target, rawActions)
+            for action in rawActions ?? [] {
+                let selector = Selector(action)
+                object.perform(selector, with: control)
+            }
+        }
+    }
+}
+#endif
