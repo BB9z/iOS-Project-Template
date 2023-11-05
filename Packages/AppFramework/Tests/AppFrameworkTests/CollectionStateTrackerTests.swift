@@ -145,6 +145,33 @@ final class CollectionStateTrackerTests: XCTestCase {
         assertResult(tracker.update(elements: ["b"], keepActive: true), [], ["a"])
         assertResult(tracker.update(elements: ["b", "c"], keepActive: true), [], [])
     }
+
+    func testSequence() {
+        let elm1 = NSArray(object: "1")
+        let elm2 = NSMutableArray(object: "2")
+        let sut = CollectionStateTracker<NSArray>()
+        _ = sut.update(elements: [elm1, elm2], keepActive: false)
+
+        XCTAssertEqual(sut.count, 2)
+        XCTAssertEqual(sut.underestimatedCount, 2)
+        var idx = 0
+        for element in sut {
+            switch idx {
+            case 0:
+                XCTAssert(element === elm1)
+            case 1:
+                XCTAssert(element === elm2)
+            default:
+                fatalError()
+            }
+            idx += 1
+        }
+        XCTAssertEqual(idx, 2)
+
+        _ = sut.update(elements: [[]], keepActive: false)
+        XCTAssertEqual(sut.count, 1)
+        XCTAssertEqual(sut.underestimatedCount, 1)
+    }
 }
 
 private extension CollectionStateTrackerTests {
