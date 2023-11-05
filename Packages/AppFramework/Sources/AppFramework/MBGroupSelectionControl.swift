@@ -16,15 +16,9 @@ import UIKit
 @objc
 public protocol MBGroupSelectionControlDelegate: AnyObject {
     /// 是否允许选中控件，传入的 control 一定是当前未选中的
-    func groupSelectionControl(_ groupControl: MBGroupSelectionControl, shouldSelect control: UIControl) -> Bool
+    @objc optional func groupSelectionControl(_ groupControl: MBGroupSelectionControl, shouldSelect control: UIControl) -> Bool
     /// 是否允许取消选中控件，传入的 control 一定是当前已选中的，单选模式不调用
-    func groupSelectionControl(_ groupControl: MBGroupSelectionControl, shouldDeselect control: UIControl) -> Bool
-}
-
-/// 可选协议
-extension MBGroupSelectionControlDelegate {
-    func groupSelectionControl(_ groupControl: MBGroupSelectionControl, shouldSelect control: UIControl) -> Bool { true }
-    func groupSelectionControl(_ groupControl: MBGroupSelectionControl, shouldDeselect control: UIControl) -> Bool { true }
+    @objc optional func groupSelectionControl(_ groupControl: MBGroupSelectionControl, shouldDeselect control: UIControl) -> Bool
 }
 
 /**
@@ -70,11 +64,36 @@ open class MBGroupSelectionControl: UIControl {
         selectedTracker.activedElements.map { $0.tag }.sorted()
     }
 
+    /// 选中控件的序号，多选时是最靠前的序号
+    ///
+    /// 越界时触发 ``MBAssert(_:_:file:line:)``，无操作
+    open var selectedIndex: Int? {
+        // 多选时的序号应该没什么意义，只实现单选的
+        get {
+            selectedTracker.activedIndexs.min()
+        }
+        set {
+            guard let newIndex = newValue else {
+                update(selection: [], animated: false)
+                return
+            }
+            guard newIndex < selectedTracker.count, newIndex >= 0 else {
+                MBAssert(false, "selectedIndex 越界")
+                return
+            }
+            let newSelection = selectedTracker.elements(of: IndexSet(integer: newIndex))
+            update(selection: newSelection, animated: false)
+        }
+    }
+
     /// 更新选中状态
     ///
     /// - SeeAlso: ``update(selectedControls:deselectedControls:animated:)``
     public func update(selection controls: [UIControl], animated: Bool) {
         let changes = selectedTracker.set(activedElements: controls)
+        if changes.actived.isEmpty && changes.deactived.isEmpty {
+            return
+        }
         changes.actived.forEach { $0.isSelected = true }
         changes.deactived.forEach { $0.isSelected = false }
         update(selectedControls: changes.actived, deselectedControls: changes.deactived, animated: animated)
@@ -127,12 +146,12 @@ extension MBGroupSelectionControl {
         if allowsMultipleSelection {
             var selected = selectedTracker.activedElements
             if let idx = selected.firstIndex(of: sender) {
-                if delegate?.groupSelectionControl(self, shouldDeselect: sender) ?? true {
+                if delegate?.groupSelectionControl?(self, shouldDeselect: sender) ?? true {
                     selected.remove(at: idx)
                     update(selection: selected, animated: true)
                 }
             } else {
-                if delegate?.groupSelectionControl(self, shouldSelect: sender) ?? true {
+                if delegate?.groupSelectionControl?(self, shouldSelect: sender) ?? true {
                     selected.append(sender)
                     update(selection: selected, animated: true)
                 }
@@ -141,7 +160,7 @@ extension MBGroupSelectionControl {
             if selectedTracker.isActived(sender) {
                 return  // noop
             }
-            if delegate?.groupSelectionControl(self, shouldSelect: sender) ?? true {
+            if delegate?.groupSelectionControl?(self, shouldSelect: sender) ?? true {
                 update(selection: [sender], animated: true)
             }
         }

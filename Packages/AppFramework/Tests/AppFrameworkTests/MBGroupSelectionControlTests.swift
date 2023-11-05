@@ -14,8 +14,6 @@ import AppFramework
 import UIKit
 import XCTest
 
-// TODO: 组件增加选中序列号方法
-
 /**
  用于测试子类行为
 
@@ -109,23 +107,28 @@ class MBGroupSelectionControlTests: XCTestCase {
 
         XCTAssertEqual(sut.selectedControls, [])
         XCTAssertEqual(sut.selectedTags, [])
+        XCTAssertNil(sut.selectedIndex)
 
         tap(control1)
         XCTAssertEqual(sut.selectedControls, [control1])
         XCTAssertEqual(sut.selectedTags, [1])
+        XCTAssertEqual(sut.selectedIndex, 0)
 
         tap(control2)
         XCTAssertEqual(sut.selectedControls, [control2])
         XCTAssertEqual(sut.selectedTags, [2])
+        XCTAssertEqual(sut.selectedIndex, 1)
 
         sut.allowsMultipleSelection = true
         tap(control3)
         XCTAssertEqual(sut.selectedControls, [control2, control3])
         XCTAssertEqual(sut.selectedTags, [2, 3])
+        XCTAssertEqual(sut.selectedIndex, 1)
 
         tap(control2)
         XCTAssertEqual(sut.selectedControls, [control3])
         XCTAssertEqual(sut.selectedTags, [3])
+        XCTAssertEqual(sut.selectedIndex, 2)
     }
 
     func testSelectedTagsOrder() {
@@ -148,6 +151,57 @@ class MBGroupSelectionControlTests: XCTestCase {
         XCTAssertEqual(alphaControl.selectedTags, [3, 2, 1])
     }
 
+    func testIndexSet() {
+        var assertCalled = false
+        MBAssertSetHandler { _, _, _ in assertCalled = true }
+        defer { MBAssertSetHandler(nil) }
+
+        let sut = AlphaGroupControl()
+        let control1 = UIButton()
+        let control2 = UIButton()
+        sut.controls = [control1, control2]
+
+        sut.resetLast()
+        sut.selectedIndex = nil
+        XCTAssertNil(sut.lastUpdateAnimated, "选中没变无操作")
+
+        sut.resetLast()
+        sut.selectedIndex = 0
+        XCTAssertEqual(sut.lastUpdateAnimated, false)
+        XCTAssertEqual(sut.selectedControls, [control1])
+
+        sut.resetLast()
+        sut.selectedIndex = 1
+        XCTAssertEqual(sut.selectedControls, [control2])
+
+        sut.resetLast()
+        XCTAssertFalse(assertCalled)
+        sut.selectedIndex = 2
+        XCTAssertTrue(assertCalled)
+        XCTAssertEqual(sut.selectedIndex, 1)
+        XCTAssertEqual(sut.selectedControls, [control2])
+    }
+
+    func testIndexSetWithMultipleSelection() {
+        let sut = AlphaGroupControl()
+        let control1 = UIButton()
+        let control2 = UIButton()
+        sut.controls = [control1, control2]
+        sut.allowsMultipleSelection = true
+
+        sut.selectedIndex = 1
+        tap(control1)
+        XCTAssertEqual(sut.selectedControls, [control1, control2])
+        XCTAssertEqual(sut.selectedIndex, 0)
+
+        sut.selectedIndex = 0
+        XCTAssertEqual(sut.selectedControls, [control1])
+
+        sut.update(selection: [control1, control2], animated: true)
+        sut.selectedIndex = sut.selectedIndex
+        XCTAssertEqual(sut.selectedControls, [control1])
+    }
+
     func testControlsSetter() {
         let sut = MBGroupSelectionControl()
         let control1 = UIButton()
@@ -163,6 +217,26 @@ class MBGroupSelectionControlTests: XCTestCase {
         sut.controls = [control2]
         let actions3rd = control1.actions(forTarget: sut, forControlEvent: .touchUpInside)
         XCTAssertNil(actions3rd)
+    }
+
+    func testUpdateOverwrite() {
+        let sut = AlphaGroupControl()
+        let control1 = UIButton()
+        let control2 = UIButton()
+        sut.controls = [control1, control2]
+
+        XCTAssertEqual(control1.alpha, 0)
+        XCTAssertEqual(control2.alpha, 0)
+        
+        sut.update(selection: [control1], animated: true)
+        XCTAssertEqual(sut.lastUpdateAnimated, true)
+        XCTAssertEqual(control1.alpha, sut.selectedAlpha, accuracy: 1e-6)
+        XCTAssertEqual(control2.alpha, 0)
+
+        sut.update(selection: [control2], animated: false)
+        XCTAssertEqual(sut.lastUpdateAnimated, false)
+        XCTAssertEqual(control1.alpha, sut.deselectedAlpha, accuracy: 1e-6)
+        XCTAssertEqual(control2.alpha, sut.selectedAlpha, accuracy: 1e-6)
     }
 
     func testAllowsMultipleSelectionChanges() {
@@ -184,8 +258,10 @@ class MBGroupSelectionControlTests: XCTestCase {
         XCTAssertEqual(sut.selectedControls, [control1], "多选变单选，保留第一个选中的控件的状态")
 
         XCTAssertEqual(sut.lastUpdateAnimated, false)
-        sut.update(selection: [control1], animated: true)
+        sut.update(selection: [control2], animated: true)
         XCTAssertEqual(sut.lastUpdateAnimated, true)
+        sut.update(selection: [control2], animated: false)
+        XCTAssertEqual(sut.lastUpdateAnimated, true, "相同的选择无执行")
 
         sut.allowsMultipleSelection = false
         XCTAssertEqual(sut.lastUpdateAnimated, true, "相同的 allowsMultipleSelection，不触发控件更新")
