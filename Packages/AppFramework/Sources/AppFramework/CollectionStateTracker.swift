@@ -15,6 +15,38 @@ import Foundation
  追踪一个集合都有哪些元素处于特定状态，每个操作都返回变化的元素集合
 
  集合中重复元素会被去除
+
+ ```swift
+ let tracker = CollectionStateTracker<Int>(elements: [1, 2, 3])
+ tracker.active([1, 2])  // (actived: [1, 2], deactived: [])
+ tracker.set(activedElements: [1, 3])  // (actived: [3], deactived: [2])
+ ```
+
+ ## Topics
+
+ - ``init(elements:)``
+
+ ### 元素
+
+ - ``elements``
+ - ``count``
+ - ``update(elements:keepActive:)``
+
+ ### 查询激活态
+
+ - ``activedElements``
+ - ``activedIndexs``
+ - ``isActived(_:)``
+
+ ### 修改激活态
+
+ - ``Result``
+ - ``active(_:)-5xkwq``
+ - ``active(_:)-2rmej``
+ - ``deactive(_:)-19n0h``
+ - ``deactive(_:)-98ad4``
+ - ``set(activedElements:)``
+
  */
 public final class CollectionStateTracker<Element: Hashable> {
     /// 当前集合中的元素
@@ -128,6 +160,9 @@ extension CollectionStateTracker {
 
     private func update(activedIndexs newValue: IndexSet) -> Result {
         let oldValue = activedStorage
+        if oldValue == newValue {
+            return ([], [])
+        }
         activedStorage = newValue
         let addedIndexs = newValue.subtracting(oldValue)
         let removedIndexs = oldValue.subtracting(newValue)

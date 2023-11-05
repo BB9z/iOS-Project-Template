@@ -31,9 +31,30 @@ public protocol MBGroupSelectionControlDelegate: AnyObject {
  在 Interface Builder 中，除了可以作为一般的 control view 使用，还可仅作为一个附加对象，只控制控制逻辑：
  附加一个 NSObject 到 scene 上，修改类名，然后连接 controls 等属性，继承 UIControl 只是为了便于发送事件。
 
- 实现备忘：
+ ## Topics
 
- - 不加泛型，否则无法在 Interface Builder 中使用
+ ### 数据源
+
+ - ``controls``
+ - ``allowsMultipleSelection``
+
+ ### 选中状态
+
+ - ``selectedControls``
+ - ``selectedIndex``
+ - ``selectedTags``
+
+ ## 更新选中
+
+ - ``update(selection:animated:)``
+ - ``update(selectedControls:deselectedControls:animated:)``
+
+ ## 事件控制
+
+ - ``delegate``
+ - ``valueChangedActionDelay``
+
+ <!-- 实现备忘：不加泛型，否则无法在 Interface Builder 中使用 -->
  */
 open class MBGroupSelectionControl: UIControl {
     /// 处于管理的控件，设置更新时会维持已有的选中状态
@@ -64,7 +85,7 @@ open class MBGroupSelectionControl: UIControl {
         selectedTracker.activedElements.map { $0.tag }.sorted()
     }
 
-    /// 选中控件的序号，多选时是最靠前的序号
+    /// 选中控件的序号，置空反选全部。多选时：获取的是最靠前的序号，设置时如果已选中多个，强制变为指定的单个
     ///
     /// 越界时触发 ``MBAssert(_:_:file:line:)``，无操作
     open var selectedIndex: Int? {
@@ -100,8 +121,9 @@ open class MBGroupSelectionControl: UIControl {
     }
 
     /**
-     单选还是多选模式，默认单选模式。
-     单选模式下，选中一个控件会取消其他控件的选中状态，点选已选中控件无操作。
+     单选还是多选模式，默认单选模式
+
+     单选模式下，选中一个控件会取消其他控件的选中状态，点选已选中控件无操作；
      多选模式下，选中一个控件不会影响其他控件的状态，点选已选中控件会取消其选中状态。
 
      多选模式变为单选，如果已选中控件多于一个，会保留第一个选中的控件的状态，其他控件重置选中。
