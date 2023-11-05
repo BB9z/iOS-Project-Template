@@ -1,5 +1,6 @@
 /*
  MBGroupSelectionControl
+ AppFramework
 
  Copyright © 2021, 2023 BB9z
  https://github.com/BB9z/iOS-Project-Template
@@ -12,11 +13,18 @@
 import B9Action
 import UIKit
 
+@objc
 public protocol MBGroupSelectionControlDelegate: AnyObject {
     /// 是否允许选中控件，传入的 control 一定是当前未选中的
     func groupSelectionControl(_ groupControl: MBGroupSelectionControl, shouldSelect control: UIControl) -> Bool
-    /// 是否允许取消选中控件，传入的 control 一定是当前已选中的
+    /// 是否允许取消选中控件，传入的 control 一定是当前已选中的，单选模式不调用
     func groupSelectionControl(_ groupControl: MBGroupSelectionControl, shouldDeselect control: UIControl) -> Bool
+}
+
+/// 可选协议
+extension MBGroupSelectionControlDelegate {
+    func groupSelectionControl(_ groupControl: MBGroupSelectionControl, shouldSelect control: UIControl) -> Bool { true }
+    func groupSelectionControl(_ groupControl: MBGroupSelectionControl, shouldDeselect control: UIControl) -> Bool { true }
 }
 
 /**
@@ -31,7 +39,7 @@ public protocol MBGroupSelectionControlDelegate: AnyObject {
 
  实现备忘：
 
- - 不加泛型，因为 IB 不支持
+ - 不加泛型，否则无法在 Interface Builder 中使用
  */
 open class MBGroupSelectionControl: UIControl {
     /// 处于管理的控件，设置更新时会维持已有的选中状态
@@ -52,17 +60,19 @@ open class MBGroupSelectionControl: UIControl {
         }
     }
 
-    /// 处于选中状态的控件，始终会是 controls 的子集
+    /// 处于选中状态的控件，始终会是 ``MBGroupSelectionControl/controls`` 的子集
     public var selectedControls: [UIControl] {
         selectedTracker.activedElements
     }
 
-    /// 选中控件的 tag 集合，已去重并排序
+    /// 选中控件的 tag 集合，已去重并按数值大小排序
     open var selectedTags: [Int] {
         selectedTracker.activedElements.map { $0.tag }.sorted()
     }
 
     /// 更新选中状态
+    ///
+    /// - SeeAlso: ``update(selectedControls:deselectedControls:animated:)``
     public func update(selection controls: [UIControl], animated: Bool) {
         let changes = selectedTracker.set(activedElements: controls)
         changes.actived.forEach { $0.isSelected = true }
@@ -94,7 +104,7 @@ open class MBGroupSelectionControl: UIControl {
         // for override
     }
 
-    open weak var delegate: MBGroupSelectionControlDelegate?
+    @IBOutlet open weak var delegate: MBGroupSelectionControlDelegate?
 
     /// 延迟选中变化事件的发送，避免连续选择发送多个无意义变更，> 0 启用，不可以是负数
     @IBInspectable open var valueChangedActionDelay: Double = 0 {
@@ -130,10 +140,9 @@ extension MBGroupSelectionControl {
         } else {
             if selectedTracker.isActived(sender) {
                 return  // noop
-            } else {
-                if delegate?.groupSelectionControl(self, shouldSelect: sender) ?? true {
-                    update(selection: [sender], animated: true)
-                }
+            }
+            if delegate?.groupSelectionControl(self, shouldSelect: sender) ?? true {
+                update(selection: [sender], animated: true)
             }
         }
         noticeValueChanged()

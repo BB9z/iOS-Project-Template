@@ -31,3 +31,15 @@ extension XCTestExpectation {
         return self
     }
 }
+
+#if canImport(UIKit)
+import UIKit
+
+extension XCTestCase {
+    /// 模拟触发 UIControl 的 touchUpInside 事件
+    func tap(_ control: UIControl) {
+        control.sendActions(for: .touchUpInside)
+    }
+}
+
+#endif
