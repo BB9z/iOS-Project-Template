@@ -117,11 +117,15 @@ final class CollectionStateTrackerTests: XCTestCase {
         XCTAssertEqual(tracker.activedElements, [])
     }
 
-    func testSetActiveMethod() {
+    func testActivedSetAndGetMethod() {
         let tracker = CollectionStateTracker<String>(elements: ["a", "b", "c"])
 
         assertResult(tracker.set(activedElements: ["a", "b"]), ["a", "b"], [])
         assertResult(tracker.set(activedElements: ["b", "c"]), ["c"], ["a"])
+
+        XCTAssertFalse(tracker.isActived("not in"))
+        XCTAssertFalse(tracker.isActived("a"))
+        XCTAssertTrue(tracker.isActived("b"))
     }
 
     func testUpdateElements() {
@@ -142,7 +146,36 @@ final class CollectionStateTrackerTests: XCTestCase {
         assertResult(tracker.update(elements: ["b", "c"], keepActive: true), [], [])
     }
 
-    private func assertResult<T>(
+    func testSequence() {
+        let elm1 = NSArray(object: "1")
+        let elm2 = NSMutableArray(object: "2")
+        let sut = CollectionStateTracker<NSArray>()
+        _ = sut.update(elements: [elm1, elm2], keepActive: false)
+
+        XCTAssertEqual(sut.count, 2)
+        XCTAssertEqual(sut.underestimatedCount, 2)
+        var idx = 0
+        for element in sut {
+            switch idx {
+            case 0:
+                XCTAssert(element === elm1)
+            case 1:
+                XCTAssert(element === elm2)
+            default:
+                fatalError()
+            }
+            idx += 1
+        }
+        XCTAssertEqual(idx, 2)
+
+        _ = sut.update(elements: [[]], keepActive: false)
+        XCTAssertEqual(sut.count, 1)
+        XCTAssertEqual(sut.underestimatedCount, 1)
+    }
+}
+
+private extension CollectionStateTrackerTests {
+    func assertResult<T>(
         _ result: CollectionStateTracker<T>.Result,
         _ actived: [T],
         _ deactived: [T],
@@ -153,7 +186,7 @@ final class CollectionStateTrackerTests: XCTestCase {
         XCTAssertEqual(result.deactived, deactived, file: file, line: line)
     }
 
-    private func assertActived<T>(
+    func assertActived<T>(
         _ tracker: CollectionStateTracker<T>,
         at activedIndexs: Int...,
         file: StaticString = #filePath,

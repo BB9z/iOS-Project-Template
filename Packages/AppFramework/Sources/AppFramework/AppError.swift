@@ -50,8 +50,8 @@ public enum AppError: LocalizedError {
 
      目前支持的种类有：
 
-     - CancellationError
-     - URLError.cancelled
+     - ``Swift.CancellationError``
+     - ``URLError.cancelled``
      */
     public static func isCancel(_ err: Error?) -> Bool {
         if err is CancellationError {

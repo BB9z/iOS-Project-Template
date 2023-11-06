@@ -7,8 +7,12 @@ on:
       - 'Packages/InterfaceApp/**'
   workflow_dispatch:
 
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  build:
+  test:
     runs-on: macos-latest
     timeout-minutes: 5
 

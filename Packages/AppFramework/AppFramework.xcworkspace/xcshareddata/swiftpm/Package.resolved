@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "B9Action",
+        "repositoryURL": "https://github.com/b9swift/Action.git",
+        "state": {
+          "branch": null,
+          "revision": "32ccacba992b921e304438ca6d6cfa20fef6e840",
+          "version": "1.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

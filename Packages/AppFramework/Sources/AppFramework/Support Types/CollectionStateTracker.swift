@@ -15,6 +15,38 @@ import Foundation
  追踪一个集合都有哪些元素处于特定状态，每个操作都返回变化的元素集合
 
  集合中重复元素会被去除
+
+ ```swift
+ let tracker = CollectionStateTracker<Int>(elements: [1, 2, 3])
+ tracker.active([1, 2])  // (actived: [1, 2], deactived: [])
+ tracker.set(activedElements: [1, 3])  // (actived: [3], deactived: [2])
+ ```
+
+ ## Topics
+
+ - ``init(elements:)``
+
+ ### 元素
+
+ - ``elements``
+ - ``count``
+ - ``update(elements:keepActive:)``
+
+ ### 查询激活态
+
+ - ``activedElements``
+ - ``activedIndexs``
+ - ``isActived(_:)``
+
+ ### 修改激活态
+
+ - ``Result``
+ - ``active(_:)-5xkwq``
+ - ``active(_:)-2rmej``
+ - ``deactive(_:)-19n0h``
+ - ``deactive(_:)-98ad4``
+ - ``set(activedElements:)``
+
  */
 public final class CollectionStateTracker<Element: Hashable> {
     /// 当前集合中的元素
@@ -82,10 +114,34 @@ public final class CollectionStateTracker<Element: Hashable> {
         return update(activedIndexs: newIndexSet)
     }
 
+    /// 查询元素是否处于激活状态。元素应当是当前集合的成员，否则会触发 ``MBAssert(_:_:file:line:)``
+    public func isActived(_ element: Element) -> Bool {
+        let idx = elementStorage.index(of: element)
+        if idx == NSNotFound {
+            MBAssert(false, "\(self) 不包含元素: \(element).")
+            return false
+        }
+        return activedStorage.contains(idx)
+    }
+
     // MARK: -
 
     private var elementStorage: NSOrderedSet
     private var activedStorage = IndexSet()
+}
+
+extension CollectionStateTracker: Sequence {
+    public var count: Int {
+        elementStorage.count
+    }
+
+    public var underestimatedCount: Int {
+        elementStorage.count
+    }
+
+    public func makeIterator() -> AnyIterator<Element> {
+        return AnyIterator(elements.makeIterator())
+    }
 }
 
 extension CollectionStateTracker {
@@ -104,6 +160,9 @@ extension CollectionStateTracker {
 
     private func update(activedIndexs newValue: IndexSet) -> Result {
         let oldValue = activedStorage
+        if oldValue == newValue {
+            return ([], [])
+        }
         activedStorage = newValue
         let addedIndexs = newValue.subtracting(oldValue)
         let removedIndexs = oldValue.subtracting(newValue)
