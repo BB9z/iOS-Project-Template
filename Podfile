@@ -59,6 +59,9 @@ target 'App' do
     pod 'RFKeyboard'
     pod 'RFMessageManager', :subspecs => ['SVProgressHUD']
     pod 'RFSegue', :subspecs => ['Async']
+
+    # 子依赖，隐藏警告
+    pod 'SVProgressHUD', :inhibit_warnings => true
 end
 
 post_install do |pi|
