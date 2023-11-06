@@ -4,7 +4,7 @@
 
 ## 需求
 
-iOS 13+；Xcode 14.1+；macOS 13+。
+iOS 14+；Xcode 14.3+；macOS 13+。
 
 依赖：
 
