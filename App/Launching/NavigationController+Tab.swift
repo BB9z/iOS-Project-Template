@@ -3,6 +3,7 @@
 //  App
 //
 
+import AppFramework
 import B9AssociatedObject
 
 /// tab 序号定义
@@ -13,12 +14,12 @@ enum NavigationTab: Int {
 }
 
 /// 导航 tab 支持
-extension NavigationController: MBControlGroupDelegate {
+extension NavigationController: MBGroupSelectionControlDelegate {
 
     /// 控制 tab item 选中状态
-    var tabItems: MBControlGroup {
-        guard let bar = bottomBar as? MBControlGroup else {
-            fatalError("使用底部 tab 时，bottomBar 必须是 MBControlGroup")
+    var tabItems: MBGroupSelectionControl {
+        guard let bar = bottomBar as? MBGroupSelectionControl else {
+            fatalError("使用底部 tab 时，bottomBar 必须是 MBGroupSelectionControl")
         }
         return bar
     }
@@ -34,15 +35,15 @@ extension NavigationController: MBControlGroupDelegate {
         return array
     }
 
-    /// 可以控制释放允许选中某一 tab
-    func controlGroup(_ controlGroup: MBControlGroup, shouldSelectControlAt index: Int) -> Bool {
-        return true
+    /// 可以控制是否允许选中某一 tab
+    func groupSelectionControl(_ groupControl: MBGroupSelectionControl, shouldSelect control: UIControl) -> Bool {
+        true
     }
 
     func selectTab(_ tabKind: NavigationTab) {
         let tabIndex = tabKind.rawValue
-        if tabItems.selectIndex != tabIndex {
-            tabItems.selectIndex = tabIndex
+        if tabItems.selectedIndex != tabIndex {
+            tabItems.selectedIndex = tabIndex
         }
         let newVCs = [ viewControllerForTab(tabKind) ]
         if viewControllers != newVCs {
@@ -50,8 +51,9 @@ extension NavigationController: MBControlGroupDelegate {
         }
     }
 
-    @IBAction private func onTabSelect(_ sender: MBControlGroup) {
-        guard let tabKind = NavigationTab(rawValue: sender.selectIndex) else {
+    @IBAction private func onTabSelect(_ sender: MBGroupSelectionControl) {
+        guard let idx = sender.selectedIndex,
+              let tabKind = NavigationTab(rawValue: idx) else {
             fatalError()
         }
         selectTab(tabKind)
@@ -81,7 +83,9 @@ extension NavigationController: MBControlGroupDelegate {
 
     /// 释放未显示的 tab vc
     func releaseTabViewControllersIfNeeded() {
-        let idx = tabItems.selectIndex
+        guard let idx = tabItems.selectedIndex else {
+            return
+        }
         for i in 0..<tabControllers.count where i != idx {
             tabControllers.replacePointer(at: i, withPointer: nil)
         }

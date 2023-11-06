@@ -46,7 +46,7 @@ class NavigationController: MBNavigationController, StoryboardCreation, UIApplic
     }
 
     override func presentLoginScene() {
-        tabItems.selectIndex = NavigationTab.login
+        tabItems.selectedIndex = NavigationTab.login
         setViewControllers([ WelcomeViewController.newFromStoryboard() ], animated: true)
     }
 

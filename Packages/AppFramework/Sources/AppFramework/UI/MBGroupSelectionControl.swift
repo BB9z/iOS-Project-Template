@@ -44,12 +44,12 @@ public protocol MBGroupSelectionControlDelegate: AnyObject {
  - ``selectedIndex``
  - ``selectedTags``
 
- ## 更新选中
+ ### 更新选中
 
  - ``update(selection:animated:)``
  - ``update(selectedControls:deselectedControls:animated:)``
 
- ## 事件控制
+ ### 事件控制
 
  - ``delegate``
  - ``valueChangedActionDelay``
@@ -94,7 +94,7 @@ open class MBGroupSelectionControl: UIControl {
             selectedTracker.activedIndexs.min()
         }
         set {
-            guard let newIndex = newValue else {
+            guard let newIndex = newValue, newIndex != NSNotFound else {
                 update(selection: [], animated: false)
                 return
             }
@@ -153,6 +153,15 @@ open class MBGroupSelectionControl: UIControl {
             assert(valueChangedActionDelay >= 0, "valueChangedActionDelay must >= 0")
             if oldValue == valueChangedActionDelay { return }
             needsSendValueChangedAction = DelayAction(needsSendValueChangedAction.action, delay: valueChangedActionDelay)
+        }
+    }
+
+    /// 在 Interface Builder 中绑定一个 UIStackView，将其管理的 UIControl 作为 controls
+    @available(*, deprecated, message: "仅用于在 IB 中便捷设置，不允许代码访问")
+    @IBOutlet public weak var _IBBindStackArrangedAsControls: UIStackView! {
+        get { nil }
+        set {
+            controls = newValue.arrangedSubviews.compactMap { $0 as? UIControl }
         }
     }
 

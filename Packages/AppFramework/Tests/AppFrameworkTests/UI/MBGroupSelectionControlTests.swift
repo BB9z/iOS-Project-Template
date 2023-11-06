@@ -343,6 +343,18 @@ class MBGroupSelectionControlTests: XCTestCase {
     @objc func valueChanged() {
         valueChangedExpectation?.fulfill()
     }
+
+    func testIBBind() {
+        let sut = MBGroupSelectionControl()
+        let stack = UIStackView(arrangedSubviews: [
+            UIControl(),
+            UIView(),
+        ])
+        sut.setValue(stack, forKey: "_IBBindStackArrangedAsControls")
+
+        XCTAssertEqual(sut.controls.count, 1)
+        XCTAssertNil(sut.value(forKey: "_IBBindStackArrangedAsControls"))
+    }
 }
 
 #endif
