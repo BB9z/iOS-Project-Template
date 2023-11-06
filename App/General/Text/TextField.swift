@@ -198,7 +198,7 @@ class TextField: MBTextField {
                 Current.hud.showErrorStatus(e)
             }
             if becomeFirstResponderWhenInvalid {
-                becomeFirstResponder()
+                _ = becomeFirstResponder()
             }
         }
         return vaildText

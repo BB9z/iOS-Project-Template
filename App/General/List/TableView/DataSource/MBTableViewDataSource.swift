@@ -17,11 +17,11 @@ class MBTableViewDataSource<CellType, ItemType: AnyObject>: MBListDataSource<Ite
     typealias CellReuseIdentifierClosure = (UITableView, IndexPath, ItemType) -> String
     typealias ConfigureCellClosure = (UITableView, CellType, IndexPath, ItemType) -> Void
 
-    var cellReuseIdentifier: CellReuseIdentifierClosure = { tableView, indexPath, item in
+    var cellReuseIdentifier: CellReuseIdentifierClosure = { _, _, _ in
         return "Cell"
     }
 
-    var configureCell: ConfigureCellClosure = { tableView, cell, indexPath, item in
+    var configureCell: ConfigureCellClosure = { _, cell, _, item in
         guard let cell = cell as? UITableViewCell & Settable else { return }
         cell.setItem(item)
     }
