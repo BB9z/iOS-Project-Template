@@ -1,14 +1,12 @@
 /*
  AppNewVersionChecker.swift
 
- Copyright © 2021-2022 BB9z.
+ Copyright © 2021-2023 BB9z.
  https://github.com/BB9z/iOS-Project-Template
 
  The MIT License
  https://opensource.org/licenses/MIT
  */
-
-// swiftlint:disable nesting inclusive_language
 
 /**
  应用更新检查器
@@ -254,23 +252,24 @@ class AppNewVersionChecker {
         saveInfo()
         noticeResultCallback(error: nil)
     }
+}
 
-    private struct FirImResponse: Decodable {
-        var app: AppInfo
+/// fir.im 版本响应
+private struct FirImResponse: Decodable {
+    var app: AppInfo
 
-        struct AppInfo: Decodable {
-            var releases: ReleaseCollection
-        }
+    struct AppInfo: Decodable {
+        var releases: ReleaseCollection
+    }
 
-        struct ReleaseCollection: Decodable {
-            var master: ReleaseItem
-        }
+    struct ReleaseCollection: Decodable {
+        var master: ReleaseItem
+    }
 
-        struct ReleaseItem: Decodable {
-            var version: String
-            var build: String
-            var changelog: String?
-        }
+    struct ReleaseItem: Decodable {
+        var version: String
+        var build: String
+        var changelog: String?
     }
 }
 

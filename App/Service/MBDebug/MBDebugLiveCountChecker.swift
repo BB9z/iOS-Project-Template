@@ -8,8 +8,6 @@
  https://opensource.org/licenses/MIT
  */
 
-// swiftlint:disable identifier_name
-
 /**
  添加对象到活动对象监控中，当相同类型的对象超出限制时报警
 
@@ -17,6 +15,7 @@
  可以在任何合理的时机调用，不只限于常规的 init 或生命周期方法
  */
 public func LiveCount(add obj: AnyObject, limit: Int) {
+    // swiftlint:disable:previous identifier_name
     #if DEBUG
     MBDebugLiveCountChecker.shared.add(obj, limit: limit)
     #endif
@@ -28,6 +27,7 @@ public func LiveCount(add obj: AnyObject, limit: Int) {
  无需在释放（deinit）时调用，线程安全
  */
 public func LiveCount(remove obj: AnyObject) {
+    // swiftlint:disable:previous identifier_name
     #if DEBUG
     MBDebugLiveCountChecker.shared.remove(obj)
     #endif
@@ -37,6 +37,7 @@ public func LiveCount(remove obj: AnyObject) {
  检查类型的数量不超过限定值
  */
 public func LiveCount(check type: AnyClass, limit: Int, delay: TimeInterval = -1) {
+    // swiftlint:disable:previous identifier_name
     #if DEBUG
     func check() {
         let count = MBDebugLiveCountChecker.shared.count(for: type)

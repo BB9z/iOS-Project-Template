@@ -8,7 +8,7 @@ ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 # https://github.com/fermoya/CatalystPodSupport
 
 target 'App' do
-    platform :ios, '13.0'
+    platform :ios, '14.0'
 
 #    pod 'AMap3DMap-NO-IDFA'             # 高德地图
 #    pod 'AXRatingView'                  # 打星评分控件
@@ -59,6 +59,9 @@ target 'App' do
     pod 'RFKeyboard'
     pod 'RFMessageManager', :subspecs => ['SVProgressHUD']
     pod 'RFSegue', :subspecs => ['Async']
+
+    # 子依赖，隐藏警告
+    pod 'SVProgressHUD', :inhibit_warnings => true
 end
 
 post_install do |pi|

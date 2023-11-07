@@ -160,7 +160,7 @@ typedef NS_ENUM(short, MBDataSourcePageEndDetectPolicy) {
  对网络请求返回的数据进行第一次处理，典型情形如手工去重、模型转换
 
  @param oldItems 数据源中目前存在对象的拷贝，如果是刷新获取会是 nil，获取下一页时一定是个数组
- @param newItems 请求返回的对象，有可能不是数组，这种情况有必要处理
+ @param newValue 请求返回的对象，有可能不是数组，这种情况有必要处理
 
  返回处理好的新数据的数组，之后会交由 data source 进行其他处理
  */
