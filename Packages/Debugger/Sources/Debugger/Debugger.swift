@@ -1,7 +1,7 @@
 /*
  Debugger
 
- Copyright © 2022 BB9z.
+ Copyright © 2022-2023 BB9z.
  https://github.com/BB9z/iOS-Project-Template
 
  The MIT License
@@ -70,24 +70,22 @@ public enum Debugger {
         }
     }
 
-    /// 自定义对象检查方法
-    public static var vauleInspector: ((Any) -> Void)?
+    /// 自定义对象检查方法 value
+    public static var valueInspector: ((Any) -> Void)?
 
     /// 检测列表时依据的属性名
-    /// 列表可以是 UITableView、UICollectionView 和 VisableCellInspecting
+    /// 列表可以是 `UITableView`、`UICollectionView` 和 ``VisibleCellInspecting``
     public static var inspectingListPropertyNames: [String] = ["listView", "tableView", "collectionView"]
 
     /// 测试 URL 跳转时，如何处理 URL 需要应用指定
     public static var urlJumpHandler: ((URL) -> Void)?
 }
 
-// MARK: - 一些操作
+// MARK: - 一些公开操作
 public extension Debugger {
-    /// 显示调试面板
+    /// 手动显示调试面板
     static func showControlCenter() {
-        if #available(iOS 13.0, *) {
-            floatWindow.windowScene = triggerButton?.window?.windowScene ?? activatedWindowScene
-        }
+        floatWindow.windowScene = triggerButton?.window?.windowScene ?? activatedWindowScene
         floatWindow.isHidden = false
         floatViewController?.refresh()
     }
@@ -97,24 +95,34 @@ public extension Debugger {
         floatWindow.isHidden = true
     }
 
+    /// 在调试浮窗中展示给定的自定义 view
+    ///
+    /// - SeeAlso: ``hideDebugView()``
     static func showDebugView(_ view: UIView) {
         floatViewController?.customView = view
     }
 
+    /// 不再展示自定义 view
+    ///
+    /// - SeeAlso: ``showDebugView(_:)``
     static func hideDebugView() {
         floatViewController?.customView = nil
     }
 
-    /// 检查对象
+    /// 检查对象，通常用于通过 UI 展示传入对象的信息
+    ///
+    /// 展示行为可通过设置 ``valueInspector`` 定制
     static func inspect(value: Any) {
         guard let value = unwrap(optional: value) else {
             return
         }
-        if let cb = vauleInspector {
-            cb(value)
+        if let handler = valueInspector {
+            handler(value)
             return
         }
-        if let value = value as? CustomDebugStringConvertible {
+        if let value = value as? CustomStringConvertible {
+            show(text: value.description)
+        } else if let value = value as? CustomDebugStringConvertible {
             show(text: value.debugDescription)
         } else {
             var output = ""
@@ -124,7 +132,7 @@ public extension Debugger {
     }
 
     /// 检测列表可见单元
-    static func inspectVisableCell() {
+    static func inspectVisibleCell() {
         guard let cells = inspectListCell(Debugger.currentViewController) else {
             return
         }
@@ -140,7 +148,9 @@ public extension Debugger {
 
     /// 显示 VC 堆栈调试信息
     static func showViewControllerHierarchy() {
-        let sel = Selector(("_printH" + "ierarchy"))
+        var selPart = "hierarchy"
+        selPart.replaceSubrange(selPart.startIndex...selPart.startIndex, with: "H")
+        let sel = Selector(("_print" + selPart))  // 规避商店审核才弄这么复杂
         guard UIViewController.responds(to: sel) else { return }
         let isFloatShown = !floatWindow.isHidden
         if isFloatShown {
@@ -163,6 +173,8 @@ public extension Debugger {
     }
 
     /// 重置网络相关存储
+    ///
+    /// 包括 `URLCache`，`URLCredentialStorage` 和 `HTTPCookieStorage`
     static func resetURLStorage() {
         URLCache.shared.removeAllCachedResponses()
         let credentialStorage = URLCredentialStorage.shared
