@@ -18,8 +18,8 @@ import Foundation
 
  ```swift
  let tracker = CollectionStateTracker<Int>(elements: [1, 2, 3])
- tracker.active([1, 2])  // (actived: [1, 2], deactived: [])
- tracker.set(activedElements: [1, 3])  // (actived: [3], deactived: [2])
+ tracker.active([1, 2])  // (activated: [1, 2], deactivated: [])
+ tracker.set(activedElements: [1, 3])  // (activated: [3], deactivated: [2])
  ```
 
  ## Topics
@@ -63,7 +63,7 @@ public final class CollectionStateTracker<Element: Hashable> {
     }
 
     /// 顺序与 elements 一致
-    public typealias Result = (actived: [Element], deactived: [Element])
+    public typealias Result = (activated: [Element], deactivated: [Element])
 
     /**
      更新元素集合
@@ -73,16 +73,16 @@ public final class CollectionStateTracker<Element: Hashable> {
      - keepActive: 是否保持原有激活状态，如果为 false，所有元素都会被取消激活
      */
     public func update(elements: [Element], keepActive: Bool) -> Result {
-        let actived = self.activedElements
+        let activated = self.activedElements
         elementStorage = NSOrderedSet(array: elements)
 
         if keepActive {
-            activedStorage = indexSet(of: actived)
-            let removed = actived.filter { !elementStorage.contains($0) }
+            activedStorage = indexSet(of: activated)
+            let removed = activated.filter { !elementStorage.contains($0) }
             return ([], removed)
         } else {
             activedStorage.removeAll()
-            return ([], actived)
+            return ([], activated)
         }
     }
 
@@ -98,12 +98,12 @@ public final class CollectionStateTracker<Element: Hashable> {
     }
 
     /// 取消激活单个元素
-    public func deactive(_ element: Element) -> Result {
-        deactive([element])
+    public func deactivate(_ element: Element) -> Result {
+        deactivate([element])
     }
 
     /// 取消多个元素的激活状态
-    public func deactive(_ elements: [Element]) -> Result {
+    public func deactivate(_ elements: [Element]) -> Result {
         let newIndexSet = activedStorage.subtracting(indexSet(of: elements))
         return update(activedIndexs: newIndexSet)
     }
