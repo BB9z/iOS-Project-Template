@@ -50,8 +50,8 @@ fileprivate extension UIControl {
 }
 
 // swizzle 不完成实现
-private func exchange(_ cls: AnyClass, _ orginal: Selector, _ new: Selector) {
-    guard let orginalMethod = class_getInstanceMethod(cls, orginal),
+private func exchange(_ cls: AnyClass, _ original: Selector, _ new: Selector) {
+    guard let orginalMethod = class_getInstanceMethod(cls, original),
           let newMethod = class_getInstanceMethod(cls, new) else {
         fatalError()
     }

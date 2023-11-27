@@ -52,27 +52,27 @@ final class CollectionStateTrackerTests: XCTestCase {
         _ = tracker.active([1, 3, 4, 5])
 
         // At begin
-        var result = tracker.deactive(3)
+        var result = tracker.deactivate(3)
         assertResult(result, [], [3])
         assertActived(tracker, at: 0, 3, 4)
 
         // At mid
-        result = tracker.deactive(1)
+        result = tracker.deactivate(1)
         assertResult(result, [], [1])
         assertActived(tracker, at: 3, 4)
 
         // At end
-        result = tracker.deactive(5)
+        result = tracker.deactivate(5)
         assertResult(result, [], [5])
         assertActived(tracker, at: 3)
 
         // Noop
-        result = tracker.deactive(5)
+        result = tracker.deactivate(5)
         assertResult(result, [], [])
         assertActived(tracker, at: 3)
 
         // Not exist
-        result = tracker.deactive(999)
+        result = tracker.deactivate(999)
         assertResult(result, [], [])
         assertActived(tracker, at: 3)
     }
@@ -84,14 +84,14 @@ final class CollectionStateTrackerTests: XCTestCase {
         assertActived(tracker, at: 0, 3)
 
         // 有效、无效混合
-        assertResult(tracker.deactive([2, 4]), [], [4])
+        assertResult(tracker.deactivate([2, 4]), [], [4])
         assertActived(tracker, at: 0)
 
         assertResult(tracker.active([5, 6]), [5], [])
         assertActived(tracker, at: 0, 4)
 
         // 多个相同操作应等同一个
-        assertResult(tracker.deactive([1, 1]), [], [1])
+        assertResult(tracker.deactivate([1, 1]), [], [1])
         assertActived(tracker, at: 4)
         
         assertResult(tracker.active([3, 3]), [3], [])
@@ -101,18 +101,18 @@ final class CollectionStateTrackerTests: XCTestCase {
         assertResult(tracker.active([4, 2, 1]), [1, 2, 4], [])
         assertActived(tracker, at: 0, 1, 2, 3, 4)
 
-        assertResult(tracker.deactive([5, 3, 1]), [], [1, 3, 5])
+        assertResult(tracker.deactivate([5, 3, 1]), [], [1, 3, 5])
         assertActived(tracker, at: 1, 3)
 
         // 无变化
         assertResult(tracker.active([2, 4]), [], [])
         assertActived(tracker, at: 1, 3)
 
-        assertResult(tracker.deactive([3, 5]), [], [])
+        assertResult(tracker.deactivate([3, 5]), [], [])
         assertActived(tracker, at: 1, 3)
 
         // 清空
-        assertResult(tracker.deactive([2, 4, 999]), [], [2, 4])
+        assertResult(tracker.deactivate([2, 4, 999]), [], [2, 4])
         XCTAssertEqual(Array(tracker.activedIndexs), [])
         XCTAssertEqual(tracker.activedElements, [])
     }
@@ -177,13 +177,13 @@ final class CollectionStateTrackerTests: XCTestCase {
 private extension CollectionStateTrackerTests {
     func assertResult<T>(
         _ result: CollectionStateTracker<T>.Result,
-        _ actived: [T],
-        _ deactived: [T],
+        _ activated: [T],
+        _ deactivated: [T],
         file: StaticString = #filePath,
         line: UInt = #line
     ) {
-        XCTAssertEqual(result.actived, actived, file: file, line: line)
-        XCTAssertEqual(result.deactived, deactived, file: file, line: line)
+        XCTAssertEqual(result.activated, activated, file: file, line: line)
+        XCTAssertEqual(result.deactivated, deactivated, file: file, line: line)
     }
 
     func assertActived<T>(
@@ -194,7 +194,7 @@ private extension CollectionStateTrackerTests {
     ) {
         let idxSet = IndexSet(activedIndexs)
         XCTAssertEqual(tracker.activedIndexs, idxSet, file: file, line: line)
-        let actived = idxSet.map { tracker.elements[$0] }
-        XCTAssertEqual(tracker.activedElements, actived, file: file, line: line)
+        let activated = idxSet.map { tracker.elements[$0] }
+        XCTAssertEqual(tracker.activedElements, activated, file: file, line: line)
     }
 }

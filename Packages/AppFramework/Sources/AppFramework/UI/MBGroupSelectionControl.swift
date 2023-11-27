@@ -71,7 +71,7 @@ open class MBGroupSelectionControl: UIControl {
                 $0.addTarget(self, action: action, for: .touchUpInside)
             }
             let changes = selectedTracker.update(elements: newValue, keepActive: true)
-            update(selectedControls: [], deselectedControls: changes.deactived, animated: false)
+            update(selectedControls: [], deselectedControls: changes.deactivated, animated: false)
         }
     }
 
@@ -112,12 +112,12 @@ open class MBGroupSelectionControl: UIControl {
     /// - SeeAlso: ``update(selectedControls:deselectedControls:animated:)``
     public func update(selection controls: [UIControl], animated: Bool) {
         let changes = selectedTracker.set(activedElements: controls)
-        if changes.actived.isEmpty && changes.deactived.isEmpty {
+        if changes.activated.isEmpty && changes.deactivated.isEmpty {
             return
         }
-        changes.actived.forEach { $0.isSelected = true }
-        changes.deactived.forEach { $0.isSelected = false }
-        update(selectedControls: changes.actived, deselectedControls: changes.deactived, animated: animated)
+        changes.activated.forEach { $0.isSelected = true }
+        changes.deactivated.forEach { $0.isSelected = false }
+        update(selectedControls: changes.activated, deselectedControls: changes.deactivated, animated: animated)
     }
 
     /**

@@ -191,10 +191,10 @@
                                     <constraint firstItem="py3-ib-nx0" firstAttribute="leading" secondItem="xsH-Kh-dLG" secondAttribute="leading" id="6WH-Ct-hga"/>
                                     <constraint firstItem="dGa-7P-2Cl" firstAttribute="leading" secondItem="xsH-Kh-dLG" secondAttribute="leading" id="7oy-5u-yFs"/>
                                     <constraint firstItem="dGa-7P-2Cl" firstAttribute="top" secondItem="xsH-Kh-dLG" secondAttribute="top" id="S53-VC-xek"/>
-                                    <constraint firstAttribute="height" constant="400" id="ZtL-3g-Sjv"/>
+                                    <constraint firstAttribute="height" priority="999" constant="400" id="ZtL-3g-Sjv"/>
                                     <constraint firstItem="py3-ib-nx0" firstAttribute="bottom" secondItem="xsH-Kh-dLG" secondAttribute="bottom" id="d96-Mu-fFH"/>
                                     <constraint firstAttribute="trailing" secondItem="py3-ib-nx0" secondAttribute="trailing" id="kyS-iB-wJ1"/>
-                                    <constraint firstAttribute="width" constant="300" id="ulE-e8-6Js"/>
+                                    <constraint firstAttribute="width" priority="999" constant="300" id="ulE-e8-6Js"/>
                                     <constraint firstItem="py3-ib-nx0" firstAttribute="top" secondItem="dGa-7P-2Cl" secondAttribute="bottom" id="wEg-vV-FKu"/>
                                     <constraint firstAttribute="trailing" secondItem="dGa-7P-2Cl" secondAttribute="trailing" id="yKE-8H-xW5"/>
                                 </constraints>
@@ -256,7 +256,7 @@
                                         <rect key="frame" x="2" y="2" width="352" height="747"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="10"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcR-L6-GVd" userLabel="Bar">
