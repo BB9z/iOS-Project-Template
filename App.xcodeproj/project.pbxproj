@@ -316,7 +316,6 @@
 		D579495E21788D67002E1C4A /* UIDevice+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+App.swift"; sourceTree = "<group>"; };
 		D584C77A26EEC970004E434B /* GradientProgressViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientProgressViews.swift; sourceTree = "<group>"; };
 		D584C78426F03768004E434B /* CoreAnimation+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreAnimation+App.swift"; sourceTree = "<group>"; };
-		D588307F20CA67A7002030C4 /* UICollectionViewFlowLayout+IBInspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewFlowLayout+IBInspectable.h"; sourceTree = "<group>"; };
 		D588308220CAB8AE002030C4 /* MBNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNavigationBar.h; sourceTree = "<group>"; };
 		D588308320CAB8AE002030C4 /* MBNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNavigationBar.m; sourceTree = "<group>"; };
 		D588308420CAB8AE002030C4 /* MBRoundBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBRoundBarButtonItem.h; sourceTree = "<group>"; };
@@ -1385,7 +1384,6 @@
 			children = (
 				D5031BFB25C03EA800C2849E /* UIButton+FontShrink.swift */,
 				D5EE51D12043F613009148B3 /* UICollectionView+IBInspectable.h */,
-				D588307F20CA67A7002030C4 /* UICollectionViewFlowLayout+IBInspectable.h */,
 				D5DB4C20241E39EA00832A0A /* UIKit+DynamicType.h */,
 				D5DB4C21241E39EA00832A0A /* UIKit+DynamicType.m */,
 				D55959C720AB924D0019D733 /* UIKit+IBInspectable.h */,
