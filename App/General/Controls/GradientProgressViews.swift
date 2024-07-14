@@ -1,7 +1,7 @@
 /*
  GradientProgressViews.swift
 
- Copyright © 2020-2021 BB9z
+ Copyright © 2020-2021, 2024 BB9z
  https://github.com/BB9z/iOS-Project-Template
 
  The MIT License
@@ -181,18 +181,22 @@ class GradientRingProgressView: UIView {
     }
     @IBInspectable var progressWidth: CGFloat = 18 {
         didSet {
-            progressLayer.lineWidth = progressWidth
+            lowerMaskLayer.lineWidth = progressWidth
+            upperMaskLayer.lineWidth = progressWidth
             layer.setNeedsLayout()
         }
     }
     @IBInspectable var progress: Float = 0 {
         didSet {
+            let strokeEnd: CGFloat
             if almostFullProgressAdjust,
                progress < 0.999 {
-                progressLayer.strokeEnd = CGFloat(progress * adjustProgess)
+                strokeEnd = CGFloat(progress * adjustProgess)
             } else {
-                progressLayer.strokeEnd = CGFloat(progress)
+                strokeEnd = CGFloat(progress)
             }
+            lowerMaskLayer.strokeEnd = strokeEnd
+            upperMaskLayer.strokeEnd = strokeEnd
         }
     }
     @IBInspectable var almostFullProgressAdjust: Bool = true
@@ -207,9 +211,10 @@ class GradientRingProgressView: UIView {
     }
     private func onInit() {
         layer.addSublayer(trackLayer)
-        layer.addSublayer(gradientLayer1)
-//        gradientLayer1.addSublayer(gradientLayer2)
-        gradientLayer1.mask = progressLayer
+        layer.addSublayer(lowerGradientLayer)
+        layer.addSublayer(upperGradientLayer)
+        lowerGradientLayer.mask = lowerMaskLayer
+        upperGradientLayer.mask = upperMaskLayer
         updateColor()
     }
 
@@ -217,13 +222,15 @@ class GradientRingProgressView: UIView {
         super.layoutSublayers(of: layer)
         let rect = layer.bounds
         trackLayer.frame = rect
-        gradientLayer1.frame = rect
-//        gradientLayer2.frame = CGRect(x: rect.minX, y: rect.minY, width: rect.width * 0.5, height: rect.height)
-        progressLayer.frame = rect
+        lowerGradientLayer.frame = rect
+        upperGradientLayer.frame = rect
+        lowerMaskLayer.frame = rect
+        upperMaskLayer.frame = rect
         let offset = max(trackWidth, progressWidth) / 2
         let lineRect = rect.insetBy(dx: offset, dy: offset)
         trackLayer.path = UIBezierPath(ovalIn: lineRect).cgPath
-        progressLayer.path = progressPath(frame: lineRect).cgPath
+        lowerMaskLayer.path = progressPath(frame: lineRect).cgPath
+        upperMaskLayer.path = lowerMaskLayer.path
         if almostFullProgressAdjust {
             let progressLength = (min(bounds.width, bounds.height) - max(trackWidth, progressWidth)) * CGFloat.pi
             adjustProgess = Float(1.0 - progressWidth * 0.5 / progressLength)
@@ -232,9 +239,9 @@ class GradientRingProgressView: UIView {
     private var adjustProgess: Float = 1
 
     private func updateColor() {
-//        let midColor = color1.mixedColor(withRatio: 0.5, color: color2)
-        gradientLayer1.colors = [color1.cgColor, color2.cgColor]
-//        gradientLayer2.colors = [color1.cgColor, color2.cgColor]
+        let midColor = color1.mixedColor(withRatio: 0.5, color: color2)
+        lowerGradientLayer.colors = [color1.cgColor, midColor.cgColor]
+        upperGradientLayer.colors = [color2.cgColor, midColor.cgColor]
     }
 
     private func progressPath(frame: CGRect) -> UIBezierPath {
@@ -259,7 +266,7 @@ class GradientRingProgressView: UIView {
         return path
     }
 
-    lazy var trackLayer: CAShapeLayer = {
+    private lazy var trackLayer: CAShapeLayer = {
         let shape = CAShapeLayer()
         shape.lineWidth = trackWidth
         shape.fillColor = nil
@@ -268,7 +275,7 @@ class GradientRingProgressView: UIView {
         return shape
     }()
 
-    lazy var progressLayer: CAShapeLayer = {
+    private lazy var lowerMaskLayer: CAShapeLayer = {
         let shape = CAShapeLayer()
         shape.lineWidth = progressWidth
         shape.fillColor = nil
@@ -277,15 +284,25 @@ class GradientRingProgressView: UIView {
         shape.strokeEnd = 0
         return shape
     }()
+    private lazy var upperMaskLayer: CAShapeLayer = {
+        let shape = CAShapeLayer()
+        shape.lineWidth = progressWidth
+        shape.fillColor = nil
+        shape.strokeColor = UIColor.white.cgColor
+        shape.lineCap = .round
+        shape.strokeStart = 0.5
+        shape.strokeEnd = 0
+        return shape
+    }()
 
-    lazy var gradientLayer1: CAGradientLayer = {
+    private lazy var lowerGradientLayer: CAGradientLayer = {
         let grad = CAGradientLayer()
         grad.locations = [0, 1] as [NSNumber]
         return grad
     }()
-//    lazy var gradientLayer2: CAGradientLayer = {
-//        let grad = CAGradientLayer()
-//        grad.locations = [0, 1] as [NSNumber]
-//        return grad
-//    }()
+    private lazy var upperGradientLayer: CAGradientLayer = {
+        let grad = CAGradientLayer()
+        grad.locations = [0, 1] as [NSNumber]
+        return grad
+    }()
 }

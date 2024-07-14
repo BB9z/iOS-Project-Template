@@ -58,12 +58,8 @@ private struct AppLogHandler: LogHandler {
     }
 
     subscript(metadataKey metadataKey: String) -> Logger.Metadata.Value? {
-        get {
-            return metadata[metadataKey]
-        }
-        set(newValue) {
-            metadata[metadataKey] = newValue
-        }
+        get { metadata[metadataKey] }
+        set(newValue) { metadata[metadataKey] = newValue }
     }
 
     private func timestamp() -> String {
