@@ -4,7 +4,7 @@
 
 ## 需求
 
-iOS 14+；Xcode 14.3+；macOS 13+。
+iOS 15+；Xcode 15.0+；macOS 14+。
 
 依赖：
 
@@ -33,7 +33,7 @@ fastlane setup_project
 强烈推荐阅读[项目模版 wiki](https://github.com/BB9z/iOS-Project-Template/wiki)内的相关文档。
 
 ```text
-Copyright © 2018-2023 BB9z.
+Copyright © 2018-2024 BB9z.
 Copyright © 2014-2016 Beijing ZhiYun ZhiYuan Information Technology Co., Ltd.
 Copyright © 2013-2014 Chinamobo Co., Ltd.
 

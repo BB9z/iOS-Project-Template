@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: macos-13
+    runs-on: macos-14
 
     steps:
       - uses: actions/checkout@v4
@@ -46,6 +46,9 @@ jobs:
           else
             echo "Podfile unchanged, skip pod install."
           fi
+
+      - name: XCode version
+        run: xcodebuild -version
 
       - name: Build maccatalyst target
         run: |
