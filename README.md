@@ -33,7 +33,7 @@ fastlane setup_project
 强烈推荐阅读[项目模版 wiki](https://github.com/BB9z/iOS-Project-Template/wiki)内的相关文档。
 
 ```text
-Copyright © 2018-2024 BB9z.
+Copyright © 2018-2025 BB9z.
 Copyright © 2014-2016 Beijing ZhiYun ZhiYuan Information Technology Co., Ltd.
 Copyright © 2013-2014 Chinamobo Co., Ltd.
 
