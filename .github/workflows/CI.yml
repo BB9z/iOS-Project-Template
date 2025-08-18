@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - develop
+      - release
+      - hotfix/*
+  pull_request:
+    branches-ignore:
+      - demo
+
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-14
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: CocoaPods Cache
+        uses: actions/cache@v4
+        with:
+          path: "Pods"
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+
+      - name: Setup Project
+        run: |
+          pod --version
+          isNeedsPodInstall=false
+          diff "Podfile.lock" "Pods/Manifest.lock" >/dev/null || {
+            isNeedsPodInstall=true
+          }
+          if $isNeedsPodInstall; then
+            pod install || {
+              echo "pod install fails, try update repo"
+              pod install --repo-update
+            }
+          else
+            echo "Podfile unchanged, skip pod install."
+          fi
+
+      - name: XCode version
+        run: xcodebuild -version
+
+      - name: Build maccatalyst target
+        run: |
+          set -o pipefail
+          xcodebuild -workspace "App.xcworkspace" -scheme "App" -destination 'platform=macOS,arch=x86_64' | xcbeautify
+
+      - name: Build iOS target
+        run: |
+          set -o pipefail
+          xcodebuild -workspace "App.xcworkspace" -scheme "App" -destination 'generic/platform=iOS' CODE_SIGNING_ALLOWED=NO | xcbeautify

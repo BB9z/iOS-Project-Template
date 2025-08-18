@@ -18,7 +18,7 @@ xcodebuild -workspace "$name.xcworkspace" -scheme "$name" -destination 'generic/
 echo "-----------"
 
 echo "Run Unit Tests"
-xcodebuild -workspace "$name.xcworkspace" -scheme "$name" -destination "platform=macOS,arch=arm64,variant=Mac Catalyst" -derivedDataPath Build -enableCodeCoverage YES test | $formatter
+xcodebuild -workspace "$name.xcworkspace" -scheme "$name" -destination "platform=macOS,variant=Mac Catalyst" -derivedDataPath Build -enableCodeCoverage YES test | $formatter
 echo "-----------"
 
 echo "Test Coverage"
