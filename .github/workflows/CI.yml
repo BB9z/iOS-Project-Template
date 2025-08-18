@@ -23,6 +23,9 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - name: Fix Xcode version
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
+
       - name: CocoaPods Cache
         uses: actions/cache@v4
         with:
@@ -48,14 +51,16 @@ jobs:
           fi
 
       - name: XCode version
-        run: xcodebuild -version
-
-      - name: Build maccatalyst target
         run: |
-          set -o pipefail
-          xcodebuild -workspace "App.xcworkspace" -scheme "App" -destination 'platform=macOS,arch=x86_64' | xcbeautify
+          xcodebuild -version
+          xcodebuild -showsdks
+
+      # - name: Build maccatalyst target
+      #   run: |
+      #     set -o pipefail
+      #     xcodebuild -workspace "App.xcworkspace" -scheme "App" -destination 'platform=macOS,arch=x86_64' | xcbeautify
 
       - name: Build iOS target
         run: |
           set -o pipefail
-          xcodebuild -workspace "App.xcworkspace" -scheme "App" -destination 'generic/platform=iOS' -sdk iphoneos CODE_SIGNING_ALLOWED=NO | xcbeautify
+          xcodebuild -workspace "App.xcworkspace" -scheme "App" -destination 'platform=iOS Simulator,name=iPhone 16' | xcbeautify
