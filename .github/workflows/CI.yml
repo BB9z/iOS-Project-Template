@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: macos-15
+    runs-on: macos-14
 
     steps:
       - uses: actions/checkout@v5
@@ -60,4 +60,4 @@ jobs:
       - name: Build iOS target
         run: |
           set -o pipefail
-          xcodebuild -workspace "App.xcworkspace" -scheme "App" -destination 'generic/platform=iOS' -sdk iphoneos18.1 CODE_SIGNING_ALLOWED=NO | xcbeautify
+          xcodebuild -workspace "App.xcworkspace" -scheme "App" -destination 'generic/platform=iOS' CODE_SIGNING_ALLOWED=NO | xcbeautify
