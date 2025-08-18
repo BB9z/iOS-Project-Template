@@ -1,7 +1,7 @@
 #! /bin/zsh
 # Test Package 
 #
-# Copyright © 2023 BB9z.
+# Copyright © 2023, 2025 BB9z.
 # https://github.com/BB9z/iOS-Project-Template
 #
 # The MIT License
@@ -10,19 +10,15 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-formatter=xcpretty
-if [ -x "$(command -v xcbeautify)" ]; then
-    formatter=xcbeautify
-fi
-
 name="AppFramework"
+formatter=xcbeautify
 
 echo "Test Release Build"
 xcodebuild -workspace "$name.xcworkspace" -scheme "$name" -destination 'generic/platform=iOS' -configuration Release build | $formatter
 echo "-----------"
 
 echo "Run Unit Tests"
-xcodebuild -workspace "$name.xcworkspace" -scheme "$name" -destination "platform=macOS,arch=x86_64,variant=Mac Catalyst" -derivedDataPath Build -enableCodeCoverage YES test | $formatter
+xcodebuild -workspace "$name.xcworkspace" -scheme "$name" -destination "platform=macOS,variant=Mac Catalyst" -derivedDataPath Build -enableCodeCoverage YES test | $formatter
 echo "-----------"
 
 echo "Test Coverage"
