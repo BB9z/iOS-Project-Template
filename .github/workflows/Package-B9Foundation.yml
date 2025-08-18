@@ -1,0 +1,24 @@
+name: "Package: B9Foundation"
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/Package-B9Foundation.yml'
+      - 'Packages/B9Foundation/**'
+  workflow_dispatch:
+
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: macos-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Run Package Tests
+        run: |
+          ./Packages/B9Foundation/run_unit_tests.command
