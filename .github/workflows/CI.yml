@@ -58,4 +58,4 @@ jobs:
       - name: Build iOS target
         run: |
           set -o pipefail
-          xcodebuild -workspace "App.xcworkspace" -scheme "App" -destination 'generic/platform=iOS' CODE_SIGNING_ALLOWED=NO | xcbeautify
+          xcodebuild -workspace "App.xcworkspace" -scheme "App" -destination 'generic/platform=iOS' -sdk iphoneos CODE_SIGNING_ALLOWED=NO | xcbeautify
