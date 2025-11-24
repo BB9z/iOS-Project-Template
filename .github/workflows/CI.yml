@@ -11,6 +11,7 @@ on:
   pull_request:
     branches-ignore:
       - demo
+  workflow_dispatch:
 
 concurrency: 
   group: ${{ github.workflow }}-${{ github.ref }}
