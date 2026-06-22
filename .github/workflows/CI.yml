@@ -22,7 +22,7 @@ jobs:
     runs-on: macos-14
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: CocoaPods Cache
         uses: actions/cache@v5
